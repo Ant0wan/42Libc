@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 16:48:11 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/18 15:24:35 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/18 15:26:45 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ int main(void)
 	printf("test26bis %#*.*f\n", 100, 42, dd);
 	printf("test26bis %#+*.*f\n", 100, 42, dd);
 	printf("test26bis %0#+*.*f\n", 100, 42, da);
+	printf("test26bis %#-*.*f\n", 100, 42, da);
+//	printf("test26bis %#-*.*x\n", 100, 42, da);
 	printf("test26bis %#-*.*f\n", 100, 42, da);
 
 	printf("test27 %%");
