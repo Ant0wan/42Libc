@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 16:48:11 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/18 14:46:20 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/18 15:10:42 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include <stdio.h>
 #include <stdarg.h>
 
+ // IEEE Standard for Floating-Point Arithmetic (IEEE 754)
+// https://www.lix.polytechnique.fr/~liberti/public/computing/prog/c/C/FUNCTIONS/format.html#id //
 
 void courses(char* arg0, ...) 
 {
@@ -38,8 +40,21 @@ int main(void)
 	int num = 42;
 	printf("test1 %#x\n", 42);
 	printf("test2 %-10d \n", num);
+	printf("test2 %010d \n", num);
+	printf("test2 %0d \n", num);
+	printf("test2 %+10d \n", num);
+	printf("test2 %0+10d \n", num);
+	printf("test2 %-10d \n", num * (-1));
+	printf("test2 %-10d \n", num * (-1));
+	printf("test2 %+10d \n", num * (-1));
+	printf("test2 %0+10d \n", num * (-1));
 	printf("test3 %010d \n", num);
 	printf("test4 %-#10x \n", num);  
+	printf("test4 %-#10x \n", num);  
+	printf("test4 %#10x \n", num);  
+	printf("test4 %0#10x \n", num);  
+//	printf("test4 %+#10x \n", num);  
+//	printf("test4 %-+#10x \n", num);  
 	printf("test5 %#x \n", num);	
 
 	/* FIELD WIDTH*/
@@ -59,6 +74,7 @@ int main(void)
 	printf("test14 %.*f\n", 8, dd);
 	printf("test14 %*.*f\n", 100, 42, dd);
 
+	printf(" %%");
 	
 
 	return 0;
