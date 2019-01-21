@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/21 09:37:30 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/21 14:36:06 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/21 16:05:19 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,34 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
+# include <stdlib.h>
+
+typedef struct	s_type
+{
+	char	*t;
+	int		(*f)(int, int);
+}				t_type;
 
 t_type	g_typetab[] =
 {
-	{ "c", &conv_chr},
-	{ "s", &conv_str},
-	{ "p", &na},
+//	{ "c", &conv_chr},
+//	{ "s", &conv_str},
+//	{ "p", &na},
 	{ "d", &na},
-	{ "i", &na},
-	{ "o", &na},
-	{ "u", &na},
-	{ "x", &na},
-	{ "X", &na},
-	{ "hh", &na},
-	{ "h", &na},
-	{ "l", &na},
-	{ "ll", &na},
-	{ "L", &na},
-	{ "f", &na},
-	{ "b", &na},
-	{ "r", &na},
-	{ "k", &na}
+//	{ "i", &na},
+//	{ "o", &na},
+//	{ "u", &na},
+//	{ "x", &na},
+//	{ "X", &na},
+//	{ "hh", &na},
+//	{ "h", &na},
+//	{ "l", &na},
+//	{ "ll", &na},
+//	{ "L", &na},
+//	{ "f", &na},
+//	{ "b", &na},
+//	{ "r", &na},
+//	{ "k", &na}
 };
 
 //t_flag	g_flag_tab[] =
