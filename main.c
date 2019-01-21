@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 16:48:11 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/21 13:03:54 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/21 14:43:08 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,8 +113,11 @@ int main(void)
 	printf("%-6d\n", 2048);
 	printf("%06d\n", 2048);
 	printf("%00d\n", 2048);
+	printf("%               d\n", 2048);
+	printf("% 0 8d\n", 2048);
+	printf("% 0 8d\n", 2048);
 
 
 
-	return 0;
+	return (0);
 }
