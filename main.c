@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 16:48:11 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/18 15:26:45 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/21 13:03:54 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,13 @@ int main(void)
 {
 	//	courses("List is made of:", "oeufs", "chocolat", "sucre", "farine", NULL);
 
+	
+	/* */
+
+
 	/* FLAGS */
 	int num = 42;
+	printf("test 0 %%");
 	printf("test 1 %#x\n", 42);
 	printf("test 2 %-10d \n", num);
 	printf("test 3 %010d \n", num);
@@ -74,23 +79,42 @@ int main(void)
 	printf("test24 %.f\n", dd);
 	printf("test25 %.*f\n", 8, dd);
 	printf("test26 %*.*f\n", 100, 42, dd);
-	printf("test26bis %+*.*f\n", 100, 42, dd);
-	printf("test26bis %0+*.*f\n", 100, 42, dd);
-	printf("test26bis %+0*.*f\n", 100, 42, dd);
-	printf("test26bis %-*.*f\n", 100, 42, dd);
-	printf("test26bis %-*.*f\n", 100, 42, da);
+	printf("test27 %+*.*f\n", 100, 42, dd);
+	printf("test28 %0+*.*f\n", 100, 42, dd);
+	printf("test29 %+0*.*f\n", 100, 42, dd);
+	printf("test30 %-*.*f\n", 100, 42, dd);
+	printf("test31 %-*.*f\n", 100, 42, da);
 //	printf("test26bis %0-*.*f\n", 100, 42, da);
 //	printf("test26bis %-0*.*f\n", 100, 42, da);
-	printf("test26bis %#-*.*f\n", 100, 42, dd);
-	printf("test26bis %#*.*f\n", 100, 42, dd);
-	printf("test26bis %#+*.*f\n", 100, 42, dd);
-	printf("test26bis %0#+*.*f\n", 100, 42, da);
-	printf("test26bis %#-*.*f\n", 100, 42, da);
+	printf("test32 %#-*.*f\n", 100, 42, dd);
+	printf("test33 %#*.*f\n", 100, 42, dd);
+	printf("test34 %#+*.*f\n", 100, 42, dd);
+	printf("test35 %0#+*.*f\n", 100, 42, da);
+	printf("test36 %#-*.*f\n", 100, 42, da);
 //	printf("test26bis %#-*.*x\n", 100, 42, da);
-	printf("test26bis %#-*.*f\n", 100, 42, da);
+	printf("test37 %#-*.*f\n", 100, 100, da);
+	printf("test38 %#-+*.*f\n", 100, 100, da);
+	printf("test39 %#+-*.*f\n", 100, 100, da);
+//	printf("test40 %#+-i*.*i\n", 100, 100, dd);
+//	printf("test41 %#-*.*i\n", 100, 100, dd);
+//	printf("test42 %+*.*i\n", 100, 100, dd);
 
-	printf("test27 %%");
-	
+    /* TEST ORDER OF SYNTAX TREATMENT */
+	printf("\n");
+	/* INT */
+	printf("%d\n", 2048);
+	printf("%.2d\n", 2048); /* pas de precision */
+	printf("%4d\n", 2048); /* len par defautl pour width */
+	printf("%3d\n", 2048); /* if width < len nothing happen */
+//	printf("%#d\n", 2048);
+//	printf("%#6d\n", 2048);
+//	printf("%+#6d\n", 2048);
+//	printf("%-#6d\n", 2048);
+	printf("%-6d\n", 2048);
+	printf("%06d\n", 2048);
+	printf("%00d\n", 2048);
+
+
 
 	return 0;
 }
