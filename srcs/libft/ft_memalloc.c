@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/21 14:36:30 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/21 16:37:26 by abarthel         ###   ########.fr       */
+/*   Created: 2018/11/09 14:08:32 by abarthel          #+#    #+#             */
+/*   Updated: 2018/11/09 15:18:22 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_printf(const char *restrict format, ...)
+void	*ft_memalloc(size_t size)
 {
-	va_list ap;
-	int		 str;
+	void	*p_mem;
 
-	va_start(ap, format);
-
-	str = va_arg(ap, int);
-	
-	//strchr//
-
-	va_end(ap);
-
-	return (0);
+	p_mem = (void*)malloc(size);
+	if (!p_mem)
+		return (NULL);
+	ft_bzero(p_mem, size);
+	return (p_mem);
 }

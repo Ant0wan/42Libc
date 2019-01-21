@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   conversions.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/21 14:36:30 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/21 16:37:26 by abarthel         ###   ########.fr       */
+/*   Created: 2018/11/06 11:55:45 by abarthel          #+#    #+#             */
+/*   Updated: 2019/01/21 16:55:44 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef CONVERSIONS_H
+# define CONVERSIONS_H
 
-int	ft_printf(const char *restrict format, ...)
-{
-	va_list ap;
-	int		 str;
+# include <string.h>
+# include <stdlib.h>
+# include <unistd.h>
 
-	va_start(ap, format);
+char			*ft_itoa(int n);
 
-	str = va_arg(ap, int);
-	
-	//strchr//
-
-	va_end(ap);
-
-	return (0);
-}
+#endif

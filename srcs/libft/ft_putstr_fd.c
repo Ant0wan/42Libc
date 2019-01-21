@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/21 14:36:30 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/21 16:37:26 by abarthel         ###   ########.fr       */
+/*   Created: 2018/11/13 08:16:07 by abarthel          #+#    #+#             */
+/*   Updated: 2018/11/13 09:28:49 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_printf(const char *restrict format, ...)
+void	ft_putstr_fd(char const *s, int fd)
 {
-	va_list ap;
-	int		 str;
-
-	va_start(ap, format);
-
-	str = va_arg(ap, int);
-	
-	//strchr//
-
-	va_end(ap);
-
-	return (0);
+	while (s && *s)
+		write(fd, s++, 1);
 }

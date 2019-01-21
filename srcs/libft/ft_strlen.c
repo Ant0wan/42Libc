@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/21 14:36:30 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/21 16:37:26 by abarthel         ###   ########.fr       */
+/*   Created: 2018/11/06 13:35:20 by abarthel          #+#    #+#             */
+/*   Updated: 2018/11/06 14:22:15 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_printf(const char *restrict format, ...)
+size_t		ft_strlen(const char *s)
 {
-	va_list ap;
-	int		 str;
+	size_t	len;
 
-	va_start(ap, format);
-
-	str = va_arg(ap, int);
-	
-	//strchr//
-
-	va_end(ap);
-
-	return (0);
+	len = 0;
+	while (s[len])
+		++len;
+	return (len);
 }

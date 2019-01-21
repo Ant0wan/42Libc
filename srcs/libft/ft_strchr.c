@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/21 14:36:30 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/21 16:37:26 by abarthel         ###   ########.fr       */
+/*   Created: 2018/11/07 10:41:16 by abarthel          #+#    #+#             */
+/*   Updated: 2018/11/08 18:54:50 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-int	ft_printf(const char *restrict format, ...)
+char	*ft_strchr(const char *s, int c)
 {
-	va_list ap;
-	int		 str;
+	int	i;
 
-	va_start(ap, format);
-
-	str = va_arg(ap, int);
-	
-	//strchr//
-
-	va_end(ap);
-
+	i = 0;
+	while ((s[i] || !c) && (c >= 0 && c <= 127))
+	{
+		if (s[i] == c)
+			return ((char*)&s[i]);
+		++i;
+	}
 	return (0);
 }

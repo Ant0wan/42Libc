@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/21 14:36:30 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/21 16:37:26 by abarthel         ###   ########.fr       */
+/*   Created: 2018/11/07 11:28:50 by abarthel          #+#    #+#             */
+/*   Updated: 2018/11/07 13:46:18 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_printf(const char *restrict format, ...)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	va_list ap;
-	int		 str;
+	size_t			i;
+	unsigned char	*b_ptr;
 
-	va_start(ap, format);
-
-	str = va_arg(ap, int);
-	
-	//strchr//
-
-	va_end(ap);
-
-	return (0);
+	i = -1;
+	b_ptr = (unsigned char*)b;
+	while (++i < len)
+		b_ptr[i] = (unsigned char)c;
+	return (b);
 }

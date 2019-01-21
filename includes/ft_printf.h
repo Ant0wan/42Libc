@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/21 09:37:30 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/21 16:05:19 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/21 16:48:11 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <stdarg.h>
 # include <stdlib.h>
+# include "conversions.h"
+# include "libft.h"
 
 typedef struct	s_type
 {
@@ -27,7 +29,7 @@ t_type	g_typetab[] =
 //	{ "c", &conv_chr},
 //	{ "s", &conv_str},
 //	{ "p", &na},
-	{ "d", &na},
+	{ "d", &ft_itoa},
 //	{ "i", &na},
 //	{ "o", &na},
 //	{ "u", &na},

@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/21 14:36:30 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/21 16:37:26 by abarthel         ###   ########.fr       */
+/*   Created: 2018/11/10 14:48:12 by abarthel          #+#    #+#             */
+/*   Updated: 2018/11/10 15:02:42 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_printf(const char *restrict format, ...)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	va_list ap;
-	int		 str;
+	char	*cpy;
 
-	va_start(ap, format);
-
-	str = va_arg(ap, int);
-	
-	//strchr//
-
-	va_end(ap);
-
-	return (0);
+	if (s1 && s2)
+		cpy = (char*)malloc(sizeof(*cpy) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
+	if (!s1 || !s2 || !cpy)
+		return (NULL);
+	cpy = ft_strcpy(cpy, s1);
+	cpy = ft_strcat(cpy, s2);
+	return (cpy);
 }
