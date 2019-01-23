@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/01/23 17:11:29 by abarthel         ###   ########.fr        #
+#    Updated: 2019/01/23 17:16:46 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS = ./srcs/ft_printf.c
 
 INCLUDES = -I ./includes/
 
-FLAGS = -Wextra -Wall -Werror
+CFLAGS = -Wextra -Wall -Werror
 
 LIB_DIR = ./libft/
 
@@ -29,8 +29,22 @@ OBJS= $(SRCS:.c=.o)
 all : $(NAME)
 
 %.o: %.c
-	@gcc $(FLAGS) $(INCLUDES) -o $@ -c $<
+	@$(CC) $(INCLUDES) -o $@ -c $<
 
 $(NAME) : $(OBJS)
 	make -C $(LIB_DIR)
 	ar rcT $(NAME) $(LIB_DIR)$(LIB) $(OBJS)
+	ranlib $(NAME)
+
+clean :
+	@rm -f $(OBJS)
+	@make -C $(LIB_DIR) clean
+
+fclean :
+	@rm -f $(NAME)
+	@rm -f $(OBJS)
+	@make -C $(LIB_DIR) fclean
+
+re : fclean all
+
+.PHONY: all clean fclean re
