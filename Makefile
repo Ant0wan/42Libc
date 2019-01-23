@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/01/23 17:23:01 by abarthel         ###   ########.fr        #
+#    Updated: 2019/01/23 17:27:47 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ all : $(NAME)
 
 $(NAME) : $(OBJS)
 	make -C $(LIB_DIR)
-	ar rcT $(NAME) $(LIB_DIR)$(LIB) $(OBJS)
+	ar rc $(NAME) $(LIB_DIR)$(LIB) $(OBJS)
 	ranlib $(NAME)
 
 clean :
