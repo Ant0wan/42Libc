@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/01/23 17:16:46 by abarthel         ###   ########.fr        #
+#    Updated: 2019/01/23 17:21:27 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ OBJS= $(SRCS:.c=.o)
 all : $(NAME)
 
 %.o: %.c
-	@$(CC) $(INCLUDES) -o $@ -c $<
+	$(CC) $(CFLAGS) $(INCLUDES) -o $@ -c $<
 
 $(NAME) : $(OBJS)
 	make -C $(LIB_DIR)
@@ -37,13 +37,13 @@ $(NAME) : $(OBJS)
 	ranlib $(NAME)
 
 clean :
-	@rm -f $(OBJS)
-	@make -C $(LIB_DIR) clean
+	rm -f $(OBJS)
+	make -C $(LIB_DIR) clean
 
 fclean :
-	@rm -f $(NAME)
-	@rm -f $(OBJS)
-	@make -C $(LIB_DIR) fclean
+	rm -f $(NAME)
+	rm -f $(OBJS)
+	make -C $(LIB_DIR) fclean
 
 re : fclean all
 
