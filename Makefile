@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/01/23 17:21:27 by abarthel         ###   ########.fr        #
+#    Updated: 2019/01/23 17:23:01 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,12 +38,10 @@ $(NAME) : $(OBJS)
 
 clean :
 	rm -f $(OBJS)
-	make -C $(LIB_DIR) clean
-
-fclean :
-	rm -f $(NAME)
-	rm -f $(OBJS)
 	make -C $(LIB_DIR) fclean
+
+fclean : clean
+	rm -f $(NAME)
 
 re : fclean all
 
