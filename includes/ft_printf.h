@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/22 14:27:04 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/22 14:46:26 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/23 17:00:29 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include "libft.h"
 # include <stdarg.h>
 
+# include <stdio.h> // DEBUGGING
+
 typedef struct	s_typeop
 {
 	char	*type;
@@ -24,7 +26,7 @@ typedef struct	s_typeop
 
 t_typeop	g_typeoptab[] =
 {
-	{ "d", &itoa},
+	{ "d", &ft_itoa},
 	{ "\0", (void*)0}
 };
 
