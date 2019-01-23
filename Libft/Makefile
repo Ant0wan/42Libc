@@ -6,11 +6,11 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 11:47:48 by abarthel          #+#    #+#              #
-#    Updated: 2019/01/21 17:24:49 by abarthel         ###   ########.fr        #
+#    Updated: 2019/01/23 13:05:22 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# To compile with the libft.a, use the command-line: gcc main.c -L. -lft
+# To compile with the libft.a, use the command-line: gcc main.c -L. -lft or add it to makefile
 
 NAME = libft.a
 
