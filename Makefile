@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/01/23 17:27:47 by abarthel         ###   ########.fr        #
+#    Updated: 2019/01/24 12:45:33 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,14 @@ NAME = libftprintf.a
 
 CC = gcc
 
-SRCS = ./srcs/ft_printf.c
+SRCS = ./srcs/ft_printf.c \
+	   ./srcs/dispatcher.c
 
 INCLUDES = -I ./includes/
 
 CFLAGS = -Wextra -Wall -Werror
 
-LIB_DIR = ./libft/
+LIB_DIR = ./Libft/
 
 LIB = libft.a
 
@@ -30,11 +31,24 @@ all : $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) $(INCLUDES) -o $@ -c $<
+	echo $@
 
 $(NAME) : $(OBJS)
 	make -C $(LIB_DIR)
-	ar rc $(NAME) $(LIB_DIR)$(LIB) $(OBJS)
+	ar rc $(LIB_DIR)$(LIB) $(OBJS)
+	mv ./libft/libft.a ./libftprintf.a
 	ranlib $(NAME)
+
+objects : $(OBJS)
+
+test : $(NAME)
+	gcc main.c -I ./includes -L. libftprintf.a
+
+testclean : fclean
+	rm -f a.out
+
+retest : testclean
+	make test
 
 clean :
 	rm -f $(OBJS)
