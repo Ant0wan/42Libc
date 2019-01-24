@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/01/24 12:45:33 by abarthel         ###   ########.fr        #
+#    Updated: 2019/01/24 18:06:06 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ test : $(NAME)
 testclean : fclean
 	rm -f a.out
 
-retest : testclean
+testre : testclean
 	make test
 
 clean :

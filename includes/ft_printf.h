@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/22 14:27:04 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/24 15:00:05 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/24 19:37:21 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ typedef struct	s_typeop
 extern t_typeop	g_typeoptab[];
 
 int				ft_printf(const char *restrict format, ...);
+
+void			*dispatcher(char *str);
 
 #endif
