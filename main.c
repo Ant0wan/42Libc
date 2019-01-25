@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 17:35:29 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/24 19:25:04 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/25 10:13:35 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 int	main()
 {
+	short i;
+	i = 100;
+	printf("short: %hd\n", i);
 	ft_printf("Hello World\n");
 	return (0);
 }
