@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/22 14:27:04 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/25 17:30:27 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/25 18:26:06 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ extern t_typeop	g_conversions[];
 extern t_typeop	g_typeoptab[];
 
 void			ft_wputchar(wchar_t c);
+
+void			ft_wputstr(wchar_t const *s);
 
 int				ft_printf(const char *restrict format, ...);
 

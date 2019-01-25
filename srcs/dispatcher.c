@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/24 12:37:47 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/25 15:35:30 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/25 18:04:26 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ t_typeop	g_typeoptab[] =
 	{ "lf", (void*)0},				 // double						8 bytes
 	{ "Lf", (void*)0},				 // long double				   12 bytes
 	{ "s", (void*)&ft_putstr},		 // char pointer				8 bytes
-	{ "ll", (void*)&ft_itoa},
 	{ "\0", (void*)0}
 };
 

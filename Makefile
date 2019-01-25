@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/01/25 15:37:04 by abarthel         ###   ########.fr        #
+#    Updated: 2019/01/25 18:23:15 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ CC = gcc
 
 SRCS = ./srcs/ft_printf.c \
 	   ./srcs/dispatcher.c \
-	   ./srcs/ft_wputchar.c
+	   ./srcs/ft_wputchar.c \
+	   ./srcs/ft_wputstr.c
 
 INCLUDES = -I ./includes/
 
