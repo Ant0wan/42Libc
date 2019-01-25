@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/22 14:27:49 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/25 14:03:17 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/25 15:38:22 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ int		ft_printf(const char * restrict format, ...)
 	ft_putstr("\n");
 	ft_putstr("here ll:");
 	ft_putnbr((int)dispatcher("ll"));
+	ft_putstr("\n");
+	ft_putstr("here c:");
+	ft_putnbr((int)dispatcher("c"));
 	ft_putstr("\n");
 	return (0);
 }
