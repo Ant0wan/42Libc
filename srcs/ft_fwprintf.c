@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_fwprintf.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/22 14:27:49 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/28 16:00:37 by abarthel         ###   ########.fr       */
+/*   Created: 2019/01/28 15:35:34 by abarthel          #+#    #+#             */
+/*   Updated: 2019/01/28 16:01:30 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_fwprintf.c"
 
-int		ft_printf(const char *restrict format, ...)
+int		ft_fwprintf(FILE *restrict stream, const wchar_t *restrict format, ...)
 {
-	va_list ap;
-	int		ret;
-
-	va_start(ap, format);
-	ret = ft_wprintf()
-	va_end(ap);
-	return (ret);
+	// test
+	ft_putstr("\n");
+	void *(*f)();
+	f = dispatcher("c");
+	f('o');
+	f = dispatcher("s");
+	f("Hello World !\n");
+	f = dispatcher("d");
+	ft_putstr(f(-42));
+	// end test
+	
+	return (0);
 }

@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   dispatcher.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/22 14:27:49 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/28 16:00:37 by abarthel         ###   ########.fr       */
+/*   Created: 2019/01/28 16:06:04 by abarthel          #+#    #+#             */
+/*   Updated: 2019/01/28 16:46:17 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef		DISPATCHER_H
+# define	DISPATCHER_H
 
-int		ft_printf(const char *restrict format, ...)
+# include <unistd.h>
+# include <stdlib.h>
+# include "libft.h"
+
+
+typedef struct		s_operator
 {
-	va_list ap;
-	int		ret;
+	char	*type;
+	void	*(*f)();
+}					t_operator;
 
-	va_start(ap, format);
-	ret = ft_wprintf()
-	va_end(ap);
-	return (ret);
-}
+ // http://www.cplusplus.com/reference/cstdio/printf/
+
+extern t_operator	g_specifier[];
+extern t_operator	g_flag[];
+extern t_operator	g_width[];
+extern t_operator	g_precision[];
+extern t_operator	g_length[];

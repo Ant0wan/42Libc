@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_wprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/22 14:27:49 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/28 16:00:37 by abarthel         ###   ########.fr       */
+/*   Created: 2019/01/28 15:28:13 by abarthel          #+#    #+#             */
+/*   Updated: 2019/01/28 16:04:21 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_wprintf.h"
 
-int		ft_printf(const char *restrict format, ...)
+int		ft_wprintf(const wchar_t *restrict format, ...)
 {
-	va_list ap;
-	int		ret;
+	int	stream = STDOUT_FILENO;  // ??? stream
 
-	va_start(ap, format);
-	ret = ft_wprintf()
-	va_end(ap);
-	return (ret);
+	ft_fwprintf(FILE *restrict stream, const wchar_t *restrict format, ...);
+	return (0);
 }

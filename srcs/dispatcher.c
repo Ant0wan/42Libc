@@ -6,13 +6,13 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/24 12:37:47 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/25 18:04:26 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/28 16:19:10 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_typeop	g_modifiers[] =
+t_typeop	g_flag[] =
 {
 	{ " ", (void*)0},
 	{ "+", (void*)0},
@@ -24,7 +24,7 @@ t_typeop	g_modifiers[] =
 	{ "\0", (void*)0}
 };
 
-t_typeop	g_conversions[] =
+t_typeop	g_precision[] =
 {
 	{ "o", (void*)0},
 	{ "x", (void*)0},
@@ -36,7 +36,7 @@ t_typeop	g_conversions[] =
 	{ "\0", (void*)0}
 };
 
-t_typeop	g_typeoptab[] =
+t_typeop	g_specifier[] =
 {
 	{ "c", (void*)&ft_wputchar},	 // char && unsigned char		1 bytes
 	{ "hd", (void*)0},				 // short int					2 bytes
@@ -60,10 +60,10 @@ void		*dispatcher(char *str)
 {
 	int	i;
 
-	i = 0;
-	while (g_typeoptab[i].type[0] && ft_strcmp(g_typeoptab[i].type, str))
+	i = 0;   // STRCMP does not work with wchar_t !!!
+	while (g_specifier[i].type[0] && ft_strcmp(g_specifier[i].type, str))
 		++i;
-	if (g_typeoptab[i].type[0])
-			return(g_typeoptab[i].f);
-	return ((void*)0);
+	if (g_specifier[i].type[0])
+			return(g_specifier[i].f);
+	return (NULL);
 }
