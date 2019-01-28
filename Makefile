@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/01/25 18:23:15 by abarthel         ###   ########.fr        #
+#    Updated: 2019/01/28 15:13:42 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,14 +43,11 @@ $(NAME) : $(OBJS)
 
 objects : $(OBJS)
 
-test : $(NAME)
+test : testclean $(NAME)
 	gcc main.c -I ./includes -L. libftprintf.a
 
 testclean : fclean
 	rm -f a.out
-
-testre : testclean
-	make test
 
 clean :
 	rm -f $(OBJS)
