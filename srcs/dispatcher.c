@@ -6,64 +6,69 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/24 12:37:47 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/28 16:19:10 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/29 11:08:49 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "dispatcher.h"
 
-t_typeop	g_flag[] =
+#include <stdlib.h>
+
+#include "libft.h"
+#include "ft_wchar.h"
+
+static const t_operator	g_flag[] =
 {
-	{ " ", (void*)0},
-	{ "+", (void*)0},
-	{ "-", (void*)0},
-	{ "#", (void*)0},
-	{ "0", (void*)0},
-	{ "\'", (void*)0},
-	{ "I", (void*)0},
-	{ "\0", (void*)0}
+	{ L" ", NULL},
+	{ L"+", NULL},
+	{ L"-", NULL},
+	{ L"#", NULL},
+	{ L"0", NULL},
+	{ L"\'", NULL},
+	{ L"I", NULL},
+	{ L"\0", NULL}
 };
 
-t_typeop	g_precision[] =
+static const t_operator	g_precision[] =
 {
-	{ "o", (void*)0},
-	{ "x", (void*)0},
-	{ "X", (void*)0},
-	{ "e", (void*)0},
-	{ "E", (void*)0},
-	{ "g", (void*)0},
-	{ "G", (void*)0},
-	{ "\0", (void*)0}
+	{ L"o", NULL},
+	{ L"x", NULL},
+	{ L"X", NULL},
+	{ L"e", NULL},
+	{ L"E", NULL},
+	{ L"g", NULL},
+	{ L"G", NULL},
+	{ L"\0", NULL}
 };
 
-t_typeop	g_specifier[] =
+static const t_operator	g_specifier[] =
 {
-	{ "c", (void*)&ft_wputchar},	 // char && unsigned char		1 bytes
-	{ "hd", (void*)0},				 // short int					2 bytes
-	{ "hu", (void*)0},				 // unsigned short int			2 bytes
-	{ "u", (void*)0},				 // unsigned int				4 bytes
-	{ "u", (void*)0},				 // unsigned int				4 bytes
-	{ "f", (void*)0},				 // float						4 bytes
-	{ "d", (void*)&ft_itoa},		 // int							4 bytes
-	{ "i", (void*)&ft_itoa},		 // int							4 bytes
-	{ "ld", (void*)&ft_itoa},		 // long int					4 bytes
-	{ "lu", (void*)&ft_itoa},		 // unsigned long int			4 bytes
-	{ "lld", (void*)&ft_itoa},		 // long long int				8 bytes
-	{ "llu", (void*)&ft_itoa},		 // unsigned long long int		8 bytes
-	{ "lf", (void*)0},				 // double						8 bytes
-	{ "Lf", (void*)0},				 // long double				   12 bytes
-	{ "s", (void*)&ft_putstr},		 // char pointer				8 bytes
-	{ "\0", (void*)0}
+	{ L"c", NULL},
+	{ L"hd", NULL},
+	{ L"hu", NULL},
+	{ L"u", NULL},
+	{ L"u", NULL},
+	{ L"f", NULL},
+	{ L"d", (void*)&ft_itoa},
+	{ L"i", (void*)&ft_itoa},
+	{ L"ld", (void*)&ft_itoa},
+	{ L"lu", (void*)&ft_itoa},
+	{ L"lld", (void*)&ft_itoa},
+	{ L"llu", (void*)&ft_itoa},
+	{ L"lf", NULL},
+	{ L"Lf", NULL},
+	{ L"s", (void*)&ft_putstr},
+	{ L"\0", NULL}
 };
 
-void		*dispatcher(char *str)
+void					*dispatcher(char *str)
 {
 	int	i;
 
-	i = 0;   // STRCMP does not work with wchar_t !!!
-	while (g_specifier[i].type[0] && ft_strcmp(g_specifier[i].type, str))
+	i = 0;
+	while (g_specifier[i].type[0] && ft_wcscmp(g_specifier[i].type, str))
 		++i;
 	if (g_specifier[i].type[0])
-			return(g_specifier[i].f);
+		return (g_specifier[i].f);
 	return (NULL);
 }

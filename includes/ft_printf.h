@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/22 14:27:04 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/25 18:26:06 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/29 10:45:50 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,6 @@
 # include <stdarg.h>
 
 # include <stdio.h> // DEBUGGING
-
-typedef struct	s_typeop
-{
-	char	*type;
-	void	*(*f)();
-}				t_typeop;
-
-extern t_typeop	g_modifiers[];
-
-extern t_typeop	g_conversions[];
-
-extern t_typeop	g_typeoptab[];
 
 void			ft_wputchar(wchar_t c);
 
