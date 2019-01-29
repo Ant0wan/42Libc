@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wputchar.c                                      :+:      :+:    :+:   */
+/*   ft_wcscmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/12 15:49:24 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/28 15:22:29 by abarthel         ###   ########.fr       */
+/*   Created: 2019/01/29 11:21:24 by abarthel          #+#    #+#             */
+/*   Updated: 2019/01/29 11:31:37 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-void	ft_wputchar(wchar_t c)
+int	ft_wcscmp(const wchar_t *s1, const wchar_t *s2)
 {
-	write(1, &c, 4);
+	size_t	i;
+
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] && s2[i])
+		++i;
+	return (s1[i] - s2[i]);
 }
