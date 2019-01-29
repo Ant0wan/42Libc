@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 11:47:48 by abarthel          #+#    #+#              #
-#    Updated: 2019/01/29 12:01:31 by abarthel         ###   ########.fr        #
+#    Updated: 2019/01/29 12:16:56 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,7 +93,8 @@ OTHERS = ft_print_tables.c \
 
 GET_NEXT_LINE = get_next_line.c \
 				ft_isempty.c \
-				ft_strclen.c
+				ft_strclen.c \
+				ft_chrsearch.c
 
 all: $(NAME)
 
