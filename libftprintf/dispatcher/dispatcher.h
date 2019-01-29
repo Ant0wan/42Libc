@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   dispatcher.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/22 14:27:49 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/29 16:39:27 by abarthel         ###   ########.fr       */
+/*   Created: 2019/01/28 16:06:04 by abarthel          #+#    #+#             */
+/*   Updated: 2019/01/29 16:43:48 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_wchar.h"
+#ifndef DISPATCHER_H
+# define DISPATCHER_H
 
-#include <stdarg.h>
-#include <unistd.h>
+#include <stdlib.h>
 
-int		ft_printf(const char *restrict format, ...)
+typedef struct	s_operator
 {
-	va_list ap;
-	int		ret;
+	wchar_t	*type;
+	void	*(*f)();
+}				t_operator;
 
-	va_start(ap, format);
-	ret = ft_fwprintf(STDOUT_FILENO, format, ap);
-	va_end(ap);
-	return (ret);
-}
+#endif

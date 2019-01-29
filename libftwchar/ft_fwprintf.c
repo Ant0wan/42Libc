@@ -6,13 +6,13 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/28 15:35:34 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/28 16:01:30 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/29 15:27:44 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_fwprintf.c"
+#include "ft_wchar.h"
 
-int		ft_fwprintf(FILE *restrict stream, const wchar_t *restrict format, ...)
+int		ft_fwprintf(g_FILE *restrict stream, const wchar_t *restrict format, ...)
 {
 	// test
 	ft_putstr("\n");
