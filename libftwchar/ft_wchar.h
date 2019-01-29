@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 15:19:44 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/29 18:48:46 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/29 19:04:27 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,7 @@ int	ft_fputwc(wchar_t wc, int fd);
 int	ft_fputws(const wchar_t *restrict ws, int fd);
 
 int	ft_putwchar(wchar_t wc);
+
+int	ft_fwprintf(int fd, const wchar_t *restrict format, ...);
 
 #endif
