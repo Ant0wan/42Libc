@@ -6,11 +6,13 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 10:28:01 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/13 11:42:22 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/29 12:24:20 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+#include <stdlib.h>
 
 t_list	*ft_lstnew(void const *content, size_t content_size)
 {

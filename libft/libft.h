@@ -6,16 +6,12 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 11:55:45 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/29 12:16:19 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/29 12:23:45 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
-# include <string.h>
-# include <stdlib.h>
-# include <unistd.h>
 
 /*
 ** LIBC's Functions

@@ -6,11 +6,11 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 07:05:04 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/13 07:09:27 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/29 12:27:54 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
 void	ft_putendl(char const *s)
 {

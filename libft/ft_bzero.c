@@ -6,11 +6,11 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 14:09:45 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/07 14:19:44 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/29 12:19:03 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 void	ft_bzero(void *s, size_t n)
 {

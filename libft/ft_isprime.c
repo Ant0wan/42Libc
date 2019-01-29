@@ -6,11 +6,11 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/08 08:54:51 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/15 15:33:33 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/29 12:20:28 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 int	ft_isprime(size_t n)
 {

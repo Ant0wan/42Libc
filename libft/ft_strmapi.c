@@ -6,11 +6,13 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 10:16:04 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/13 11:18:01 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/29 12:51:53 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+#include <stdlib.h>
 
 static unsigned int	stat_strlen(char const *s)
 {

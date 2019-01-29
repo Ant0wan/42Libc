@@ -6,11 +6,13 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 12:35:08 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/13 19:20:13 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/29 14:12:22 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+#include <stdlib.h>
 
 int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {

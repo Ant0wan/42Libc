@@ -6,11 +6,11 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 09:58:26 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/13 21:10:31 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/29 14:14:49 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 static size_t	nb_words(const char *s, char c)
 {

@@ -6,11 +6,13 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 09:46:50 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/08 14:33:44 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/29 12:25:02 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+#include <stdlib.h>
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {

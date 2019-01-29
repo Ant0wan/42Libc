@@ -6,11 +6,13 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 11:19:27 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/08 18:44:38 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/29 12:26:32 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+#include <stdlib.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {

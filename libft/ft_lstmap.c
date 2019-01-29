@@ -6,11 +6,13 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 14:56:43 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/14 09:51:11 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/29 12:24:02 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+#include <stdlib.h>
 
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {

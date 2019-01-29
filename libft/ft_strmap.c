@@ -6,11 +6,13 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 18:45:57 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/13 11:17:37 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/29 12:50:48 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+#include <stdlib.h>
 
 char	*ft_strmap(char const *s, char (*f)(char))
 {

@@ -6,13 +6,13 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 08:11:33 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/07 11:36:56 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/29 14:30:20 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_tolower(int c)
 {
 	if (c > 64 && c < 91)
-		return (c + (97 - 65));
+		return (c | (1 << 5));
 	return (c);
 }

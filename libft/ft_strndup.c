@@ -6,11 +6,13 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 18:20:20 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/27 11:55:00 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/29 14:12:03 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+#include <stdlib.h>
 
 char	*ft_strndup(const char *s1, size_t len)
 {

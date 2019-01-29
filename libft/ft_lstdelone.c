@@ -6,11 +6,13 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 11:44:24 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/13 13:30:02 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/29 12:22:24 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+#include <stdlib.h>
 
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {

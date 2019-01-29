@@ -6,11 +6,13 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 16:39:20 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/09 16:45:37 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/29 14:12:38 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+#include <stdlib.h>
 
 char	*ft_strnew(size_t size)
 {

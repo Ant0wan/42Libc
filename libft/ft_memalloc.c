@@ -6,11 +6,13 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 14:08:32 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/09 15:18:22 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/29 12:24:38 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+#include <stdlib.h>
 
 void	*ft_memalloc(size_t size)
 {

@@ -6,11 +6,11 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/14 09:58:07 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/29 12:21:19 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 char	*ft_itoa(int n)
 {
