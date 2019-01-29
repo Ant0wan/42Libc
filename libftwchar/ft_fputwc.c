@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putwchar.c                                      :+:      :+:    :+:   */
+/*   ft_fputwc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/29 17:03:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/29 18:12:34 by abarthel         ###   ########.fr       */
+/*   Created: 2019/01/29 18:07:08 by abarthel          #+#    #+#             */
+/*   Updated: 2019/01/29 18:22:05 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 #define RET_ERROR -1
 
-int	ft_putwchar(wchar_t wc)
+int	ft_fputwc(wchar_t wc, int fd)
 {
 	if (wc >= 0x00 && wc <= 0xFF)
-		if(write(STDOUT_FILENO, &wc, sizeof(wc)))
+		if(write(fd, &wc, sizeof(wc)))
 			return ((int)wc);
 	return (RET_ERROR);
 }
