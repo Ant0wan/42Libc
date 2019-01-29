@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 18:07:08 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/29 18:22:05 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/29 18:47:41 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 int	ft_fputwc(wchar_t wc, int fd)
 {
 	if (wc >= 0x00 && wc <= 0xFF)
-		if(write(fd, &wc, sizeof(wc)))
+		if (write(fd, &wc, sizeof(wc)))
 			return ((int)wc);
 	return (RET_ERROR);
 }

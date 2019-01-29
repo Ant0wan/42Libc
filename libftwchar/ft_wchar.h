@@ -6,14 +6,14 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 15:19:44 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/29 18:37:20 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/29 18:48:46 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_WCHAR_H
-#define FT_WCHAR_H
+# define FT_WCHAR_H
 
-#include <stdlib.h>
+# include <stdlib.h>
 
 int	ft_wcscmp(const wchar_t *s1, const wchar_t *s2);
 
