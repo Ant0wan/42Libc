@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utf8.c                                             :+:      :+:    :+:   */
+/*   struct_dispatch.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/29 18:54:10 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/30 16:43:58 by abarthel         ###   ########.fr       */
+/*   Created: 2019/01/30 16:59:46 by abarthel          #+#    #+#             */
+/*   Updated: 2019/01/30 17:02:28 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef STRUCT_DISPATCH_H
+# define STRUCT_DISPATCH_H
 
-wchar_t	utf8_encoder(wchar_t wc)
+# include <stdlib.h>
+
+typedef struct	s_operator
 {
-	return (wc);
-}
+	wchar_t	*type;
+	void	*(*f)();
+}				t_operator;
+
+#endif

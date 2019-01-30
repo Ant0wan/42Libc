@@ -6,11 +6,13 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 18:53:37 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/29 18:54:00 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/30 16:44:26 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef UTF8_H
 # define UTF8_H
+
+wchar_t	utf8_encoder(wchar_t wc);
 
 #endif

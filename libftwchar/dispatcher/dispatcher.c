@@ -6,11 +6,12 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/24 12:37:47 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/29 11:08:49 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/30 17:02:09 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "dispatcher.h"
+#include "struct_dispatch.h"
 
 #include <stdlib.h>
 
