@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fprintbits.c                                    :+:      :+:    :+:   */
+/*   ft_fputwsbits.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 13:25:35 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/30 15:53:27 by abarthel         ###   ########.fr       */
+/*   Created: 2019/01/29 18:25:44 by abarthel          #+#    #+#             */
+/*   Updated: 2019/01/30 16:33:06 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft_wchar.h"
 
-#define BITS_IN_CHAR 8
-#define START_ARRAY (BITS_IN_CHAR - 1)
-#define MASK 0x30
+#include <stdlib.h>
 
-int		ft_fprintbits(int fd, char c)
+#define RET_ERROR -1
+
+int	ft_fputwsbits(const wchar_t *restrict ws, int fd)
 {
-	int		bit;
-	char	str[BITS_IN_CHAR];
+	int		ret;
+	size_t	i;
 
-	bit = -1;
-	while (++bit < BITS_IN_CHAR)
-		str[START_ARRAY - bit] = c & (1 << bit) ? 1 ^ MASK : 0 ^ MASK;
-	return ((int)write(fd, str, BITS_IN_CHAR));
+	i = 0;
+	if (ws && *ws)
+	{
+		while (ws[i])
+		{
+			if ((ret = ft_fputwcbits(ws[i], fd)) == RET_ERROR)
+				return (ret);
+			else
+				++i;
+		}
+		return (ret);
+	}
+	return (RET_ERROR);
 }

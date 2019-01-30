@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 13:25:35 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/30 15:53:27 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/30 16:28:17 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #define START_ARRAY (BITS_IN_CHAR - 1)
 #define MASK 0x30
 
-int		ft_fprintbits(int fd, char c)
+int		ft_fprintbits(char c, int fd)
 {
 	int		bit;
 	char	str[BITS_IN_CHAR];

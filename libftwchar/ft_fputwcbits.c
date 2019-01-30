@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 13:25:35 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/30 16:08:06 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/30 16:11:00 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #define START_ARRAY (BITS_IN_WCHAR - 1)
 #define MASK 0x30
 
-int		ft_fputwcbits(int fd, wchar_t c)
+int		ft_fputwcbits(wchar_t c, int fd)
 {
 	int		bit;
 	char	str[BITS_IN_WCHAR];
