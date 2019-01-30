@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 11:47:48 by abarthel          #+#    #+#              #
-#    Updated: 2019/01/29 19:00:49 by abarthel         ###   ########.fr        #
+#    Updated: 2019/01/30 15:55:17 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,7 +89,8 @@ OTHERS = ft_print_tables.c \
 		 ft_str_is_printable.c \
 		 ft_str_is_lowercase.c \
 		 ft_str_is_uppercase.c \
-		 ft_isprime.c
+		 ft_isprime.c \
+		 ft_fprintbits.c
 
 GET_NEXT_LINE = get_next_line.c \
 				ft_isempty.c \
