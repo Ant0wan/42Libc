@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/24 12:37:47 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/30 17:02:09 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/31 11:47:58 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 #include <stdlib.h>
 
-#include "libft.h"
 #include "ft_wchar.h"
 
 static const t_operator	g_flag[] =
@@ -50,15 +49,15 @@ static const t_operator	g_specifier[] =
 	{ L"u", NULL},
 	{ L"u", NULL},
 	{ L"f", NULL},
-	{ L"d", (void*)&ft_itoa},
-	{ L"i", (void*)&ft_itoa},
-	{ L"ld", (void*)&ft_itoa},
-	{ L"lu", (void*)&ft_itoa},
-	{ L"lld", (void*)&ft_itoa},
-	{ L"llu", (void*)&ft_itoa},
+	{ L"d", NULL},
+	{ L"i", NULL},
+	{ L"ld", NULL},
+	{ L"lu", NULL},
+	{ L"lld", NULL},
+	{ L"llu", NULL},
 	{ L"lf", NULL},
 	{ L"Lf", NULL},
-	{ L"s", (void*)&ft_putstr},
+	{ L"s", NULL},
 	{ L"\0", NULL}
 };
 
