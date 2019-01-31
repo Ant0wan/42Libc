@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   disptacher.c                                       :+:      :+:    :+:   */
+/*   ft_fwprintf_disp.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/24 12:37:47 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/31 11:47:58 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/31 12:16:55 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "dispatcher.h"
-#include "struct_dispatch.h"
+#include "ft_fwprintf_disp.h"
+#include "struct_fwprintf_disp.h"
 
 #include <stdlib.h>
 
@@ -61,7 +61,7 @@ static const t_operator	g_specifier[] =
 	{ L"\0", NULL}
 };
 
-void					*dispatcher(char *str)
+void					*dispatcher(wchar_t *str)
 {
 	int	i;
 

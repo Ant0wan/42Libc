@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dispatcher.h                                       :+:      :+:    :+:   */
+/*   ft_fwprintf_disp.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/28 16:06:04 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/30 17:01:54 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/01/31 12:18:18 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DISPATCHER_H
-# define DISPATCHER_H
+#ifndef FT_FWPRINTF_DISP_H
+# define FT_FWPRINTF_DISP_H
 
-void	*dispatcher(char *str);
+# include <stdlib.h>
+
+void	*dispatcher(wchar_t *str);
 
 #endif
