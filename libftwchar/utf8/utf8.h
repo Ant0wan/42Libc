@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 18:53:37 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/31 15:28:02 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/01 14:13:40 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 
 # include <stdlib.h>
 
-wchar_t	*utf8_encoder(wchar_t *wc);
+int	utf8_encoder(wchar_t *wc);
 
 #endif

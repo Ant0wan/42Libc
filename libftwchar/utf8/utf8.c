@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 18:54:10 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/31 17:51:16 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/01 14:15:24 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,15 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-#define BITS_IN_WCHAR 32
+#define BYTE_WCHAR 4
+#define RET_ERROR -1
 
-static wchar_t	*m0x07ff_utf8(wchar_t *wc)
+static int	m0x07ff_utf8(wchar_t *wc)
 {
 	wchar_t	unicode_pt;
-	wchar_t	byte1;
-	wchar_t	byte2;
 
 	unicode_pt = *wc;
-	byte1 = (unicode_pt >> 6) << 24;
-	byte2 = (unicode_pt << 26) >> 10;
-	write(1, "OK\n", 3);
+	write(1, "2B\n", 3);
 	*wc = 0;
 	*wc |= (1 << 31) | (1 << 30);
 	*wc &= ~(1 << 29);
@@ -34,26 +31,26 @@ static wchar_t	*m0x07ff_utf8(wchar_t *wc)
 	*wc &= ~(1 << 22);
 	*wc ^= (unicode_pt >> 6) << 24;
 	*wc ^= (unicode_pt << 26) >> 10;
-	return (wc);
+	return ((int)*wc);
 }
 
-static wchar_t	*m0xffff_utf8(wchar_t *wc)
+static int	m0xffff_utf8(wchar_t *wc)
 {
 
-	return (wc);
+	return ((int)*wc);
 }
 
-static wchar_t	*m0x10ffff_ut8(wchar_t *wc)
+static int	m0x10ffff_ut8(wchar_t *wc)
 {
-	return (wc);
+	return ((int)*wc);
 }
 
-wchar_t			*utf8_encoder(wchar_t *wc)
+int			utf8_encoder(wchar_t *wc)
 {
-	if (BITS_IN_WCHAR < 32 || *wc < 0)
-		return (NULL);
-	if (*wc <= 0x007F)
-		return (wc);
+	if (sizeof(wchar_t) != BYTE_WCHAR || *wc < 0)
+		return (RET_ERROR);
+	else if (*wc <= 0x007F)
+		return ((int)*wc);
 	else if (*wc <= 0x07FF)
 		return (m0x07ff_utf8(wc));
 	else if (*wc <= 0xFFFF)
@@ -61,5 +58,5 @@ wchar_t			*utf8_encoder(wchar_t *wc)
 	else if (*wc <= 0x10FFFF)
 		return (m0x10ffff_ut8(wc));
 	else
-		return (NULL);
+		return (RET_ERROR);
 }
