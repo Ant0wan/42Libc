@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 18:54:10 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/01 14:15:24 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/01 16:00:39 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ static int	m0x07ff_utf8(wchar_t *wc)
 
 static int	m0xffff_utf8(wchar_t *wc)
 {
-
 	return ((int)*wc);
 }
 
