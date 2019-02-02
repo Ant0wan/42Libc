@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 17:03:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/01 16:00:22 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/02 12:50:52 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int	ft_putwchar(wchar_t wc)
 	if (wc >= 0x00)
 	{
 		if (wc <= 0x007F)
-			return ((write(STDOUT_FILENO, &wc, sizeof(wc))) == RET_ERROR ?
-					RET_ERROR : (int)wc);
+			return ((write(STDOUT_FILENO, &wc, sizeof(wc))) == RET_ERROR
+					? RET_ERROR : (int)wc);
 		else
 		{
 			if (utf8_encoder(&wc) == RET_ERROR)
@@ -35,8 +35,8 @@ int	ft_putwchar(wchar_t wc)
 			buf[1] = wc >> 16;
 			buf[2] = wc >> 8;
 			buf[3] = wc;
-			return ((write(STDOUT_FILENO, buf, UTF8ENCOD_SIZE)) == RET_ERROR ?
-					RET_ERROR : (int)wc);
+			return ((write(STDOUT_FILENO, buf, UTF8ENCOD_SIZE)) == RET_ERROR
+					? RET_ERROR : (int)wc);
 		}
 	}
 	else

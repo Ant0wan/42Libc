@@ -6,11 +6,9 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 18:54:10 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/01 18:42:27 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/02 13:31:38 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "ft_wchar.h"
 
 #include "utf8.h"
 
@@ -22,32 +20,24 @@
 
 static int	m0x07ff_utf8(wchar_t *wc)
 {
-	wchar_t	unicode_pt;
-
-	unicode_pt = *wc;
-	*wc = 0;
+	*wc = ((*wc << 16) & ~0xFFC0FFFF) | ((*wc << 23) & ~0xE0FFFFFF);
 	*wc ^= 0xC0000000 | 0x800000;
-	*wc ^= (unicode_pt >> 6) << 24;
-	*wc ^= (unicode_pt << 26) >> 10;
 	return ((int)*wc);
 }
 
 static int	m0xffff_utf8(wchar_t *wc)
 {
-	wchar_t	unicode_pt;
-
-	unicode_pt = *wc;
-	*wc = 0;
+	*wc = ((*wc << 12) & ~0xF0FFFFFF) | ((*wc << 10) & ~0xFFC0FFFF)
+		| ((*wc << 8) & ~0xFFFFC0FF);
 	*wc ^= 0xE0000000 | 0x800000 | 0x8000;
-	*wc ^= (unicode_pt << 12) & (0xF000000);
-	*wc ^= (unicode_pt & 0xFC0) << 10;
-	*wc ^= (unicode_pt & 0x3F) << 8;
 	return ((int)*wc);
 }
 
 static int	m0x10ffff_ut8(wchar_t *wc)
 {
-	ft_fputwcbits(*wc, 1);
+	*wc = ((*wc << 7) & ~0xF8FFFFFF) | ((*wc << 4) & ~0xFFC0FFFF)
+		| ((*wc << 2) & ~0xFFFFC0FF) | (*wc & ~0xFFFFFFC0);
+	*wc ^= 0xF0000000 | 0x800000 | 0x8000 | 0x80;
 	return ((int)*wc);
 }
 
