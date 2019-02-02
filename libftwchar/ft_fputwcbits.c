@@ -6,9 +6,11 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 13:25:35 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/01 11:45:42 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/02 14:31:28 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_wchar.h"
 
 #include <unistd.h>
 #include <stdlib.h>
