@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 07:05:04 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/29 12:27:54 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/06 16:49:45 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_putendl(char const *s)
 {
 	while (s && *s)
-		write(1, &*s++, 1);
+		write(STDOUT_FILENO, s, ft_strlen(s))
 	if (s)
-		write(1, "\n", 1);
+		write(STDOUT_FILENO, "\n", sizeof(char));
 }
