@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 11:47:48 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/06 14:54:31 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/06 16:46:02 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ CC = gcc
 FLAGS = -Werror -Wall -Wextra
 
 %.o : %.c
-	$(CC) $(FLAGS) $< -c
+	@printf "\e[38;5;74m%-20s \e[38;5;85mbuilt.\n\e[0m" $(basename $@)
+	@$(CC) $(FLAGS) $< -c
 
 O_FILES	=	ft_bzero.o ft_isalpha.o ft_isdigit.o ft_isalnum.o \
 	   		ft_isascii.o ft_isprint.o ft_toupper.o ft_tolower.o \
@@ -41,15 +42,19 @@ O_FILES	=	ft_bzero.o ft_isalpha.o ft_isdigit.o ft_isalnum.o \
 
 all: $(NAME)
 
-$(NAME): $(O_FILES) 
-	ar rc $(NAME) $(O_FILES)
-	ranlib $(NAME)
+$(NAME): $(O_FILES)
+	@ar rc $(NAME) $(O_FILES)
+	@ranlib $(NAME)
+	@printf "\e[38;5;82m%4s [\e[1m$(NAME) built]\n\e[0m"
+	@printf "\e[38;5;25mTo compile with the $(NAME), use the command-line: \e[0m\e[4mgcc main.c -L. -lft\n\e[0m"
 
 clean:
-	rm -f $(O_FILES)
+	@rm -f $(O_FILES)
+	@printf "\e[0m.o \e[38;5;154mfiles%1sdeleted ♻\n\e[0m"
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@printf "\e[0m$(NAME)\e[38;5;154m%2sdeleted ❌\n\e[0m"
 
 re: fclean $(NAME)
 
