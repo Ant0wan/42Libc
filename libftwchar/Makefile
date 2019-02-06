@@ -1,0 +1,46 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2018/11/06 11:47:48 by abarthel          #+#    #+#              #
+#    Updated: 2019/02/06 18:32:08 by abarthel         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+# To compile with the libftwchar.a, use the command-line: gcc main.c -L. -lftwchar or add it to makefile
+
+NAME = libftwchar.a
+
+CC = gcc
+
+FLAGS = -Werror -Wall -Wextra
+
+%.o : %.c
+	@printf "\e[38;5;127m%-20s \e[38;5;125mbuilt.\n\e[0m" $(basename $@)
+	@$(CC) $(FLAGS) $< -c
+
+O_FILES	=	ft_fputwc.o ft_fputwcbits.o ft_fputws.o ft_fputwsbits.o ft_fwprintf.o \
+			ft_fwprintf_disp.o ft_putwchar.o ft_wcscmp.o ./utf8/utf8.o
+
+all: $(NAME)
+
+$(NAME): $(O_FILES)
+	@ar rc $(NAME) $(O_FILES)
+	@ranlib $(NAME)
+	@printf "\e[38;5;198m%4s [\e[1m$(NAME) built]\n\e[0m"
+#	@printf "\e[38;5;25mTo compile with the $(NAME), use the command-line: \e[0m\e[4mgcc main.c -L. -lft\n\e[0m"
+
+clean:
+	@rm -f $(O_FILES)
+	@printf "\e[0m.o \e[38;5;154mfiles%1sdeleted ♻\n\e[0m"
+
+fclean: clean
+	@rm -f $(NAME)
+	@printf "\e[0m$(NAME)\e[38;5;154m%2sdeleted ❌\n\e[0m"
+
+re: fclean $(NAME)
+
+.PHONY : all clean fclean re
