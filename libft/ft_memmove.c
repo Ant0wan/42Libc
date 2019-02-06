@@ -6,11 +6,9 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 11:19:27 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/29 12:26:32 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/06 16:56:11 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 #include <stdlib.h>
 

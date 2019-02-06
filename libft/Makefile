@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 11:47:48 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/06 16:46:55 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/06 17:58:28 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ O_FILES	=	ft_bzero.o ft_isalpha.o ft_isdigit.o ft_isalnum.o \
 		 	ft_str_is_alpha.o ft_str_is_numeric.o ft_str_is_printable.o \
 		 	ft_str_is_lowercase.o ft_str_is_uppercase.o ft_isprime.o \
 	   		ft_fprintbits.o get_next_line.o ft_isempty.o ft_strclen.o \
-			ft_chrsearch.o
+			ft_chrsearch.o ft_strndup.o
 
 all: $(NAME)
 

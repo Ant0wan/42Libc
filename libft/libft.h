@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 11:55:45 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/06 14:36:08 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/06 17:11:53 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,19 +104,17 @@ void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 void			ft_putchar(char c);
 
-void			ft_putstr(char const *s) __attribute__((nonnull(1)));
+void			ft_putstr(char const *s);
 
-void			ft_putendl(char const *s) __attribute__((nonnull(1)));
+void			ft_putendl(char const *s);
 
 void			ft_putnbr(int n);
 
 void			ft_putchar_fd(char c, int fd);
 
-void			ft_putstr_fd(char const *s, int fd) __attribute__
-				((nonnull(1)));
+void			ft_putstr_fd(char const *s, int fd);
 
-void			ft_putendl_fd(char const *s, int fd) __attribute__
-				((nonnull(1)));
+void			ft_putendl_fd(char const *s, int fd);
 
 void			ft_putnbr_fd(int n, int fd);
 
