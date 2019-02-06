@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 15:19:44 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/30 16:15:54 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/06 18:45:17 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 # include <stdlib.h>
 
-int	ft_wcscmp(const wchar_t *s1, const wchar_t *s2);
+int	ft_wcscmp(const wchar_t *s1, const wchar_t *s2) __attribute__
+	((nonnull(1,2)));
 
 int	ft_fputwc(wchar_t wc, int fd);
 
