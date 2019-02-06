@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 11:47:48 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/06 16:46:02 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/06 16:46:55 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ $(NAME): $(O_FILES)
 	@ar rc $(NAME) $(O_FILES)
 	@ranlib $(NAME)
 	@printf "\e[38;5;82m%4s [\e[1m$(NAME) built]\n\e[0m"
-	@printf "\e[38;5;25mTo compile with the $(NAME), use the command-line: \e[0m\e[4mgcc main.c -L. -lft\n\e[0m"
+#	@printf "\e[38;5;25mTo compile with the $(NAME), use the command-line: \e[0m\e[4mgcc main.c -L. -lft\n\e[0m"
 
 clean:
 	@rm -f $(O_FILES)
