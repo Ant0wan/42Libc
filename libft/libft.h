@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 11:55:45 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/06 14:26:04 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/06 14:36:08 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,9 +125,9 @@ int				ft_strequ(char const *s1, char const *s2) __attribute__
 
 int				ft_strnequ(char const *s1, char const *s2, size_t n);
 
-void			*ft_memalloc(size_t size);
+void			*ft_memalloc(size_t size) __attribute__((alloc_size(1)));
 
-char			*ft_strnew(size_t size);
+char			*ft_strnew(size_t size) __attribute__((alloc_size(1)));
 
 char			*ft_strmap(char const *s, char (*f)(char));
 
@@ -141,7 +141,8 @@ char			*ft_strtrim(char const *s);
 
 char			*ft_itoa(int n);
 
-char			**ft_strsplit(char const *s, char c);
+char			**ft_strsplit(char const *s, char c) __attribute__
+				((nonnull(1)));
 
 typedef struct	s_list
 {
@@ -162,28 +163,28 @@ t_list			*ft_lstnew(void const *content, size_t content_size);
 
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
-void			ft_print_tables(char **tab);
+void			ft_print_tables(char **tab) __attribute__((nonnull(1)));
 
-int				ft_str_is_alpha(char *s);
+int				ft_str_is_alpha(char *s) __attribute__((nonnull(1)));
 
-int				ft_str_is_numeric(char *s);
+int				ft_str_is_numeric(char *s) __attribute__((nonnull(1)));
 
-int				ft_str_is_printable(char *s);
+int				ft_str_is_printable(char *s) __attribute__((nonnull(1)));
 
-int				ft_str_is_lowercase(char *s);
+int				ft_str_is_lowercase(char *s) __attribute__((nonnull(1)));
 
-int				ft_str_is_uppercase(char *s);
+int				ft_str_is_uppercase(char *s) __attribute__((nonnull(1)));
 
 int				ft_isprime(size_t n);
 
 int				ft_isempty(char *s);
 
-int				ft_chrsearch(const char *s, int c);
+int				ft_chrsearch(const char *s, int c) __attribute__((nonnull(1)));
 
 int				get_next_line(const int fd, char **line);
 
 int				ft_fprintbits(int fd, char c);
 
-size_t			ft_strclen(const char *s, char c);
+size_t			ft_strclen(const char *s, char c) __attribute__((nonnull(1)));
 
 #endif
