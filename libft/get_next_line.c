@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 12:01:41 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/29 11:54:12 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/06 11:24:49 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ static int		readl(t_list *lst, int fd, char **line)
 	char	buffer[BUFF_SIZE + 1];
 	char	*tmp;
 
+	ret = 0;
 	while (!(has_chr = ft_chrsearch(lst->content, '\n')))
 	{
 		ft_bzero(buffer, BUFF_SIZE + 1);
