@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 11:55:45 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/06 12:05:42 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/06 14:22:37 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,24 +102,21 @@ void			ft_striter(char *s, void (*f)(char *));
 
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 
-void			ft_putchar(char c) __attribute__((noreturn));
+void			ft_putchar(char c);
 
-void			ft_putstr(char const *s) __attribute__
-				((noreturn));
+void			ft_putstr(char const *s);
 
-void			ft_putendl(char const *s) __attribute__((noreturn));
+void			ft_putendl(char const *s);
 
-void			ft_putnbr(int n) __attribute__((noreturn));
+void			ft_putnbr(int n);
 
-void			ft_putchar_fd(char c, int fd) __attribute__((noreturn));
+void			ft_putchar_fd(char c, int fd);
 
-void			ft_putstr_fd(char const *s, int fd) __attribute__
-				((noreturn));
+void			ft_putstr_fd(char const *s, int fd);
 
-void			ft_putendl_fd(char const *s, int fd) __attribute__
-				((noreturn));
+void			ft_putendl_fd(char const *s, int fd);
 
-void			ft_putnbr_fd(int n, int fd) __attribute__((noreturn));
+void			ft_putnbr_fd(int n, int fd);
 
 int				ft_strequ(char const *s1, char const *s2);
 

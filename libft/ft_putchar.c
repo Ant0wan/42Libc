@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 15:49:24 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/29 12:27:16 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/06 14:13:43 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_putchar(char c)
 {
-	write(1, &c, 1);
+	write(STDOUT_FILENO, &c, sizeof(c));
 }
