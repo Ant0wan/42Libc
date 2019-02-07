@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 11:47:48 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/06 18:38:38 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/07 10:09:43 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,16 +19,18 @@ CC = gcc
 FLAGS = -Werror -Wall -Wextra
 
 %.o : %.c
-	@printf "\e[38;5;127m%-20s \e[38;5;125mbuilt.\n\e[0m" $(basename $@)
+	@printf "\e[38;5;127m%-20s \e[38;5;125mobject built\n\e[0m" $(basename $@)
 	@$(CC) $(FLAGS) $< -c
 
 O_FILES	=	ft_fputwc.o ft_fputwcbits.o ft_fputws.o ft_fputwsbits.o ft_fwprintf.o \
-			ft_putwchar.o ft_wcscmp.o utf8.o \
+			ft_putwchar.o ft_wcscmp.o ./utf8/utf8.o \
 #			ft_fwprintf_disp.o
+
+INCS = utf8/utf8.h
 
 all: $(NAME)
 
-$(NAME): $(O_FILES)
+$(NAME): $(O_FILES) utf8/utf8.h
 	@ar rc $(NAME) $(O_FILES)
 	@ranlib $(NAME)
 	@printf "\e[38;5;198m%4s [\e[1m$(NAME) built]\n\e[0m"

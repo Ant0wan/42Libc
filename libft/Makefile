@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 11:47:48 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/06 17:58:28 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/07 10:14:22 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CC = gcc
 FLAGS = -Werror -Wall -Wextra
 
 %.o : %.c
-	@printf "\e[38;5;74m%-20s \e[38;5;85mbuilt.\n\e[0m" $(basename $@)
+	@printf "\e[38;5;74m%-20s \e[38;5;85mobject built\n\e[0m" $(basename $@)
 	@$(CC) $(FLAGS) $< -c
 
 O_FILES	=	ft_bzero.o ft_isalpha.o ft_isdigit.o ft_isalnum.o \
@@ -46,7 +46,7 @@ $(NAME): $(O_FILES)
 	@ar rc $(NAME) $(O_FILES)
 	@ranlib $(NAME)
 	@printf "\e[38;5;82m%4s [\e[1m$(NAME) built]\n\e[0m"
-#	@printf "\e[38;5;25mTo compile with the $(NAME), use the command-line: \e[0m\e[4mgcc main.c -L. -lft\n\e[0m"
+	@printf "\e[38;5;25mTo compile with the $(NAME), use the command-line: \e[0m\e[4mgcc main.c -L. -lft\n\e[0m"
 
 clean:
 	@rm -f $(O_FILES)
@@ -58,4 +58,7 @@ fclean: clean
 
 re: fclean $(NAME)
 
-.PHONY : all clean fclean re
+# Objects rule to be used when building larger libraries
+objects: $(O_FILES)
+
+.PHONY : all clean fclean re objects
