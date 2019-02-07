@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/07 14:36:01 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/07 14:50:43 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,12 +20,6 @@ FLAGS = -Werror -Wall -Wextra
 
 
 ############################ OBJECTS #########################################
-
-INCS = -I./libftprintf/ -I./libftwchar/ -I./libftwchar/utf8/ -I./libft/
-
-%.o : %.c
-	@$(CC) $(FLAGS) $(INCS) $(addprefix $(O_FILES_PATH),$<) -c -o $(addprefix $(O_FILES_PATH),$<)
-	@printf "\e[38;5;49m%-20s \e[38;5;11mobject built\n\e[0m" $(basename $@)
 
 O_FILES_PATH = ./libftprintf/
 O_FILES = ft_printf.o \
@@ -61,30 +55,33 @@ UTF8 = utf8.o
 
 all: $(NAME)
 
-$(NAME): $(O_FILES)
-	@printf "\n"
+$(NAME):
 	@make -C ./libft objects
 	@printf "\n"
 	@make -C ./libftwchar objects
+	@printf "\n"
+	@make -C ./libftprintf objects
 	@ar rc $(NAME) $(addprefix $(O_FILES_PATH),$(O_FILES)) $(addprefix $(LIBFT_PATH),$(LIBFT)) $(addprefix $(LIBFTWCHAR_PATH),$(LIBFTWCHAR)) $(addprefix $(UTF8_PATH),$(UTF8))
 	@ranlib $(NAME)
 	@printf "\n\e[38;5;51m%4s [\e[1m$(NAME) built]\n\n\e[0m"
 	@printf "\e[38;5;50m\e[2mTo compile with the $(NAME), use the command-line: \e[0m\e[4mgcc main.c -L. -lft\n\e[0m"
 
 clean :
-	@rm -f $(O_FILES)
 	@make -C ./libft clean
 	@make -C ./libftwchar clean
+	@make -C ./libftprintf clean
 
 fclean : clean
 	@rm -f $(NAME)
 
 re : fclean all
 
-objects : $(O_FILES)
+objects :
 	@printf "\n"
 	@make -C ./libft objects
 	@printf "\n"
 	@make -C ./libftwchar objects
+	@printf "\n"
+	@make -C ./libftprintf objects
 
 .PHONY: all clean fclean re objects
