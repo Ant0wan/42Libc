@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 11:47:48 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/07 11:44:19 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/07 11:46:52 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,5 +55,6 @@ fclean: clean
 re: fclean $(NAME)
 
 objects: $(O_FILES)
+	@make -C ./utf8/ objects
 
 .PHONY : all clean fclean re objects

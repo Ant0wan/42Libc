@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/01/28 15:13:42 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/07 11:46:20 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,29 +14,9 @@ NAME = libftprintf.a
 
 CC = gcc
 
-SRCS = ./srcs/ft_printf.c \
-	   ./srcs/dispatcher.c \
-	   ./srcs/ft_wputchar.c \
-	   ./srcs/ft_wputstr.c
-
-INCLUDES = -I ./includes/
-
-CFLAGS = -Wextra -Wall -Werror
-
-LIB_DIR = ./Libft/
-
-LIB = libft.a
-
-OBJS= $(SRCS:.c=.o)
-
-all : $(NAME)
-
-%.o: %.c
-	$(CC) $(CFLAGS) $(INCLUDES) -o $@ -c $<
-	echo $@
-
-$(NAME) : $(OBJS)
-	make -C $(LIB_DIR)
+$(NAME) :
+	@make -C ./libft objects
+	@make -C ./libftwchar objects
 	ar rc $(LIB_DIR)$(LIB) $(OBJS)
 	mv ./libft/libft.a ./libftprintf.a
 	ranlib $(NAME)
