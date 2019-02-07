@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 11:47:48 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/07 10:09:43 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/07 10:16:03 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,4 +46,7 @@ fclean: clean
 
 re: fclean $(NAME)
 
-.PHONY : all clean fclean re
+# Objects rule to be used when building larger libraries
+objects: $(O_FILES)
+
+.PHONY : all clean fclean re objects
