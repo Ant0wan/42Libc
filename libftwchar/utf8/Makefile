@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/07 11:08:30 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/07 15:13:01 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/07 17:13:29 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,13 +18,11 @@ CC = gcc
 
 FLAGS = -Werror -Wall -Wextra
 
+O_FILES = utf8.o
+
 %.o : %.c
 	@$(CC) $(FLAGS) $< -c
 	@printf "\e[38;5;180m%-20s \e[38;5;191mobject built\n\e[0m" $(basename $@)
-
-O_FILES = utf8.o
-
-objects: $(O_FILES)
 
 clean:
 	@rm -f $(O_FILES)
@@ -32,4 +30,7 @@ clean:
 
 re: clean objects
 
-.PHONY : clean objects re
+# Objects rule to be used when building larger libraries
+objects: $(O_FILES)
+
+.PHONY : clean re objects

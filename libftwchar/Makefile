@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 11:47:48 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/07 15:11:39 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/07 17:12:29 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,6 +56,7 @@ fclean: clean
 
 re: fclean $(NAME)
 
+# Objects rule to be used when building larger libraries
 objects: $(O_FILES)
 	@printf "\n"
 	@make -C ./utf8/ objects

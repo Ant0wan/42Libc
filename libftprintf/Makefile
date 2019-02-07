@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/07 11:08:30 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/07 14:56:35 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/07 17:14:22 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,13 +20,11 @@ FLAGS = -Werror -Wall -Wextra
 
 INCS = -I./../libftwchar/ -I./../libftwchar/utf8/ -I./../libft/
 
+O_FILES = ft_printf.o \
+
 %.o : %.c
 	@$(CC) $(FLAGS) $(INCS) $< -c
 	@printf "\e[38;5;49m%-20s \e[38;5;226mobject built\n\e[0m" $(basename $@)
-
-O_FILES = ft_printf.o \
-
-objects: $(O_FILES)
 
 clean:
 	@rm -f $(O_FILES)
@@ -34,4 +32,6 @@ clean:
 
 re: clean objects
 
-.PHONY : clean objects re
+objects: $(O_FILES)
+
+.PHONY : clean re objects

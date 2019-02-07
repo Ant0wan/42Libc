@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/07 14:50:43 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/07 17:10:55 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,17 +66,19 @@ $(NAME):
 	@printf "\n\e[38;5;51m%4s [\e[1m$(NAME) built]\n\n\e[0m"
 	@printf "\e[38;5;50m\e[2mTo compile with the $(NAME), use the command-line: \e[0m\e[4mgcc main.c -L. -lft\n\e[0m"
 
-clean :
+clean:
 	@make -C ./libft clean
 	@make -C ./libftwchar clean
 	@make -C ./libftprintf clean
 
-fclean : clean
+fclean: clean
 	@rm -f $(NAME)
+	@printf "\e[0m$(NAME)\e[38;5;123m%2sdeleted ❌\n\e[0m"
 
-re : fclean all
+re: fclean all
 
-objects :
+# Objects rule to be used when building larger libraries
+objects:
 	@printf "\n"
 	@make -C ./libft objects
 	@printf "\n"
