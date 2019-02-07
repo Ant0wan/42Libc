@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 11:47:48 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/07 11:46:52 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/07 11:56:50 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ O_FILES	=	ft_fputwc.o ft_fputwcbits.o ft_fputws.o ft_fputwsbits.o ft_fwprintf.o 
 			ft_putwchar.o ft_wcscmp.o
 #			ft_fwprintf_disp.o
 
+UTF8 = ./utf8/utf8.o
 
 ######################### GENERAL RULES ######################################
 
@@ -38,7 +39,7 @@ all: $(NAME)
 
 $(NAME): $(O_FILES)
 	@make -C ./utf8/ objects
-	@ar rc $(NAME) $(O_FILES)
+	@ar rc $(NAME) $(O_FILES) $(UTF8)
 	@ranlib $(NAME)
 	@printf "\e[38;5;198m%4s [\e[1m$(NAME) built]\n\e[0m"
 	@printf "\e[38;5;90mTo compile with the $(NAME), use the command-line: \e[0m\e[4mgcc main.c -L. -lft\n\e[0m"
