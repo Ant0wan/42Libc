@@ -6,14 +6,9 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/31 14:06:36 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/05 17:41:43 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/07 14:12:09 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
-#include "ft_printf.h"
-#include "ft_wchar.h"
-#include "utf8.h"
 
 #include <unistd.h>
 #include <stdio.h>
