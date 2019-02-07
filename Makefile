@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/07 12:29:28 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/07 12:35:48 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,9 @@ UTF8 = utf8.o
 all: $(NAME)
 
 $(NAME): $(O_FILES)
+	@printf "\n"
 	@make -C ./libft objects
+	@printf "\n"
 	@make -C ./libftwchar objects
 	@ar rc $(NAME) $(O_FILES) $(addprefix $(LIBFT_PATH),$(LIBFT)) $(addprefix $(LIBFTWCHAR_PATH),$(LIBFTWCHAR)) $(addprefix $(UTF8_PATH),$(UTF8))
 	@ranlib $(NAME)
