@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/07 12:35:48 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/07 12:38:26 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,6 @@ FLAGS = -Werror -Wall -Wextra
 
 
 ############################ OBJECTS #########################################
-
 
 %.o : %.c
 	@$(CC) $(FLAGS) $(INCS) $< -c
@@ -54,6 +53,7 @@ LIBFTWCHAR = ft_fputwc.o ft_fputwcbits.o ft_fputws.o ft_fputwsbits.o ft_fwprintf
 UTF8_PATH = ./libftwchar/utf8/
 UTF8 = utf8.o
 
+
 ######################### GENERAL RULES ######################################
 
 all: $(NAME)
@@ -79,7 +79,9 @@ fclean : clean
 re : fclean all
 
 objects : $(O_FILES)
+	@printf "\n"
 	@make -C ./libft objects
+	@printf "\n"
 	@make -C ./libftwchar objects
 
 .PHONY: all clean fclean re objects
