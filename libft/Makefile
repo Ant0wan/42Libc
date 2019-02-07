@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 11:47:48 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/07 10:14:22 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/07 10:21:46 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,8 @@ CC = gcc
 FLAGS = -Werror -Wall -Wextra
 
 %.o : %.c
-	@printf "\e[38;5;74m%-20s \e[38;5;85mobject built\n\e[0m" $(basename $@)
 	@$(CC) $(FLAGS) $< -c
+	@printf "\e[38;5;74m%-20s \e[38;5;85mobject built\n\e[0m" $(basename $@)
 
 O_FILES	=	ft_bzero.o ft_isalpha.o ft_isdigit.o ft_isalnum.o \
 	   		ft_isascii.o ft_isprint.o ft_toupper.o ft_tolower.o \
