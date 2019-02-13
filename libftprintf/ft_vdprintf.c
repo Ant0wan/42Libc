@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_vdprintf.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abarthel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/06 13:35:20 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/13 15:08:48 by abarthel         ###   ########.fr       */
+/*   Created: 2019/02/13 14:59:46 by abarthel          #+#    #+#             */
+/*   Updated: 2019/02/13 15:07:42 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdarg.h>
 #include <stdlib.h>
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	len;
+#include <stdio.h> // for DEBUGGING
 
-	len = 0;
-	if (s)
-		while (s[len])
-			++len;
-	return (len);
+int	ft_vdprintf(int fd, const char *restrict format, va_list ap)
+{
+	int		ret;
+
+	ret = vdprintf(fd, format, ap);
+	return (ret);
 }

@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_vdprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abarthel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/06 13:35:20 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/13 15:08:48 by abarthel         ###   ########.fr       */
+/*   Created: 2019/02/13 14:57:47 by abarthel          #+#    #+#             */
+/*   Updated: 2019/02/13 15:06:26 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef FT_VDPRINTF_H
+# define FT_VDPRINTF_H
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	len;
+# include <stdarg.h>
 
-	len = 0;
-	if (s)
-		while (s[len])
-			++len;
-	return (len);
-}
+int	ft_vdprintf(int fd, const char *restrict format, va_list ap);
+
+#endif
