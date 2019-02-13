@@ -6,11 +6,9 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 18:54:10 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/02 13:31:38 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/13 17:29:25 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "utf8.h"
 
 #include <stdlib.h>
 #include <unistd.h>

@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fwprintf.c                                      :+:      :+:    :+:   */
+/*   ft_vasprintf.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abarthel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/28 15:35:34 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/13 15:09:14 by abarthel         ###   ########.fr       */
+/*   Created: 2019/02/13 16:13:29 by abarthel          #+#    #+#             */
+/*   Updated: 2019/02/13 17:25:15 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_wchar.h"
+#include "ft_vasprintf.h"
 
-#include <stdlib.h>
+#include <stdarg.h>
 
-int	ft_fwprintf(int fd, const wchar_t *restrict format, ...)
+#include "ft_vdprintf.h"
+
+int	ft_vasprintf(char **ret, const char *format, va_list ap)
 {
-	(void)fd;
-	(void)format;
-	return (0);
+	
+	return (ret);
 }

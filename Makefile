@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/07 17:10:55 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/13 17:29:49 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ FLAGS = -Werror -Wall -Wextra
 ############################ OBJECTS #########################################
 
 O_FILES_PATH = ./libftprintf/
-O_FILES = ft_printf.o \
+O_FILES = ft_printf.o ft_vdprintf.o \
 
 LIBFT_PATH = ./libft/
 LIBFT = ft_bzero.o ft_isalpha.o ft_isdigit.o ft_isalnum.o \
@@ -44,7 +44,7 @@ LIBFT = ft_bzero.o ft_isalpha.o ft_isdigit.o ft_isalnum.o \
 		ft_chrsearch.o ft_strndup.o
 
 LIBFTWCHAR_PATH = ./libftwchar/
-LIBFTWCHAR = ft_fputwc.o ft_fputwcbits.o ft_fputws.o ft_fputwsbits.o ft_fwprintf.o \
+LIBFTWCHAR = ft_fputwc.o ft_fputwcbits.o ft_fputws.o ft_fputwsbits.o \
 			 ft_putwchar.o ft_wcscmp.o
 
 UTF8_PATH = ./libftwchar/utf8/
