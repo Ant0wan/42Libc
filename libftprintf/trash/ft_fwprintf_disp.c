@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/24 12:37:47 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/31 12:16:55 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/14 11:06:05 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@
 
 static const t_operator	g_flag[] =
 {
-	{ L" ", NULL},
-	{ L"+", NULL},
-	{ L"-", NULL},
-	{ L"#", NULL},
-	{ L"0", NULL},
-	{ L"\'", NULL},
-	{ L"I", NULL},
-	{ L"\0", NULL}
+	{ " ", NULL},
+	{ "+", NULL},
+	{ "-", NULL},
+	{ "#", NULL},
+	{ "0", NULL},
+	{ "\'", NULL},
+	{ "I", NULL},
+	{ "\0", NULL}
 };
 
 static const t_operator	g_precision[] =
