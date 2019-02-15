@@ -1,33 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vdprintf.c                                      :+:      :+:    :+:   */
+/*   dispatcher.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/14 13:51:19 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/15 14:43:31 by abarthel         ###   ########.fr       */
+/*   Created: 2019/02/15 14:51:32 by abarthel          #+#    #+#             */
+/*   Updated: 2019/02/15 16:20:42 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include <stdlib.h>
-#include <unistd.h>
+#include "disptacher.h"
+#define TYPE char
+#include "struct_disp.h"
 
-#include "ft_vasprintf.h"
+#include <stdlib.h>
 #include "libft.h"
 
-int	ft_vdprintf(int fd, const char *restrict format, va_list ap)
-{
-	int		ret;
-	char	*str;
+/*
+** Set the number of function pointers in table "g_disp"
+*/
 
-	ret = ft_vasprintf(&str, format, ap);
-	if (ret != -1 && str)
-	{
-		write(fd, str, ft_strlen(str));
-		free(str);
-		str = NULL;
-	}
-	return (ret);
+#define NB_PTR 1
+
+static const t_disp	g_disp[] =
+{
+	{ "d", NULL}
+};
+
+void				*dispatcher(char *str)
+{
+	char	i;
+
+	i = 0;
+	while (i < NB_PTR && ft_strcmp(g_specifier[(int)i].type, str))
+		++i;
+	if (g_disp[(int)i].type[0])
+		return (g_disp[(int)i].f);
+	else
+		return (NULL);
 }

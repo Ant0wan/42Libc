@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   struct_fwprintf_disp.h                             :+:      :+:    :+:   */
+/*   struct_disp.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 16:59:46 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/31 12:14:56 by abarthel         ###   ########.fr       */
+/*   Created: 2019/02/15 14:49:00 by abarthel          #+#    #+#             */
+/*   Updated: 2019/02/15 16:19:35 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCT_FWPRINTF_DISP_H
-# define STRUCT_FWPRINTF_DISP_H
+#ifndef STRUCT_DISP_H
+# define STRUCT_DISP_H
 
-# include <stdlib.h>
+# ifndef TYPE
+#  define TYPE void
+# endif
 
-typedef struct	s_operator
+typedef struct	s_disp
 {
-	wchar_t	*type;
+	TYPE	*type;
 	void	*(*f)();
-}				t_operator;
+}				t_disp;
 
 #endif
