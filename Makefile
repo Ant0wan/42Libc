@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/15 17:16:53 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/15 18:02:09 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,7 +67,7 @@ $(NAME):
 	@ar rc $(NAME) $(addprefix $(O_FILES_PATH),$(O_FILES)) $(addprefix $(DISPATCHER_PATH),$(DISPATCHER)) $(addprefix $(LIBFT_PATH),$(LIBFT)) $(addprefix $(LIBFTWCHAR_PATH),$(LIBFTWCHAR)) $(addprefix $(UTF8_PATH),$(UTF8))
 	@ranlib $(NAME)
 	@printf "\n\e[38;5;51m%4s [\e[1m$(NAME) built]\n\n\e[0m"
-	@printf "\e[38;5;50m\e[2mTo compile with the $(NAME), use the command-line: \e[0m\e[4mgcc main.c -L. -lft\n\e[0m"
+	@printf "\e[38;5;50m\e[2mTo compile with the $(NAME), use the command-line: \e[0m\e[4mgcc main.c -L. -lftprintf\n\e[0m"
 
 clean:
 	@make -C ./libft clean

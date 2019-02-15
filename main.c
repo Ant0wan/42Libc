@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/07 14:09:45 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/15 18:02:45 by abarthel         ###   ########.fr       */
+/*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
+/*   Updated: 2019/02/15 18:43:56 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "dispatcher.h"
+#include <stdio.h>
 
-void	ft_bzero(void *s, size_t n)
+int main(void)
 {
-	size_t			i;
-	unsigned char	*s_ptr;
+	void	(*f)();
 
-	i = -1;
-	s_ptr = (unsigned char*)s;
-	while (++i < n)
-		s_ptr[i] = 0;
+	f = dispatcher("o");
+	printf("%d\n", (int)f);
+	f = dispatcher("d");
+	printf("%d\n", (int)f);
+	if (!f)
+		return (0);
+	else
+		f(200);
+	return (0);
 }
