@@ -6,12 +6,13 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 14:51:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/15 16:55:18 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/15 17:11:59 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "dispatcher.h"
 #define TYPE char
+#define T_ (void*)
 #include "struct_disp.h"
 
 #include <stdlib.h>
@@ -25,7 +26,7 @@
 
 static const t_disp	g_disp[] =
 {
-	{ "d", NULL}
+	{ "d", T_&ft_itoa}
 };
 
 void				*dispatcher(void *str)

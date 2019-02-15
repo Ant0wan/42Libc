@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/13 17:35:24 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/15 17:16:53 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,9 @@ FLAGS = -Werror -Wall -Wextra
 
 O_FILES_PATH = ./libftprintf/
 O_FILES = ft_printf.o ft_vdprintf.o ft_vasprintf.o \
+
+DISPATCHER_PATH = ./libftprintf/dispatcher/
+DISPATCHER = dispatcher.o \
 
 LIBFT_PATH = ./libft/
 LIBFT = ft_bzero.o ft_isalpha.o ft_isdigit.o ft_isalnum.o \
@@ -61,7 +64,7 @@ $(NAME):
 	@make -C ./libftwchar objects
 	@printf "\n"
 	@make -C ./libftprintf objects
-	@ar rc $(NAME) $(addprefix $(O_FILES_PATH),$(O_FILES)) $(addprefix $(LIBFT_PATH),$(LIBFT)) $(addprefix $(LIBFTWCHAR_PATH),$(LIBFTWCHAR)) $(addprefix $(UTF8_PATH),$(UTF8))
+	@ar rc $(NAME) $(addprefix $(O_FILES_PATH),$(O_FILES)) $(addprefix $(DISPATCHER_PATH),$(DISPATCHER)) $(addprefix $(LIBFT_PATH),$(LIBFT)) $(addprefix $(LIBFTWCHAR_PATH),$(LIBFTWCHAR)) $(addprefix $(UTF8_PATH),$(UTF8))
 	@ranlib $(NAME)
 	@printf "\n\e[38;5;51m%4s [\e[1m$(NAME) built]\n\n\e[0m"
 	@printf "\e[38;5;50m\e[2mTo compile with the $(NAME), use the command-line: \e[0m\e[4mgcc main.c -L. -lft\n\e[0m"

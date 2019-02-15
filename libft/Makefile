@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 11:47:48 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/07 16:27:01 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/15 17:20:34 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,7 @@ $(NAME): $(O_FILES)
 
 clean:
 	@rm -f $(O_FILES)
-	@printf "\e[0m$(NAME) .o \e[38;5;154mfiles%1sdeleted ♻\n\e[0m"
+	@printf "\e[0m$(basename $(NAME)) .o \e[38;5;154mfiles%1sdeleted ♻\n\e[0m"
 
 fclean: clean
 	@rm -f $(NAME)
