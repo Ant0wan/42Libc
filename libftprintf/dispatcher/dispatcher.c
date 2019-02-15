@@ -6,11 +6,11 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 14:51:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/15 16:20:42 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/15 16:44:13 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "disptacher.h"
+#include "dispatcher.h"
 #define TYPE char
 #include "struct_disp.h"
 
