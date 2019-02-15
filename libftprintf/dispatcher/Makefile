@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/07 11:08:30 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/15 16:45:39 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/15 16:48:50 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,11 +24,11 @@ O_FILES = dispatcher.o
 
 %.o : %.c
 	@$(CC) $(FLAGS) $(INCS) $< -c
-	@printf "\e[38;5;180m%-20s \e[38;5;71mobject built\n\e[0m" $(basename $@)
+	@printf "\e[38;5;52m%-20s \e[38;5;53mobject built\n\e[0m" $(basename $@)
 
 clean:
 	@rm -f $(O_FILES)
-	@printf "\e[0m$(NAME)%1s\e[0m.o \e[38;5;70mfiles%1sdeleted ♻\n\e[0m"
+	@printf "\e[0m$(NAME)%1s\e[0m.o \e[38;5;54mfiles%1sdeleted ♻\n\e[0m"
 
 re: clean objects
 
