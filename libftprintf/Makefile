@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/07 11:08:30 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/15 17:25:57 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/18 09:51:43 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ O_FILES = ft_printf.o ft_vdprintf.o ft_vasprintf.o \
 	@printf "\e[38;5;49m%-20s \e[38;5;226mobject built\n\e[0m" $(basename $@)
 
 clean:
-	@make -C ./dispatcher/ clean
+	@$(MAKE) -C ./dispatcher/ clean
 	@rm -f $(O_FILES)
 	@printf "\e[0m$(NAME)%1s\e[0m.o \e[38;5;123mfiles%1sdeleted ♻\n\e[0m"
 
@@ -35,6 +35,6 @@ re: clean objects
 
 objects: $(O_FILES)
 	@printf "\n"
-	@make -C ./dispatcher/ objects
+	@$(MAKE) -C ./dispatcher/ objects
 
 .PHONY : clean re objects

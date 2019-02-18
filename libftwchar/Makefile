@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 11:47:48 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/15 18:01:32 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/18 09:52:19 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,14 +38,14 @@ all: $(NAME)
 
 $(NAME): $(O_FILES)
 	@printf "\n"
-	@make -C ./utf8/ objects
+	@$(MAKE) -C ./utf8/ objects
 	@ar rc $(NAME) $(O_FILES) $(UTF8)
 	@ranlib $(NAME)
 	@printf "\n\e[38;5;198m%4s [\e[1m$(NAME) built]\n\n\e[0m"
 	@printf "\e[38;5;90mTo compile with the $(NAME), use the command-line: \e[0m\e[4mgcc main.c -L. -lftwchar\n\e[0m"
 
 clean:
-	@make -C ./utf8/ clean
+	@$(MAKE) -C ./utf8/ clean
 	@rm -f $(O_FILES)
 	@printf "\e[0m$(basename $(NAME))%1s\e[0m.o \e[38;5;201mfiles%1sdeleted ♻\n\e[0m"
 
@@ -58,6 +58,6 @@ re: fclean $(NAME)
 # Objects rule to be used when building larger libraries
 objects: $(O_FILES)
 	@printf "\n"
-	@make -C ./utf8/ objects
+	@$(MAKE) -C ./utf8/ objects
 
 .PHONY : all clean fclean re objects
