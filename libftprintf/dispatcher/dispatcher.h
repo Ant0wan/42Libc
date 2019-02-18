@@ -6,13 +6,13 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 14:46:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/15 14:48:17 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/18 09:34:31 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_DISPATCHER_H
 # define FT_DISPATCHER_H
 
-void	*dispatcher(void *str);
+void	*dispatcher(char *str);
 
 #endif
