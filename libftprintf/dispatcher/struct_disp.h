@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 14:49:00 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/15 16:19:35 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/18 14:47:09 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 # define STRUCT_DISP_H
 
 # ifndef TYPE
-#  define TYPE void
+#  define TYPE char
 # endif
 
 typedef struct	s_disp
 {
-	TYPE	*type;
+	TYPE	type;
 	void	*(*f)();
 }				t_disp;
 
