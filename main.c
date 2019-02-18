@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/18 16:36:03 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/18 17:31:24 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int main(void)
 	//	printf("%d\n", (int)f);
 	//	if (f)
 	//		f(2000);
-	ft_printf("Hello World%d   k\n", 99420000000);
+	ft_printf("Hello World%Xd   k\n", 99420000000);
 	printf("\n\n");
-	printf("Hello World%x   k", 99420000000);
+	printf("Hello World%Xd   k", 99420000000);
 	printf("\n\n");
 	printf("\n\n");
 	printf("4567 |%-10]5d| plip\n", 12);

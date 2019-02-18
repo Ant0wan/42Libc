@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 14:51:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/18 16:45:08 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/18 17:30:31 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,6 @@
 #define NB_PTR 10
 
 /*
-** Printf format specifiers
-** %c	character
-** %d	decimal (integer) number (base 10)
-** %e	exponential floating-point number
-** %f	floating-point number
-** %i	integer (base 10)
-** %o	octal number (base 8)
-** %s	a string of characters
-** %u	unsigned decimal (integer) number
-** %x	number in hexadecimal (base 16)
 ** %%	print a percent sign // not in specifieratcher
 ** \%	print a percent sign // not in specifieratcher
 */
@@ -41,11 +31,11 @@ static const t_specifier	g_specifier[] =
 	{ 'e', T_ & ft_putnbr},
 	{ 'f', T_ & ft_putnbr},
 	{ 'i', T_ & ft_putnbr},
-	{ 'o', T_ & ft_putnbr},
-	{ 's', T_ & ft_putnbr},
+	{ 'o', T_ & ft_putnbr_octal},
+	{ 's', T_ & ft_putstr},
 	{ 'u', T_ & ft_putnbr},
-	{ 'x', T_ & ft_putnbr},
-	{ 'X', T_ & ft_putnbr}
+	{ 'x', T_ & ft_putnbr_lowhexa},
+	{ 'X', T_ & ft_putnbr_upphexa}
 };
 
 void				*dispatcher(char c)
