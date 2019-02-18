@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_printf_prs.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/18 12:03:16 by abarthel         ###   ########.fr       */
+/*   Created: 2019/02/18 12:00:51 by abarthel          #+#    #+#             */
+/*   Updated: 2019/02/18 12:08:32 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "dispatcher.h"
-#include "ft_printf.h"
-#include <stdio.h>
+#ifndef FT_PRINTF_PRS_H
+# define FT_PRINTF_PRS_H
 
-int main(void)
-{
-//	void	(*f)();
+# include <stdarg.h>
 
-//	f = dispatcher("o");
-//	printf("%d\n", (int)f);
-//	f = dispatcher("d");
-//	printf("%d\n", (int)f);
-//	if (f)
-//		f(2000);
-	ft_printf("Hello World %d !", 42);
-	return (0);
-}
+int	printf_prs(char **ret, const char *format, va_list ap);
+
+#endif

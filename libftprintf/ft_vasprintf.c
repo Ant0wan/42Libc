@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 16:13:29 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/15 18:05:31 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/18 12:57:50 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,18 @@
 
 #include "ft_vdprintf.h"
 #include "libft.h"
+#include "dispatcher.h"
+#include "ft_printf_prs.h"
 
+#define RET_ERROR -1
 #define BUFF 1024
 
 int	ft_vasprintf(char **ret, const char *format, va_list ap)
 {
-	(void)ret;
-	(void)format;
-	(void)ap;
-	if (!(ret = (char**)ft_memalloc(sizeof(**ret) * BUFF + 1)))
-		return (-1);
-	return (2);
+	int	parse_ret;
+	if (!(*ret = (char*)ft_memalloc(sizeof(**ret) * BUFF + 1)))
+		return (RET_ERROR);
+	if ((parse_ret = printf_prs(ret, format, ap) == RET_ERROR))
+		return (RET_ERROR);
+	return (parse_ret);
 }
