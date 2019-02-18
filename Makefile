@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/18 09:50:57 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/18 10:23:04 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,17 +53,18 @@ LIBFTWCHAR = ft_fputwc.o ft_fputwcbits.o ft_fputws.o ft_fputwsbits.o \
 UTF8_PATH = ./libftwchar/utf8/
 UTF8 = utf8.o
 
-
 ######################### GENERAL RULES ######################################
 
 all: $(NAME)
 
-$(NAME):
+subdir: 
 	@$(MAKE) -C ./libft objects
 	@printf "\n"
 	@$(MAKE) -C ./libftwchar objects
 	@printf "\n"
 	@$(MAKE) -C ./libftprintf objects
+
+$(NAME): $(LIBFTPRINTF) | subdir
 	@ar rc $(NAME) $(addprefix $(O_FILES_PATH),$(O_FILES)) $(addprefix $(DISPATCHER_PATH),$(DISPATCHER)) $(addprefix $(LIBFT_PATH),$(LIBFT)) $(addprefix $(LIBFTWCHAR_PATH),$(LIBFTWCHAR)) $(addprefix $(UTF8_PATH),$(UTF8))
 	@ranlib $(NAME)
 	@printf "\n\e[38;5;51m%4s [\e[1m$(NAME) built]\n\n\e[0m"
@@ -89,4 +90,4 @@ objects:
 	@printf "\n"
 	@$(MAKE) -C ./libftprintf objects
 
-.PHONY: all clean fclean re objects
+.PHONY: all clean fclean re objects subdir
