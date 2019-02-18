@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/18 16:12:46 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/18 16:34:55 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include "dispatcher.h"
 #include "libft.h"
+#include "prs_struct.h"
+
+
 
 //int	local_parser()
 
