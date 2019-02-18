@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 14:49:00 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/18 14:47:09 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/18 16:42:54 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 #  define TYPE char
 # endif
 
-typedef struct	s_disp
+typedef struct	s_specifier
 {
 	TYPE	type;
 	void	*(*f)();
-}				t_disp;
+}				t_specifier;
 
 #endif
