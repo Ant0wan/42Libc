@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/07 11:08:30 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/15 16:51:44 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/18 17:44:08 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CC = gcc
 
 FLAGS = -Werror -Wall -Wextra
 
-INCS = -I./../../libft/
+INCS = -I./../../libft/ -I./../../libftwchar/
 
 O_FILES = dispatcher.o
 

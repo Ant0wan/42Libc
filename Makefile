@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/18 17:25:29 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/19 10:57:33 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ LIBFT = ft_bzero.o ft_isalpha.o ft_isdigit.o ft_isalnum.o \
 		ft_str_is_lowercase.o ft_str_is_uppercase.o ft_isprime.o \
 		ft_fprintbits.o get_next_line.o ft_isempty.o ft_strclen.o \
 		ft_chrsearch.o ft_strndup.o ft_putnbr_base.o ft_putnbr_lowhexa.o \
-		ft_putnbr_upphexa.o ft_putnbr_octal.o
+		ft_putnbr_upphexa.o ft_putnbr_octal.o ft_putaddr.o \
 
 LIBFTWCHAR_PATH = ./libftwchar/
 LIBFTWCHAR = ft_fputwc.o ft_fputwcbits.o ft_fputws.o ft_fputwsbits.o \

@@ -1,43 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_prs.c                                    :+:      :+:    :+:   */
+/*   ft_putaddr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/18 17:46:10 by abarthel         ###   ########.fr       */
+/*   Created: 2019/02/19 10:55:44 by abarthel          #+#    #+#             */
+/*   Updated: 2019/02/19 11:15:40 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdarg.h>
-
-#include "dispatcher.h"
 #include "libft.h"
-#include "prs_struct.h"
 
+#include <stdlib.h>
 
+#define HEXA_SIZE 16
 
-//int	local_parser()
-
-int	printf_prs(char **ret, const char *format, va_list ap)
+static void	ft_putint(size_t nbr, char *base)
 {
-	size_t	i;
-	void	(*f)();
-
-	i = -1;
-	while (format[++i])
+	if (nbr >= HEXA_SIZE)
 	{
-		if (format[i] == '%')
-			if (format[i + 1])
-			{
-				if ((f = dispatcher(format[i + 1])))
-					f(va_arg(ap, typeof(ap)));
-				while (format[i])
-					++i;
-			}
-		(*ret)[i] = format[i];
+		ft_putint(nbr / HEXA_SIZE, base);
+		ft_putint(nbr % HEXA_SIZE, base);
 	}
-	return (0);
+	else
+		ft_putchar(base[nbr]);
+}
+
+static void	ft_putnbrhexa(size_t nbr)
+{
+	char	*base;
+
+	base = "0123456789abcdef\0";
+	ft_putint(nbr, base);
+}
+
+void		ft_putaddr(void **ptr)
+{
+	ft_putstr("0x");
+	ft_putnbrhexa((size_t)ptr);
 }

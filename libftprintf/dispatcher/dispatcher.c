@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 14:51:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/18 17:30:31 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/19 10:55:19 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,9 @@
 
 #include <stdlib.h>
 #include "libft.h"
+#include "ft_wchar.h"
 
-#define NB_PTR 10
-
-/*
-** %%	print a percent sign // not in specifieratcher
-** \%	print a percent sign // not in specifieratcher
-*/
+#define NB_PTR 12
 
 static const t_specifier	g_specifier[] =
 {
@@ -35,7 +31,9 @@ static const t_specifier	g_specifier[] =
 	{ 's', T_ & ft_putstr},
 	{ 'u', T_ & ft_putnbr},
 	{ 'x', T_ & ft_putnbr_lowhexa},
-	{ 'X', T_ & ft_putnbr_upphexa}
+	{ 'X', T_ & ft_putnbr_upphexa},
+	{ 'C', T_ & ft_putwchar},
+	{ 'p', T_ & ft_putaddr}
 };
 
 void				*dispatcher(char c)

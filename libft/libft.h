@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 11:55:45 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/18 17:25:00 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/19 11:03:15 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,8 @@ void			ft_putnbr_lowhexa(int nbr);
 void			ft_putnbr_upphexa(int nbr);
 
 void			ft_putnbr_octal(int nbr);
+
+void			ft_putaddr(void **ptr);
 
 void			ft_putchar_fd(char c, int fd);
 
