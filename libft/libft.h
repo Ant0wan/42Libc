@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 11:55:45 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/19 12:55:29 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/19 16:53:05 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -194,6 +194,8 @@ int				ft_chrsearch(const char *s, int c) __attribute__((nonnull(1)));
 int				get_next_line(const int fd, char **line);
 
 int				ft_fprintbits(int fd, char c);
+
+int				ft_printbits(char c);
 
 size_t			ft_strclen(const char *s, char c) __attribute__((nonnull(1)));
 

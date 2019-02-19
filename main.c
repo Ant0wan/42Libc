@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/19 15:08:22 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/19 18:06:21 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,20 @@ int main(void)
 //	printf(" LENGTH: %u\n", sizeof(t_modifier));
 //	printf(" LENGTH: %u\n", sizeof(t_flags));
 
-	ft_printf("Hello World%s", 'H');
-	printf("\n\n");
-	printf("Hello World%s", 'H');
-	printf("\n\n");
-//	ft_printf("Hello World%d   k\n", -99420000000);
-//	ft_printf("Hello World%p   k\n", o);
+//	printf("%.s", 428);
 //	printf("\n\n");
+//	ft_printf("%.s", 42);
+
+//	ft_printf("Hello World%d", 2147483648);
+//	printf("\n\n");
+//	printf("Hello World |%3$d|%1$d\n", 100, 24, 1);
+//	printf("Hello World%*d", 2147483648, 45); // intersting behavior
+//	printf("\n\n");
+//	ft_printf("Hello World%d   k\n", -99420000000);
+	ft_printf("Hello World%p   k\n", o);
+	printf("\n\n");
 //	printf("Hello World%d   k", -99420000000);
-//	printf("Hello World%p   k", o);
+	printf("Hello World%p   k", o);
 //	printf("\n\n");
 //	ft_printf("%d\n", "😄");// OK
 //	printf("\n\n");

@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 16:10:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/19 14:31:58 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/19 18:21:40 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct	s_modifier
 	unsigned int	t:1;
 	unsigned int	z:1;
 	unsigned int	q:1;
-	unsigned int	L:1;
+	unsigned int	upl:1;
 }				t_modifier;
 
 typedef struct	s_flags
