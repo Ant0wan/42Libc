@@ -6,20 +6,34 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 16:10:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/19 12:27:12 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/19 14:31:58 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRS_STRUCT_H
 # define PRS_STRUCT_H
 
-typedef struct	s_prs
+typedef struct	s_modifier
 {
-	unsigned int	space:1;
+	unsigned int	hh:1;
+	unsigned int	h:1;
 	unsigned int	l:1;
 	unsigned int	ll:1;
-}				t_prs;
+	unsigned int	j:1;
+	unsigned int	t:1;
+	unsigned int	z:1;
+	unsigned int	q:1;
+	unsigned int	L:1;
+}				t_modifier;
 
-extern t_prs g_local_prs;
+typedef struct	s_flags
+{
+	unsigned int	hash:1;
+	unsigned int	zero:1;
+	unsigned int	minus:1;
+	unsigned int	space:1;
+	unsigned int	plus:1;
+	unsigned int	apost:1;
+}				t_flags;
 
 #endif

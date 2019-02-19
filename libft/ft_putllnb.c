@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_prs.c                                    :+:      :+:    :+:   */
+/*   ft_putllnb.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/19 14:03:00 by abarthel         ###   ########.fr       */
+/*   Created: 2018/11/13 07:11:32 by abarthel          #+#    #+#             */
+/*   Updated: 2019/02/19 12:54:56 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdarg.h>
-
-#include "dispatcher.h"
 #include "libft.h"
-#include "prs_struct.h"
 
-int	printf_prs(char **ret, const char *format, va_list ap)
+void	ft_putllnb(long long int n)
 {
-	size_t	i;
-	void	(*f)();
+	unsigned long long int	nb;
 
-	i = -1;
-	while (format[++i])
+	if (n < 0)
+		ft_putchar('-');
+	nb = n < 0 ? n * -1 : n;
+	if (nb >= 10)
 	{
-		if (format[i] == '%')
-			if (format[i + 1])
-			{
-				if ((f = dispatcher(format[i + 1])))
-					f(va_arg(ap, typeof(ap)));
-				while (format[i])
-					++i;
-			}
-		(*ret)[i] = format[i];
+		ft_putllnb(nb / 10);
+		ft_putchar(nb % 10 + '0');
 	}
-	return (0);
+	else
+		ft_putchar(nb + '0');
 }

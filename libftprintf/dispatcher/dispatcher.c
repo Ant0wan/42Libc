@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 14:51:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/19 10:55:19 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/19 14:31:56 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include "libft.h"
 #include "ft_wchar.h"
 
-#define NB_PTR 12
+#define NB_PTR 16
 
 static const t_specifier	g_specifier[] =
 {
@@ -33,7 +33,19 @@ static const t_specifier	g_specifier[] =
 	{ 'x', T_ & ft_putnbr_lowhexa},
 	{ 'X', T_ & ft_putnbr_upphexa},
 	{ 'C', T_ & ft_putwchar},
-	{ 'p', T_ & ft_putaddr}
+	{ 'p', T_ & ft_putaddr},
+	{ 'n', T_ & ft_putaddr},
+	{ 'D', T_ & ft_putaddr},
+	{ 'O', T_ & ft_putaddr},
+	{ 'U', T_ & ft_putaddr},
+	{ 'E', T_ & ft_putaddr},
+	{ 'F', T_ & ft_putaddr},
+	{ 'g', T_ & ft_putaddr},
+	{ 'G', T_ & ft_putaddr},
+	{ 'a', T_ & ft_putaddr},
+	{ 'A', T_ & ft_putaddr},
+	{ 'S', T_ & ft_putaddr},
+	{ '%', T_ & ft_putaddr}
 };
 
 void				*dispatcher(char c)
