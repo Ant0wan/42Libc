@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 11:47:48 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/19 14:48:30 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/19 18:49:48 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ INCS = -I./utf8/
 	@printf "\e[38;5;127m%-20s \e[38;5;125mobject built\n\e[0m" $(basename $@)
 
 O_FILES	=	ft_fputwc.o ft_fputwcbits.o ft_fputws.o ft_fputwsbits.o \
-			ft_putwchar.o ft_wcscmp.o ft_putwstr.o
+			ft_putwchar.o ft_wcscmp.o ft_putwstr.o ft_putwcbits.o \
 
 UTF8 = ./utf8/utf8.o
 

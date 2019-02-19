@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/19 18:06:21 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/19 19:15:13 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "prs_struct.h"
 #include <stdio.h>
 #include <locale.h>
+#include <limits.h>
 
 int main(void)
 {
@@ -27,13 +28,16 @@ int main(void)
 	//	printf("%d\n", (int)f);
 	//	if (f)
 	//		f(2000);
-	int o;
+//	int o;
 
 //	printf(" LENGTH: %u\n", sizeof(t_modifier));
 //	printf(" LENGTH: %u\n", sizeof(t_flags));
-
+//	ft_printf("%B", L'😄');
+	ft_printf("%D", INT_MAX + 4 );
+	printf("\n\n");
+	printf("%D", INT_MAX + INT_MAX ); // pas pareil que %d not defined by an INT !
 //	printf("%.s", 428);
-//	printf("\n\n");
+	printf("\n\n");
 //	ft_printf("%.s", 42);
 
 //	ft_printf("Hello World%d", 2147483648);
@@ -42,10 +46,10 @@ int main(void)
 //	printf("Hello World%*d", 2147483648, 45); // intersting behavior
 //	printf("\n\n");
 //	ft_printf("Hello World%d   k\n", -99420000000);
-	ft_printf("Hello World%p   k\n", o);
+//	ft_printf("Hello World%p   k\n", o);
 	printf("\n\n");
 //	printf("Hello World%d   k", -99420000000);
-	printf("Hello World%p   k", o);
+//	printf("Hello World%p   k", o);
 //	printf("\n\n");
 //	ft_printf("%d\n", "😄");// OK
 //	printf("\n\n");
