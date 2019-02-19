@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 14:51:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/19 14:31:56 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/19 15:08:34 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include "libft.h"
 #include "ft_wchar.h"
 
-#define NB_PTR 16
+#define NB_PTR 24
 
 static const t_specifier	g_specifier[] =
 {
@@ -44,7 +44,7 @@ static const t_specifier	g_specifier[] =
 	{ 'G', T_ & ft_putaddr},
 	{ 'a', T_ & ft_putaddr},
 	{ 'A', T_ & ft_putaddr},
-	{ 'S', T_ & ft_putaddr},
+	{ 'S', T_ & ft_putwstr},
 	{ '%', T_ & ft_putaddr}
 };
 

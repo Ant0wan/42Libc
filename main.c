@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/19 14:33:18 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/19 15:08:22 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ int main(void)
 //	printf(" LENGTH: %u\n", sizeof(t_modifier));
 //	printf(" LENGTH: %u\n", sizeof(t_flags));
 
-	ft_printf("Hello World%s   k\n", "HHHH");
+	ft_printf("Hello World%s", 'H');
 	printf("\n\n");
-	printf("Hello World%s   k\n", "HHHH");
+	printf("Hello World%s", 'H');
 	printf("\n\n");
 //	ft_printf("Hello World%d   k\n", -99420000000);
 //	ft_printf("Hello World%p   k\n", o);

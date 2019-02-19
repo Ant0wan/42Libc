@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 15:19:44 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/06 18:45:17 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/19 14:47:01 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@ int	ft_fwprintf(int fd, const wchar_t *restrict format, ...);
 int	ft_fputwcbits(wchar_t c, int fd);
 
 int	ft_fputwsbits(const wchar_t *restrict ws, int fd);
+
+int	ft_putwstr(const wchar_t *restrict ws);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/19 12:56:24 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/19 14:49:00 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ LIBFT = ft_bzero.o ft_isalpha.o ft_isdigit.o ft_isalnum.o \
 
 LIBFTWCHAR_PATH = ./libftwchar/
 LIBFTWCHAR = ft_fputwc.o ft_fputwcbits.o ft_fputws.o ft_fputwsbits.o \
-			 ft_putwchar.o ft_wcscmp.o
+			 ft_putwchar.o ft_wcscmp.o ft_putwstr.o
 
 UTF8_PATH = ./libftwchar/utf8/
 UTF8 = utf8.o
