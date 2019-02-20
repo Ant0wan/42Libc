@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 11:47:48 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/20 10:19:00 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/20 10:27:31 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ O_FILES	=	ft_bzero.o ft_isalpha.o ft_isdigit.o ft_isalnum.o \
 	   		ft_fprintbits.o get_next_line.o ft_isempty.o ft_strclen.o \
 			ft_chrsearch.o ft_strndup.o ft_putnbr_base.o ft_putnbr_lowhexa.o \
 			ft_putnbr_upphexa.o ft_putnbr_octal.o ft_putaddr.o ft_putllnb.o \
-			ft_printbits.o ft_putuint.o ft_putuint_octal.o
+			ft_printbits.o ft_putuint.o ft_putuint_octal.o ft_putuint.o \
 
 all: $(NAME)
 

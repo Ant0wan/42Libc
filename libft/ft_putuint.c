@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 07:11:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/20 10:07:34 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/20 10:28:48 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_putuint(unsigned int n)
 {
 	if (n >= 10)
 	{
-		ft_putnbr(n / 10);
+		ft_putuint(n / 10);
 		ft_putchar(n % 10 + '0');
 	}
 	else

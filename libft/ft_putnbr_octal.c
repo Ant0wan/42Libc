@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 18:11:18 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/18 17:24:37 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/20 10:29:53 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 #include <stdlib.h>
 
 #define OCTAL_SIZE 8
+#define OCTAL_BASE "01234567\0"
 
-static void	ft_putint(unsigned int nbr, char *base)
+static void	ft_putint(unsigned int nbr, const char *base)
 {
 	if (nbr >= OCTAL_SIZE)
 	{
@@ -29,14 +30,11 @@ static void	ft_putint(unsigned int nbr, char *base)
 
 void		ft_putnbr_octal(int nbr)
 {
-	char	*base;
-
-	base = "01234567\0";
 	if (nbr >= 0)
-		ft_putint(nbr, base);
+		ft_putint(nbr, OCTAL_BASE);
 	else if (nbr < 0)
 	{
 		ft_putchar('-');
-		ft_putint((nbr * -1), base);
+		ft_putint((nbr * -1), OCTAL_BASE);
 	}
 }
