@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/19 19:15:13 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/20 10:10:30 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ int main(void)
 //	printf(" LENGTH: %u\n", sizeof(t_modifier));
 //	printf(" LENGTH: %u\n", sizeof(t_flags));
 //	ft_printf("%B", L'😄');
-	ft_printf("%D", INT_MAX + 4 );
+//	ft_printf("%D", UINT_MAX * -1); // OK
 	printf("\n\n");
-	printf("%D", INT_MAX + INT_MAX ); // pas pareil que %d not defined by an INT !
+//	printf("%D", UINT_MAX * -1); // OK
 //	printf("%.s", 428);
 	printf("\n\n");
 //	ft_printf("%.s", 42);
