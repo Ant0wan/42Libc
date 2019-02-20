@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/20 10:32:10 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/20 12:02:02 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,19 @@ int main(void)
 	//	printf("%d\n", (int)f);
 	//	if (f)
 	//		f(2000);
-//	int o;
+	int o;
+	int k;
 
 //	printf(" LENGTH: %u\n", sizeof(t_modifier));
 //	printf(" LENGTH: %u\n", sizeof(t_flags));
 //	ft_printf("%B", L'😄');
 //	ft_printf("%D", UINT_MAX * -1); // OK
 //	ft_printf("%O", UINT_MAX * 2); // OK
-	ft_printf("%U", -1); 
+	printf("Hello%nj%sijoj%n", &o,"Hello", &k);
+   	printf("\n\n%d\n", o);
+   	printf("\n\n%d\n", k);
 	printf("\n\n");
-	printf("%U", -1); 
+//	printf("%i", -INT_MIN); 
 //	printf("%O", UINT_MAX * 2); // OK
 //	printf("%D", UINT_MAX * -1); // OK
 //	printf("%.s", 428);
