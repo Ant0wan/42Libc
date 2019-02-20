@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/20 12:08:26 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/20 14:55:24 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,16 @@
 #include "libft.h"
 #include "prs_struct.h"
 
+#include "stdio.h"
+
+static t_ret	g_ret;
+
 int	printf_prs(char **ret, const char *format, va_list ap)
 {
 	size_t	i;
 	void	(*f)();
 
+	g_ret.ret = (char*)ret;
 	i = -1;
 	while (format[++i])
 	{

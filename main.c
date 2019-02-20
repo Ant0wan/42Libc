@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/20 12:02:02 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/20 14:54:12 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,20 +31,32 @@ int main(void)
 	int o;
 	int k;
 
-//	printf(" LENGTH: %u\n", sizeof(t_modifier));
-//	printf(" LENGTH: %u\n", sizeof(t_flags));
+	printf(" LENGTH t_ap: %lu\n", sizeof(t_ap));
+	printf(" LENGTH t_ret: %lu\n", sizeof(t_ret));
+	printf(" LENGTH t_modifier: %lu\n", sizeof(t_modifier));
+	printf(" LENGTH t_flags: %lu\n", sizeof(t_flags));
+	
+//	t_flags	flags;
+
+//	flags.hash = 1;
+// 	printf("\n\n%d\n", flags.hash);
+	
 //	ft_printf("%B", L'😄');
 //	ft_printf("%D", UINT_MAX * -1); // OK
 //	ft_printf("%O", UINT_MAX * 2); // OK
-	printf("Hello%nj%sijoj%n", &o,"Hello", &k);
-   	printf("\n\n%d\n", o);
-   	printf("\n\n%d\n", k);
+	
+//	printf("\n\n %*.*d \n\n",24,55, 10);
+	
+//	printf("Hello%nj%sijoj%n", &o,"Hello", &k);
+// 	printf("\n\n%d\n", o);
+// 	printf("\n\n%d\n", k);
 	printf("\n\n");
 //	printf("%i", -INT_MIN); 
 //	printf("%O", UINT_MAX * 2); // OK
 //	printf("%D", UINT_MAX * -1); // OK
 //	printf("%.s", 428);
 	printf("\n\n");
+	ft_printf("Hello %d\n", INT_MAX);
 //	ft_printf("%.s", 42);
 
 //	ft_printf("Hello World%d", 2147483648);

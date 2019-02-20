@@ -6,34 +6,49 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 16:10:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/20 11:47:54 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/20 14:44:24 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRS_STRUCT_H
 # define PRS_STRUCT_H
 
+# include <stdarg.h>
+# include <stdlib.h>
+
+typedef struct	s_ap
+{
+	unsigned int	nb_ap;
+	va_list			*ap_list;
+}				t_ap;
+
+typedef struct	s_ret
+{
+	int		i;
+	int		max;
+	char	*ret;
+}				t_ret;
+
 typedef struct	s_modifier
 {
-	unsigned int	hh:1;
-	unsigned int	h:1;
-	unsigned int	l:1;
-	unsigned int	ll:1;
-	unsigned int	j:1;
-	unsigned int	t:1;
-	unsigned int	z:1;
-	unsigned int	q:1;
-	unsigned int	upl:1;
+	_Bool	hh:1;
+	_Bool	h:1;
+	_Bool	l:1;
+	_Bool	ll:1;
+	_Bool	j:1;
+	_Bool	t:1;
+	_Bool	z:1;
+	_Bool	upl:1;
 }				t_modifier;
 
 typedef struct	s_flags
 {
-	unsigned int	hash:1;
-	unsigned int	zero:1;
-	unsigned int	minus:1;
-	unsigned int	space:1;
-	unsigned int	plus:1;
-	unsigned int	apost:1;
+	_Bool	hash:1;
+	_Bool	zero:1;
+	_Bool	minus:1;
+	_Bool	space:1;
+	_Bool	plus:1;
+	_Bool	apost:1;
 }				t_flags;
 
 #endif
