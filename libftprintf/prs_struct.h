@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 16:10:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/20 14:44:24 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/20 15:07:11 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 # define PRS_STRUCT_H
 
 # include <stdarg.h>
-# include <stdlib.h>
 
 typedef struct	s_ap
 {
-	unsigned int	nb_ap;
+	unsigned short	i_ap;
+	unsigned short	nb_ap;
 	va_list			*ap_list;
 }				t_ap;
 
 typedef struct	s_ret
 {
-	int		i;
-	int		max;
-	char	*ret;
+	unsigned short	i;
+	unsigned short	max;
+	char			*ret;
 }				t_ret;
 
 typedef struct	s_modifier
