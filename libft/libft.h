@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 11:55:45 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/20 10:08:00 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/20 10:18:35 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,8 @@ void			ft_putendl(char const *s);
 void			ft_putnbr(int n);
 
 void			ft_putuint(unsigned int n);
+
+void			ft_putuint_octal(unsigned int nbr);
 
 void			ft_putllnb(long long int n);
 
