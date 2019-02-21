@@ -6,13 +6,15 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 14:51:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/20 10:36:35 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/21 12:03:16 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "dispatcher.h"
 #define T_ (void*)
+#define W_ (void *(*)())
 #include "struct_disp.h"
+#include "wrappers.h"
 
 #include <stdlib.h>
 #include "libft.h"
@@ -22,37 +24,37 @@
 
 static const t_specifier	g_specifier[] =
 {
-	{ 'c', T_ & ft_putchar},
-	{ 'd', T_ & ft_putnbr},
-	{ 'e', T_ & ft_putnbr},
-	{ 'f', T_ & ft_putnbr},
-	{ 'i', T_ & ft_putnbr},
-	{ 'o', T_ & ft_putnbr_octal},
-	{ 's', T_ & ft_putstr},
-	{ 'u', T_ & ft_putuint},
-	{ 'x', T_ & ft_putnbr_lowhexa},
-	{ 'X', T_ & ft_putnbr_upphexa},
-	{ 'C', T_ & ft_putwchar},
-	{ 'p', T_ & ft_putaddr},
-	{ 'n', T_ & ft_putaddr},
-	{ 'D', T_ & ft_putuint},
-	{ 'O', T_ & ft_putuint_octal},
-	{ 'U', T_ & ft_putuint},
-	{ 'E', T_ & ft_putaddr},
-	{ 'F', T_ & ft_putaddr},
-	{ 'g', T_ & ft_putaddr},
-	{ 'G', T_ & ft_putaddr},
-	{ 'a', T_ & ft_putaddr},
-	{ 'A', T_ & ft_putaddr},
-	{ 'S', T_ & ft_putwstr},
-	{ '%', T_ & ft_putchar},
-	{ 'k', T_ & ft_putaddr},
-	{ 'r', T_ & ft_putaddr},
-	{ 'B', T_ & ft_putwcbits},
-	{ 'b', T_ & ft_printbits}
+	{ 'c', T_ & ft_putchar, W_ & passivewrap},
+	{ 'd', T_ & ft_putnbr, W_ & passivewrap},
+	{ 'e', T_ & ft_putnbr, W_ & passivewrap},
+	{ 'f', T_ & ft_putnbr, W_ & passivewrap},
+	{ 'i', T_ & ft_putnbr, W_ & passivewrap},
+	{ 'o', T_ & ft_putnbr_octal, W_ & passivewrap},
+	{ 's', T_ & ft_putstr, W_ & passivewrap},
+	{ 'u', T_ & ft_putuint, W_ & passivewrap},
+	{ 'x', T_ & ft_putnbr_lowhexa, W_ & passivewrap},
+	{ 'X', T_ & ft_putnbr_upphexa, W_ & passivewrap},
+	{ 'C', T_ & ft_putwchar, W_ & passivewrap},
+	{ 'p', T_ & ft_putaddr, W_ & passivewrap},
+	{ 'n', T_ & ft_putaddr, W_ & passivewrap},
+	{ 'D', T_ & ft_putuint, W_ & passivewrap},
+	{ 'O', T_ & ft_putuint_octal, W_ & passivewrap},
+	{ 'U', T_ & ft_putuint, W_ & passivewrap},
+	{ 'E', T_ & ft_putaddr, W_ & passivewrap},
+	{ 'F', T_ & ft_putaddr, W_ & passivewrap},
+	{ 'g', T_ & ft_putaddr, W_ & passivewrap},
+	{ 'G', T_ & ft_putaddr, W_ & passivewrap},
+	{ 'a', T_ & ft_putaddr, W_ & passivewrap},
+	{ 'A', T_ & ft_putaddr, W_ & passivewrap},
+	{ 'S', T_ & ft_putwstr, W_ & passivewrap},
+	{ '%', T_ & ft_putchar, W_ & passivewrap},
+	{ 'k', T_ & ft_putaddr, W_ & passivewrap},
+	{ 'r', T_ & ft_putaddr, W_ & passivewrap},
+	{ 'B', T_ & ft_putwcbits, W_ & passivewrap},
+	{ 'b', T_ & ft_printbits, W_ & passivewrap}
 };
 
-void				*dispatcher(char c)
+t_specifier				dispatcher(char c)
 {
 	char	i;
 
@@ -60,7 +62,8 @@ void				*dispatcher(char c)
 	while (i < NB_PTR && ft_strcmp(&g_specifier[(int)i].type, &c))
 		++i;
 	if (i == NB_PTR)
-		return (NULL);
+		return ((t_specifier){.f = NULL, .wrapper = NULL});
 	else
-		return (g_specifier[(int)i].f);
+		return ((t_specifier){.f = g_specifier[(int)i].f,
+				.wrapper = g_specifier[(int)i].wrapper});
 }

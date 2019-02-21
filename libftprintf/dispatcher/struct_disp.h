@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 14:49:00 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/18 16:42:54 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/21 11:51:05 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct	s_specifier
 {
 	TYPE	type;
 	void	*(*f)();
+	void	*(*wrapper)();
 }				t_specifier;
 
 #endif

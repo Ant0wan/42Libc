@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nowrap.c                                           :+:      :+:    :+:   */
+/*   passivewrap.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 10:38:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/21 11:01:55 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/21 11:48:29 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <starg.h>
+#include <stdarg.h>
 
-void	nowrap(void *(*f)(va_list ap))
+void	passivewrap(void *(*f)())
 {
-	f(va_arg(ap, typeof(ap)));
+	f();
 }

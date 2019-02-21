@@ -6,21 +6,21 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/07 11:08:30 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/21 11:42:35 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/21 11:40:34 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Dispatcher module
+# Wrappers module
 
-NAME = dispatcher
+NAME = wrappers
 
 CC = gcc
 
 FLAGS = -Werror -Wall -Wextra
 
-INCS = -I./../../libft/ -I./../../libftwchar/ -I./../wrappers/
+INCS = -I./
 
-O_FILES = dispatcher.o
+O_FILES = passivewrap.o
 
 %.o : %.c
 	@$(CC) $(FLAGS) $(INCS) $< -c

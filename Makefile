@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/20 10:27:45 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/21 12:12:17 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,9 @@ O_FILES = ft_printf.o ft_vdprintf.o ft_vasprintf.o ft_printf_prs.o \
 
 DISPATCHER_PATH = ./libftprintf/dispatcher/
 DISPATCHER = dispatcher.o \
+
+WRAPPERS_PATH = ./libftprintf/wrappers/
+WRAPPERS = passivewrap.o \
 
 LIBFT_PATH = ./libft/
 LIBFT = ft_bzero.o ft_isalpha.o ft_isdigit.o ft_isalnum.o \
@@ -65,7 +68,7 @@ $(NAME):
 	@$(MAKE) -C ./libftwchar objects
 	@printf "\n"
 	@$(MAKE) -C ./libftprintf objects
-	@ar rc $(NAME) $(addprefix $(O_FILES_PATH),$(O_FILES)) $(addprefix $(DISPATCHER_PATH),$(DISPATCHER)) $(addprefix $(LIBFT_PATH),$(LIBFT)) $(addprefix $(LIBFTWCHAR_PATH),$(LIBFTWCHAR)) $(addprefix $(UTF8_PATH),$(UTF8))
+	@ar rc $(NAME) $(addprefix $(O_FILES_PATH),$(O_FILES)) $(addprefix $(DISPATCHER_PATH),$(DISPATCHER)) $(addprefix $(WRAPPERS_PATH),$(WRAPPERS)) $(addprefix $(LIBFT_PATH),$(LIBFT)) $(addprefix $(LIBFTWCHAR_PATH),$(LIBFTWCHAR)) $(addprefix $(UTF8_PATH),$(UTF8))
 	@ranlib $(NAME)
 	@printf "\n\e[38;5;51m%4s [\e[1m$(NAME) built]\n\n\e[0m"
 	@printf "\e[38;5;50m\e[2mTo compile with the $(NAME), use the command-line: \e[0m\e[4mgcc main.c -L. -lftprintf\n\e[0m"
@@ -95,7 +98,7 @@ test:
 	@rm -f $(NAME)
 	@$(MAKE) -C ./libftprintf clean
 	@$(MAKE) -C ./libftprintf objects
-	@ar rc $(NAME) $(addprefix $(O_FILES_PATH),$(O_FILES)) $(addprefix $(DISPATCHER_PATH),$(DISPATCHER)) $(addprefix $(LIBFT_PATH),$(LIBFT)) $(addprefix $(LIBFTWCHAR_PATH),$(LIBFTWCHAR)) $(addprefix $(UTF8_PATH),$(UTF8))
+	@ar rc $(NAME) $(addprefix $(O_FILES_PATH),$(O_FILES)) $(addprefix $(DISPATCHER_PATH),$(DISPATCHER)) $(addprefix $(WRAPPERS_PATH),$(WRAPPERS)) $(addprefix $(LIBFT_PATH),$(LIBFT)) $(addprefix $(LIBFTWCHAR_PATH),$(LIBFTWCHAR)) $(addprefix $(UTF8_PATH),$(UTF8))
 	@ranlib $(NAME)
 	
 .PHONY: all clean fclean re objects
