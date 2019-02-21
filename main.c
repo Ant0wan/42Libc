@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/21 15:41:53 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/21 16:56:14 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,20 @@ int main(void)
 {
 	//	void	(*f)();
 
-	setlocale(LC_ALL, "");
+//	setlocale(LC_ALL, "");
 	//	f = dispatcher("o");
 	//	printf("%d\n", (int)f);
 	//	f = dispatcher("d");
 	//	printf("%d\n", (int)f);
 	//	if (f)
 	//		f(2000);
-	int o;
-	int k;
+//	int o;
+//	int k;
 
-	printf(" LENGTH t_ap: %lu\n", sizeof(t_ap));
-	printf(" LENGTH t_ret: %lu\n", sizeof(t_ret));
-	printf(" LENGTH t_modifier: %lu\n", sizeof(t_modifier));
-	printf(" LENGTH t_flags: %lu\n", sizeof(t_flags));
+//	printf(" LENGTH t_ap: %lu\n", sizeof(t_ap));
+//	printf(" LENGTH t_ret: %lu\n", sizeof(t_ret));
+//	printf(" LENGTH t_modifier: %lu\n", sizeof(t_modifier));
+//	printf(" LENGTH t_flags: %lu\n", sizeof(t_flags));
 	
 //	t_flags	flags;
 
@@ -50,17 +50,18 @@ int main(void)
 //	printf("Hello%nj%sijoj%n", &o,"Hello", &k);
 // 	printf("\n\n%d\n", o);
 // 	printf("\n\n%d\n", k);
-	printf("\n\n");
+	ft_printf("s\n%d\n", 5454);
+	printf("s\n%d\n", 5454);
 //	printf("%i", -INT_MIN); 
 //	printf("%O", UINT_MAX * 2); // OK
 //	printf("%D", UINT_MAX * -1); // OK
 //	printf("%.s", 428);
-	printf("\n\n");
+//	ft_printf("\ntest nothing except line\n");
 	//ft_printf("Hello %d\n", INT_MAX);
-	printf("Hello %n\n", &o);
-	printf("%d\n", o);
-	ft_printf("Hello %d\n", INT_MAX);
-	printf("\n\n");
+//	printf("Hello %n\n", &o);
+//	printf("%d\n", o);
+//	ft_printf("Hello %Z\n", INT_MAX);
+//	printf("\n\n");
 //	ft_printf("%.s", 42);
 
 //	ft_printf("Hello World%d", 2147483648);
@@ -70,7 +71,7 @@ int main(void)
 //	printf("\n\n");
 //	ft_printf("Hello World%d   k\n", -99420000000);
 //	ft_printf("Hello World%p   k\n", o);
-	printf("\n\n");
+//	printf("\n\n");
 //	printf("Hello World%d   k", -99420000000);
 //	printf("Hello World%p   k", o);
 //	printf("\n\n");

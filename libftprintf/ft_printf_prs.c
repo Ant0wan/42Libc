@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/21 15:40:34 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/21 17:01:01 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ int	printf_prs(char **ret, const char *format, va_list ap)
 {
 	t_specifier	s_functions;
 
-	s_functions.f = NULL;
-	s_functions.wrapper = NULL;
 	g_ret.ret = (char*)ret;
 	g_ret.i = -1;
 	while (format[++g_ret.i])
@@ -38,8 +36,6 @@ int	printf_prs(char **ret, const char *format, va_list ap)
 					s_functions.wrapper(s_functions.f, ap);
 				if (format[g_ret.i])
 					++g_ret.i;
-				else
-					return (0);
 			}
 		(*ret)[g_ret.i] = format[g_ret.i];
 	}
