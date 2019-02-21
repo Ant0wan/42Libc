@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_prs.h                                    :+:      :+:    :+:   */
+/*   valist_cpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/18 12:00:51 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/21 18:03:51 by abarthel         ###   ########.fr       */
+/*   Created: 2019/02/21 17:39:02 by abarthel          #+#    #+#             */
+/*   Updated: 2019/02/21 18:12:36 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_PRS_H
-# define FT_PRINTF_PRS_H
+#include "ft_printf_prs.h"
+#include "prs_struct.h"
 
-# include <stdarg.h>
+#include <stdlib.h>
+#include <stdarg.h>
 
-int	printf_prs(char **ret, const char *format, va_list ap);
+#include "libft.h"
 
-int	valist_cpy(va_list ap, va_list **array);
+t_ap	g_ap;
 
-#endif
+int	valist_cpy(va_list ap, va_list **array)
+{
+	(void)ap;
+	(void)array;
+	*array = (va_list*)ft_memalloc(sizeof(va_list) * g_ap.nb_ap);
+	return (0);
+}

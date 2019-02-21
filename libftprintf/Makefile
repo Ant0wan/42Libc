@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/07 11:08:30 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/21 11:41:48 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/21 17:59:06 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ FLAGS = -Werror -Wall -Wextra
 
 INCS = -I./dispatcher/ -I./../libftwchar/ -I./../libftwchar/utf8/ -I./../libft/ -I./wrappers/
 
-O_FILES = ft_printf.o ft_vdprintf.o ft_vasprintf.o ft_printf_prs.o \
+O_FILES = ft_printf.o ft_vdprintf.o ft_vasprintf.o ft_printf_prs.o valist_cpy.o \
 
 %.o : %.c
 	@$(CC) $(FLAGS) $(INCS) $< -c

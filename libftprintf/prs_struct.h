@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 16:10:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/21 15:22:51 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/21 18:10:23 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ typedef struct	s_ap
 	unsigned short	nb_ap;
 	va_list			*ap_list;
 }				t_ap;
+
+extern t_ap		g_ap;
 
 typedef struct	s_ret
 {
