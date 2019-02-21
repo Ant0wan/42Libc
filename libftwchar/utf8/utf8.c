@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 18:54:10 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/13 17:29:25 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/21 15:36:12 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,9 @@ static int	m0x10ffff_ut8(wchar_t *wc)
 
 int			utf8_encoder(wchar_t *wc)
 {
-	if (sizeof(wchar_t) != BYTE_WCHAR || *wc < 0)
+	_Static_assert(sizeof(wchar_t) == BYTE_WCHAR,
+			"System does not support 32bits wchar_t");
+	if (*wc < 0)
 		return (RET_ERROR);
 	else if (*wc <= 0x007F)
 		return ((int)*wc);
