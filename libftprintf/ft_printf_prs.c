@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/21 18:17:47 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/21 19:03:55 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	printf_prs(char **ret, const char *format, va_list ap)
 
 	g_ret.ret = (char*)ret;
 	g_ret.i = -1;
-	if (valist_cpy(ap, &g_ap.ap_list))
+	if (valist_cpy(ap, &g_ap.ap_list, format))
 		return (RET_ERROR);
 	while (format[++g_ret.i])
 	{
