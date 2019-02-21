@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/21 15:13:21 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/21 15:40:34 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,7 @@
 #include "prs_struct.h"
 #include "struct_disp.h"
 
-#include <stdio.h>
-
 t_ret	g_ret;
-
-int	sotre_va_list(char c);
 
 int	printf_prs(char **ret, const char *format, va_list ap)
 {
