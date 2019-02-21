@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/07 11:08:30 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/21 11:40:34 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/21 12:25:00 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,11 +24,11 @@ O_FILES = passivewrap.o
 
 %.o : %.c
 	@$(CC) $(FLAGS) $(INCS) $< -c
-	@printf "\e[38;5;88m%-20s \e[38;5;90mobject built\n\e[0m" $(basename $@)
+	@printf "\e[38;5;57m%-20s \e[38;5;27mobject built\n\e[0m" $(basename $@)
 
 clean:
 	@rm -f $(O_FILES)
-	@printf "\e[0m$(NAME)%1s\e[0m.o \e[38;5;89mfiles%1sdeleted ♻\n\e[0m"
+	@printf "\e[0m$(NAME)%1s\e[0m.o \e[38;5;56mfiles%1sdeleted ♻\n\e[0m"
 
 re: clean objects
 

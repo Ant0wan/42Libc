@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 14:51:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/21 12:03:16 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/21 13:50:10 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 #include <stdlib.h>
 #include "libft.h"
 #include "ft_wchar.h"
+
+#include <stdio.h> // DEBUGGING
 
 #define NB_PTR 28
 
@@ -59,7 +61,7 @@ t_specifier				dispatcher(char c)
 	char	i;
 
 	i = 0;
-	while (i < NB_PTR && ft_strcmp(&g_specifier[(int)i].type, &c))
+	while (i < NB_PTR && g_specifier[(int)i].type != c)
 		++i;
 	if (i == NB_PTR)
 		return ((t_specifier){.f = NULL, .wrapper = NULL});

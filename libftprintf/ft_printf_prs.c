@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/21 12:05:24 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/21 13:50:33 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include "libft.h"
 #include "prs_struct.h"
 #include "struct_disp.h"
+
+#include <stdio.h>
 
 static t_ret	g_ret;
 
@@ -34,9 +36,9 @@ int	printf_prs(char **ret, const char *format, va_list ap)
 			if (format[g_ret.i + 1])
 			{
 				s_functions = dispatcher(format[g_ret.i + 1]);
-				if ((s_functions.f))
+				if (s_functions.f)
 					s_functions.f(va_arg(ap, typeof(ap)));
-				while (format[g_ret.i])
+				if (format[g_ret.i])
 					++g_ret.i;
 			}
 		(*ret)[g_ret.i] = format[g_ret.i];
