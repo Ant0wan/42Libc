@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 14:51:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/21 13:50:10 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/21 14:10:54 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 #include <stdlib.h>
 #include "libft.h"
 #include "ft_wchar.h"
-
-#include <stdio.h> // DEBUGGING
 
 #define NB_PTR 28
 
