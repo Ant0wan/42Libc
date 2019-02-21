@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/07 11:08:30 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/21 12:25:00 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/21 14:51:59 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CC = gcc
 
 FLAGS = -Werror -Wall -Wextra
 
-INCS = -I./
+INCS = -I./ -I./../
 
 O_FILES = passivewrap.o
 

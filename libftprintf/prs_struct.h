@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 16:10:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/21 13:59:54 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/21 15:06:02 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ typedef struct	s_ret
 	unsigned short	max;
 	char			*ret;
 }				t_ret;
+
+extern t_ret	g_ret;
 
 typedef struct	s_modifier
 {
