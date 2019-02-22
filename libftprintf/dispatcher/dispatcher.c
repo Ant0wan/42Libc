@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 14:51:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/21 14:10:54 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/22 14:27:55 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 #define NB_PTR 28
 
-static const t_specifier	g_specifier[] =
+const t_specifier	g_specifier[] =
 {
 	{ 'c', T_ & ft_putchar, W_ & passivewrap},
 	{ 'd', T_ & ft_putnbr, W_ & passivewrap},

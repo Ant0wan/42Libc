@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/21 16:56:14 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/22 14:05:38 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ int main(void)
 	
 //	printf("Hello%nj%sijoj%n", &o,"Hello", &k);
 // 	printf("\n\n%d\n", o);
-// 	printf("\n\n%d\n", k);
-	ft_printf("s\n%d\n", 5454);
-	printf("s\n%d\n", 5454);
+ 	printf("%2$d\n", 42);
+	ft_printf(" #eH!&\(+-,/ ell*o# world * \n%0*#1.*d %0**#.*d %d\n", 5454, 42, 21, 1);
+//	printf("s\n%d %d\n", 5454);
 //	printf("%i", -INT_MIN); 
 //	printf("%O", UINT_MAX * 2); // OK
 //	printf("%D", UINT_MAX * -1); // OK
