@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 17:39:02 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/22 15:43:20 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/22 16:33:16 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@
 
 #define RET_ERROR -1
 
+#include <stdio.h> // DEBUGGING
+
 extern const t_specifier	g_specifier[];
 t_ap						g_ap;
 
-static _Bool	isintable(char c)
+static _Bool	isspecifier(char c)
 {
 	unsigned short	i;
 
@@ -33,6 +35,14 @@ static _Bool	isintable(char c)
 		if (!(c ^ g_specifier[i].type))
 			return (1);
 	return (0);
+}
+
+static _Bool	feed_aplist(void)
+{
+	if (!(g_ap.ap_list = (va_list*)ft_memalloc(sizeof(va_list) * g_ap.nb_ap)))
+		return (RET_ERROR);
+	else
+		return (0);
 }
 
 _Bool			valist_cpy(va_list ap, const char *fmt)
@@ -50,14 +60,14 @@ _Bool			valist_cpy(va_list ap, const char *fmt)
 			{
 				if (!(fmt[i] ^ '*'))
 					++g_ap.nb_ap;
-				else if (isintable(fmt[i]))
+				else if (isspecifier(fmt[i]))
 				{
 					specifier = 0;
 					++g_ap.nb_ap;
 				}
 			}
 		}
-	if (!(g_ap.ap_list = (va_list*)ft_memalloc(sizeof(va_list) * g_ap.nb_ap)))
+	if (feed_aplist())
 		return (RET_ERROR);
 	return (0);
 }
