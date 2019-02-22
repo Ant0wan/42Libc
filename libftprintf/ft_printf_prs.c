@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/22 17:38:45 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/22 17:59:08 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,19 +46,19 @@ char			printf_prs(char **ret, const char *format, va_list ap)
 			specifier = 1;
 			while (format[++g_ret.i] && specifier)
 			{
-				if (!(format[g_ret.i] ^ '*'))
+				if (!(format[g_ret.i] ^ '*')) // to add flags, and modifiers and dollar parser
 					(void)ap;
 				else if (isspecifier(format[g_ret.i]))
 				{
 					specifier = 0;
-					s_functions = dispatcher(format[g_ret.i + 1]);
+					s_functions = dispatcher(format[g_ret.i]);
 					if (s_functions.f)
 						s_functions.wrapper(s_functions.f, ap);
 				}
 			}
 		}
-		ft_putchar(format[g_ret.i]);
-	//	(*ret)[g_ret.i] = format[g_ret.i];
+		ft_putchar(format[g_ret.i]); // DEBUGGING
+//		(*ret)[g_ret.i] = format[g_ret.i]; // find a way to properly write on the allocated string
 	}
 	return (0);
 }
