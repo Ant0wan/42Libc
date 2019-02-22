@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 18:08:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/21 19:05:34 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/22 15:42:43 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 
 # include <stdarg.h>
 
-int	valist_cpy(va_list ap, va_list **array, const char *fmt);
+_Bool	valist_cpy(va_list ap, const char *fmt);
 
 #endif

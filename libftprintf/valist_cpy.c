@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 17:39:02 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/22 15:19:56 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/22 15:43:20 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 #define RET_ERROR -1
 
 extern const t_specifier	g_specifier[];
-
 t_ap						g_ap;
 
 static _Bool	isintable(char c)
@@ -36,7 +35,7 @@ static _Bool	isintable(char c)
 	return (0);
 }
 
-int				valist_cpy(va_list ap, va_list **array, const char *fmt)
+_Bool			valist_cpy(va_list ap, const char *fmt)
 {
 	unsigned short	i;
 	_Bool			specifier;
@@ -58,7 +57,7 @@ int				valist_cpy(va_list ap, va_list **array, const char *fmt)
 				}
 			}
 		}
-	if (!(*array = (va_list*)ft_memalloc(sizeof(va_list) * g_ap.nb_ap)))
+	if (!(g_ap.ap_list = (va_list*)ft_memalloc(sizeof(va_list) * g_ap.nb_ap)))
 		return (RET_ERROR);
 	return (0);
 }
