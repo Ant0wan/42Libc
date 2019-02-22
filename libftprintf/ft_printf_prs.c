@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/22 17:59:08 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/22 18:31:30 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "prs_struct.h"
 #include "struct_disp.h"
 
-static t_ap		g_ap;
+static va_list	ap_origin;
 t_ret			g_ret;
 
 static _Bool	isspecifier(char c)
@@ -38,7 +38,7 @@ char			printf_prs(char **ret, const char *format, va_list ap)
 
 	g_ret.ret = (char*)ret;
 	g_ret.i = -1;
-	va_copy(g_ap.origin, ap);
+	va_copy(ap_origin, ap);
 	while (format[++g_ret.i])
 	{
 		if (!(format[g_ret.i] ^ '%'))
@@ -47,7 +47,7 @@ char			printf_prs(char **ret, const char *format, va_list ap)
 			while (format[++g_ret.i] && specifier)
 			{
 				if (!(format[g_ret.i] ^ '*')) // to add flags, and modifiers and dollar parser
-					(void)ap;
+					(void)ap; // there is a need for a * structure keeping value *.*
 				else if (isspecifier(format[g_ret.i]))
 				{
 					specifier = 0;
@@ -57,8 +57,8 @@ char			printf_prs(char **ret, const char *format, va_list ap)
 				}
 			}
 		}
-		ft_putchar(format[g_ret.i]); // DEBUGGING
-//		(*ret)[g_ret.i] = format[g_ret.i]; // find a way to properly write on the allocated string
+//		ft_putchar(format[g_ret.i]); // DEBUGGING
+		(*ret)[g_ret.i] = format[g_ret.i]; // find a way to properly write on the allocated string
 	}
 	return (0);
 }

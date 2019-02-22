@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 16:13:29 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/21 16:59:07 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/22 18:27:44 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 
 int	ft_vasprintf(char **ret, const char *format, va_list ap)
 {
-	int				parse_ret;
 	extern t_ret	g_ret;
+	int				parse_ret;
 
 	g_ret.max = BUFF;
 	if (!(*ret = (char*)ft_memalloc(sizeof(**ret) * BUFF + 1)))

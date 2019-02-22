@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/22 17:04:17 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/22 18:26:37 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main(void)
 //	int o;
 //	int k;
 
-//	printf(" LENGTH t_ap: %lu\n", sizeof(t_ap));
+//	printf(" LENGTH ap_origin: %lu\n", sizeof(va_list));
 //	printf(" LENGTH t_ret: %lu\n", sizeof(t_ret));
 //	printf(" LENGTH t_modifier: %lu\n", sizeof(t_modifier));
 //	printf(" LENGTH t_flags: %lu\n", sizeof(t_flags));

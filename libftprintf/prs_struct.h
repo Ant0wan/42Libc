@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 16:10:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/22 16:53:21 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/22 18:24:27 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,6 @@
 # define PRS_STRUCT_H
 
 # include <stdarg.h>
-
-typedef struct	s_ap
-{
-	unsigned short	last_ap;
-	unsigned short	next_ap;
-	va_list			origin;
-}				t_ap;
 
 typedef struct	s_ret
 {
