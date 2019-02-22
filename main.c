@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/22 16:57:30 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/22 17:04:17 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int main(void)
 // 	printf("\n\n%d\n", flags.hash);
 	
 //	ft_printf("%B", L'😄');
-	ft_printf("%D", UINT_MAX * -1); // OK
+//	ft_printf("%D", UINT_MAX * -1); // OK
 //	ft_printf("%O", UINT_MAX * 2); // OK
 	
 //	printf("\n\n %*.*d \n\n",24,55, 10);
@@ -50,7 +50,7 @@ int main(void)
 //	printf("Hello%nj%sijoj%n", &o,"Hello", &k);
 // 	printf("\n\n%d\n", o);
 // 	printf("%2$d\n", 42);
-	ft_printf("Hello %**.* *d %*.*dhello\n", 5454, 42, 21, 1, 54, 68);
+	ft_printf("Hello%d a %**.* *d  b %*.*dend\n", 5454, 42, 21, 1, 54, 68, 55, 68, 88);
 //	ft_printf(" #eH!&\(+-,/ ell*o# world * \n%0*#1.*d %4*#.*d %d\n", 5454, 42, 21, 1, 54, 68);
 //	printf("s\n%d %d\n", 5454);
 //	printf("%i", -INT_MIN); 
