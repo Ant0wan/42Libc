@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/22 15:42:09 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/22 16:56:24 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,8 @@
 #include "libft.h"
 #include "prs_struct.h"
 #include "struct_disp.h"
-#include "valist_cpy.h"
 
-#define RET_ERROR -1
-
-extern	t_ap	g_ap;
+static t_ap		g_ap;
 t_ret			g_ret;
 
 int	printf_prs(char **ret, const char *format, va_list ap)
@@ -29,8 +26,7 @@ int	printf_prs(char **ret, const char *format, va_list ap)
 
 	g_ret.ret = (char*)ret;
 	g_ret.i = -1;
-	if (valist_cpy(ap, format))
-		return (RET_ERROR);
+	va_copy(g_ap.origin, ap);
 	while (format[++g_ret.i])
 	{
 		if (format[g_ret.i] == '%')

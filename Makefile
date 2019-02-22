@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/21 17:59:15 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/22 16:44:58 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ FLAGS = -Werror -Wall -Wextra
 ############################ OBJECTS #########################################
 
 O_FILES_PATH = ./libftprintf/
-O_FILES = ft_printf.o ft_vdprintf.o ft_vasprintf.o ft_printf_prs.o valist_cpy.o \
+O_FILES = ft_printf.o ft_vdprintf.o ft_vasprintf.o ft_printf_prs.o \
 
 DISPATCHER_PATH = ./libftprintf/dispatcher/
 DISPATCHER = dispatcher.o \

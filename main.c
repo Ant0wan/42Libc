@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/22 15:00:42 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/22 16:57:30 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int main(void)
 // 	printf("\n\n%d\n", flags.hash);
 	
 //	ft_printf("%B", L'😄');
-//	ft_printf("%D", UINT_MAX * -1); // OK
+	ft_printf("%D", UINT_MAX * -1); // OK
 //	ft_printf("%O", UINT_MAX * 2); // OK
 	
 //	printf("\n\n %*.*d \n\n",24,55, 10);
