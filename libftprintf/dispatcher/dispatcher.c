@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 14:51:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/22 14:27:55 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/22 15:16:41 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 #include <stdlib.h>
 #include "libft.h"
 #include "ft_wchar.h"
-
-#define NB_PTR 28
 
 const t_specifier	g_specifier[] =
 {

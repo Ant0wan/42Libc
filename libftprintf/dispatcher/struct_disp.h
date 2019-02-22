@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 14:49:00 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/22 14:27:45 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/22 15:10:05 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # ifndef TYPE
 #  define TYPE char
 # endif
+
+# define NB_PTR 28
 
 typedef struct	s_specifier
 {
