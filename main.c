@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/23 10:43:08 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/23 11:26:47 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,13 @@ int main(void)
 //	int o;
 //	int k;
 
-//	printf(" LENGTH flags_: %lu\n", sizeof(a));
+//	printf("\n____ PADDING TEST ____\n");
+//	printf(" LENGTH t_options: %lu\n", sizeof(t_options));
 //	printf(" LENGTH t_ret: %lu\n", sizeof(t_ret));
 //	printf(" LENGTH t_modifier: %lu\n", sizeof(t_modifier));
 //	printf(" LENGTH t_flags: %lu\n", sizeof(t_flags));
+//	printf(" LENGTH va_list: %lu\n", sizeof(va_list));
+//	printf("‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\n\n");
 	
 //	t_flags	flags;
 
@@ -50,7 +53,10 @@ int main(void)
 //	printf("Hello%nj%sijoj%n", &o,"Hello", &k);
 // 	printf("\n\n%d\n", o);
 // 	printf("%2$d\n", 42);
-	ft_printf("Hello%d a %**.* *C  b %*.*send  \n", 5454, L'😄', "DONE", 1, 54, 68, 55, 68, 88);
+	//printf("Hello%d a %**.* *C  b %*.*send  \n", 5454, L'😄', "DONE", 1, 54, 68, 55, 68, 88);
+//	ft_printf("Hello%d a %**.* *C  b %*.*send  \n", 5454, L'😄', "DONE", 1, 54, 68, 55, 68, 88);
+	ft_printf("%*.*d\n", 10, 20, 42);
+	printf("%*.*d\n", 10, 20, 42);
 //	printf("\n\n");
 //	printf("%*.*d\n", 10, 20, 42);
 //	printf("%12.9$d\n", 10, 20, 42);
