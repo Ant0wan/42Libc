@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/23 12:33:20 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/23 13:26:15 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 	t_specifier	s_functions;
 	_Bool		specifier;
 
-	if (!(format[g_ret.i] ^ '%'))
+	if (!(format[g_ret.i] ^ '%')) // SPECIFIER
 	{
 		specifier = 1;
-		while (format[++g_ret.i] && specifier)
+		while (format[++g_ret.i] && specifier) // WHEN IN %
 		{
 			if (!(format[g_ret.i] ^ '.')) // check precision
 			{

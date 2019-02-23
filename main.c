@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/23 12:33:54 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/23 13:26:09 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,12 @@ int main(void)
 	//ft_printf("%*.*d\n", 10, 20, 42);
 	//printf("%*.*d\n", 10, 20, 42);
 	//printf("%2$d,  %*.*d\n", 10, 20, 42, 5, 6);
-	ft_printf("%*100d\n", 10, 42);
-	printf("%*100d\n", 10, 42);
+//	ft_printf("%*21d\n", 10, 42);
+//	printf("%*21d\n", 10, 42);
+//	printf("%.*2$d\n", 10, 42);
+//	printf("%*2$d\n", 10, 42);
+	//printf("H%3$H%de3$re:%*3$.*2$d\n", 10, 42, 10, 21); // KEY BEHAVIOR with dollars and stars
+	printf("H%3$H%3$de3$re:%*3$.*3$3$d\n", 10, 42, 10, 21); // KEY BEHAVIOR with dollars and stars
 //	printf("\n\n");
 //	printf("%*.*d\n", 10, 20, 42);
 //	printf("%12.9$d\n", 10, 20, 42);
@@ -99,10 +103,10 @@ int main(void)
 	printf("\n\n");
 //	printf("4567 |%-10]5d| plip\n", 12);
 //	printf("4567 |%10]5d| plip\n", 12);
-	printf("|%10 30.5.10 15d|\n", -12);
-	printf("|%10d|\n", -12);
-	printf("|%010d|\n", -12); 
-	printf("|%-10.5d|\n", -12);
-	printf("|%-010.5d|\n", -12);
+	//printf("|%10 30.5.10 15d|\n", -12);
+	//printf("|%10d|\n", -12);
+	//printf("|%010d|\n", -12); 
+	//printf("|%-10.5d|\n", -12);
+	//printf("|%-010.5d|\n", -12);
 	return (0);
 }
