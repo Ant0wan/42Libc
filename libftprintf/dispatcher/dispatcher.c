@@ -6,17 +6,18 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 14:51:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/22 17:20:25 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/23 09:16:54 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
+#include <stdlib.h>
 
 #include "dispatcher.h"
 #define T_ (void*)
 #define W_ (void *(*)())
 #include "struct_disp.h"
 #include "wrappers.h"
-
-#include <stdlib.h>
 #include "libft.h"
 #include "ft_wchar.h"
 

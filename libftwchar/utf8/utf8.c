@@ -6,12 +6,11 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 18:54:10 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/21 18:21:51 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/22 18:39:44 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <unistd.h>
 
 #define BYTE_WCHAR 4
 #define RET_ERROR -1

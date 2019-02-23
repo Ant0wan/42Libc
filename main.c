@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/22 18:26:37 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/23 10:43:08 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main(void)
 //	int o;
 //	int k;
 
-//	printf(" LENGTH ap_origin: %lu\n", sizeof(va_list));
+//	printf(" LENGTH flags_: %lu\n", sizeof(a));
 //	printf(" LENGTH t_ret: %lu\n", sizeof(t_ret));
 //	printf(" LENGTH t_modifier: %lu\n", sizeof(t_modifier));
 //	printf(" LENGTH t_flags: %lu\n", sizeof(t_flags));
@@ -50,7 +50,15 @@ int main(void)
 //	printf("Hello%nj%sijoj%n", &o,"Hello", &k);
 // 	printf("\n\n%d\n", o);
 // 	printf("%2$d\n", 42);
-	ft_printf("Hello%d a %**.* *d  b %*.*dend\n", 5454, 42, 21, 1, 54, 68, 55, 68, 88);
+	ft_printf("Hello%d a %**.* *C  b %*.*send  \n", 5454, L'😄', "DONE", 1, 54, 68, 55, 68, 88);
+//	printf("\n\n");
+//	printf("%*.*d\n", 10, 20, 42);
+//	printf("%12.9$d\n", 10, 20, 42);
+//	printf("%12.99999$d\n", 10, 20, 42);
+//	printf("%12 1$d\n", 10, 20, 42);
+//	printf("%12,1$d\n", 10, 20, 42);
+//	printf("%12/1$d\n", 10, 20, 42);
+//	printf("Hello%d a %**.* *  b %*.*send  \n", 5454, L'😄', "DONE", 1, 54, 68, 55, 68, 88);
 //	ft_printf(" #eH!&\(+-,/ ell*o# world * \n%0*#1.*d %4*#.*d %d\n", 5454, 42, 21, 1, 54, 68);
 //	printf("s\n%d %d\n", 5454);
 //	printf("%i", -INT_MIN); 
@@ -79,13 +87,13 @@ int main(void)
 //	ft_printf("%d\n", "😄");// OK
 //	printf("\n\n");
 //	printf("%d\n", "😄"); // OK
-//	printf("\n\n");
+	printf("\n\n");
 //	printf("4567 |%-10]5d| plip\n", 12);
 //	printf("4567 |%10]5d| plip\n", 12);
-//	printf("|%10.5d|\n", -12);
-//	printf("|%10d|\n", -12);
-//	printf("|%010d|\n", -12); 
-//	printf("|%-10.5d|\n", -12);
-//	printf("|%-010.5d|\n", -12);
+	printf("|%10 30.5.10 15d|\n", -12);
+	printf("|%10d|\n", -12);
+	printf("|%010d|\n", -12); 
+	printf("|%-10.5d|\n", -12);
+	printf("|%-010.5d|\n", -12);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/29 12:21:19 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/23 10:23:08 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ char	*ft_itoa(int n)
 		return (NULL);
 	if (n <= 0)
 		*string = n == 0 ? '0' : '-';
-	string[i] = '\0';
+	string[i] = 0;
 	cp = n < 0 ? n * -1 : n;
 	while (cp)
 	{
-		string[--i] = cp % 10 + 48;
+		string[--i] = (cp % 10) ^ 0x30;
 		cp = (cp - cp % 10) / 10;
 	}
 	return (string);
