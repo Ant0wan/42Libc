@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/23 11:33:30 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/23 12:33:20 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@
 
 #include <stdio.h> // DEBUGGING
 
-static va_list	ap_origin;
+static va_list	g_ap_origin;
 t_ret			g_ret;
-t_options		g_options;
+t_options		g_options =
+{.width = 0, .precision = 0, .i_ap = 0, .val_dol = 1};
 
 static _Bool	isspecifier(char c)
 {
@@ -45,13 +46,18 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 		while (format[++g_ret.i] && specifier)
 		{
 			if (!(format[g_ret.i] ^ '.')) // check precision
+			{
 				if (!(format[++g_ret.i] ^ '*'))
 				{
 					g_options.precision = va_arg(ap, int);
 					++g_options.i_ap;
 				}
-			if (!(format[g_ret.i] ^ '*')) // to add flags, and modifiers and dollar parser
-				(void)ap; // check width value and feed the g_otpions
+			}
+			else if (!(format[g_ret.i] ^ '*')) // to add flags, and modifiers and dollar parser
+			{
+				g_options.width = va_arg(ap, int);
+				++g_options.i_ap;
+			}
 			else if (isspecifier(format[g_ret.i]))
 			{
 				specifier = 0;
@@ -64,13 +70,11 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 	return (0);
 }
 
-char			printf_prs(char **ret, const char *format, va_list ap)
+char			printf_prs(const char *format, va_list ap)
 {
-	g_ret.ret = (char*)ret;
-	g_ret.i = -1;
-	va_copy(ap_origin, ap);
+	va_copy(g_ap_origin, ap);
 	while (format[++g_ret.i] && !(prs_specifier(format, ap)))
-//		ft_putchar(format[g_ret.i]); // DEBUGGING
-		(*ret)[g_ret.i] = format[g_ret.i]; // find a way to properly write on the allocated string
+		ft_putchar(format[g_ret.i]); // DEBUGGING
+//		(*ret)[g_ret.i] = format[g_ret.i]; // find a way to properly write on the allocated string
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 16:10:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/23 11:33:08 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/23 12:10:36 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ typedef struct	s_options
 	int	width;
 	int	precision;
 	int	i_ap;
+	int	val_dol;
 }				t_options;
 
 extern t_options	g_options;
