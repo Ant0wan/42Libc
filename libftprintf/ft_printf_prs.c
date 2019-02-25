@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/25 15:43:44 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/25 18:00:07 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,31 +60,42 @@ static void		get_precision(const char *format, va_list ap)
 		g_options.precision = va_arg(ap, int);
 		++g_options.i_ap;
 	}
-	else if ((format[g_ret.i] & '0') == '0')
+	else if (!((format[g_ret.i] & '0')) ^ '0')
 		if (format[g_ret.i] > '0' && format[g_ret.i] <= '9')
 			g_options.precision = ft_atoi_special(format);
 }
 
-static void		get_flags(const char *format)
+static void		get_flags(const char *format, _Bool *specifier)
 {
-	if (format[g_ret.i] == '#')
+	if (!(format[g_ret.i] ^ '#'))
 		g_flags.hash = 1;
-	else if (format[g_ret.i] == '-')
+	else if (!(format[g_ret.i] ^ '-'))
 	{
 		g_flags.minus = 1;
 		g_flags.zero = 0;
 	}
-	else if (g_flags.minus == 0 && format[g_ret.i] == '0')
-		g_flags.zero = 1;
-	else if (format[g_ret.i] == '+')
+	else if (!(format[g_ret.i] ^ '0'))
+	{
+		if (!(g_flags.minus))
+			g_flags.zero = 1;
+	}
+	else if (!(format[g_ret.i] ^ '+'))
 	{
 		g_flags.plus = 1;
 		g_flags.space = 0;
 	}
-	else if (g_flags.plus == 0 && format[g_ret.i] == ' ')
-		g_flags.space = 1;
-	else if (format[g_ret.i] == '\'')
+	else if (!(format[g_ret.i] ^ ' '))
+	{
+		if (!(g_flags.plus))
+			g_flags.space = 1;
+	}
+	else if (!(format[g_ret.i] ^ '\''))
 		g_flags.apost = 1;
+	else // better filter
+	{
+		*specifier = 0;
+		ft_putchar(format[g_ret.i]); //write the character with character wrapper and character function
+	}
 }
 
 static _Bool	prs_specifier(const char *format, va_list ap)
@@ -97,6 +108,7 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 		specifier = 1;
 		while (format[++g_ret.i] && specifier)
 		{
+//			printf("here:%s", &format[g_ret.i]);
 			if (format[g_ret.i] > '0' && format[g_ret.i] <= '9')
 				g_options.width = ft_atoi_special(format);
 			else if (!(format[g_ret.i] ^ '.'))
@@ -106,8 +118,10 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 				g_options.width = va_arg(ap, int);
 				++g_options.i_ap;
 			}
-			else if ((format[g_ret.i] & ' ') == ' ' && format[g_ret.i] < '1')
-					get_flags(format);
+			else if (!((format[g_ret.i] & ' ') ^ ' ') && format[g_ret.i] < '1') // too many char going in !!
+			{
+				get_flags(format, &specifier);
+			}
 			else if (isspecifier(format[g_ret.i]))
 			{
 				specifier = 0;
@@ -115,21 +129,21 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 				if (s_functions.f)
 					s_functions.wrapper(s_functions.f, ap);
 			}
-			else // MUST TEST CHARACTERS THAT STOP THE ARG they are certainly an ascii value
+			else if (specifier)
 			{
+				specifier = 0;
 				ft_putchar(format[g_ret.i]); //write the character with character wrapper and character function
-				++g_ret.i; // tests
-				return (0); // tests
 			}
+//			printf(" end:%s", &format[g_ret.i]);
 		}
-	//	printf("\nwidth: %d\n", g_options.width);
-	//	printf("precision: %d\n", g_options.precision);
-	//	printf("hash:%d\n", g_flags.hash);
-	//	printf("zero:%d\n", g_flags.zero);
-	//	printf("minus:%d\n", g_flags.minus);
-	//	printf("space:%d\n", g_flags.space);
-	//	printf("plus:%d\n", g_flags.plus);
-	//	printf("apost:%d\n", g_flags.apost);
+//		printf("\nwidth: %d\n", g_options.width);
+//		printf("precision: %d\n", g_options.precision);
+//		printf("hash:%d\n", g_flags.hash);
+//		printf("zero:%d\n", g_flags.zero);
+//		printf("minus:%d\n", g_flags.minus);
+//		printf("space:%d\n", g_flags.space);
+//		printf("plus:%d\n", g_flags.plus);
+//		printf("apost:%d\n", g_flags.apost);
 	}
 	return (0);
 }
