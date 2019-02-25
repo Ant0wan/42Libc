@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/25 15:26:09 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/25 15:42:18 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,8 +135,20 @@ int main(void)
 //	printf("\n\n");
 //	printf("%d\n", "😄"); // OK
 	printf("\n\n");
-	printf("4567 |%-10 5d| %20d plip\n", 12, 14);
-	ft_printf("4567 |%-10 5d| %20d plip\n", 12, 14);
+	printf("4567 |%-10]5d| plip\n", 12);
+	ft_printf("4567 |%-10]5d| plip\n", 12);
+	printf("\n\n");
+	printf("4567 |%-10!5d| plip\n", 12);
+	ft_printf("4567 |%-10!5d| plip\n", 12);
+	printf("\n\n");
+	printf("4567 |%-10'\0'5d| plip\n", 12);
+	ft_printf("4567 |%-10'\0'5d| plip\n", 12);
+	printf("\n\n");
+	printf("4567 |%d-10'\0'5d| plip\n", 12);
+	ft_printf("4567 |%d-10'\0'5d| plip\n", 12);
+	printf("\n\n");
+	printf("4567 |%", 12);
+	ft_printf("4567 |%", 12);
 //	printf("4567 |%-10]5d| plip\n", 12);
 //	ft_printf("4567 |%-10]5d| plip\n", 12);
 //	printf("4567 |%10]5d| plip\n", 12);

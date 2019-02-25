@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/25 15:25:33 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/25 15:43:44 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,8 +115,12 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 				if (s_functions.f)
 					s_functions.wrapper(s_functions.f, ap);
 			}
-			else
+			else // MUST TEST CHARACTERS THAT STOP THE ARG they are certainly an ascii value
+			{
 				ft_putchar(format[g_ret.i]); //write the character with character wrapper and character function
+				++g_ret.i; // tests
+				return (0); // tests
+			}
 		}
 	//	printf("\nwidth: %d\n", g_options.width);
 	//	printf("precision: %d\n", g_options.precision);
