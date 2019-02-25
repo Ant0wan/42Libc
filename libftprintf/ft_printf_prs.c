@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/25 18:00:07 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/25 18:30:33 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_options		g_options =
 static t_flags	g_flags =
 {.hash = 0, .zero = 0, .minus = 0, .space = 0, .plus = 0, .apost = 0};
 
-static int		ft_atoi_special(const char *str)
+static int		ft_atoi_special(const char *str) // ADDING $ mgt here ??
 {
 	int	nbr;
 
@@ -119,9 +119,7 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 				++g_options.i_ap;
 			}
 			else if (!((format[g_ret.i] & ' ') ^ ' ') && format[g_ret.i] < '1') // too many char going in !!
-			{
 				get_flags(format, &specifier);
-			}
 			else if (isspecifier(format[g_ret.i]))
 			{
 				specifier = 0;

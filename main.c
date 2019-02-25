@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/25 17:49:33 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/25 18:23:57 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ int main(void)
 //	printf("H%3$H%3$de3$re:%*3$.*3$3$d\n", 10, 42, 10, 21); // KEY BEHAVIOR with dollars and stars
 //	printf("This: % *.-42.954do\n", 42, 10, 15, 45);
 //	ft_printf("This: % *.-42.954do\n", 42, 10, 15, 45);
-	printf("This: % * +- 0 ..9..** do\n", 18, 10, 15, 45, 66);
-	ft_printf("This: % * +- 0 ..9..** do\n", 18, 10, 15, 45, 66);
+//	printf("This: % * +- 0 ..9..** do\n", 18, 10, 15, 45, 66);
+//	ft_printf("This: % * +- 0 ..9..** do\n", 18, 10, 15, 45, 66);
 //	printf("This: % * # 0 ..9..** do\n", 18, 10, 15, 45, 66);
 //	ft_printf("This: % * # 0 ..9..** do\n", 18, 10, 15, 45, 66);
 //	printf("This: % * ..9..*45 .12* do\n", 18, 10, 15, 45, 66);
@@ -75,14 +75,14 @@ int main(void)
 
 //	ft_printbits(' ');
 //	ft_putchar('\n');
-	int i;
-
-	i = 0;
-	while (++i <= 128)
-	{
-		if (!(((i & ' ')) ^ ' ') && i < '1')
-			printf("%c\n", i);
-	}
+//	int i;
+//
+//	i = 0;
+//	while (++i <= 128)
+//	{
+//		if (!(((i & ' ')) ^ ' ') && i < '1')
+//			printf("%c\n", i);
+//	}
 
 
 //	printf("This: % 400 0*# ..9..*45 .124.* 220do\n", 18, 10, 15, 45, 66);
@@ -136,18 +136,21 @@ int main(void)
 //	printf("\n\n");
 //	printf("%d\n", "😄"); // OK
 //	printf("\n\n");
-	printf("4567 |%10]5d| plip\n", 12);
-	ft_printf("4567 |%10]5d| plip\n", 12);
-	printf("\n\n");
-	printf("4567 |%-10]5d| plip%d\n", 12);
-	ft_printf("4567 |%-10]5d| plip%d\n", 12);
-	printf("\n\n");
-	printf("I4567 |%-10!d| plip\n", 12);
-	ft_printf("I4567 |%-10!d| plip\n", 12);
-	printf("\n\n");
-	printf("I4567 |%10!d| plip\n", 12);
-	ft_printf("I4567 |%10!d| plip\n", 12);
-	printf("\n\n");
+//	printf("4567 |%10]5d| plip\n", 12);
+//	ft_printf("4567 |%10]5d| plip\n", 12);
+//	printf("\n\n");
+//	printf("4567 |%-10]5d| plip%d\n", 12);
+//	ft_printf("4567 |%-10]5d| plip%d\n", 12);
+//	printf("\n\n");
+//	printf("I4567 |%-10!d| plip\n", 12);
+//	ft_printf("I4567 |%-10!d| plip\n", 12);
+//	printf("\n\n");
+//	printf("I4567 |%10!d| plip\n", 12);
+//	ft_printf("I4567 |%10!d| plip\n", 12);
+//	printf("\n\n");
+//	printf("I4567 |%1😄0!d| plip\n", 12);
+//	ft_printf("I4567 |%1😄0!d| plip\n", 12);
+//	printf("\n\n");
 //	printf("4567 |%-10'\0'5d| plip\n", 12);
 //	printf("\n\n");
 //	printf("\n\n");
@@ -155,6 +158,7 @@ int main(void)
 //	printf("\n\n");
 //	printf("4567 |%d-10'\0'5d| plip\n", 12);
 //	ft_printf("4567 |%d-10'\0'5d| plip\n", 12);
+//	printf("4567 |%d-10'\0'5d| plip\n", 12);
 //	printf("\n\n");
 //	printf("4567 |%", 12);
 //	ft_printf("4567 |%", 12);
@@ -165,7 +169,14 @@ int main(void)
 //	ft_printf("|%10 30.5.10 15d|\n", -12);
 //	printf("|%10d|\n", -12);
 //	printf("|%010d|\n", -12); 
+//	ft_printf("|%010d|\n", -12); 
 //	printf("|%-10.5d|\n", -12);
+//	ft_printf("|%-10.5d|\n", -12);
 //	printf("|%-010.5d|\n", -12);
+//	ft_printf("|%-010.5d|\n", -12);
+
+	printf("%3$d %*1$2$d", 18, 45, 67, 62);
+
+
 	return (0);
 }
