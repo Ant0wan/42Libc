@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/25 11:23:00 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/25 12:28:43 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,12 @@ int main(void)
 //	printf("H%3$H%3$de3$re:%*3$.*3$3$d\n", 10, 42, 10, 21); // KEY BEHAVIOR with dollars and stars
 //	printf("This: % *.-42.954do\n", 42, 10, 15, 45);
 //	ft_printf("This: % *.-42.954do\n", 42, 10, 15, 45);
-	printf("This: % * ..9..* do\n", 18, 10, 15, 45, 66);
-	ft_printf("This: % * ..9..* do\n", 18, 10, 15, 45, 66);
+	//printf("This: % * ..9..** do\n", 18, 10, 15, 45, 66);
+	//ft_printf("This: % * ..9..** do\n", 18, 10, 15, 45, 66);
+//	printf("This: % * ..9..*45 .12* do\n", 18, 10, 15, 45, 66);
+//	ft_printf("This: % * ..9..*45 .12* do\n", 18, 10, 15, 45, 66);
+	printf("This: % * ..9..*45 .12* -100do\n", 18, 10, 15, 45, 66);
+	ft_printf("This: % * ..9..*45 .12* -100do\n", 18, 10, 15, 45, 66);
 	//printf("This: % *. 4 9do\n", 18, 10, 15, 45);
 	//ft_printf("This: % *. 4 9do\n", 18, 10, 15, 45);
 //	printf("This: % -61do\n", 42, 10, 15, 45);

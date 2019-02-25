@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/25 12:05:34 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/25 12:29:36 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ static int		ft_atoi_special(const char *str)
 		nbr = nbr * 10 + (str[g_ret.i] ^ '0');
 		++g_ret.i;
 	}
+	--g_ret.i;
 	return (nbr);
 }
 
@@ -50,15 +51,15 @@ static _Bool	isspecifier(char c)
 
 static void		get_precision(const char *format, va_list ap)
 {
-	printf("check: |%s", &format[g_ret.i]);
+//	printf("check: |%s", &format[g_ret.i]);
 	while (!(format[g_ret.i] ^ '.'))
 	{
 		++g_ret.i;
-		printf("check2: |%s", &format[g_ret.i]);
+//		printf("check2: |%s", &format[g_ret.i]);
 	}
 	if (!(format[g_ret.i] ^ '*'))
 	{
-		printf("GET precision from wildcard%s\n", &format[g_ret.i]);
+//		printf("GET precision from wildcard%s\n", &format[g_ret.i]);
 		g_options.precision = va_arg(ap, int);
 		++g_options.i_ap;
 	}
@@ -66,12 +67,18 @@ static void		get_precision(const char *format, va_list ap)
 	{
 		if (format[g_ret.i] > '0' && format[g_ret.i] <= '9')
 		{
-			printf("%s\n", &format[g_ret.i]);
+//			printf("%s\n", &format[g_ret.i]);
 			g_options.precision = ft_atoi_special(format);
 		}
 	}
-	printf("precision: %d\n", g_options.precision);
+//	printf("precision: %d\n", g_options.precision);
 }
+
+//static void		get_width(const char *format, va_list ap)
+//{
+
+
+//}
 
 static _Bool	prs_specifier(const char *format, va_list ap)
 {
@@ -83,7 +90,7 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 		specifier = 1;
 		while (format[++g_ret.i] && specifier)
 		{
-			printf("loop: |%s\n", &format[g_ret.i]);
+//			printf("loop: |%s\n", &format[g_ret.i]);
 			//add flags parsing here ? like 0, -, # etc
 			if (!(format[g_ret.i] ^ '.'))
 				get_precision(format, ap);
@@ -91,14 +98,15 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 			{
 				g_options.width = va_arg(ap, int);
 				++g_options.i_ap;
-				printf("width: %d\n", g_options.width);
+//				printf(">* width: %d\n", g_options.width);
 			}
-	//		else if ((format[g_ret.i] & '0') == '0' ? 1: 0)
-	//		{
-	//			if (format[g_ret.i] > '0' && format[g_ret.i] <= '9')
-	//				g_options.width = ft_atoi_special(format);
-	//			++g_ret.i;
-	//		} // A revoir !...
+			else if ((format[g_ret.i] & '0') == '0' ? 1: 0)
+			{
+				if (format[g_ret.i] > '0' && format[g_ret.i] <= '9')
+					g_options.width = ft_atoi_special(format);
+//				printf(">digit width: %d\n", g_options.width);
+//				printf("where it stands after digit: |%s\n", &format[g_ret.i]);
+			} // A revoir !...
 			else if (isspecifier(format[g_ret.i]))
 			{
 				specifier = 0;
@@ -106,6 +114,7 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 				if (s_functions.f)
 					s_functions.wrapper(s_functions.f, ap);
 			}
+//			printf("end of loop: |%s\n", &format[g_ret.i]);
 			printf("\nwidth: %d\n", g_options.width);
 			printf("precision: %d\n", g_options.precision);
 		}
