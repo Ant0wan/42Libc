@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/25 12:35:38 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/25 14:09:11 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,16 @@ static void		get_precision(const char *format, va_list ap)
 		g_options.precision = va_arg(ap, int);
 		++g_options.i_ap;
 	}
-	else if ((format[g_ret.i] & '0') == '0' ? 1: 0)
+	else if ((format[g_ret.i] & '0') == '0')
 		if (format[g_ret.i] > '0' && format[g_ret.i] <= '9')
-		{
 			g_options.precision = ft_atoi_special(format);
-		}
+}
+
+static void		get_flags(const char *format)
+{
+	if (format[g_ret.i] == '-')
+		g_flags.minus = 1;
+	printf("flags: %c\n", format[g_ret.i]);
 }
 
 static _Bool	prs_specifier(const char *format, va_list ap)
@@ -77,7 +82,6 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 		specifier = 1;
 		while (format[++g_ret.i] && specifier)
 		{
-			//add flags parsing here ? like 0, -, # etc
 			if (!(format[g_ret.i] ^ '.'))
 				get_precision(format, ap);
 			else if (!(format[g_ret.i] ^ '*')) // to add flags, and modifiers and dollar parser
@@ -85,7 +89,12 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 				g_options.width = va_arg(ap, int);
 				++g_options.i_ap;
 			}
-			else if ((format[g_ret.i] & '0') == '0' ? 1: 0)
+			else if ((format[g_ret.i] & ' ') == ' ') //add flags parsing here ? like 0, -, # etc
+			{
+				if (format[g_ret.i] < '0')
+					get_flags(format);
+			}
+			else if ((format[g_ret.i] & '0') == '0')
 			{
 				if (format[g_ret.i] > '0' && format[g_ret.i] <= '9')
 					g_options.width = ft_atoi_special(format);
@@ -97,8 +106,8 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 				if (s_functions.f)
 					s_functions.wrapper(s_functions.f, ap);
 			}
-			printf("\nwidth: %d\n", g_options.width);
-			printf("precision: %d\n", g_options.precision);
+		//	printf("\nwidth: %d\n", g_options.width);
+		//	printf("precision: %d\n", g_options.precision);
 	//		printf("hash:%d\n", g_flags.hash);
 	//		printf("zero:%d\n", g_flags.zero);
 			printf("minus:%d\n", g_flags.minus);
