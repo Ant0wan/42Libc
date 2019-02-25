@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/23 13:26:09 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/25 11:23:00 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int main(void)
 //	printf(" LENGTH t_flags: %lu\n", sizeof(t_flags));
 //	printf(" LENGTH va_list: %lu\n", sizeof(va_list));
 //	printf("‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\n\n");
-	
+
 //	t_flags	flags;
 
 //	flags.hash = 1;
@@ -63,8 +63,21 @@ int main(void)
 //	printf("%.*2$d\n", 10, 42);
 //	printf("%*2$d\n", 10, 42);
 	//printf("H%3$H%de3$re:%*3$.*2$d\n", 10, 42, 10, 21); // KEY BEHAVIOR with dollars and stars
-	printf("H%3$H%3$de3$re:%*3$.*3$3$d\n", 10, 42, 10, 21); // KEY BEHAVIOR with dollars and stars
-//	printf("\n\n");
+//	printf("H%3$H%3$de3$re:%*3$.*3$3$d\n", 10, 42, 10, 21); // KEY BEHAVIOR with dollars and stars
+//	printf("This: % *.-42.954do\n", 42, 10, 15, 45);
+//	ft_printf("This: % *.-42.954do\n", 42, 10, 15, 45);
+	printf("This: % * ..9..* do\n", 18, 10, 15, 45, 66);
+	ft_printf("This: % * ..9..* do\n", 18, 10, 15, 45, 66);
+	//printf("This: % *. 4 9do\n", 18, 10, 15, 45);
+	//ft_printf("This: % *. 4 9do\n", 18, 10, 15, 45);
+//	printf("This: % -61do\n", 42, 10, 15, 45);
+//	printf("This: % -61.7 do\n", 42, 10, 15, 45);
+//	printf("This: % 0.42.-61do\n", 42, 10, 15, 45);
+//	ft_printf("This: % 0.-42.*do\n", 42, 10, 15, 45);
+//	printf("This: % 0.-42.*do\n", 42, 10, 15, 45);
+//	printf("This: % *.*d\n", 42, 10, 15, 45);
+//	printf("This: % .** 10d\n", 42, 10, 15, 45);
+	//	printf("\n\n");
 //	printf("%*.*d\n", 10, 20, 42);
 //	printf("%12.9$d\n", 10, 20, 42);
 //	printf("%12.99999$d\n", 10, 20, 42);
