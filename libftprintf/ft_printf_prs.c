@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/27 09:55:02 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/27 14:57:23 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,26 @@ static int		ft_atoi_special(const char *str) // ADDING $ mgt here ??
 	}
 	--g_ret.i;
 	return (nbr);
+}
+
+static int		ft_getif_dollar(const char *str)
+{
+	int	nbr;
+	int	i;
+
+	nbr = 0;
+	i = 0;
+	while (str[i] > 47 && str[i] < 58)
+	{
+		nbr = nbr * 10 + (str[i] ^ '0');
+		++i;
+	}
+	if (!(str[i] ^ '$'))
+	{
+		g_ret.i += i + 1;
+		return (nbr);
+	}
+	return (0);
 }
 
 static _Bool	isspecifier(char c)
@@ -102,6 +122,7 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 {
 	t_specifier	s_functions;
 	_Bool		specifier;
+	int			doltest;
 
 	if (!(format[g_ret.i] ^ '%'))
 	{
@@ -110,7 +131,12 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 		{
 //			printf("here:%s", &format[g_ret.i]);
 			if (format[g_ret.i] > '0' && format[g_ret.i] <= '9')
-				g_options.width = ft_atoi_special(format);
+			{
+				if (!(doltest = ft_getif_dollar(&format[g_ret.i])))
+					g_options.val_dol = doltest;
+				else
+					g_options.width = ft_atoi_special(format);
+			}
 			else if (!(format[g_ret.i] ^ '.'))
 				get_precision(format, ap);
 			else if (!(format[g_ret.i] ^ '*')) // to add dollar parser taking * and numbers
@@ -137,9 +163,9 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 		printf("\nwidth: %d\n", g_options.width);
 		printf("precision: %d\n", g_options.precision);
 //		printf("hash:%d\n", g_flags.hash);
-//		printf("zero:%d\n", g_flags.zero);
+		printf("zero:%d\n", g_flags.zero);
 //		printf("minus:%d\n", g_flags.minus);
-//		printf("space:%d\n", g_flags.space);
+		printf("space:%d\n", g_flags.space);
 //		printf("plus:%d\n", g_flags.plus);
 //		printf("apost:%d\n", g_flags.apost);
 	}

@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/27 09:53:35 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/27 14:57:20 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,8 +94,8 @@ int main(void)
 
 //	printf("This: % -61do\n", 42, 10, 15, 45);
 //	printf("This: % -61.7 do\n", 42, 10, 15, 45);
-//	printf("This: % 0.42.-61do\n", 42, 10, 15, 45);
-//	ft_printf("This: % 0.-42.*do\n", 42, 10, 15, 45);
+//	printf("% 0.42.-61do\n", 42, 10, 15, 45);
+//	ft_printf("% 0.-42.*do\n", 42, 10, 15, 45);
 //	printf("This: % 0.-42.*do\n", 42, 10, 15, 45);
 //	printf("This: % *.*d\n", 42, 10, 15, 45);
 //	printf("This: % .** 10d\n", 42, 10, 15, 45);
@@ -182,9 +182,8 @@ int main(void)
 //	printf("%*3$d\n", 18, 45, 67, 62);
 //	ft_printf("%*3$d\n", 18, 45, 67, 62);
 //	printf("\n\n");
-	printf("%*3$ 0$d\n", 18, 45, 67, 62);
-	ft_printf("%*3$ 0$d\n", 18, 45, 67, 62);
-	printf("\n\n");
+//	printf("%*45 .12 .* d\n", 18, 45, 67, 62);
+//	ft_printf("%*45 .12 .* d\n", 18, 45, 67, 62);
 //	printf("%.*3$d\n", 18, 45, 67, 62);
 //	ft_printf("%.*3$d\n", 18, 45, 67, 62);
 //	printf("\n\n");
@@ -194,7 +193,6 @@ int main(void)
 //	printf("%.*3$ 2$d\n", 18, 45, 67, 62);
 //	printf("%3$*d\n", 18, 45, 67, 62);
 //	printf("%* 3$d\n", 18, 45, 67, 62);
-	printf("\n\n");
 
 //	printf("%3$d %*1$2$d\n", 18, 45, 67, 62);
 //	ft_printf("%3$d %*1$2$d\n", 18, 45, 67, 62);
@@ -205,6 +203,15 @@ int main(void)
 //	printf("%3$$d $ %*d\n", 18, 45, 150, 62);
 //	ft_printf("%3$$d $ %*d\n", 18, 45, 150, 62);
 //	printf("\n\n");
+	printf("%2$d\n", 18, 45);
+	ft_printf("%2$d\n", 18, 45);
+	printf("\n\n");
+	printf("%2$45d\n", 18, 45);
+	ft_printf("%2$45d\n", 18, 45);
+	printf("\n\n");
+	printf("%3$10.4d\n", 18, 45, 100);
+	ft_printf("%3$10.4d\n", 18, 45, 100);
+	printf("\n\n");
 
 	return (0);
 }
