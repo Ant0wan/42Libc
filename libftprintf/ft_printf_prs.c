@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/27 15:12:24 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/27 15:35:50 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -181,6 +181,9 @@ char			printf_prs(const char *format, va_list ap)
 	while (format[++g_ret.i] && !(prs_specifier(format, ap)))
 	{
 		ft_putchar(format[g_ret.i]); // DEBUGGING
+		g_options.width = 0;
+		g_options.precision = 0;
+		g_options.val_dol = 1;
 		g_flags.hash = 0;
 		g_flags.zero = 0;
 		g_flags.minus = 0;
