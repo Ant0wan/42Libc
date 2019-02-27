@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/27 15:35:50 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/27 15:55:12 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 #include "libft.h"
 #include "prs_struct.h"
 #include "struct_disp.h"
-
-#include <stdio.h> // DEBUGGING
+#include "pars_tools.h"
 
 static va_list	g_ap_origin;
 t_ret			g_ret;
@@ -25,40 +24,6 @@ t_options		g_options =
 {.width = 0, .precision = 0, .i_ap = 0, .val_dol = 1};
 static t_flags	g_flags =
 {.hash = 0, .zero = 0, .minus = 0, .space = 0, .plus = 0, .apost = 0};
-
-static int		ft_atoi_special(const char *str) // ADDING $ mgt here ??
-{
-	int	nbr;
-
-	nbr = 0;
-	while (str[g_ret.i] > 47 && str[g_ret.i] < 58)
-	{
-		nbr = nbr * 10 + (str[g_ret.i] ^ '0');
-		++g_ret.i;
-	}
-	--g_ret.i;
-	return (nbr);
-}
-
-static int		ft_getif_dollar(const char *str)
-{
-	int	nbr;
-	int	i;
-
-	nbr = 0;
-	i = 0;
-	while (str[i] > 47 && str[i] < 58)
-	{
-		nbr = nbr * 10 + (str[i] ^ '0');
-		++i;
-	}
-	if (!(str[i] ^ '$'))
-	{
-		g_ret.i += i;
-		return (nbr);
-	}
-	return (0);
-}
 
 static _Bool	isspecifier(char c)
 {
@@ -111,10 +76,10 @@ static void		get_flags(const char *format, _Bool *specifier)
 	}
 	else if (!(format[g_ret.i] ^ '\''))
 		g_flags.apost = 1;
-	else // better filter
+	else // EXIT 1
 	{
 		*specifier = 0;
-		ft_putchar(format[g_ret.i]); //write the character with character wrapper and character function
+		ft_putchar(format[g_ret.i]);
 	}
 }
 
@@ -129,7 +94,6 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 		specifier = 1;
 		while (format[++g_ret.i] && specifier)
 		{
-//			printf("here:%s", &format[g_ret.i]);
 			if (format[g_ret.i] > '0' && format[g_ret.i] <= '9')
 			{
 				if ((doltest = ft_getif_dollar(&format[g_ret.i])))
@@ -139,38 +103,26 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 			}
 			else if (!(format[g_ret.i] ^ '.'))
 				get_precision(format, ap);
-			else if (!(format[g_ret.i] ^ '*')) // to add dollar parser taking * and numbers
+			else if (!(format[g_ret.i] ^ '*'))
 			{
 				g_options.width = va_arg(ap, int);
 				++g_options.i_ap;
 			}
-			else if (!((format[g_ret.i] & ' ') ^ ' ') && format[g_ret.i] < '1') // too many char going in !!
+			else if (!((format[g_ret.i] & ' ') ^ ' ') && format[g_ret.i] < '1')
 				get_flags(format, &specifier);
 			else if (isspecifier(format[g_ret.i]))
 			{
 				specifier = 0;
 				s_functions = dispatcher(format[g_ret.i]);
 				if (s_functions.f)
-				{
-					printf("i_ap:%d\tval_dol:%d\n",g_options.i_ap,g_options.val_dol);
 					s_functions.wrapper(s_functions.f, ap);
-				}
 			}
-			else if (specifier)
+			else if (specifier) // EXIT 2
 			{
 				specifier = 0;
-				ft_putchar(format[g_ret.i]); //write the character with character wrapper and character function
+				ft_putchar(format[g_ret.i]);
 			}
-//			printf(" end:%s", &format[g_ret.i]);
 		}
-		printf("\nwidth: %d\n", g_options.width);
-		printf("precision: %d\n", g_options.precision);
-//		printf("hash:%d\n", g_flags.hash);
-		printf("zero:%d\n", g_flags.zero);
-//		printf("minus:%d\n", g_flags.minus);
-		printf("space:%d\n", g_flags.space);
-//		printf("plus:%d\n", g_flags.plus);
-//		printf("apost:%d\n", g_flags.apost);
 	}
 	return (0);
 }
@@ -190,7 +142,7 @@ char			printf_prs(const char *format, va_list ap)
 		g_flags.space = 0;
 		g_flags.plus = 0;
 		g_flags.apost = 0;
-	//		(*ret)[g_ret.i] = format[g_ret.i]; // find a way to properly write on the allocated string
+	//	(*ret)[g_ret.i] = format[g_ret.i]; // find a way to properly write on the allocated string
 	}
 	return (0);
 }
