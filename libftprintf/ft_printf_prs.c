@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/27 15:58:35 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/27 16:15:16 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,20 +60,14 @@ static void		get_flags(const char *format, _Bool *specifier)
 		g_flags.zero = 0;
 	}
 	else if (!(format[g_ret.i] ^ '0'))
-	{
-		if (!(g_flags.minus))
-			g_flags.zero = 1;
-	}
+		g_flags.zero = !(g_flags.minus) ? 1 : 0;
 	else if (!(format[g_ret.i] ^ '+'))
 	{
 		g_flags.plus = 1;
 		g_flags.space = 0;
 	}
 	else if (!(format[g_ret.i] ^ ' '))
-	{
-		if (!(g_flags.plus))
-			g_flags.space = 1;
-	}
+		g_flags.space = !(g_flags.plus) ? 1 : 0;
 	else if (!(format[g_ret.i] ^ '\''))
 		g_flags.apost = 1;
 	else // EXIT 1
