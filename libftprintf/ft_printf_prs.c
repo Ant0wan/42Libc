@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/27 14:57:23 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/27 15:12:24 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static int		ft_getif_dollar(const char *str)
 	}
 	if (!(str[i] ^ '$'))
 	{
-		g_ret.i += i + 1;
+		g_ret.i += i;
 		return (nbr);
 	}
 	return (0);
@@ -132,7 +132,7 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 //			printf("here:%s", &format[g_ret.i]);
 			if (format[g_ret.i] > '0' && format[g_ret.i] <= '9')
 			{
-				if (!(doltest = ft_getif_dollar(&format[g_ret.i])))
+				if ((doltest = ft_getif_dollar(&format[g_ret.i])))
 					g_options.val_dol = doltest;
 				else
 					g_options.width = ft_atoi_special(format);
@@ -151,7 +151,10 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 				specifier = 0;
 				s_functions = dispatcher(format[g_ret.i]);
 				if (s_functions.f)
+				{
+					printf("i_ap:%d\tval_dol:%d\n",g_options.i_ap,g_options.val_dol);
 					s_functions.wrapper(s_functions.f, ap);
+				}
 			}
 			else if (specifier)
 			{
