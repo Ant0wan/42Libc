@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/26 14:36:54 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/27 09:55:02 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,8 +134,8 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 			}
 //			printf(" end:%s", &format[g_ret.i]);
 		}
-//		printf("\nwidth: %d\n", g_options.width);
-//		printf("precision: %d\n", g_options.precision);
+		printf("\nwidth: %d\n", g_options.width);
+		printf("precision: %d\n", g_options.precision);
 //		printf("hash:%d\n", g_flags.hash);
 //		printf("zero:%d\n", g_flags.zero);
 //		printf("minus:%d\n", g_flags.minus);

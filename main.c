@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/26 14:20:26 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/27 09:53:35 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,8 +148,8 @@ int main(void)
 //	printf("I4567 |%10!d| plip\n", 12);
 //	ft_printf("I4567 |%10!d| plip\n", 12);
 //	printf("\n\n");
-//	printf("I4567 |%1😄0!d| plip\n", 12);
-//	ft_printf("I4567 |%1😄0!d| plip\n", 12);
+//	printf("I4567 |%1😄0!d| plip\n", 12); //hoho
+//	ft_printf("I4567 |%1😄0!d| plip\n", 12); //hoho
 //	printf("\n\n");
 //	printf("4567 |%-10'\0'5d| plip\n", 12);
 //	printf("\n\n");
@@ -177,9 +177,34 @@ int main(void)
 
 //////// DOLARS SECTION //////////////
 
-	printf("%3$d %*1$2$d\n", 18, 45, 67, 62);
-	printf("%3$d $ %*d\n", 18, 45, 67, 62);
-	printf("%3$$d $ %*d\n", 18, 45, 150, 62);
+//	printf("%*3d\n", 18, 45, 67, 62);
+//	printf("%* d\n", 18, 45, 67, 62);
+//	printf("%*3$d\n", 18, 45, 67, 62);
+//	ft_printf("%*3$d\n", 18, 45, 67, 62);
+//	printf("\n\n");
+	printf("%*3$ 0$d\n", 18, 45, 67, 62);
+	ft_printf("%*3$ 0$d\n", 18, 45, 67, 62);
+	printf("\n\n");
+//	printf("%.*3$d\n", 18, 45, 67, 62);
+//	ft_printf("%.*3$d\n", 18, 45, 67, 62);
+//	printf("\n\n");
+//	printf("%*.*3$d\n", 18, 45, 67, 62);
+//	ft_printf("%*.*3$d\n", 18, 45, 67, 62);
+//	printf("%.*3$2$d\n", 18, 45, 67, 62);
+//	printf("%.*3$ 2$d\n", 18, 45, 67, 62);
+//	printf("%3$*d\n", 18, 45, 67, 62);
+//	printf("%* 3$d\n", 18, 45, 67, 62);
+	printf("\n\n");
+
+//	printf("%3$d %*1$2$d\n", 18, 45, 67, 62);
+//	ft_printf("%3$d %*1$2$d\n", 18, 45, 67, 62);
+//	printf("\n\n");
+//	printf("%3$d $ %*d\n", 18, 45, 67, 62);
+//	ft_printf("%3$d $ %*d\n", 18, 45, 67, 62);
+//	printf("\n\n");
+//	printf("%3$$d $ %*d\n", 18, 45, 150, 62);
+//	ft_printf("%3$$d $ %*d\n", 18, 45, 150, 62);
+//	printf("\n\n");
 
 	return (0);
 }
