@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   wrappers.h                                         :+:      :+:    :+:   */
+/*   strings.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/21 10:36:23 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/27 17:34:03 by abarthel         ###   ########.fr       */
+/*   Created: 2019/02/27 18:19:57 by abarthel          #+#    #+#             */
+/*   Updated: 2019/02/27 18:34:14 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRAPPERS_H
-# define WRAPPERS_H
+#include <stdlib.h>
+#include "prs_struct.h"
 
-void	passivewrap(void *(*f)());
+void	strings(char *str)
+{
+	int	i;
 
-void	di(void *(*f)());
-
-#endif
+	i = -1;
+	while (str[++i])
+	{
+		g_ret.ret[g_ret.i] = str[i];
+		++g_ret.i;
+	}
+}

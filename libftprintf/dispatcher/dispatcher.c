@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 14:51:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/25 16:50:32 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/27 18:23:30 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,17 @@
 #include "wrappers.h"
 #include "libft.h"
 #include "ft_wchar.h"
+#include "specifiers.h"
 
 const t_specifier	g_specifier[] =
 {
 	{ 'c', T_ & ft_putchar, W_ & passivewrap},
-	{ 'd', T_ & ft_putnbr, W_ & passivewrap},
+	{ 'd', T_ & signedint, W_ & passivewrap},
 	{ 'e', T_ & ft_putnbr, W_ & passivewrap},
 	{ 'f', T_ & ft_putnbr, W_ & passivewrap},
 	{ 'i', T_ & ft_putnbr, W_ & passivewrap},
 	{ 'o', T_ & ft_putnbr_octal, W_ & passivewrap},
-	{ 's', T_ & ft_putstr, W_ & passivewrap},
+	{ 's', T_ & strings, W_ & passivewrap},
 	{ 'u', T_ & ft_putuint, W_ & passivewrap},
 	{ 'x', T_ & ft_putnbr_lowhexa, W_ & passivewrap},
 	{ 'X', T_ & ft_putnbr_upphexa, W_ & passivewrap},

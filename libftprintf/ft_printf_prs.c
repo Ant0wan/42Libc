@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/27 16:15:16 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/27 18:35:26 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,6 @@ char			printf_prs(const char *format, va_list ap)
 	va_copy(g_ap_origin, ap);
 	while (format[++g_ret.i] && !(prs_specifier(format, ap)))
 	{
-		ft_putchar(format[g_ret.i]); // DEBUGGING
 		g_options.width = 0;
 		g_options.precision = 0;
 		g_options.val_dol = 1;
@@ -136,7 +135,7 @@ char			printf_prs(const char *format, va_list ap)
 		g_flags.space = 0;
 		g_flags.plus = 0;
 		g_flags.apost = 0;
-	//	(*ret)[g_ret.i] = format[g_ret.i]; // find a way to properly write on the allocated string
+		g_ret.ret[g_ret.i] = format[g_ret.i]; // bug decalage entre ret et format !!
 	}
 	return (0);
 }

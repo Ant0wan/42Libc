@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/27 15:56:23 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/27 18:22:26 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,9 @@ DISPATCHER = dispatcher.o \
 
 WRAPPERS_PATH = ./libftprintf/wrappers/
 WRAPPERS = passivewrap.o \
+
+SPECIFIERS_PATH = ./libftprintf/specifiers/
+SPECIFIERS = signedint.o strings.o \
 
 LIBFT_PATH = ./libft/
 LIBFT = ft_bzero.o ft_isalpha.o ft_isdigit.o ft_isalnum.o \
@@ -97,7 +100,7 @@ test:
 	@rm -f $(NAME)
 	@$(MAKE) -C ./libftprintf clean
 	@$(MAKE) -C ./libftprintf objects
-	@ar rc $(NAME) $(addprefix $(O_FILES_PATH),$(O_FILES)) $(addprefix $(DISPATCHER_PATH),$(DISPATCHER)) $(addprefix $(WRAPPERS_PATH),$(WRAPPERS)) $(addprefix $(LIBFT_PATH),$(LIBFT)) $(addprefix $(LIBFTWCHAR_PATH),$(LIBFTWCHAR)) $(addprefix $(UTF8_PATH),$(UTF8))
+	@ar rc $(NAME) $(addprefix $(O_FILES_PATH),$(O_FILES)) $(addprefix $(DISPATCHER_PATH),$(DISPATCHER)) $(addprefix $(WRAPPERS_PATH),$(WRAPPERS)) $(addprefix $(SPECIFIERS_PATH),$(SPECIFIERS)) $(addprefix $(LIBFT_PATH),$(LIBFT)) $(addprefix $(LIBFTWCHAR_PATH),$(LIBFTWCHAR)) $(addprefix $(UTF8_PATH),$(UTF8))
 	@ranlib $(NAME)
 	
 .PHONY: all clean fclean re objects

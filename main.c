@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/27 15:35:30 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/27 18:34:22 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -203,20 +203,25 @@ int main(void)
 //	printf("%3$$d $ %*d\n", 18, 45, 150, 62);
 //	ft_printf("%3$$d $ %*d\n", 18, 45, 150, 62);
 //	printf("\n\n");
-	printf("%10.4d\n", 18, 45, 100);
-	ft_printf("%10.4d\n", 18, 45, 100);
-	printf("\n\n");
-	printf("%2$d\n", 18, 45);
-	ft_printf("%2$d\n", 18, 45);
-	printf("\n\n");
-	printf("%2$45d\n", 18, 45);
-	ft_printf("%2$45d\n", 18, 45);
-	printf("\n\n");
-	printf("%3$10.4d\n", 18, 45, 100);
-	ft_printf("%3$10.4d\n", 18, 45, 100);
-	printf("\n\n");
-	printf("% 0.-42.*do\n", 42, 10, 15, 45);
-	ft_printf("% 0.-42.*do\n", 42, 10, 15, 45);
+//	printf("%10.4d\n", 18, 45, 100);
+//	ft_printf("%10.4d\n", 18, 45, 100);
+//	printf("\n\n");
+//	printf("%2$d\n", 18, 45);
+//	ft_printf("%2$d\n", 18, 45);
+//	printf("\n\n");
+//	printf("%2$45d\n", 18, 45);
+//	ft_printf("%2$45d\n", 18, 45);
+//	printf("\n\n");
+//	printf("%3$10.4d\n", 18, 45, 100);
+//	ft_printf("%3$10.4d\n", 18, 45, 100);
+//	printf("\n\n");
+//	printf("% 0.-42.*do\n", 42, 10, 15, 45);
+//	ft_printf("% 0.-42.*do\n", 42, 10, 15, 45);
+	
+	printf("Hello %s !\n", "World");
+	ft_printf("Hello %s !\n", "World");
+
+		
 
 	return (0);
 }

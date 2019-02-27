@@ -6,41 +6,33 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/07 11:08:30 by abarthel          #+#    #+#              #
-#    Updated: 2019/02/27 18:14:00 by abarthel         ###   ########.fr        #
+#    Updated: 2019/02/27 18:22:12 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Ft_printf module (library part)
+# Dispatcher module
 
-NAME = libftprintf
+NAME = specifiers
 
 CC = gcc
 
 FLAGS = -Werror -Wall -Wextra
 
-INCS = -I./dispatcher/ -I./../libftwchar/ -I./../libftwchar/utf8/ -I./../libft/ -I./wrappers/
+INCS = -I./../../libft/ -I./../../libftwchar/ -I./../wrappers/ -I./../
 
-O_FILES = ft_printf.o ft_vdprintf.o ft_vasprintf.o ft_printf_prs.o prs_tools.o \
+O_FILES = signedint.o strings.o
 
 %.o : %.c
 	@$(CC) $(FLAGS) $(INCS) $< -c
-	@printf "\e[38;5;49m%-20s \e[38;5;226mobject built\n\e[0m" $(basename $@)
+	@printf "\e[38;5;80m%-20s \e[38;5;76mobject built\n\e[0m" $(basename $@)
 
 clean:
-	@$(MAKE) -C ./dispatcher/ clean
-	@$(MAKE) -C ./wrappers/ clean
-	@$(MAKE) -C ./specifiers/ clean
 	@rm -f $(O_FILES)
-	@printf "\e[0m$(NAME)%1s\e[0m.o \e[38;5;123mfiles%1sdeleted ♻\n\e[0m"
+	@printf "\e[0m$(NAME)%1s\e[0m.o \e[38;5;119mfiles%1sdeleted ♻\n\e[0m"
 
 re: clean objects
 
+# Objects rule to be used when building larger libraries
 objects: $(O_FILES)
-	@printf "\n"
-	@$(MAKE) -C ./dispatcher/ objects
-	@printf "\n"
-	@$(MAKE) -C ./wrappers/ objects
-	@printf "\n"
-	@$(MAKE) -C ./specifiers/ objects
 
 .PHONY : clean re objects

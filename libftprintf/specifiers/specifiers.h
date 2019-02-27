@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   wrappers.h                                         :+:      :+:    :+:   */
+/*   specifiers.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/21 10:36:23 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/27 17:34:03 by abarthel         ###   ########.fr       */
+/*   Created: 2019/02/27 17:44:58 by abarthel          #+#    #+#             */
+/*   Updated: 2019/02/27 18:21:51 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRAPPERS_H
-# define WRAPPERS_H
+#ifndef SPECIFIERS_H
+# define SPECIFIERS_H
 
-void	passivewrap(void *(*f)());
+void	signedint(int n);
 
-void	di(void *(*f)());
+void	strings(char *str);
 
 #endif
