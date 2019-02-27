@@ -6,12 +6,14 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 15:51:04 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/27 15:57:30 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/27 16:00:38 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRS_TOOLS_H
 # define PRS_TOOLS_H
+
+# include "prs_struct.h"
 
 extern t_ret	g_ret;
 
