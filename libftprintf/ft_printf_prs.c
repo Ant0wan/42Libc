@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/28 12:26:01 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/28 12:31:50 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,37 +38,37 @@ static _Bool	isspecifier(char c)
 
 static void		get_precision(const char *format, va_list ap)
 {
-	while (!(format[g_ret.i] ^ '.'))
-		++g_ret.i;
-	if (!(format[g_ret.i] ^ '*'))
+	while (!(format[g_ret.fmt_i] ^ '.'))
+		++g_ret.fmt_i;
+	if (!(format[g_ret.fmt_i] ^ '*'))
 	{
 		g_options.precision = va_arg(ap, int);
 		++g_options.i_ap;
 	}
-	else if (!((format[g_ret.i] & '0')) ^ '0')
-		if (format[g_ret.i] > '0' && format[g_ret.i] <= '9')
+	else if (!((format[g_ret.fmt_i] & '0')) ^ '0')
+		if (format[g_ret.fmt_i] > '0' && format[g_ret.fmt_i] <= '9')
 			g_options.precision = ft_atoi_special(format);
 }
 
 static void		get_flags(const char *format, _Bool *specifier)
 {
-	if (!(format[g_ret.i] ^ '#'))
+	if (!(format[g_ret.fmt_i] ^ '#'))
 		g_flags.hash = 1;
-	else if (!(format[g_ret.i] ^ '-'))
+	else if (!(format[g_ret.fmt_i] ^ '-'))
 	{
 		g_flags.minus = 1;
 		g_flags.zero = 0;
 	}
-	else if (!(format[g_ret.i] ^ '0'))
+	else if (!(format[g_ret.fmt_i] ^ '0'))
 		g_flags.zero = !(g_flags.minus) ? 1 : 0;
-	else if (!(format[g_ret.i] ^ '+'))
+	else if (!(format[g_ret.fmt_i] ^ '+'))
 	{
 		g_flags.plus = 1;
 		g_flags.space = 0;
 	}
-	else if (!(format[g_ret.i] ^ ' '))
+	else if (!(format[g_ret.fmt_i] ^ ' '))
 		g_flags.space = !(g_flags.plus) ? 1 : 0;
-	else if (!(format[g_ret.i] ^ '\''))
+	else if (!(format[g_ret.fmt_i] ^ '\''))
 		g_flags.apost = 1;
 	else // EXIT 1
 	{
@@ -83,31 +83,31 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 	_Bool		specifier;
 	int			doltest;
 
-	if (!(format[g_ret.i] ^ '%'))
+	if (!(format[g_ret.fmt_i] ^ '%'))
 	{
 		specifier = 1;
-		while (format[++g_ret.i] && specifier)
+		while (format[++g_ret.fmt_i] && specifier)
 		{
-			if (format[g_ret.i] > '0' && format[g_ret.i] <= '9')
+			if (format[g_ret.fmt_i] > '0' && format[g_ret.fmt_i] <= '9')
 			{
-				if ((doltest = ft_getif_dollar(&format[g_ret.i])))
+				if ((doltest = ft_getif_dollar(&format[g_ret.fmt_i])))
 					g_options.val_dol = doltest;
 				else
 					g_options.width = ft_atoi_special(format);
 			}
-			else if (!(format[g_ret.i] ^ '.'))
+			else if (!(format[g_ret.fmt_i] ^ '.'))
 				get_precision(format, ap);
-			else if (!(format[g_ret.i] ^ '*'))
+			else if (!(format[g_ret.fmt_i] ^ '*'))
 			{
 				g_options.width = va_arg(ap, int);
 				++g_options.i_ap;
 			}
-			else if (!((format[g_ret.i] & ' ') ^ ' ') && format[g_ret.i] < '1')
+			else if (!((format[g_ret.fmt_i] & ' ') ^ ' ') && format[g_ret.fmt_i] < '1')
 				get_flags(format, &specifier);
-			else if (isspecifier(format[g_ret.i]))
+			else if (isspecifier(format[g_ret.fmt_i]))
 			{
 				specifier = 0;
-				s_functions = dispatcher(format[g_ret.i]);
+				s_functions = dispatcher(format[g_ret.fmt_i]);
 				if (s_functions.f)
 					s_functions.wrapper(s_functions.f, ap);
 			}
