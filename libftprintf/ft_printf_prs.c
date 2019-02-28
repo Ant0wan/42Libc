@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/28 12:31:50 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/28 12:59:29 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,5 +139,5 @@ char			printf_prs(const char *format, va_list ap)
 		g_flags.apost = 0;
 		g_ret.ret[++g_ret.i] = format[g_ret.fmt_i]; // bug decalage entre ret et format !!
 	}
-	return (g_ret.i);
+	return (g_ret.i + 1);
 }

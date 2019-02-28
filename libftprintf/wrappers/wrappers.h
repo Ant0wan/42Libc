@@ -6,15 +6,15 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 10:36:23 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/27 17:34:03 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/28 13:15:15 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WRAPPERS_H
 # define WRAPPERS_H
 
-void	passivewrap(void *(*f)());
+void	passive_wrap(void *(*f)());
 
-void	di(void *(*f)());
+void	di_wrap(void *(*f)());
 
 #endif

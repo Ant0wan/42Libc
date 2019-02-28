@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 14:51:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/27 18:23:30 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/28 13:16:11 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,34 +23,34 @@
 
 const t_specifier	g_specifier[] =
 {
-	{ 'c', T_ & ft_putchar, W_ & passivewrap},
-	{ 'd', T_ & signedint, W_ & passivewrap},
-	{ 'e', T_ & ft_putnbr, W_ & passivewrap},
-	{ 'f', T_ & ft_putnbr, W_ & passivewrap},
-	{ 'i', T_ & ft_putnbr, W_ & passivewrap},
-	{ 'o', T_ & ft_putnbr_octal, W_ & passivewrap},
-	{ 's', T_ & strings, W_ & passivewrap},
-	{ 'u', T_ & ft_putuint, W_ & passivewrap},
-	{ 'x', T_ & ft_putnbr_lowhexa, W_ & passivewrap},
-	{ 'X', T_ & ft_putnbr_upphexa, W_ & passivewrap},
-	{ 'C', T_ & ft_putwchar, W_ & passivewrap},
-	{ 'p', T_ & ft_putaddr, W_ & passivewrap},
-	{ 'n', T_ & ft_putaddr, W_ & passivewrap},
-	{ 'D', T_ & ft_putuint, W_ & passivewrap},
-	{ 'O', T_ & ft_putuint_octal, W_ & passivewrap},
-	{ 'U', T_ & ft_putuint, W_ & passivewrap},
-	{ 'E', T_ & ft_putaddr, W_ & passivewrap},
-	{ 'F', T_ & ft_putaddr, W_ & passivewrap},
-	{ 'g', T_ & ft_putaddr, W_ & passivewrap},
-	{ 'G', T_ & ft_putaddr, W_ & passivewrap},
-	{ 'a', T_ & ft_putaddr, W_ & passivewrap},
-	{ 'A', T_ & ft_putaddr, W_ & passivewrap},
-	{ 'S', T_ & ft_putwstr, W_ & passivewrap},
-	{ '%', T_ & ft_putchar, W_ & passivewrap},
-	{ 'k', T_ & ft_putaddr, W_ & passivewrap},
-	{ 'r', T_ & ft_putaddr, W_ & passivewrap},
-	{ 'B', T_ & ft_putwcbits, W_ & passivewrap},
-	{ 'b', T_ & ft_printbits, W_ & passivewrap}
+	{ 'c', T_ & ft_putchar, W_ & passive_wrap},
+	{ 'd', T_ & signedint, W_ & passive_wrap},
+	{ 'e', T_ & ft_putnbr, W_ & passive_wrap},
+	{ 'f', T_ & ft_putnbr, W_ & passive_wrap},
+	{ 'i', T_ & ft_putnbr, W_ & passive_wrap},
+	{ 'o', T_ & ft_putnbr_octal, W_ & passive_wrap},
+	{ 's', T_ & ft_str, W_ & passive_wrap},
+	{ 'u', T_ & ft_putuint, W_ & passive_wrap},
+	{ 'x', T_ & ft_putnbr_lowhexa, W_ & passive_wrap},
+	{ 'X', T_ & ft_putnbr_upphexa, W_ & passive_wrap},
+	{ 'C', T_ & ft_putwchar, W_ & passive_wrap},
+	{ 'p', T_ & ft_putaddr, W_ & passive_wrap},
+	{ 'n', T_ & ft_putaddr, W_ & passive_wrap},
+	{ 'D', T_ & ft_putuint, W_ & passive_wrap},
+	{ 'O', T_ & ft_putuint_octal, W_ & passive_wrap},
+	{ 'U', T_ & ft_putuint, W_ & passive_wrap},
+	{ 'E', T_ & ft_putaddr, W_ & passive_wrap},
+	{ 'F', T_ & ft_putaddr, W_ & passive_wrap},
+	{ 'g', T_ & ft_putaddr, W_ & passive_wrap},
+	{ 'G', T_ & ft_putaddr, W_ & passive_wrap},
+	{ 'a', T_ & ft_putaddr, W_ & passive_wrap},
+	{ 'A', T_ & ft_putaddr, W_ & passive_wrap},
+	{ 'S', T_ & ft_putwstr, W_ & passive_wrap},
+	{ '%', T_ & ft_putchar, W_ & passive_wrap},
+	{ 'k', T_ & ft_putaddr, W_ & passive_wrap},
+	{ 'r', T_ & ft_putaddr, W_ & passive_wrap},
+	{ 'B', T_ & ft_putwcbits, W_ & passive_wrap},
+	{ 'b', T_ & ft_printbits, W_ & passive_wrap}
 };
 
 t_specifier				dispatcher(char c)
