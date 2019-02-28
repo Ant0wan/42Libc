@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/27 18:34:22 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/28 12:24:08 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <stdio.h>
 #include <locale.h>
 #include <limits.h>
+#include <stdlib.h>
 
 int main(void)
 {
@@ -31,13 +32,14 @@ int main(void)
 //	int o;
 //	int k;
 
-//	printf("\n____ PADDING TEST ____\n");
-//	printf(" LENGTH t_options: %lu\n", sizeof(t_options));
-//	printf(" LENGTH t_ret: %lu\n", sizeof(t_ret));
-//	printf(" LENGTH t_modifier: %lu\n", sizeof(t_modifier));
-//	printf(" LENGTH t_flags: %lu\n", sizeof(t_flags));
-//	printf(" LENGTH va_list: %lu\n", sizeof(va_list));
-//	printf("‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\n\n");
+	printf("\n____ PADDING TEST ____\n");
+	printf(" LENGTH va_list: %lu\n", sizeof(va_list));
+	printf(" LENGTH t_ret: %lu\n", sizeof(t_ret));
+	printf(" LENGTH t_modifier: %lu\n", sizeof(t_modifier));
+	printf(" LENGTH t_flags: %lu\n", sizeof(t_flags));
+	printf(" LENGTH t_options: %lu\n", sizeof(t_options));
+	printf(" LENGTH sizeof size_t: %lu\n", sizeof(size_t));
+	printf("‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\n\n");
 
 //	t_flags	flags;
 
@@ -218,8 +220,13 @@ int main(void)
 //	printf("% 0.-42.*do\n", 42, 10, 15, 45);
 //	ft_printf("% 0.-42.*do\n", 42, 10, 15, 45);
 	
-	printf("Hello %s !\n", "World");
-	ft_printf("Hello %s !\n", "World");
+	int ret1;
+	int ret2;
+	ret1 = printf("Hello %s !\n", "World");
+	printf("%d\n", ret1);
+	printf("\n\n");
+	ret2 = ft_printf("Hello %s !\n", "World");
+	printf("%d\n", ret2);
 
 		
 
