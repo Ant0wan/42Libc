@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 16:13:29 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/01 16:21:48 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/01 16:55:24 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include "prs_struct.h"
 
 #define RET_ERROR -1
-#define BUFF 5
+#define BUFF 1024
 
 int	ft_vasprintf(char **ret, const char *format, va_list ap)
 {
