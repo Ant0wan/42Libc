@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/01 14:26:05 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/01 16:24:34 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 #include <locale.h>
 #include <limits.h>
 #include <stdlib.h>
+
+
+// make test && gcc -fsanitize=address -Wall -Wextra -Werror main.c libftprintf.a -I./libftprintf/dispatcher/ -I./libftprintf && ./a.out
 
 int main(void)
 {
@@ -249,9 +252,9 @@ int main(void)
 	//printf("\n\n");
 
 
-	ret1 = printf("Hello %s!%s%s", "World", "Damn", "ok");
+	ret1 = printf("Hello %s!%s%s", "World", "Damn", "okay");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("Hello %s!%s%s", "World", "Damn", "ok");
+	ret2 = ft_printf("Hello %s!%s%s", "World", "Damn", "okay");
 	printf("%d\n", ret2);
 
 	printf("\n\n");

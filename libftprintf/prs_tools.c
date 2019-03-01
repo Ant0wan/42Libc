@@ -6,18 +6,19 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 15:49:12 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/01 14:54:15 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/01 16:41:33 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "prs_tools.h"
 #include "libft.h"
 
 #ifndef BUFF
-# define BUFF 1
+# define BUFF 1024
 #endif
 
-#define RET_ERROR -1
+#define G_ERROR 1
 
 extern t_ret	g_ret;
 extern _Bool	g_error;
@@ -56,22 +57,19 @@ int		ft_getif_dollar(const char *str)
 	return (0);
 }
 
-void	ft_realloc_cpy(void)
+void	ft_expand_ret(int size)
 {
-	char	*new_ret;
-	char	*tmp;
+	void	*ptr_to_free;
 
-	g_ret.max += BUFF;
-	tmp = g_ret.ret;
-	if (!(new_ret = (char*)ft_memalloc(sizeof(*g_ret.ret) * g_ret.max)))
+	ptr_to_free = NULL;
+	ptr_to_free = g_ret.ret;
+	g_ret.max = size < BUFF ? BUFF : size + 1;
+	if (!(g_ret.ret = (char*)ft_memalloc()))
 	{
-		g_error = RET_ERROR;
+		g_error = G_ERROR;
 		return ;
 	}
 	else
 	{
-		ft_strcpy(new_ret, g_ret.ret);
-		g_ret.ret = new_ret;
-		ft_memdel((void**)&tmp);
 	}
 }

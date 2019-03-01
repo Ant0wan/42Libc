@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/01 14:56:37 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/01 16:18:31 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,7 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 	return (0);
 }
 
+
 int			printf_prs(const char *format, va_list ap)
 {
 	g_ret.fmt_i = -1;
@@ -140,12 +141,6 @@ int			printf_prs(const char *format, va_list ap)
 		g_flags.space = 0;
 		g_flags.plus = 0;
 		g_flags.apost = 0;
-		if (g_ret.i + 1 >= g_ret.max)
-		{
-			ft_realloc_cpy();
-			if (g_error)
-				return (g_ret.i + 1);
-		}
 		g_ret.ret[++g_ret.i] = format[g_ret.fmt_i];
 	}
 	return (g_ret.i + 1);
