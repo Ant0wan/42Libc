@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 16:10:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/01 12:46:34 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/01 14:50:46 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,7 @@ typedef struct	s_options
 }				t_options;
 
 extern t_options	g_options;
+
+extern _Bool		g_error;
 
 #endif

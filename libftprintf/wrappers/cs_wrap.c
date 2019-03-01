@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   wrappers.h                                         :+:      :+:    :+:   */
+/*   cs_wrap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/21 10:36:23 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/01 13:52:36 by abarthel         ###   ########.fr       */
+/*   Created: 2019/02/21 10:38:50 by abarthel          #+#    #+#             */
+/*   Updated: 2019/03/01 14:01:06 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRAPPERS_H
-# define WRAPPERS_H
+#include <stdarg.h>
 
-void	passive_wrap(void *(*f)());
+#include "prs_struct.h"
 
-void	di_wrap(void *(*f)());
+extern t_ret		g_ret;
+extern t_options	g_options;
 
-void	cs_wrap(void *(*f)());
+void	cs_wrap(void *(*f)(), va_list ap)
+{
+	int	i;
+	int	rubbish;
 
-#endif
+	i = 0;
+	while (++i < g_options.val_dol)
+		rubbish = va_arg(ap, int);
+	f(va_arg(ap, typeof(ap)));
+	++g_options.i_ap;
+}

@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/01 13:35:35 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/01 14:26:05 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -242,16 +242,16 @@ int main(void)
 //	printf("%d\n", ret2);
 //	printf("\n\n");
 
-//	ret1 = printf("%   %", "Hello");
-//	printf("%d\n", ret1);
-//	ret2 = ft_printf("%   %", "Hello");
-//	printf("%d\n", ret2);
-//	printf("\n\n");
+	//ret1 = printf("%   %", "Hello");
+	//printf("%d\n", ret1);
+	//ret2 = ft_printf("%   %", "Hello");
+	//printf("%d\n", ret2);
+	//printf("\n\n");
 
 
-		ret1 = printf("%12s!", "World");
+	ret1 = printf("Hello %s!%s%s", "World", "Damn", "ok");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("%12s!", "World");
+	ret2 = ft_printf("Hello %s!%s%s", "World", "Damn", "ok");
 	printf("%d\n", ret2);
 
 	printf("\n\n");

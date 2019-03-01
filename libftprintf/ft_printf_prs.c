@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/01 13:34:03 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/01 14:56:37 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ t_options		g_options =
 {.width = 0, .precision = 0, .i_ap = 0, .val_dol = 1};
 static t_flags	g_flags =
 {.hash = 0, .zero = 0, .minus = 0, .space = 0, .plus = 0, .apost = 0};
+_Bool			g_error = 0;
 
 static _Bool	isspecifier(char c)
 {
@@ -122,7 +123,6 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 	return (0);
 }
 
-
 int			printf_prs(const char *format, va_list ap)
 {
 	g_ret.fmt_i = -1;
@@ -130,7 +130,7 @@ int			printf_prs(const char *format, va_list ap)
 	while (format[++g_ret.fmt_i] && !(prs_specifier(format, ap)))
 	{
 		if (!(format[g_ret.fmt_i]))
-			break;
+			break ;
 		g_options.width = 0;
 		g_options.precision = 0;
 		g_options.val_dol = 1;
@@ -140,7 +140,13 @@ int			printf_prs(const char *format, va_list ap)
 		g_flags.space = 0;
 		g_flags.plus = 0;
 		g_flags.apost = 0;
-		g_ret.ret[++g_ret.i] = format[g_ret.fmt_i]; // MAKES THE BUG !!
+		if (g_ret.i + 1 >= g_ret.max)
+		{
+			ft_realloc_cpy();
+			if (g_error)
+				return (g_ret.i + 1);
+		}
+		g_ret.ret[++g_ret.i] = format[g_ret.fmt_i];
 	}
 	return (g_ret.i + 1);
 }
