@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/01 09:38:21 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/01 13:34:03 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 	_Bool		specifier;
 	int			doltest;
 
-	if (!(format[g_ret.fmt_i] ^ '%'))
+	while (!(format[g_ret.fmt_i] ^ '%'))
 	{
 		specifier = 1;
 		while (format[++g_ret.fmt_i] && specifier)
@@ -123,14 +123,14 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 }
 
 
-char			printf_prs(const char *format, va_list ap)
+int			printf_prs(const char *format, va_list ap)
 {
 	g_ret.fmt_i = -1;
 	va_copy(g_ap_origin, ap);
 	while (format[++g_ret.fmt_i] && !(prs_specifier(format, ap)))
 	{
 		if (!(format[g_ret.fmt_i]))
-			return (g_ret.i + 1);
+			break;
 		g_options.width = 0;
 		g_options.precision = 0;
 		g_options.val_dol = 1;

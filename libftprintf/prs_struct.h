@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 16:10:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/28 14:31:09 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/01 12:46:34 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 typedef struct	s_ret
 {
 	char			*ret;
-	short	i;
-	short	fmt_i;
+	short			i;
+	short			fmt_i;
 	unsigned short	max;
 }				t_ret;
 
