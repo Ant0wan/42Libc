@@ -6,11 +6,12 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/28 11:48:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/28 13:28:16 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/28 14:54:10 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "prs_struct.h"
+#include "libft.h"
 
 #ifndef BUFF
 # define BUFF 1024
@@ -28,13 +29,16 @@ static void	ft_strcpy_special(char *dst, const char *src)
 	g_ret.i += count - 1;
 }
 
-void		retwriter(char *str)
+void		retwriter(char *str, int size)
 {
-	//	char	*new_ret;
-	//	if (g_ret.i + size >= max)
-	//		if (!(*new_ret = (char*)ft_memalloc(sizeof(**ret) * (max + BUFF + 1))))
-	//			return (RET_ERROR);
-	//	set the new max
+	char	*new_ret;
+	if (g_ret.i + size >= g_ret.max)
+	{
+		g_ret.max += BUFF;
+		if (!(new_ret = (char*)ft_memalloc(sizeof(*g_ret.ret) * g_ret.max)))
+			return ;
+	}
+	
 	//	copy the ret to new ret
 	//	g_ret.ret = new_ret; // set new ret
 

@@ -6,13 +6,13 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/28 13:23:31 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/28 13:24:13 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/02/28 13:37:14 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RETWRITER_H
 # define RETWRITER_H
 
-void	retwriter(char *str);
+void	retwriter(char *str, int size);
 
 #endif

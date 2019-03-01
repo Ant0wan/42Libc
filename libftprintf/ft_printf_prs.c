@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/28 12:59:29 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/01 09:38:21 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,8 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 				g_options.width = va_arg(ap, int);
 				++g_options.i_ap;
 			}
-			else if (!((format[g_ret.fmt_i] & ' ') ^ ' ') && format[g_ret.fmt_i] < '1')
+			else if (!((format[g_ret.fmt_i] & ' ') ^ ' ')
+					&& format[g_ret.fmt_i] < '1')
 				get_flags(format, &specifier);
 			else if (isspecifier(format[g_ret.fmt_i]))
 			{
@@ -117,10 +118,10 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 		//		ft_putchar(format[g_ret.i]);
 			}
 		}
-		return (0); // case it was %
 	}
 	return (0);
 }
+
 
 char			printf_prs(const char *format, va_list ap)
 {
@@ -128,6 +129,8 @@ char			printf_prs(const char *format, va_list ap)
 	va_copy(g_ap_origin, ap);
 	while (format[++g_ret.fmt_i] && !(prs_specifier(format, ap)))
 	{
+		if (!(format[g_ret.fmt_i]))
+			return (g_ret.i + 1);
 		g_options.width = 0;
 		g_options.precision = 0;
 		g_options.val_dol = 1;
@@ -137,7 +140,7 @@ char			printf_prs(const char *format, va_list ap)
 		g_flags.space = 0;
 		g_flags.plus = 0;
 		g_flags.apost = 0;
-		g_ret.ret[++g_ret.i] = format[g_ret.fmt_i]; // bug decalage entre ret et format !!
+		g_ret.ret[++g_ret.i] = format[g_ret.fmt_i]; // MAKES THE BUG !!
 	}
 	return (g_ret.i + 1);
 }
