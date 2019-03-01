@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/01 09:30:58 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/01 10:23:00 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,10 @@ int main(void)
 //	printf("Hello%nj%sijoj%n", &o,"Hello", &k);
 // 	printf("\n\n%d\n", o);
 // 	printf("%2$d\n", 42);
-	//printf("Hello%d a %**.* *C  b %*.*send  \n", 5454, L'😄', "DONE", 1, 54, 68, 55, 68, 88);
+//	printf("Hello%d a %**.* *C  b %*.*send  \n", 5454, L'😄', "DONE", 1, 54, 68, 55, 68, 88);
 //	ft_printf("Hello%d a %**.* *C  b %*.*send  \n", 5454, L'😄', "DONE", 1, 54, 68, 55, 68, 88);
-	//ft_printf("%*.*d\n", 10, 20, 42);
-	//printf("%*.*d\n", 10, 20, 42);
+//	ft_printf("%*.*d\n", 10, 20, 42);
+//	printf("%*.*d\n", 10, 20, 42);
 	//printf("%2$d,  %*.*d\n", 10, 20, 42, 5, 6);
 //	ft_printf("%*21d\n", 10, 42);
 //	printf("%*21d\n", 10, 42);
