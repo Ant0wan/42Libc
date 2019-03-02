@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/02 13:59:35 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/02 14:54:14 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -252,23 +252,23 @@ int main(void)
 	//printf("\n\n");
 
 
-//	ret1 = printf("Hello %s!%s%s", "World", "Damn", "okay");
-//	printf("%d\n", ret1);
-//	ret2 = ft_printf("Hello %s!%s%s", "World", "Damn", "okay");
-//	printf("%d\n", ret2);
-//	printf("\n\n");
-
-	ret1 = printf("A%s", "Hello");
+	ret1 = printf("Hello %s!%s%s", "World", "Damn", "okay");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("A%s", "Hello");
+	ret2 = ft_printf("Hello %s!%s%s", "World", "Damn", "okay");
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("%s", "Hello");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%s", "Hello");
 	printf("%d\n", ret2);
 	printf("\n\n");
 	
-//	ret1 = printf("Hello");
-//	printf("%d\n", ret1);
-//	ret2 = ft_printf("Hello");
-//	printf("%d\n", ret2);
-//	printf("\n\n");
+	ret1 = printf("Hello");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("Hello");
+	printf("%d\n", ret2);
+	printf("\n\n");
 //		ret1 = printf("Hello %s %s ! \n", "Awesome", "World");
 //	printf("%d\n", ret1);
 //	ret2 = ft_printf("Hello %s %s ! \n", "Awesome", "World");
