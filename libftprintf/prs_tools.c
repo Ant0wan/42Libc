@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 15:49:12 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/01 18:15:57 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/02 14:23:46 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "libft.h"
 
 #ifndef BUFF
-# define BUFF 1024
+# define BUFF 1
 #endif
 
 #define G_ERROR 1
@@ -57,20 +57,28 @@ int		ft_getif_dollar(const char *str)
 	return (0);
 }
 
+#include <stdio.h>
+
 void	ft_expand_ret(int size) // HEAP BUFFER OVERFLOW
 {
 	void	*new_ret;
 
 	g_ret.max += size < BUFF ? BUFF : size;
+	printf("expand g_ret.max:%d\n", g_ret.max);
 	if (!(new_ret = (char*)ft_memalloc(sizeof(char) * g_ret.max + 1)))
 	{
+		printf("BUG\n");
 		g_error = G_ERROR;
 		return ;
 	}
 	else
 	{
-		ft_memcpy(new_ret, g_ret.ret, g_ret.i); // BUG ?
+		printf("expand g_ret.ret:%s\n", g_ret.ret);
+		printf("expandyy g_ret.i:%d\n", g_ret.i);
+		if (g_ret.i > -1)
+			ft_memcpy(new_ret, g_ret.ret, g_ret.i + 1); // BUG ?
+		printf("expand newet:%s\n", new_ret);
 		ft_memdel((void**)&g_ret.ret); // BUG ?
-		g_ret.ret = new_ret;
+		g_ret.ret = (char*)new_ret;
 	}
 }
