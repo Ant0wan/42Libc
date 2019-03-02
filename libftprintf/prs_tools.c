@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 15:49:12 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/02 14:52:54 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/02 15:04:19 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,20 +62,15 @@ void	ft_expand_ret(int size)
 	void	*new_ret;
 
 	g_ret.max += size < BUFF ? BUFF : size;
-//	printf("expand g_ret.max:%d\n", g_ret.max);
 	if (!(new_ret = (char*)ft_memalloc(sizeof(char) * g_ret.max + 1)))
 	{
-//		printf("BUG\n");
 		g_error = G_ERROR;
 		return ;
 	}
 	else
 	{
-//		printf("expand g_ret.ret:%s\n", g_ret.ret);
-//		printf("expandyy g_ret.i:%d\n", g_ret.i);
 		if (g_ret.i > -1)
 			ft_memcpy(new_ret, g_ret.ret, g_ret.i + 1);
-//		printf("expand newet:%s\n", new_ret);
 		ft_memdel((void**)&g_ret.ret);
 		g_ret.ret = (char*)new_ret;
 	}
