@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 18:19:57 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/05 13:10:55 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/05 15:57:29 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include "ft_wchar.h"
 
 extern t_options	g_options;
-extern t_modifier   g_modifier;
+extern t_modifier	g_modifier;
 
 void	ft_str(char *str)
 {

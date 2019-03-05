@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/28 11:48:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/05 14:53:03 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/05 16:01:36 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 extern t_ret	g_ret;
 extern _Bool	g_error;
 
-static void	ft_wcsncpy_special(char *dst, const wchar_t *src)
+static inline void	ft_wcsncpy_special(char *dst, const wchar_t *src)
 {
 	int	count;
 
@@ -36,7 +36,7 @@ static void	ft_wcsncpy_special(char *dst, const wchar_t *src)
 	g_ret.i += count - 1;
 }
 
-void		wretwriter(wchar_t *ws, int size)
+void				wretwriter(wchar_t *ws, int size)
 {
 	if (g_ret.i + size >= g_ret.max)
 	{
