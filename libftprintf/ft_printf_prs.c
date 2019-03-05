@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/05 14:56:07 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/05 16:36:28 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_modifier		g_modifier =
 {.hh = 0, .h = 0, .l = 0, .ll = 0, .j = 0, .t = 0, .z = 0, .upl = 0};
 t_options		g_options =
 {.width = 0, .precision = 0, .i_ap = 0, .val_dol = 1};
-static t_flags	g_flags =
+t_flags			g_flags =
 {.hash = 0, .zero = 0, .minus = 0, .space = 0, .plus = 0, .apost = 0};
 _Bool			g_error = 0;
 

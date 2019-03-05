@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/28 11:48:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/05 16:26:01 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/05 18:02:47 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,13 @@
 
 /*
 ** RETWRITER handles char type. It writes to the given string and applies
-** options such as width, precision, minus, plus...
+** options such as width, precision and flags such as plus.
 ** RETWRITER is called by the specifier functions returned by the dispatcher.
 */
 
 extern t_ret		g_ret;
-extern t_options	g_options; 
+extern t_options	g_options;
+extern t_flags		g_flags;
 extern _Bool		g_error;
 
 static inline void	ft_strcpy_special(char *dst, const char *src)
@@ -38,12 +39,13 @@ static inline void	ft_strcpy_special(char *dst, const char *src)
 	g_ret.i += count - 1;
 }
 
+#include <stdio.h>
 void				retwriter(char *str, int size)
 {
 	int	width_diff;
-	
+
 	width_diff = 0;
-	if (g_ret.i + size >= g_ret.max)
+	if (g_ret.i + size + g_options.width >= g_ret.max)
 	{
 		ft_expand_ret(size < g_options.width ? g_options.width : size);
 		if (g_error)
@@ -51,7 +53,7 @@ void				retwriter(char *str, int size)
 			return ;
 		}
 	}
-	if (g_options.min = 0)
+	if (g_flags.minus == 0)
 	{
 		while (size + width_diff < g_options.width)
 		{
@@ -59,5 +61,14 @@ void				retwriter(char *str, int size)
 			g_ret.ret[++g_ret.i] = ' ';
 		}
 		ft_strcpy_special(&g_ret.ret[++g_ret.i], str);
+	}
+	else if (g_flags.minus == 1)
+	{
+		ft_strcpy_special(&g_ret.ret[++g_ret.i], str);
+		while (size + width_diff < g_options.width)
+		{
+			++width_diff;
+			g_ret.ret[++g_ret.i] = ' ';
+		}
 	}
 }

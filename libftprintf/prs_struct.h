@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 16:10:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/05 14:37:57 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/05 17:40:44 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 
 typedef struct	s_ret
 {
-	char			*ret;
-	short			i;
-	short			fmt_i;
-	unsigned short	max;
+	char	*ret;
+	long	i;
+	long	fmt_i;
+	long	max;
 }				t_ret;
 
 extern t_ret	g_ret;
@@ -46,6 +46,8 @@ typedef struct	s_flags
 	_Bool	plus:1;
 	_Bool	apost:1;
 }				t_flags;
+
+extern t_flags	g_flags;
 
 typedef struct	s_options
 {

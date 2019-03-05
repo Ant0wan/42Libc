@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/28 11:48:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/05 16:01:36 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/05 18:03:40 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,21 +30,39 @@ static inline void	ft_wcsncpy_special(char *dst, const wchar_t *src)
 
 	count = -1;
 	while (src[++count])
-	{
 		dst[count] = (char)src[count];
-	}
 	g_ret.i += count - 1;
 }
 
 void				wretwriter(wchar_t *ws, int size)
 {
-	if (g_ret.i + size >= g_ret.max)
+	int width_diff;
+	width_diff = 0;
+	if (g_ret.i + size + g_options.width >= g_ret.max)
 	{
-		ft_expand_ret(size);
+		ft_expand_ret(size < g_options.width ? g_options.width : size);
 		if (g_error)
 		{
 			return ;
 		}
 	}
-	ft_wcsncpy_special(&g_ret.ret[++g_ret.i], ws);
+	if (g_flags.minus == 0)
+	{
+		while (size + width_diff < g_options.width)
+		{
+			++width_diff;
+			g_ret.ret[++g_ret.i] = ' ';
+		}
+		ft_wcsncpy_special(&g_ret.ret[++g_ret.i], ws);
+	}
+	else if (g_flags.minus == 1)
+	{
+		ft_wcsncpy_special(&g_ret.ret[++g_ret.i], ws);
+		while (size + width_diff < g_options.width)
+		{
+			++width_diff;
+			g_ret.ret[++g_ret.i] = ' ';
+		}
+	}
+	
 }
