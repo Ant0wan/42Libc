@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 15:19:44 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/19 18:49:03 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/05 12:07:22 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,28 @@
 
 # include <stdlib.h>
 
-int	ft_wcscmp(const wchar_t *s1, const wchar_t *s2) __attribute__
-	((nonnull(1,2)));
+int		ft_wcscmp(const wchar_t *s1, const wchar_t *s2) __attribute__
+		((nonnull(1,2)));
 
-int	ft_fputwc(wchar_t wc, int fd);
+int		ft_fputwc(wchar_t wc, int fd);
 
-int	ft_fputws(const wchar_t *restrict ws, int fd);
+int		ft_fputws(const wchar_t *restrict ws, int fd);
 
-int	ft_putwchar(wchar_t wc);
+int		ft_putwchar(wchar_t wc);
 
-int	ft_fwprintf(int fd, const wchar_t *restrict format, ...);
+int		ft_fwprintf(int fd, const wchar_t *restrict format, ...);
 
-int	ft_fputwcbits(wchar_t c, int fd);
+int		ft_fputwcbits(wchar_t c, int fd);
 
-int	ft_fputwsbits(const wchar_t *restrict ws, int fd);
+int		ft_fputwsbits(const wchar_t *restrict ws, int fd);
 
-int	ft_putwstr(const wchar_t *restrict ws);
+int		ft_putwstr(const wchar_t *restrict ws);
 
-int	ft_putwcbits(wchar_t c);
+int		ft_putwcbits(wchar_t c);
+
+size_t	ft_wcslen(const wchar_t *ws);
+
+wchar_t	*ft_wcscpy(wchar_t *ws1, const wchar_t *ws2) __attribute__
+		((nonnull(1,2)));
 
 #endif

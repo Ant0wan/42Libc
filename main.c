@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/02 14:54:14 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/05 15:04:11 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -244,31 +244,88 @@ int main(void)
 //	ret2 = ft_printf("%");
 //	printf("%d\n", ret2);
 //	printf("\n\n");
+//
+//	ret1 = printf("%   %", "Hello");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("%   %", "Hello");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
 
-	//ret1 = printf("%   %", "Hello");
-	//printf("%d\n", ret1);
-	//ret2 = ft_printf("%   %", "Hello");
-	//printf("%d\n", ret2);
-	//printf("\n\n");
+//	ret1 = printf("Hello %ls!%s%s", L"World", "Damn", "okay");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("Hello %ls!%s%s", L"World", "Damn", "okay");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
+//
+//	ret1 = printf("Hello %s!%s%s", "World", "Damn", "okay");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("Hello %s!%s%s", "World", "Damn", "okay");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
 
+//	ret1 = printf("Hello %s!%s%s", "😄", "Damn", "okay");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("Hello %s!%s%s", "😄", "Damn", "okay");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
 
-	ret1 = printf("Hello %s!%s%s", "World", "Damn", "okay");
+//	ret1 = printf("Hello %ls!%s%s", L"😄<", "Damn", "okay");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("Hello %ls!%s%s", L"😄<", "Damn", "okay");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
+//	ret1 = printf("Hello %ls!%s%s", L"\x160", "Damn", "okay");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("Hello %ls!%s%s", L"\x160", "Damn", "okay"); // 352 it checks the overflow before putting char in wchar
+//	printf("%d\n", ret2);
+//	printf("\n\n");
+//	ret1 = printf("Hello %ls!%s%s", L"\x00F", "Damn", "okay");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("Hello %ls!%s%s", L"\x00F", "Damn", "okay"); // 256
+//	printf("%d\n", ret2);
+//	printf("\n\n");
+	ret1 = printf("1Hello %ls!", L"~");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("Hello %s!%s%s", "World", "Damn", "okay");
+	ret2 = ft_printf("1Hello %ls!", L"~"); // 256
 	printf("%d\n", ret2);
 	printf("\n\n");
-
-	ret1 = printf("%s", "Hello");
+//	ret1 = printf("Hello %ls!%s", L"\x160", "BOY");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("Hello %ls!%s", L"\x160", "BOY"); // 256
+//	printf("%d\n", ret2);
+//	printf("\n\n");
+	ret1 = printf("2Hellowidth %12ls!%s%s", L"\x0FF", "Damn", "okay"); // 255
 	printf("%d\n", ret1);
-	ret2 = ft_printf("%s", "Hello");
+	ret2 = ft_printf("2Hellowidth %12ls!%s%s", L"\x0FF", "Damn", "okay");
+	printf("%d\n", ret2);
+	printf("\n\n");
+//	ret1 = printf("Hello %ls!%s%s", L"\x100", "Damn", "okay");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("Hello %ls!%s%s", L"\x100", "Damn", "okay");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
+
+	ret1 = printf("3All ok Hello %ls!%ls%s", L"~", L"Damnijefihwfiwhf~", "Ookay");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("3All ok Hello %ls!%ls%s", L"~", L"Damnijefihwfiwhf~", "Ookay");
+	printf("%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("4Ko on sec arg Hello %ls! %ls%s", L"~", L"Damn\x100ijefihwfiwhf~", "okay"); // NOT OK
+	printf("%d\n", ret1);
+	ret2 = ft_printf("4Ko on sec arg Hello %ls! %ls%s", L"~", L"Damn\x100ijefihwfiwhf~", "okay"); // NOT OK
 	printf("%d\n", ret2);
 	printf("\n\n");
 	
-	ret1 = printf("Hello");
+	ret1 = printf("5Hello %ls! !%s%s", L"\x100", "Damn", "okay");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("Hello");
+	ret2 = ft_printf("5Hello %ls! !%s%s", L"\x100", "Damn", "okay");
 	printf("%d\n", ret2);
 	printf("\n\n");
+//	ret1 = printf("Hello");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("Hello");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
 //		ret1 = printf("Hello %s %s ! \n", "Awesome", "World");
 //	printf("%d\n", ret1);
 //	ret2 = ft_printf("Hello %s %s ! \n", "Awesome", "World");

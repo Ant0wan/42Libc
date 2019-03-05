@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/02 14:43:46 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/05 14:56:07 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 
 static va_list	g_ap_origin;
 t_ret			g_ret;
+t_modifier		g_modifier =
+{.hh = 0, .h = 0, .l = 0, .ll = 0, .j = 0, .t = 0, .z = 0, .upl = 0};
 t_options		g_options =
 {.width = 0, .precision = 0, .i_ap = 0, .val_dol = 1};
 static t_flags	g_flags =
@@ -78,6 +80,75 @@ static void		get_flags(const char *format, _Bool *specifier)
 	}
 }
 
+static _Bool	get_modifier(const char *format)
+{
+	if (!(format[g_ret.fmt_i] ^ 'l'))
+	{
+		g_modifier.l = 1;
+		if (!(format[g_ret.fmt_i + 1] ^ 'l'))
+		{
+			++g_ret.fmt_i;
+			g_modifier.l = 0;
+			g_modifier.ll = 1;
+		}
+		return (0);
+	}
+	else if (!(format[g_ret.fmt_i] ^ 'h'))
+	{
+		g_modifier.h = 1;
+		if (!(format[g_ret.fmt_i + 1] ^ 'h'))
+		{
+			++g_ret.fmt_i;
+			g_modifier.h = 0;
+			g_modifier.hh = 1;
+		}
+		return (0);
+	}
+	else if (!(format[g_ret.fmt_i] ^ 'j'))
+	{
+		g_modifier.j = 1;
+		return (0);
+	}
+	else if (!(format[g_ret.fmt_i] ^ 't'))
+	{
+		g_modifier.t = 1;
+		return (0);
+	}
+	else if (!(format[g_ret.fmt_i] ^ 'z'))
+	{
+		g_modifier.z = 1;
+		return (0);
+	}
+	else if (!(format[g_ret.fmt_i] ^ 'L'))
+	{
+		g_modifier.upl = 1;
+		return (0);
+	}
+	else
+		return (1);
+}
+
+static void		reset_globals(void)
+{
+		g_options.width = 0;
+		g_options.precision = 0;
+		g_options.val_dol = 1;
+		g_flags.hash = 0;
+		g_flags.zero = 0;
+		g_flags.minus = 0;
+		g_flags.space = 0;
+		g_flags.plus = 0;
+		g_flags.apost = 0;
+		g_modifier.hh = 0;
+		g_modifier.h = 0;
+		g_modifier.l = 0;
+		g_modifier.ll = 0;
+		g_modifier.j = 0;
+		g_modifier.t = 0;
+		g_modifier.z = 0;
+		g_modifier.upl = 0;
+}
+
 static _Bool	prs_specifier(const char *format, va_list ap)
 {
 	t_specifier	s_functions;
@@ -86,6 +157,7 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 
 	while (!(format[g_ret.fmt_i] ^ '%'))
 	{
+		reset_globals();
 		specifier = 1;
 		while (format[++g_ret.fmt_i] && specifier)
 		{
@@ -115,8 +187,9 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 			}
 			else if (specifier) // EXIT 2
 			{
-				specifier = 0;
-		//		ft_putchar(format[g_ret.i]);
+				if (get_modifier(format))
+					specifier = 0;
+		//		ft_putchar(format[g_ret.i]); // ft_chr.c
 			}
 		}
 	}
@@ -129,18 +202,10 @@ int			printf_prs(const char *format, va_list ap)
 	va_copy(g_ap_origin, ap);
 	while (format[++g_ret.fmt_i] && !(prs_specifier(format, ap)))
 	{
+		if (g_error)
+				return (-1);
 		if (!(format[g_ret.fmt_i]))
 			break ;
-		g_options.width = 0;
-		g_options.precision = 0;
-		g_options.val_dol = 1;
-		g_flags.hash = 0;
-		g_flags.zero = 0;
-		g_flags.minus = 0;
-		g_flags.space = 0;
-		g_flags.plus = 0;
-		g_flags.apost = 0;
-//		printf("parser g_ret.i:%d\n", g_ret.i);
 		while (g_ret.i + 1 >= g_ret.max)
 			ft_expand_ret(1);
 		g_ret.ret[++g_ret.i] = format[g_ret.fmt_i];

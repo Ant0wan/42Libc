@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 16:13:29 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/02 14:27:34 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/03 17:02:52 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,10 @@ int	ft_vasprintf(char **ret, const char *format, va_list ap)
 		return (RET_ERROR);
 	g_ret.ret = *ret;
 	if (((parse_ret = printf_prs(format, ap)) == RET_ERROR))
+	{
+		*ret = g_ret.ret;
 		return (RET_ERROR);
+	}
 	*ret = g_ret.ret;
 	return (parse_ret);
 }

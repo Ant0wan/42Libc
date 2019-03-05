@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   retwriter.h                                        :+:      :+:    :+:   */
+/*   ft_int.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/28 13:23:31 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/05 12:48:34 by abarthel         ###   ########.fr       */
+/*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
+/*   Updated: 2019/03/02 15:36:08 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RETWRITER_H
-# define RETWRITER_H
+#include "prs_struct.h"
 
-# include <stdlib.h>
+void	ft_int(int i)
+{
+	typeof(n)			i;
+	unsigned int	cp;
 
-void	retwriter(char *str, int size);
-
-void	wretwriter(wchar_t *ws, int size);
-
-#endif
+	cp = n < 0 ? n * -1 : n;
+	i = (n <= 0 ? 1 : 0);
+	while (cp > 0)
+	{
+		cp = (cp - cp % 10) / 10;
+		++i;
+	}
+	if (n <= 0)
+		*g_ret.ret = n == 0 ? '0' : '-';
+	cp = n < 0 ? n * -1 : n;
+	while (cp)
+	{
+		g_ret.ret[--i] = (cp % 10) ^ 0x30;
+		cp = (cp - cp % 10) / 10;
+	}
+}

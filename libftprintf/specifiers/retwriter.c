@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/28 11:48:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/02 15:03:54 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/05 14:39:31 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,9 @@ void		retwriter(char *str, int size)
 	{
 		ft_expand_ret(size);
 		if (g_error)
+		{
 			return ;
+		}
 	}
 	ft_strcpy_special(&g_ret.ret[++g_ret.i], str);
 }
