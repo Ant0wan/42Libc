@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/28 11:48:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/05 18:24:24 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/05 18:35:23 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,6 @@
 #ifndef BUFF
 # define BUFF 1024
 #endif
-
-/*
-** RETWRITER handles char type. It writes to the given string and applies
-** options such as width, precision and flags such as plus.
-** RETWRITER is called by the specifier functions returned by the dispatcher.
-*/
 
 extern t_ret		g_ret;
 extern t_options	g_options;
@@ -39,8 +33,7 @@ static inline void	ft_strcpy_special(char *dst, const char *src)
 	g_ret.i += count - 1;
 }
 
-#include <stdio.h>
-void				retwriter(char *str, int size)
+extern inline void	retwriter(char *str, int size)
 {
 	int	width_diff;
 

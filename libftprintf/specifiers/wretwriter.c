@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/28 11:48:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/05 18:32:25 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/05 18:37:03 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,10 @@ static inline void	ft_wcsncpy_special(char *dst, const wchar_t *src)
 	g_ret.i += count - 1;
 }
 
-void				wretwriter(wchar_t *ws, int size)
+extern inline void	wretwriter(wchar_t *ws, int size)
 {
 	int width_diff;
+
 	width_diff = 0;
 	if (g_ret.i + size + g_options.width >= g_ret.max)
 	{
@@ -64,5 +65,4 @@ void				wretwriter(wchar_t *ws, int size)
 			g_ret.ret[++g_ret.i] = ' ';
 		}
 	}
-	
 }

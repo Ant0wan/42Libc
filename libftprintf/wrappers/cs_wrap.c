@@ -6,18 +6,9 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 10:38:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/05 18:30:48 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/05 18:34:05 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-** CS_WRAP give the specifiers the correct argument and verify conditions
-** given by modifiers. CS_WRAP is returned by the dispatcher and wrappes
-** the specifiers functions.
-** This particular wrapper, verify conditions for 'l' modifier using 's'
-** and 'c' specifier. It casts char in wchar_t if 'l' applies and verify
-** the string is valide i.e. wchar_t val contained in a byte.
-*/
 
 #include <stdarg.h>
 #include <stdlib.h>
