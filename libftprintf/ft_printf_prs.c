@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/05 16:36:28 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/05 18:26:37 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_flags			g_flags =
 {.hash = 0, .zero = 0, .minus = 0, .space = 0, .plus = 0, .apost = 0};
 _Bool			g_error = 0;
 
-static _Bool	isspecifier(char c)
+static inline _Bool	isspecifier(char c)
 {
 	unsigned short	i;
 
@@ -39,7 +39,7 @@ static _Bool	isspecifier(char c)
 	return (0);
 }
 
-static void		get_precision(const char *format, va_list ap)
+static inline void	get_precision(const char *format, va_list ap)
 {
 	while (!(format[g_ret.fmt_i] ^ '.'))
 		++g_ret.fmt_i;
@@ -53,7 +53,7 @@ static void		get_precision(const char *format, va_list ap)
 			g_options.precision = ft_atoi_special(format);
 }
 
-static void		get_flags(const char *format, _Bool *specifier)
+static inline void	get_flags(const char *format, _Bool *specifier)
 {
 	if (!(format[g_ret.fmt_i] ^ '#'))
 		g_flags.hash = 1;
@@ -80,7 +80,7 @@ static void		get_flags(const char *format, _Bool *specifier)
 	}
 }
 
-static _Bool	get_modifier(const char *format)
+static inline _Bool	get_modifier(const char *format)
 {
 	if (!(format[g_ret.fmt_i] ^ 'l'))
 	{
@@ -128,7 +128,7 @@ static _Bool	get_modifier(const char *format)
 		return (1);
 }
 
-static void		reset_globals(void)
+static inline void	reset_globals(void)
 {
 		g_options.width = 0;
 		g_options.precision = 0;
@@ -149,7 +149,7 @@ static void		reset_globals(void)
 		g_modifier.upl = 0;
 }
 
-static _Bool	prs_specifier(const char *format, va_list ap)
+static inline _Bool	prs_specifier(const char *format, va_list ap)
 {
 	t_specifier	s_functions;
 	_Bool		specifier;
@@ -196,7 +196,7 @@ static _Bool	prs_specifier(const char *format, va_list ap)
 	return (0);
 }
 
-int			printf_prs(const char *format, va_list ap)
+int					printf_prs(const char *format, va_list ap)
 {
 	g_ret.fmt_i = -1;
 	va_copy(g_ap_origin, ap);

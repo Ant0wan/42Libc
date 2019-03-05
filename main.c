@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/05 18:05:45 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/05 18:28:00 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main(void)
 {
 	//	void	(*f)();
 
-//	setlocale(LC_ALL, "");
+	setlocale(LC_ALL, "");
 	//	f = dispatcher("o");
 	//	printf("%d\n", (int)f);
 	//	f = dispatcher("d");
@@ -310,22 +310,22 @@ int main(void)
 //	printf("%d\n", ret2);
 //	printf("\n\n");
 
-//	ret1 = printf("3All ok Hello %ls!%ls%s", L"~", L"Damnijefihwfiwhf~", "Ookay");
-//	printf("%d\n", ret1);
-//	ret2 = ft_printf("3All ok Hello %ls!%ls%s", L"~", L"Damnijefihwfiwhf~", "Ookay");
-//	printf("%d\n", ret2);
-//	printf("\n\n");
-//	ret1 = printf("4Ko on sec arg Hello %ls! %ls%s", L"~", L"Damn\x100ijefihwfiwhf~", "okay"); // NOT OK
-//	printf("%d\n", ret1);
-//	ret2 = ft_printf("4Ko on sec arg Hello %ls! %ls%s", L"~", L"Damn\x100ijefihwfiwhf~", "okay"); // NOT OK
-//	printf("%d\n", ret2);
-//	printf("\n\n");
-//	
-//	ret1 = printf("5Hello %ls! !%s%s", L"\x100", "Damn", "okay");
-//	printf("%d\n", ret1);
-//	ret2 = ft_printf("5Hello %ls! !%s%s", L"\x100", "Damn", "okay");
-//	printf("%d\n", ret2);
-//	printf("\n\n");
+	ret1 = printf("3All ok Hello %ls!%ls%s", L"~", L"Damnijefihwfiwhf~", "Ookay");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("3All ok Hello %ls!%ls%s", L"~", L"Damnijefihwfiwhf~", "Ookay");
+	printf("%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("4Ko on sec arg Hello %ls! %ls%s", L"~", L"Damn\x100ijefihwfiwhf~", "okay"); // NOT OK
+	printf("%d\n", ret1);
+	ret2 = ft_printf("4Ko on sec arg Hello %ls! %ls%s", L"~", L"Damn\x100ijefihwfiwhf~", "okay"); // NOT OK
+	printf("%d\n", ret2);
+	printf("\n\n");
+	
+	ret1 = printf("5Hello %ls! !%s%s", L"\x100", "Damn", "okay");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("5Hello %ls! !%s%s", L"\x100", "Damn", "okay");
+	printf("%d\n", ret2);
+	printf("\n\n");
 //	ret1 = printf("Hello");
 //	printf("%d\n", ret1);
 //	ret2 = ft_printf("Hello");
@@ -368,12 +368,17 @@ int main(void)
 	printf("\n\n");
 
 
-	ret1 = printf("%2147483649s", "World ");
+//	ret1 = printf("%-2147483649s", "World ");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("%-2147483649s", "World ");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
+// "Hello %ls!%ls%ls", L"电脑是新的", L",电脑死机了。", L"电脑坏了。😢 "
+	ret1 = printf("Hello %S", L"电脑是新的");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("%2147483649s", "World ");
+	ret2 = ft_printf("Hello %S", L"电脑是新的");
 	printf("%d\n", ret2);
 	printf("\n\n");
-
 
 	return (0);
 }
