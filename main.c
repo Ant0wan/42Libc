@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/05 18:45:30 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/06 16:30:47 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -315,9 +315,9 @@ int main(void)
 	ret2 = ft_printf("3All ok Hello %ls!%ls%s", L"~", L"Damnijefihwfiwhf~", "Ookay");
 	printf("%d\n", ret2);
 	printf("\n\n");
-	ret1 = printf("4Ko on sec arg Hello %ls! %ls%s", L"~", L"Damn\x100ijefihwfiwhf~", "okay"); // NOT OK
+	ret1 = printf("4Ko on sec arg Hello %ls! %ls%s", L"~", L"Damn\x100ijefihwfiwhf~", "okay");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("4Ko on sec arg Hello %ls! %ls%s", L"~", L"Damn\x100ijefihwfiwhf~", "okay"); // NOT OK
+	ret2 = ft_printf("4Ko on sec arg Hello %ls! %ls%s", L"~", L"Damn\x100ijefihwfiwhf~", "okay");
 	printf("%d\n", ret2);
 	printf("\n\n");
 	
@@ -374,11 +374,11 @@ int main(void)
 //	printf("%d\n", ret2);
 //	printf("\n\n");
 // "Hello %ls!%ls%ls", L"电脑是新的", L",电脑死机了。", L"电脑坏了。😢 "
-//	ret1 = printf("Hello %S", L"电脑是新的");
-//	printf("%d\n", ret1);
-//	ret2 = ft_printf("Hello %S", L"电脑是新的");
-//	printf("%d\n", ret2);
-//	printf("\n\n");
+	ret1 = printf("Hello %ls", L"电脑是新的");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("Hello %ls", L"电脑是新的");
+	printf("%d\n", ret2);
+	printf("\n\n");
 	ret1 = printf("电");
 	printf("%d\n", ret1);
 	ret2 = ft_printf("电");
@@ -394,6 +394,18 @@ int main(void)
 	ret2 = ft_printf("%ls", L"\x100");
 	printf("%d\n", ret2);
 	printf("\n\n");
+	ret1 = printf("%ls", L"电脑坏了。😢 ");
+//	ret1 = printf("%ls", L"电脑坏了");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%ls", L"电脑坏了。😢 ");
+//	ret2 = ft_printf("%ls", L"电脑坏了");
+	printf("%d\n", ret2);
+	printf("\n\n");
 
+	ret1 = printf("%ls", L"😢 ");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%ls", L"😢 ");
+	printf("%d\n", ret2);
+	printf("\n\n");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 18:54:10 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/22 18:39:44 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/06 12:12:24 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 #define BYTE_WCHAR 4
 #define RET_ERROR -1
 
-static int	m0x07ff_utf8(wchar_t *wc)
+static inline int	m0x07ff_utf8(wchar_t *wc)
 {
 	*wc = ((*wc << 16) & ~0xFFC0FFFF) | ((*wc << 23) & ~0xE0FFFFFF);
 	*wc ^= 0xC0000000 | 0x800000;
 	return ((int)*wc);
 }
 
-static int	m0xffff_utf8(wchar_t *wc)
+static inline int	m0xffff_utf8(wchar_t *wc)
 {
 	*wc = ((*wc << 12) & ~0xF0FFFFFF) | ((*wc << 10) & ~0xFFC0FFFF)
 		| ((*wc << 8) & ~0xFFFFC0FF);
@@ -30,7 +30,7 @@ static int	m0xffff_utf8(wchar_t *wc)
 	return ((int)*wc);
 }
 
-static int	m0x10ffff_ut8(wchar_t *wc)
+static inline int	m0x10ffff_ut8(wchar_t *wc)
 {
 	*wc = ((*wc << 7) & ~0xF8FFFFFF) | ((*wc << 4) & ~0xFFC0FFFF)
 		| ((*wc << 2) & ~0xFFFFC0FF) | (*wc & ~0xFFFFFFC0);
@@ -38,7 +38,7 @@ static int	m0x10ffff_ut8(wchar_t *wc)
 	return ((int)*wc);
 }
 
-int			utf8_encoder(wchar_t *wc)
+extern inline int	utf8_encoder(wchar_t *wc)
 {
 	_Static_assert(sizeof(wchar_t) == BYTE_WCHAR,
 			"System does not support 32bits wchar_t");

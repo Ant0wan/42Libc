@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/05 18:26:37 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/06 16:43:53 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,27 +126,6 @@ static inline _Bool	get_modifier(const char *format)
 	}
 	else
 		return (1);
-}
-
-static inline void	reset_globals(void)
-{
-		g_options.width = 0;
-		g_options.precision = 0;
-		g_options.val_dol = 1;
-		g_flags.hash = 0;
-		g_flags.zero = 0;
-		g_flags.minus = 0;
-		g_flags.space = 0;
-		g_flags.plus = 0;
-		g_flags.apost = 0;
-		g_modifier.hh = 0;
-		g_modifier.h = 0;
-		g_modifier.l = 0;
-		g_modifier.ll = 0;
-		g_modifier.j = 0;
-		g_modifier.t = 0;
-		g_modifier.z = 0;
-		g_modifier.upl = 0;
 }
 
 static inline _Bool	prs_specifier(const char *format, va_list ap)

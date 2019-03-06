@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 15:51:04 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/01 16:49:01 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/06 16:43:02 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@
 
 extern t_ret	g_ret;
 
-int		ft_atoi_special(const char *str);
+void	reset_globals(void) __attribute__((always_inline));
 
-int		ft_getif_dollar(const char *str);
+int		ft_atoi_special(const char *str) __attribute__((always_inline));
 
-void	ft_expand_ret(int size);
+int		ft_getif_dollar(const char *str) __attribute__((always_inline));
+
+void	ft_expand_ret(int size) __attribute__((always_inline));
 
 #endif
