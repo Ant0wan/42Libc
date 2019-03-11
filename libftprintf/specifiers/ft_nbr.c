@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/11 13:16:21 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/11 13:18:51 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_nbr(intmax_t nb)
 	i = (nb <= 0 ? 1 : 0);
 	while (cp > 0 && ++i)
 		cp = (cp - cp % 10) / 10;
-	len = i + 1;
+	len = i;
 	if (nb <= 0)
 		*string = nb == 0 ? '0' : '-';
 	string[i] = 0;

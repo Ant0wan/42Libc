@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/11 13:14:32 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/11 13:18:09 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -428,6 +428,13 @@ int main(void)
 	ret2 = ft_printf("normal test %1$d%2$d %3$d %4$5d", 1548, INT_MAX + 1, 42, -1);
 	printf("\t%d\n", ret2);
 	printf("\n\n");
+	
+	ret1 = printf("normal test %1$d %2$d %3$d %4$5d", 1548, INT_MAX + 1, 42, -1);
+	printf("\t%d\n", ret1);
+	ret2 = ft_printf("normal test %1$d %2$d %3$d %4$5d", 1548, INT_MAX + 1, 42, -1);
+	printf("\t%d\n", ret2);
+	printf("\n\n");
+	
 	
 	ret1 = printf("Dollars test %1$d %2$d %3$d %4$d", INT_MAX + 2, INT_MAX + 1, 42, -15);
 	printf("\t%d\n", ret1);
