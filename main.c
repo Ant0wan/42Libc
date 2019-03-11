@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/11 11:24:24 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/11 13:14:32 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -232,9 +232,9 @@ int main(void)
 //	printf("%d\n", ret2);
 //	printf("\n\n");
 //
-//	ret1 = printf("%2$s%1$s%3$s", "World", "Hello ", "!");
+//	ret1 = printf("%2$40s%1$s%3$s", "World", "Hello ", "!");
 //	printf("%d\n", ret1);
-//	ret2 = ft_printf("%2$s%1$s%3$s", "World", "Hello ", "!");
+//	ret2 = ft_printf("%2$40s%1$s%3$s", "World", "Hello ", "!");
 //	printf("%d\n", ret2);
 //	printf("\n\n");
 
@@ -423,22 +423,28 @@ int main(void)
 //	printf("%d\n", ret2);
 //	printf("\n\n");
 //
-	ret1 = printf("Dollars test %1$d %2$d", INT_MAX + 2, INT_MAX + 1);
+	ret1 = printf("normal test %1$d%2$d %3$d %4$5d", 1548, INT_MAX + 1, 42, -1);
 	printf("\t%d\n", ret1);
-	ret2 = ft_printf("Dollars test %1$d %2$d", INT_MAX + 2, INT_MAX + 1);
+	ret2 = ft_printf("normal test %1$d%2$d %3$d %4$5d", 1548, INT_MAX + 1, 42, -1);
+	printf("\t%d\n", ret2);
+	printf("\n\n");
+	
+	ret1 = printf("Dollars test %1$d %2$d %3$d %4$d", INT_MAX + 2, INT_MAX + 1, 42, -15);
+	printf("\t%d\n", ret1);
+	ret2 = ft_printf("Dollars test %1$d %2$d %3$d %4$d", INT_MAX + 2, INT_MAX + 1, 42, -15);
 	printf("\t%d\n", ret2);
 	printf("\n\n");
 
-	ret1 = printf("Dollars test %2$d %1$d", INT_MAX + 2, INT_MAX + 1);
+	ret1 = printf("Dollars test %4$d %3$10d %2$d %1$d", INT_MAX + 2, INT_MAX + 1, 42, -1515151515);
 	printf("\t%d\n", ret1);
-	ret2 = ft_printf("Dollars test %2$d %1$d", INT_MAX + 2, INT_MAX + 1);
+	ret2 = ft_printf("Dollars test %4$d %3$10d %2$d %1$d", INT_MAX + 2, INT_MAX + 1, 42, -1515151515);
 	printf("\t%d\n", ret2);
 	printf("\n\n");
 
-	ret1 = printf("Hello %s %s ! \n", "Awesome", "World");
-	printf("%d\n", ret1);
-	ret2 = ft_printf("Hello %s %s ! \n", "Awesome", "World");
-	printf("%d\n", ret2);	
+	ret1 = printf("Dollars test %4$40d %3$d %1$d %2$d", INT_MAX + 2, INT_MAX + 1, 42, -15);
+	printf("\t%d\n", ret1);
+	ret2 = ft_printf("Dollars test %4$40d %3$d %1$d %2$d", INT_MAX + 2, INT_MAX + 1, 42, -15);
+	printf("\t%d\n", ret2);	
 	printf("\n\n");
 //
 //	ret1 = printf("%d", INT_MIN - 1);

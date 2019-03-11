@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   diu_wrap.c                                         :+:      :+:    :+:   */
+/*   di_wrap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 10:38:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/11 11:22:30 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/11 13:10:27 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 extern t_ret		g_ret;
 extern t_options	g_options;
 
-void	diu_wrap(void *(*f)(), va_list ap)
+void	di_wrap(void *(*f)(), va_list ap)
 {
 	int	i;
 	int	rubbish;

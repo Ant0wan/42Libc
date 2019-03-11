@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/03/11 10:32:47 by abarthel         ###   ########.fr        #
+#    Updated: 2019/03/11 13:11:06 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ DISPATCHER_PATH = ./libftprintf/dispatcher/
 DISPATCHER = dispatcher.o \
 
 WRAPPERS_PATH = ./libftprintf/wrappers/
-WRAPPERS = passive_wrap.o diu_wrap.o cs_wrap.o \
+WRAPPERS = passive_wrap.o di_wrap.o cs_wrap.o \
 
 SPECIFIERS_PATH = ./libftprintf/specifiers/
 SPECIFIERS = ft_str.o ft_nbr.o retwriter.o wretwriter.o \

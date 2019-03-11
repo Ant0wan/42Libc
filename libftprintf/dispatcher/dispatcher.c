@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 14:51:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/11 10:33:12 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/11 13:11:20 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 const t_specifier	g_specifier[] =
 {
 	{ 'c', T_ & ft_putchar, W_ & passive_wrap},
-	{ 'd', T_ & ft_nbr, W_ & diu_wrap},
+	{ 'd', T_ & ft_nbr, W_ & di_wrap},
 	{ 'e', T_ & ft_putnbr, W_ & passive_wrap},
 	{ 'f', T_ & ft_putnbr, W_ & passive_wrap},
 	{ 'i', T_ & ft_putnbr, W_ & passive_wrap},
