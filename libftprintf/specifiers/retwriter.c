@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/28 11:48:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/05 18:35:23 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/11 17:10:17 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,14 @@ extern inline void	retwriter(char *str, int size)
 	int	width_diff;
 
 	width_diff = 0;
+	if (g_ret.i + size + g_options.precision >= g_ret.max)
+	{
+		ft_expand_ret(size < g_options.precision ? g_options.precision : size);
+		if (g_error)
+		{
+			return ;
+		}
+	}
 	if (g_ret.i + size + g_options.width >= g_ret.max)
 	{
 		ft_expand_ret(size < g_options.width ? g_options.width : size);

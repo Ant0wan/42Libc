@@ -6,19 +6,20 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/11 16:26:23 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/11 17:04:06 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdint.h>
 #include <stddef.h>
 
 #include "prs_struct.h"
 #include "retwriter.h"
 #include "libft.h"
 
-#define MAX_DIGITS_NB 64
+#ifndef MAX_DIGITS_NB
+# define MAX_DIGITS_NB 32
+#endif
 
 extern t_modifier	g_modifier;
 
