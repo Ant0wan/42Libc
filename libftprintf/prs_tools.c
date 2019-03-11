@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 15:49:12 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/06 16:45:13 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/11 11:22:39 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ inline void	reset_globals(void)
 {
 	g_options.width = 0;
 	g_options.precision = 0;
-	g_options.val_dol = 1;
+	g_options.val_dol = 0;
 	g_flags.hash = 0;
 	g_flags.zero = 0;
 	g_flags.minus = 0;
@@ -73,7 +73,7 @@ inline int	ft_getif_dollar(const char *str)
 	}
 	if (!(str[i] ^ '$'))
 	{
-		g_ret.i += i;
+		g_ret.fmt_i += i;
 		return (nbr);
 	}
 	return (0);

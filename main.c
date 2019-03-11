@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/06 16:30:47 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/11 11:24:24 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -222,9 +222,24 @@ int main(void)
 //	printf("\n\n");
 //	printf("% 0.-42.*do\n", 42, 10, 15, 45);
 //	ft_printf("% 0.-42.*do\n", 42, 10, 15, 45);
-	
+
 	int ret1;
 	int ret2;
+
+//	ret1 = printf("%2$s%1$s", "World", "Hello ");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("%2$s%1$s", "World", "Hello ");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
+//
+//	ret1 = printf("%2$s%1$s%3$s", "World", "Hello ", "!");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("%2$s%1$s%3$s", "World", "Hello ", "!");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
+
+
+
 //	int i = 100000;
 //	while (--i)
 //		ret1 = printf("%d\n", L"😄");
@@ -294,38 +309,38 @@ int main(void)
 //	ret2 = ft_printf("Hello %ls!%s", L"\x160", "BOY"); // 256
 //	printf("%d\n", ret2);
 //	printf("\n\n");
-	ret1 = printf("2Hellowidth %12ls!%-1s%10s", L"\x0FF", "Damn", "okay"); // 255
-	printf("%d\n", ret1);
-	ret2 = ft_printf("2Hellowidth %12ls!%-1s%10s", L"\x0FF", "Damn", "okay");
-	printf("%d\n", ret2);
-	printf("\n\n");
-	ret1 = printf("2Hellowidth %-12ls!%s%s", L"\x0FF", "Damn", "okay"); // 255
-	printf("%d\n", ret1);
-	ret2 = ft_printf("2Hellowidth %-12ls!%s%s", L"\x0FF", "Damn", "okay");
-	printf("%d\n", ret2);
-	printf("\n\n");
+//	ret1 = printf("2Hellowidth %12ls!%-1s%10s", L"\x0FF", "Damn", "okay"); // 255
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("2Hellowidth %12ls!%-1s%10s", L"\x0FF", "Damn", "okay");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
+//	ret1 = printf("2Hellowidth %-12ls!%s%s", L"\x0FF", "Damn", "okay"); // 255
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("2Hellowidth %-12ls!%s%s", L"\x0FF", "Damn", "okay");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
 //	ret1 = printf("Hello %ls!%s%s", L"\x100", "Damn", "okay");
 //	printf("%d\n", ret1);
 //	ret2 = ft_printf("Hello %ls!%s%s", L"\x100", "Damn", "okay");
 //	printf("%d\n", ret2);
 //	printf("\n\n");
 
-	ret1 = printf("3All ok Hello %ls!%ls%s", L"~", L"Damnijefihwfiwhf~", "Ookay");
-	printf("%d\n", ret1);
-	ret2 = ft_printf("3All ok Hello %ls!%ls%s", L"~", L"Damnijefihwfiwhf~", "Ookay");
-	printf("%d\n", ret2);
-	printf("\n\n");
-	ret1 = printf("4Ko on sec arg Hello %ls! %ls%s", L"~", L"Damn\x100ijefihwfiwhf~", "okay");
-	printf("%d\n", ret1);
-	ret2 = ft_printf("4Ko on sec arg Hello %ls! %ls%s", L"~", L"Damn\x100ijefihwfiwhf~", "okay");
-	printf("%d\n", ret2);
-	printf("\n\n");
-	
-	ret1 = printf("5Hello %ls! !%s%s", L"\x100", "Damn", "okay");
-	printf("%d\n", ret1);
-	ret2 = ft_printf("5Hello %ls! !%s%s", L"\x100", "Damn", "okay");
-	printf("%d\n", ret2);
-	printf("\n\n");
+//	ret1 = printf("3All ok Hello %ls!%ls%s", L"~", L"Damnijefihwfiwhf~", "Ookay");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("3All ok Hello %ls!%ls%s", L"~", L"Damnijefihwfiwhf~", "Ookay");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
+//	ret1 = printf("4Ko on sec arg Hello %ls! %ls%s", L"~", L"Damn\x100ijefihwfiwhf~", "okay");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("4Ko on sec arg Hello %ls! %ls%s", L"~", L"Damn\x100ijefihwfiwhf~", "okay");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
+//	
+//	ret1 = printf("5Hello %ls! !%s%s", L"\x100", "Damn", "okay");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("5Hello %ls! !%s%s", L"\x100", "Damn", "okay");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
 //	ret1 = printf("Hello");
 //	printf("%d\n", ret1);
 //	ret2 = ft_printf("Hello");
@@ -336,36 +351,36 @@ int main(void)
 //	ret2 = ft_printf("Hello %s %s ! \n", "Awesome", "World");
 //	printf("%d\n", ret2);	
 
-	ret1 = printf("Hello %s!", "World ");
-	printf("%d\n", ret1);
-	ret2 = ft_printf("Hello %s!", "World ");
-	printf("%d\n", ret2);
-	printf("\n\n");
-
-	ret1 = printf("Hello %20s!", "World ");
-	printf("%d\n", ret1);
-	ret2 = ft_printf("Hello %20s!", "World ");
-	printf("%d\n", ret2);
-	printf("\n\n");
-
-
-	ret1 = printf("Hello %-20s!", "World ");
-	printf("%d\n", ret1);
-	ret2 = ft_printf("Hello %-20s!", "World ");
-	printf("%d\n", ret2);
-	printf("\n\n");
-
-	ret1 = printf("Hello %.12s!", "World ");
-	printf("%d\n", ret1);
-	ret2 = ft_printf("Hello %.12s!", "World ");
-	printf("%d\n", ret2);
-	printf("\n\n");
-
-	ret1 = printf("Hello %.2s!", "World ");
-	printf("%d\n", ret1);
-	ret2 = ft_printf("Hello %.2s!", "World ");
-	printf("%d\n", ret2);
-	printf("\n\n");
+//	ret1 = printf("Hello %s!", "World ");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("Hello %s!", "World ");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
+//
+//	ret1 = printf("Hello %20s!", "World ");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("Hello %20s!", "World ");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
+//
+//
+//	ret1 = printf("Hello %-20s!", "World ");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("Hello %-20s!", "World ");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
+//
+//	ret1 = printf("Hello %.12s!", "World ");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("Hello %.12s!", "World ");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
+//
+//	ret1 = printf("Hello %.2s!", "World ");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("Hello %.2s!", "World ");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
 
 
 //	ret1 = printf("%-2147483649s", "World ");
@@ -374,38 +389,69 @@ int main(void)
 //	printf("%d\n", ret2);
 //	printf("\n\n");
 // "Hello %ls!%ls%ls", L"电脑是新的", L",电脑死机了。", L"电脑坏了。😢 "
-	ret1 = printf("Hello %ls", L"电脑是新的");
-	printf("%d\n", ret1);
-	ret2 = ft_printf("Hello %ls", L"电脑是新的");
-	printf("%d\n", ret2);
-	printf("\n\n");
-	ret1 = printf("电");
-	printf("%d\n", ret1);
-	ret2 = ft_printf("电");
-	printf("%d\n", ret2);
-	printf("\n\n");
-	ret1 = printf("Ā");
-	printf("%d\n", ret1);
-	ret2 = ft_printf("Ā");
-	printf("%d\n", ret2);
-	printf("\n\n");
-	ret1 = printf("%ls", L"\x100");
-	printf("%d\n", ret1);
-	ret2 = ft_printf("%ls", L"\x100");
-	printf("%d\n", ret2);
-	printf("\n\n");
-	ret1 = printf("%ls", L"电脑坏了。😢 ");
-//	ret1 = printf("%ls", L"电脑坏了");
-	printf("%d\n", ret1);
-	ret2 = ft_printf("%ls", L"电脑坏了。😢 ");
-//	ret2 = ft_printf("%ls", L"电脑坏了");
-	printf("%d\n", ret2);
+//	ret1 = printf("Hello %ls", L"电脑是新的");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("Hello %ls", L"电脑是新的");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
+//	ret1 = printf("电");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("电");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
+//	ret1 = printf("Ā");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("Ā");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
+//	ret1 = printf("%ls", L"\x100");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("%ls", L"\x100");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
+//	ret1 = printf("%ls", L"电脑坏了。😢 ");
+////	ret1 = printf("%ls", L"电脑坏了");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("%ls", L"电脑坏了。😢 ");
+////	ret2 = ft_printf("%ls", L"电脑坏了");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
+//
+//	ret1 = printf("%ls", L"😢 ");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("%ls", L"😢 ");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
+//
+	ret1 = printf("Dollars test %1$d %2$d", INT_MAX + 2, INT_MAX + 1);
+	printf("\t%d\n", ret1);
+	ret2 = ft_printf("Dollars test %1$d %2$d", INT_MAX + 2, INT_MAX + 1);
+	printf("\t%d\n", ret2);
 	printf("\n\n");
 
-	ret1 = printf("%ls", L"😢 ");
-	printf("%d\n", ret1);
-	ret2 = ft_printf("%ls", L"😢 ");
-	printf("%d\n", ret2);
+	ret1 = printf("Dollars test %2$d %1$d", INT_MAX + 2, INT_MAX + 1);
+	printf("\t%d\n", ret1);
+	ret2 = ft_printf("Dollars test %2$d %1$d", INT_MAX + 2, INT_MAX + 1);
+	printf("\t%d\n", ret2);
 	printf("\n\n");
+
+	ret1 = printf("Hello %s %s ! \n", "Awesome", "World");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("Hello %s %s ! \n", "Awesome", "World");
+	printf("%d\n", ret2);	
+	printf("\n\n");
+//
+//	ret1 = printf("%d", INT_MIN - 1);
+//	printf("\t%d\n", ret1);
+//	ret2 = ft_printf("%d", INT_MIN - 1);
+//	printf("\t%d\n", ret2);
+//	printf("\n\n");
+//
+//	ret1 = printf("%d", INT_MAX + 2);
+//	printf("\t%d\n", ret1);
+//	ret2 = ft_printf("%d", INT_MAX + 2);
+//	printf("\t%d\n", ret2);
+//	printf("\n\n");
+
 	return (0);
 }

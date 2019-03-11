@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/07 11:08:30 by abarthel          #+#    #+#              #
-#    Updated: 2019/03/01 13:53:13 by abarthel         ###   ########.fr        #
+#    Updated: 2019/03/11 10:32:38 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ FLAGS = -Werror -Wall -Wextra
 
 INCS = -I./ -I./../
 
-O_FILES = passive_wrap.o di_wrap.o cs_wrap.o \
+O_FILES = passive_wrap.o diu_wrap.o cs_wrap.o \
 
 %.o : %.c
 	@$(CC) $(FLAGS) $(INCS) $< -c
