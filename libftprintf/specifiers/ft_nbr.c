@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/12 18:31:47 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/12 19:22:47 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,12 +85,19 @@ void	ft_nbr(intmax_t nb)
 	uintmax_t	cp;
 
 	ft_cast_nbr(&nb);
+	if (g_flags.zero)
+	{
+		g_options.precision = g_options.width;
+		g_options.width = 0;
+		if (nb > 0 && !(g_flags.plus))
+			g_flags.zero = 0;
+	}
 	cp = nb < 0 ? nb * -1 : nb;
 	i = 0;
 	while (cp > 0 && ++i)
 		cp = (cp - cp % 10) / 10;
 	len = i;
-	size = g_options.precision > len ? g_options.precision : len;
+	size = g_options.precision > len ? g_options.precision - g_flags.zero : len;
 	if (!(string = ft_give_space_to_write(nb <= 0 ? size + 1 : size)))
 		return ;
 	if (nb <= 0)
