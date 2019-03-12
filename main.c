@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/12 17:54:56 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/12 18:36:19 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -425,66 +425,78 @@ int main(void)
 //	printf("%d\n", ret2);
 //	printf("\n\n");
 //
-	ret1 = printf("0 test %1.42d %.0d %d %5d", -0, 0 , 0, 0);
+	ret1 = printf("0 test %'1.42d %'.0d %'d %'5d", -0, 0 , 0, 0);
 	printf("\t%d\n", ret1);
-	ret2 = ft_printf("0 test %1.42d %.0d %d %5d", -0, 0 , 0, 0);
+	ret2 = ft_printf("0 test %'1.42d %'.0d %'d %'5d", -0, 0 , 0, 0);
 	printf("\t%d\n", ret2);
 	printf("\n\n");
 	
-	ret1 = printf("0 test %+1.42d %+.0d %+d %+5d", -0, 0 , 0, 0);
+	ret1 = printf("0 test %'+1.42d %'+.0d %'+d %'+5d", -0, 0 , 0, 0);
 	printf("\t%d\n", ret1);
-	ret2 = ft_printf("0 test %+1.42d %+.0d %+d %+5d", -0, 0 , 0, 0);
+	ret2 = ft_printf("0 test %'+1.42d %'+.0d %'+d %'+5d", -0, 0 , 0, 0);
 	printf("\t%d\n", ret2);
 	printf("\n\n");
 	
-	ret1 = printf("0 test %+-1.42d %+-.0d %+-d %+-5d", -0, 0 , 0, 0);
+	ret1 = printf("0 test %'+-1.42d %'+-.0d %'+-d %'+-5d", -0, 0 , 0, 0);
 	printf("\t%d\n", ret1);
-	ret2 = ft_printf("0 test %+-1.42d %+-.0d %+-d %+-5d", -0, 0 , 0, 0);
+	ret2 = ft_printf("0 test %'+-1.42d %'+-.0d %'+-d %'+-5d", -0, 0 , 0, 0);
 	printf("\t%d\n", ret2);
 	printf("\n\n");
 	
-	ret1 = printf("0 test %1$1.42d %2$.0d %3$d %4$5d", -0, 0 , 0, 0);
+	ret1 = printf("0 test %1$'1.42d %2$'.0d %3$'d %4$'5d", -0, 0 , 0, 0);
 	printf("\t%d\n", ret1);
-	ret2 = ft_printf("0 test %1$1.42d %2$.0d %3$d %4$5d", -0, 0 , 0, 0);
+	ret2 = ft_printf("0 test %1$'1.42d %2$'.0d %3$'d %4$'5d", -0, 0 , 0, 0);
 	printf("\t%d\n", ret2);
 	printf("\n\n");
 	
-	ret1 = printf("%1$1.42d%2$d%3$.0d%4$5d", -1548, INT_MAX + 1, 42, 0);
+	ret1 = printf("%1$'1.0d%2$'d%3$'.0d%4$'0.0d", -1548, INT_MAX + 1, 42, 0);
 	printf("\t%d\n", ret1);
-	ret2 = ft_printf("%1$1.42d%2$d%3$.0d%4$5d", -1548, INT_MAX + 1, 42, 0);
+	ret2 = ft_printf("%1$'1.0d%2$'d%3$'.0d%4$'0.0d", -1548, INT_MAX + 1, 42, 0);
 	printf("\t%d\n", ret2);
 	printf("\n\n");
 	
-	ret1 = printf("%1$+1.42d%2$+d%3$+.0d%4$+5d", -1548, INT_MAX + 1, 42, 0);
+	ret1 = printf("%1$'+1.42d%2$'+d%3$'+.0d%4$'+5d", -1548, INT_MAX + 1, 42, 0);
 	printf("\t%d\n", ret1);
-	ret2 = ft_printf("%1$+1.42d%2$+d%3$+.0d%4$+5d", -1548, INT_MAX + 1, 42, 0);
+	ret2 = ft_printf("%1$'+1.42d%2$'+d%3$'+.0d%4$'+5d", -1548, INT_MAX + 1, 42, 0);
 	printf("\t%d\n", ret2);
 	printf("\n\n");
 	
-	ret1 = printf("normal test %1$+100.42d %2$d %3$d %4$5d", 1548, INT_MAX + 1, 42, 0);
+	ret1 = printf("normal test %1$'+0.42d %2$'d %3$'d %4$'5d", 1548, INT_MAX + 1, 42, 0);
 	printf("\t%d\n", ret1);
-	ret2 = ft_printf("normal test %1$+100.42d %2$d %3$d %4$5d", 1548, INT_MAX + 1, 42, 0);
+	ret2 = ft_printf("normal test %1$'+0.42d %2$'d %3$'d %4$'5d", 1548, INT_MAX + 1, 42, 0);
 	printf("\t%d\n", ret2);
 	printf("\n\n");
 	
-	ret1 = printf("normal test%+d %d %d %d", 1548, INT_MAX + 1, 42, 0);
-	printf("\t%d\n", ret1);
-	ret2 = ft_printf("normal test%+d %d %d %d", 1548, INT_MAX + 1, 42, 0);
-	printf("\t%d\n", ret2);
-	printf("\n\n");
-	
-	ret1 = printf("space test%+'d %+-d% d %d", 1548, INT_MAX + 1, 42, 0);
-	printf("\t%d\n", ret1);
-	ret2 = ft_printf("space test%+'d %+-d% d %d", 1548, INT_MAX + 1, 42, 0);
-	printf("\t%d\n", ret2);
-	printf("\n\n");
-	
-	ret1 = printf("normal test %+-100.42d %d %d %5d", 1548, INT_MAX + 1, 42, 0);
-	printf("\t%d\n", ret1);
-	ret2 = ft_printf("normal test %+-100.42d %d %d %5d", 1548, INT_MAX + 1, 42, 0);
-	printf("\t%d\n", ret2);
-	printf("\n\n");
-	
+//	ret1 = printf("0width test%+d %.0d %d %d", 1548, INT_MAX + 1, 42, 0);
+//	printf("\t%d\n", ret1);
+//	ret2 = ft_printf("0width test%+d %.0d %d %d", 1548, INT_MAX + 1, 42, 0);
+//	printf("\t%d\n", ret2);
+//	printf("\n\n");
+//	
+//	ret1 = printf("space test%+'d %+-d% d %d", 1548, INT_MAX + 1, 42, 0);
+//	printf("\t%d\n", ret1);
+//	ret2 = ft_printf("space test%+'d %+-d% d %d", 1548, INT_MAX + 1, 42, 0);
+//	printf("\t%d\n", ret2);
+//	printf("\n\n");
+//	
+//	ret1 = printf("2nd 0width test %+-.0d %.0d %.1d %5.3d", 1548, INT_MAX + 1, 42, 0);
+//	printf("\t%d\n", ret1);
+//	ret2 = ft_printf("2nd 0width test %+-.0d %.0d %.1d %5.3d", 1548, INT_MAX + 1, 42, 0);
+//	printf("\t%d\n", ret2);
+//	printf("\n\n");
+//	
+//	ret1 = printf("2nd 0width test %+-.0d %.0d %.10d %5.3d", 1548, INT_MAX + 1, 42, 0);
+//	printf("\t%d\n", ret1);
+//	ret2 = ft_printf("2nd 0width test %+-.0d %.0d %.10d %5.3d", 1548, INT_MAX + 1, 42, 0);
+//	printf("\t%d\n", ret2);
+//	printf("\n\n");
+//	
+//	ret1 = printf("normal test %+-100.42d %d %d %5d", 1548, INT_MAX + 1, 42, 0);
+//	printf("\t%d\n", ret1);
+//	ret2 = ft_printf("normal test %+-100.42d %d %d %5d", 1548, INT_MAX + 1, 42, 0);
+//	printf("\t%d\n", ret2);
+//	printf("\n\n");
+//	
 //	ret1 = printf("overflow on prec test %1$-100.2147483649d %2$d %3$d %4$5d", 1548, INT_MAX + 1, 42, 0);
 //	printf("\t%d\n", ret1);
 //	ret2 = ft_printf("overflow on prec test %1$-100.42147483649d %2$d %3$d %4$5d", 1548, INT_MAX + 1, 42, 0);

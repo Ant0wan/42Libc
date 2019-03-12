@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/12 18:20:10 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/12 18:31:47 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,5 +107,7 @@ void	ft_nbr(intmax_t nb)
 		ft_addplus(string, len);
 	else if (g_options.precision != 0 || nb)
 		retwriter(string, len == 0 ? 1 : len);
+	else
+		retwriter(string, 0);
 	free(string);
 }
