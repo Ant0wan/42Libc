@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 18:19:57 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/06 11:39:43 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/12 12:44:45 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ void	ft_str(char *str)
 	if (g_modifier.l)
 		wretwriter((wchar_t*)str, ft_wcslen((wchar_t*)str) * UTF8ENCOD_SIZE);
 	else
-		retwriter(str, ft_strlen(str));
+		retwriter(str, g_options.precision ? g_options.precision
+				: ft_strlen(str));
 }

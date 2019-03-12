@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/11 17:08:45 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/12 12:46:57 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -437,6 +437,23 @@ int main(void)
 	printf("\t%d\n", ret2);
 	printf("\n\n");
 	
+	ret1 = printf("normal test %1$-100.42d %2$d %3$d %4$5d", 1548, INT_MAX + 1, 42, 0);
+	printf("\t%d\n", ret1);
+	ret2 = ft_printf("normal test %1$-100.42d %2$d %3$d %4$5d", 1548, INT_MAX + 1, 42, 0);
+	printf("\t%d\n", ret2);
+	printf("\n\n");
+	
+	ret1 = printf("%2$-10.2s%1$s%3$s", "World", "Hello ", "!");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%2$-10.2s%1$s%3$s", "World", "Hello ", "!");
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("%2$10.2s%1$s%3$s", "World", "Hello ", "!");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%2$10.2s%1$s%3$s", "World", "Hello ", "!");
+	printf("%d\n", ret2);
+	printf("\n\n");
 //	ret1 = printf("normal test %1$d %2$d %3$d %4$5d", 1548, INT_MAX + 1, 42, -1);
 //	printf("\t%d\n", ret1);
 //	ret2 = ft_printf("normal test %1$d %2$d %3$d %4$5d", 1548, INT_MAX + 1, 42, -1);
