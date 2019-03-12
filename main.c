@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/12 19:24:52 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/12 20:25:10 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main(void)
 {
 	//	void	(*f)();
 
-//	setlocale(LC_ALL, "");
+	setlocale(LC_ALL, "");
 	//	f = dispatcher("o");
 	//	printf("%d\n", (int)f);
 	//	f = dispatcher("d");
@@ -521,18 +521,36 @@ int main(void)
 //	printf("\n\n");
 //	
 //	
-	ret1 = printf("Dollars test %1$d %2$d %3$d %4$d", INT_MAX + 2, INT_MAX + 1, 42, -15);
-	printf("\t%d\n", ret1);
-	ret2 = ft_printf("Dollars test %1$d %2$d %3$d %4$d", INT_MAX + 2, INT_MAX + 1, 42, -15);
-	printf("\t%d\n", ret2);
-	printf("\n\n");
+//	ret1 = printf("Dollars test %1$d %2$d %3$d %4$d", INT_MAX + 2, INT_MAX + 1, 42, -15);
+//	printf("\t%d\n", ret1);
+//	ret2 = ft_printf("Dollars test %1$d %2$d %3$d %4$d", INT_MAX + 2, INT_MAX + 1, 42, -15);
+//	printf("\t%d\n", ret2);
+//	printf("\n\n");
 
-	ret1 = printf("0 test %+01.42d %0+.0d %0+d %0+5d", -0, 0 , 0, 0);
+	ret1 = printf("0 test+ %+1.42d %+.0d %+d %+5d", -0, 0 , 0, 0);
 	printf("\t%d\n", ret1);
-	ret2 = ft_printf("0 test %+01.42d %0+.0d %0+d %0+5d", -0, 0 , 0, 0);
+	ret2 = ft_printf("0 test+ %+1.42d %+.0d %+d %+5d", -0, 0 , 0, 0);
 	printf("\t%d\n", ret2);
 	printf("\n\n");
 	
+	ret1 = printf("1 test - %+-1.42d %+-.0d %d %+-5d", -0, 0 , 0, 0);
+	printf("\t%d\n", ret1);
+	ret2 = ft_printf("1 test - %+-1.42d %+-.0d %d %+-5d", -0, 0 , 0, 0);
+	printf("\t%d\n", ret2);
+	printf("\n\n");
+	
+	ret1 = printf("0z test+zero +01.42d|%+01.42d| 0+.0|%0+.0d| 0+d|%0+d| 0+5d|%0+5d|", -0, 0 , 0, 0);
+	printf("\t%d\n", ret1);
+	ret2 = ft_printf("0z test+zero +01.42d|%+01.42d| 0+.0|%0+.0d| 0+d|%0+d| 0+5d|%0+5d|", -0, 0 , 0, 0);
+	printf("\t%d\n", ret2);
+	printf("\n\n");
+	
+	ret1 = printf("1z testzero %001.42d %0+.0d %0+d %0+5d", -0, 0 , 0, 0);
+	printf("\t%d\n", ret1);
+	ret2 = ft_printf("1z testzero %001.42d %0+.0d %0+d %0+5d", -0, 0 , 0, 0);
+	printf("\t%d\n", ret2);
+	printf("\n\n");
+
    ret1 = printf("Dollars test %4$d %3$010d %2$d %1$d", INT_MAX + 2, INT_MAX + 1, 42, -1515151515);
    printf("\t%d\n", ret1);
    ret2 = ft_printf("Dollars test %4$d %3$010d %2$d %1$d", INT_MAX + 2, INT_MAX + 1, 42, -1515151515);
