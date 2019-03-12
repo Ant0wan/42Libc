@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/12 16:21:08 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/12 18:20:10 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,23 @@ static inline char	*ft_give_space_to_write(size_t len)
 	return (string);
 }
 
+static inline void	ft_addplus(char *str, int len)
+{
+	char *new;
+
+	if (!(new = (char*)ft_memalloc(sizeof(char) * len + 2)))
+	{
+		g_error = 1;
+		return ;
+	}
+	*new = '+';
+	ft_memcpy(&new[1], str, len + 1);
+	if (g_options.precision != 0)
+		retwriter(new, len == 0 ? 2 : len + 1);
+	else
+		retwriter(new, len == 0 ? 1 : len + 1);
+}
+
 void	ft_nbr(intmax_t nb)
 {
 	int			i;
@@ -86,7 +103,9 @@ void	ft_nbr(intmax_t nb)
 		string[--i] = (cp % 10) ^ 0x30;
 		cp = (cp - cp % 10) / 10;
 	}
-	if (g_options.precision != 0 || nb)
+	if (g_flags.plus && nb >= 0)
+		ft_addplus(string, len);
+	else if (g_options.precision != 0 || nb)
 		retwriter(string, len == 0 ? 1 : len);
 	free(string);
 }
