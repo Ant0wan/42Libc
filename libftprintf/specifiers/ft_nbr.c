@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/12 15:36:48 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/12 16:21:08 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ static inline void	ft_cast_nbr(intmax_t *nb)
 		*nb = (int)(*nb);
 }
 
-#include <stdio.h>
 static inline char	*ft_give_space_to_write(size_t len)
 {
 	size_t	i;
@@ -57,7 +56,6 @@ static inline char	*ft_give_space_to_write(size_t len)
 			string[i] = '0';
 		string[i] = 0;
 	}
-//	printf(">%s<", string);
 	return (string);
 }
 
@@ -71,7 +69,6 @@ void	ft_nbr(intmax_t nb)
 
 	ft_cast_nbr(&nb);
 	cp = nb < 0 ? nb * -1 : nb;
-//	i = (nb <= 0 ? 1 : 0);
 	i = 0;
 	while (cp > 0 && ++i)
 		cp = (cp - cp % 10) / 10;
@@ -81,16 +78,15 @@ void	ft_nbr(intmax_t nb)
 		return ;
 	if (nb <= 0)
 		*string = nb == 0 ? '0' : '-';
-//	string[(size_t)g_options.precision > len ? g_options.precision : len] = 0;
 	cp = nb < 0 ? nb * -1 : nb;
 	i = nb < 0 ? size + 1 : size;
 	len = i;
 	while (cp)
 	{
-		string[--i] = ((cp % 10) ^ 0x30);
+		string[--i] = (cp % 10) ^ 0x30;
 		cp = (cp - cp % 10) / 10;
 	}
-//	printf("|%s|", string);
-	retwriter(string, len == 0 ? 1 : len);
+	if (g_options.precision != 0 || nb)
+		retwriter(string, len == 0 ? 1 : len);
 	free(string);
 }

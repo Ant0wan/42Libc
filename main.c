@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/12 15:28:51 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/12 16:19:20 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -425,15 +425,21 @@ int main(void)
 //	printf("%d\n", ret2);
 //	printf("\n\n");
 //
+	ret1 = printf("0 test %1.42d %.0d %d %5d", -0, 0 , 0, 0);
+	printf("\t%d\n", ret1);
+	ret2 = ft_printf("0 test %1.42d %.0d %d %5d", -0, 0 , 0, 0);
+	printf("\t%d\n", ret2);
+	printf("\n\n");
+	
 	ret1 = printf("0 test %1$1.42d %2$.0d %3$d %4$5d", -0, 0 , 0, 0);
 	printf("\t%d\n", ret1);
 	ret2 = ft_printf("0 test %1$1.42d %2$.0d %3$d %4$5d", -0, 0 , 0, 0);
 	printf("\t%d\n", ret2);
 	printf("\n\n");
 	
-	ret1 = printf("normal test %1$1.42d %2$d %3$.0d %4$5d", -1548, INT_MAX + 1, 42, 0);
+	ret1 = printf("%1$1.42d%2$d%3$.0d%4$5d", -1548, INT_MAX + 1, 42, 0);
 	printf("\t%d\n", ret1);
-	ret2 = ft_printf("normal test %1$1.42d %2$d %3$.0d %4$5d", -1548, INT_MAX + 1, 42, 0);
+	ret2 = ft_printf("%1$1.42d%2$d%3$.0d%4$5d", -1548, INT_MAX + 1, 42, 0);
 	printf("\t%d\n", ret2);
 	printf("\n\n");
 	

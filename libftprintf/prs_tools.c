@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 15:49:12 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/11 17:10:33 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/12 16:04:56 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ extern _Bool		g_error;
 inline void	reset_globals(void)
 {
 	g_options.width = 0;
-	g_options.precision = 0;
+	g_options.precision = -1;
 	g_options.val_dol = 0;
 	g_flags.hash = 0;
 	g_flags.zero = 0;

@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/11 11:24:13 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/12 16:08:00 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_ret			g_ret;
 t_modifier		g_modifier =
 {.hh = 0, .h = 0, .l = 0, .ll = 0, .j = 0, .t = 0, .z = 0, .upl = 0};
 t_options		g_options =
-{.width = 0, .precision = 0, .i_ap = 0, .val_dol = 0};
+{.width = 0, .precision = -1, .i_ap = 0, .val_dol = 0};
 t_flags			g_flags =
 {.hash = 0, .zero = 0, .minus = 0, .space = 0, .plus = 0, .apost = 0};
 _Bool			g_error = 0;
@@ -49,7 +49,7 @@ static inline void	get_precision(const char *format, va_list ap)
 		++g_options.i_ap;
 	}
 	else if (!((format[g_ret.fmt_i] & '0')) ^ '0')
-		if (format[g_ret.fmt_i] > '0' && format[g_ret.fmt_i] <= '9')
+		if (format[g_ret.fmt_i] >= '0' && format[g_ret.fmt_i] <= '9') // modified for precision purpose 0 handeling
 			g_options.precision = ft_atoi_special(format);
 }
 
