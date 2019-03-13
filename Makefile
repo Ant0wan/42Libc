@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/03/13 11:22:42 by abarthel         ###   ########.fr        #
+#    Updated: 2019/03/13 13:32:29 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -95,6 +95,7 @@ objects:
 
 # For testing purpose
 test:
+	@make
 	@rm -f $(NAME)
 	@$(MAKE) -C ./libftprintf clean
 	@$(MAKE) -C ./libftprintf objects
