@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/13 13:31:30 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/13 14:11:07 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ extern _Bool		g_error;
 //	return (string);
 //}
 
-static inline void	ft_cast_nbr(intmax_t *nb)
+static inline void				ft_cast_nbr(intmax_t *nb)
 {
 	if (g_modifier.hh)
 		*nb = (signed char)(*nb);
@@ -74,7 +74,7 @@ static inline unsigned short	ft_nbrlen(intmax_t nb)
 }
 
 #include <stdio.h>
-void	ft_nbr(intmax_t nb)
+void							ft_nbr(intmax_t nb)
 {
 	unsigned short	len;
 	_Bool			negative;
@@ -84,12 +84,25 @@ void	ft_nbr(intmax_t nb)
 	negative = 0;
 	if (nb < 0)
 		negative = 1;
-//	printf("|%jd, %d\n", nb, negative);
-	printf("|%hu, %d\n", len, negative);
-	
-	
 
+/* here to introduce all the formatting */
+	
+/* malloc size */
 
-//	retwriter(string, 0);
+/* fill the string */
+
+/* retwriter */
+//	retwriter(str, len);
+
+/* free */
 //	free(string);
+
+
+
+//	printf("|%jd, %d\n", nb, negative);
+//	printf("|%hu, %d\n", len, negative);
+	
+	
+
+
 }
