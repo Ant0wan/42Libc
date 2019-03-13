@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/13 17:54:37 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/13 18:08:22 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,10 +97,8 @@ void							ft_nbr(intmax_t nb)
 	negative = 0;
 	if (nb < 0)
 		negative = 1;
-	//printf("%d\n",len);
 /* Get object size */
 	size = ft_get_object_size(len, negative);
-	//printf("%d\n",ft_get_object_size(len, negative));
 /* Malloc size */
 	if (!(str = (char*)ft_memalloc(sizeof(char)	* size)))
 	{
