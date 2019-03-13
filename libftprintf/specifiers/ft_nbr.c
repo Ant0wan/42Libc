@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/12 20:33:30 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/13 13:30:51 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,25 @@
 
 extern t_modifier	g_modifier;
 extern _Bool		g_error;
+
+//static inline char	*ft_give_space_to_write(size_t len)
+//{
+//	size_t	i;
+//	char	*string;
+//
+//	i = -1;
+//	if (len == 0)
+//		++len;
+//	if (!(string = (char*)malloc(sizeof(char) * (len + 1))))
+//		g_error = 1;
+//	else
+//	{
+//		while (++i < len)
+//			string[i] = '0';
+//		string[i] = 0;
+//	}
+//	return (string);
+//}
 
 static inline void	ft_cast_nbr(intmax_t *nb)
 {
@@ -40,81 +59,37 @@ static inline void	ft_cast_nbr(intmax_t *nb)
 		*nb = (int)(*nb);
 }
 
-static inline char	*ft_give_space_to_write(size_t len)
+static inline unsigned short	ft_nbrlen(intmax_t nb)
 {
-	size_t	i;
-	char	*string;
+	intmax_t		rest;
+	unsigned short	len;
 
-	i = -1;
-	if (len == 0)
+	len = 0;
+	rest = nb;
+	while (rest && ++ len)
+		rest = (rest - (rest % 10)) / 10;
+	if (nb < 0)
 		++len;
-	if (!(string = (char*)malloc(sizeof(char) * (len + 1))))
-		g_error = 1;
-	else
-	{
-		while (++i < len)
-			string[i] = '0';
-		string[i] = 0;
-	}
-	return (string);
+	return (len);
 }
 
-static inline void	ft_addplus(char *str, int len)
-{
-	char *new;
-
-	if (!(new = (char*)ft_memalloc(sizeof(char) * len + 2)))
-	{
-		g_error = 1;
-		return ;
-	}
-	*new = '+';
-	ft_memcpy(&new[1], str, len + 1);
-	if (g_options.precision != 0)
-		retwriter(new, len == 0 ? 2 : len + 1);
-	else
-		retwriter(new, len == 0 ? 1 : len + 1);
-}
-
+#include <stdio.h>
 void	ft_nbr(intmax_t nb)
 {
-	int			i;
-	int			len;
-	int			size;
-	char		*string;
-	uintmax_t	cp;
+	unsigned short	len;
+	_Bool			negative;
 
 	ft_cast_nbr(&nb);
-	if (g_flags.zero)
-	{
-		g_options.precision = g_options.width;
-		g_options.width = 0;
-		if (nb > 0 && !(g_flags.plus))
-			g_flags.zero = 0;
-	}
-	cp = nb < 0 ? nb * -1 : nb;
-	i = 0;
-	while (cp > 0 && ++i)
-		cp = (cp - cp % 10) / 10;
-	len = i;
-	size = g_options.precision > len ? g_options.precision - g_flags.zero : len;
-	if (!(string = ft_give_space_to_write(nb <= 0 ? size + 1 : size)))
-		return ;
-	if (nb <= 0)
-		*string = nb == 0 ? '0' : '-';
-	cp = nb < 0 ? nb * -1 : nb;
-	i = nb < 0 ? size + 1 : size;
-	len = i;
-	while (cp)
-	{
-		string[--i] = (cp % 10) ^ 0x30;
-		cp = (cp - cp % 10) / 10;
-	}
-	if (g_flags.plus && nb >= 0)
-		ft_addplus(string, len);
-	else if (g_options.precision != 0 || nb)
-		retwriter(string, len == 0 ? 1 : len);
-	else
-		retwriter(string, 0);
-	free(string);
+	len = ft_nbrlen(nb);
+	negative = 0;
+	if (nb < 0)
+		negative = 1;
+//	printf("|%jd, %d\n", nb, negative);
+	printf("|%hu, %d\n", len, negative);
+	
+	
+
+
+//	retwriter(string, 0);
+//	free(string);
 }
