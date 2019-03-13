@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/13 18:09:54 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/13 18:30:43 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -559,70 +559,134 @@ int main(void)
 	
 	(void)ret2;
 	ret1 = printf("|%d|\n", -15);
+	ret1 = ft_printf("|%d|\n", -15);
 	ret1 = printf("|%d|\n", 15);
+	ret1 = ft_printf("|%d|\n", 15);
 	ret1 = printf("|%0d|\n", -15);
+	ret1 = ft_printf("|%0d|\n", -15);
 	ret1 = printf("|%0d|\n", 15);
+	ret1 = ft_printf("|%0d|\n", 15);
 	ret1 = printf("|%+d|\n", -15);
+	ret1 = ft_printf("|%+d|\n", -15);
 	ret1 = printf("|%+d|\n", 15);
+	ret1 = ft_printf("|%+d|\n", 15);
 	ret1 = printf("|%40d|\n", -15);
+	ret1 = ft_printf("|%40d|\n", -15);
 	ret1 = printf("|%40d|\n", 15);
+	ret1 = ft_printf("|%40d|\n", 15);
 	ret1 = printf("|%.40d|\n", -15); // +1 and - nb
+	ret1 = ft_printf("|%.40d|\n", -15); // +1 and - nb
 	ret1 = printf("|%+.40d|\n", -15); // +1 and - nb
+	ret1 = ft_printf("|%+.40d|\n", -15); // +1 and - nb
 	ret1 = printf("|%+.40d|\n", 15); // +1 and + nb
+	ret1 = ft_printf("|%+.40d|\n", 15); // +1 and + nb
 	ret1 = printf("|%45.40d|\n", -15); // +1 and - nb
+	ret1 = ft_printf("|%45.40d|\n", -15); // +1 and - nb
 	ret1 = printf("|%45.40d|\n", 15);
+	ret1 = ft_printf("|%45.40d|\n", 15);
 	ret1 = printf("|%+45.40d|\n", -15); // +1 and - nb
+	ret1 = ft_printf("|%+45.40d|\n", -15); // +1 and - nb
 	ret1 = printf("|%+45.40d|\n", 15); // +1 and + nb
+	ret1 = ft_printf("|%+45.40d|\n", 15); // +1 and + nb
 	ret1 = printf("|%040d|\n", -15);
+	ret1 = ft_printf("|%040d|\n", -15);
 	ret1 = printf("|%040d|\n", 15);
+	ret1 = ft_printf("|%040d|\n", 15);
 	ret1 = printf("|%+040d|\n", -15);
+	ret1 = ft_printf("|%+040d|\n", -15);
 	ret1 = printf("|%+040d|\n", 15);
+	ret1 = ft_printf("|%+040d|\n", 15);
 	ret1 = printf("|%0.40d|\n", -15); // +1 and -nb
+	ret1 = ft_printf("|%0.40d|\n", -15); // +1 and -nb
 	ret1 = printf("|%0.40d|\n", 15);
+	ret1 = ft_printf("|%0.40d|\n", 15);
 	ret1 = printf("|%0d|\n", -15);
+	ret1 = ft_printf("|%0d|\n", -15);
 	ret1 = printf("|%0d|\n", 15);
+	ret1 = ft_printf("|%0d|\n", 15);
 	ret1 = printf("|%.0d|\n", -15);
+	ret1 = ft_printf("|%.0d|\n", -15);
 	ret1 = printf("|%+0.0d|\n", 0); // +
+	ret1 = ft_printf("|%+0.0d|\n", 0); // +
 	ret1 = printf("|%+0.0d|\n", 1); // +1
+	ret1 = ft_printf("|%+0.0d|\n", 1); // +1
 	ret1 = printf("|%+.0d|\n", 0); // +
+	ret1 = ft_printf("|%+.0d|\n", 0); // +
 	ret1 = printf("|%+0d|\n", 0); // +0
+	ret1 = ft_printf("|%+0d|\n", 0); // +0
 	ret1 = printf("|%+d|\n", 0); // +0
+	ret1 = ft_printf("|%+d|\n", 0); // +0
 	ret1 = printf("|%.0d|\n", 15);
+	ret1 = ft_printf("|%.0d|\n", 15);
 	ret1 = printf("|%+40d|\n", -15);
+	ret1 = ft_printf("|%+40d|\n", -15);
 	ret1 = printf("|%+40d|\n", 15);
+	ret1 = ft_printf("|%+40d|\n", 15);
 	ret1 = printf("|%40.0d|\n", -15);
+	ret1 = ft_printf("|%40.0d|\n", -15);
 	ret1 = printf("|%40.0d|\n", 15);
+	ret1 = ft_printf("|%40.0d|\n", 15);
 	ret1 = printf("|%+40.0d|\n", -15);
+	ret1 = ft_printf("|%+40.0d|\n", -15);
 	ret1 = printf("|%+40.0d|\n", 15);
+	ret1 = ft_printf("|%+40.0d|\n", 15);
 	ret1 = printf("|%+40.0d|\n", -15);
+	ret1 = ft_printf("|%+40.0d|\n", -15);
 	ret1 = printf("|%+40.0d|\n", 15);
+	ret1 = ft_printf("|%+40.0d|\n", 15);
 	printf("\n");	
 	ret1 = printf("|%-d|\n", -15);
+	ret1 = ft_printf("|%-d|\n", -15);
 	ret1 = printf("|%-d|\n", 15);
+	ret1 = ft_printf("|%-d|\n", 15);
 	ret1 = printf("|%-+d|\n", -15);
+	ret1 = ft_printf("|%-+d|\n", -15);
 	ret1 = printf("|%-+d|\n", 15);
+	ret1 = ft_printf("|%-+d|\n", 15);
 	ret1 = printf("|%-40d|\n", -15);
+	ret1 = ft_printf("|%-40d|\n", -15);
 	ret1 = printf("|%-40d|\n", 15);
+	ret1 = ft_printf("|%-40d|\n", 15);
 	ret1 = printf("|%-40.5d|\n", -15);
+	ret1 = ft_printf("|%-40.5d|\n", -15);
 	ret1 = printf("|%-40.5d|\n", 15);
+	ret1 = ft_printf("|%-40.5d|\n", 15);
 	ret1 = printf("|%-.40d|\n", -15); // +1 and - nb
+	ret1 = ft_printf("|%-.40d|\n", -15); // +1 and - nb
 	ret1 = printf("|%-.40d|\n", 15);
+	ret1 = ft_printf("|%-.40d|\n", 15);
 	ret1 = printf("|%-+.40d|\n", -15); // +1 and - nb
+	ret1 = ft_printf("|%-+.40d|\n", -15); // +1 and - nb
 	ret1 = printf("|%-+.40d|\n", 15); // +1 and + nb
+	ret1 = ft_printf("|%-+.40d|\n", 15); // +1 and + nb
 	ret1 = printf("|%-45.40d|\n", -15); // +1 and - nb
+	ret1 = ft_printf("|%-45.40d|\n", -15); // +1 and - nb
 	ret1 = printf("|%-45.40d|\n", 15);
+	ret1 = ft_printf("|%-45.40d|\n", 15);
 	ret1 = printf("|%-+45.40d|\n", -15); // +1 and - nb
+	ret1 = ft_printf("|%-+45.40d|\n", -15); // +1 and - nb
 	ret1 = printf("|%-+45.40d|\n", 15); // +1 and + nb
+	ret1 = ft_printf("|%-+45.40d|\n", 15); // +1 and + nb
 	ret1 = printf("|%-.0d|\n", -15);
+	ret1 = ft_printf("|%-.0d|\n", -15);
 	ret1 = printf("|%-.0d|\n", 15);
+	ret1 = ft_printf("|%-.0d|\n", 15);
 	ret1 = printf("|%-+40d|\n", -15);
+	ret1 = ft_printf("|%-+40d|\n", -15);
 	ret1 = printf("|%-+40d|\n", 15);
+	ret1 = ft_printf("|%-+40d|\n", 15);
 	ret1 = printf("|%-40.0d|\n", -15);
+	ret1 = ft_printf("|%-40.0d|\n", -15);
 	ret1 = printf("|%-40.0d|\n", 15);
+	ret1 = ft_printf("|%-40.0d|\n", 15);
 	ret1 = printf("|%-+40.0d|\n", -15);
+	ret1 = ft_printf("|%-+40.0d|\n", -15);
 	ret1 = printf("|%-+40.0d|\n", 15);
+	ret1 = ft_printf("|%-+40.0d|\n", 15);
 	ret1 = printf("|%-+40.0d|\n", -15);
+	ret1 = ft_printf("|%-+40.0d|\n", -15);
 	ret1 = printf("|%-+40.0d|\n", 15);
+	ret1 = ft_printf("|%-+40.0d|\n", 15);
 	
 	
 	
