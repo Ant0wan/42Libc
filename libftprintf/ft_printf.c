@@ -6,14 +6,14 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/22 14:27:49 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/13 17:58:22 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/13 10:53:21 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_vdprintf.h"
-
 #include <stdarg.h>
 #include <unistd.h>
+
+#include "ft_vdprintf.h"
 
 int		ft_printf(const char *restrict format, ...)
 {

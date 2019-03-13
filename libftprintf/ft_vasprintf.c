@@ -6,19 +6,23 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 16:13:29 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/05 16:52:25 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/13 10:57:05 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 
-#include "ft_vdprintf.h"
-#include "libft.h"
 #include "ft_printf_prs.h"
 #include "prs_struct.h"
+#include "libft.h"
 
-#define RET_ERROR -1
-#define BUFF 2048
+#ifndef RET_ERROR
+# define RET_ERROR -1
+#endif
+
+#ifndef BUFF
+# define BUFF 2048
+#endif
 
 int	ft_vasprintf(char **ret, const char *format, va_list ap)
 {
