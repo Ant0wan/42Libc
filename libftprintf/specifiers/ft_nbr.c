@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/13 18:31:08 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/13 20:08:38 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,30 @@ static inline int				ft_get_object_size(int len, _Bool negative)
 {
 	int		size;
 
-	size = g_options.precision + g_flags.plus + negative > g_options.width
-		? g_options.precision + g_flags.plus + negative : g_options.width;
-	size = size < len + g_flags.plus ? len + g_flags.plus : size;
+	size = 0;
+	if (g_options.width == -1 && g_options.precision == -1)
+	{
+		if (negative)
+			size = len;
+		else
+			size = len + g_flags.plus;
+	}
+	else if (g_options.width != -1 && g_options.precision != -1)
+	{
+		if (g_options.width > g_options.precision)
+			size = g_options.width > len ? g_options.width : len;
+		else
+			size = g_options.precision > len ? g_options.precision : len;
+	}
+	else if (g_options.width != -1)
+		size = g_options.width > len ? g_options.width : len;
+	else if (g_options.precision != -1)
+	{
+		if (negative)
+			size = g_options.precision + negative > len ? g_options.precision + negative : len;
+		else
+			size = g_options.precision + g_flags.plus > len ? g_options.precision + g_flags.plus : len;
+	}
 	return (size);
 }
 
