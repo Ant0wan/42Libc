@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/13 12:30:01 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/13 12:33:03 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -626,6 +626,26 @@ int main(void)
 	ret1 = printf("3>>Dollars test %+-20.4d %d %+0.0d %+d", -15, 42, 0, -0);
 	printf("\t%d\n", ret1);
 	ret2 = ft_printf("3<<Dollars test %+-20.4d %d %+0.0d %+d", -15, 42, 0, -0);
+	printf("\t%d\n", ret2);	
+	printf("\n");
+	ret1 = printf("4>>Dollars test %+-20.d %d %+0.0d %+d", -15, 42, 0, -0);
+	printf("\t%d\n", ret1);
+	ret2 = ft_printf("4<<Dollars test %+-20.d %d %+0.0d %+d", -15, 42, 0, -0);
+	printf("\t%d\n", ret2);	
+	printf("\n");
+	ret1 = printf("5>>Dollars test %+-.d %d %+0.0d %+d", -15, 42, 0, -0);
+	printf("\t%d\n", ret1);
+	ret2 = ft_printf("5<<Dollars test %+-.d %d %+0.0d %+d", -15, 42, 0, -0);
+	printf("\t%d\n", ret2);	
+	printf("\n");
+	ret1 = printf("6>>Dollars test %+0.d %d %+0.0d %+d", -15, 42, 0, -0);
+	printf("\t%d\n", ret1);
+	ret2 = ft_printf("6<<Dollars test %+0.d %d %+0.0d %+d", -15, 42, 0, -0);
+	printf("\t%d\n", ret2);	
+	printf("\n");
+	ret1 = printf("7>>Dollars test %+.0d %d %+0.0d %+d", -15, 42, 0, -0);
+	printf("\t%d\n", ret1);
+	ret2 = ft_printf("7<<Dollars test %+.0d %d %+0.0d %+d", -15, 42, 0, -0);
 	printf("\t%d\n", ret2);	
 	printf("\n");
 	printf("\n\n");
