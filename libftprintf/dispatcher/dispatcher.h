@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 14:46:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/22 17:17:05 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/13 11:29:58 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 
 # include "struct_disp.h"
 
-# define NB_PTR 28
+# ifndef NB_PTR
+#  define NB_PTR 28
+# endif
 
-t_specifier	dispatcher(char c);
+void	*dispatcher(char c);
 
 #endif

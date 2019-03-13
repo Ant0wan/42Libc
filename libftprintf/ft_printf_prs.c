@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/12 17:53:26 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/13 11:36:10 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,9 +130,9 @@ static inline _Bool	get_modifier(const char *format)
 
 static inline _Bool	prs_specifier(const char *format, va_list ap)
 {
-	t_specifier	s_functions;
-	_Bool		specifier;
-	int			doltest;
+	void	*(*f)();
+	_Bool	specifier;
+	int		doltest;
 
 	while (!(format[g_ret.fmt_i] ^ '%'))
 	{
@@ -160,12 +160,12 @@ static inline _Bool	prs_specifier(const char *format, va_list ap)
 			else if (isspecifier(format[g_ret.fmt_i]))
 			{
 				specifier = 0;
-				s_functions = dispatcher(format[g_ret.fmt_i]);
-				if (s_functions.f)
+				f = dispatcher(format[g_ret.fmt_i]);
+				if (f)
 				{
 					if (g_options.val_dol)
 						va_copy(ap, g_ap_origin);
-					s_functions.wrapper(s_functions.f, ap);
+					wrapper(f, ap);
 				}
 			}
 			else if (specifier) // EXIT 2

@@ -6,11 +6,14 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 15:49:12 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/12 16:04:56 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/13 11:17:17 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdarg.h>
+
+#include "prs_struct.h"
 #include "prs_tools.h"
 #include "libft.h"
 
@@ -18,10 +21,13 @@
 # define BUFF 2048
 #endif
 
-#define G_ERROR 1
+#ifndef G_ERROR
+# define G_ERROR 1
+#endif
 
 extern t_ret		g_ret;
 extern t_modifier	g_modifier;
+extern t_options	g_options;
 extern _Bool		g_error;
 
 inline void	reset_globals(void)
@@ -96,4 +102,16 @@ inline void	ft_expand_ret(int size)
 		ft_memdel((void**)&g_ret.ret);
 		g_ret.ret = (char*)new_ret;
 	}
+}
+
+inline void	wrapper(void *(*f)(), va_list ap)
+{
+	int	i;
+	int	rubbish;
+
+	i = 0;
+	while (++i < g_options.val_dol)
+		rubbish = va_arg(ap, int);
+	f(va_arg(ap, typeof(ap)));
+	++g_options.i_ap;
 }
