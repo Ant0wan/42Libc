@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/13 14:11:07 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/13 17:54:37 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,12 @@
 #include "retwriter.h"
 #include "libft.h"
 
+#ifndef G_ERROR
+# define G_ERROR 1
+#endif
+
 extern t_modifier	g_modifier;
 extern _Bool		g_error;
-
-//static inline char	*ft_give_space_to_write(size_t len)
-//{
-//	size_t	i;
-//	char	*string;
-//
-//	i = -1;
-//	if (len == 0)
-//		++len;
-//	if (!(string = (char*)malloc(sizeof(char) * (len + 1))))
-//		g_error = 1;
-//	else
-//	{
-//		while (++i < len)
-//			string[i] = '0';
-//		string[i] = 0;
-//	}
-//	return (string);
-//}
 
 static inline void				ft_cast_nbr(intmax_t *nb)
 {
@@ -70,39 +55,62 @@ static inline unsigned short	ft_nbrlen(intmax_t nb)
 		rest = (rest - (rest % 10)) / 10;
 	if (nb < 0)
 		++len;
+	if (nb == 0 && g_options.precision == -1)
+		++len;
 	return (len);
+}
+
+static inline int				ft_get_object_size(int len, _Bool negative)
+{
+	int		size;
+
+	size = g_options.precision + g_flags.plus + negative > g_options.width
+		? g_options.precision + g_flags.plus + negative : g_options.width;
+	size = size < len + g_flags.plus ? len + g_flags.plus : size;
+	return (size);
+}
+
+static inline void				ft_format(intmax_t nb, char *str, int size)
+{
+	int	i;
+	(void)nb;
+
+	i = -1;
+	while (++i < size)
+	{
+		str[i] = ' ';
+	}
 }
 
 #include <stdio.h>
 void							ft_nbr(intmax_t nb)
 {
+	int				size;
 	unsigned short	len;
 	_Bool			negative;
+	char			*str;
 
+/* Casts the nb */
 	ft_cast_nbr(&nb);
+/* Get nb len   */
 	len = ft_nbrlen(nb);
 	negative = 0;
 	if (nb < 0)
 		negative = 1;
-
-/* here to introduce all the formatting */
-	
-/* malloc size */
-
-/* fill the string */
-
-/* retwriter */
-//	retwriter(str, len);
-
-/* free */
-//	free(string);
-
-
-
-//	printf("|%jd, %d\n", nb, negative);
-//	printf("|%hu, %d\n", len, negative);
-	
-	
-
-
+	//printf("%d\n",len);
+/* Get object size */
+	size = ft_get_object_size(len, negative);
+	//printf("%d\n",ft_get_object_size(len, negative));
+/* Malloc size */
+	if (!(str = (char*)ft_memalloc(sizeof(char)	* size)))
+	{
+		g_error = G_ERROR;
+		return ;
+	}
+/* Fill the string and introduce all the formatting */
+	ft_format(nb, str, size);	
+/* Retwriter */
+	retwriter(str, size);
+/* Free */
+	free(str);
 }

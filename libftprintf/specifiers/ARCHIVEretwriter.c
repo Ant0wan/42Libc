@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/28 11:48:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/13 16:28:40 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/13 16:25:40 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 #endif
 
 extern t_ret		g_ret;
+extern t_options	g_options;
+extern t_flags		g_flags;
 extern _Bool		g_error;
 
 static inline void	ft_strcpy_special(char *dst, const char *src, int size)
@@ -33,11 +35,31 @@ static inline void	ft_strcpy_special(char *dst, const char *src, int size)
 
 extern inline void	retwriter(char *str, int size)
 {
-	if (g_ret.i + size >= g_ret.max)
+	int	width_diff;
+
+	width_diff = 0;
+	if (g_ret.i + size + g_options.width >= g_ret.max)
 	{
-		ft_expand_ret(size);
+		ft_expand_ret(size < g_options.width ? g_options.width : size);
 		if (g_error)
 			return ;
 	}
-	ft_strcpy_special(&g_ret.ret[++g_ret.i], str, size);
+	if (g_flags.minus == 0)
+	{
+		while (size + width_diff < g_options.width)
+		{
+			++width_diff;
+			g_ret.ret[++g_ret.i] = ' ';
+		}
+		ft_strcpy_special(&g_ret.ret[++g_ret.i], str, size);
+	}
+	else if (g_flags.minus == 1)
+	{
+		ft_strcpy_special(&g_ret.ret[++g_ret.i], str, size);
+		while (size + width_diff < g_options.width)
+		{
+			++width_diff;
+			g_ret.ret[++g_ret.i] = ' ';
+		}
+	}
 }
