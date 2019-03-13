@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/13 12:08:53 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/13 12:30:01 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -558,35 +558,76 @@ int main(void)
 //   printf("\n\n");
 
 	printf("\n\n");
-	ret1 = printf("1>>Dollars test %4$040d %3$d %1$.0d %2$+d", 0, -0, 42, -15);
+	ret1 = printf("0>>Dollars test %040d %d %.0d %+d", -15, 42, -0, 0);
 	printf("\t%d\n", ret1);
-	ret2 = ft_printf("1<<Dollars test %4$040d %3$d %1$.0d %2$d", 0, -0, 42, -15);
+	ret2 = ft_printf("0<<Dollars test %040d %d %.0d %+d", -15, 42, -0, 0);
 	printf("\t%d\n", ret2);	
 	printf("\n");
-	ret1 = printf("2>>Dollars test %4$40d %3$d %1$+d %2$+d", 0, -0, 42, -15);
+	ret1 = printf("1>>Dollars test %40d %d %+d %+d", -15, 42, 0, -0);
 	printf("\t%d\n", ret1);
-	ret2 = ft_printf("2<<Dollars test %4$40d %3$d %1$+d %2$d", 0, -0, 42, -15);
+	ret2 = ft_printf("1<<Dollars test %40d %d %+d %+d", -15, 42, 0, -0);
 	printf("\t%d\n", ret2);	
 	printf("\n");
-	ret1 = printf("3>>Dollars test %4$+40d %3$d %1$d %2$+d", 0, -0, 42, 15);
+	ret1 = printf("2>>Dollars test %+40d %d %+d %+d", 15, 42, 0, -0);
 	printf("\t%d\n", ret1);
-	ret2 = ft_printf("3<<Dollars test %4$+40d %3$d %1$d %2$+d", 0, -0, 42, 15);
+	ret2 = ft_printf("2<<Dollars test %+40d %d %+d %+d", 15, 42, 0, -0);
 	printf("\t%d\n", ret2);	
 	printf("\n");
-	ret1 = printf("4>>Dollars test %04$+40d %3$d %1$d %2$+d", 0, -0, 42, 15);
+	ret1 = printf("3>>Dollars test %+40d %d %d %+d", 15, 42, 0, -0);
 	printf("\t%d\n", ret1);
-	ret2 = ft_printf("4<<Dollars test %04$+40d %3$d %1$d %2$d", 0, -0, 42, 15);
+	ret2 = ft_printf("3<<Dollars test %+40d %d %d %+d", 15, 42, 0, -0);
 	printf("\t%d\n", ret2);	
 	printf("\n");
-	ret1 = printf("5>>Dollars test %04$+.40d %3$d %1$d %2$+d", 0, -0, 42, 15);
+	ret1 = printf("4>>Dollars test %0+40d %d %d %+d", 15, 42, 0, -0);
 	printf("\t%d\n", ret1);
-	ret2 = ft_printf("5<<Dollars test %04$+.40d %3$d %1$d %2$d", 0, -0, 42, 15);
+	ret2 = ft_printf("4<<Dollars test %0+40d %d %d %+d", 15, 42, 0, -0);
 	printf("\t%d\n", ret2);	
 	printf("\n");
-	ret1 = printf("6>>Dollars test %4$.40d %3$d %1$d %2$+d", 0, -0, 42, 15);
+	ret1 = printf("5>>Dollars test %0+.40d %d %d %+d", 15, 42, 0, -0);
 	printf("\t%d\n", ret1);
-	ret2 = ft_printf("6<<Dollars test %4$.40d %3$d %1$d %2$d", 0, -0, 42, 15);
+	ret2 = ft_printf("5<<Dollars test %0+.40d %d %d %+d", 15, 42, 0, -0);
 	printf("\t%d\n", ret2);	
+	printf("\n");
+	ret1 = printf("6>>Dollars test %0+.40d %d %d %+d", -15, 42, 0, -0);
+	printf("\t%d\n", ret1);
+	ret2 = ft_printf("6<<Dollars test %0+.40d %d %d %+d", -15, 42, 0, -0);
+	printf("\t%d\n", ret2);	
+	printf("\n");
+	ret1 = printf("7>>Dollars test %.40d %d %+4.2d %+d", 15, 42, 0, -0);
+	printf("\t%d\n", ret1);
+	ret2 = ft_printf("7<<Dollars test %.40d %d %+4.2d %+d", 15, 42, 0, -0);
+	printf("\t%d\n", ret2);	
+	printf("\n");
+	ret1 = printf("8>>Dollars test %20.4d %d %4.2d %+d", 15, 42, 0, -0);
+	printf("\t%d\n", ret1);
+	ret2 = ft_printf("8<<Dollars test %20.4d %d %4.2d %+d", 15, 42, 0, -0);
+	printf("\t%d\n", ret2);	
+	printf("\n");
+	ret1 = printf("9>>Dollars test %020.4d %d %+0.0d %+d", 15, 42, 0, -0);
+	printf("\t%d\n", ret1);
+	ret2 = ft_printf("9<<Dollars test %020.4d %d %+0.0d %+d", 15, 42, 0, -0);
+	printf("\t%d\n", ret2);	
+	printf("\n");
+	ret1 = printf("0>>Dollars test %+020.4d %d %d %+d", 15, 42, 0, -0);
+	printf("\t%d\n", ret1);
+	ret2 = ft_printf("0<<Dollars test %+020.4d %d %d %+d", 15, 42, 0, -0);
+	printf("\t%d\n", ret2);	
+	printf("\n");
+	ret1 = printf("1>>Dollars test %+020.4d %d %0.0d %+d", -15, 42, 0, -0);
+	printf("\t%d\n", ret1);
+	ret2 = ft_printf("1<<Dollars test %+020.4d %d %0.0d %+d", -15, 42, 0, -0);
+	printf("\t%d\n", ret2);	
+	printf("\n");
+	ret1 = printf("2>>Dollars test %+-20.4d %d %0.0d %+d", 15, 42, -0, -0);
+	printf("\t%d\n", ret1);
+	ret2 = ft_printf("2<<Dollars test %+-20.4d %d %0.0d %+d", 15, 42, -0, -0);
+	printf("\t%d\n", ret2);	
+	printf("\n");
+	ret1 = printf("3>>Dollars test %+-20.4d %d %+0.0d %+d", -15, 42, 0, -0);
+	printf("\t%d\n", ret1);
+	ret2 = ft_printf("3<<Dollars test %+-20.4d %d %+0.0d %+d", -15, 42, 0, -0);
+	printf("\t%d\n", ret2);	
+	printf("\n");
 	printf("\n\n");
 	printf("\n\n");
 	printf("\n\n");
