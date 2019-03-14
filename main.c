@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/14 16:59:38 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/14 19:31:33 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -612,29 +612,29 @@ int main(void)
 	printf("|%+0.0d|\n", 0);
 	ft_printf("|%+0.0d|\n", 0);
 	printf("|%+0.0d|\n", 1);
-	ft_printf("|%+0.0d|\n", 1); // KO
+	ft_printf("|%+0.0d|\n", 1);
 	printf("|%+10.0d|\n", 1);
-	ft_printf("|%+10.0d|\n", 1); // KO
+	ft_printf("|%+10.0d|\n", 1);
 	printf("|%+0.10d|\n", 1);
-	ft_printf("|%+0.10d|\n", 1); // KO
+	ft_printf("|%+0.10d|\n", 1);
 	printf("|%+0.0d|\n", -1);
-	ft_printf("|%+0.0d|\n", -1); // KO
+	ft_printf("|%+0.0d|\n", -1);
 	printf("|%+10.0d|\n", -1);
-	ft_printf("|%+10.0d|\n", -1); // KO
+	ft_printf("|%+10.0d|\n", -1);
 	printf("|%+0.10d|\n", -1);
-	ft_printf("|%+0.10d|\n", -1); // KO
+	ft_printf("|%+0.10d|\n", -1);
 	printf("|%+0.0d|\n", INT_MAX);
-	ft_printf("|%+0.0d|\n", INT_MAX); // KO
+	ft_printf("|%+0.0d|\n", INT_MAX);
 	printf("|%+10.0d|\n", INT_MAX);
-	ft_printf("|%+10.0d|\n", INT_MAX); // KO
+	ft_printf("|%+10.0d|\n", INT_MAX);
 	printf("|%+0.10d|\n", INT_MAX);
-	ft_printf("|%+0.10d|\n", INT_MAX); // KO
+	ft_printf("|%+0.10d|\n", INT_MAX);
 	printf("|%+0.0d|\n", INT_MIN);
-	ft_printf("|%+0.0d|\n", INT_MIN); // KO
+	ft_printf("|%+0.0d|\n", INT_MIN);
 	printf("|%+10.0d|\n", INT_MIN);
-	ft_printf("|%+10.0d|\n", INT_MIN); // KO
+	ft_printf("|%+10.0d|\n", INT_MIN);
 	printf("|%+0.10d|\n", INT_MIN);
-	ft_printf("|%+0.10d|\n", INT_MIN); // KO
+	ft_printf("|%+0.10d|\n", INT_MIN);
 	printf("|%+.0d|\n", 0);
 	ft_printf("|%+.0d|\n", 0);
 	printf("|%+0d|\n", 0);
@@ -647,10 +647,30 @@ int main(void)
 	ft_printf("|%+d|\n", 0);
 	printf("|%.0d|\n", 150);
 	ft_printf("|%.0d|\n", 150);
+	printf("|%042.0d|\n", 150);
+	ft_printf("|%042.0d|\n", 150);
+	printf("|%42.20d|\n", 150);
+	ft_printf("|%42.20d|\n", 150);
+	printf("|%+42.20d|\n", 150);
+	ft_printf("|%+42.20d|\n", 150);
+	printf("|%42.20d|\n", -150);
+	ft_printf("|%42.20d|\n", -150);
+	printf("|%+42.20d|\n", -150);
+	ft_printf("|%+42.20d|\n", -150);
+	printf("|%+042.0d|\n", 150);
+	ft_printf("|%+042.0d|\n", 150);
+	printf("|%+042.3d|\n", 150);
+	ft_printf("|%+042.3d|\n", 150);
+	printf("|%+042.1d|\n", 150);
+	ft_printf("|%+042.1d|\n", 150);
+	printf("|%+042d|\n", 150);
+	ft_printf("|%+042d|\n", 150);
+	printf("|%+042.4d|\n", 150);
+	ft_printf("|%+042.4d|\n", 150);
 	printf("|%+40d|\n", -150);
 	ft_printf("|%+40d|\n", -150);
-	printf("|%+40d|\n", 150);
-	ft_printf("|%+40d|\n", 150);
+	printf("|%+40.24d|\n", 150);
+	ft_printf("|%+40.24d|\n", 150);
 	printf("|%40.0d|\n", -150);
 	ft_printf("|%40.0d|\n", -150);
 	printf("|%40.0d|\n", 150);
@@ -661,65 +681,71 @@ int main(void)
 	ft_printf("|%+40.0d|\n", 150);
 	printf("|%+40.0d|\n", -150);
 	ft_printf("|%+40.0d|\n", -150);
+	printf("|%+40d|\n", -150);
+	ft_printf("|%+40d|\n", -150);
+	printf("|%+040d|\n", -150);
+	ft_printf("|%+040d|\n", -150);
+	printf("|%+040.0d|\n", -150);
+	ft_printf("|%+040.0d|\n", -150);
 	printf("|%+40.0d|\n", 150);
 	ft_printf("|%+40.0d|\n", 150);
-	printf("********************    -   ****************\n");	
-	printf("|%-d|\n", -150);
-	ft_printf("|%-d|\n", -150);
-	printf("|%-d|\n", 150);
-	ft_printf("|%-d|\n", 150);
-	printf("|%-+d|\n", -150);
-	ft_printf("|%-+d|\n", -150);
-	printf("|%-+d|\n", 150);
-	ft_printf("|%-+d|\n", 150);
-	printf("|%-40d|\n", -150);
-	ft_printf("|%-40d|\n", -150);
-	printf("|%-40d|\n", 150);
-	ft_printf("|%-40d|\n", 150);
-	printf("|%-40.5d|\n", -150);
-	ft_printf("|%-40.5d|\n", -150);
-	printf("|%-40.5d|\n", 150);
-	ft_printf("|%-40.5d|\n", 150);
-	printf("|%-.40d|\n", -150);
-	ft_printf("|%-.40d|\n", -150);
-	printf("|%-.40d|\n", 150);
-	ft_printf("|%-.40d|\n", 150);
-	printf("|%-+.40d|\n", -150); 
-	ft_printf("|%-+.40d|\n", -150); 
-	printf("|%-+.40d|\n", 150); 
-	ft_printf("|%-+.40d|\n", 150); 
-	printf("|%-45.40d|\n", -150); 
-	ft_printf("|%-45.40d|\n", -150); 
-	printf("|%-45.40d|\n", 150);
-	ft_printf("|%-45.40d|\n", 150);
-	printf("|%-+45.40d|\n", -150); 
-	ft_printf("|%-+45.40d|\n", -150); 
-	printf("|%-+45.40d|\n", 150); 
-	ft_printf("|%-+45.40d|\n", 150); 
-	printf("|%-.0d|\n", -150);
-	ft_printf("|%-.0d|\n", -150);
-	printf("|%-.0d|\n", 150);
-	ft_printf("|%-.0d|\n", 150);
-	printf("|%-+40d|\n", -150);
-	ft_printf("|%-+40d|\n", -150);
-	printf("|%-+40d|\n", 150);
-	ft_printf("|%-+40d|\n", 150);
-	printf("|%-40.0d|\n", -150);
-	ft_printf("|%-40.0d|\n", -150);
-	printf("|%-40.0d|\n", 150);
-	ft_printf("|%-40.0d|\n", 150);
-	printf("|%-+40.0d|\n", -150);
-	ft_printf("|%-+40.0d|\n", -150);
-	printf("|%-+40.0d|\n", 150);
-	ft_printf("|%-+40.0d|\n", 150);
-	printf("|%-+40.0d|\n", -150);
-	ft_printf("|%-+40.0d|\n", -150);
-	printf("|%-+40.0d|\n", 150);
-	ft_printf("|%-+40.0d|\n", 150);
-	
-	
-	
-	
+//	printf("********************    -   ****************\n");	
+//	printf("|%-d|\n", -150);
+//	ft_printf("|%-d|\n", -150);
+//	printf("|%-d|\n", 150);
+//	ft_printf("|%-d|\n", 150);
+//	printf("|%-+d|\n", -150);
+//	ft_printf("|%-+d|\n", -150);
+//	printf("|%-+d|\n", 150);
+//	ft_printf("|%-+d|\n", 150);
+//	printf("|%-40d|\n", -150);
+//	ft_printf("|%-40d|\n", -150);
+//	printf("|%-40d|\n", 150);
+//	ft_printf("|%-40d|\n", 150);
+//	printf("|%-40.5d|\n", -150);
+//	ft_printf("|%-40.5d|\n", -150);
+//	printf("|%-40.5d|\n", 150);
+//	ft_printf("|%-40.5d|\n", 150);
+//	printf("|%-.40d|\n", -150);
+//	ft_printf("|%-.40d|\n", -150);
+//	printf("|%-.40d|\n", 150);
+//	ft_printf("|%-.40d|\n", 150);
+//	printf("|%-+.40d|\n", -150); 
+//	ft_printf("|%-+.40d|\n", -150); 
+//	printf("|%-+.40d|\n", 150); 
+//	ft_printf("|%-+.40d|\n", 150); 
+//	printf("|%-45.40d|\n", -150); 
+//	ft_printf("|%-45.40d|\n", -150); 
+//	printf("|%-45.40d|\n", 150);
+//	ft_printf("|%-45.40d|\n", 150);
+//	printf("|%-+45.40d|\n", -150); 
+//	ft_printf("|%-+45.40d|\n", -150); 
+//	printf("|%-+45.40d|\n", 150); 
+//	ft_printf("|%-+45.40d|\n", 150); 
+//	printf("|%-.0d|\n", -150);
+//	ft_printf("|%-.0d|\n", -150);
+//	printf("|%-.0d|\n", 150);
+//	ft_printf("|%-.0d|\n", 150);
+//	printf("|%-+40d|\n", -150);
+//	ft_printf("|%-+40d|\n", -150);
+//	printf("|%-+40d|\n", 150);
+//	ft_printf("|%-+40d|\n", 150);
+//	printf("|%-40.0d|\n", -150);
+//	ft_printf("|%-40.0d|\n", -150);
+//	printf("|%-40.0d|\n", 150);
+//	ft_printf("|%-40.0d|\n", 150);
+//	printf("|%-+40.0d|\n", -150);
+//	ft_printf("|%-+40.0d|\n", -150);
+//	printf("|%-+40.0d|\n", 150);
+//	ft_printf("|%-+40.0d|\n", 150);
+//	printf("|%-+40.0d|\n", -150);
+//	ft_printf("|%-+40.0d|\n", -150);
+//	printf("|%-+40.0d|\n", 150);
+//	ft_printf("|%-+40.0d|\n", 150);
+//	
+//	
+//	
+//	
 //	ret1 = printf("0>>Dollars test %40d %d %.0d %+d", -15, 42, -0, 0);
 //	printf("\t%d\n", ret1);
 //	ret2 = ft_printf("0<<Dollars test %40d %d %.0d %+d", -15, 42, -0, 0);
