@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/14 12:07:40 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/14 13:08:50 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,17 +58,16 @@ static inline unsigned short	ft_nbrlen(intmax_t nb)
 	return (len);
 }
 
-#include <stdio.h> // DEBUGGING
 static inline int				ft_get_object_size(int len, _Bool negative)
 {
 	int		size;
 
 	size = 0;
-//	printf("pre:%d, wid:%d, zero:%d, neg:%d, plus:%d, len:%d\n", g_options.precision, g_options.width, g_flags.zero, negative, g_flags.plus, len);
 	if (negative || g_flags.plus)
 	{
 		if (g_options.precision > g_options.width)
-			size = g_options.precision > len ? g_options.precision + 1 : len + 1;
+			size = g_options.precision > len ? g_options.precision + 1
+				: len + 1;
 		else
 			size = g_options.width > len ? g_options.width : len + 1;
 	}
@@ -81,15 +80,46 @@ static inline int				ft_get_object_size(int len, _Bool negative)
 	return (size);
 }
 
-static inline void				ft_format(intmax_t nb, char *str, int size)
+#include <stdio.h>
+static inline void				ft_format(intmax_t nb, char *str, int size,
+		int len, _Bool negative)
 {
-	int	i;
+	intmax_t	rest;
+	int			i;
 	(void)nb;
+	(void)len;
 
 	i = -1;
-	while (++i < size)
+	if (g_flags.minus)
 	{
-		str[i] = ' ';
+		while (++i < size)
+		{
+			str[i] = ' ';
+		}
+	}
+	else
+	{
+		rest = nb;
+		while (rest && size >= 0)
+		{
+		//	printf("size:%d, rest:%ld\n", size, rest % 10);
+			str[--size] = rest % 10 < 0 ? ((rest % 10) * -1) ^ 0x30: (rest % 10) ^ 0x30;
+			rest = (rest - (rest % 10)) / 10;
+		}
+		if (negative && --size >= 0)
+			str[size] = '-';
+		else if (g_flags.plus && --size >= 0)
+			str[size] = '+';
+		if (g_flags.zero)
+		{
+			while (--size >= 0)
+				str[size] = '0';
+		}
+		else
+		{
+			while (--size >= 0)
+				str[size] = ' ';
+		}
 	}
 }
 
@@ -116,7 +146,7 @@ void							ft_nbr(intmax_t nb)
 		return ;
 	}
 /* Fill the string and introduce all the formatting */
-	ft_format(nb, str, size);	
+	ft_format(nb, str, size, len, negative);	
 /* Retwriter */
 	retwriter(str, size);
 /* Free */
