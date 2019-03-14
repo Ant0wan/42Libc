@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/14 13:53:28 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/14 16:59:38 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -611,7 +611,6 @@ int main(void)
 	ft_printf("|%.0d|\n", -150);
 	printf("|%+0.0d|\n", 0);
 	ft_printf("|%+0.0d|\n", 0);
-	printf("************************************\n");
 	printf("|%+0.0d|\n", 1);
 	ft_printf("|%+0.0d|\n", 1); // KO
 	printf("|%+10.0d|\n", 1);
@@ -636,16 +635,16 @@ int main(void)
 	ft_printf("|%+10.0d|\n", INT_MIN); // KO
 	printf("|%+0.10d|\n", INT_MIN);
 	ft_printf("|%+0.10d|\n", INT_MIN); // KO
-	printf(">+.0d |%+.0d|\n", 0);
-	ft_printf(">+.0d |%+.0d|\n", 0);
-	printf(">+0d  |%+0d|\n", 0);
-	ft_printf(">+0d  |%+0d|\n", 0);
-	printf(">+.10d|%+.10d|\n", 0);
-	ft_printf(">+.10d|%+.10d|\n", 0);
-	printf(">+10d |%+10d|\n", 0);
-	ft_printf(">+10d |%+10d|\n", 0);
-	printf(">+d   |%+d|\n", 0);
-	ft_printf(">+d   |%+d|\n", 0);
+	printf("|%+.0d|\n", 0);
+	ft_printf("|%+.0d|\n", 0);
+	printf("|%+0d|\n", 0);
+	ft_printf("|%+0d|\n", 0);
+	printf("|%+.10d|\n", 0);
+	ft_printf("|%+.10d|\n", 0);
+	printf("|%+10d|\n", 0);
+	ft_printf("|%+10d|\n", 0);
+	printf("|%+d|\n", 0);
+	ft_printf("|%+d|\n", 0);
 	printf("|%.0d|\n", 150);
 	ft_printf("|%.0d|\n", 150);
 	printf("|%+40d|\n", -150);
@@ -664,7 +663,7 @@ int main(void)
 	ft_printf("|%+40.0d|\n", -150);
 	printf("|%+40.0d|\n", 150);
 	ft_printf("|%+40.0d|\n", 150);
-	printf("///////////// - /////////////////\n");	
+	printf("********************    -   ****************\n");	
 	printf("|%-d|\n", -150);
 	ft_printf("|%-d|\n", -150);
 	printf("|%-d|\n", 150);

@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/14 16:04:17 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/14 17:06:55 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,29 +80,45 @@ static inline int				ft_get_object_size(int len, _Bool negative)
 	return (size);
 }
 
-#include <stdio.h>
 static inline void				ft_format(intmax_t nb, char *str, int size,
 		int len, _Bool negative)
 {
 	intmax_t	rest;
-	int			i;
-	(void)nb;
-	(void)len;
+	int			test = 0;
 
-	i = -1;
+	rest = nb;
 	if (g_flags.minus)
 	{
-		while (++i < size)
+		if (g_options.precision > 0)
 		{
-			str[i] = ' ';
+			test = g_flags.plus > negative ? g_flags.plus : negative;
+			test += g_options.precision;
+			while (size > test)
+				str[--size] = ' ';
 		}
+		else if (g_options.width > 0)
+		{
+			test = g_flags.plus > negative ? g_flags.plus : negative;
+			while (size > len + test)
+				str[--size] = ' ';
+		}
+		while (rest && size >= 0)
+		{
+			str[--size] = rest % 10 < 0
+				? ((rest % 10) * -1) ^ 0x30: (rest % 10) ^ 0x30;
+			rest = (rest - (rest % 10)) / 10;
+		}
+		while (size > 0)
+			str[--size] = '0';
+		if (negative)
+			str[0] = '-';
+		else if (g_flags.plus)
+			str[0] = '+';
 	}
 	else
 	{
-		rest = nb;
 		while (rest && size >= 0)
 		{
-		//	printf("size:%d, rest:%ld\n", size, rest % 10);
 			str[--size] = rest % 10 < 0
 				? ((rest % 10) * -1) ^ 0x30: (rest % 10) ^ 0x30;
 			rest = (rest - (rest % 10)) / 10;
