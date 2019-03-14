@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/14 13:08:50 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/14 16:04:17 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,13 +103,36 @@ static inline void				ft_format(intmax_t nb, char *str, int size,
 		while (rest && size >= 0)
 		{
 		//	printf("size:%d, rest:%ld\n", size, rest % 10);
-			str[--size] = rest % 10 < 0 ? ((rest % 10) * -1) ^ 0x30: (rest % 10) ^ 0x30;
+			str[--size] = rest % 10 < 0
+				? ((rest % 10) * -1) ^ 0x30: (rest % 10) ^ 0x30;
 			rest = (rest - (rest % 10)) / 10;
 		}
-		if (negative && --size >= 0)
-			str[size] = '-';
-		else if (g_flags.plus && --size >= 0)
-			str[size] = '+';
+		if (nb == 0)
+		   if (g_options.precision == -1 && size > 0)
+				str[--size] = '0';
+		if (g_options.precision > 0)
+		{
+			g_options.precision -= len;
+			while (g_options.precision && size > 0)
+			{
+				str[--size] = '0';
+				--g_options.precision;
+			}
+		}
+		if (negative && !(g_flags.zero))
+		{
+			if (size > 0)
+				str[--size] = '-';
+			else
+				str[0] = '-';
+		}
+		else if (g_flags.plus && !(g_flags.zero))
+		{
+			if (size > 0)
+				str[--size] = '+';
+			else
+				str[0] = '+';
+		}
 		if (g_flags.zero)
 		{
 			while (--size >= 0)
@@ -119,6 +142,20 @@ static inline void				ft_format(intmax_t nb, char *str, int size,
 		{
 			while (--size >= 0)
 				str[size] = ' ';
+		}
+		if (g_flags.zero && negative)
+		{
+			if (size > 0)
+				str[--size] = '-';
+			else
+				str[0] = '-';
+		}
+		else if (g_flags.zero && g_flags.plus)
+		{
+			if (size > 0)
+				str[--size] = '+';
+			else
+				str[0] = '+';
 		}
 	}
 }
