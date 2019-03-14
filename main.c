@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/13 20:06:36 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/14 11:42:57 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -604,14 +604,37 @@ int main(void)
 	ret1 = ft_printf("|%0d|\n", -15);
 	ret1 = printf("|%0d|\n", 15);
 	ret1 = ft_printf("|%0d|\n", 15);
+	ret1 = printf("|%010d|\n", 15);
+	ret1 = ft_printf("|%010d|\n", 15);
 	ret1 = printf("|%.0d|\n", -15);
 	ret1 = ft_printf("|%.0d|\n", -15);
 	ret1 = printf("|%+0.0d|\n", 0);
 	ret1 = ft_printf("|%+0.0d|\n", 0);
+	printf("************************************\n");
 	ret1 = printf("|%+0.0d|\n", 1);
 	ret1 = ft_printf("|%+0.0d|\n", 1); // KO
+	ret1 = printf("|%+10.0d|\n", 1);
+	ret1 = ft_printf("|%+10.0d|\n", 1); // KO
+	ret1 = printf("|%+0.10d|\n", 1);
+	ret1 = ft_printf("|%+0.10d|\n", 1); // KO
 	ret1 = printf("|%+0.0d|\n", -1);
 	ret1 = ft_printf("|%+0.0d|\n", -1); // KO
+	ret1 = printf("|%+10.0d|\n", -1);
+	ret1 = ft_printf("|%+10.0d|\n", -1); // KO
+	ret1 = printf("|%+0.10d|\n", -1);
+	ret1 = ft_printf("|%+0.10d|\n", -1); // KO
+	ret1 = printf("|%+0.0d|\n", INT_MAX);
+	ret1 = ft_printf("|%+0.0d|\n", INT_MAX); // KO
+	ret1 = printf("|%+10.0d|\n", INT_MAX);
+	ret1 = ft_printf("|%+10.0d|\n", INT_MAX); // KO
+	ret1 = printf("|%+0.10d|\n", INT_MAX);
+	ret1 = ft_printf("|%+0.10d|\n", INT_MAX); // KO
+	ret1 = printf("|%+0.0d|\n", INT_MIN);
+	ret1 = ft_printf("|%+0.0d|\n", INT_MIN); // KO
+	ret1 = printf("|%+10.0d|\n", INT_MIN);
+	ret1 = ft_printf("|%+10.0d|\n", INT_MIN); // KO
+	ret1 = printf("|%+0.10d|\n", INT_MIN);
+	ret1 = ft_printf("|%+0.10d|\n", INT_MIN); // KO
 	ret1 = printf("|%+.0d|\n", 0);
 	ret1 = ft_printf("|%+.0d|\n", 0);
 	ret1 = printf("|%+0d|\n", 0);

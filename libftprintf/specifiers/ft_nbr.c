@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/13 20:08:38 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/14 11:59:28 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,40 +53,26 @@ static inline unsigned short	ft_nbrlen(intmax_t nb)
 	rest = nb;
 	while (rest && ++ len)
 		rest = (rest - (rest % 10)) / 10;
-	if (nb < 0)
-		++len;
+//	if (nb < 0)
+//		++len;
 	if (nb == 0 && g_options.precision == -1)
 		++len;
 	return (len);
 }
 
+#include <stdio.h>
 static inline int				ft_get_object_size(int len, _Bool negative)
 {
 	int		size;
 
 	size = 0;
-	if (g_options.width == -1 && g_options.precision == -1)
+	printf("pre:%d, wid:%d, zero:%d, neg:%d, plus:%d, len:%d\n", g_options.precision, g_options.width, g_flags.zero, negative, g_flags.plus, len);
+	if (negative || g_flags.plus)
 	{
-		if (negative)
-			size = len;
+		if (g_options.precision > g_options.width)
+			size = g_options.precision > len ? g_options.precision + 1 : len + 1;
 		else
-			size = len + g_flags.plus;
-	}
-	else if (g_options.width != -1 && g_options.precision != -1)
-	{
-		if (g_options.width > g_options.precision)
-			size = g_options.width > len ? g_options.width : len;
-		else
-			size = g_options.precision > len ? g_options.precision : len;
-	}
-	else if (g_options.width != -1)
-		size = g_options.width > len ? g_options.width : len;
-	else if (g_options.precision != -1)
-	{
-		if (negative)
-			size = g_options.precision + negative > len ? g_options.precision + negative : len;
-		else
-			size = g_options.precision + g_flags.plus > len ? g_options.precision + g_flags.plus : len;
+			size = g_options.width > len ? g_options.width : len + 1;
 	}
 	return (size);
 }
