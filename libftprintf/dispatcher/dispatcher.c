@@ -6,13 +6,11 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 14:51:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/15 10:14:06 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/15 10:25:52 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
-#include "dispatcher.h"
 
 #include "specifiers.h"
 #include "struct_disp.h"
