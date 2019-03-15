@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/15 12:03:57 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/15 12:57:24 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -916,7 +916,7 @@ int main(void)
 
 
 
-	printf("|%-d%-d|\n", -150, 42);
+	printf("|% -d% -d|\n", -150, 42);
 	ft_printf("|% -d% -d|\n", -150, 42);
 	printf("|%-d%-d|\n", 150, -42);
 	ft_printf("|%-d%-d|\n", 150, -42);
@@ -959,8 +959,13 @@ int main(void)
 	printf("|%-40.0d%-d|\n", 150, -42);
 	ft_printf("|%-40.0d%-d|\n", 150, -42);
 
+
+	printf("\n\n==== SPACE FLAG ====\n\n");
+	printf("== - ===\n");
 	printf("|%+0.0d% -d% -d% -d|\n", 0, 150, -42, 0);
 	ft_printf("|%+0.0d% -d% -d% -d|\n", 0, 150, -42, 0);
+	printf("|%+0.0d% -d%-d%-d|\n", 0, 150, -42, 0);
+	ft_printf("|%+0.0d% -d%-d%-d|\n", 0, 150, -42, 0);
 	printf("|%+0.0d% -d% -d% -d|\n", 1, 150, -42, 0);
 	ft_printf("|%+0.0d% -d% -d% -d|\n", 1, 150, -42, 0);
 	printf("|%+10.0d% -d% -d% -d|\n", 1, 150, -42, 0);
@@ -993,8 +998,51 @@ int main(void)
 	ft_printf("|%+.10d% -d% -d% -d|\n", 0, 150, -42, 0);
 	printf("|%+10d% -d% -d% -d|\n", 0, 150, -42, 0);
 	ft_printf("|%+10d% -d% -d% -d|\n", 0, 150, -42, 0);
+	printf("|%+10d% -d% 0d% -d|\n", 0, 150, -42, 0);
+	ft_printf("|%+10d% -d% 0d% -d|\n", 0, 150, -42, 0);
 	printf("|%+d% -d% -d% -d|\n", 0, 150, -42, 0);
 	ft_printf("|%+d% -d% -d% -d|\n", 0, 150, -42, 0);
+	printf("== + ===\n");
+	printf("|%+0.0d% d% d% d|\n", 0, 150, -42, 0);
+	ft_printf("|%+0.0d% d% d% -d|\n", 0, 150, -42, 0);
+	printf("|%+0.0d% d%d%d|\n", 0, 150, -42, 0);
+	ft_printf("|%+0.0d% d%d%d|\n", 0, 150, -42, 0);
+	printf("|%+0.0d% d% d% d|\n", 1, 150, -42, 0);
+	ft_printf("|%+0.0d% d% d% -d|\n", 1, 150, -42, 0);
+	printf("|%+10.0d% d% d% -d|\n", 1, 150, -42, 0);
+	ft_printf("|%+10.0d% d% d% -d|\n", 1, 150, -42, 0);
+	printf("|%+0.10d% d% d% -d|\n", 1, 150, -42, 0);
+	ft_printf("|%+0.10d% d% d% -d|\n", 1, 150, -42, 0);
+	printf("|%+0.0d% d% d% -d|\n", -1, 150, -42, 0);
+	ft_printf("|%+0.0d% d% d% -d|\n", -1, 150, -42, 0);
+	printf("|%+10.0d% d% d% -d|\n", -1, 150, -42, 0);
+	ft_printf("|%+10.0d% d% d% -d|\n", -1, 150, -42, 0);
+	printf("|%+0.10d% d% d% -d|\n", -1, 150, -42, 0);
+	ft_printf("|%+0.10d% d% d% -d|\n", -1, 150, -42, 0);
+	printf("|%+0.0d% d% d% -d|\n", INT_MAX, 150, -42, 0);
+	ft_printf("|%+0.0d% d% d% -d|\n", INT_MAX, 150, -42, 0);
+	printf("|%+10.0d% d% d% -d|\n", INT_MAX, 150, -42, 0);
+	ft_printf("|%+10.0d% d% d% -d|\n", INT_MAX, 150, -42, 0);
+	printf("|%+0.10d% d% d% -d|\n", INT_MAX, 150, -42, 0);
+	ft_printf("|%+0.10d% d% d% -d|\n", INT_MAX, 150, -42, 0);
+	printf("|%+0.0d% d% d% -d|\n", INT_MIN, 150, -42, 0);
+	ft_printf("|%+0.0d% d% d% -d|\n", INT_MIN, 150, -42, 0);
+	printf("|%+10.0d% d% d% -d|\n", INT_MIN, 150, -42, 0);
+	ft_printf("|%+10.0d% d% d% -d|\n", INT_MIN, 150, -42, 0);
+	printf("|%+0.10d% d% d% -d|\n", INT_MIN, 150, -42, 0);
+	ft_printf("|%+0.10d% d% d% -d|\n", INT_MIN, 150, -42, 0);
+	printf("|%+.0d% d% d% -d|\n", 0, 150, -42, 0);
+	ft_printf("|%+.0d% d% d% -d|\n", 0, 150, -42, 0);
+	printf("|%+0d% d% d% -d|\n", 0, 150, -42, 0);
+	ft_printf("|%+0d% d% d% -d|\n", 0, 150, -42, 0);
+	printf("|%+.10d% d% d% -d|\n", 0, 150, -42, 0);
+	ft_printf("|%+.10d% d% d% -d|\n", 0, 150, -42, 0);
+	printf("|%+10d% d% d% -d|\n", 0, 150, -42, 0);
+	ft_printf("|%+10d% d% d% -d|\n", 0, 150, -42, 0);
+	printf("|%+10d% d% 0d% -d|\n", 0, 150, -42, 0);
+	ft_printf("|%+10d% d% 0d% -d|\n", 0, 150, -42, 0);
+	printf("|%+d% d% d% -d|\n", 0, 150, -42, 0);
+	ft_printf("|%+d% d% d% -d|\n", 0, 150, -42, 0);
 
 //
 //
