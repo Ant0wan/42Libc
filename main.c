@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/15 11:37:32 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/15 12:03:57 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -913,6 +913,89 @@ int main(void)
 	ret2 = ft_printf("lld Dollars test %4$40lld %3$d %1$d %2$d", INT_MAX + 2, INT_MAX + 1, 42, LLONG_MIN - 1);
 	printf("\t%d\n", ret2);	
 	printf("\n\n");
+
+
+
+	printf("|%-d%-d|\n", -150, 42);
+	ft_printf("|% -d% -d|\n", -150, 42);
+	printf("|%-d%-d|\n", 150, -42);
+	ft_printf("|%-d%-d|\n", 150, -42);
+	printf("|%-40d%-d|\n", -150, 42);
+	ft_printf("|%-40d%-d|\n", -150, 42);
+	printf("|%-40d%-d|\n", 150, -42);
+	ft_printf("|%-40d%-d|\n", 150, -42);
+	printf("|%-40.d%-d|\n", -150, 42);
+	ft_printf("|%-40.d%-d|\n", -150, 42);
+	printf("|%-40.d%-d|\n", 150, -42);
+	ft_printf("|%-40.d%-d|\n", 150, -42);
+	printf("|%-.d%-d|\n", -150, 42);
+	ft_printf("|%-.d%-d|\n", -150, 42);
+	printf("|%-.d%-d|\n", 150, -42);
+	ft_printf("|%-.d%-d|\n", 150, -42);
+	printf("|%-45.d%-d|\n", -150, 42); 
+	ft_printf("|%-45.d%-d|\n", -150, 42); 
+	printf("|%-45.d%-d|\n", 150, -42);
+	ft_printf("|%-45.d%-d|\n", 150, -42);
+	printf("|%-.d%-d|\n", -150, 42);
+	ft_printf("|%-.d%-d|\n", -150, 42);
+	printf("|%-40.5d%-d|\n", -150, 42);
+	ft_printf("|%-40.5d%-d|\n", -150, 42);
+	printf("|%-40.5d%-d|\n", 150, -42);
+	ft_printf("|%-40.5d%-d|\n", 150, -42);
+	printf("|%-.40d%-d|\n", -150, 42);
+	ft_printf("|%-.40d%-d|\n", -150, 42);
+	printf("|%-.40d%-d|\n", 150, -42);
+	ft_printf("|%-.40d%-d|\n", 150, -42);
+	printf("|%-45.40d%-d|\n", -150, 42); 
+	ft_printf("|%-45.40d%-d|\n", -150, 42); 
+	printf("|%-45.40d%-d|\n", 150, -42);
+	ft_printf("|%-45.40d%-d|\n", 150, -42);
+	printf("|%-.0d%-d|\n", -150, 42);
+	ft_printf("|%-.0d%-d|\n", -150, 42);
+	printf("|%-.0d%-d|\n", 150, -42);
+	ft_printf("|%-.0d%-d|\n", 150, -42);
+	printf("|%-40.0d%-d|\n", -150, 42);
+	ft_printf("|%-40.0d%-d|\n", -150, 42);
+	printf("|%-40.0d%-d|\n", 150, -42);
+	ft_printf("|%-40.0d%-d|\n", 150, -42);
+
+	printf("|%+0.0d% -d% -d% -d|\n", 0, 150, -42, 0);
+	ft_printf("|%+0.0d% -d% -d% -d|\n", 0, 150, -42, 0);
+	printf("|%+0.0d% -d% -d% -d|\n", 1, 150, -42, 0);
+	ft_printf("|%+0.0d% -d% -d% -d|\n", 1, 150, -42, 0);
+	printf("|%+10.0d% -d% -d% -d|\n", 1, 150, -42, 0);
+	ft_printf("|%+10.0d% -d% -d% -d|\n", 1, 150, -42, 0);
+	printf("|%+0.10d% -d% -d% -d|\n", 1, 150, -42, 0);
+	ft_printf("|%+0.10d% -d% -d% -d|\n", 1, 150, -42, 0);
+	printf("|%+0.0d% -d% -d% -d|\n", -1, 150, -42, 0);
+	ft_printf("|%+0.0d% -d% -d% -d|\n", -1, 150, -42, 0);
+	printf("|%+10.0d% -d% -d% -d|\n", -1, 150, -42, 0);
+	ft_printf("|%+10.0d% -d% -d% -d|\n", -1, 150, -42, 0);
+	printf("|%+0.10d% -d% -d% -d|\n", -1, 150, -42, 0);
+	ft_printf("|%+0.10d% -d% -d% -d|\n", -1, 150, -42, 0);
+	printf("|%+0.0d% -d% -d% -d|\n", INT_MAX, 150, -42, 0);
+	ft_printf("|%+0.0d% -d% -d% -d|\n", INT_MAX, 150, -42, 0);
+	printf("|%+10.0d% -d% -d% -d|\n", INT_MAX, 150, -42, 0);
+	ft_printf("|%+10.0d% -d% -d% -d|\n", INT_MAX, 150, -42, 0);
+	printf("|%+0.10d% -d% -d% -d|\n", INT_MAX, 150, -42, 0);
+	ft_printf("|%+0.10d% -d% -d% -d|\n", INT_MAX, 150, -42, 0);
+	printf("|%+0.0d% -d% -d% -d|\n", INT_MIN, 150, -42, 0);
+	ft_printf("|%+0.0d% -d% -d% -d|\n", INT_MIN, 150, -42, 0);
+	printf("|%+10.0d% -d% -d% -d|\n", INT_MIN, 150, -42, 0);
+	ft_printf("|%+10.0d% -d% -d% -d|\n", INT_MIN, 150, -42, 0);
+	printf("|%+0.10d% -d% -d% -d|\n", INT_MIN, 150, -42, 0);
+	ft_printf("|%+0.10d% -d% -d% -d|\n", INT_MIN, 150, -42, 0);
+	printf("|%+.0d% -d% -d% -d|\n", 0, 150, -42, 0);
+	ft_printf("|%+.0d% -d% -d% -d|\n", 0, 150, -42, 0);
+	printf("|%+0d% -d% -d% -d|\n", 0, 150, -42, 0);
+	ft_printf("|%+0d% -d% -d% -d|\n", 0, 150, -42, 0);
+	printf("|%+.10d% -d% -d% -d|\n", 0, 150, -42, 0);
+	ft_printf("|%+.10d% -d% -d% -d|\n", 0, 150, -42, 0);
+	printf("|%+10d% -d% -d% -d|\n", 0, 150, -42, 0);
+	ft_printf("|%+10d% -d% -d% -d|\n", 0, 150, -42, 0);
+	printf("|%+d% -d% -d% -d|\n", 0, 150, -42, 0);
+	ft_printf("|%+d% -d% -d% -d|\n", 0, 150, -42, 0);
+
 //
 //
 //
