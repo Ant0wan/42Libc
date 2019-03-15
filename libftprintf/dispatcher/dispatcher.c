@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 14:51:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/15 10:25:52 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/15 19:52:01 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static const t_specifier	g_specifier[] =
 	{ 'd', T_ & ft_nbr},
 	{ 'e', T_ & ft_putnbr},
 	{ 'f', T_ & ft_putnbr},
-	{ 'i', T_ & ft_putnbr},
+	{ 'i', T_ & ft_nbr},
 	{ 'o', T_ & ft_putnbr_octal},
 	{ 's', T_ & ft_str},
 	{ 'u', T_ & ft_putuint},
