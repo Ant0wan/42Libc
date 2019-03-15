@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 18:06:34 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/15 16:49:58 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/15 18:41:28 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ extern inline void	ft_format(intmax_t nb, char *str, int size,	int len,
 			g_options.precision = len;
 		if (g_flags.plus || negative)
 			++g_options.precision;
-		if (g_flags.space && nb > 0)
+		if (g_flags.space && nb >= 0)
 		{
 			++len;
 			++g_options.precision;
@@ -84,6 +84,8 @@ extern inline void	ft_format(intmax_t nb, char *str, int size,	int len,
 			}
 			else if (len > 0 && (rest || nb == 0))
 			{
+				if (nb == 0)
+					--len;
 				--len;
 				--g_options.precision;
 				--g_options.width;
