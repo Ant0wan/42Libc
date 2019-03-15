@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/15 11:44:45 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/15 15:48:36 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,10 @@ static inline void	get_precision(const char *format, va_list ap)
 		if (format[g_ret.fmt_i] >= '0' && format[g_ret.fmt_i] <= '9')
 			g_options.precision = ft_atoi_special(format);
 		else // added for case "%.d"
+		{
 			--g_ret.fmt_i; //
+			g_options.precision = 0;
+		}
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 18:06:34 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/15 12:57:44 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/15 15:55:56 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,9 @@ extern inline void	ft_format(intmax_t nb, char *str, int size,	int len,
 	rest = nb;
 	if (g_options.precision >= 0)
 		g_flags.zero = 0;
-	if (g_flags.space) // STILL APOSTROPHES TO HANDLE
-		str[0] = ' ';
-	if (g_flags.minus)
+//	if (g_flags.space) // STILL APOSTROPHES TO HANDLE
+//		str[0] = ' ';
+	if (g_flags.minus) // OK no space
 	{
 		if (g_options.precision <= 0)
 			g_options.precision = len;
@@ -99,7 +99,7 @@ extern inline void	ft_format(intmax_t nb, char *str, int size,	int len,
 		else if (g_flags.plus)
 			str[size] = '+';
 	}
-	else
+	else // KO
 	{
 		while (size > 0)
 		{
@@ -117,8 +117,7 @@ extern inline void	ft_format(intmax_t nb, char *str, int size,	int len,
 				--g_options.precision;
 				str[size] = '0';
 			}
-			else if (((negative || g_flags.plus)
-						&& !(g_flags.zero)) || (size == 0 && g_flags.zero))
+			else if (g_flags.zero || negative || g_flags.plus || g_flags.space)
 			{
 				if (negative)
 				{
@@ -131,11 +130,15 @@ extern inline void	ft_format(intmax_t nb, char *str, int size,	int len,
 					g_flags.plus = 0;
 					str[size] = '+';
 				}
+				else if (g_flags.space)
+					str[size] = ' ';
 				else if (g_flags.zero)
 					str[size] = '0';
 			}
 			else
-				str[size] = g_flags.zero ? '0' : ' ';
+			{
+				str[size] = ' ';
+			}
 			--g_options.width;
 		}
 	}

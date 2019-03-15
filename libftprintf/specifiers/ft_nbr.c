@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/15 12:19:12 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/15 15:06:26 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,9 @@ static inline unsigned short	ft_nbrlen(intmax_t nb)
 	rest = nb;
 	while (rest && ++ len)
 		rest = (rest - (rest % 10)) / 10;
-	if (nb == 0 && g_options.precision == -1)
-		++len;
+//	if (nb == 0)
+//		if (g_options.precision == -1)
+//		   ++len;
 	return (len);
 }
 
@@ -78,8 +79,12 @@ static inline int				ft_get_object_size(int len, _Bool negative)
 		if (size < g_options.precision)
 			size = g_options.precision;
 	}
-	if (g_flags.space && !(g_flags.plus) && !(negative) && !(g_flags.zero))
-		++size;
+	if (g_flags.space)
+		if (!(negative))
+			if (!(g_options.width > len))
+				++size;
+//	   if (!(g_flags.plus) && !(negative) && !(g_flags.zero))
+//			++size;
 	return (size);
 }
 
