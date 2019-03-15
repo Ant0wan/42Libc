@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/15 15:53:37 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/15 16:27:10 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1317,6 +1317,114 @@ int main(void)
 	ft_printf("|%-+d|\n", 0);
 //
 	printf("\n\n");
+	printf("\n\n");
+	printf("\n\n");
+	printf("\n\n");
+	printf("MINUS    How 1 works with printf...\n");
+	printf(">|%- 21d|\n", 1);
+	ft_printf(">|%- 21d|\n", 1);
+	printf(".|% -21d|\n", 1);
+	ft_printf(".|% -21d|\n", 1);
+	printf("a|% -21.d|\n", 1);
+	ft_printf("a|% -21.d|\n", 1);
+	printf("c|%- .d|\n", 1);
+	ft_printf("c|%- .d|\n", 1);
+	printf(" |%- 0.d|\n", 1);
+	ft_printf(" |%- 0.d|\n", 1);
+	printf(" |%- 010.d|\n", 1);
+	ft_printf(" |%- 010.d|\n", 1);
+	printf("0|%-010.d|\n", 1);
+	ft_printf("0|%-010.d|\n", 1);
+	printf("1|%-010.0d|\n", 1);
+	ft_printf("1|%-010.0d|\n", 1);
+	printf("n|%-10.d|\n", 1);
+	ft_printf("n|%-10.d|\n", 1);
+	printf("p|%- 010.4d|\n", 1);
+	ft_printf("p|%- 010.4d|\n", 1);
+	printf("q|%-010.4d|\n", 1);
+	ft_printf("q|%-010.4d|\n", 1);
+	printf("r|%-10.4d|\n", 1);
+	ft_printf("r|%-10.4d|\n", 1);
+	printf(" |%- .d|\n", 1);
+	ft_printf(" |%- .d|\n", 1);
+	printf(" |%- 1.d|\n", 1);
+	ft_printf(" |%- 1.d|\n", 1);
+	printf("d|%- d|\n", 1);
+	ft_printf("d|%- d|\n", 1);
+	printf("e|%-d|\n", 1);
+	ft_printf("e|%-d|\n", 1);
+	printf("f|%-.d|\n", 1);
+	ft_printf("f|%-.d|\n", 1);
+	printf("g|%-+.d|\n", 1);
+	ft_printf("g|%-+.d|\n", 1);
+	printf("h|%-.d|\n", 1);
+	ft_printf("h|%-.d|\n", 1);
+	printf("i|%- 0.0d|\n", 1);
+	ft_printf("i|%- 0.0d|\n", 1);
+	printf("j|%-0.0d|\n", 1);
+	ft_printf("j|%-0.0d|\n", 1);
+	printf("k|%-+0.0d|\n", 1);
+	ft_printf("k|%-+0.0d|\n", 1);
+	printf("z|%-+d|\n", 1);
+	ft_printf("z|%-+d|\n", 1);
+	printf("l|%-+.0d|\n", 1);
+	ft_printf("l|%-+.0d|\n", 1);
+	printf("m|%- d|\n", 1);
+	ft_printf("m|%- d|\n", 1);
+	printf("n|%-+d|\n", 1);
+	ft_printf("n|%-+d|\n", 1);
+
+	printf("\n\n");
+	printf("\n\n");
+	printf("MINUS     How -1 works with printf...\n");
+	printf("|%- 21d|\n", -1);
+	ft_printf("|%- 21d|\n", -1);
+	printf("|%0- 21d|\n", -1);
+	ft_printf("|%0- 21d|\n", -1);
+	printf("|% -21d|\n", -1);
+	ft_printf("|% -21d|\n", -1);
+	printf("|% -21.d|\n", -1);
+	ft_printf("|% -21.d|\n", -1);
+	printf("|%- 21.d|\n", -1);
+	ft_printf("|%- 21.d|\n", -1);
+	printf("|%- 21.2d|\n", -1);
+	ft_printf("|%- 21.2d|\n", -1);
+	printf("|%- 21.3d|\n", -1);
+	ft_printf("|%- 21.3d|\n", -1);
+	printf("|%- 21.3d|\n", -1);
+	ft_printf("|%- 21.3d|\n", -1);
+	printf("|%- 21.0d|\n", -1);
+	ft_printf("|%- 21.0d|\n", -1);
+	printf("|%- 21.0d|\n", -1);
+	ft_printf("|%- 21.0d|\n", -1);
+	printf("|%- .d|\n", -1);
+	ft_printf("|%- .d|\n", -1);
+	printf("|%- 0.d|\n", -1);
+	ft_printf("|%- 0.d|\n", -1);
+	printf("|%- d|\n", -1);
+	ft_printf("|%- d|\n", -1);
+	printf("|%-d|\n", -1);
+	ft_printf("|%-d|\n", -1);
+	printf("|%-.d|\n", -1);
+	ft_printf("|%-.d|\n", -1);
+	printf("|%-+.d|\n", -1);
+	ft_printf("|%-+.d|\n", -1);
+	printf("|%-.d|\n", -1);
+	ft_printf("|%-.d|\n", -1);
+	printf("|%- 0.0d|\n", -1);
+	ft_printf("|%- 0.0d|\n", -1);
+	printf("|%-0.0d|\n", -1);
+	ft_printf("|%-0.0d|\n", -1);
+	printf("|%-+0.0d|\n", -1);
+	ft_printf("|%-+d|\n", -1);
+	printf("|%-+d|\n", -1);
+	ft_printf("|%-+.0d|\n", -1);
+	printf("|%-+.0d|\n", -1);
+	ft_printf("|%- d|\n", -1);
+	printf("|%- d|\n", -1);
+	ft_printf("|%--+d|\n", -1);
+	printf("|%--+d|\n", -1);
+//
 	printf("\n\n");
 	printf("\n\n");
 	printf("\n\n");

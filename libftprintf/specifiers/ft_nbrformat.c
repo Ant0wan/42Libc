@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 18:06:34 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/15 15:55:56 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/15 16:27:50 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,8 @@ extern inline void	ft_format(intmax_t nb, char *str, int size,	int len,
 	rest = nb;
 	if (g_options.precision >= 0)
 		g_flags.zero = 0;
-//	if (g_flags.space) // STILL APOSTROPHES TO HANDLE
-//		str[0] = ' ';
-	if (g_flags.minus) // OK no space
+	// STILL APOSTROPHES TO HANDLE
+	if (g_flags.minus) // KO
 	{
 		if (g_options.precision <= 0)
 			g_options.precision = len;
@@ -99,7 +98,7 @@ extern inline void	ft_format(intmax_t nb, char *str, int size,	int len,
 		else if (g_flags.plus)
 			str[size] = '+';
 	}
-	else // KO
+	else
 	{
 		while (size > 0)
 		{
@@ -136,9 +135,7 @@ extern inline void	ft_format(intmax_t nb, char *str, int size,	int len,
 					str[size] = '0';
 			}
 			else
-			{
 				str[size] = ' ';
-			}
 			--g_options.width;
 		}
 	}
