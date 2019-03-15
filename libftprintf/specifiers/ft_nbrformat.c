@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 18:06:34 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/15 16:27:50 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/15 16:49:58 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ extern _Bool		g_error;
 //    |--------------------- while: width > precision --------|
 //    --width;                                                |
 //    --size;                                                 |
-//    |------ nbr -----------|
+//    |space------ nbr -----------|
 //    --len;                 |
 //    --precision;           |
 //    |----precision --|
@@ -63,16 +63,21 @@ extern inline void	ft_format(intmax_t nb, char *str, int size,	int len,
 	if (g_options.precision >= 0)
 		g_flags.zero = 0;
 	// STILL APOSTROPHES TO HANDLE
-	if (g_flags.minus) // KO
+	if (g_flags.minus)
 	{
 		if (g_options.precision <= 0)
 			g_options.precision = len;
 		if (g_flags.plus || negative)
 			++g_options.precision;
+		if (g_flags.space && nb > 0)
+		{
+			++len;
+			++g_options.precision;
+		}
 		while (size > 0)
 		{
 			--size;
-			if (g_options.width > g_options.precision)
+			if (g_options.width > g_options.precision && size >= len)
 			{
 				--g_options.width;
 				str[size] = ' ';
@@ -90,8 +95,13 @@ extern inline void	ft_format(intmax_t nb, char *str, int size,	int len,
 			{
 				--g_options.precision;
 				--g_options.width;
-				str[size] = '0';
+				if (g_flags.space && !(size))
+					str[size] = ' ';
+				else
+					str[size] = '0';
 			}
+			else if (g_flags.space)
+				str[size] = ' ';
 		}
 		if (negative)
 			str[size] = '-';
