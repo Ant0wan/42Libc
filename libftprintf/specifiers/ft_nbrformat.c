@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 18:06:34 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/15 18:41:28 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/15 18:56:43 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ extern inline void	ft_format(intmax_t nb, char *str, int size,	int len,
 				--g_options.width;
 				str[size] = ' ';
 			}
-			else if (len > 0 && (rest || nb == 0))
+			else if (len > 0 && rest)
 			{
 				if (nb == 0)
 					--len;
@@ -92,6 +92,13 @@ extern inline void	ft_format(intmax_t nb, char *str, int size,	int len,
 				str[size] = rest % 10 < 0 ? ((rest % 10) * -1) ^ 0x30
 					: (rest % 10) ^ 0x30;
 				rest = (rest - (rest % 10)) / 10;
+			}
+			else if (len > 0 && nb == 0 && !(g_options.precision))
+			{
+				len -= 2;
+				str[size] = '0';
+				--g_options.precision;
+				--g_options.width;
 			}
 			else if (g_options.precision > 0)
 			{
