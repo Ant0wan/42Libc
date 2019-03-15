@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 14:51:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/13 11:28:26 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/15 10:14:06 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,21 @@
 
 #include "dispatcher.h"
 
-#ifndef T_
-# define T_ (void*)
-#endif
-
 #include "specifiers.h"
 #include "struct_disp.h"
 #include "prs_tools.h"
 #include "libft.h"
 #include "ft_wchar.h"
 
-const t_specifier	g_specifier[] =
+#ifndef T_
+# define T_ (void*)
+#endif
+
+#ifndef NB_PTR
+# define NB_PTR 28
+#endif
+
+static const t_specifier	g_specifier[] =
 {
 	{ 'c', T_ & ft_putchar},
 	{ 'd', T_ & ft_nbr},

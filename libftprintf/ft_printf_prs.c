@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/14 11:43:05 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/15 10:10:00 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,6 @@ t_options		g_options =
 t_flags			g_flags =
 {.hash = 0, .zero = 0, .minus = 0, .space = 0, .plus = 0, .apost = 0};
 _Bool			g_error = 0;
-
-static inline _Bool	isspecifier(char c)
-{
-	unsigned short	i;
-
-	i = -1;
-	while (++i < NB_PTR)
-		if (!(c ^ g_specifier[i].type))
-			return (1);
-	return (0);
-}
 
 static inline void	get_precision(const char *format, va_list ap)
 {
@@ -157,16 +146,12 @@ static inline _Bool	prs_specifier(const char *format, va_list ap)
 			else if (!((format[g_ret.fmt_i] & ' ') ^ ' ')
 					&& format[g_ret.fmt_i] < '1')
 				get_flags(format, &specifier);
-			else if (isspecifier(format[g_ret.fmt_i]))
+			else if ((f = dispatcher(format[g_ret.fmt_i])))
 			{
 				specifier = 0;
-				f = dispatcher(format[g_ret.fmt_i]);
-				if (f)
-				{
-					if (g_options.val_dol)
-						va_copy(ap, g_ap_origin);
-					wrapper(f, ap);
-				}
+				if (g_options.val_dol)
+					va_copy(ap, g_ap_origin);
+				wrapper(f, ap);
 			}
 			else if (specifier) // EXIT 2
 			{
