@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/15 18:41:22 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/18 14:14:55 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,6 @@ static inline int				ft_get_object_size(int len, _Bool negative)
 		if (!(negative))
 			if (!(g_options.width > len))
 				++size;
-//	   if (!(g_flags.plus) && !(negative) && !(g_flags.zero))
-//			++size;
 	return (size);
 }
 
