@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 18:19:57 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/19 17:39:50 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/19 18:19:17 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,7 @@ static inline int	ft_get_str_object_size(int len)
 	return (size);
 }
 
-#include <stdio.h>
-static inline void	ft_fill_object(char *obj, wchar_t *str, int len, int size)
+static inline void	ft_fill_object(char *obj, wchar_t *str, int len)
 {
 	int	i;
 	int	j;
@@ -57,44 +56,48 @@ static inline void	ft_fill_object(char *obj, wchar_t *str, int len, int size)
 	{
 		while (g_options.precision >= 0)
 		{
-//			printf("precision %d\n", g_options.precision);
 			wc = str[j];
-			utf8_encoder(&wc);
-			if ((char)(wc >> 24))
+			if (enchrlen(wc) <= g_options.precision)
 			{
-				obj[i] = (char)(wc >> 24);
-				++i;
-				--g_options.precision;
-				--size;
+				utf8_encoder(&wc);
+				if ((char)(wc >> 24))
+				{
+					obj[i] = (char)(wc >> 24);
+					++i;
+					--g_options.precision;
+					--g_options.width;
+				}
+				if ((char)(wc >> 16))
+				{
+					obj[i] = (char)(wc >> 16);
+					++i;
+					--g_options.precision;
+					--g_options.width;
+				}
+				if ((char)(wc >> 8))
+				{
+					obj[i] = (char)(wc >> 8);
+					++i;
+					--g_options.precision;
+					--g_options.width;
+				}
+				if ((char)wc)
+				{
+					obj[i] = (char)wc;
+					++i;
+					--g_options.precision;
+					--g_options.width;
+				}
 			}
-			if ((char)(wc >> 16))
-			{
-				obj[i] = (char)(wc >> 16);
-				++i;
-				--g_options.precision;
-				--size;
-			}
-			if ((char)(wc >> 8))
-			{
-				obj[i] = (char)(wc >> 8);
-				++i;
-				--g_options.precision;
-				--size;
-			}
-			if ((char)wc)
-			{
-				obj[i] = (char)wc;
-				++i;
-				--g_options.precision;
-				--size;
-			}
+			else
+				break;
 			++j;
 		}
-		while (size >= 0)
+		while (g_options.width > 0)
 		{
 			obj[i] = ' ';
 			++i;
-			--size;
+			--g_options.width;
 		}
 	}
 }
@@ -112,7 +115,7 @@ void				ft_wstr(wchar_t *str)
 		g_error = G_ERROR;
 		return ;
 	}
-	ft_fill_object(object, str, len, size);
+	ft_fill_object(object, str, len);
 	retwriter(object, size);
 	free(object);
 }

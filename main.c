@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/19 17:36:41 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/19 18:16:14 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -310,6 +310,18 @@ int main(void)
 	ret1 = printf("c|%-40.5ls|", L"😢 😢");
 	printf("%d\n", ret1);
 	ret2 = ft_printf("c|%-40.5ls|", L"😢 😢");
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("c|%-.6ls|", L"😢 😢");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("c|%-.6ls|", L"😢 😢");
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("%-.11ls", L"电脑坏了。");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%-.11ls", L"电脑坏了。");
 	printf("%d\n", ret2);
 	printf("\n\n");
 
