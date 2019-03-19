@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/18 15:02:02 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/19 13:49:47 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -317,7 +317,19 @@ int main(void)
 
 	ret1 = printf("q|%2.2s|", "World");
 	printf("%i\n", ret1);
-	ret2 = ft_printf("q|%-2.2s|", "World");
+	ret2 = ft_printf("q|%2.2s|", "World");
+	printf("%i\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("q|%20.2s|", "World");
+	printf("%i\n", ret1);
+	ret2 = ft_printf("q|%20.2s|", "World");
+	printf("%i\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("q|%10.1s|", "World");
+	printf("%i\n", ret1);
+	ret2 = ft_printf("q|%10.1s|", "World");
 	printf("%i\n", ret2);
 	printf("\n\n");
 	return (0);

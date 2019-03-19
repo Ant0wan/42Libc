@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 18:19:57 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/18 15:24:56 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/19 13:51:23 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,20 +62,23 @@ static inline void	ft_fill_object(char *obj, char *str, int len, int size)
 			--size;
 		}
 	}
-//	else
-//	{
-//		while (g_options.width - g_options.precision > len)
-//		{
-//			obj[i] = ' ';
-//			++i;
-//		}
-//		while (len > 0)
-//		{
-//			obj[i] = str[j];
-//			++j;
-//			++i;
-//		}
-//	}
+	else
+	{
+		len = g_options.precision < len ? g_options.precision : len;
+		while (size - len)
+		{
+			obj[i] = ' ';
+			++i;
+			--size;
+		}
+		while (size && j <= len)
+		{
+			obj[i] = str[j];
+			++j;
+			++i;
+			--size;
+		}
+	}
 }
 
 void				ft_str(char *str)
