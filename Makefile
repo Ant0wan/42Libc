@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/03/15 18:13:40 by abarthel         ###   ########.fr        #
+#    Updated: 2019/03/19 14:45:23 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ DISPATCHER_PATH = ./libftprintf/dispatcher/
 DISPATCHER = dispatcher.o \
 
 SPECIFIERS_PATH = ./libftprintf/specifiers/
-SPECIFIERS = ft_str.o ft_nbr.o ft_nbrformat.o retwriter.o wretwriter.o \
+SPECIFIERS = ft_str.o ft_wstr.o ft_nbr.o ft_nbrformat.o retwriter.o \
 
 LIBFT_PATH = ./libft/
 LIBFT = ft_bzero.o ft_isalpha.o ft_isdigit.o ft_isalnum.o \
@@ -56,7 +56,7 @@ LIBFTWCHAR = ft_fputwc.o ft_fputwcbits.o ft_fputws.o ft_fputwsbits.o \
 			 ft_wcslen.o ft_wcscpy.o \
 
 UTF8_PATH = ./libftwchar/utf8/
-UTF8 = utf8.o
+UTF8 = utf8.o encodlen.o \
 
 ######################### GENERAL RULES ######################################
 

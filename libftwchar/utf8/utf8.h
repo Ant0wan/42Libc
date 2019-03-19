@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 18:53:37 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/06 12:11:56 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/19 17:02:00 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,7 @@
 # include <stdlib.h>
 
 int	utf8_encoder(wchar_t *wc) __attribute__((always_inline));
+
+int	encodlen(wchar_t *ws) __attribute__((always_inline));
 
 #endif

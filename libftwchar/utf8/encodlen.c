@@ -1,20 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   retwriter.h                                        :+:      :+:    :+:   */
+/*   encodlen.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/28 13:23:31 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/19 14:20:02 by abarthel         ###   ########.fr       */
+/*   Created: 2019/03/19 14:28:19 by abarthel          #+#    #+#             */
+/*   Updated: 2019/03/19 17:33:04 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RETWRITER_H
-# define RETWRITER_H
+#include <stdlib.h>
 
-# include <stdlib.h>
+extern inline int	encodlen(wchar_t *ws)
+{
+	size_t	len;
 
-void	retwriter(char *str, int size) __attribute__((always_inline));
-
-#endif
+	len = 0;
+	while ((char)*ws)
+	{
+		if (*ws < 0)
+			return (0);
+		if (*ws <= 0x007F)
+			len += 1;
+		else if (*ws <= 0x07FF)
+			len += 2;
+		else if (*ws <= 0xFFFF)
+			len += 3;
+		else if (*ws <= 0x10FFFF)
+			len += 4;
+		else
+			return (0);
+		++ws;
+	}
+	return (len);
+}
