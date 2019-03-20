@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/20 14:12:37 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/20 15:22:33 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -219,77 +219,82 @@ int main(void)
 //	printf("\n\n");
 
 
-	ret1 = printf("|%-2147483647d|", 10);
+	
+	ret1 = printf("124%2147483646d|", 1234);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("|%-2147483647d|", 10);
+	ret2 = ft_printf("224%2147483646d|", 1234);
 	printf("%d\n", ret2);
 	printf("\n\n");
-	
-	ret1 = printf("%-.2147483649ls1|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	ret1 = printf(" %2147483647d", 12);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("%-.2147483649ls2|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	ret2 = ft_printf(" %2147483647d", 12);
+	printf("%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("%.2147483649ls1|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%.2147483649ls2|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret2);
 	printf("\n\n");
 //	INT MAX + 1 =  2147483648
 //	INT_MAX -1 || INT_MAX
-	ret1 = printf("w %-*s1|", INT_MAX - 1,  " ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	ret1 = printf("w %*s1|", INT_MAX - 1,  " ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("w %-*s2|", INT_MAX - 1, " ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	ret2 = ft_printf("w %*s2|", INT_MAX - 1, " ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret2);
 	printf("\n\n");
-	ret1 = printf("w %-2147483647s1|", " ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	ret1 = printf("w %2147483647s1|", " ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("w %-2147483647s2|", " ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	ret2 = ft_printf("w %2147483647s2|", " ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret2);
 	printf("\n\n");
-	ret1 = printf("w %-2147483646ls1|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	ret1 = printf("w %2147483646ls1|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("w %-2147483646ls2|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	ret2 = ft_printf("w %2147483646ls2|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret2);
 	printf("\n\n");
-	ret1 = printf("precision %-.2147483648ls1|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	ret1 = printf("precision %.2147483648ls1|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("precision %-.2147483648ls2|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	ret2 = ft_printf("precision %.2147483648ls2|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret2);
 	printf("\n\n");
-	ret1 = printf("precision %-.2147483649ls1|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	ret1 = printf("precision %.2147483649ls1|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("precision %-.2147483649ls2|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	ret2 = ft_printf("precision %.2147483649ls2|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret2);
 	printf("\n\n");
-	ret1 = printf("width %-2147483649ls1|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	ret1 = printf("width %2147483649ls1|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("width %-2147483649ls2|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	ret2 = ft_printf("width %2147483649ls2|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret2);
 	printf("\n\n");
-	ret1 = printf("%-4294967298S1|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	ret1 = printf("%4294967298S1|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("%-4294967298S2|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	ret2 = ft_printf("%4294967298S2|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret2);
 	printf("\n\n");
-	ret1 = printf("|%-S|", L">1< ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	ret1 = printf("|%S|", L">1< ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("|%-S|", L">1< ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	ret2 = ft_printf("|%S|", L">1< ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret2);
 	printf("\n\n");
-	ret1 = printf("|%-2140ls|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	ret1 = printf("|%2140ls|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("|%-2140ls|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	ret2 = ft_printf("|%2140ls|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret2);
 	printf("\n\n");
-	ret1 = printf(".214|%-.2140ls|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	ret1 = printf(".214|%.2140ls|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret1);
-	ret2 = ft_printf(".214|%-.2140ls|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	ret2 = ft_printf(".214|%.2140ls|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret2);
 	printf("\n\n");
-	ret1 = printf("|%-214S|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	ret1 = printf("|%214S|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("|%-214S|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	ret2 = ft_printf("|%214S|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret2);
 	printf("\n\n");
-	ret1 = printf("|%-S|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	ret1 = printf("|%S|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("|%-S|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	ret2 = ft_printf("|%S|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret2);
 	printf("\n\n");
 // "Hello %ls!i%ls%ls", L"电脑是新的", L",电脑死机了。", L"电脑坏了。😢 "
@@ -313,107 +318,161 @@ int main(void)
 //	ret2 = ft_printf("%ls", L"\x100");
 //	printf("%d\n", ret2);
 //	printf("\n\n");
-	ret1 = printf("%-.11ls", L"电脑坏了。😢 ");
+	ret1 = printf("%.11ls", L"电脑坏了。😢 ");
 //	ret1 = printf("%ls", L"电脑坏了");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("%-.11ls", L"电脑坏了。😢 ");
+	ret2 = ft_printf("%.11ls", L"电脑坏了。😢 ");
 //	ret2 = printf("%ls", L"电脑坏了");
 	printf("%d\n", ret2);
 	printf("\n\n");
 
-	ret1 = printf("%-S", L"😢 ");
+	ret1 = printf("%S", L"😢 ");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("%-S", L"😢 ");
+	ret2 = ft_printf("%S", L"😢 ");
 	printf("%d\n", ret2);
 	printf("\n\n");
 
-	ret1 = printf("d|%-.3ls|", L"😢 ");
+	ret1 = printf("d|%.3ls|", L"😢 ");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("d|%-.3ls|", L"😢 ");
+	ret2 = ft_printf("d|%.3ls|", L"😢 ");
 	printf("%d\n", ret2);
 	printf("\n\n");
 
-	ret1 = printf("c|%-.10ls|", L"😢 😢");
+	ret1 = printf("c|%.10ls|", L"😢 😢");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("c|%-.10ls|", L"😢 😢");
+	ret2 = ft_printf("c|%.10ls|", L"😢 😢");
 	printf("%d\n", ret2);
 	printf("\n\n");
 
-	ret1 = printf("c|%-ls|", L"😢 😢");
+	ret1 = printf("c|%ls|", L"😢 😢");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("c|%-ls|", L"😢 😢");
+	ret2 = ft_printf("c|%ls|", L"😢 😢");
 	printf("%d\n", ret2);
 	printf("\n\n");
 
-	ret1 = printf("b|%-10.3ls|", L"😢 ");
+	ret1 = printf("b|%10.3ls|", L"😢 ");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("b|%-10.3ls|", L"😢 ");
+	ret2 = ft_printf("b|%10.3ls|", L"😢 ");
 	printf("%d\n", ret2);
 	printf("\n\n");
 
-	ret1 = printf("a|%-ls|", L"😢 ");
+	ret1 = printf("a|%ls|", L"😢 ");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("a|%-ls|", L"😢 ");
+	ret2 = ft_printf("a|%ls|", L"😢 ");
 	printf("%d\n", ret2);
 	printf("\n\n");
 
-	ret1 = printf("b|%-ls|", L"hello 😢 ok");
+	ret1 = printf("b|%ls|", L"hello 😢 ok");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("b|%-ls|", L"hello 😢 ok");
+	ret2 = ft_printf("b|%ls|", L"hello 😢 ok");
 	printf("%d\n", ret2);
 	printf("\n\n");
 
-	ret1 = printf("b|%-ls|", L"hello ok");
+	ret1 = printf("b|%ls|", L"hello ok");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("b|%-ls|", L"hello ok");
+	ret2 = ft_printf("b|%ls|", L"hello ok");
 	printf("%d\n", ret2);
 	printf("\n\n");
 
-	ret1 = printf("c|%-ls|", L"😢 😢");
+	ret1 = printf("c|%ls|", L"😢 😢");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("c|%-ls|", L"😢 😢");
+	ret2 = ft_printf("c|%ls|", L"😢 😢");
 	printf("%d\n", ret2);
 	printf("\n\n");
 
-	ret1 = printf("c|%-40.5ls|", L"😢 😢");
+	ret1 = printf("c|%40.5ls|", L"😢 😢");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("c|%-40.5ls|", L"😢 😢");
+	ret2 = ft_printf("c|%40.5ls|", L"😢 😢");
 	printf("%d\n", ret2);
 	printf("\n\n");
 
-	ret1 = printf("c|%-.6ls|", L"😢 😢");
+	ret1 = printf("c|%.6ls|", L"😢 😢");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("c|%-.6ls|", L"😢 😢");
+	ret2 = ft_printf("c|%.6ls|", L"😢 😢");
 	printf("%d\n", ret2);
 	printf("\n\n");
 
-	ret1 = printf("%-.11ls", L"电脑坏了。");
+	ret1 = printf("%.11ls", L"电脑坏了。");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("%-.11ls", L"电脑坏了。");
+	ret2 = ft_printf("%.11ls", L"电脑坏了。");
 	printf("%d\n", ret2);
 	printf("\n\n");
 
-	ret1 = printf("%-.0ls", L"电脑坏了。");
+	ret1 = printf("%.0ls", L"电脑坏了。");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("%-.0ls", L"电脑坏了。");
+	ret2 = ft_printf("%.0ls", L"电脑坏了。");
 	printf("%d\n", ret2);
 	printf("\n\n");
 
-	ret1 = printf("%-.3ls", L"电");
+	ret1 = printf("%.3ls", L"电");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("%-.3ls", L"电");
+	ret2 = ft_printf("%.3ls", L"电");
 	printf("%d\n", ret2);
 	printf("\n\n");
 
-	ret1 = printf("%-.2ls", L"电");
+	ret1 = printf("%.2ls", L"电");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("%-.2ls", L"电");
+	ret2 = ft_printf("%.2ls", L"电");
 	printf("%d\n", ret2);
 	printf("\n\n");
 
-	ret1 = printf("%-.1ls", L"电");
+	ret1 = printf("%.1ls", L"电");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("%-.1ls", L"电");
+	ret2 = ft_printf("%.1ls", L"电");
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("%.4ls", L"电");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%.4ls", L"电");
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("%4.1ls", L"电");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%4.1ls", L"电");
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("%3.1ls", L"电");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%3.1ls", L"电");
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("%4.3ls", L"电");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%4.3ls", L"电");
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("%3.4ls", L"电");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%3.4ls", L"电");
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("%3.3ls", L"电");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%3.3ls", L"电");
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("%.0ls", L"电");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%.0ls", L"电");
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("%2.0ls", L"电");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%2.0ls", L"电");
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("%1ls", L"电");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%1ls", L"电");
 	printf("%d\n", ret2);
 	printf("\n\n");
 

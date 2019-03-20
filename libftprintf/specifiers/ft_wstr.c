@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 18:19:57 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/20 14:00:44 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/20 15:27:50 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,63 @@ static inline void	ft_fill_object(char *obj, wchar_t *str, int len)
 			--g_options.width;
 		}
 	}
+	else
+	{
+		while (g_options.width - g_options.precision > 0)
+		{
+			obj[i] = ' ';
+			++i;
+			--g_options.width;
+		}
+		while (g_options.precision >= 0)
+		{
+			wc = str[j];
+			if (enchrlen(wc) <= g_options.precision)
+			{
+				utf8_encoder(&wc);
+				if ((char)(wc >> 24))
+				{
+					obj[i] = (char)(wc >> 24);
+					++i;
+					--g_options.precision;
+					--g_options.width;
+				}
+				if ((char)(wc >> 16))
+				{
+					obj[i] = (char)(wc >> 16);
+					++i;
+					--g_options.precision;
+					--g_options.width;
+				}
+				if ((char)(wc >> 8))
+				{
+					obj[i] = (char)(wc >> 8);
+					++i;
+					--g_options.precision;
+					--g_options.width;
+				}
+				if ((char)wc)
+				{
+					obj[i] = (char)wc;
+					++i;
+					--g_options.precision;
+					--g_options.width;
+				}
+			}
+			else
+			{
+				while (g_options.width > 0)
+				{
+					obj[i] = ' ';
+					++i;
+					--g_options.width;
+				}
+				break;
+			}
+			++j;
+		}
+		
+	}
 }
 
 void				ft_wstr(wchar_t *str)
@@ -113,7 +170,7 @@ void				ft_wstr(wchar_t *str)
 	int		size;
 	int		len;
 
-	if (g_options.width == INT_MAX || g_options.width == INT_MAX - 1)
+	if (g_options.width >= INT_MAX - g_ret.i)
 	{
 		g_error = G_ERROR;
 		return ;
