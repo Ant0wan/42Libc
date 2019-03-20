@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/20 17:29:57 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/20 17:35:03 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,9 +107,9 @@ int main(void)
 	ret2 = ft_printf("Hello %ls!%s%s", L"\x160", "Damn", "okay"); // 352 it checks the overflow before putting char in wchar
 	printf("%d\n", ret2);
 	printf("\n\n");
-	ret1 = printf("Hello %ls!%s%s", L"\x00F", "Damn", "okay");
+	ret1 = printf("Hello %ls!%s%s", L"\x00F ¼ Ç", "Damn", "okay");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("Hello %ls!%s%s", L"\x00F", "Damn", "okay"); // 256
+	ret2 = ft_printf("Hello %ls!%s%s", L"\x00F ¼ Ç", "Damn", "okay"); // 256
 	printf("%d\n", ret2);
 	printf("\n\n");
 //	ret1 = printf("1Hello %ls!", L"~");
@@ -138,11 +138,11 @@ int main(void)
 //	printf("%d\n", ret2);
 //	printf("\n\n");
 //
-//	ret1 = printf("3All ok Hello %ls!%ls%s", L"~", L"Damnijefihwfiwhf~", "Ookay");
-//	printf("%d\n", ret1);
-//	ret2 = printf("3All ok Hello %ls!%ls%s", L"~", L"Damnijefihwfiwhf~", "Ookay");
-//	printf("%d\n", ret2);
-//	printf("\n\n");
+	ret1 = printf("3All ok Hello %ls!%ls%s", L"~Æ", L"DamÂnijefihwfiwhf~", "Ookay");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("3All ok Hello %ls!%ls%s", L"~Æ", L"DamÂnijefihwfiwhf~", "Ookay");
+	printf("%d\n", ret2);
+	printf("\n\n");
 	ret1 = printf("4Ko on sec arg Hello %ls! %ls%s", L"~", L"Damn\x100ijefihwfiwhf~", "okay");
 	printf("%d\n", ret1);
 	ret2 = ft_printf("4Ko on sec arg Hello %ls! %ls%s", L"~", L"Damn\x100ijefihwfiwhf~", "okay");
