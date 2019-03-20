@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/19 18:16:14 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/20 14:12:37 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,17 +85,17 @@ int main(void)
 //	printf("%d\n", ret2);
 //	printf("\n\n");
 //
-	ret1 = printf("Hello %s!%s%s", "World", "Damn", "okay");
-	printf("%d\n", ret1);
-	ret2 = ft_printf("Hello %s!%s%s", "World", "Damn", "okay");
-	printf("%d\n", ret2);
-	printf("\n\n");
-
-	ret1 = printf("Hello %s!%s%s", "😄", "Damn", "okay");
-	printf("%d\n", ret1);
-	ret2 = ft_printf("Hello %s!%s%s", "😄", "Damn", "okay");
-	printf("%d\n", ret2);
-	printf("\n\n");
+//	ret1 = printf("Hello %s!%s%s", "World", "Damn", "okay");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("Hello %s!%s%s", "World", "Damn", "okay");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
+//
+//	ret1 = printf("Hello %s!%s%s", "😄", "Damn", "okay");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("Hello %s!%s%s", "😄", "Damn", "okay");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
 
 //	ret1 = printf("Hello %ls!%s%s", L"😄<", "Damn", "okay");
 //	printf("%d\n", ret1);
@@ -159,69 +159,137 @@ int main(void)
 //	ret2 = printf("Hello");
 //	printf("%d\n", ret2);
 //	printf("\n\n");
-		ret1 = printf("w10Hello %s %10s ! ", "Awesome", "World");
-	printf("%d\n", ret1);
-	ret2 = ft_printf("w10Hello %s %10s ! ", "Awesome", "World");
-	printf("%d\n", ret2);	
-	printf("\n\n");
-		ret1 = printf(">w1Hello %s %1s ! ", "Awesome", "World");
-	printf("%d\n", ret1);
-	ret2 = ft_printf(">w1Hello %s %1s ! ", "Awesome", "World");
-	printf("%d\n", ret2);	
-	printf("\n\n");
-		ret1 = printf(">w4Hello %s %4s ! ", "Awesome", "World");
-	printf("%d\n", ret1);
-	ret2 = ft_printf(">w4Hello %s %4s ! ", "Awesome", "World");
-	printf("%d\n", ret2);	
-	printf("\n\n");
-		ret1 = printf("Hello %.0s %10s ! ", "Awesome", "World");
-	printf("%d\n", ret1);
-	ret2 = ft_printf("Hello %.0s %10s ! ", "Awesome", "World");
-	printf("%d\n", ret2);	
-	printf("\n\n");
+//		ret1 = printf("w10Hello %s %10s ! ", "Awesome", "World");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("w10Hello %s %10s ! ", "Awesome", "World");
+//	printf("%d\n", ret2);	
+//	printf("\n\n");
+//		ret1 = printf(">w1Hello %s %1s ! ", "Awesome", "World");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf(">w1Hello %s %1s ! ", "Awesome", "World");
+//	printf("%d\n", ret2);	
+//	printf("\n\n");
+//		ret1 = printf(">w4Hello %s %4s ! ", "Awesome", "World");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf(">w4Hello %s %4s ! ", "Awesome", "World");
+//	printf("%d\n", ret2);	
+//	printf("\n\n");
+//		ret1 = printf("Hello %.0s %10s ! ", "Awesome", "World");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("Hello %.0s %10s ! ", "Awesome", "World");
+//	printf("%d\n", ret2);	
+//	printf("\n\n");
+//
+//		ret1 = printf("Hello %.0s %10.s ! ", "Awesome", "World");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("Hello %.0s %10.s ! ", "Awesome", "World");
+//	printf("%d\n", ret2);	
+//
+//
+//	printf("\n\n");
+//	ret1 = printf("Hello %.2s!", "World ");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("Hello %.2s!", "World ");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
+//
+//	ret1 = printf("Hello %20s!", "World ");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("Hello %20s!", "World ");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
+//
+//
+//	ret1 = printf("Hello %-20s!", "World ");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("Hello %-20s!", "World ");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
+//
+//	ret1 = printf("Hello %.12s!", "World ");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("Hello %.12s!", "World ");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
+//
+//	ret1 = printf("Hello %.2s!", "World ");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("Hello %.2s!", "World ");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
 
-		ret1 = printf("Hello %.0s %10.s ! ", "Awesome", "World");
-	printf("%d\n", ret1);
-	ret2 = ft_printf("Hello %.0s %10.s ! ", "Awesome", "World");
-	printf("%d\n", ret2);	
 
-
-	printf("\n\n");
-	ret1 = printf("Hello %.2s!", "World ");
+	ret1 = printf("|%-2147483647d|", 10);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("Hello %.2s!", "World ");
+	ret2 = ft_printf("|%-2147483647d|", 10);
 	printf("%d\n", ret2);
 	printf("\n\n");
-
-	ret1 = printf("Hello %20s!", "World ");
+	
+	ret1 = printf("%-.2147483649ls1|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("Hello %20s!", "World ");
+	ret2 = ft_printf("%-.2147483649ls2|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret2);
 	printf("\n\n");
-
-
-	ret1 = printf("Hello %-20s!", "World ");
+//	INT MAX + 1 =  2147483648
+//	INT_MAX -1 || INT_MAX
+	ret1 = printf("w %-*s1|", INT_MAX - 1,  " ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("Hello %-20s!", "World ");
+	ret2 = ft_printf("w %-*s2|", INT_MAX - 1, " ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret2);
 	printf("\n\n");
-
-	ret1 = printf("Hello %.12s!", "World ");
+	ret1 = printf("w %-2147483647s1|", " ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("Hello %.12s!", "World ");
+	ret2 = ft_printf("w %-2147483647s2|", " ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret2);
 	printf("\n\n");
-
-	ret1 = printf("Hello %.2s!", "World ");
+	ret1 = printf("w %-2147483646ls1|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("Hello %.2s!", "World ");
+	ret2 = ft_printf("w %-2147483646ls2|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret2);
 	printf("\n\n");
-
-
-	ret1 = printf("%-2147483649s", "World ");
+	ret1 = printf("precision %-.2147483648ls1|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("%-2147483649s", "World ");
+	ret2 = ft_printf("precision %-.2147483648ls2|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	printf("%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("precision %-.2147483649ls1|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("precision %-.2147483649ls2|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	printf("%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("width %-2147483649ls1|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("width %-2147483649ls2|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	printf("%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("%-4294967298S1|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%-4294967298S2|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	printf("%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("|%-S|", L">1< ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("|%-S|", L">1< ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	printf("%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("|%-2140ls|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("|%-2140ls|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	printf("%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf(".214|%-.2140ls|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	printf("%d\n", ret1);
+	ret2 = ft_printf(".214|%-.2140ls|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	printf("%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("|%-214S|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("|%-214S|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	printf("%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("|%-S|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("|%-S|", L" ❤ ☀ ☆ ☂ ☻ ♞ ☯ ☭ ☢ € → ");
 	printf("%d\n", ret2);
 	printf("\n\n");
 // "Hello %ls!i%ls%ls", L"电脑是新的", L",电脑死机了。", L"电脑坏了。😢 "
@@ -322,6 +390,30 @@ int main(void)
 	ret1 = printf("%-.11ls", L"电脑坏了。");
 	printf("%d\n", ret1);
 	ret2 = ft_printf("%-.11ls", L"电脑坏了。");
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("%-.0ls", L"电脑坏了。");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%-.0ls", L"电脑坏了。");
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("%-.3ls", L"电");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%-.3ls", L"电");
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("%-.2ls", L"电");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%-.2ls", L"电");
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("%-.1ls", L"电");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%-.1ls", L"电");
 	printf("%d\n", ret2);
 	printf("\n\n");
 

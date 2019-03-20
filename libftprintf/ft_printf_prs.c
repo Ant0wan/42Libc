@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/15 15:48:36 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/20 14:08:47 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,7 +178,10 @@ int					printf_prs(const char *format, va_list ap)
 	while (format[++g_ret.fmt_i] && !(prs_specifier(format, ap)))
 	{
 		if (g_error)
-				return (-1);
+		{
+			g_error = 0;
+			return (-1);
+		}
 		if (!(format[g_ret.fmt_i]))
 			break ;
 		while (g_ret.i + 1 >= g_ret.max)

@@ -6,12 +6,13 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/18 14:14:55 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/20 14:12:25 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stddef.h>
+#include <limits.h>
 
 #include "prs_struct.h"
 #include "specifiers.h"
@@ -93,6 +94,11 @@ void							ft_nbr(intmax_t nb)
 	_Bool			negative;
 	char			*str;
 
+	if (g_options.width == INT_MAX || g_options.width == INT_MAX - 1)
+	{
+		g_error = G_ERROR;
+		return ;
+	}
 	ft_cast_nbr(&nb);
 	len = ft_nbrlen(nb);
 	negative = 0;
