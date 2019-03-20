@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 18:19:57 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/20 15:10:25 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/20 17:17:04 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void				ft_str(char *str)
 
 	if (g_modifier.l)
 	{
-		ft_wstr(str);
+		ft_wstr((wchar_t*)str);
 		return ;
 	}
 	else if (g_options.width >= INT_MAX - g_ret.i)
