@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/21 16:58:14 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/21 17:47:24 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void							ft_nbr(intmax_t nb)
 		g_error = G_ERROR;
 		return ;
 	}
-	ft_format(nb, str, size, len, negative);
+	ft_nbrformat(nb, str, size, len, negative);
 	retwriter(str, size);
 	free(str);
 }

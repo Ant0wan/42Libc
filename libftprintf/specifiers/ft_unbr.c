@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/21 17:07:27 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/21 17:47:34 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static inline void				ft_cast_nbr(uintmax_t *nb)
 	else if (g_modifier.ll)
 		*nb = (unsigned long long)*nb;
 	else if (g_modifier.j)
-		return ;
+		*nb = (uintmax_t)*nb;
 	else if (g_modifier.t)
 		*nb = (ptrdiff_t)(*nb);
 	else if (g_modifier.z)
@@ -53,7 +53,7 @@ static inline unsigned short	ft_nbrlen(uintmax_t nb)
 
 	len = 0;
 	rest = nb;
-	while (rest && ++ len)
+	while (rest && ++len)
 		rest = (rest - (rest % 10)) / 10;
 	if (nb == 0)
 		if (g_options.precision == -1 || g_options.precision == 1)
@@ -61,6 +61,7 @@ static inline unsigned short	ft_nbrlen(uintmax_t nb)
 	return (len);
 }
 
+#include <stdio.h>
 void							ft_unbr(uintmax_t nb)
 {
 	int				size;
@@ -83,7 +84,7 @@ void							ft_unbr(uintmax_t nb)
 		g_error = G_ERROR;
 		return ;
 	}
-	ft_format(nb, str, size, len, negative);
+	ft_unbrformat(nb, str, size, len, negative);
 	retwriter(str, size);
 	free(str);
 }
