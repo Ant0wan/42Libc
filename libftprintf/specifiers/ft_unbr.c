@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nbr.c                                           :+:      :+:    :+:   */
+/*   ft_unbr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/21 16:58:14 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/21 16:58:26 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,29 +26,29 @@
 extern t_modifier	g_modifier;
 extern _Bool		g_error;
 
-static inline void				ft_cast_nbr(intmax_t *nb)
+static inline void				ft_cast_nbr(uintmax_t *nb)
 {
 	if (g_modifier.hh)
-		*nb = (signed char)(*nb);
+		*nb = (unsigned char)(*nb);
 	else if (g_modifier.h)
-		*nb = (short)(*nb);
+		*nb = (unsigned short)(*nb);
 	else if (g_modifier.l)
-		*nb = (long)(*nb);
+		*nb = (unsigned long)(*nb);
 	else if (g_modifier.ll)
-		*nb = (long long)*nb;
+		*nb = (unsigned long long)*nb;
 	else if (g_modifier.j)
-		*nb = (intmax_t)(*nb);
+		return ;
 	else if (g_modifier.t)
 		*nb = (ptrdiff_t)(*nb);
 	else if (g_modifier.z)
 		*nb = (size_t)(*nb);
 	else
-		*nb = (int)(*nb);
+		*nb = (unsigned int)(*nb);
 }
 
-static inline unsigned short	ft_nbrlen(intmax_t nb)
+static inline unsigned short	ft_nbrlen(uintmax_t nb)
 {
-	intmax_t		rest;
+	uintmax_t		rest;
 	unsigned short	len;
 
 	len = 0;
@@ -61,7 +61,7 @@ static inline unsigned short	ft_nbrlen(intmax_t nb)
 	return (len);
 }
 
-void							ft_nbr(intmax_t nb)
+void							ft_unbr(uintmax_t nb)
 {
 	int				size;
 	unsigned short	len;
@@ -76,8 +76,6 @@ void							ft_nbr(intmax_t nb)
 	ft_cast_nbr(&nb);
 	len = ft_nbrlen(nb);
 	negative = 0;
-	if (nb < 0)
-		negative = 1;
 	size = ft_get_object_size(len, negative);
 	if (!(str = (char*)ft_memalloc(sizeof(char)	* size)))
 	{
