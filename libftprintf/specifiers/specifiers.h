@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 17:44:58 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/20 17:16:45 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/21 15:59:13 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 # define SPECIFIERS_H
 
 # include <stdlib.h>
+
+void	ft_chr(wchar_t wc);
+
+void	ft_wchr(wchar_t wc);
 
 void	ft_str(char *str);
 
