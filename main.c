@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/21 16:39:32 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/21 17:07:39 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,9 @@ int main(void)
 //	printf("%d\n", ret2);
 //
 //	printf("\n\n");
-		ret1 = printf("|% 10u|", L'😄');
+		ret1 = printf("|% 10u|", UINT_MAX);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("|% 10u|", L'😄');
+	ret2 = ft_printf("|% 10u|", UINT_MAX);
 	printf("%d\n", ret2);
 	printf("\n\n");
 		ret1 = printf("|% -10u|", L'😄');

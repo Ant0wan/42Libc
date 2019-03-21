@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/21 16:58:26 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/21 17:07:27 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ void							ft_unbr(uintmax_t nb)
 	ft_cast_nbr(&nb);
 	len = ft_nbrlen(nb);
 	negative = 0;
+	g_flags.space = 0;
 	size = ft_get_object_size(len, negative);
 	if (!(str = (char*)ft_memalloc(sizeof(char)	* size)))
 	{
