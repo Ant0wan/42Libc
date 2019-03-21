@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/07 11:08:30 by abarthel          #+#    #+#              #
-#    Updated: 2019/03/13 11:59:46 by abarthel         ###   ########.fr        #
+#    Updated: 2019/03/21 18:06:14 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CC = gcc
 
 FLAGS = -Werror -Wall -Wextra
 
-INCS = -I./dispatcher/ -I./../libftwchar/ -I./../libftwchar/utf8/ -I./../libft/
+INCS = -I./dispatcher/ -I./specifiers/ -I./../libftwchar/ -I./../libftwchar/utf8/ -I./../libft/
 
 O_FILES = ft_printf.o ft_vdprintf.o ft_vasprintf.o ft_printf_prs.o prs_tools.o \
 

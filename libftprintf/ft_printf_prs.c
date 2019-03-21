@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/20 14:08:47 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/21 18:24:41 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include "prs_struct.h"
 #include "struct_disp.h"
 #include "prs_tools.h"
+#include "specifiers.h"
 
 static va_list	g_ap_origin;
 t_ret			g_ret;
@@ -69,10 +70,10 @@ static inline void	get_flags(const char *format, _Bool *specifier)
 		g_flags.space = !(g_flags.plus) ? 1 : 0;
 	else if (!(format[g_ret.fmt_i] ^ '\''))
 		g_flags.apost = 1;
-	else // EXIT 1
+	else
 	{
 		*specifier = 0;
-//		ft_putchar(format[g_ret.i]);
+		ft_chr(format[g_ret.fmt_i]);
 	}
 }
 
@@ -160,11 +161,10 @@ static inline _Bool	prs_specifier(const char *format, va_list ap)
 					va_copy(ap, g_ap_origin);
 				wrapper(f, ap);
 			}
-			else if (specifier) // EXIT 2
+			else if (specifier)
 			{
 				if (get_modifier(format))
 					specifier = 0;
-		//		ft_putchar(format[g_ret.i]); // ft_chr.c
 			}
 		}
 	}

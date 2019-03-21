@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 14:51:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/21 17:38:27 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/21 18:00:49 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 #endif
 
 #ifndef NB_PTR
-# define NB_PTR 28
+# define NB_PTR 27
 #endif
 
 static const t_specifier	g_specifier[] =
@@ -51,7 +51,6 @@ static const t_specifier	g_specifier[] =
 	{ 'a', T_ & ft_putaddr},
 	{ 'A', T_ & ft_putaddr},
 	{ 'S', T_ & ft_wstr},
-	{ '%', T_ & ft_putchar},
 	{ 'k', T_ & ft_putaddr},
 	{ 'r', T_ & ft_putaddr},
 	{ 'B', T_ & ft_putwcbits},
