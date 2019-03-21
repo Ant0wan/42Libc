@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 18:19:57 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/21 15:50:03 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/21 16:18:20 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,58 +43,41 @@ static inline int	ft_get_wstr_object_size(int len)
 	return (size);
 }
 
-static inline void	ft_fill_object(char *obj, wchar_t wc, int len)
+static inline void	ft_fill_object(char *obj, wchar_t wc)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	j = 0;
-	if (g_options.precision == -1
-			|| g_options.precision > len
-			|| g_options.precision < 0)
-		g_options.precision = len;
-	if (g_options.width < -1)
-		g_options.width = len;
 	if (g_flags.minus)
 	{
-		while (g_options.precision >= 0)
+		utf8_encoder(&wc);
+		if ((char)(wc >> 24))
 		{
-			if (enchrlen(wc) <= g_options.precision)
-			{
-				utf8_encoder(&wc);
-				if ((char)(wc >> 24))
-				{
-					obj[i] = (char)(wc >> 24);
-					++i;
-					--g_options.precision;
-					--g_options.width;
-				}
-				if ((char)(wc >> 16))
-				{
-					obj[i] = (char)(wc >> 16);
-					++i;
-					--g_options.precision;
-					--g_options.width;
-				}
-				if ((char)(wc >> 8))
-				{
-					obj[i] = (char)(wc >> 8);
-					++i;
-					--g_options.precision;
-					--g_options.width;
-				}
-				if ((char)wc)
-				{
-					obj[i] = (char)wc;
-					++i;
-					--g_options.precision;
-					--g_options.width;
-				}
-			}
-			else
-				break;
-			++j;
+			obj[i] = (char)(wc >> 24);
+			++i;
+			--g_options.precision;
+			--g_options.width;
+		}
+		if ((char)(wc >> 16))
+		{
+			obj[i] = (char)(wc >> 16);
+			++i;
+			--g_options.precision;
+			--g_options.width;
+		}
+		if ((char)(wc >> 8))
+		{
+			obj[i] = (char)(wc >> 8);
+			++i;
+			--g_options.precision;
+			--g_options.width;
+		}
+		if ((char)wc)
+		{
+			obj[i] = (char)wc;
+			++i;
+			--g_options.precision;
+			--g_options.width;
 		}
 		while (g_options.width > 0)
 		{
@@ -105,59 +88,44 @@ static inline void	ft_fill_object(char *obj, wchar_t wc, int len)
 	}
 	else
 	{
-		while (g_options.width - g_options.precision > 0)
+		if (g_options.width > 0)
 		{
-			obj[i] = ' ';
+			while (g_options.width - enchrlen(wc))
+			{
+				obj[i] = ' ';
+				++i;
+				--g_options.width;
+			}
+		}
+		utf8_encoder(&wc);
+		if ((char)(wc >> 24))
+		{
+			obj[i] = (char)(wc >> 24);
 			++i;
+			--g_options.precision;
 			--g_options.width;
 		}
-		while (g_options.precision >= 0)
+		if ((char)(wc >> 16))
 		{
-			if (enchrlen(wc) <= g_options.precision)
-			{
-				utf8_encoder(&wc);
-				if ((char)(wc >> 24))
-				{
-					obj[i] = (char)(wc >> 24);
-					++i;
-					--g_options.precision;
-					--g_options.width;
-				}
-				if ((char)(wc >> 16))
-				{
-					obj[i] = (char)(wc >> 16);
-					++i;
-					--g_options.precision;
-					--g_options.width;
-				}
-				if ((char)(wc >> 8))
-				{
-					obj[i] = (char)(wc >> 8);
-					++i;
-					--g_options.precision;
-					--g_options.width;
-				}
-				if ((char)wc)
-				{
-					obj[i] = (char)wc;
-					++i;
-					--g_options.precision;
-					--g_options.width;
-				}
-			}
-			else
-			{
-				while (g_options.width > 0)
-				{
-					obj[i] = ' ';
-					++i;
-					--g_options.width;
-				}
-				break;
-			}
-			++j;
+			obj[i] = (char)(wc >> 16);
+			++i;
+			--g_options.precision;
+			--g_options.width;
 		}
-		
+		if ((char)(wc >> 8))
+		{
+			obj[i] = (char)(wc >> 8);
+			++i;
+			--g_options.precision;
+			--g_options.width;
+		}
+		if ((char)wc)
+		{
+			obj[i] = (char)wc;
+			++i;
+			--g_options.precision;
+			--g_options.width;
+		}
 	}
 }
 
@@ -179,7 +147,7 @@ void				ft_wchr(wchar_t wc)
 		g_error = G_ERROR;
 		return ;
 	}
-	ft_fill_object(object, wc, len);
+	ft_fill_object(object, wc);
 	retwriter(object, size);
 	free(object);
 }

@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 18:19:57 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/21 15:58:56 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/21 16:08:24 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,24 +40,16 @@ static inline int	ft_get_str_object_size(void)
 	return (size);
 }
 
-static inline void	ft_fill_object(char *obj, char c, int len, int size)
+static inline void	ft_fill_object(char *obj, char c, int size)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	j = 0;
-	if (g_options.precision == -1 || g_options.precision > len)
-		g_options.precision = len;
 	if (g_flags.minus)
 	{
-		while (g_options.precision)
-		{
-			obj[i] = c;
-			++i;
-			--g_options.precision;
-			--size;
-		}
+		obj[i] = c;
+		++i;
+		--size;
 		while (size >= 0)
 		{
 			obj[i] = ' ';
@@ -67,26 +59,20 @@ static inline void	ft_fill_object(char *obj, char c, int len, int size)
 	}
 	else
 	{
-		len = g_options.precision < len ? g_options.precision : len;
-		while (size - len)
+		while (size - 1)
 		{
 			obj[i] = ' ';
 			++i;
 			--size;
 		}
-		while (size && j <= len)
-		{
-			obj[i] = c;
-			++j;
-			++i;
-			--size;
-		}
+		obj[i] = c;
+		++i;
+		--size;
 	}
 }
 
 void				ft_chr(wchar_t wc)
 {
-	char	c;
 	char	*object;
 	int		size;
 
@@ -95,9 +81,7 @@ void				ft_chr(wchar_t wc)
 		ft_wchr(wc);
 		return ;
 	}
-	else
-		c = (unsigned char)wc;
-	if (g_options.width >= INT_MAX - g_ret.i)
+	else if (g_options.width >= INT_MAX - g_ret.i)
 	{
 		g_error = G_ERROR;
 		return ;
@@ -108,7 +92,7 @@ void				ft_chr(wchar_t wc)
 		g_error = G_ERROR;
 		return ;
 	}
-	ft_fill_object(object, c, 1, size);
+	ft_fill_object(object, (unsigned char)wc, size);
 	retwriter(object, size);
 	free(object);
 }
