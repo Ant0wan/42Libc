@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/21 16:14:16 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/21 16:23:59 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,9 @@ int main(void)
 	int ret1;
 	int ret2;
 
-	ret1 = printf("|%.10lc|", L'😄');
+/*	ret1 =*/ printf("|ok%n|", &ret1);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("|%.10lc|", L'😄');
+/*	ret2 =*/ ft_printf("|ok%n|", &ret2);
 	printf("%d\n", ret2);
 
 	printf("\n\n");
