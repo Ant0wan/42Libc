@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 18:06:34 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/21 17:49:03 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/21 17:53:40 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,7 @@ extern _Bool		g_error;
 //    |-------------------------------------------------------|
 
 #include <stdio.h> // DEBUGGING
-extern inline void	ft_unbrformat(uintmax_t nb, char *str, int size, int len,
-		_Bool negative)
+extern inline void	ft_unbrformat(uintmax_t nb, char *str, int size, int len)
 {
 	uintmax_t	rest;
 
@@ -67,8 +66,6 @@ extern inline void	ft_unbrformat(uintmax_t nb, char *str, int size, int len,
 	{
 		if (g_options.precision <= 0)
 			g_options.precision = len;
-		if (g_flags.plus || negative)
-			++g_options.precision;
 		if (g_flags.space)
 		{
 			++len;
@@ -111,10 +108,6 @@ extern inline void	ft_unbrformat(uintmax_t nb, char *str, int size, int len,
 			else if (g_flags.space)
 				str[size] = ' ';
 		}
-		if (negative)
-			str[size] = '-';
-		else if (g_flags.plus)
-			str[size] = '+';
 	}
 	else
 	{
@@ -136,29 +129,13 @@ extern inline void	ft_unbrformat(uintmax_t nb, char *str, int size, int len,
 			}
 			else if (g_flags.zero)
 			{
-				if (size == 0 && (negative || g_flags.plus))
+				if (size == 0)
 				{
 					g_flags.zero = 0;
 					++size;
 				}
 				else
 					str[size] = '0';
-			}
-			else if (negative || g_flags.plus || g_flags.space)
-			{
-				if (negative)
-				{
-					negative = 0;
-					g_flags.plus = 0;
-					str[size] = '-';
-				}
-				else if (g_flags.plus)
-				{
-					g_flags.plus = 0;
-					str[size] = '+';
-				}
-				else if (g_flags.space)
-					str[size] = ' ';
 			}
 			else
 				str[size] = ' ';
