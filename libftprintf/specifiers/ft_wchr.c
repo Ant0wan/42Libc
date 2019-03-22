@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 18:19:57 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/21 16:18:20 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/22 12:25:44 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,5 +149,5 @@ void				ft_wchr(wchar_t wc)
 	}
 	ft_fill_object(object, wc);
 	retwriter(object, size);
-	free(object);
+	ft_memdel((void**)&object);
 }

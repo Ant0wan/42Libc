@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/21 17:55:04 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/22 12:26:37 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,5 @@ void							ft_unbr(uintmax_t nb)
 	}
 	ft_unbrformat(nb, str, size, len);
 	retwriter(str, size);
-	free(str);
+	ft_memdel((void**)&str);
 }

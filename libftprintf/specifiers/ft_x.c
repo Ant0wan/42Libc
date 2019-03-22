@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nbr.c                                           :+:      :+:    :+:   */
+/*   ft_x.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/22 12:26:20 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/22 12:47:42 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,45 +23,53 @@
 # define G_ERROR 1
 #endif
 
+#ifndef BASE
+# define BASE 16
+#endif
+
 extern t_modifier	g_modifier;
 extern _Bool		g_error;
 
-static inline void				ft_cast_nbr(intmax_t *nb)
+static inline void				ft_cast_nbr(uintmax_t *nb)
 {
 	if (g_modifier.hh)
-		*nb = (signed char)(*nb);
+		*nb = (unsigned char)(*nb);
 	else if (g_modifier.h)
-		*nb = (short)(*nb);
+		*nb = (unsigned short)(*nb);
 	else if (g_modifier.l)
-		*nb = (long)(*nb);
+		*nb = (unsigned long)(*nb);
 	else if (g_modifier.ll)
-		*nb = (long long)*nb;
+		*nb = (unsigned long long)*nb;
 	else if (g_modifier.j)
-		*nb = (intmax_t)(*nb);
+		*nb = (uintmax_t)*nb;
 	else if (g_modifier.t)
 		*nb = (ptrdiff_t)(*nb);
 	else if (g_modifier.z)
 		*nb = (size_t)(*nb);
 	else
-		*nb = (int)(*nb);
+		*nb = (unsigned int)(*nb);
 }
 
-static inline unsigned short	ft_nbrlen(intmax_t nb)
+static inline unsigned short	ft_nbrlen(uintmax_t nb)
 {
-	intmax_t		rest;
+	uintmax_t		rest;
 	unsigned short	len;
 
 	len = 0;
 	rest = nb;
-	while (rest && ++ len)
-		rest = (rest - (rest % 10)) / 10;
+	while (rest && ++len)
+		rest = (rest - (rest % BASE)) / BASE;
 	if (nb == 0)
+	{
 		if (g_options.precision == -1 || g_options.precision == 1)
 		   ++len;
+	}
+	else if (g_flags.hash)
+		len += 2;
 	return (len);
 }
 
-void							ft_nbr(intmax_t nb)
+void							ft_x(uintmax_t nb)
 {
 	int				size;
 	unsigned short	len;
@@ -76,15 +84,15 @@ void							ft_nbr(intmax_t nb)
 	ft_cast_nbr(&nb);
 	len = ft_nbrlen(nb);
 	negative = 0;
-	if (nb < 0)
-		negative = 1;
+	g_flags.space = 0;
+	g_flags.plus = 0;
 	size = ft_get_object_size(len, negative);
 	if (!(str = (char*)ft_memalloc(sizeof(char)	* size)))
 	{
 		g_error = G_ERROR;
 		return ;
 	}
-	ft_nbrformat(nb, str, size, len, negative);
+	ft_xformat(nb, str, size, len);
 	retwriter(str, size);
 	ft_memdel((void**)&str);
 }
