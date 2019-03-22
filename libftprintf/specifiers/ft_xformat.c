@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 18:06:34 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/22 15:50:53 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/22 16:10:14 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ extern inline void	ft_xformat(uintmax_t nb, char *str, int size, int len)
 				--g_options.width;
 				str[size] = '0';
 			}
-			else if (g_flags.hash)
+			else if (g_flags.hash && nb > 0)
 			{
 				str[size] = 'x';
 				--size;

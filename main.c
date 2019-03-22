@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/22 15:49:43 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/22 15:56:59 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,23 +122,23 @@ int main(void)
 	printf("%d\n", ret2);
 	printf("\n\n");
 
-	ret1 = printf("<|%014.10x|", -14578);
+	ret1 = printf("z|%#14.10hhx|", LONG_MIN);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("<|%014.10x|", -14578);
+	ret2 = ft_printf("z|%#14.10hhx|", LONG_MIN);
 	printf("%d\n", ret2);
-	ret1 = printf("<|%#014.10x|", -14578);
+	ret1 = printf("z|%#14.10hx|", LONG_MIN);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("<|%#014.10x|", -14578);
+	ret2 = ft_printf("z|%#14.10hx|", LONG_MIN);
 	printf("%d\n", ret2);
 	printf("\n\n");
 
-	ret1 = printf("z|%14.10x|", -14578);
+	ret1 = printf("z|%#14.10x|", INT_MIN * 2);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("z|%14.10x|", -14578);
+	ret2 = ft_printf("z|%#14.10x|", INT_MIN * 4);
 	printf("%d\n", ret2);
-	ret1 = printf("z|%#14.10llx|", ULONG_MAX);
+	ret1 = printf("z|%#14.10llx|", LONG_MIN);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("z|%#14.10llx|", ULONG_MAX);
+	ret2 = ft_printf("z|%#14.10llx|", LONG_MIN);
 	printf("%d\n", ret2);
 	printf("\n\n");
 
