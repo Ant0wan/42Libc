@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 18:06:34 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/22 14:42:18 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/22 15:50:53 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,21 +33,20 @@
 extern t_modifier	g_modifier;
 extern _Bool		g_error;
 
-extern inline void	ft_xformat(intmax_t nb, char *str, int size, int len)
+extern inline void	ft_xformat(uintmax_t nb, char *str, int size, int len)
 {
-	intmax_t	rest;
+	uintmax_t	rest;
 	const char	*s_base;
 
 	rest = nb;
 	s_base = BASE_L;
-	// STILL APOSTROPHES TO HANDLE
 	if (g_flags.minus)
 	{
 		if (g_options.precision <= 0)
 			g_options.precision = len;
 		if (g_flags.plus)
 			++g_options.precision;
-		if (g_flags.space && nb >= 0)
+		if (g_flags.space)
 		{
 			++len;
 			++g_options.precision;
@@ -104,10 +103,6 @@ extern inline void	ft_xformat(intmax_t nb, char *str, int size, int len)
 			{
 				--g_options.precision;
 				--g_options.width;
-				str[size] = '0';
-			}
-			else if (g_flags.zero)
-			{
 				str[size] = '0';
 			}
 			else if (g_flags.hash)
