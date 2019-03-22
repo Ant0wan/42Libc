@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 18:06:34 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/22 13:06:34 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/22 14:42:18 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,19 @@
 extern t_modifier	g_modifier;
 extern _Bool		g_error;
 
-extern inline void	ft_xformat(intmax_t nb, char *str, int size, int len, 
-		_Bool negative)
+extern inline void	ft_xformat(intmax_t nb, char *str, int size, int len)
 {
 	intmax_t	rest;
 	const char	*s_base;
 
 	rest = nb;
 	s_base = BASE_L;
-	if (g_options.precision >= 0)
-		g_flags.zero = 0;
 	// STILL APOSTROPHES TO HANDLE
 	if (g_flags.minus)
 	{
 		if (g_options.precision <= 0)
 			g_options.precision = len;
-		if (g_flags.plus || negative)
+		if (g_flags.plus)
 			++g_options.precision;
 		if (g_flags.space && nb >= 0)
 		{
@@ -89,13 +86,7 @@ extern inline void	ft_xformat(intmax_t nb, char *str, int size, int len,
 				else
 					str[size] = '0';
 			}
-			else if (g_flags.space)
-				str[size] = ' ';
 		}
-		if (negative)
-			str[size] = '-';
-		else if (g_flags.plus)
-			str[size] = '+';
 	}
 	else
 	{
@@ -117,29 +108,7 @@ extern inline void	ft_xformat(intmax_t nb, char *str, int size, int len,
 			}
 			else if (g_flags.zero)
 			{
-				if (size == 0 && (negative || g_flags.plus))
-				{
-					g_flags.zero = 0;
-					++size;
-				}
-				else
-					str[size] = '0';
-			}
-			else if (negative || g_flags.plus || g_flags.space)
-			{
-				if (negative)
-				{
-					negative = 0;
-					g_flags.plus = 0;
-					str[size] = '-';
-				}
-				else if (g_flags.plus)
-				{
-					g_flags.plus = 0;
-					str[size] = '+';
-				}
-				else if (g_flags.space)
-					str[size] = ' ';
+				str[size] = '0';
 			}
 			else if (g_flags.hash)
 			{

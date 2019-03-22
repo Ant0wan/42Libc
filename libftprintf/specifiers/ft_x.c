@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/22 12:47:42 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/22 15:31:27 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,27 @@ static inline unsigned short	ft_nbrlen(uintmax_t nb)
 	if (nb == 0)
 	{
 		if (g_options.precision == -1 || g_options.precision == 1)
-		   ++len;
+			++len;
 	}
-	else if (g_flags.hash)
-		len += 2;
 	return (len);
+}
+
+#include <stdio.h>
+static inline int				ft_get_object_size_x(int len, uintmax_t nb)
+{
+	int		size;
+
+	if (g_flags.hash && nb > 0)
+	{
+		size = len + 2 > g_options.width ? len + 2 : g_options.width;
+		size = size > g_options.precision + 2 ? size : g_options.precision + 2;
+	}
+	else
+	{
+		size = len > g_options.width ? len : g_options.width;
+		size = size > g_options.precision ? size : g_options.precision;
+	}
+	return (size);
 }
 
 void							ft_x(uintmax_t nb)
@@ -86,7 +102,7 @@ void							ft_x(uintmax_t nb)
 	negative = 0;
 	g_flags.space = 0;
 	g_flags.plus = 0;
-	size = ft_get_object_size(len, negative);
+	size = ft_get_object_size_x(len, nb);
 	if (!(str = (char*)ft_memalloc(sizeof(char)	* size)))
 	{
 		g_error = G_ERROR;
