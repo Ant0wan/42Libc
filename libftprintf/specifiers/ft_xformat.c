@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 18:06:34 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/25 18:18:21 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/25 18:24:18 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ extern inline void	ft_xformat(uintmax_t nb, char *str, int size, int len)
 			len += 2;
 		}
 		else if (g_flags.hash && (nb > 0 || g_conv.isp) && g_conv.base == OCTAL_B)
+		{
 			len += 1;
 		}
 		while (size > 0)
