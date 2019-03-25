@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/25 14:40:32 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/25 18:03:05 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@
 
 #ifndef G_ERROR
 # define G_ERROR 1
+#endif
+
+#ifndef OCTAL_B
+# define OCTAL_B 8
 #endif
 
 extern t_modifier	g_modifier;
@@ -69,7 +73,12 @@ static inline int				ft_get_object_size_x(int len, uintmax_t nb)
 {
 	int		size;
 
-	if (g_flags.hash && (nb > 0 || g_conv.isp))
+	if (g_flags.hash && g_conv.base == OCTAL_B && g_options.precision <= len)
+	{
+		size = len + 1 > g_options.width ? len + 1 : g_options.width;
+		size = size > g_options.precision + 1 ? size : g_options.precision + 1;
+	}
+	else if (g_flags.hash && (nb > 0 || g_conv.isp) && g_conv.base != OCTAL_B)
 	{
 		size = len + 2 > g_options.width ? len + 2 : g_options.width;
 		size = size > g_options.precision + 2 ? size : g_options.precision + 2;

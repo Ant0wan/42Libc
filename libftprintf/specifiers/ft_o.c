@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/25 14:11:03 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/25 16:45:31 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ void	ft_o(uintmax_t nb)
 	g_conv.base_ret = "0123456789abcdef";
 	g_conv.base = 8;
 	g_conv.isupp = 0;
-	g_flags.hash = 0;
 	ft_x(nb);
 }
