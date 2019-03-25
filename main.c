@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/25 12:06:44 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/25 12:34:31 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,6 +157,16 @@ int main(void)
 	ret1 = printf("z|%-#14.10hx|", LONG_MIN);
 	printf("%d\n", ret1);
 	ret2 = ft_printf("z|%-#14.10hx|", LONG_MIN);
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("z|%-#14.10zx|", LONG_MIN);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("z|%-#14.10zx|", LONG_MIN);
+	printf("%d\n", ret2);
+	ret1 = printf("z|%-#14.10tx|", LONG_MIN);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("z|%-#14.10tx|", LONG_MIN);
 	printf("%d\n", ret2);
 	printf("\n\n");
 

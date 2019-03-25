@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/25 12:05:38 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/25 12:20:03 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ static inline unsigned short	ft_nbrlen(uintmax_t nb)
 	return (len);
 }
 
-#include <stdio.h>
 static inline int				ft_get_object_size_x(int len, uintmax_t nb)
 {
 	int		size;
