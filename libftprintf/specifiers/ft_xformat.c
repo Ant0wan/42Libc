@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 18:06:34 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/25 13:56:10 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/25 14:41:56 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ extern inline void	ft_xformat(uintmax_t nb, char *str, int size, int len)
 	rest = nb;
 	if (g_flags.minus)
 	{
-		if (g_flags.hash && nb > 0)
+		if (g_flags.hash && (nb > 0 || g_conv.isp))
 		{
 			g_options.precision += 2;
 			len += 2;
@@ -62,7 +62,7 @@ extern inline void	ft_xformat(uintmax_t nb, char *str, int size, int len)
 			}
 			else
 			{
-				if (size < 2 && g_flags.hash && nb > 0)
+				if (size < 2 && g_flags.hash && (nb > 0 || g_conv.isp))
 				{
 					str[size] = g_conv.isupp ? 'X' : 'x';
 					--size;
@@ -91,7 +91,7 @@ extern inline void	ft_xformat(uintmax_t nb, char *str, int size, int len)
 				--g_options.width;
 				str[size] = '0';
 			}
-			else if (g_flags.hash && nb > 0)
+			else if (g_flags.hash && (nb > 0 || g_conv.isp))
 			{
 				str[size] = g_conv.isupp ? 'X' : 'x';
 				--size;

@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/25 13:47:55 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/25 14:40:32 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ static inline int				ft_get_object_size_x(int len, uintmax_t nb)
 {
 	int		size;
 
-	if (g_flags.hash && nb > 0)
+	if (g_flags.hash && (nb > 0 || g_conv.isp))
 	{
 		size = len + 2 > g_options.width ? len + 2 : g_options.width;
 		size = size > g_options.precision + 2 ? size : g_options.precision + 2;

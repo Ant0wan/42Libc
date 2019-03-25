@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 14:51:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/25 13:51:15 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/25 14:25:04 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,16 @@ static const t_specifier	g_specifier[] =
 	{ 'e', T_ & ft_putnbr},
 	{ 'f', T_ & ft_putnbr},
 	{ 'i', T_ & ft_nbr}, // OK
-	{ 'o', T_ & ft_putnbr_octal},
+	{ 'o', T_ & ft_o}, // KO
 	{ 's', T_ & ft_str}, // OK
 	{ 'u', T_ & ft_unbr}, // OK
-	{ 'x', T_ & ft_xlow},
-	{ 'X', T_ & ft_xupp},
+	{ 'x', T_ & ft_xlow}, // OK
+	{ 'X', T_ & ft_xupp}, // OK
 	{ 'C', T_ & ft_wchr}, // not all OK
-	{ 'p', T_ & ft_putaddr},
+	{ 'p', T_ & ft_p}, // KO
 	{ 'n', T_ & ft_n}, // OK
 	{ 'D', T_ & ft_putuint},
-	{ 'O', T_ & ft_putuint_octal},
+	{ 'O', T_ & ft_o},
 	{ 'U', T_ & ft_uold}, // OK
 	{ 'E', T_ & ft_putaddr},
 	{ 'F', T_ & ft_putaddr},

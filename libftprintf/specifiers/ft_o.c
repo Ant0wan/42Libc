@@ -1,42 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   specifiers.h                                       :+:      :+:    :+:   */
+/*   ft_o.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/27 17:44:58 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/25 14:21:15 by abarthel         ###   ########.fr       */
+/*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
+/*   Updated: 2019/03/25 14:11:03 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SPECIFIERS_H
-# define SPECIFIERS_H
+#include <stdlib.h>
 
-# include <stdlib.h>
+#include "prs_struct.h"
+#include "conversion.h"
+#include "format_tools.h"
 
-void	ft_chr(wchar_t wc);
+extern t_modifier	g_modifier;
+extern _Bool		g_error;
+extern t_conv		g_conv;
 
-void	ft_wchr(wchar_t wc);
-
-void	ft_str(char *str);
-
-void	ft_wstr(wchar_t *str);
-
-void	ft_n(intmax_t *ptr);
-
-void	ft_nbr(intmax_t nb);
-
-void	ft_unbr(uintmax_t nb);
-
-void	ft_uold(uintmax_t nb);
-
-void	ft_xlow(uintmax_t nb);
-
-void	ft_xupp(uintmax_t nb);
-
-void	ft_o(uintmax_t nb);
-
-void	ft_p(void *ptr);
-
-#endif
+void	ft_o(uintmax_t nb)
+{
+	g_conv.base_ret = "0123456789abcdef";
+	g_conv.base = 8;
+	g_conv.isupp = 0;
+	g_flags.hash = 0;
+	ft_x(nb);
+}

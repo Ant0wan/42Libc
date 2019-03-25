@@ -6,11 +6,11 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/25 13:34:06 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/25 13:54:16 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/25 14:37:42 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "conversion.h"
 
 t_conv	g_conv =
-{.base_ret = "0123456789abcdef", .base = 16, .isupp = 0};
+{.base_ret = "0123456789abcdef", .base = 0, .isupp = 0, .isp = 0};
