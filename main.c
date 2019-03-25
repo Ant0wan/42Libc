@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/22 17:31:02 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/25 12:06:44 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,34 @@ int main(void)
 	ret1 = printf("e|%-#10.8x|", &ret1);
 	printf("%d\n", ret1);
 	ret2 = ft_printf("e|%-#10.8x|", &ret1);
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("e.|%-#10.9x|", &ret1);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("e.|%-#10.9x|", &ret1);
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("f.|%-#10.9x|", 87945612);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("f.|%-#10.9x|", 87945612);
+	printf("%d\n", ret2);
+	ret1 = printf("f.|%-#10.8x|", 87945612);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("f.|%-#10.8x|", 87945612);
+	printf("%d\n", ret2);
+	ret1 = printf("f.|%-#10.7x|", 87945612);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("f.|%-#10.7x|", 87945612);
+	printf("%d\n", ret2);
+	ret1 = printf("f.|%-#10.10x|", 87945612);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("f.|%-#10.10x|", 87945612);
+	printf("%d\n", ret2);
+	ret1 = printf("f.|%-10.9x|", 87945612);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("f.|%-10.9x|", 87945612);
 	printf("%d\n", ret2);
 	printf("\n\n");
 

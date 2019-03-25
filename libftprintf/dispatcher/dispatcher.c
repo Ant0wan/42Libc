@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 14:51:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/22 12:46:09 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/25 11:38:52 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,33 +28,33 @@
 
 static const t_specifier	g_specifier[] =
 {
-	{ 'c', T_ & ft_chr},
-	{ 'd', T_ & ft_nbr},
+	{ 'c', T_ & ft_chr}, // OK
+	{ 'd', T_ & ft_nbr}, // OK
 	{ 'e', T_ & ft_putnbr},
 	{ 'f', T_ & ft_putnbr},
-	{ 'i', T_ & ft_nbr},
+	{ 'i', T_ & ft_nbr}, // OK
 	{ 'o', T_ & ft_putnbr_octal},
-	{ 's', T_ & ft_str},
-	{ 'u', T_ & ft_unbr},
+	{ 's', T_ & ft_str}, // OK
+	{ 'u', T_ & ft_unbr}, // OK
 	{ 'x', T_ & ft_x},
 	{ 'X', T_ & ft_x},
-	{ 'C', T_ & ft_wchr},
+	{ 'C', T_ & ft_wchr}, // not all OK
 	{ 'p', T_ & ft_putaddr},
-	{ 'n', T_ & ft_n},
+	{ 'n', T_ & ft_n}, // OK
 	{ 'D', T_ & ft_putuint},
 	{ 'O', T_ & ft_putuint_octal},
-	{ 'U', T_ & ft_uold},
+	{ 'U', T_ & ft_uold}, // OK
 	{ 'E', T_ & ft_putaddr},
 	{ 'F', T_ & ft_putaddr},
 	{ 'g', T_ & ft_putaddr},
 	{ 'G', T_ & ft_putaddr},
 	{ 'a', T_ & ft_putaddr},
 	{ 'A', T_ & ft_putaddr},
-	{ 'S', T_ & ft_wstr},
-	{ 'k', T_ & ft_putaddr},
-	{ 'r', T_ & ft_putaddr},
-	{ 'B', T_ & ft_putwcbits},
-	{ 'b', T_ & ft_printbits}
+	{ 'S', T_ & ft_wstr}, // not all OK
+	{ 'k', T_ & ft_putaddr}, // date in ISO
+	{ 'r', T_ & ft_putaddr}, // non printable character print
+	{ 'b', T_ & ft_printbits}, // binary print of the characterm use modifiers for the length
+	{ 'y', T_ & ft_printbits} // wild cards should works, modifiers are Bold/italic.. width is foreground color, and precision is background color, what about options ? try to use forum marksup
 };
 
 void	*dispatcher(char c)

@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 18:06:34 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/22 17:31:40 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/25 12:15:52 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,18 @@ extern inline void	ft_xformat(uintmax_t nb, char *str, int size, int len)
 	s_base = BASE_L;
 	if (g_flags.minus)
 	{
-		if (g_flags.hash)
+		if (g_flags.hash && nb > 0)
+		{
+			g_options.precision += 2;
 			len += 2;
+		}
 		while (size > 0)
 		{
 			--size;
-			//if (g_options.width > g_options.precision && size >= len)
 			if (g_options.width > g_options.precision && size >= len)
 			{
 				--g_options.width;
-				str[size] = 'K';
+				str[size] = ' ';
 			}
 			else if (len > 0 && rest)
 			{
@@ -79,7 +81,7 @@ extern inline void	ft_xformat(uintmax_t nb, char *str, int size, int len)
 					str[size] = '0';
 				}
 				else
-					str[size] = 'S';
+					str[size] = '0';
 			}
 		}
 	}
