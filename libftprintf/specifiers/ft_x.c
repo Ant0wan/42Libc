@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/25 12:20:03 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/25 13:47:55 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,15 @@
 #include "format_tools.h"
 #include "retwriter.h"
 #include "libft.h"
+#include "conversion.h"
 
 #ifndef G_ERROR
 # define G_ERROR 1
 #endif
 
-#ifndef BASE
-# define BASE 16
-#endif
-
 extern t_modifier	g_modifier;
 extern _Bool		g_error;
+extern t_conv		g_conv;
 
 static inline void				ft_cast_nbr(uintmax_t *nb)
 {
@@ -58,7 +56,7 @@ static inline unsigned short	ft_nbrlen(uintmax_t nb)
 	len = 0;
 	rest = nb;
 	while (rest && ++len)
-		rest = (rest - (rest % BASE)) / BASE;
+		rest = (rest - (rest % g_conv.base)) / g_conv.base;
 	if (nb == 0)
 	{
 		if (g_options.precision == -1 || g_options.precision == 1)
@@ -84,7 +82,7 @@ static inline int				ft_get_object_size_x(int len, uintmax_t nb)
 	return (size);
 }
 
-void							ft_x(uintmax_t nb)
+extern inline void				ft_x(uintmax_t nb)
 {
 	int				size;
 	unsigned short	len;
@@ -102,7 +100,7 @@ void							ft_x(uintmax_t nb)
 	g_flags.space = 0;
 	g_flags.plus = 0;
 	size = ft_get_object_size_x(len, nb);
-	if (!(str = (char*)ft_memalloc(sizeof(char)	* size)))
+	if (!(str = (char*)ft_memalloc(sizeof(char) * size)))
 	{
 		g_error = G_ERROR;
 		return ;

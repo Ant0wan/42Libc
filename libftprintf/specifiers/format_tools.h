@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 16:53:28 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/22 12:47:09 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/25 13:41:07 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ void	ft_xformat(uintmax_t nb, char *str, int size,
 
 int		ft_get_object_size(int len, _Bool negative) __attribute__
 		((always_inline));
+
+void	ft_x(uintmax_t nb) __attribute__((always_inline));
 
 #endif

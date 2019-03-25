@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/25 12:34:31 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/25 13:52:12 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,131 +42,131 @@ int main(void)
 	int ret1;
 	int ret2;
 
-	ret1 = printf("a|%-.x|", 0);
+	ret1 = printf("a|%-.X|", 0);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("a|%-.x|", 0);
+	ret2 = ft_printf("a|%-.X|", 0);
 	printf("%d\n", ret2);
-	ret1 = printf("a|%-#.x|", 0);
+	ret1 = printf("a|%-#.X|", 0);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("a|%-#.x|", 0);
+	ret2 = ft_printf("a|%-#.X|", 0);
 	printf("%d\n", ret2);
 	printf("\n\n");
 //
-	ret1 = printf("b|%- 0.0x|", &ret1);
+	ret1 = printf("b|%- 0.0X|", &ret1);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("b|%- 0.0x|", &ret1);
+	ret2 = ft_printf("b|%- 0.0X|", &ret1);
 	printf("%d\n", ret2);
-	ret1 = printf("b|%-# 0.0x|", &ret1);
+	ret1 = printf("b|%-# 0.0X|", &ret1);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("b|%-# 0.0x|", &ret1);
+	ret2 = ft_printf("b|%-# 0.0X|", &ret1);
 	printf("%d\n", ret2);
 	printf("\n\n");
 
-	ret1 = printf("c|%-.50x|", &ret1);
+	ret1 = printf("c|%-.50X|", &ret1);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("c|%-.50x|", &ret1);
+	ret2 = ft_printf("c|%-.50X|", &ret1);
 	printf("%d\n", ret2);
-	ret1 = printf("c|%-#40.0x|", &ret1);
+	ret1 = printf("c|%-#40.0X|", &ret1);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("c|%-#40.0x|", &ret1);
+	ret2 = ft_printf("c|%-#40.0X|", &ret1);
 	printf("%d\n", ret2);
 	printf("\n\n");
 	
-	ret1 = printf("5|%-.5x|", &ret1);
+	ret1 = printf("5|%-.5X|", &ret1);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("5|%-.5x|", &ret1);
+	ret2 = ft_printf("5|%-.5X|", &ret1);
 	printf("%d\n", ret2);
-	ret1 = printf("5|%-#.5x|", &ret1);
+	ret1 = printf("5|%-#.5X|", &ret1);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("5|%-#.5x|", &ret1);
+	ret2 = ft_printf("5|%-#.5X|", &ret1);
 	printf("%d\n", ret2);
 	printf("\n\n");
 
-	ret1 = printf("d|%-x|", 0);
+	ret1 = printf("d|%-X|", 0);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("d|%-x|", 0);
+	ret2 = ft_printf("d|%-X|", 0);
 	printf("%d\n", ret2);
-	ret1 = printf("d|%-#2x|", 0);
+	ret1 = printf("d|%-#2X|", 0);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("d|%-#2x|", 0);
+	ret2 = ft_printf("d|%-#2X|", 0);
 	printf("%d\n", ret2);
 	printf("\n\n");
 	
-	ret1 = printf("e|%-10.8x|", &ret1);
+	ret1 = printf("e|%-10.8X|", &ret1);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("e|%-10.8x|", &ret1);
+	ret2 = ft_printf("e|%-10.8X|", &ret1);
 	printf("%d\n", ret2);
-	ret1 = printf("e|%-#10.8x|", &ret1);
+	ret1 = printf("e|%-#10.8X|", &ret1);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("e|%-#10.8x|", &ret1);
-	printf("%d\n", ret2);
-	printf("\n\n");
-
-	ret1 = printf("e.|%-#10.9x|", &ret1);
-	printf("%d\n", ret1);
-	ret2 = ft_printf("e.|%-#10.9x|", &ret1);
+	ret2 = ft_printf("e|%-#10.8X|", &ret1);
 	printf("%d\n", ret2);
 	printf("\n\n");
 
-	ret1 = printf("f.|%-#10.9x|", 87945612);
+	ret1 = printf("e.|%-#10.9X|", &ret1);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("f.|%-#10.9x|", 87945612);
-	printf("%d\n", ret2);
-	ret1 = printf("f.|%-#10.8x|", 87945612);
-	printf("%d\n", ret1);
-	ret2 = ft_printf("f.|%-#10.8x|", 87945612);
-	printf("%d\n", ret2);
-	ret1 = printf("f.|%-#10.7x|", 87945612);
-	printf("%d\n", ret1);
-	ret2 = ft_printf("f.|%-#10.7x|", 87945612);
-	printf("%d\n", ret2);
-	ret1 = printf("f.|%-#10.10x|", 87945612);
-	printf("%d\n", ret1);
-	ret2 = ft_printf("f.|%-#10.10x|", 87945612);
-	printf("%d\n", ret2);
-	ret1 = printf("f.|%-10.9x|", 87945612);
-	printf("%d\n", ret1);
-	ret2 = ft_printf("f.|%-10.9x|", 87945612);
+	ret2 = ft_printf("e.|%-#10.9X|", &ret1);
 	printf("%d\n", ret2);
 	printf("\n\n");
 
-	ret1 = printf("f|%-10.9x|", UINT_MAX);
+	ret1 = printf("f.|%-#10.9X|", 87945612);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("f|%-10.9x|", UINT_MAX);
+	ret2 = ft_printf("f.|%-#10.9X|", 87945612);
 	printf("%d\n", ret2);
-	ret1 = printf("f|%-#10.9x|", UINT_MAX + 4);
+	ret1 = printf("f.|%-#10.8X|", 87945612);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("f|%-#10.9x|", UINT_MAX + 4);
+	ret2 = ft_printf("f.|%-#10.8X|", 87945612);
 	printf("%d\n", ret2);
-	printf("\n\n");
-
-	ret1 = printf(">|%-10.10hx|", INT_MAX);
+	ret1 = printf("f.|%-#10.7X|", 87945612);
 	printf("%d\n", ret1);
-	ret2 = ft_printf(">|%-10.10hx|", INT_MAX);
+	ret2 = ft_printf("f.|%-#10.7X|", 87945612);
 	printf("%d\n", ret2);
-	ret1 = printf(">|%-#10.10hx|", INT_MAX);
+	ret1 = printf("f.|%-#10.10X|", 87945612);
 	printf("%d\n", ret1);
-	ret2 = ft_printf(">|%-#10.10hx|", INT_MAX);
+	ret2 = ft_printf("f.|%-#10.10X|", 87945612);
 	printf("%d\n", ret2);
-	printf("\n\n");
-
-	ret1 = printf("z|%-#14.10hhx|", LONG_MIN);
+	ret1 = printf("f.|%-10.9X|", 87945612);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("z|%-#14.10hhx|", LONG_MIN);
-	printf("%d\n", ret2);
-	ret1 = printf("z|%-#14.10hx|", LONG_MIN);
-	printf("%d\n", ret1);
-	ret2 = ft_printf("z|%-#14.10hx|", LONG_MIN);
+	ret2 = ft_printf("f.|%-10.9X|", 87945612);
 	printf("%d\n", ret2);
 	printf("\n\n");
 
-	ret1 = printf("z|%-#14.10zx|", LONG_MIN);
+	ret1 = printf("f|%-10.9X|", UINT_MAX);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("z|%-#14.10zx|", LONG_MIN);
+	ret2 = ft_printf("f|%-10.9X|", UINT_MAX);
 	printf("%d\n", ret2);
-	ret1 = printf("z|%-#14.10tx|", LONG_MIN);
+	ret1 = printf("f|%-#10.9X|", UINT_MAX + 4);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("z|%-#14.10tx|", LONG_MIN);
+	ret2 = ft_printf("f|%-#10.9X|", UINT_MAX + 4);
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf(">|%-10.10hX|", INT_MAX);
+	printf("%d\n", ret1);
+	ret2 = ft_printf(">|%-10.10hX|", INT_MAX);
+	printf("%d\n", ret2);
+	ret1 = printf(">|%-#10.10hX|", INT_MAX);
+	printf("%d\n", ret1);
+	ret2 = ft_printf(">|%-#10.10hX|", INT_MAX);
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("z|%-#14.10hhX|", LONG_MIN);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("z|%-#14.10hhX|", LONG_MIN);
+	printf("%d\n", ret2);
+	ret1 = printf("z|%-#14.10hX|", LONG_MIN);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("z|%-#14.10hX|", LONG_MIN);
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("z|%-#14.10zX|", LONG_MIN);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("z|%-#14.10zX|", LONG_MIN);
+	printf("%d\n", ret2);
+	ret1 = printf("z|%-#14.10tX|", LONG_MIN);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("z|%-#14.10tX|", LONG_MIN);
 	printf("%d\n", ret2);
 	printf("\n\n");
 

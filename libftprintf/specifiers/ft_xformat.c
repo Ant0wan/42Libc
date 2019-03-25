@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 18:06:34 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/25 12:15:52 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/25 13:56:10 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,17 @@
 #include "specifiers.h"
 #include "retwriter.h"
 #include "libft.h"
-
-#ifndef G_ERROR
-# define G_ERROR 1
-#endif
-
-#ifndef BASE
-# define BASE 16
-#endif
-
-#ifndef BASE_L
-# define BASE_L "0123456789abcdef"
-#endif
+#include "conversion.h"
 
 extern t_modifier	g_modifier;
 extern _Bool		g_error;
+extern t_conv		g_conv;
 
 extern inline void	ft_xformat(uintmax_t nb, char *str, int size, int len)
 {
 	uintmax_t	rest;
-	const char	*s_base;
 
 	rest = nb;
-	s_base = BASE_L;
 	if (g_flags.minus)
 	{
 		if (g_flags.hash && nb > 0)
@@ -62,8 +50,8 @@ extern inline void	ft_xformat(uintmax_t nb, char *str, int size, int len)
 				--len;
 				--g_options.precision;
 				--g_options.width;
-				str[size] = s_base[rest % BASE];
-				rest = (rest - (rest % BASE)) / BASE;
+				str[size] = g_conv.base_ret[rest % g_conv.base];
+				rest = (rest - (rest % g_conv.base)) / g_conv.base;
 			}
 			else if (len > 0 && nb == 0 && !(g_options.precision))
 			{
@@ -76,7 +64,7 @@ extern inline void	ft_xformat(uintmax_t nb, char *str, int size, int len)
 			{
 				if (size < 2 && g_flags.hash && nb > 0)
 				{
-					str[size] = 'x';
+					str[size] = g_conv.isupp ? 'X' : 'x';
 					--size;
 					str[size] = '0';
 				}
@@ -94,8 +82,8 @@ extern inline void	ft_xformat(uintmax_t nb, char *str, int size, int len)
 			{
 				--len;
 				--g_options.precision;
-				str[size] = s_base[rest % BASE];
-				rest = (rest - (rest % BASE)) / BASE;
+				str[size] = g_conv.base_ret[rest % g_conv.base];
+				rest = (rest - (rest % g_conv.base)) / g_conv.base;
 			}
 			else if (g_options.precision > 0)
 			{
@@ -105,7 +93,7 @@ extern inline void	ft_xformat(uintmax_t nb, char *str, int size, int len)
 			}
 			else if (g_flags.hash && nb > 0)
 			{
-				str[size] = 'x';
+				str[size] = g_conv.isupp ? 'X' : 'x';
 				--size;
 				--g_options.width;
 				str[size] = '0';

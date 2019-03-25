@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 14:51:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/25 12:25:05 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/25 13:51:15 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ static const t_specifier	g_specifier[] =
 	{ 'o', T_ & ft_putnbr_octal},
 	{ 's', T_ & ft_str}, // OK
 	{ 'u', T_ & ft_unbr}, // OK
-	{ 'x', T_ & ft_x},
-	{ 'X', T_ & ft_x},
+	{ 'x', T_ & ft_xlow},
+	{ 'X', T_ & ft_xupp},
 	{ 'C', T_ & ft_wchr}, // not all OK
 	{ 'p', T_ & ft_putaddr},
 	{ 'n', T_ & ft_n}, // OK
