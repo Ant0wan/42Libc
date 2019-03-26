@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 18:06:34 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/25 18:24:18 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/26 10:58:00 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ extern t_modifier	g_modifier;
 extern _Bool		g_error;
 extern t_conv		g_conv;
 
+#include <stdio.h>
 extern inline void	ft_xformat(uintmax_t nb, char *str, int size, int len)
 {
 	uintmax_t	rest;
@@ -103,18 +104,16 @@ extern inline void	ft_xformat(uintmax_t nb, char *str, int size, int len)
 				--g_options.width;
 				str[size] = '0';
 			}
-			else if (g_flags.hash && g_conv.base == OCTAL_B)
-			{
-				str[size] = '0';
-				--size;
-				--g_options.width;
-				g_flags.hash = 0;
-			}
-			else if (g_flags.hash && (nb > 0 || g_conv.isp))
+			else if (g_flags.hash && (nb > 0 || g_conv.isp) && g_conv.base != OCTAL_B)
 			{
 				str[size] = g_conv.isupp ? 'X' : 'x';
 				--size;
 				--g_options.width;
+				str[size] = '0';
+				g_flags.hash = 0;
+			}
+			else if (g_flags.hash && g_conv.base == OCTAL_B && g_options.precision < 0 && nb > 0)
+			{
 				str[size] = '0';
 				g_flags.hash = 0;
 			}
