@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/26 13:45:51 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/26 13:56:40 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,37 +66,37 @@ int main(void)
 //	printf("%d\n", ret2);
 //	printf("\n\n");
 //
-	ret1 = printf("size + minus%-5d", -879650);
+	ret1 = printf("size + minus%-5d", 0);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("size + minus%-5d", -879650);
+	ret2 = ft_printf("size + minus%-5d", 0);
 	printf("%d\n", ret2);
-	ret1 = printf("size + minus%-5i", -879650);
+	ret1 = printf("size + minus%-5i", 0);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("size + minus%-5i", -879650);
+	ret2 = ft_printf("size + minus%-5i", 0);
 	printf("%d\n", ret2);
 	printf("\n\n");
 	
-	ret1 = printf("size + minus + plus + prec%-+5.3i", -879650);
+	ret1 = printf("size + minus + plus + prec%-+5.3i", 0);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("size + minus + plus + prec%-+5.3i", -879650);
+	ret2 = ft_printf("size + minus + plus + prec%-+5.3i", 0);
 	printf("%d\n", ret2);
-	ret1 = printf("size + minus + prec%-5.3i", -879650);
+	ret1 = printf("size + minus + prec%-5.3i", 0);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("size + minus + prec%-5.3i", -879650);
+	ret2 = ft_printf("size + minus + prec%-5.3i", 0);
 	printf("%d\n", ret2);
-	ret1 = printf("size + minus + prec%-7.6d", -879650);
+	ret1 = printf("size + minus + prec%-7.6d", 0);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("size + minus + prec%-7.6d", -879650);
+	ret2 = ft_printf("size + minus + prec%-7.6d", 0);
 	printf("%d\n", ret2);
 	printf("\n\n");
 //
-	ret1 = printf("size + minus + plus + prec%-+5.3d", -879650);
+	ret1 = printf("size + minus%-5d", 0);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("size + minus + plus + prec%-+5.3d", -879650);
+	ret2 = ft_printf("size + minus%-5d", 0);
 	printf("%d\n", ret2);
-	ret1 = printf("size + minus + prec%-5.3d", -879650);
+	ret1 = printf("size + minus%-5i", 0);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("size + minus + prec%-5.3d", -879650);
+	ret2 = ft_printf("size + minus%-5i", 0);
 	printf("%d\n", ret2);
 	printf("\n\n");
 	
