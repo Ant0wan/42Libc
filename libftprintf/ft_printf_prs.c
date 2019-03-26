@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/25 16:27:49 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/26 15:09:49 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,6 +175,8 @@ int					printf_prs(const char *format, va_list ap)
 {
 	g_ret.fmt_i = -1;
 	va_copy(g_ap_origin, ap);
+	if (!(format))
+		return (-1);
 	while (format[++g_ret.fmt_i] && !(prs_specifier(format, ap)))
 	{
 		if (g_error)

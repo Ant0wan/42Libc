@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 18:19:57 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/22 12:25:27 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/26 15:04:13 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 
 extern t_options	g_options;
 extern t_modifier	g_modifier;
+extern t_ret		g_ret;
 
 static inline int	ft_get_str_object_size(void)
 {
@@ -76,6 +77,11 @@ void				ft_chr(wchar_t wc)
 	char	*object;
 	int		size;
 
+	if (wc == '\0')
+	{
+		++g_ret.i;
+		return ;
+	}
 	if (g_modifier.l)
 	{
 		ft_wchr(wc);
