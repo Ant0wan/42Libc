@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 18:06:34 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/22 13:14:32 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/26 13:45:05 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ extern _Bool		g_error;
 //    sign;
 //    |-------------------------------------------------------|
 
-#include <stdio.h> // DEBUGGING
 extern inline void	ft_nbrformat(intmax_t nb, char *str, int size, int len,
 		_Bool negative)
 {
@@ -77,7 +76,7 @@ extern inline void	ft_nbrformat(intmax_t nb, char *str, int size, int len,
 		while (size > 0)
 		{
 			--size;
-			if (g_options.width > g_options.precision && size >= len)
+			if (g_options.width > g_options.precision && size > len)
 			{
 				--g_options.width;
 				str[size] = ' ';

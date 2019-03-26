@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 18:06:34 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/26 11:36:33 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/26 12:35:31 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,6 @@
 #include "retwriter.h"
 #include "libft.h"
 #include "conversion.h"
-
-#ifndef OCTAL_B
-# define OCTAL_B 8
-#endif
 
 extern t_modifier	g_modifier;
 extern _Bool		g_error;
@@ -35,12 +31,7 @@ extern inline void	ft_oformat(uintmax_t nb, char *str, int size, int len)
 	rest = nb;
 	if (g_flags.minus)
 	{
-		if (g_flags.hash && (nb > 0 || g_conv.isp) && g_conv.base != OCTAL_B)
-		{
-			g_options.precision += 2;
-			len += 2;
-		}
-		else if (g_flags.hash && (nb > 0 || g_conv.isp) && g_conv.base == OCTAL_B)
+		if (g_flags.hash && (nb > 0 || g_conv.isp))
 		{
 			len += 1;
 		}
@@ -71,14 +62,8 @@ extern inline void	ft_oformat(uintmax_t nb, char *str, int size, int len)
 			}
 			else
 			{
-				if (g_flags.hash && g_conv.base == OCTAL_B)
+				if (g_flags.hash)
 				{
-					str[size] = '0';
-				}
-				else if (size < 2 && g_flags.hash && (nb > 0 || g_conv.isp))
-				{
-					str[size] = g_conv.isupp ? 'X' : 'x';
-					--size;
 					str[size] = '0';
 				}
 				else
@@ -88,6 +73,15 @@ extern inline void	ft_oformat(uintmax_t nb, char *str, int size, int len)
 	}
 	else
 	{
+
+		// 
+		//
+		//
+		//
+		//
+		//
+		//
+		//
 		while (size > 0)
 		{
 			--size;
@@ -98,25 +92,21 @@ extern inline void	ft_oformat(uintmax_t nb, char *str, int size, int len)
 				str[size] = g_conv.base_ret[rest % g_conv.base];
 				rest = (rest - (rest % g_conv.base)) / g_conv.base;
 			}
-			else if (g_options.precision > 0 || (g_conv.base == OCTAL_B && g_options.precision >= 0 && nb == 0 && g_options.width == -1))
+			else if (g_options.precision > 0)
 			{
 				--g_options.precision;
-				--g_options.width;
-				str[size] = '0';
+				str[size] = 'L';
 			}
-			else if (g_flags.hash && (nb > 0 || g_conv.isp) && g_conv.base != OCTAL_B)
-			{
-				str[size] = g_conv.isupp ? 'X' : 'x';
-				--size;
-				--g_options.width;
-				str[size] = '0';
-				g_flags.hash = 0;
-			}
-			else if (g_flags.hash && g_conv.base == OCTAL_B && g_options.precision < 0 && nb > 0)
-			{
-				str[size] = '0';
-				g_flags.hash = 0;
-			}
+		//	else if (g_flags.hash && ((g_options.precision == 0 && nb == 0) || (g_options.precision <= 0 && nb > 0)))
+//			else if (g_flags.hash)
+//			{
+//				printf("len:%d\n",len);
+//				printf("preci:%d\n",g_options.precision);
+//				printf("width:%d\n", g_options.width);
+//				printf("nb:%jd\n", nb);
+//				str[size] = 'S';
+//				g_flags.hash = 0;
+//			}
 			else
 				str[size] = ' ';
 			--g_options.width;
