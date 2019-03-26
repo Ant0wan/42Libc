@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/26 11:04:24 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/26 11:33:38 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -288,6 +288,48 @@ int main(void)
 	printf("%d\n", ret2);
 	printf("\n\n");
 
+	ret1 = printf("e.|%#10.2o|", NULL);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("e.|%#10.2o|", NULL);
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("e.|%#10.1o|", NULL);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("e.|%#10.1o|", NULL);
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("e.|%#10.0o|", NULL);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("e.|%#10.0o|", NULL);
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("e.|%#1.1o|", NULL);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("e.|%#1.1o|", NULL);
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("e.|%#0.0o|", NULL);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("e.|%#0.0o|", NULL);
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("e.|%#.1o|", NULL);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("e.|%#.1o|", NULL);
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("e.|%#.1o|", NULL);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("e.|%#.1o|", NULL);
+	printf("%d\n", ret2);
+	printf("\n\n");
+
 	ret1 = printf("f.|%#10.9o|", LLONG_MAX);
 	printf("%d\n", ret1);
 	ret2 = ft_printf("f.|%#10.9o|", LLONG_MAX);
@@ -330,9 +372,17 @@ int main(void)
 	printf("%d\n", ret2);
 	printf("\n\n");
 
-	ret1 = printf("z|%#14.4hho|", LLONG_MAX);
+	ret1 = printf("|%#14.11llo|", 1111111111);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("z|%#14.4hho|", LLONG_MAX);
+	ret2 = ft_printf("|%#14.11llo|", 1111111111);
+	printf("%d\n", ret2);
+	ret1 = printf("|%#14.10llo|", 1111111111);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("|%#14.10llo|", 1111111111);
+	printf("%d\n", ret2);
+	ret1 = printf("|%#14.12llo|", 1111111111);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("|%#14.12llo|", 1111111111);
 	printf("%d\n", ret2);
 	ret1 = printf("z|%#14.10ho|", LLONG_MAX);
 	printf("%d\n", ret1);

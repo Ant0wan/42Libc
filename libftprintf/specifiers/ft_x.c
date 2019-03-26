@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/26 11:22:52 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/26 11:38:04 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,10 @@ extern inline void				ft_x(uintmax_t nb)
 		g_error = G_ERROR;
 		return ;
 	}
-	ft_xformat(nb, str, size, len);
+	if (g_conv.base == OCTAL_B)
+		ft_oformat(nb, str, size, len);
+	else
+		ft_xformat(nb, str, size, len);
 	retwriter(str, size);
 	ft_memdel((void**)&str);
 }

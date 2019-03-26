@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/07 11:08:30 by abarthel          #+#    #+#              #
-#    Updated: 2019/03/25 14:20:44 by abarthel         ###   ########.fr        #
+#    Updated: 2019/03/26 11:38:56 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ INCS = -I./../../libft/ -I./../../libftwchar/ -I./../wrappers/ -I./../ \
 O_FILES = ft_n.o ft_chr.o ft_wchr.o ft_str.o ft_wstr.o ft_nbr.o ft_unbr.o \
 		  ft_nbrformat.o ft_unbrformat.o retwriter.o nbr_tools.o ft_uold.o \
 		  ft_x.o ft_xlow.o ft_xupp.o ft_xformat.o conversion.o ft_o.o \
-		  ft_p.o
+		  ft_p.o ft_oformat.o \
 
 %.o : %.c
 	@$(CC) $(FLAGS) $(INCS) $< -c

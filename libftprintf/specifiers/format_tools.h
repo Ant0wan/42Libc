@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 16:53:28 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/25 13:41:07 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/26 11:38:32 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ void	ft_unbrformat(uintmax_t nb, char *str, int size,
 		int len) __attribute__((always_inline));
 
 void	ft_xformat(uintmax_t nb, char *str, int size,
+		int len) __attribute__((always_inline));
+
+void	ft_oformat(uintmax_t nb, char *str, int size,
 		int len) __attribute__((always_inline));
 
 int		ft_get_object_size(int len, _Bool negative) __attribute__
