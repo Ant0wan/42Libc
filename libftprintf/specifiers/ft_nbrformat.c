@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 18:06:34 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/26 13:56:11 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/26 14:52:29 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ extern inline void	ft_nbrformat(intmax_t nb, char *str, int size, int len,
 		while (size > 0)
 		{
 			--size;
-			if (g_options.width > g_options.precision && (size > len || nb == 0))
+			if (g_options.width > g_options.precision && ((size >= len && nb == 0) || size > len))
 			{
 				--g_options.width;
 				str[size] = ' ';
