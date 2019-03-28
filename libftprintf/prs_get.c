@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/28 12:17:11 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/28 12:41:35 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/28 13:36:14 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,10 @@
 
 #include "prs_struct.h"
 #include "specifiers.h"
-#include "prs_tools.h"
 
 extern t_ret		g_ret;
 extern t_modifier	g_modifier;
 extern t_options	g_options;
-
-extern inline void		get_precision(const char *format, va_list ap)
-{
-	while (!(format[g_ret.fmt_i] ^ '.'))
-		++g_ret.fmt_i;
-	if (!(format[g_ret.fmt_i] ^ '*'))
-	{
-		g_options.precision = va_arg(ap, int);
-		++g_options.i_ap;
-	}
-	else if (!((format[g_ret.fmt_i] & '0')) ^ '0')
-	{
-		if (format[g_ret.fmt_i] >= '0' && format[g_ret.fmt_i] <= '9')
-			g_options.precision = ft_atoi_special(format);
-		else
-		{
-			--g_ret.fmt_i;
-			g_options.precision = 0;
-		}
-	}
-}
 
 extern inline void		get_flags(const char *format, _Bool *specifier)
 {
@@ -123,22 +101,47 @@ extern inline _Bool		get_modifier(const char *format)
 	return (1);
 }
 
-extern inline int		ft_getif_dollar(const char *str)
+extern inline void		ft_get_width_or_dollar(const char *str, _Bool dot)
 {
 	int	nbr;
-	int	i;
 
 	nbr = 0;
-	i = 0;
-	while (str[i] > 47 && str[i] < 58)
+	while (str[g_ret.fmt_i] > 47 && str[g_ret.fmt_i] < 58)
 	{
-		nbr = nbr * 10 + (str[i] ^ '0');
-		++i;
+		nbr = nbr * 10 + (str[g_ret.fmt_i] ^ '0');
+		++g_ret.fmt_i;
 	}
-	if (!(str[i] ^ '$'))
+	if (dot)
 	{
-		g_ret.fmt_i += i;
-		return (nbr);
+		g_options.precision = nbr;
+		--g_ret.fmt_i;
 	}
-	return (0);
+	else if (!(str[g_ret.fmt_i] ^ '$'))
+		g_options.val_dol = nbr;
+	else
+	{
+		g_options.width = nbr;
+		--g_ret.fmt_i;
+	}
+}
+
+extern inline void		get_precision(const char *format, va_list ap)
+{
+	while (!(format[g_ret.fmt_i] ^ '.'))
+		++g_ret.fmt_i;
+	if (!(format[g_ret.fmt_i] ^ '*'))
+	{
+		g_options.precision = va_arg(ap, int);
+		++g_options.i_ap;
+	}
+	else if (!((format[g_ret.fmt_i] & '0')) ^ '0')
+	{
+		if (format[g_ret.fmt_i] >= '0' && format[g_ret.fmt_i] <= '9')
+			ft_get_width_or_dollar(format, 1);
+		else
+		{
+			--g_ret.fmt_i;
+			g_options.precision = 0;
+		}
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/28 12:05:27 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/28 13:36:47 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,17 @@ int main(void)
 	printf("%d\n", ret2);
 	printf("\n\n");
 	
+	ret1 = printf("|%5Ld|", 100, 42, INT_MAX);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("|%5Ld|", 100, 42, INT_MAX);
+	printf("%d\n", ret2);
+	printf("\n\n");
+
+	ret1 = printf("|%.5$Ld|", 72, 48, 24, 12, INT_MAX);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("|%.5$Ld|", 72, 48, 24, 12, INT_MAX);
+	printf("%d\n", ret2);
+	printf("\n\n");
 //	ret1 = printf("e|%-10.8o|", LLONG_MAX);
 //	printf("%d\n", ret1);
 //	ret2 = ft_printf("e|%-10.8o|", LLONG_MAX);

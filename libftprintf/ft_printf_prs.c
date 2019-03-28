@@ -6,20 +6,18 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/28 12:55:05 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/28 13:30:48 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 
-#include "dispatcher.h"
-#include "libft.h"
 #include "prs_struct.h"
-#include "struct_disp.h"
-#include "prs_tools.h"
-#include "specifiers.h"
-#include "wrapper.h"
 #include "prs_get.h"
+#include "wrapper.h"
+#include "dispatcher.h"
+#include "specifiers.h"
+#include "ft_expand_ret.h"
 
 static va_list	g_ap_origin;
 t_ret			g_ret;
@@ -56,7 +54,6 @@ static inline _Bool	prs_specifier(const char *format, va_list ap)
 {
 	void	*(*f)();
 	_Bool	specifier;
-	int		doltest;
 
 	while (!(format[g_ret.fmt_i] ^ '%'))
 	{
@@ -65,12 +62,7 @@ static inline _Bool	prs_specifier(const char *format, va_list ap)
 		while (format[++g_ret.fmt_i] && specifier)
 		{
 			if (format[g_ret.fmt_i] > '0' && format[g_ret.fmt_i] <= '9')
-			{
-				if ((doltest = ft_getif_dollar(&format[g_ret.fmt_i])))
-					g_options.val_dol = doltest;
-				else
-					g_options.width = ft_atoi_special(format);
-			}
+				ft_get_width_or_dollar(format, 0);
 			else if (!(format[g_ret.fmt_i] ^ '.'))
 				get_precision(format, ap);
 			else if (!(format[g_ret.fmt_i] ^ '*'))
