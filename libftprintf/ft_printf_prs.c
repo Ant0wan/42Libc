@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/28 13:30:48 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/28 15:50:29 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,34 @@ static inline void	reset_globals(void)
 	g_modifier.upl = 0;
 }
 
+static inline _Bool	get_fwpm(const char *format, va_list ap, _Bool *specifier)
+{
+	if (format[g_ret.fmt_i] > '0' && format[g_ret.fmt_i] <= '9')
+	{
+		ft_get_width_or_dollar(format, 0);
+		return (1);
+	}
+	else if (!(format[g_ret.fmt_i] ^ '.'))
+	{
+		get_precision(format, ap);
+		return (1);
+	}
+	else if (!(format[g_ret.fmt_i] ^ '*'))
+	{
+		g_options.width = va_arg(ap, int);
+		++g_options.i_ap;
+		return (1);
+	}
+	else if (!((format[g_ret.fmt_i] & ' ') ^ ' ')
+			&& format[g_ret.fmt_i] < '1')
+	{
+		get_flags(format, specifier);
+		return (1);
+	}
+	else
+		return (0);
+}
+
 static inline _Bool	prs_specifier(const char *format, va_list ap)
 {
 	void	*(*f)();
@@ -61,18 +89,8 @@ static inline _Bool	prs_specifier(const char *format, va_list ap)
 		specifier = 1;
 		while (format[++g_ret.fmt_i] && specifier)
 		{
-			if (format[g_ret.fmt_i] > '0' && format[g_ret.fmt_i] <= '9')
-				ft_get_width_or_dollar(format, 0);
-			else if (!(format[g_ret.fmt_i] ^ '.'))
-				get_precision(format, ap);
-			else if (!(format[g_ret.fmt_i] ^ '*'))
-			{
-				g_options.width = va_arg(ap, int);
-				++g_options.i_ap;
-			}
-			else if (!((format[g_ret.fmt_i] & ' ') ^ ' ')
-					&& format[g_ret.fmt_i] < '1')
-				get_flags(format, &specifier);
+			if (get_fwpm(format, ap, &specifier))
+				continue ;
 			else if ((f = dispatcher(format[g_ret.fmt_i])))
 			{
 				specifier = 0;
@@ -81,10 +99,8 @@ static inline _Bool	prs_specifier(const char *format, va_list ap)
 				wrapper(f, ap);
 			}
 			else if (specifier)
-			{
 				if (get_modifier(format))
 					specifier = 0;
-			}
 		}
 	}
 	return (0);
