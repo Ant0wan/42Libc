@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 15:49:12 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/13 18:51:24 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/28 12:21:24 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,26 +63,6 @@ inline int	ft_atoi_special(const char *str)
 	}
 	--g_ret.fmt_i;
 	return (nbr);
-}
-
-inline int	ft_getif_dollar(const char *str)
-{
-	int	nbr;
-	int	i;
-
-	nbr = 0;
-	i = 0;
-	while (str[i] > 47 && str[i] < 58)
-	{
-		nbr = nbr * 10 + (str[i] ^ '0');
-		++i;
-	}
-	if (!(str[i] ^ '$'))
-	{
-		g_ret.fmt_i += i;
-		return (nbr);
-	}
-	return (0);
 }
 
 inline void	ft_expand_ret(int size)
