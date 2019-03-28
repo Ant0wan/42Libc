@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 15:49:12 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/28 12:21:24 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/03/28 12:49:52 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,16 +82,4 @@ inline void	ft_expand_ret(int size)
 		ft_memdel((void**)&g_ret.ret);
 		g_ret.ret = (char*)new_ret;
 	}
-}
-
-inline void	wrapper(void *(*f)(), va_list ap)
-{
-	int	i;
-	int	rubbish;
-
-	i = 0;
-	while (++i < g_options.val_dol)
-		rubbish = va_arg(ap, int);
-	f(va_arg(ap, typeof(ap)));
-	++g_options.i_ap;
 }

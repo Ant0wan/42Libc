@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prs_tools.h                                        :+:      :+:    :+:   */
+/*   wrapper.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/27 15:51:04 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/28 12:51:12 by abarthel         ###   ########.fr       */
+/*   Created: 2019/03/28 12:47:59 by abarthel          #+#    #+#             */
+/*   Updated: 2019/03/28 12:52:27 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRS_TOOLS_H
-# define PRS_TOOLS_H
+#include <stdarg.h>
 
-# include "prs_struct.h"
+#include "prs_struct.h"
 
-extern t_ret	g_ret;
+extern t_options	g_options;
 
-void	reset_globals(void) __attribute__((always_inline));
+extern inline void	wrapper(void *(*f)(), va_list ap)
+{
+	int	i;
+	int	rubbish;
 
-int		ft_atoi_special(const char *str) __attribute__((always_inline));
-
-void	ft_expand_ret(int size) __attribute__((always_inline));
-
-#endif
+	i = 0;
+	while (++i < g_options.val_dol)
+		rubbish = va_arg(ap, int);
+	f(va_arg(ap, typeof(ap)));
+	++g_options.i_ap;
+}
