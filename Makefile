@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/04/01 22:15:43 by abarthel         ###   ########.fr        #
+#    Updated: 2019/04/02 00:23:40 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,7 +81,7 @@ clean:
 
 fclean: clean
 	@rm -f $(NAME)
-	@printf "\e[0m$(NAME)\e[38;5;123m%2sdeleted ❌\n\e[0m"
+	@printf "\e[0m$(NAME)\e[38;5;52m%2sdeleted\n\e[0m"
 
 re: fclean all
 

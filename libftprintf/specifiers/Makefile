@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/07 11:08:30 by abarthel          #+#    #+#              #
-#    Updated: 2019/04/01 22:15:35 by abarthel         ###   ########.fr        #
+#    Updated: 2019/04/02 00:23:04 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ O_FILES = ft_nbr.o  \
 
 clean:
 	@rm -f $(O_FILES)
-	@printf "\e[0m$(NAME)%1s\e[0m.o \e[38;5;119mfiles%1sdeleted ♻\n\e[0m"
+	@printf "\e[0m$(NAME)%1s\e[0m.o \e[38;5;52mfiles%1sdeleted\n\e[0m"
 
 re: clean objects
 

@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 11:47:48 by abarthel          #+#    #+#              #
-#    Updated: 2019/03/13 11:59:51 by abarthel         ###   ########.fr        #
+#    Updated: 2019/04/02 00:24:07 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,11 +48,11 @@ $(NAME): $(O_FILES)
 clean:
 	@$(MAKE) -C ./utf8/ clean
 	@rm -f $(O_FILES)
-	@printf "\e[0m$(basename $(NAME))%1s\e[0m.o \e[38;5;56mfiles%1sdeleted ♻\n\e[0m"
+	@printf "\e[0m$(basename $(NAME))%1s\e[0m.o \e[38;5;52mfiles%1sdeleted\n\e[0m"
 
 fclean: clean
 	@rm -f $(NAME)
-	@printf "\e[0m$(NAME)\e[38;5;56m%8sdeleted ❌\n\e[0m"
+	@printf "\e[0m$(NAME)\e[38;5;52m%8sdeleted\n\e[0m"
 
 re: fclean $(NAME)
 

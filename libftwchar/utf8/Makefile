@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/07 11:08:30 by abarthel          #+#    #+#              #
-#    Updated: 2019/03/19 17:56:25 by abarthel         ###   ########.fr        #
+#    Updated: 2019/04/02 00:24:23 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ O_FILES = utf8.o encodlen.o enchrlen.o \
 
 clean:
 	@rm -f $(O_FILES)
-	@printf "\e[0m$(NAME)%1s\e[0m.o \e[38;5;179mfiles%1sdeleted ♻\n\e[0m"
+	@printf "\e[0m$(NAME)%1s\e[0m.o \e[38;5;52mfiles%1sdeleted\n\e[0m"
 
 re: clean objects
 
