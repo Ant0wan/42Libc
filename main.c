@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/01 22:01:00 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/01 22:05:19 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,9 @@ int main(void)
 	printf("%d\n", ret2);
 	printf("\n\n");
 	
-	ret1 = printf("size + minus + plus + prec%-+5.3i", 0);
+	ret1 = printf("size + minus + plus + prec% -+5.3i", 0);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("size + minus + plus + prec%-+5.3i", 0);
+	ret2 = ft_printf("size + minus + plus + prec% -+5.3i", 0);
 	printf("%d\n", ret2);
 	ret1 = printf("size + minus + prec%-5.3i", 0);
 	printf("%d\n", ret1);

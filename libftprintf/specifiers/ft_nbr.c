@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/01 22:01:21 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/01 22:25:21 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 #include <limits.h>
 
 #include "prs_struct.h"
-#include "retwriter.h"
-#include "libft.h"
-#include "ft_nbrformat.c"
+#include "ft_expand_ret.h"
 
 #ifndef G_ERROR
 # define G_ERROR 1
@@ -46,32 +44,6 @@ static inline void				ft_cast_nbr(intmax_t *nb)
 		*nb = (int)(*nb);
 }
 
-static inline int	ft_get_object_size(int len, _Bool negative)
-{
-	int		size;
-
-	size = 0;
-	if (negative || g_flags.plus)
-	{
-		if (g_options.precision > g_options.width)
-			size = g_options.precision > len ? g_options.precision + 1
-				: len + 1;
-		else
-			size = g_options.width > len ? g_options.width : len + 1;
-	}
-	else
-	{
-		size = len > g_options.width ? len : g_options.width;
-		if (size < g_options.precision)
-			size = g_options.precision;
-	}
-	if (g_flags.space)
-		if (!(negative))
-			if (!(g_options.width > len))
-				++size;
-	return (size);
-}
-
 static inline unsigned short	ft_nbrlen(intmax_t nb)
 {
 	intmax_t		rest;
@@ -87,27 +59,31 @@ static inline unsigned short	ft_nbrlen(intmax_t nb)
 	return (len > 0 ? len : 1);
 }
 
+static inline void				ret_nbr(intmax_t nb, unsigned short len)
+{
+	int	i;
+
+	(void)nb;
+	i = -1;
+	while (++i < len)
+	{
+		g_ret.ret[++g_ret.i] = 'O';
+	}
+}
+
 #include <stdio.h>
 void							ft_nbr(intmax_t nb)
 {
 	int				size;
 	unsigned short	len;
-	_Bool			negative;
-	char			*str;
 
 	ft_cast_nbr(&nb);
 	len = ft_nbrlen(nb);
 	printf("len:%d\n", len);
-	negative = 0;
-	if (nb < 0)
-		negative = 1;
-	size = ft_get_object_size(len, negative);
-	if (!(str = (char*)ft_memalloc(sizeof(char)	* size)))
-	{
-		g_error = G_ERROR;
-		return ;
-	}
-	ft_nbrformat(nb, str, size, len, negative);
-	retwriter(str, size);
-	ft_memdel((void**)&str);
+	size = len > g_options.precision ? len : g_options.precision;
+	size = size > g_options.width ? len : g_options.width;
+	++size;
+	while (g_ret.i + size >= g_ret.max)
+		ft_expand_ret(size);
+	ret_nbr(nb, len);
 }
