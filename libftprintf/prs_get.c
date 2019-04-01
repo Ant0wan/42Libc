@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/28 12:17:11 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/28 15:47:32 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/01 21:48:36 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ extern inline void		get_flags(const char *format, _Bool *specifier)
 	else
 	{
 		*specifier = 0;
-		ft_chr(format[g_ret.fmt_i]);
+//		ft_chr(format[g_ret.fmt_i]);
 	}
 }
 

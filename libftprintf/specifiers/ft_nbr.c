@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/28 15:22:18 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/01 22:01:21 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 #include <limits.h>
 
 #include "prs_struct.h"
-#include "format_tools.h"
 #include "retwriter.h"
 #include "libft.h"
+#include "ft_nbrformat.c"
 
 #ifndef G_ERROR
 # define G_ERROR 1
@@ -46,6 +46,32 @@ static inline void				ft_cast_nbr(intmax_t *nb)
 		*nb = (int)(*nb);
 }
 
+static inline int	ft_get_object_size(int len, _Bool negative)
+{
+	int		size;
+
+	size = 0;
+	if (negative || g_flags.plus)
+	{
+		if (g_options.precision > g_options.width)
+			size = g_options.precision > len ? g_options.precision + 1
+				: len + 1;
+		else
+			size = g_options.width > len ? g_options.width : len + 1;
+	}
+	else
+	{
+		size = len > g_options.width ? len : g_options.width;
+		if (size < g_options.precision)
+			size = g_options.precision;
+	}
+	if (g_flags.space)
+		if (!(negative))
+			if (!(g_options.width > len))
+				++size;
+	return (size);
+}
+
 static inline unsigned short	ft_nbrlen(intmax_t nb)
 {
 	intmax_t		rest;
@@ -53,14 +79,15 @@ static inline unsigned short	ft_nbrlen(intmax_t nb)
 
 	len = 0;
 	rest = nb;
-	while (rest && ++ len)
+	while (rest)
+	{
+		++len;
 		rest = (rest - (rest % 10)) / 10;
-	if (nb == 0)
-		if (g_options.precision == -1 || g_options.precision == 1)
-		   ++len;
-	return (len);
+	}
+	return (len > 0 ? len : 1);
 }
 
+#include <stdio.h>
 void							ft_nbr(intmax_t nb)
 {
 	int				size;
@@ -68,13 +95,9 @@ void							ft_nbr(intmax_t nb)
 	_Bool			negative;
 	char			*str;
 
-	if (g_options.width >= INT_MAX - g_ret.i)
-	{
-		g_error = G_ERROR;
-		return ;
-	}
 	ft_cast_nbr(&nb);
 	len = ft_nbrlen(nb);
+	printf("len:%d\n", len);
 	negative = 0;
 	if (nb < 0)
 		negative = 1;
