@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/01 22:05:19 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/01 23:49:44 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,11 @@ int main(void)
 	ret1 = printf("size + 0 + plus:%0+5hhd ", 125);
 	printf("%d\n", ret1);
 	ret2 = ft_printf("size + 0 + plus:%0+5hhd ", 125);
+	printf("%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("size + 0 + plus:%0+5hhd ", -42);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("size + 0 + plus:%0+5hhd ", -42);
 	printf("%d\n", ret2);
 	printf("\n\n");
 //
