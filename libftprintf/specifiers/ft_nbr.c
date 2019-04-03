@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/03 19:50:13 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/03 20:17:41 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,9 @@
 #include "prs_struct.h"
 #include "ft_expand_ret.h"
 
-#ifndef G_ERROR
-# define G_ERROR 1
-#endif
-
 extern t_modifier	g_modifier;
-extern _Bool		g_error;
+extern t_flags		g_flags;
+extern t_options	g_options;
 
 static inline void				ft_cast_nbr(intmax_t *nb)
 {

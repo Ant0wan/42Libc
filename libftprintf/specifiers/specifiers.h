@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 17:44:58 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/28 16:11:00 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/03 20:08:41 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 
 void	ft_nbr(intmax_t nb);
 
-//void	ft_unbr(uintmax_t nb);
+void	ft_unbr(intmax_t nb);
 
 //void	ft_uold(uintmax_t nb);
 
