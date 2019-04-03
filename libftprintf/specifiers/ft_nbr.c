@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/03 19:35:48 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/03 19:50:13 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,24 +70,14 @@ static inline void				ret_nbr(uintmax_t nb, short len)
 	}
 }
 
-void							ft_nbr(intmax_t nb)
+static inline void				width_precision(intmax_t nb,
+		short len, char prefix_size)
 {
-	int		size;
-	short	len;
-	char	prefix_size;
-
-	ft_cast_nbr(&nb);
-	len = ft_nbrlen(nb);
-	size = len > g_options.precision ? len : g_options.precision;
-	size = size > g_options.width ? len : g_options.width;
-	size += 2; //include max size of prefix
-	prefix_size = 1; // size of prefix 0b 0X 0x - + ' '
-	while (g_ret.i + size >= g_ret.max)
-		ft_expand_ret(size);
 	while (!(g_flags.zero) && !(g_flags.minus) && g_options.width - len
-			- (g_flags.plus | g_flags.space | (nb < 0)) > 0) // format width
+			- (g_flags.plus | g_flags.space | (nb < 0)) > 0)
 	{
-		if (!(g_options.width - g_options.precision - (g_flags.plus | g_flags.space | (nb < 0)))) // test to put preci
+		if (!(g_options.width - g_options.precision
+					- (g_flags.plus | g_flags.space | (nb < 0))))
 			break ;
 		--g_options.width;
 		g_ret.ret[++g_ret.i] = ' ';
@@ -99,19 +89,34 @@ void							ft_nbr(intmax_t nb)
 	else if (g_flags.space)
 		g_ret.ret[++g_ret.i] = ' ';
 	if (g_flags.zero)
-	{
-		g_options.precision = g_flags.plus | g_flags.space | (nb < 0) ? g_options.width - prefix_size : g_options.width;
-		g_options.width = 0;
-	}
+		g_options.precision = g_flags.plus | g_flags.space | (nb < 0)
+			? g_options.width - prefix_size : g_options.width;
 	while (g_options.precision - len > 0)
 	{
 		g_ret.ret[++g_ret.i] = '0';
 		--g_options.precision;
 		--g_options.width;
 	}
+}
+
+void							ft_nbr(intmax_t nb)
+{
+	int		size;
+	short	len;
+	char	prefix_size;
+
+	ft_cast_nbr(&nb);
+	len = ft_nbrlen(nb);
+	size = len > g_options.precision ? len : g_options.precision;
+	size = size > g_options.width ? len : g_options.width;
+	size += 2;
+	prefix_size = 1;
+	while (g_ret.i + size >= g_ret.max)
+		ft_expand_ret(size);
+	width_precision(nb, len, prefix_size);
 	ret_nbr(nb > 0 ? nb : nb * -1, len);
 	g_ret.i += len;
-	while (g_flags.minus && g_options.width - len > 0) // format width
+	while (g_flags.minus && g_options.width - len > 0)
 	{
 		--g_options.width;
 		g_ret.ret[++g_ret.i] = ' ';
