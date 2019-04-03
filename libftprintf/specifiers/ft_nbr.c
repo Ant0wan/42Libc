@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/03 19:23:16 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/03 19:35:48 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void							ft_nbr(intmax_t nb)
 		g_ret.ret[++g_ret.i] = ' ';
 	if (g_flags.zero)
 	{
-		g_options.precision = g_options.width - prefix_size;
+		g_options.precision = g_flags.plus | g_flags.space | (nb < 0) ? g_options.width - prefix_size : g_options.width;
 		g_options.width = 0;
 	}
 	while (g_options.precision - len > 0)
