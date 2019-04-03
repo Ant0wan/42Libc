@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/02 00:06:55 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/03 15:11:19 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,16 +74,29 @@ void							ft_nbr(intmax_t nb)
 {
 	int		size;
 	short	len;
+	char	prefix_size;
 
 	ft_cast_nbr(&nb);
 	len = ft_nbrlen(nb);
 	size = len > g_options.precision ? len : g_options.precision;
 	size = size > g_options.width ? len : g_options.width;
-	++size;
+	size += 2; // size of prefix
+	prefix_size = 1;
 	while (g_ret.i + size >= g_ret.max)
 		ft_expand_ret(size);
-	if (nb < 0)
-		g_ret.ret[++g_ret.i] = '-';
+	while (g_options.width - len > 0) // format width
+	{
+		--g_options.width;
+		g_ret.ret[++g_ret.i] = ' ';
+	}
+	if (g_options.width < len)
+		++g_ret.i;
 	ret_nbr(nb > 0 ? nb : nb * -1, len);
+	if (nb < 0)
+		g_ret.ret[g_ret.i] = '-';
+	else if (g_flags.plus)
+		g_ret.ret[g_ret.i] = '+';
+	else if (g_flags.space)
+		g_ret.ret[g_ret.i] = ' ';
 	g_ret.i += len;
 }
