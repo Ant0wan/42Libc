@@ -6,11 +6,12 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/28 16:12:08 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/03 18:22:56 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/03 18:37:58 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include "ft_printf.h"
 int main(void)
 {
 	int ret1;
@@ -35,6 +36,10 @@ int main(void)
 	printf("%d\n", ret1);
 	ret1 = printf("|%0.40d|", -123456789);
 	printf("%d\n", ret1);
+	ret1 = printf("|%40.20d|", 123456789);
+	printf("%d\n", ret1);
+	ret1 = printf("|%40.20d|", -123456789);
+	printf("%d\n", ret1);
 	ret1 = printf("|%040d|", 123456789);
 	printf("%d\n", ret1);
 	ret1 = printf("|%040d|", -123456789);
@@ -58,6 +63,10 @@ int main(void)
 	ft_printf("%d\n", ret1);
 	ret1 = ft_printf("|%.40d|", 123456789);
 	ft_printf("%d\n", ret1);
+	ret1 = ft_printf("|%40.20d|", 123456789);
+	printf("%d\n", ret1);
+	ret1 = ft_printf("|%40.20d|", -123456789);
+	printf("%d\n", ret1);
 	ret1 = ft_printf("|%.40d|", -123456789);
 	ft_printf("%d\n", ret1);
 	ret1 = ft_printf("|%0.40d|", 123456789);
