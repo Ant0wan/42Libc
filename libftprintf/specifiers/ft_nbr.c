@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/03 17:01:17 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/03 18:09:06 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,20 +84,19 @@ void							ft_nbr(intmax_t nb)
 	prefix_size = 1; // size of prefix 0b 0X 0x - + ' '
 	while (g_ret.i + size >= g_ret.max)
 		ft_expand_ret(size);
-	while (++g_ret.i && !(g_flags.minus) && g_options.width - len > 0) // format width
+	while (!(g_flags.minus) && g_options.width - len
+			- (g_flags.plus | g_flags.space | (nb < 0)) > 0) // format width
 	{
 		--g_options.width;
-		g_ret.ret[g_ret.i] = ' ';
-		if (g_options.width == len && (g_flags.plus || g_flags.space || nb < 0))
-			--g_ret.i;
+		g_ret.ret[++g_ret.i] = ' ';
 	}
-	ret_nbr(nb > 0 ? nb : nb * -1, len);
 	if (nb < 0)
-		g_ret.ret[g_ret.i] = '-';
+		g_ret.ret[++g_ret.i] = '-';
 	else if (g_flags.plus)
-		g_ret.ret[g_ret.i] = '+';
+		g_ret.ret[++g_ret.i] = '+';
 	else if (g_flags.space)
-		g_ret.ret[g_ret.i] = ' ';
+		g_ret.ret[++g_ret.i] = ' ';
+	ret_nbr(nb > 0 ? nb : nb * -1, len);
 	g_ret.i += len;
 	while (g_flags.minus && g_options.width - len > 0) // format width
 	{
