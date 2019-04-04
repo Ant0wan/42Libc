@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/04 15:04:04 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/04 16:22:53 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ static inline void				ft_cast_nbr(intmax_t *nb)
 void							ft_nbr(intmax_t nb)
 {
 	ft_cast_nbr(&nb);
+	g_flags.hash = 0;
 	g_prefix.base = 10;
 	g_prefix.size = 1;
 	if (nb < 0)

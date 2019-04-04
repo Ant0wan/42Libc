@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/04 16:08:05 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/04 16:29:41 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ static inline void				width_precision(intmax_t nb, short len)
 			++g_prefix.prefix;
 		}
 	if (g_flags.zero)
-		g_options.precision = g_flags.plus | g_flags.space | (nb < 0)
-			? g_options.width - g_prefix.size : g_options.width;
+		g_options.precision = g_flags.plus | g_flags.hash | g_flags.space
+			| (nb < 0) ? g_options.width - g_prefix.size : g_options.width;
 	while (g_options.precision - len > 0)
 	{
 		g_ret.ret[++g_ret.i] = '0';
@@ -96,7 +96,8 @@ void							format(intmax_t nb)
 	{
 		--g_options.width;
 		g_ret.ret[++g_ret.i] = ' ';
-		if (g_options.width == len && (g_flags.plus || g_flags.space || nb < 0))
-			--g_ret.i;
+		if (g_options.width == len && (g_flags.plus || g_flags.hash
+					|| g_flags.space || nb < 0))
+			g_ret.i -= g_prefix.size;
 	}
 }
