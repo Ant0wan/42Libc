@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/04 16:55:59 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/04 16:54:05 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,42 +43,14 @@ static inline void				ft_cast_nbr(uintmax_t *nb)
 		*nb = (unsigned int)(*nb);
 }
 
-void							ft_lhexa(uintmax_t nb)
+void							ft_octa(uintmax_t nb)
 {
 	ft_cast_nbr(&nb);
-	g_prefix.base = 16;
-	g_prefix.size = 2;
-	g_flags.plus = 0;
-	if (g_flags.hash && nb > 0)
-		g_prefix.prefix = "0x";
-	else
-		g_prefix.size = 0;
-	g_prefix.ch_base = "0123456789abcdef";
-	format(nb);
-}
-
-void							ft_uhexa(uintmax_t nb)
-{
-	ft_cast_nbr(&nb);
-	g_prefix.base = 16;
-	g_prefix.size = 2;
-	g_flags.plus = 0;
-	if (g_flags.hash && nb > 0)
-		g_prefix.prefix = "0X";
-	else
-		g_prefix.size = 0;
-	g_prefix.ch_base = "0123456789ABCDEF";
-	format(nb);
-}
-
-void							ft_bina(uintmax_t nb)
-{
-	ft_cast_nbr(&nb);
-	g_prefix.base = 2;
-	g_prefix.size = 2;
+	g_prefix.base = 8;
+	g_prefix.size = 1;
 	g_flags.plus = 0;
 	if (g_flags.hash)
-		g_prefix.prefix = "0b";
+		g_prefix.prefix = "0";
 	else
 		g_prefix.size = 0;
 	g_prefix.ch_base = "0123456789abcdef";
