@@ -1,26 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_unbr.c                                          :+:      :+:    :+:   */
+/*   prefix.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/03 20:01:40 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/04 14:45:59 by abarthel         ###   ########.fr       */
+/*   Created: 2019/04/04 14:27:24 by abarthel          #+#    #+#             */
+/*   Updated: 2019/04/04 14:48:39 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-#include "prs_struct.h"
-#include "specifiers.h"
 #include "prefix.h"
 
-extern t_flags	g_flags;
-
-void	ft_unbr(intmax_t nb)
-{
-	g_flags.space = 0;
-	g_flags.plus = 0;
-	ft_nbr(nb);
-}
+t_prefix	g_prefix = {.base = 10, .size = 0, .prefix = NULL};
