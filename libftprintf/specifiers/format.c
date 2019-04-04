@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/04 15:15:54 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/04 16:08:05 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,10 @@ static inline void				ret_nbr(uintmax_t nb, short len)
 static inline void				width_precision(intmax_t nb, short len)
 {
 	while (!(g_flags.zero) && !(g_flags.minus) && g_options.width - len
-			- (g_flags.plus | g_flags.space | (nb < 0)) > 0)
+			- g_prefix.size > 0)
 	{
-		if (!(g_options.width - g_options.precision
-					- (g_flags.plus | g_flags.space | (nb < 0))))
+		if (g_options.width - g_options.precision
+					- g_prefix.size <= 0)
 			break ;
 		--g_options.width;
 		g_ret.ret[++g_ret.i] = ' ';
@@ -83,6 +83,7 @@ void							format(intmax_t nb)
 	short	len;
 
 	len = ft_nbrlen(nb);
+	len = !(g_options.precision) && !(nb) ? 0 : len;
 	size = len > g_options.precision ? len : g_options.precision;
 	size = size > g_options.width ? len : g_options.width;
 	size += g_prefix.size;
