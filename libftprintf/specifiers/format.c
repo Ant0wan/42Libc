@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/04 14:58:45 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/04 15:15:54 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static inline unsigned short	ft_nbrlen(intmax_t nb)
 	while (rest)
 	{
 		++len;
-		rest = (rest - (rest % 10)) / 10;
+		rest = (rest - (rest % g_prefix.base)) / g_prefix.base;
 	}
 	return (len > 0 ? len : 1);
 }
@@ -43,8 +43,8 @@ static inline void				ret_nbr(uintmax_t nb, short len)
 	g_ret.i += len;
 	while (len--)
 	{
-		g_ret.ret[g_ret.i] = nb % 10 ^ 0x30;
-		nb = (nb - (nb % 10)) / 10;
+		g_ret.ret[g_ret.i] = g_prefix.ch_base[nb % g_prefix.base];
+		nb = (nb - (nb % g_prefix.base)) / g_prefix.base;
 		--g_ret.i;
 	}
 }
