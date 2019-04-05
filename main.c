@@ -5,46 +5,106 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/05 17:12:52 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/05 18:12:06 by abarthel         ###   ########.fr       */
+/*   Created: 2019/04/03 18:50:40 by abarthel          #+#    #+#             */
+/*   Updated: 2019/04/04 14:45:18 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "ft_printf.h"
+#include <stdio.h>
+#include <limits.h>
 
 int main(void)
 {
-	long long k;
 	int		nb;
-	char	c;
-	nb = 654654654;
-	c = 'W';
-	k = 545454564548665;
-	ft_printf("%5b\n", nb);
-	dprintf(2,"%5b\n", nb);
-	ft_printf("%-15b\n", nb);
-	dprintf(2,"%-15b\n", nb);
-	ft_printf("%-5b\n", nb);
-	dprintf(2,"%-5b\n", nb);
-	ft_printf("%42llb\n", k);
-	dprintf(2,"%42llb\n", k);
-	ft_printf("%-18llb\n", k);
-	dprintf(2,"%-18llb\n", k);
-	ft_printf("%42llb\n", k);
-	dprintf(2,"%42llb\n", k);
-	ft_printf("%5hhb\n", c);
-	dprintf(2,"%5hhb\n", c);
-	ft_printf("%-15hhb\n", c);
-	dprintf(2,"%-15hhb\n", c);
-	ft_printf("%-5hhb\n", c);
-	dprintf(2,"%-5hhb\n", c);
-	ft_printf("%42hhb\n", c);
-	dprintf(2,"%42hhb\n", c);
-	ft_printf("%-18hhb\n", c);
-	dprintf(2,"%-18hhb\n", c);
-	ft_printf("%42hhb\n", c);
-	dprintf(2,"%42hhb\n", c);
+//	nb = 18446744073709551615;
+//	ft_printf("space% lu\n", nb);
+//	printf("space% lu\n", nb);
+//	ft_printf("plus:%+lu\n", nb);
+//	printf("plus:%+lu\n", nb);
+//	ft_printf("precision:%.5lu\n", nb);
+//	printf("precision:%.5lu\n", nb);
+//	ft_printf("space + prec:% .5lu\n", nb);
+//	printf("space + prec:% .5lu\n", nb);
+//	ft_printf("Plus + prec / grande:%+040lu\n", nb);
+//	printf("Plus + prec / grande:%+040lu\n", nb);
+//	ft_printf("Plus + prec / petite:%+0.40lu\n", nb);
+//	printf("Plus + prec / petite:%+0.40lu\n", nb);
+//	ft_printf("Prec + 0:%0.5lu\n", nb);
+//	printf("Prec + 0:%0.5lu\n", nb);
+//	ft_printf("Prec + minus:%-.5lu\n", nb);
+//	printf("Prec + minus:%-.5lu\n", nb);
+//	ft_printf("size:%5lu\n", nb);
+//	printf("size:%5lu\n", nb);
+//	ft_printf("size + space:% 5lu\n", nb);
+//	printf("size + space:% 5lu\n", nb);
+//	ft_printf("size + plus:%+5lu\n", nb);
+//	printf("size + plus:%+5lu\n", nb);
+//	ft_printf("size + minus:%-5lu\n", nb);
+//	printf("size + minus:%-5lu\n", nb);
+//	ft_printf("size + 0:%05lu\n", nb);
+//	printf("size + 0:%05lu\n", nb);
+//	ft_printf("size + 0 + plus:%+05lu\n", nb);
+//	printf("size + 0 + plus:%+05lu\n", nb);
+//	ft_printf("size + 0 + plus:%0+5lu\n", nb);
+//	printf("size + 0 + plus:%0+5lu\n", nb);
+//	ft_printf("size + 0 + prec:%05.3lu\n", nb);
+//	printf("size + 0 + prec:%05.3lu\n", nb);
+//	ft_printf("size + minus + prec:%-5.3lu\n", nb);
+//	printf("size + minus + prec:%-5.3lu\n", nb);
+//	ft_printf("size + plus + 0 + prec:%+05.3lu\n", nb);
+//	printf("size + plus + 0 + prec:%+05.3lu\n", nb);
+//	ft_printf("size + espace + zero + prec:%0 5.3lu\n", nb);
+//	printf("size + espace + zero + prec:%0 5.3lu\n", nb);
+//	ft_printf("size + espace + zero + prec:% 05.3lu\n", nb);
+//	printf("size + espace + zero + prec:% 05.3lu\n", nb);
+//	ft_printf("size + minus + plus + prec:%-+5.3lu\n", nb);
+//	printf("size + minus + plus + prec:%-+5.3lu\n", nb);
 
+	nb = -125;
+	printf("\n\n");
+	ft_printf("space% d\n", nb);
+	printf("space% d\n", nb);
+	ft_printf("plus:%+d\n", nb);
+	printf("plus:%+d\n", nb);
+	ft_printf("precision:%.5d\n", nb);
+	printf("precision:%.5d\n", nb);
+	ft_printf("space + prec:% .5d\n", nb);
+	printf("space + prec:% .5d\n", nb);
+	ft_printf("Plus + prec / grande:%+.5d\n", nb);
+	printf("Plus + prec / grande:%+.5d\n", nb);
+	ft_printf("Plus + prec / petite:%+.0d\n", nb);
+	printf("Plus + prec / petite:%+.0d\n", nb);
+	ft_printf("Prec + 0:%0.5d\n", nb);
+	printf("Prec + 0:%0.5d\n", nb);
+	ft_printf("Prec + minus:%-.5d\n", nb);
+	printf("Prec + minus:%-.5d\n", nb);
+	ft_printf("size:%5d\n", nb);
+	printf("size:%5d\n", nb);
+	ft_printf("size + space:% 5d\n", nb);
+	printf("size + space:% 5d\n", nb);
+	ft_printf("size + plus:%+5d\n", nb);
+	printf("size + plus:%+5d\n", nb);
+	ft_printf("size + minus:%-5d\n", nb);
+	printf("size + minus:%-5d\n", nb);
+	ft_printf("size + 0:%05d\n", nb);
+	printf("size + 0:%05d\n", nb);
+	ft_printf("size + 0 + plus:%+05d\n", nb);
+	printf("size + 0 + plus:%+05d\n", nb);
+	ft_printf("size + 0 + plus:%0+5d\n", nb);
+	printf("size + 0 + plus:%0+5d\n", nb);
+	ft_printf("size + 0 + prec:%05.3d\n", nb);
+	printf("size + 0 + prec:%05.3d\n", nb);
+	ft_printf("size + minus + prec:%-5.3d\n", nb);
+	printf("size + minus + prec:%-5.3d\n", nb);
+	ft_printf("size + plus + 0 + prec:%+05.3d\n", nb);
+	printf("size + plus + 0 + prec:%+05.3d\n", nb);
+	ft_printf("size + espace + zero + prec:%0 5.3d\n", nb);
+	printf("size + espace + zero + prec:%0 5.3d\n", nb);
+	ft_printf("size + espace + zero + prec:% 05.3d\n", nb);
+	printf("size + espace + zero + prec:% 05.3d\n", nb);
+	ft_printf("size + minus + plus + prec:%-+5.3d\n", nb);
+	printf("size + minus + plus + prec:%-+5.3d\n", nb);
+	printf("\n\n");
 	return (0);
 }
