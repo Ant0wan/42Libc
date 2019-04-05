@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 17:00:19 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/05 17:10:11 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/05 17:26:07 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ extern t_modifier	g_modifier;
 void	ft_p(void *ptr)
 {
 	g_flags.hash = 1;
-	if (sizeof(void*) == 8)
+	if (sizeof(void*) == x64BYTES)
 		g_modifier.l = 1;
 	ft_lhexa((intmax_t)ptr);
 }
