@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   01_o_basic1.c                                      :+:      :+:    :+:   */
+/*   01_basic1.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmartel <jmartel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/13 10:46:53 by jmartel           #+#    #+#             */
-/*   Updated: 2019/04/05 14:48:05 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/04 16:26:43 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,76 +16,83 @@
 int			main(void)
 {
 	int ret;
-	int	nb = 45;
-	ret = ft_printf("test b:%o", nb);
+	int		nb = 12;
+	ret = ft_printf("%X", nb);
 	printf("|%d\n", ret);
-	ret = printf("test b:%o", nb);
+	ret = printf("%X", nb);
 	printf("|%d\n", ret);
-	ret = ft_printf("hash:%#o", nb);
+	ret = ft_printf("test X:%X", nb);
 	printf("|%d\n", ret);
-	ret = printf("hash:%#o", nb);
+	ret = printf("test X:%X", nb);
 	printf("|%d\n", ret);
-	ret = ft_printf("precisibn / grande:%.5o", nb);
+	ret = ft_printf("Hash:%#X", nb);
 	printf("|%d\n", ret);
-	ret = printf("precisibn / grande:%.5o", nb);
+	ret = printf("Hash:%#X", nb);
 	printf("|%d\n", ret);
-	ret = ft_printf("Prec + hash / grande:%#.5o", nb);
+	ret = ft_printf("prec / grande:%.5X", nb);
 	printf("|%d\n", ret);
-	ret = printf("Prec + hash / grande:%#.5o", nb);
+	ret = printf("prec / grande:%.5X", nb);
 	printf("|%d\n", ret);
-	ret = ft_printf("Prec + hash / petite:%#.1o", nb);
+	ret = ft_printf("prec / petite:%.0X", nb);
 	printf("|%d\n", ret);
-	ret = printf("Prec + hash / petite:%#.1o", nb);
+	ret = printf("prec / petite:%.0X", nb);
 	printf("|%d\n", ret);
-	ret = ft_printf("Prec + 0:%0.5o", nb);
+	ret = ft_printf("hash + prec / grande:%#.5X", nb);
 	printf("|%d\n", ret);
-	ret = printf("Prec + 0:%0.5o", nb);
+	ret = printf("hash + prec / grande:%#.5X", nb);
 	printf("|%d\n", ret);
-	ret = ft_printf("Prec + minus:%-.5o", nb);
+	ret = ft_printf("hash + prec / petite:%#.1X", nb);
 	printf("|%d\n", ret);
-	ret = printf("Prec + minus:%-.5o", nb);
+	ret = printf("hash + prec / petite:%#.1X", nb);
 	printf("|%d\n", ret);
-	ret = ft_printf("Size:%5o", nb);
+	ret = ft_printf("prec + 0: %0.5X", nb);
 	printf("|%d\n", ret);
-	ret = printf("Size:%5o", nb);
+	ret = printf("prec + 0: %0.5X", nb);
 	printf("|%d\n", ret);
-	ret = ft_printf("size + prec:%7.3o", nb);
+	ret = ft_printf("Prec + minus:%-.5X", nb);
 	printf("|%d\n", ret);
-	ret = printf("size + prec:%7.3o", nb);
+	ret = printf("Prec + minus:%-.5X", nb);
 	printf("|%d\n", ret);
-	ret = ft_printf("size + minus:%-5o", nb);
+	ret = ft_printf("size:%5X", nb);
 	printf("|%d\n", ret);
-	ret = printf("size + minus:%-5o", nb);
+	ret = printf("size:%5X", nb);
 	printf("|%d\n", ret);
-	ret = ft_printf("size + zerb:%05o", nb);
+	ret = ft_printf("size + prec:%7.3X", nb);
 	printf("|%d\n", ret);
-	ret = printf("size + zerb:%05o", nb);
+	ret = printf("size + prec:%7.3X", nb);
 	printf("|%d\n", ret);
-	ret = ft_printf("size + zerb + hash:%#05o", nb);
+	ret = ft_printf("size + mminus:%-5X", nb);
 	printf("|%d\n", ret);
-	ret = printf("size + zerb + hash:%#05o", nb);
+	ret = printf("size + mminus:%-5X", nb);
 	printf("|%d\n", ret);
-	ret = ft_printf("size + zerb + prec:%05.3o", nb);
+	ret = ft_printf("size + 0:%05X", nb);
 	printf("|%d\n", ret);
-	ret = printf("size + zerb + prec:%05.3o", nb);
+	ret = printf("size + 0:%05X", nb);
 	printf("|%d\n", ret);
-	ret = ft_printf("size + minus + prec:%-5.3o", nb);
+	ret = ft_printf("size + 0 + hash:%#05X", nb);
 	printf("|%d\n", ret);
-	ret = printf("size + minus + prec:%-5.3o", nb);
+	ret = printf("size + 0 + hash:%#05X", nb);
 	printf("|%d\n", ret);
-	ret = ft_printf("size + hash + zerb + prec:%#05.3o", nb);
+	ret = ft_printf("size + 0 + prec:%05.3X", nb);
 	printf("|%d\n", ret);
-	ret = printf("size + hash + zerb + prec:%#05.3o", nb);
+	ret = printf("size + 0 + prec:%05.3X", nb);
 	printf("|%d\n", ret);
-	ret = ft_printf("size + hash + zerb + prec:%0#5.3o", nb);
+	ret = ft_printf("size + minus + prec:%-5.3X", nb);
 	printf("|%d\n", ret);
-	ret = printf("size + hash + zerb + prec:%0#5.3o", nb);
+	ret = printf("size + minus + prec:%-5.3X", nb);
 	printf("|%d\n", ret);
-	ret = ft_printf("size + hash + minus + prec:%-#7.3o", nb);
+	ret = ft_printf("size + hash + 0 + prec:%#05.3X", nb);
 	printf("|%d\n", ret);
-	ret = printf("size + hash + minus + prec:%-#7.3o", nb);
+	ret = printf("size + hash + 0 + prec:%#05.3X", nb);
 	printf("|%d\n", ret);
-	printf("\n\n");
-	printf("\n\n");
+	ret = ft_printf("size + hash + 0 + prec:%0#5.3X", nb);
+	printf("|%d\n", ret);
+	ret = printf("size + hash + 0 + prec:%0#5.3X", nb);
+	printf("|%d\n", ret);
+	ret = ft_printf("size + hash + minus + prec:%-#7.3X", nb);	
+	printf("|%d\n", ret);
+	ret = printf("size + hash + minus + prec:%-#7.3X", nb);
+	printf("|%d\n", ret);
+	ret = printf("");
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/04/05 15:00:30 by abarthel         ###   ########.fr        #
+#    Updated: 2019/04/05 15:13:16 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -103,7 +103,7 @@ test:
 	@ar rc $(NAME) $(addprefix $(O_FILES_PATH),$(O_FILES)) $(addprefix $(DISPATCHER_PATH),$(DISPATCHER)) $(addprefix $(SPECIFIERS_PATH),$(SPECIFIERS)) $(addprefix $(SPECIFIERS_PATH),$(SPECIFIERS)) $(addprefix $(LIBFT_PATH),$(LIBFT)) $(addprefix $(LIBFTWCHAR_PATH),$(LIBFTWCHAR)) $(addprefix $(UTF8_PATH),$(UTF8))
 	@ranlib $(NAME)
 #	@gcc -fsanitize=address -Wall -Wextra -Werror main.c libftprintf.a -I./libftprintf/dispatcher/ -I./libftprintf
-	@gcc main.c libftprintf.a -I./libftprintf/dispatcher/ -I./libftprintf
+	@gcc main.c libftprintf.a -I./libftprintf/dispatcher/ -I./libftprintf -I./libftprintf/specifiers/
 	./a.out
 
 .PHONY: all clean fclean re objects

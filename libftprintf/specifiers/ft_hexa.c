@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/05 15:02:00 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/05 15:40:24 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void							ft_lhexa(uintmax_t nb)
 	else
 		g_prefix.size = 0;
 	g_prefix.ch_base = "0123456789abcdef";
+	g_prefix.len = ft_nbrlen((intmax_t)nb);
 	format(nb);
 }
 
@@ -45,5 +46,6 @@ void							ft_uhexa(uintmax_t nb)
 	else
 		g_prefix.size = 0;
 	g_prefix.ch_base = "0123456789ABCDEF";
+	g_prefix.len = ft_nbrlen((intmax_t)nb);
 	format(nb);
 }

@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 14:27:45 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/04 15:12:10 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/05 15:39:35 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 
 typedef struct	s_prefi
 {
-	unsigned char	base:5;
-	unsigned char	size:3;
+	unsigned short	len;
+	unsigned char	base;
+	unsigned char	size;
 	char			*prefix;
 	char			*ch_base;
 }				t_prefix;
