@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/05 15:40:24 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/05 19:49:03 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ extern t_prefix		g_prefix;
 
 void							ft_lhexa(uintmax_t nb)
 {
+	reset_prefix();
 	ft_cast_unbr(&nb);
 	g_prefix.base = 16;
 	g_prefix.size = 2;
@@ -37,6 +38,7 @@ void							ft_lhexa(uintmax_t nb)
 
 void							ft_uhexa(uintmax_t nb)
 {
+	reset_prefix();
 	ft_cast_unbr(&nb);
 	g_prefix.base = 16;
 	g_prefix.size = 2;

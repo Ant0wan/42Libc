@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 14:27:45 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/05 18:23:22 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/05 19:47:50 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ typedef struct	s_prefi
 }				t_prefix;
 
 extern t_prefix	g_prefix;
+
+void	reset_prefix(void) __attribute__((always_inline));
 
 #endif

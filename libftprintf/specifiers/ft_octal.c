@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/05 16:56:01 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/05 19:49:32 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ extern t_prefix		g_prefix;
 
 void							ft_octal(uintmax_t nb)
 {
+	reset_prefix();
 	ft_cast_unbr(&nb);
 	g_prefix.base = 8;
 	g_prefix.size = 1;

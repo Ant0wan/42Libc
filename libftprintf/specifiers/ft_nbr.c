@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/05 18:46:57 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/05 19:47:23 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ extern t_prefix		g_prefix;
 
 void							ft_nbr(intmax_t nb)
 {
+	reset_prefix();
 	ft_cast_nbr(&nb);
 	g_prefix.len = ft_nbrlen(nb);
 	g_flags.hash = 0;

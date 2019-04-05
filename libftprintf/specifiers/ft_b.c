@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 17:00:19 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/05 19:23:26 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/05 19:48:39 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ static inline size_t	ft_type_len(void)
 
 void					ft_b(uintmax_t nb)
 {
+	reset_prefix();
 	g_prefix.base = 2;
 	g_prefix.size = 2;
 	g_flags.plus = 0;

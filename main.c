@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 17:12:52 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/05 19:20:09 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/05 19:44:33 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,15 @@ int main(void)
 	nb = 654654654;
 	c = 'W';
 	k = 545454564548665;
-	ft_printf("%4llb\n", k);
-	printf("%4llb\n", k);
+	ft_printf("%#4llb\n", k);
+	printf("%#4llb\n", k);
 	printf("%d\n", g_options.precision);
 	printf("%d\n", g_options.width);
-	ft_printf(">%25.0lld\n", LLONG_MAX);
+	ft_printf(">%25.0llX\n", LLONG_MAX);
 
 	printf("%d\n", g_options.precision);
 	printf("%d\n", g_options.width);
-	printf(">%25.0lld\n", LLONG_MAX);
+	printf(">%25.0llX\n", LLONG_MAX);
 	ft_printf("%42llb\n", k);
 	dprintf(2,"%42llb\n", k);
 	ft_printf("%5hhb\n", c);
