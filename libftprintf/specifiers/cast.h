@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_unbr.c                                          :+:      :+:    :+:   */
+/*   cast.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/03 20:01:40 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/05 14:59:36 by abarthel         ###   ########.fr       */
+/*   Created: 2019/04/05 14:52:15 by abarthel          #+#    #+#             */
+/*   Updated: 2019/04/05 14:53:34 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef CAST_H
+# define CAST_H
 
-#include "prs_struct.h"
-#include "specifiers.h"
+# include <stdlib.h>
 
-extern t_flags	g_flags;
+void	ft_cast_nbr(intmax_t *nb) __attribute((always_inline));
 
-void	ft_unbr(intmax_t nb)
-{
-	g_flags.space = 0;
-	g_flags.plus = 0;
-	ft_nbr(nb);
-}
+void	ft_cast_unbr(uintmax_t *nb) __attribute((always_inline));
+
+#endif

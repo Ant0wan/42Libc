@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 17:44:58 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/04 16:57:24 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/05 15:02:31 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ void	ft_lhexa(uintmax_t nb);
 
 void	ft_uhexa(uintmax_t nb);
 
-void	ft_octa(uintmax_t nb);
+//void	ft_octa(uintmax_t nb);
 
-void	ft_bina(uintmax_t nb);
+//void	ft_bina(uintmax_t nb);
 
 //void	ft_xlow(uintmax_t nb);
 

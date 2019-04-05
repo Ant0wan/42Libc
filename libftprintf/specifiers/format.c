@@ -6,19 +6,16 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/04 16:49:20 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/05 14:57:58 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stddef.h>
-#include <limits.h>
 
 #include "prs_struct.h"
 #include "ft_expand_ret.h"
 #include "prefix.h"
 
-extern t_modifier	g_modifier;
 extern t_flags		g_flags;
 extern t_options	g_options;
 extern t_prefix		g_prefix;
