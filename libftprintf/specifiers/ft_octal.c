@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/05 16:02:11 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/05 16:56:01 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ void							ft_octal(uintmax_t nb)
 	g_prefix.base = 8;
 	g_prefix.size = 1;
 	g_flags.plus = 0;
-	if (g_flags.hash && nb > 0)
+	if (g_flags.hash && (!(g_options.precision) || nb > 0))
 		g_prefix.prefix = "0";
-	else 
+	else
 		g_prefix.size = 0;
 	g_prefix.ch_base = "0123456789ABCDEF";
 	g_prefix.len = ft_nbrlen((intmax_t)nb);
