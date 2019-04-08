@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/08 16:11:49 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/08 16:43:22 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,7 @@ extern inline unsigned short	ft_nbrlen(intmax_t nb)
 		rest = (rest - (rest % g_prefix.base)) / g_prefix.base;
 	}
 	if (g_flags.apost)
-	{
-		len += len % 3 == 0 ? 0 : 1;
-		len += len / 3 == 0 ? 0 : (len / 3) - 1;
-	}
+		len += !(len % 3) ? len / 3 - 1 : len / 3;
 	return (len > 0 ? len : 1);
 }
 
@@ -54,10 +51,7 @@ extern inline unsigned short	ft_unbrlen(uintmax_t nb)
 		rest = (rest - (rest % g_prefix.base)) / g_prefix.base;
 	}
 	if (g_flags.apost)
-	{
-		len += len % 3 == 0 ? 0 : 1;
-		len += len / 3 == 0 ? 0 : (len / 3) - 1;
-	}
+		len += !(len % 3) ? len / 3 - 1 : len / 3;
 	return (len > 0 ? len : 1);
 }
 
