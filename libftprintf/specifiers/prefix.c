@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 14:27:24 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/08 14:15:37 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/08 14:20:21 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 #include "prefix.h"
 
-t_prefix	g_prefix =
-{.len = 0, .base = 10, .size = 0, .neg = 0
-	, .prefix = NULL, .ch_base = "0123456789abcdef"};
+t_prefix	g_prefix;
 
 extern inline void	reset_prefix(void)
 {
