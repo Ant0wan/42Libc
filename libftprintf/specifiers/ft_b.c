@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 17:00:19 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/08 14:07:09 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/08 14:14:01 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 #include "prefix.h"
 #include "format.h"
 
-#ifndef	nb_BITS
-# define nb_BITS 8
+#ifndef NB_BITS
+# define NB_BITS 8
 #endif
 
 extern t_flags		g_flags;
@@ -30,21 +30,21 @@ extern t_prefix		g_prefix;
 static inline size_t	ft_type_len(void)
 {
 	if (g_modifier.hh)
-		return (sizeof(char) * nb_BITS);
+		return (sizeof(char) * NB_BITS);
 	else if (g_modifier.h)
-		return (sizeof(short) * nb_BITS);
+		return (sizeof(short) * NB_BITS);
 	else if (g_modifier.l)
-		return (sizeof(long) * nb_BITS);
+		return (sizeof(long) * NB_BITS);
 	else if (g_modifier.ll)
-		return (sizeof(long long) * nb_BITS);
+		return (sizeof(long long) * NB_BITS);
 	else if (g_modifier.j)
-		return (sizeof(intmax_t) * nb_BITS);
+		return (sizeof(intmax_t) * NB_BITS);
 	else if (g_modifier.t)
-		return (sizeof(ptrdiff_t) * nb_BITS);
+		return (sizeof(ptrdiff_t) * NB_BITS);
 	else if (g_modifier.z)
-		return (sizeof(size_t) * nb_BITS);
+		return (sizeof(size_t) * NB_BITS);
 	else
-		return (sizeof(int) * nb_BITS);
+		return (sizeof(int) * NB_BITS);
 }
 
 void					ft_b(uintmax_t nb)
