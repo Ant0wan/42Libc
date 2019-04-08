@@ -6,12 +6,11 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/08 16:43:22 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/08 17:09:18 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <locale.h>
 
 #include "prs_struct.h"
 #include "ft_expand_ret.h"
