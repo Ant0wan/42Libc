@@ -6,12 +6,14 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 14:27:45 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/05 19:47:50 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/08 16:11:22 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PREFIX_H
 # define PREFIX_H
+
+# include <locale.h>
 
 typedef struct	s_prefi
 {
@@ -21,6 +23,8 @@ typedef struct	s_prefi
 	_Bool			neg;
 	char			*prefix;
 	char			*ch_base;
+	struct lconv	*lc;
+	short			len_thousands_sep:8;
 }				t_prefix;
 
 extern t_prefix	g_prefix;

@@ -6,11 +6,12 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/05 18:36:14 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/08 16:11:49 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <locale.h>
 
 #include "prs_struct.h"
 #include "ft_expand_ret.h"
@@ -32,6 +33,11 @@ extern inline unsigned short	ft_nbrlen(intmax_t nb)
 		++len;
 		rest = (rest - (rest % g_prefix.base)) / g_prefix.base;
 	}
+	if (g_flags.apost)
+	{
+		len += len % 3 == 0 ? 0 : 1;
+		len += len / 3 == 0 ? 0 : (len / 3) - 1;
+	}
 	return (len > 0 ? len : 1);
 }
 
@@ -47,16 +53,35 @@ extern inline unsigned short	ft_unbrlen(uintmax_t nb)
 		++len;
 		rest = (rest - (rest % g_prefix.base)) / g_prefix.base;
 	}
+	if (g_flags.apost)
+	{
+		len += len % 3 == 0 ? 0 : 1;
+		len += len / 3 == 0 ? 0 : (len / 3) - 1;
+	}
 	return (len > 0 ? len : 1);
 }
 
 static inline void				ret_nbr(uintmax_t nb, short len)
 {
+	short	i;
+	char	mod;
+
 	g_ret.i += len;
+	mod = 0;
 	while (len--)
 	{
-		g_ret.ret[g_ret.i] = g_prefix.ch_base[nb % g_prefix.base];
-		nb = (nb - (nb % g_prefix.base)) / g_prefix.base;
+		++mod;
+		if (g_flags.apost && !(mod % 4))
+		{
+			i = g_prefix.len_thousands_sep;
+			while (i--)
+				g_ret.ret[g_ret.i] = g_prefix.lc->thousands_sep[i];
+		}
+		else
+		{
+			g_ret.ret[g_ret.i] = g_prefix.ch_base[nb % g_prefix.base];
+			nb = (nb - (nb % g_prefix.base)) / g_prefix.base;
+		}
 		--g_ret.i;
 	}
 }

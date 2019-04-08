@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/28 16:12:08 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/08 15:18:07 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/08 15:51:00 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,9 +109,9 @@ int main(void)
 	printf("%d\n", ret1);
 	ret1 = printf("|%'-040d|", -123456789);
 	printf("%d\n", ret1);
-	ret1 = printf("|%'-5d|", 123456789);
+	ret1 = printf("|%'-5d|", 1123456789);
 	printf("%d\n", ret1);
-	ret1 = printf("|%'-5d|", -123456789);
+	ret1 = printf("|%'-5d|", -1123456789);
 	printf("%d\n", ret1);
 	printf("\n");
 	ret1 = ft_printf("|%'-40d|", 123456789);
@@ -138,9 +138,9 @@ int main(void)
 	ft_printf("%d\n", ret1);
 	ret1 = ft_printf("|%'-040d|", -123456789);
 	ft_printf("%d\n", ret1);
-	ret1 = ft_printf("|%'-5d|", 123456789);
+	ret1 = ft_printf("|%'-5d|", 1123456789);
 	ft_printf("%d\n", ret1);
-	ret1 = ft_printf("|%'-5d|", -123456789);
+	ret1 = ft_printf("|%'-5d|", -1123456789);
 	ft_printf("%d\n", ret1);
 	printf("\n");
 	return (0);
