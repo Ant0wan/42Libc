@@ -5,70 +5,143 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/05 17:12:52 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/08 15:08:17 by abarthel         ###   ########.fr       */
+/*   Created: 2019/03/28 16:12:08 by abarthel          #+#    #+#             */
+/*   Updated: 2019/04/08 15:18:07 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "ft_printf.h"
-#include <limits.h>
-#include "prs_struct.h"
-
-extern t_options	g_options;
-
+#include <locale.h>
 int main(void)
 {
-	long long k;
-	int		nb;
-	char	c;
-	nb = 654654654;
-	c = 'W';
-	k = 545454564548665;
-	int ret;
-	int	i;
-	i = printf("Hello%n !\n", &ret);
-	printf("%d\n", ret);
-	printf("%d\n", i);
-	i = ft_printf("Hello%n !\n", &ret);
-	printf("%d\n", ret);
-	printf("%d\n", i);
+	int ret1;
 
-	i = printf("%n !\n", &ret);
-	printf("%d\n", ret);
-	printf("%d\n", i);
-	i = ft_printf("%n !\n", &ret);
-	printf("%d\n", ret);
-	printf("%d\n", i);
+	setlocale(LC_ALL, "en_GB");
 
-
-
-	ft_printf("%#4llx\n", k);
-	printf("%#4llx\n", k);
-	ft_printf(">%25.0llX\n", LLONG_MAX);
-	printf(">%25.0llX\n", LLONG_MAX);
-	ft_printf("%42llo\n", ULLONG_MAX);
-	printf("%42llo\n", ULLONG_MAX);
-	ft_printf("%42lld\n", ULLONG_MAX);
-	printf("%42lld\n", ULLONG_MAX);
-	ft_printf("%42llu\n", ULLONG_MAX);
-	printf("%42llu\n", ULLONG_MAX);
-	ft_printf("%42llx\n", ULLONG_MAX);
-	printf("%42llx\n", ULLONG_MAX);
-	ft_printf("%42llX\n", ULLONG_MAX);
-	printf("%42llX\n", ULLONG_MAX);
-	ft_printf("%5hhd\n", c);
-	printf("%5hhd\n", c);
-	ft_printf("%-15hhd\n", c);
-	printf("%-15hhd\n", c);
-	ft_printf("%-5hhd\n", c);
-	printf("%-5hhd\n", c);
-	ft_printf("%42hhd\n", c);
-	printf("%42hhd\n", c);
-	ft_printf("%-18hhd\n", c);
-	printf("%-18hhd\n", c);
-	ft_printf("%42hhd\n", c);
-	printf("%42hhd\n", c);
-
+	ret1 = printf("|%40d|", 123456789);
+	printf("%d\n", ret1);
+	ret1 = printf("|%40d|", -123456789);
+	printf("%d\n", ret1);
+	ret1 = printf("|%040d|", 123456789);
+	printf("%d\n", ret1);
+	ret1 = printf("|%040d|", -123456789);
+	printf("%d\n", ret1);
+	ret1 = printf("|% 040d|", 123456789);
+	printf("%d\n", ret1);
+	ret1 = printf("|% 040d|", -123456789);
+	printf("%d\n", ret1);
+	ret1 = printf("|%.40d|", 123456789);
+	printf("%d\n", ret1);
+	ret1 = printf("|%.40d|", -123456789);
+	printf("%d\n", ret1);
+	ret1 = printf("|%0.40d|", 123456789);
+	printf("%d\n", ret1);
+	ret1 = printf("|%0.40d|", -123456789);
+	printf("%d\n", ret1);
+	ret1 = printf("|%40.20d|", 123456789);
+	printf("%d\n", ret1);
+	ret1 = printf("|%40.20d|", -123456789);
+	printf("%d\n", ret1);
+	ret1 = printf("|%040d|", 123456789);
+	printf("%d\n", ret1);
+	ret1 = printf("|%040d|", -123456789);
+	printf("%d\n", ret1);
+	ret1 = printf("|%5d|", 123456789);
+	printf("%d\n", ret1);
+	ret1 = printf("|%5d|", -123456789);
+	printf("%d\n", ret1);
+	printf("\n");
+	ret1 = ft_printf("|%40d|", 123456789);
+	ft_printf("%d\n", ret1);
+	ret1 = ft_printf("|%40d|", -123456789);
+	ft_printf("%d\n", ret1);
+	ret1 = ft_printf("|%040d|", 123456789);
+	ft_printf("%d\n", ret1);
+	ret1 = ft_printf("|%040d|", -123456789);
+	ft_printf("%d\n", ret1);
+	ret1 = ft_printf("|% 040d|", 123456789);
+	ft_printf("%d\n", ret1);
+	ret1 = ft_printf("|% 040d|", -123456789);
+	ft_printf("%d\n", ret1);
+	ret1 = ft_printf("|%.40d|", 123456789);
+	ft_printf("%d\n", ret1);
+	ret1 = ft_printf("|%40.20d|", 123456789);
+	printf("%d\n", ret1);
+	ret1 = ft_printf("|%40.20d|", -123456789);
+	printf("%d\n", ret1);
+	ret1 = ft_printf("|%.40d|", -123456789);
+	ft_printf("%d\n", ret1);
+	ret1 = ft_printf("|%0.40d|", 123456789);
+	ft_printf("%d\n", ret1);
+	ret1 = ft_printf("|%0.40d|", -123456789);
+	ft_printf("%d\n", ret1);
+	ret1 = ft_printf("|%040d|", 123456789);
+	ft_printf("%d\n", ret1);
+	ret1 = ft_printf("|%040d|", -123456789);
+	ft_printf("%d\n", ret1);
+	ret1 = ft_printf("|%5d|", 123456789);
+	ft_printf("%d\n", ret1);
+	ret1 = ft_printf("|%5d|", -123456789);
+	ft_printf("%d\n", ret1);
+	printf("\n");
+	ret1 = printf("|%'-40d|", 123456789);
+	printf("%d\n", ret1);
+	ret1 = printf("|%'-40d|", -123456789);
+	printf("%d\n", ret1);
+	ret1 = printf("|%'-040d|", 123456789);
+	printf("%d\n", ret1);
+	ret1 = printf("|%'-040d|", -123456789);
+	printf("%d\n", ret1);
+	ret1 = printf("|%'- 040d|", 123456789);
+	printf("%d\n", ret1);
+	ret1 = printf("|%'- 040d|", -123456789);
+	printf("%d\n", ret1);
+	ret1 = printf("|%'-.40d|", 123456789);
+	printf("%d\n", ret1);
+	ret1 = printf("|%'-.40d|", -123456789);
+	printf("%d\n", ret1);
+	ret1 = printf("|%'-0.40d|", 123456789);
+	printf("%d\n", ret1);
+	ret1 = printf("|%'-0.40d|", -123456789);
+	printf("%d\n", ret1);
+	ret1 = printf("|%'-040d|", 123456789);
+	printf("%d\n", ret1);
+	ret1 = printf("|%'-040d|", -123456789);
+	printf("%d\n", ret1);
+	ret1 = printf("|%'-5d|", 123456789);
+	printf("%d\n", ret1);
+	ret1 = printf("|%'-5d|", -123456789);
+	printf("%d\n", ret1);
+	printf("\n");
+	ret1 = ft_printf("|%'-40d|", 123456789);
+	ft_printf("%d\n", ret1);
+	ret1 = ft_printf("|%'-40d|", -123456789);
+	ft_printf("%d\n", ret1);
+	ret1 = ft_printf("|%'-040d|", 123456789);
+	ft_printf("%d\n", ret1);
+	ret1 = ft_printf("|%'-040d|", -123456789);
+	ft_printf("%d\n", ret1);
+	ret1 = ft_printf("|%'- 040d|", 123456789);
+	ft_printf("%d\n", ret1);
+	ret1 = ft_printf("|%'- 040d|", -123456789);
+	ft_printf("%d\n", ret1);
+	ret1 = ft_printf("|%'-.40d|", 123456789);
+	ft_printf("%d\n", ret1);
+	ret1 = ft_printf("|%'-.40d|", -123456789);
+	ft_printf("%d\n", ret1);
+	ret1 = ft_printf("|%'-0.40d|", 123456789);
+	ft_printf("%d\n", ret1);
+	ret1 = ft_printf("|%'-0.40d|", -123456789);
+	ft_printf("%d\n", ret1);
+	ret1 = ft_printf("|%'-040d|", 123456789);
+	ft_printf("%d\n", ret1);
+	ret1 = ft_printf("|%'-040d|", -123456789);
+	ft_printf("%d\n", ret1);
+	ret1 = ft_printf("|%'-5d|", 123456789);
+	ft_printf("%d\n", ret1);
+	ret1 = ft_printf("|%'-5d|", -123456789);
+	ft_printf("%d\n", ret1);
+	printf("\n");
 	return (0);
 }
