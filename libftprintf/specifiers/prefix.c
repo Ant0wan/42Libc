@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 14:27:24 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/08 15:40:09 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/09 13:03:35 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,4 @@ extern inline void	reset_prefix(void)
 	g_prefix.prefix = NULL;
 	g_prefix.ch_base = "0123456789ABCDEF";
 	g_prefix.lc = localeconv();
-	g_prefix.len_thousands_sep = ft_strlen(g_prefix.lc->thousands_sep);
 }

@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/08 17:09:18 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/09 13:03:04 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,7 @@ extern inline unsigned short	ft_unbrlen(uintmax_t nb)
 
 static inline void				ret_nbr(uintmax_t nb, short len)
 {
-	short	i;
-	char	mod;
+	int	mod;
 
 	g_ret.i += len;
 	mod = 0;
@@ -65,11 +64,7 @@ static inline void				ret_nbr(uintmax_t nb, short len)
 	{
 		++mod;
 		if (g_flags.apost && !(mod % 4))
-		{
-			i = g_prefix.len_thousands_sep;
-			while (i--)
-				g_ret.ret[g_ret.i] = g_prefix.lc->thousands_sep[i];
-		}
+			g_ret.ret[g_ret.i] = *(g_prefix.lc->thousands_sep);
 		else
 		{
 			g_ret.ret[g_ret.i] = g_prefix.ch_base[nb % g_prefix.base];

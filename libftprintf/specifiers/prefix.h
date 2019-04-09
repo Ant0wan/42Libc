@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 14:27:45 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/08 17:30:23 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/09 13:03:20 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ typedef struct	s_prefi
 	char			*prefix;
 	char			*ch_base;
 	struct lconv	*lc;
-	short			len_thousands_sep:8;
 }				t_prefix;
 
 extern t_prefix	g_prefix;
