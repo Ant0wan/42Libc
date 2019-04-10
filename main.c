@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/09 18:54:14 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/10 12:53:28 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ int main(void)
 	dprintf(2, "NULL:%-.8s\n", NULL);
 	ft_printf("NULL:%.12s\n", NULL);
 	dprintf(2, "NULL:%.12s\n", NULL);
+	ft_printf("|NULL:%.2s\n", NULL);
+	dprintf(2, "|NULL:%.2s\n", NULL);
 	ft_printf("empty:%-.5s\n", "");
 	dprintf(2, "empty:%-.5s\n", "");
 	ft_printf("empty:%-1.32s\n", "");
