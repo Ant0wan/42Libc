@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/10 17:12:32 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/10 18:13:18 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,6 @@ static inline void				ret_str(char *str)
 	}
 }
 
-// |--prec-----|
-// | C |  C |  C |  C |  C |
-// |
-//
-//
-//
-
-
-
 #include <stdio.h>
 static inline void				ret_wcs(wchar_t *wcs)
 {
@@ -47,7 +38,8 @@ static inline void				ret_wcs(wchar_t *wcs)
 	int diff;
 	printf("len:%d\n", g_prefix.len);
 	diff = ft_ewcswidth(wcs);
-	printf("diff:%d\n", diff);
+	printf("ewidth:%d\n", diff);
+	printf("maxun:%d\n",  ft_ewcsnwidth(wcs, g_prefix.len));
 //	printf("ft_:%zu\n", ft_ewcslen(wcs));
 	while (g_prefix.len)
 	{

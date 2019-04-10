@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/10 17:08:22 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/10 18:03:19 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -209,46 +209,51 @@ int main(void)
 //	INT_MAX -1 || INT_MAX
 // "Hello %ls!i%ls%ls", L"电脑是新的", L",电脑死机了。", L"电脑坏了。😢 "
 //	ft_printf("%0y");
-	ret1 = printf("Hello %10.10lsa%.2ls", L"电脑是新的", L"😢 ");
-	printf("%d\n", ret1);
-	ret2 = ft_printf("Hello %10.10lsa%.2ls", L"电脑是新的", L"😢 ");
-	printf("%d\n", ret2);
-	printf("\n\n");
+//	ret1 = printf("Hello %10.10lsa%.2ls", L"电脑是新的", L"😢 ");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("Hello %10.10lsa%.2ls", L"电脑是新的", L"😢 ");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
 
 //	ft_printf("%y");
-	ret1 = printf("%1.5ls", L"电是");
+	ret1 = printf("%1.5ls", L"电脑是新的");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("%1.5ls", L"电是");
+	ret2 = ft_printf("%1.5ls", L"电脑是新的");
 	printf("%d\n", ret2);
 	printf("\n\n");
-	ret1 = printf("%5.5ls", L"电是");
+	ret1 = printf("%5.5ls", L"电脑是新的");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("%5.5ls", L"电是");
+	ret2 = ft_printf("%5.5ls", L"电脑是新的");
 	printf("%d\n", ret2);
 	printf("\n\n");
-	ret1 = printf("%1.3ls", L"电是");
+	ret1 = printf("%1.3ls", L"电脑是新的");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("%1.3ls", L"电是");
+	ret2 = ft_printf("%1.3ls", L"电脑是新的");
 	printf("%d\n", ret2);
 	printf("\n\n");
-	ret1 = printf("%1.4ls", L"电是");
+	ret1 = printf("%1.4ls", L"电脑是新的");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("%1.4ls", L"电是");
+	ret2 = ft_printf("%1.4ls", L"电脑是新的");
 	printf("%d\n", ret2);
 	printf("\n\n");
-	ret1 = printf("%.6ls", L"电是");
+	ret1 = printf("%5.6ls", L"电脑是新的");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("%.6ls", L"电是");
+	ret2 = ft_printf("%5.6ls", L"电脑是新的");
 	printf("%d\n", ret2);
 	printf("\n\n");
-	ret1 = printf("%ls", L"电");
+	ret1 = printf("%7.6ls", L"电脑是新的");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("%ls", L"电");
+	ret2 = ft_printf("%7.6ls", L"电脑是新的");
 	printf("%d\n", ret2);
 	printf("\n\n");
-	ret1 = printf("Hello %10.10ls!", L"电脑是新的");
+	ret1 = printf("%ls", L"电脑是新的");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("Hello %10.10ls!", L"电脑是新的");
+	ret2 = ft_printf("%ls", L"电脑是新的");
+	printf("%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("%10.10ls!", L"电脑是新的");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%10.10ls!", L"电脑是新的");
 	printf("%d\n", ret2);
 	printf("\n\n");
 
