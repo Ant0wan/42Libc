@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/10 18:30:47 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/10 19:03:26 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ extern t_options	g_options;
 extern t_modifier	g_modifier;
 extern t_prefix		g_prefix;
 
-void	ft_str(void	*str)
+void	ft_str(void *str)
 {
 	reset_prefix();
 	if (!(str))
