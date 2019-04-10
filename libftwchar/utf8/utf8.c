@@ -6,14 +6,19 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 18:54:10 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/21 12:16:17 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/10 14:52:20 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-#define BYTE_WCHAR 4
-#define RET_ERROR -1
+#ifndef BYTE_WCHAR
+# define BYTE_WCHAR 4
+#endif
+
+#ifndef RET_ERROR
+# define RET_ERROR -1
+#endif
 
 static inline int	m0x07ff_utf8(wchar_t *wc)
 {
