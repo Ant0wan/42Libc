@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/04/10 14:53:13 by abarthel         ###   ########.fr        #
+#    Updated: 2019/04/10 16:40:17 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,7 @@ LIBFT = ft_bzero.o ft_isalpha.o ft_isdigit.o ft_isalnum.o \
 LIBFTWCHAR_PATH = ./libftwchar/
 LIBFTWCHAR = ft_fputwc.o ft_fputwcbits.o ft_fputws.o ft_fputwsbits.o \
 			 ft_putwchar.o ft_wcscmp.o ft_putwstr.o ft_putwcbits.o \
-			 ft_wcslen.o ft_wcscpy.o ft_wcswidth.o ft_wcwidth.o \
+			 ft_wcslen.o ft_wcscpy.o ft_ewcswidth.o ft_ewcwidth.o \
 
 UTF8_PATH = ./libftwchar/utf8/
 UTF8 = utf8.o \
@@ -103,8 +103,8 @@ test:
 	@$(MAKE) -C ./libftprintf objects
 	@ar rc $(NAME) $(addprefix $(O_FILES_PATH),$(O_FILES)) $(addprefix $(DISPATCHER_PATH),$(DISPATCHER)) $(addprefix $(SPECIFIERS_PATH),$(SPECIFIERS)) $(addprefix $(SPECIFIERS_PATH),$(SPECIFIERS)) $(addprefix $(LIBFT_PATH),$(LIBFT)) $(addprefix $(LIBFTWCHAR_PATH),$(LIBFTWCHAR)) $(addprefix $(UTF8_PATH),$(UTF8))
 	@ranlib $(NAME)
-	@gcc -fsanitize=address -Wall -Wextra -Werror main.c libftprintf.a -I./libftprintf/dispatcher/ -I./libftprintf -I./libftprintf/specifiers/
-#	@gcc main.c libftprintf.a -I./libftprintf/dispatcher/ -I./libftprintf -I./libftprintf/specifiers/
+#	@gcc -fsanitize=address -Wall -Wextra -Werror main.c libftprintf.a -I./libftprintf/dispatcher/ -I./libftprintf -I./libftprintf/specifiers/
+	@gcc main.c libftprintf.a -I./libftprintf/dispatcher/ -I./libftprintf -I./libftprintf/specifiers/
 	./a.out
 
 .PHONY: all clean fclean re objects

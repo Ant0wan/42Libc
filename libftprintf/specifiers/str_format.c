@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/10 14:43:21 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/10 16:48:07 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "prs_struct.h"
 #include "ft_expand_ret.h"
 #include "prefix.h"
-#include "utf8.h"
+#include "ft_wchar.h"
 
 extern t_flags		g_flags;
 extern t_options	g_options;
@@ -31,18 +31,29 @@ static inline void				ret_str(char *str)
 	}
 }
 
+// |--prec-----|
+// | C |  C |  C |  C |  C |
+// |
+//
+//
+//
+
+
+
+#include <stdio.h>
 static inline void				ret_wcs(wchar_t *wcs)
 {
-	while (g_prefix.len % sizeof(wchar_t))
-	{
-		--g_options.width;
-		g_ret.ret[++g_ret.i] = 'X';
-		--g_prefix.len;
-	}
+
+	int diff;
+	printf("len:%d\n", g_prefix.len);
+	printf("wd_:%d\n", ft_ewcswidth(wcs, 2));
+	diff = ft_ewcswidth(wcs, g_prefix.len) - g_prefix.len;
+	printf("diff:%d\n", diff);
+//	printf("ft_:%zu\n", ft_ewcslen(wcs));
 	while (g_prefix.len)
 	{
 		--g_options.width;
-		g_ret.ret[++g_ret.i] = ' ';
+		g_ret.ret[++g_ret.i] = 'X';
 		--g_prefix.len;
 	}
 //	while (g_prefix.len)

@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/22 14:27:49 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/13 10:53:21 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/10 15:45:08 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,19 @@
 #include <unistd.h>
 
 #include "ft_vdprintf.h"
+
+// OPTIMISER les algos
+// REVOIR les includes minimums
+// revoir le padding des structures
+// revoir le makefile
+// faire une macro pour le compiler AVEC ou SANS MALLOC
+// voir pour les couleurs de format standard
+// voir pour les dates retour de ctime au format LS
+// voir pour des flags d'optimisation de la compilation des lib
+// rediger la doc de chaque lib README.md
+// rediger la page man de ft_printf
+// rediger la doc du projet
+// rediger les graph d'algo de printf
 
 int		ft_printf(const char *restrict format, ...)
 {
