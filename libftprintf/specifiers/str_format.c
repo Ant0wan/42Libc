@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/10 13:57:09 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/10 14:10:45 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,10 @@ static inline void				ret_str(char *str)
 
 static inline void				ret_wcs(char *str)
 {
-	while (g_prefix.len--)
-	{
+	if ()
+
 		g_ret.ret[++g_ret.i] = *str++;
 		--g_options.width;
-	}
 }
 
 static inline void				pre_format_str(void)
