@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/10 16:58:21 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/10 18:30:47 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	ft_str(void	*str)
 		g_prefix.len = ft_strlen((char*)str);
 	if (g_options.precision > -1 && g_options.precision < g_prefix.len)
 		g_prefix.len = g_options.precision;
+	if (g_modifier.l)
+		g_prefix.len = ft_ewcsnwidth((wchar_t*)str, g_prefix.len);
 	str_format(str);
 }
 

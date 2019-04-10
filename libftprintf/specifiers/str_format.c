@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/10 18:13:18 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/10 18:19:34 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ static inline void				ret_wcs(wchar_t *wcs)
 	diff = ft_ewcswidth(wcs);
 	printf("ewidth:%d\n", diff);
 	printf("maxun:%d\n",  ft_ewcsnwidth(wcs, g_prefix.len));
-//	printf("ft_:%zu\n", ft_ewcslen(wcs));
 	while (g_prefix.len)
 	{
 		--g_options.width;
