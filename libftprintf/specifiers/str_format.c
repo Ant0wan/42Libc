@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/10 18:58:28 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/10 19:18:52 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,16 @@ static inline void				ret_wcs(wchar_t *wcs)
 		--g_options.width;
 		wc = *wcs;
 		utf8_encoder(&wc);
-		if (wc >> 24)
+		if ((char)(wc >> 24))
 			g_ret.ret[++g_ret.i] = (char)(wc >> 24);
-		if (wc >> 16)
+		if ((char)(wc >> 16))
 			g_ret.ret[++g_ret.i] = (char)(wc >> 16);
-		if (wc >> 8)
+		if ((char)(wc >> 8))
 			g_ret.ret[++g_ret.i] = (char)(wc >> 8);
-		if (wc)
+		if ((char)wc)
 			g_ret.ret[++g_ret.i] = (char)wc;
 		g_prefix.len -= ft_ewcwidth(*wcs);
 		++wcs;
-		--g_ret.i;
 	}
 }
 

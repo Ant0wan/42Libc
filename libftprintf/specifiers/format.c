@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/09 13:03:04 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/10 19:26:05 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ extern inline void				format(uintmax_t nb)
 	size = size > g_options.width ? g_prefix.len : g_options.width;
 	size += g_prefix.size;
 	while (g_ret.i + size >= g_ret.max)
-		ft_expand_ret(size);
+		ft_expand_ret(size); // to check if space ok INT_MAX ?
 	width_precision();
 	ret_nbr(nb, g_prefix.len);
 	g_ret.i += g_prefix.len;
