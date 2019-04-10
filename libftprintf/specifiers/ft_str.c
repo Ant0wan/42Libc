@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/10 16:47:51 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/10 16:58:21 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_str(void	*str)
 	if (!(str))
 		str = NULL_STR;
 	if (g_modifier.l)
-		g_prefix.len = ft_wcslen((wchar_t*)str);
+		g_prefix.len = ft_ewcswidth((wchar_t*)str);
 	else
 		g_prefix.len = ft_strlen((char*)str);
 	if (g_options.precision > -1 && g_options.precision < g_prefix.len)
