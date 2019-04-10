@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/04/10 16:40:17 by abarthel         ###   ########.fr        #
+#    Updated: 2019/04/10 17:23:09 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,6 +56,7 @@ LIBFTWCHAR_PATH = ./libftwchar/
 LIBFTWCHAR = ft_fputwc.o ft_fputwcbits.o ft_fputws.o ft_fputwsbits.o \
 			 ft_putwchar.o ft_wcscmp.o ft_putwstr.o ft_putwcbits.o \
 			 ft_wcslen.o ft_wcscpy.o ft_ewcswidth.o ft_ewcwidth.o \
+			 ft_ewcsnwidth.o \
 
 UTF8_PATH = ./libftwchar/utf8/
 UTF8 = utf8.o \

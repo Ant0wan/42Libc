@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/10 16:15:46 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/10 17:08:22 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -221,9 +221,9 @@ int main(void)
 	ret2 = ft_printf("%1.5ls", L"电是");
 	printf("%d\n", ret2);
 	printf("\n\n");
-	ret1 = printf("%1.5ls", L"电是");
+	ret1 = printf("%5.5ls", L"电是");
 	printf("%d\n", ret1);
-	ret2 = ft_printf("%1.5ls", L"电是");
+	ret2 = ft_printf("%5.5ls", L"电是");
 	printf("%d\n", ret2);
 	printf("\n\n");
 	ret1 = printf("%1.3ls", L"电是");
