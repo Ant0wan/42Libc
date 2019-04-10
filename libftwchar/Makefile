@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 11:47:48 by abarthel          #+#    #+#              #
-#    Updated: 2019/04/10 14:12:24 by abarthel         ###   ########.fr        #
+#    Updated: 2019/04/10 14:46:59 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ INCS = -I./utf8/
 
 O_FILES	=	ft_fputwc.o ft_fputwcbits.o ft_fputws.o ft_fputwsbits.o \
 			ft_putwchar.o ft_wcscmp.o ft_putwstr.o ft_putwcbits.o \
-			ft_wcslen.o ft_wcscpy.o \
+			ft_wcslen.o ft_wcscpy.o ft_wcswidth.o ft_wcwidth.o \
 
 UTF8 = ./utf8/utf8.o
 

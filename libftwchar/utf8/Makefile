@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/07 11:08:30 by abarthel          #+#    #+#              #
-#    Updated: 2019/04/02 00:24:23 by abarthel         ###   ########.fr        #
+#    Updated: 2019/04/10 14:45:10 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CC = gcc
 
 FLAGS = -Werror -Wall -Wextra
 
-O_FILES = utf8.o encodlen.o enchrlen.o \
+O_FILES = utf8.o \
 
 %.o : %.c
 	@$(CC) $(FLAGS) $< -c

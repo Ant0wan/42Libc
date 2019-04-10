@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 15:19:44 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/05 12:07:22 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/10 14:50:19 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,9 @@ size_t	ft_wcslen(const wchar_t *ws);
 
 wchar_t	*ft_wcscpy(wchar_t *ws1, const wchar_t *ws2) __attribute__
 		((nonnull(1,2)));
+
+int		ft_wcwidth(wchar_t ws);
+
+int		ft_wcswidth(wchar_t *ws);
 
 #endif

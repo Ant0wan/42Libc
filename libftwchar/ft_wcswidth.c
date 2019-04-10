@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   encodlen.c                                         :+:      :+:    :+:   */
+/*   ft_wcswidth.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/19 14:28:19 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/19 17:55:25 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/10 14:49:48 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-extern inline int	encodlen(wchar_t *ws)
+int	ft_wcswidth(wchar_t *ws)
 {
 	int	len;
 
