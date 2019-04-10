@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/22 14:27:49 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/10 15:45:08 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/10 19:28:25 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 // OPTIMISER les algos
 // REVOIR les includes minimums
+// ajouter le errno et l'utiliser quand ret > INT_MAX
 // revoir le padding des structures
 // revoir le makefile
 // faire une macro pour le compiler AVEC ou SANS MALLOC
