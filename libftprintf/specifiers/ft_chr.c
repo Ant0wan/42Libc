@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/11 16:32:14 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/11 16:41:19 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include "prs_struct.h"
 #include "ft_expand_ret.h"
 #include "prefix.h"
-#include "libft.h"
 #include "ft_wchar.h"
 #include "utf8.h"
 
@@ -25,7 +24,8 @@ extern t_prefix		g_prefix;
 
 static inline void	ret_wc(wchar_t wc)
 {
-	utf8_encoder(&wc);
+	if (g_modifier.l)
+		utf8_encoder(&wc);
 	if ((char)(wc >> 24))
 		g_ret.ret[++g_ret.i] = (char)(wc >> 24);
 	if ((char)(wc >> 16))
@@ -54,7 +54,10 @@ void				ft_chr(wchar_t wc)
 		--g_options.width;
 		g_ret.ret[++g_ret.i] = ' ';
 	}
-	ret_wc(wc);
+	if (g_modifier.l)
+		ret_wc(wc);
+	else
+		ret_wc((unsigned char)wc);
 	while (g_flags.minus && g_options.width > 0)
 	{
 		--g_options.width;

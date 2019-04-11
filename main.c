@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/11 16:27:44 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/11 16:41:01 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,9 +125,9 @@ int main(void)
 	printf("%d\n", ret2);
 	printf("\n\n");
 
-	ret1 = printf("Hello %20c!", -8000);
+	ret1 = printf(">>>>>>>>>Hello %20c!", -8000);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("Hello %20c!", -8000);
+	ret2 = ft_printf(">>>>>>>>>Hello %20c!", -8000);
 	printf("%d\n", ret2);
 	printf("\n\n");
 
