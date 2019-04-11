@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/04/11 16:31:06 by abarthel         ###   ########.fr        #
+#    Updated: 2019/04/11 19:24:51 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -98,10 +98,10 @@ objects:
 
 # For testing purpose
 test:
-	@make
+	@make -j
 	@rm -f $(NAME)
-	@$(MAKE) -C ./libftprintf clean
-	@$(MAKE) -C ./libftprintf objects
+	@$(MAKE) -j -C ./libftprintf clean
+	@$(MAKE) -j -C ./libftprintf objects
 	@ar rc $(NAME) $(addprefix $(O_FILES_PATH),$(O_FILES)) $(addprefix $(DISPATCHER_PATH),$(DISPATCHER)) $(addprefix $(SPECIFIERS_PATH),$(SPECIFIERS)) $(addprefix $(SPECIFIERS_PATH),$(SPECIFIERS)) $(addprefix $(LIBFT_PATH),$(LIBFT)) $(addprefix $(LIBFTWCHAR_PATH),$(LIBFTWCHAR)) $(addprefix $(UTF8_PATH),$(UTF8))
 	@ranlib $(NAME)
 #	@gcc -fsanitize=address -Wall -Wextra -Werror main.c libftprintf.a -I./libftprintf/dispatcher/ -I./libftprintf -I./libftprintf/specifiers/
