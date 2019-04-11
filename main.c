@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/11 16:46:54 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/11 18:59:44 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,9 @@ int main(void)
 	printf("%d\n", ret2);
 	printf("\n\n");
 
+	ft_printf("%y", 34);
+	
+	
 	ret1 = printf("%   %");
 	printf("%d\n", ret1);
 	ret2 = ft_printf("%   %");
@@ -100,6 +103,10 @@ int main(void)
 	ret2 = printf("1Hello %C!", L'~'); // 256
 	printf("%d\n", ret2);
 	printf("\n\n");
+
+	ft_printf("%+y", 154);
+	
+	
 	ret1 = printf("Hello %C!%s", L'\x160', "BOY");
 	printf("%d\n", ret1);
 	ret2 = printf("Hello %C!%s", L'\x160', "BOY"); // 256
@@ -110,6 +117,9 @@ int main(void)
 	ret2 = printf("2Hellowidth %-12lc!%s%s", L'\x0FF', "Damn", "okay");
 	printf("%d\n", ret2);
 	printf("\n\n");
+	
+	ft_printf("%+#y", 100);
+	
 	ret1 = printf("Hello %lc!%s%s", L'\x100', "Damn", "okay");
 	printf("%d\n", ret1);
 	ret2 = ft_printf("Hello %lc!%s%s", L'\x100', "Damn", "okay");
@@ -132,6 +142,9 @@ int main(void)
 	printf("\n\n");
 
 
+	ft_printf("%0y");
+	printf("=====================================================");
+	ft_printf("%+y%+y", 154, 147);
 	ret1 = printf("Hello %-20c!", 'w');
 	printf("%d\n", ret1);
 	ret2 = ft_printf("Hello %-20c!", 'w');
@@ -328,6 +341,11 @@ int main(void)
 	ret1 = printf("%c\n", 0);
 	printf("%i\n", ret1);
 	ret2 = ft_printf("%c\n", 0);
+	printf("%i\n", ret2);
+	printf("\n\n");
+	ret1 = printf("%C\n", L'\0');
+	printf("%i\n", ret1);
+	ret2 = ft_printf("%C\n", L'\0');
 	printf("%i\n", ret2);
 	printf("\n\n");
 ////
