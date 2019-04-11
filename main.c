@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/11 16:41:01 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/11 16:46:54 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -323,6 +323,11 @@ int main(void)
 	ret1 = printf("z|%1.20C|", '\0');
 	printf("%i\n", ret1);
 	ret2 = ft_printf("z|%1.20C|", '\0');
+	printf("%i\n", ret2);
+	printf("\n\n");
+	ret1 = printf("%c\n", 0);
+	printf("%i\n", ret1);
+	ret2 = ft_printf("%c\n", 0);
 	printf("%i\n", ret2);
 	printf("\n\n");
 ////

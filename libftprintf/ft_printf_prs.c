@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/08 17:55:05 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/11 16:45:06 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ static inline void	reset_globals(void)
 	g_modifier.t = 0;
 	g_modifier.z = 0;
 	g_modifier.upl = 0;
-
 }
 
 static inline _Bool	get_fwpm(const char *format, va_list ap, _Bool *specifier)

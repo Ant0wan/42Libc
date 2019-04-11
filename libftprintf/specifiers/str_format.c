@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/11 15:01:58 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/11 16:57:37 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ extern inline void				str_format(void *str)
 
 	size = g_options.width < g_prefix.len ? g_prefix.len : g_options.width;
 	while (g_ret.i + size >= g_ret.max)
-		ft_expand_ret(size);
+		ft_expand_ret(size); // use errno to avoid segV here
 	while (!(g_flags.minus) && g_options.width - g_prefix.len > 0)
 	{
 		--g_options.width;
