@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/10 19:18:52 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/11 15:01:58 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,6 @@ static inline void				ret_wcs(wchar_t *wcs)
 	}
 }
 
-static inline void				pre_format_str(void)
-{
-	while (!(g_flags.minus) && g_options.width - g_prefix.len > 0)
-	{
-		--g_options.width;
-		g_ret.ret[++g_ret.i] = ' ';
-	}
-}
-
 extern inline void				str_format(void *str)
 {
 	int	size;
@@ -70,7 +61,11 @@ extern inline void				str_format(void *str)
 	size = g_options.width < g_prefix.len ? g_prefix.len : g_options.width;
 	while (g_ret.i + size >= g_ret.max)
 		ft_expand_ret(size);
-	pre_format_str();
+	while (!(g_flags.minus) && g_options.width - g_prefix.len > 0)
+	{
+		--g_options.width;
+		g_ret.ret[++g_ret.i] = ' ';
+	}
 	if (g_modifier.l)
 		ret_wcs(str);
 	else
