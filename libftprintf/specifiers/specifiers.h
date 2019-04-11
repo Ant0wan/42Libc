@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 17:44:58 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/10 19:03:05 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/11 15:46:44 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 # include <stdlib.h>
 
-//void	ft_chr(wchar_t wc);
+void	ft_chr(wchar_t wc);
 
-//void	ft_wchr(wchar_t wc);
+void	ft_wchr(wchar_t wc);
 
 void	ft_str(char *str);
 

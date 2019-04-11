@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/11 15:39:16 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/11 16:27:44 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -288,6 +288,11 @@ int main(void)
 	ret2 = ft_printf("a|%-2.20lc|", L'坏');
 	printf("%i\n", ret2);
 	printf("\n\n");
+	ret1 = printf("a2|%-2lc|", L'坏');
+	printf("%i\n", ret1);
+	ret2 = ft_printf("a2|%-2lc|", L'坏');
+	printf("%i\n", ret2);
+	printf("\n\n");
 
 	ret1 = printf("q|%2.2lc|", L'坏');
 	printf("%i\n", ret1);
@@ -298,6 +303,26 @@ int main(void)
 	ret1 = printf("q|%20.6C|", L'坏');
 	printf("%i\n", ret1);
 	ret2 = ft_printf("q|%20.6C|", L'坏');
+	printf("%i\n", ret2);
+	printf("\n\n");
+	ret1 = printf("q|%.0C|", L'坏');
+	printf("%i\n", ret1);
+	ret2 = ft_printf("q|%.0C|", L'坏');
+	printf("%i\n", ret2);
+	printf("\n\n");
+	ret1 = printf("x|%1.20C|", L'坏');
+	printf("%i\n", ret1);
+	ret2 = ft_printf("x|%1.20C|", L'坏');
+	printf("%i\n", ret2);
+	printf("\n\n");
+	ret1 = printf("y|%.20C|", '\0');
+	printf("%i\n", ret1);
+	ret2 = ft_printf("y|%.20C|", '\0');
+	printf("%i\n", ret2);
+	printf("\n\n");
+	ret1 = printf("z|%1.20C|", '\0');
+	printf("%i\n", ret1);
+	ret2 = ft_printf("z|%1.20C|", '\0');
 	printf("%i\n", ret2);
 	printf("\n\n");
 ////
