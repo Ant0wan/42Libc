@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/11 19:19:09 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/12 13:06:49 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -327,7 +327,16 @@ int main(void)
 	printf("\n\n");
 	ret1 = printf("x|%1.20C|", 65, L'坏', 0);
 	printf("%i\n", ret1);
-	ret2 = ft_printf("%+#yx|%1.20C|%y", 65, L'坏', 0);
+	ret2 = ft_printf("%yx|%1.20C|%y", 34, L'坏', 0);
+	printf("%i\n", ret2);
+	printf("\n\n");
+	ret2 = ft_printf("x|%y%*s%y|", 96, 15, "dir_name", 0);
+	printf("%i\n", ret2);
+	printf("\n\n");
+
+	ret2 = ft_printf("%*d %s %*d %s 2018_paris 15150 April 12 13.01 %y% s%y\n",3, 16, "-rw-r--r--", 4, 165, "abarthel", 96, "dir_name", 0);
+	ret2 = ft_printf("%*d %s %*d %s 2018_paris 15150 April 12 13.01 %y% s%y\n",3, 16, "-rw-r--r--", 4, 165, "abarthel", 31, "a.out", 0);
+	ret2 = ft_printf("%*d %s %*d %s 2018_paris 15150 April 12 13.01 %y% s%y\n",3, 16, "-rw-r--r--", 4, 165, "abarthel", 0, "main.c", 0);
 	printf("%i\n", ret2);
 	printf("\n\n");
 	ret1 = printf("y|%.20C|", '\0');
