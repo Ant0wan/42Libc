@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/12 13:36:56 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/12 13:52:57 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,18 +40,7 @@
 
 int main(void)
 {
-	//	void	(*f)();
-
 //	setlocale(LC_ALL, "");
-	//	f = dispatcher("o");
-	//	printf("%d\n", (int)f);
-	//	f = dispatcher("d");
-	//	printf("%d\n", (int)f);
-	//	if (f)
-	//		f(2000);
-//	int o;
-//	int k;
-
 //	printf("\n____ PADDING TEST ____\n");
 //	printf(" LENGTH va_list: %lu\n", sizeof(va_list));
 //	printf(" LENGTH t_ret: %lu\n", sizeof(t_ret));
@@ -66,20 +55,11 @@ int main(void)
 //	printf(" LENGTH sizeof long long: %lu\n", sizeof(long long));
 //	printf("‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\n\n");
 
-
-	
-
 	int ret1;
 	int ret2;
 
-	ret1 = 20000;
+	ret1 = printf("|%f|", 124.15545454545454);
+	printf("%d\n", ret1);
 
-
-	while (ret1--)
-	{
-		ft_printf("%*d %s %*d %s 2018_paris 15150 April 12 13.01 %y% s%y\n",3, 16, "-rw-r--r--", 4, 165, "abarthel", 96, "dir_name", 0);
-		ft_printf("%*d %s %*d %s 2018_paris 15150 April 12 13.01 %y% s%y\n",3, 16, "-rw-r--r--", 4, 165, "abarthel", 31, "a.out", 0);
-		ft_printf("%*d %s %*d %s 2018_paris 15150 April 12 13.01 %y% s%y\n",3, 16, "-rw-r--r--", 4, 165, "abarthel", 0, "main.c", 0);
-	}
 	return (0);
 }
