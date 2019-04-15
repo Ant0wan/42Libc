@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/15 18:55:18 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/15 19:17:14 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,8 @@ void							ft_upoc(uintmax_t nb)
 	g_modifier.l = 1;
 	g_modifier.h = 0;
 	g_modifier.hh = 0;
+	g_flags.hash = 0;
+	g_flags.space = 0;
+	g_flags.plus = 0;
 	ft_octal(nb);
 }
