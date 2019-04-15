@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/11 16:54:52 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/15 15:53:04 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,8 @@ static inline void	ret_wc(wchar_t wc)
 	g_options.width -= g_prefix.len;
 }
 
-void				ft_chr(wchar_t wc)
+static inline void	chr_format(wchar_t wc)
 {
-	int	size;
-
-	reset_prefix();
-	if (g_modifier.l)
-		g_prefix.len = ft_ewcwidth(wc);
-	else
-		g_prefix.len = sizeof(char);
-	size = g_options.width < g_prefix.len ? g_prefix.len : g_options.width;
-	while (g_ret.i + size >= g_ret.max)
-		ft_expand_ret(size); // check return value again with errno
 	while (!(g_flags.minus) && g_options.width - g_prefix.len > 0)
 	{
 		--g_options.width;
@@ -63,6 +53,25 @@ void				ft_chr(wchar_t wc)
 		--g_options.width;
 		g_ret.ret[++g_ret.i] = ' ';
 	}
+}
+
+void				ft_chr(wchar_t wc)
+{
+	int	size;
+
+	reset_prefix();
+	if (g_modifier.l)
+		g_prefix.len = ft_ewcwidth(wc);
+	else
+		g_prefix.len = sizeof(char);
+	size = g_options.width < g_prefix.len ? g_prefix.len : g_options.width;
+	if ((int)((unsigned int)(g_ret.i + size)) < 0 && (g_error = G_ERROR))
+		return ;
+	if (g_ret.i + size >= g_ret.max)
+		ft_expand_ret(size);
+	if (g_error)
+		return ;
+	chr_format(wc);
 }
 
 void				ft_wchr(wchar_t wc)

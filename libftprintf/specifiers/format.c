@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/10 19:26:05 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/15 15:49:23 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@
 #include "ft_expand_ret.h"
 #include "prefix.h"
 
+#ifndef G_ERROR
+# define G_ERROR 1
+#endif
+
+extern _Bool		g_error;
 extern t_flags		g_flags;
 extern t_options	g_options;
 extern t_prefix		g_prefix;
@@ -111,8 +116,12 @@ extern inline void				format(uintmax_t nb)
 		? g_prefix.len : g_options.precision;
 	size = size > g_options.width ? g_prefix.len : g_options.width;
 	size += g_prefix.size;
-	while (g_ret.i + size >= g_ret.max)
-		ft_expand_ret(size); // to check if space ok INT_MAX ?
+	if ((int)((unsigned int)(g_ret.i + size)) < 0 && (g_error = G_ERROR))
+		return ;
+	if (g_ret.i + size >= g_ret.max)
+		ft_expand_ret(size);
+	if (g_error)
+		return ;
 	width_precision();
 	ret_nbr(nb, g_prefix.len);
 	g_ret.i += g_prefix.len;

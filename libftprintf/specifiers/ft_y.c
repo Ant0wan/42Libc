@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 17:38:39 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/11 19:14:18 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/15 15:50:21 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,12 @@ static inline void	ffff_coloring(unsigned short value)
 
 void				ft_y(unsigned short value)
 {
-	while (g_ret.i + 14 >= g_ret.max)
-		ft_expand_ret(14); // protect with errno
+	if ((int)((unsigned int)(g_ret.i + 14)) < 0 && (g_error = G_ERROR))
+		return ;
+	if (g_ret.i + 14 >= g_ret.max)
+		ft_expand_ret(14);
+	if (g_error)
+		return ;
 	g_ret.ret[++g_ret.i] = '\e';
 	g_ret.ret[++g_ret.i] = '[';
 	if (g_flags.plus)
