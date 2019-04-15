@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/15 16:09:47 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/15 16:36:16 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,20 @@ int main(void)
 	printf("%d\n", ret2);
 	printf("\n\n");
 
+	ret1 = printf("%p", 0);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%p", 0);
+	printf("%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("% kZoooo");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("% kZoooo");
+	printf("%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("%k");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%k");
+	printf("%d\n", ret2);
+	printf("\n\n");
 	return (0);
 }

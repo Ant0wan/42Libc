@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/11 16:45:06 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/15 16:46:28 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,24 +83,25 @@ static inline _Bool	prs_specifier(const char *format, va_list ap)
 	void	*(*f)();
 	_Bool	specifier;
 
-	while (!(format[g_ret.fmt_i] ^ '%'))
+	while ((specifier = 1) && !(format[g_ret.fmt_i] ^ '%'))
 	{
 		reset_globals();
-		specifier = 1;
 		while (format[++g_ret.fmt_i] && specifier)
 		{
 			if (get_fwpm(format, ap, &specifier))
 				continue ;
 			else if ((f = dispatcher(format[g_ret.fmt_i])))
 			{
-				specifier = 0;
-				if (g_options.val_dol)
+				if ((specifier = 0) && g_options.val_dol)
 					va_copy(ap, g_ap_origin);
 				wrapper(f, ap);
 			}
 			else if (specifier)
+			{
 				if (get_modifier(format))
 					specifier = 0;
+				ft_chr(format[g_ret.fmt_i]);
+			}
 		}
 	}
 	return (0);
