@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/08 16:34:06 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/15 18:55:18 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 extern t_flags		g_flags;
 extern t_options	g_options;
 extern t_prefix		g_prefix;
+extern t_modifier	g_modifier;
 
 void							ft_octal(uintmax_t nb)
 {
@@ -36,4 +37,12 @@ void							ft_octal(uintmax_t nb)
 	if (g_options.precision > g_prefix.len)
 		g_prefix.size = 0;
 	format(nb);
+}
+
+void							ft_upoc(uintmax_t nb)
+{
+	g_modifier.l = 1;
+	g_modifier.h = 0;
+	g_modifier.hh = 0;
+	ft_octal(nb);
 }

@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/15 18:45:53 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/15 18:58:40 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,9 +103,9 @@ int main(void)
 	ret2 = ft_printf("{% S}", NULL);
 	printf("%d\n", ret2);
 	printf("\n\n");
-	ret1 = printf("{% s}", NULL);
+	ret1 = printf("{% 4.3s}", NULL);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("{% s}", NULL);
+	ret2 = ft_printf("{% 4.3s}", NULL);
 	printf("%d\n", ret2);
 	printf("\n\n");
 	ret1 = printf("%.0p, %.p", 0, 0);
@@ -119,9 +119,19 @@ int main(void)
 	printf("%d\n", ret2);
 	printf("\n\n");
 	ret1 = printf("%O", LONG_MIN);
-	printf("%d\n", ret1);
+	printf("|%d\n", ret1);
 	ret2 = ft_printf("%O", LONG_MIN);
-	printf("%d\n", ret2);
+	printf("|%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("% llO", LONG_MAX);
+	printf("|%d\n", ret1);
+	ret2 = ft_printf("% llO", LONG_MAX);
+	printf("|%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("%#llO", ULONG_MAX);
+	printf("|%d\n", ret1);
+	ret2 = ft_printf("%#llO", ULONG_MAX);
+	printf("|%d\n", ret2);
 	printf("\n\n");
 	ret1 = printf("{%*d}", -5, 42);
 	printf("%d\n", ret1);
