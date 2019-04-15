@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/15 15:49:25 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/15 16:15:12 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@
 #include "ft_wchar.h"
 #include "utf8.h"
 
+#ifndef G_ERROR
+# define G_ERROR 1
+#endif
+
+extern _Bool		g_error;
 extern t_flags		g_flags;
 extern t_options	g_options;
 extern t_modifier	g_modifier;
@@ -59,7 +64,7 @@ extern inline void				str_format(void *str)
 	int	size;
 
 	size = g_options.width < g_prefix.len ? g_prefix.len : g_options.width;
-	if ((int)((unsigned int)(g_ret.i + size)) < 0 && (g_error = G_ERROR))
+	if ((int)((unsigned int)(g_ret.i + size)) < -1 && (g_error = G_ERROR))
 		return ;
 	if (g_ret.i + size >= g_ret.max)
 		ft_expand_ret(size);

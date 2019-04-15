@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/15 15:49:23 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/15 16:12:27 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ extern inline void				format(uintmax_t nb)
 		? g_prefix.len : g_options.precision;
 	size = size > g_options.width ? g_prefix.len : g_options.width;
 	size += g_prefix.size;
-	if ((int)((unsigned int)(g_ret.i + size)) < 0 && (g_error = G_ERROR))
+	if ((int)((unsigned int)(g_ret.i + size)) < -1 && (g_error = G_ERROR))
 		return ;
 	if (g_ret.i + size >= g_ret.max)
 		ft_expand_ret(size);
