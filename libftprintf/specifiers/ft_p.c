@@ -6,15 +6,16 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 17:00:19 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/08 16:17:08 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/15 18:35:48 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stddef.h>
 
 #include "prs_struct.h"
-#include "specifiers.h"
+#include "prefix.h"
+#include "cast.h"
+#include "format.h"
 
 #ifndef X64BYTES
 # define X64BYTES 8
@@ -25,9 +26,24 @@ extern t_modifier	g_modifier;
 
 void	ft_p(void *ptr)
 {
+	uintmax_t p_ptr;
+
+	p_ptr = (uintmax_t)ptr;
 	g_flags.hash = 1;
 	g_flags.apost = 0;
 	if (sizeof(void*) == X64BYTES)
 		g_modifier.l = 1;
-	ft_lhexa((intmax_t)ptr);
+	reset_prefix();
+	ft_cast_unbr(&p_ptr);
+	g_prefix.base = 16;
+	g_flags.plus = 0;
+	g_flags.apost = 0;
+	if (g_flags.hash)
+	{
+		g_prefix.size = 2;
+		g_prefix.prefix = "0x";
+	}
+	g_prefix.ch_base = "0123456789abcdef";
+	g_prefix.len = ft_unbrlen(p_ptr);
+	format(p_ptr);
 }

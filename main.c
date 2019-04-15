@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/15 17:12:18 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/15 18:25:46 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,6 +133,11 @@ int main(void)
 	ret2 = ft_printf("{%f}{%F}", 1.42, 1.42);
 	printf("%d\n", ret2);
 	printf("\n\n");
+	printf("\n\n");
+	printf("\n\n");
+	printf("\n\n");
+	printf("\nUNDEFINED BEHAVIOR\n");
+	printf("\n\n");
 	// UNDEFINED BEHAVIOR //
 	ret1 = printf("%jhd", 9223372036854775807);
 	printf("%d\n", ret1);
@@ -157,6 +162,18 @@ int main(void)
 	ret1 = printf("%010s is a string", "this");
 	printf("%d\n", ret1);
 	ret2 = ft_printf("%010s is a string", "this");
+	printf("%d\n", ret2);
+	printf("\n\n");
+	printf("\n\n");
+	printf("\n\n");
+	printf("\n\n");
+	printf("\n\n");
+	printf("\nDEFINED\n");
+	printf("\n\n");
+	printf("\n\n");
+	ret1 = printf("%p", &ret1);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%p", &ret1);
 	printf("%d\n", ret2);
 	printf("\n\n");
 	return (0);
