@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/15 16:36:16 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/15 17:12:18 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,9 +88,75 @@ int main(void)
 	ret2 = ft_printf("% kZoooo");
 	printf("%d\n", ret2);
 	printf("\n\n");
-	ret1 = printf("%k");
+	ret1 = printf("{%5p}", 0);
 	printf("%d\n", ret1);
-	ret2 = ft_printf("%k");
+	ret2 = ft_printf("{%5p}", 0);
+	printf("%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("{%03c}", 0);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("{%03c}", 0);
+	printf("%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("{% S}", NULL);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("{% S}", NULL);
+	printf("%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("%.0p, %.p", 0, 0);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%.0p, %.p", 0, 0);
+	printf("%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("%.p, %.0p", 0, 0);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%.p, %.0p", 0, 0);
+	printf("%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("%O", LONG_MIN);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%O", LONG_MIN);
+	printf("%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("{%*d}", -5, 42);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("{%*d}", -5, 42);
+	printf("%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("{%05.*d}", -15, 42);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("{%05.*d}", -15, 42);
+	printf("%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("{%f}{%F}", 1.42, 1.42);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("{%f}{%F}", 1.42, 1.42);
+	printf("%d\n", ret2);
+	printf("\n\n");
+	// UNDEFINED BEHAVIOR //
+	ret1 = printf("%jhd", 9223372036854775807);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%jhd", 9223372036854775807);
+	printf("%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("@main_ftprintf: %####0000 33..1..#00d\n", 256);
+	printf("%d\n", ret1);
+	ret2 = ft_printf("@main_ftprintf: %####0000 33..1..#00d\n", 256);
+	printf("%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("@main_ftprintf: %####0000 33..1..#00s\n", "DO");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("@main_ftprintf: %####0000 33..1..#00s\n", "DO");
+	printf("%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("%05%");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%05%");
+	printf("%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("%010s is a string", "this");
+	printf("%d\n", ret1);
+	ret2 = ft_printf("%010s is a string", "this");
 	printf("%d\n", ret2);
 	printf("\n\n");
 	return (0);
