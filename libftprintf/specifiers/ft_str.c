@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/10 19:03:26 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/15 18:49:08 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@
 # define NULL_STR "(null)"
 #endif
 
+#ifndef NULL_WSTR
+# define NULL_WSTR L"(null)"
+#endif
+
 extern t_options	g_options;
 extern t_modifier	g_modifier;
 extern t_prefix		g_prefix;
@@ -29,8 +33,10 @@ extern t_prefix		g_prefix;
 void	ft_str(void *str)
 {
 	reset_prefix();
-	if (!(str))
+	if (!(str) && !(g_modifier.l))
 		str = NULL_STR;
+	else if (!(str))
+		str = NULL_WSTR;
 	if (g_modifier.l)
 		g_prefix.len = ft_ewcswidth((wchar_t*)str);
 	else
