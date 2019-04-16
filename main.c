@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/16 15:15:32 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/16 16:12:06 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -216,10 +216,26 @@ int main(void)
 	ret2 = ft_printf("{%03c}", 0);
 	printf("|%d\n", ret2);
 	printf("\n\n");
-	ret1 = printf("{%05.c}", 0);
+	ret1 = printf("{%-13p}", &strlen);
 	printf("|%d\n", ret1);
-	ret2 = ft_printf("{%05.c}", 0);
+	ret2 = ft_printf("{%-13p}", &strlen);
 	printf("|%d\n", ret2);
 	printf("\n\n");
+	ret1 = printf("{%13p}", &strlen);
+	printf("|%d\n", ret1);
+	ret2 = ft_printf("{%13p}", &strlen);
+	printf("|%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("{%*d}", -5, 42);
+	printf("|%d\n", ret1);
+	ret2 = ft_printf("{%*d}", -5, 42);
+	printf("|%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("{%05.*d}", -15, 42);
+	printf("|%d\n", ret1);
+	ret2 = ft_printf("{%05.*d}", -15, 42);
+	printf("|%d\n", ret2);
+	printf("\n\n");
+
 	return (0);
 }
