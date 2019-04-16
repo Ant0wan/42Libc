@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/16 16:07:10 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/16 17:00:03 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,8 @@ extern inline void				format(uintmax_t nb)
 	width_precision();
 	ret_nbr(nb, g_prefix.len);
 	g_ret.i += g_prefix.len;
-	while (g_flags.minus && g_options.width - g_prefix.len > 0)
+	size = g_options.width - g_prefix.len;
+	while (g_flags.minus && g_options.width - g_prefix.len - g_prefix.size > 0)
 	{
 		--g_options.width;
 		g_ret.ret[++g_ret.i] = ' ';

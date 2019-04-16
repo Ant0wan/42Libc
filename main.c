@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/16 16:12:06 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/16 17:00:27 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,21 +62,21 @@ int main(void)
 	printf("%d\n", ret1);
 
 
-	ret1 = printf("hello%4294967298d|", 1234);
-	printf("%d\n", ret1);
-	ret2 = ft_printf("hello%4294967298d|", 1234);
-	printf("%d\n", ret2);
-	printf("\n\n");
-	ret1 = printf("wd%2147483647d|", 1234);
-	printf("%d\n", ret1);
-	ret2 = ft_printf("wd%2147483647d|", 1234);
-	printf("%d\n", ret2);
-	printf("\n\n");
-	ret1 = printf("%-4294967292.2s is a string", "");
-	printf("%d\n", ret1);
-	ret2 = ft_printf("%-4294967292.2s is a string", "");
-	printf("%d\n", ret2);
-	printf("\n\n");
+//	ret1 = printf("hello%4294967298d|", 1234);
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("hello%4294967298d|", 1234);
+//	printf("%d\n", ret2);
+//	printf("\n\n");
+//	ret1 = printf("wd%2147483647d|", 1234);
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("wd%2147483647d|", 1234);
+//	printf("%d\n", ret2);
+//	printf("\n\n");
+//	ret1 = printf("%-4294967292.2s is a string", "");
+//	printf("%d\n", ret1);
+//	ret2 = ft_printf("%-4294967292.2s is a string", "");
+//	printf("%d\n", ret2);
+//	printf("\n\n");
 
 	ret1 = printf("%p", 0);
 	printf("%d\n", ret1);
@@ -221,6 +221,21 @@ int main(void)
 	ret2 = ft_printf("{%-13p}", &strlen);
 	printf("|%d\n", ret2);
 	printf("\n\n");
+	ret1 = printf("{%-14p}", &strlen);
+	printf("|%d\n", ret1);
+	ret2 = ft_printf("{%-14p}", &strlen);
+	printf("|%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("{%-12p}", &strlen);
+	printf("|%d\n", ret1);
+	ret2 = ft_printf("{%-12p}", &strlen);
+	printf("|%d\n", ret2);
+	printf("\n\n");
+	ret1 = printf("{%-#6lx}", (unsigned long)121354);
+	printf("|%d\n", ret1);
+	ret2 = ft_printf("{%-#6lx}", (unsigned long)121354);
+	printf("|%d\n", ret2);
+	printf("\n\n");
 	ret1 = printf("{%13p}", &strlen);
 	printf("|%d\n", ret1);
 	ret2 = ft_printf("{%13p}", &strlen);
@@ -236,6 +251,16 @@ int main(void)
 	ret2 = ft_printf("{%05.*d}", -15, 42);
 	printf("|%d\n", ret2);
 	printf("\n\n");
+	ret1 = printf("{%05.0d}", 42);
+	printf("|%d\n", ret1);
+	ret2 = ft_printf("{%05.0d}", 42);
+	printf("|%d\n", ret2);
+	printf("\n\n");
 
+	ret1 = printf("{%-30S}", L"ÊM-M-^QÊM-^XØ‰∏M-ÂM-^O™ÁM-^L´„M-M-^B");
+	printf("|%d\n", ret1);
+	ret2 = ft_printf("{%-30S}", L"ÊM-M-^QÊM-^XØ‰∏M-ÂM-^O™ÁM-^L´„M-M-^B");
+	printf("|%d\n", ret2);
+	printf("\n\n");
 	return (0);
 }
