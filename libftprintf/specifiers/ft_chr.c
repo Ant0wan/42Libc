@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/15 16:12:02 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/16 15:00:04 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static inline void	chr_format(wchar_t wc)
 	while (!(g_flags.minus) && g_options.width - g_prefix.len > 0)
 	{
 		--g_options.width;
-		g_ret.ret[++g_ret.i] = ' ';
+		g_ret.ret[++g_ret.i] = g_flags.zero ? '0' : ' ';
 	}
 	if (g_modifier.l)
 		ret_wc(wc);
