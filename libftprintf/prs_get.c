@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/28 12:17:11 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/15 19:13:05 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/16 16:07:25 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,5 +144,4 @@ extern inline void		get_precision(const char *format, va_list ap)
 			g_options.precision = 0;
 		}
 	}
-	g_flags.zero = 0;
 }

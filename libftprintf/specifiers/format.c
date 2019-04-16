@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/15 16:12:27 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/16 16:07:10 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,7 @@ extern inline void				format(uintmax_t nb)
 {
 	int	size;
 
+	g_flags.zero = g_options.precision != -1 ? 0 : g_flags.zero;
 	g_prefix.len = !(g_options.precision) && !(nb) ? 0 : g_prefix.len;
 	size = g_prefix.len > g_options.precision
 		? g_prefix.len : g_options.precision;
