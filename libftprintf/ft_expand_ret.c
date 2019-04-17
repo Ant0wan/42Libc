@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 15:49:12 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/10 19:24:37 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/17 10:12:20 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include "libft.h"
 
 #ifndef BUFF
-# define BUFF 2048
+# define BUFF 512
 #endif
 
 #ifndef G_ERROR

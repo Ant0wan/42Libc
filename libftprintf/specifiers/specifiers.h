@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 17:44:58 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/15 19:17:39 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/16 17:35:04 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,7 @@ void	ft_lo(uintmax_t nb);
 void	ft_p(void *ptr);
 
 void	ft_y(unsigned short value);
+
+void	ft_double(long double nb);
 
 #endif
