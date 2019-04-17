@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 16:10:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/15 15:46:05 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/17 10:44:05 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 
 typedef struct	s_ret
 {
-	char	*ret;
-	int		i;
-	int		fmt_i;
-	int		max;
+	char *restrict	ret;
+	int				i;
+	int				fmt_i;
+	int				max;
 }				t_ret;
 
 extern t_ret	g_ret;

@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 15:49:12 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/17 10:12:20 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/17 10:43:41 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ extern _Bool		g_error;
 
 extern inline void	ft_expand_ret(int size)
 {
-	void	*new_ret;
+	void *restrict	new_ret;
 
 	g_ret.max += size < BUFF ? BUFF : size;
 	if (!(new_ret = (char*)ft_memalloc(sizeof(char) * g_ret.max + 1)))

@@ -6,14 +6,14 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/19 14:28:19 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/11 16:56:46 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/17 11:09:51 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "ft_wchar.h"
 
-int	ft_ewcsnwidth(const wchar_t *pwcs, size_t n)
+int	ft_ewcsnwidth(const wchar_t *restrict pwcs, size_t n)
 {
 	size_t	ret;
 	int		max_nb_unicode;

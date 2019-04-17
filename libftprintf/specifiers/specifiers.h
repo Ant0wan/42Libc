@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 17:44:58 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/16 17:35:04 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/17 11:08:24 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ void	ft_chr(wchar_t wc);
 
 void	ft_wchr(wchar_t wc);
 
-void	ft_str(char *str);
+void	ft_str(void *restrict str);
 
-void	ft_wstr(wchar_t *wcs);
+void	ft_wstr(void *restrict wcs);
 
-void	ft_n(int *ptr);
+void	ft_n(int *restrict ptr);
 
 void	ft_nbr(intmax_t nb);
 
@@ -47,7 +47,7 @@ void	ft_ld(intmax_t nb);
 
 void	ft_lo(uintmax_t nb);
 
-void	ft_p(void *ptr);
+void	ft_p(void *restrict ptr);
 
 void	ft_y(unsigned short value);
 

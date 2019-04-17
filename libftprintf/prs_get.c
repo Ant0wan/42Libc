@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/28 12:17:11 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/16 16:07:25 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/17 10:51:26 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ extern t_ret		g_ret;
 extern t_modifier	g_modifier;
 extern t_options	g_options;
 
-extern inline void		get_flags(const char *format, _Bool *specifier)
+extern inline void		get_flags(const char *restrict format
+		, _Bool *restrict specifier)
 {
 	if (!(format[g_ret.fmt_i] ^ '#'))
 		g_flags.hash = 1;
@@ -46,7 +47,7 @@ extern inline void		get_flags(const char *format, _Bool *specifier)
 	}
 }
 
-static inline _Bool		get_additional_modifier(const char *format)
+static inline _Bool		get_additional_modifier(const char *restrict format)
 {
 	if (!(format[g_ret.fmt_i] ^ 'j'))
 	{
@@ -72,7 +73,7 @@ static inline _Bool		get_additional_modifier(const char *format)
 		return (1);
 }
 
-extern inline _Bool		get_modifier(const char *format)
+extern inline _Bool		get_modifier(const char *restrict format)
 {
 	if (!(format[g_ret.fmt_i] ^ 'l'))
 	{
@@ -101,7 +102,8 @@ extern inline _Bool		get_modifier(const char *format)
 	return (1);
 }
 
-extern inline void		ft_get_width_or_dollar(const char *str, _Bool dot)
+extern inline void		ft_get_width_or_dollar(const char *restrict str
+		, _Bool dot)
 {
 	int	nbr;
 
@@ -125,7 +127,7 @@ extern inline void		ft_get_width_or_dollar(const char *str, _Bool dot)
 	}
 }
 
-extern inline void		get_precision(const char *format, va_list ap)
+extern inline void		get_precision(const char *restrict format, va_list ap)
 {
 	while (!(format[g_ret.fmt_i] ^ '.'))
 		++g_ret.fmt_i;

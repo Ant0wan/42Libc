@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 15:19:44 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/10 18:12:04 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/17 11:10:10 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ int		ft_ewcwidth(wchar_t ws);
 
 int		ft_ewcswidth(const wchar_t *pwcs);
 
-int		ft_ewcsnwidth(const wchar_t *pwcs, size_t n);
+int		ft_ewcsnwidth(const wchar_t *restrict pwcs, size_t n);
 
 #endif

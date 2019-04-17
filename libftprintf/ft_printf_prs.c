@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/15 16:58:53 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/17 10:48:01 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ static inline void	reset_globals(void)
 	g_modifier.upl = 0;
 }
 
-static inline _Bool	get_fwpm(const char *format, va_list ap, _Bool *specifier)
+static inline _Bool	get_fwpm(const char *restrict format, va_list ap
+		, _Bool *restrict specifier)
 {
 	if (format[g_ret.fmt_i] > '0' && format[g_ret.fmt_i] <= '9')
 	{
@@ -78,7 +79,7 @@ static inline _Bool	get_fwpm(const char *format, va_list ap, _Bool *specifier)
 		return (0);
 }
 
-static inline _Bool	prs_specifier(const char *format, va_list ap)
+static inline _Bool	prs_specifier(const char *restrict format, va_list ap)
 {
 	void	*(*f)();
 	_Bool	specifier;
@@ -106,7 +107,7 @@ static inline _Bool	prs_specifier(const char *format, va_list ap)
 	return (0);
 }
 
-int					printf_prs(const char *format, va_list ap)
+int					printf_prs(const char *restrict format, va_list ap)
 {
 	g_ret.fmt_i = -1;
 	va_copy(g_ap_origin, ap);
