@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/16 17:00:03 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/17 11:19:27 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,24 +109,23 @@ static inline void				width_precision(void)
 
 extern inline void				format(uintmax_t nb)
 {
-	int	size;
+	int	z;
 
 	g_flags.zero = g_options.precision != -1 ? 0 : g_flags.zero;
 	g_prefix.len = !(g_options.precision) && !(nb) ? 0 : g_prefix.len;
-	size = g_prefix.len > g_options.precision
-		? g_prefix.len : g_options.precision;
-	size = size > g_options.width ? g_prefix.len : g_options.width;
-	size += g_prefix.size;
-	if ((int)((unsigned int)(g_ret.i + size)) < -1 && (g_error = G_ERROR))
+	z = g_prefix.len > g_options.precision ? g_prefix.len : g_options.precision;
+	z = z > g_options.width ? g_prefix.len : g_options.width;
+	z += g_prefix.size;
+	if ((int)((unsigned int)(g_ret.i + z)) < -1 && (g_error = G_ERROR))
 		return ;
-	if (g_ret.i + size >= g_ret.max)
-		ft_expand_ret(size);
+	if (g_ret.i + z >= g_ret.max)
+		ft_expand_ret(z);
 	if (g_error)
 		return ;
 	width_precision();
 	ret_nbr(nb, g_prefix.len);
 	g_ret.i += g_prefix.len;
-	size = g_options.width - g_prefix.len;
+	z = g_options.width - g_prefix.len;
 	while (g_flags.minus && g_options.width - g_prefix.len - g_prefix.size > 0)
 	{
 		--g_options.width;

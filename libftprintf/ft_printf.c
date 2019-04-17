@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/22 14:27:49 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/15 18:42:38 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/17 11:18:18 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,8 @@
 
 #include "ft_vdprintf.h"
 
-// OPTIMISER les algos
 // REVOIR les includes minimums
-// revoir le padding des structures
 // revoir le makefile
-// voir pour les dates retour de ctime au format LS
 // voir pour des flags d'optimisation de la compilation des lib
 // rediger la doc de chaque lib README.md
 // rediger la page man de ft_printf

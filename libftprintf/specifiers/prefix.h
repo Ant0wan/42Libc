@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 14:27:45 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/17 10:41:57 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/17 11:14:09 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef struct	s_prefi
 	char *restrict			prefix;
 	char *restrict			ch_base;
 	struct lconv *restrict	lc;
-	unsigned short			len:5;
+	unsigned short			len;
 	unsigned short			base:5;
 	unsigned short			size:2;
 	_Bool					neg:1;
