@@ -6,19 +6,17 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 14:09:45 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/15 18:02:45 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/17 15:19:04 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	ft_bzero(void *s, size_t n)
+extern inline void	ft_bzero(void *s, size_t n)
 {
-	size_t			i;
-	unsigned char	*s_ptr;
+	unsigned char	*ptr;
 
-	i = -1;
-	s_ptr = (unsigned char*)s;
-	while (++i < n)
-		s_ptr[i] = 0;
+	ptr = s;
+	while (n--)
+		*ptr++ = 0;
 }

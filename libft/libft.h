@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 11:55:45 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/20 10:29:15 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/17 15:23:18 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 # include <stdlib.h>
 
-void			ft_bzero(void *s, size_t n) __attribute__((nonnull(1)));
+void			ft_bzero(void *s, size_t n) __attribute__
+				((nonnull(1),always_inline));
 
 int				ft_isalpha(int c);
 
@@ -37,15 +38,15 @@ int				ft_strcmp(const char *s1, const char *s2) __attribute__
 				((nonnull(1,2)));
 
 int				ft_strncmp(const char *s1, const char *s2,
-		size_t n) __attribute__((nonnull(1,2)));
+				size_t n) __attribute__((nonnull(1,2)));
 
 int				ft_memcmp(const void *s1, const void *s2,
-		size_t n) __attribute__((nonnull(1,2)));
+				size_t n) __attribute__((nonnull(1,2)));
 
 size_t			ft_strlen(const char *s) __attribute__((nonnull(1)));
 
 size_t			ft_strlcat(char *dst, const char *src,
-		size_t size) __attribute__((nonnull(1,2)));
+				size_t size) __attribute__((nonnull(1,2)));
 
 void			*ft_memset(void	*b, int c, size_t len) __attribute__
 				((nonnull(1)));
@@ -54,16 +55,16 @@ void			*ft_memcpy(void *dst, const void *src, size_t n) __attribute__
 				((nonnull(1,2)));
 
 void			*ft_memccpy(void *dst, const void *src, int c,
-		size_t n) __attribute__((nonnull(1,2)));
+				size_t n) __attribute__((nonnull(1,2)));
 
 void			*ft_memmove(void *dst, const void *src,
-		size_t len) __attribute__((nonnull(1,2)));
+				size_t len) __attribute__((nonnull(1,2)));
 
 void			*ft_memchr(const void *s, int c, size_t n) __attribute__
 				((nonnull(1)));
 
 char			*ft_strstr(const char *haystack, const char
-		*needle) __attribute__((nonnull(1,2)));
+				*needle) __attribute__((nonnull(1,2)));
 
 char			*ft_strcat(char *s1, const char *s2) __attribute__
 				((nonnull(1,2)));
@@ -75,7 +76,7 @@ char			*ft_strcpy(char *dst, const char *src) __attribute__
 				((nonnull(1,2)));
 
 char			*ft_strncpy(char *dst, const char *src,
-		size_t len) __attribute__((nonnull(1,2)));
+				size_t len) __attribute__((nonnull(1,2)));
 
 char			*ft_strdup(const char *s1) __attribute__
 				((nonnull(1)));
@@ -84,7 +85,7 @@ char			*ft_strndup(const char *s1, size_t len) __attribute__
 				((nonnull(1)));
 
 char			*ft_strnstr(const char *haystack, const char *neddle,
-		size_t len) __attribute__((nonnull(1,2)));
+				size_t len) __attribute__((nonnull(1,2)));
 
 char			*ft_strchr(const char *s, int c) __attribute__
 				((nonnull(1)));
@@ -139,7 +140,7 @@ int				ft_strequ(char const *s1, char const *s2) __attribute__
 
 int				ft_strnequ(char const *s1, char const *s2, size_t n);
 
-void			*ft_memalloc(size_t size) __attribute__((alloc_size(1)));
+void			*ft_memalloc(size_t size) __attribute__((always_inline));
 
 char			*ft_strnew(size_t size) __attribute__((alloc_size(1)));
 
