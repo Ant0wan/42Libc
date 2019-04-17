@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/04/17 10:58:46 by abarthel         ###   ########.fr        #
+#    Updated: 2019/04/17 13:46:46 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,11 @@ NAME = libftprintf.a
 
 CC = gcc
 
-FLAGS = -Werror -Wall -Wextra
+# Optimization flags used to get better performance on use of intmax_t, 
+# inlines and restricts
+OPTI_FLAGS = -fsplit-wide-types -fdevirtualize-speculatively -fstrict-aliasing
+
+FLAGS = -Werror -Wall -Wextra $(OPTI_FLAGS)
 
 ############################ OBJECTS #########################################
 

@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 16:13:29 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/17 10:12:30 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/17 13:44:18 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 #endif
 
 #ifndef BUFF
-# define BUFF 512
+# define BUFF 128
 #endif
 
 int	ft_vasprintf(char **ret, const char *format, va_list ap)
