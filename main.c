@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/18 14:30:54 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/18 14:38:20 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,9 @@ int main(void)
 	//	void	(*f)();
 
 //	setlocale(LC_ALL, "");
+//	setlocale(LC_ALL, "en_US.UTF-8");
+//	setlocale(LC_ALL, "de_DE.UTF-8");
+//	setlocale(LC_TIME, "ja_JP.UTF-8");
 	//	f = dispatcher("o");
 	//	printf("%d\n", (int)f);
 	//	f = dispatcher("d");
@@ -80,9 +83,9 @@ int main(void)
 	while (ret1--)
 	{
 //		printf("|%f|", 1234.56789);
-		printf("|% 0-40.20Lf|", fpn);
+		printf("|% '0-40.20Lf|", fpn);
 		printf("\n");
-		ft_printf("|% 0-40.20Lf|", fpn);
+		ft_printf("|% '0-40.20Lf|", fpn);
 		printf("\n\n");
 	}
 	return (0);
