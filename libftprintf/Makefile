@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/07 11:08:30 by abarthel          #+#    #+#              #
-#    Updated: 2019/04/15 18:39:54 by abarthel         ###   ########.fr        #
+#    Updated: 2019/04/18 12:32:18 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,9 @@ NAME = libftprintf
 
 CC = gcc
 
-FLAGS = -Werror -Wall -Wextra
+OPTI_FLAGS = -fstrict-aliasing
+
+FLAGS = -Werror -Wall -Wextra $(OPTI_FLAGS)
 
 INCS = -I./dispatcher/ -I./specifiers/ -I./../libftwchar/ -I./../libftwchar/utf8/ -I./../libft/
 

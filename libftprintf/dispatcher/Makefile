@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/07 11:08:30 by abarthel          #+#    #+#              #
-#    Updated: 2019/04/15 18:40:03 by abarthel         ###   ########.fr        #
+#    Updated: 2019/04/18 12:13:22 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,9 @@ NAME = dispatcher
 
 CC = gcc
 
-FLAGS = -Werror -Wall -Wextra
+OPTI_FLAGS = -fstrict-aliasing
+
+FLAGS = -Werror -Wall -Wextra $(OPTI_FLAGS)
 
 INCS = -I./../../libft/ -I./../../libftwchar/ -I./../specifiers/ -I./../
 
