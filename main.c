@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:27:50 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/17 10:12:51 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/18 14:30:54 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,14 +72,18 @@ int main(void)
 	int ret1;
 //	int ret2;
 
-	ret1 = 20000;
+	ret1 = 30000;
+	long double fpn = 11230.354541;
 
-
+		printf("\n\n");
+		printf("\n\n");
 	while (ret1--)
 	{
-		ft_printf("%*d %s %*d %s 2018_paris 15150 April 12 13.01  %s\n",3, 16, "-rw-r--r--", 4, 165, "abarthel", "dir_name" );
-		ft_printf("%*d %s %*d %s 2018_paris 15150 April 12 13.01  %s\n",3, 16, "-rw-r--r--", 4, 165, "abarthel", "a.out");
-		ft_printf("%*d %s %*d %s 2018_paris 15150 April 12 13.01  %s\n",3, 16, "-rw-r--r--", 4, 165, "abarthel", "main.c");
+//		printf("|%f|", 1234.56789);
+		printf("|% 0-40.20Lf|", fpn);
+		printf("\n");
+		ft_printf("|% 0-40.20Lf|", fpn);
+		printf("\n\n");
 	}
 	return (0);
 }

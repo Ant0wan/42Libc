@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 17:44:58 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/18 12:22:23 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/18 14:28:12 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SPECIFIERS_H
 
 # include <stdlib.h>
+# include <stdarg.h>
 
 void	ft_chr(wchar_t wc);
 
@@ -51,6 +52,6 @@ void	ft_p(void *restrict ptr);
 
 void	ft_y(unsigned short value);
 
-void	ft_double(long double nb);
+void	ft_double(va_list ap);
 
 #endif
