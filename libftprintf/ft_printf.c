@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/22 14:27:49 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/17 11:18:18 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/04/19 10:22:17 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ft_vdprintf.h"
 
-// REVOIR les includes minimums
+// REVOIR les includes minimums et les linkage units des globales
 // revoir le makefile
 // voir pour des flags d'optimisation de la compilation des lib
 // rediger la doc de chaque lib README.md
