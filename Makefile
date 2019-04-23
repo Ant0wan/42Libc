@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 15:14:08 by abarthel          #+#    #+#              #
-#    Updated: 2019/04/19 10:11:25 by abarthel         ###   ########.fr        #
+#    Updated: 2019/04/23 11:40:12 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ DISPATCHER = dispatcher.o \
 SPECIFIERS_PATH = ./libftprintf/specifiers/
 SPECIFIERS = format.o prefix.o cast.o ft_nbr.o ft_unbr.o ft_hexa.o ft_octal.o \
 			 ft_p.o ft_b.o ft_n.o ft_y.o ft_str.o str_format.o ft_chr.o \
-			 ft_double.o
+			 ft_double.o grisu.o \
 
 LIBFT_PATH = ./libft/
 LIBFT = ft_bzero.o ft_isalpha.o ft_isdigit.o ft_isalnum.o \
