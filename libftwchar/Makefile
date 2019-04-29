@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 11:47:48 by abarthel          #+#    #+#              #
-#    Updated: 2019/04/15 18:40:26 by abarthel         ###   ########.fr        #
+#    Updated: 2019/04/29 11:40:36 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME = libftwchar.a
 
 CC = gcc
 
-FLAGS = -Werror -Wall -Wextra
+FLAGS = -Werror -Wall -Wextra -fno-builtin -O2
 
 
 ############################ OBJECTS #########################################

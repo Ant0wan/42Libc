@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/07 11:08:30 by abarthel          #+#    #+#              #
-#    Updated: 2019/04/15 18:40:35 by abarthel         ###   ########.fr        #
+#    Updated: 2019/04/29 11:40:25 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME = utf8
 
 CC = gcc
 
-FLAGS = -Werror -Wall -Wextra
+FLAGS = -Werror -Wall -Wextra -fno-builtin -O2
 
 O_FILES = utf8.o \
 
