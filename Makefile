@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 11:47:48 by abarthel          #+#    #+#              #
-#    Updated: 2019/05/08 11:37:28 by abarthel         ###   ########.fr        #
+#    Updated: 2019/05/08 11:51:34 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,9 @@ CC = gcc
 
 FLAGS = -Werror -Wall -Wextra -fno-builtin -O2
 
-$(addprefix $SRC_PATH,%.o) : $(addprefix $SRC_PATH,%.c)
+%.o : %.c
 	@$(CC) $(FLAGS) $< -c -I$(INCLUDES_PATH)
-	@printf "\e[38;5;74m%-20s \e[38;5;85mobject built\n\e[0m" $(basename $@)
+	@printf "\e[38;5;74m%-20s \e[38;5;85mobject built\n\e[0m" $(notdir $(basename $@))
 
 INCLUDES_PATH =	./include/
 INCLUDES = 	cast.h \
@@ -164,7 +164,7 @@ SRC_FILES =	cast.o \
 
 all: $(NAME)
 
-$(NAME): $(SRC_FILES)
+$(NAME): $(addprefix $(SRC_PATH), $(SRC_FILES))
 	@ar rc $(NAME) $(SRC_FILES)
 	@ranlib $(NAME)
 	@printf "\n\e[38;5;82m%4s [\e[1m$(NAME) built]\n\n\e[0m"
