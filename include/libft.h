@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 11:55:45 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/17 15:23:18 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/05/08 12:29:14 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <stdarg.h>
 
 void			ft_bzero(void *s, size_t n) __attribute__
 				((nonnull(1),always_inline));
@@ -203,5 +204,12 @@ int				ft_fprintbits(int fd, char c);
 int				ft_printbits(char c);
 
 size_t			ft_strclen(const char *s, char c) __attribute__((nonnull(1)));
+
+int				ft_printf(const char *restrict format, ...) __attribute__
+				((format(printf,1,2)));
+
+int				ft_vdprintf(int fd, const char *restrict format, va_list ap);
+
+int				ft_vasprintf(char **ret, const char *format, va_list ap);
 
 #endif
