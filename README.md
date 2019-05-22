@@ -1,4 +1,4 @@
-# Libft [![42](https://i.imgur.com/9NXfcit.jpg)](i.imgur.com/9NXfcit.jpg)
+# 42Libc [![42](https://i.imgur.com/9NXfcit.jpg)](i.imgur.com/9NXfcit.jpg)
 
 [![Build Status](https://travis-ci.com/Ant0wan/42Libc.svg?branch=master)](https://travis-ci.com/Ant0wan/42Libc)
 
