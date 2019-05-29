@@ -1,4 +1,4 @@
-# 42Libc [![42](https://i.imgur.com/9NXfcit.jpg)](i.imgur.com/9NXfcit.jpg)
+# 42Libc [![42](https://i.imgur.com/9NXfcit.jpg)](i.imgur.com/9NXfcit.jpg)[![freetime](https://i.imgur.com/8IcDLkc.png)](i.imgur.com/8IcDLkc.png)
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/72deeb1e890b4bd490676de2ccd1cc91)](https://www.codacy.com/app/Ant0wan/42Libc?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Ant0wan/42Libc&amp;utm_campaign=Badge_Grade)
 [![Build Status](https://travis-ci.com/Ant0wan/42Libc.svg?branch=master)](https://travis-ci.com/Ant0wan/42Libc)
