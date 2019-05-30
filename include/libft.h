@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 11:55:45 by abarthel          #+#    #+#             */
-/*   Updated: 2019/05/08 12:29:14 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/05/30 15:09:53 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -207,6 +207,8 @@ size_t			ft_strclen(const char *s, char c) __attribute__((nonnull(1)));
 
 int				ft_printf(const char *restrict format, ...) __attribute__
 				((format(printf,1,2)));
+
+int				ft_asprintf(char **ret, const char *format, ...);
 
 int				ft_vdprintf(int fd, const char *restrict format, va_list ap);
 
