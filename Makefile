@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 11:47:48 by abarthel          #+#    #+#              #
-#    Updated: 2019/05/30 15:10:51 by abarthel         ###   ########.fr        #
+#    Updated: 2019/05/30 16:09:49 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,6 +53,7 @@ SRC_FILES =	cast.o \
 			ft_bzero.o \
 			ft_chr.o \
 			ft_chrsearch.o \
+			ft_dprintf.o \
 			ft_double.o \
 			ft_ewcsnwidth.o \
 			ft_ewcswidth.o \
