@@ -13,6 +13,6 @@
 #ifndef STR_FORMAT_H
 # define STR_FORMAT_H
 
-void	str_format(void *restrict str) __attribute__((nonnull,always_inline));
+void	str_format(void *restrict str) __attribute__((nonnull));
 
 #endif

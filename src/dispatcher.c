@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdint.h>
 
 #include "struct_disp.h"
 #include "specifiers.h"
@@ -55,13 +56,13 @@ static const t_specifier	g_specifier[] =
 
 void	*dispatcher(char c)
 {
-	char	i;
+	int	i;
 
 	i = 0;
-	while (i < NB_PTR && g_specifier[(int)i].type ^ c)
+	while (i < NB_PTR && g_specifier[i].type ^ c)
 		++i;
-	if (!(i ^ NB_PTR))
+	if (i == NB_PTR)
 		return (NULL);
 	else
-		return (g_specifier[(int)i].f);
+		return (g_specifier[i].f);
 }

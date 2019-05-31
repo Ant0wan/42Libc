@@ -26,7 +26,8 @@ char	*ft_strtrim(char const *s)
 		++s;
 	while (s[i])
 		++i;
-	i = i == 0 ? 0 : --i;
+	if (i)
+		--i;
 	while (s[i] == '\t' || s[i] == ' ' || s[i] == '\n')
 		--i;
 	cpy = ft_strsub(s, 0, i + 1);

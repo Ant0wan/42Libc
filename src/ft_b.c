@@ -12,6 +12,7 @@
 
 #include <stdlib.h>
 #include <stddef.h>
+#include <stdint.h>
 
 #include "prs_struct.h"
 #include "specifiers.h"

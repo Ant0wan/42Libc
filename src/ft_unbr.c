@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdint.h>
 
 #include "prs_struct.h"
 #include "specifiers.h"

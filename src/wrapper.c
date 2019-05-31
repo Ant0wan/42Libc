@@ -24,7 +24,10 @@ extern inline void	wrapper(void *(*f)(), va_list ap)
 
 	i = 0;
 	while (++i < g_options.val_dol)
+	{
 		rubbish = va_arg(ap, int);
+		(void)rubbish;
+	}
 	if (f == (void*)&ft_double)
 		f(ap);
 	else

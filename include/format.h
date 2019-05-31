@@ -13,10 +13,10 @@
 #ifndef FORMAT_H
 # define FORMAT_H
 
-void			format(uintmax_t nb) __attribute__((always_inline));
+void			format(uintmax_t nb);
 
-unsigned short	ft_nbrlen(intmax_t nb) __attribute__((always_inline));
+unsigned short	ft_nbrlen(intmax_t nb);
 
-unsigned short	ft_unbrlen(uintmax_t nb) __attribute__((always_inline));
+unsigned short	ft_unbrlen(uintmax_t nb);
 
 #endif

@@ -17,7 +17,7 @@
 # include <stdarg.h>
 
 void			ft_bzero(void *s, size_t n) __attribute__
-				((nonnull(1),always_inline));
+				((nonnull(1)));
 
 int				ft_isalpha(int c);
 
@@ -141,7 +141,7 @@ int				ft_strequ(char const *s1, char const *s2) __attribute__
 
 int				ft_strnequ(char const *s1, char const *s2, size_t n);
 
-void			*ft_memalloc(size_t size) __attribute__((always_inline));
+void			*ft_memalloc(size_t size);
 
 char			*ft_strnew(size_t size) __attribute__((alloc_size(1)));
 

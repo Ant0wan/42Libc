@@ -41,10 +41,8 @@ wchar_t	*ft_wcscpy(wchar_t *ws1, const wchar_t *ws2) __attribute__
 
 int		ft_ewcwidth(wchar_t ws);
 
-int		ft_ewcswidth(const wchar_t *restrict pwcs) __attribute__
-		((always_inline));
+int		ft_ewcswidth(const wchar_t *restrict pwcs);
 
-int		ft_ewcsnwidth(const wchar_t *restrict pwcs, size_t n) __attribute__
-		((always_inline));
+int		ft_ewcsnwidth(const wchar_t *restrict pwcs, size_t n);
 
 #endif

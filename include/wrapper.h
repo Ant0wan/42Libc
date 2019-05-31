@@ -15,6 +15,6 @@
 
 # include <stdarg.h>
 
-void	wrapper(void *(*f)(), va_list ap) __attribute__((always_inline));
+void	wrapper(void *(*f)(), va_list ap);
 
 #endif

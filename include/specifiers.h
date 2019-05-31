@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <stdarg.h>
+# include <stdint.h>
 
 void	ft_chr(wchar_t wc);
 

@@ -28,6 +28,6 @@ typedef struct	s_prefi
 
 extern t_prefix	g_prefix;
 
-void			reset_prefix(void) __attribute__((always_inline));
+void			reset_prefix(void);
 
 #endif

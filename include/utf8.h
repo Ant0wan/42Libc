@@ -15,6 +15,6 @@
 
 # include <stdlib.h>
 
-int	utf8_encoder(wchar_t *wc) __attribute__((always_inline));
+int	utf8_encoder(wchar_t *wc);
 
 #endif

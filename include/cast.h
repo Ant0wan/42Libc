@@ -16,9 +16,9 @@
 # include <stdlib.h>
 
 void	ft_cast_nbr(intmax_t *restrict nb) __attribute__
-		((nonnull,always_inline));
+		((nonnull));
 
 void	ft_cast_unbr(uintmax_t *restrict nb) __attribute__
-		((nonnull,always_inline));
+		((nonnull));
 
 #endif

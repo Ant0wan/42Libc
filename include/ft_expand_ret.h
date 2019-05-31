@@ -13,6 +13,6 @@
 #ifndef FT_EXPAND_RET_H
 # define FT_EXPAND_RET_H
 
-void	ft_expand_ret(int size) __attribute__((always_inline));
+void	ft_expand_ret(int size);
 
 #endif
