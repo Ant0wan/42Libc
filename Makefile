@@ -10,8 +10,6 @@
 #                                                                              #
 # **************************************************************************** #
 
-# To compile with the libft.a, use the command-line: gcc main.c -L. -lft or add it to makefile
-
 NAME = libft.a
 
 CC = clang
@@ -171,7 +169,7 @@ $(NAME): $(addprefix $(SRC_PATH), $(SRC_FILES))
 	@ar rc $(NAME) $(SRC_FILES)
 	@ranlib $(NAME)
 	@printf "\n\e[38;5;82m%4s [\e[1m$(NAME) built]\n\n\e[0m"
-	@printf "\e[38;5;41mTo compile with the $(NAME), use the command-line: \e[0m\e[4mgcc main.c -L. -lft\n\e[0m"
+	@printf "\e[38;5;41mTo compile with the $(NAME), use the command-line: \e[0m\e[4m%s main.c -L. -lft\n\e[0m" $(CC)
 
 clean:
 	@rm -f $(SRC_FILES)
