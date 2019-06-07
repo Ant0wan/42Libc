@@ -76,6 +76,9 @@ char			*ft_strncat(char *s1, const char *s2, size_t n) __attribute__
 char			*ft_strcpy(char *dst, const char *src) __attribute__
 				((nonnull(1,2)));
 
+char			*ft_strendcpy(char *dst, const char *src) __attribute__
+				((nonnull(1,2)));
+
 char			*ft_strncpy(char *dst, const char *src,
 				size_t len) __attribute__((nonnull(1,2)));
 
