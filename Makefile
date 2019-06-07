@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 11:47:48 by abarthel          #+#    #+#              #
-#    Updated: 2019/05/30 16:09:49 by abarthel         ###   ########.fr        #
+#    Updated: 2019/06/06 10:52:26 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 
 NAME = libft.a
 
-CC = gcc
+CC = clang
 
 FLAGS = -Werror -Wall -Wextra -fno-builtin -O2
 
@@ -128,6 +128,7 @@ SRC_FILES =	cast.o \
 			ft_strcpy.o \
 			ft_strdel.o \
 			ft_strdup.o \
+			ft_strendcpy.o \
 			ft_strequ.o \
 			ft_striter.o \
 			ft_striteri.o \
