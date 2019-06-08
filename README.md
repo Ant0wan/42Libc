@@ -43,11 +43,13 @@ make && make clean
 include "libft.h"
 ```
 
-- When compiling entire project, specify the path to libft.a in gcc command line
+- When compiling entire project, specify the path to libft.a in [compiler] command line
 
 ```shell=
-gcc some_c_file.c -L<path_to_library_file> -lft
+[compiler] some_c_file.c -L<path_to_library_file> -lft
 ```
+
+The makefile defines Clang as default compiler.
 
 Note that -L takes the path to your library and -l takes the set of characters that come after lib in your library name.
 
