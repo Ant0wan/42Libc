@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strcasecmp.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,13 +11,15 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include "libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+int		ft_strcasecmp(const char *s1, const char *s2)
 {
 	size_t	i;
 
 	i = 0;
-	while (s1[i] == s2[i] && s1[i] && s2[i])
+	while (ft_tolower(s1[i]) == ft_tolower(s2[i]) && s1[i] && s2[i])
 		++i;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	return ((unsigned char)ft_tolower(s1[i])
+			- (unsigned char)ft_tolower(s2[i]));
 }

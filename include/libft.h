@@ -38,6 +38,9 @@ int				ft_atoi(const char *str) __attribute__((nonnull(1)));
 int				ft_strcmp(const char *s1, const char *s2) __attribute__
 				((nonnull(1,2)));
 
+int				ft_strcasecmp(const char *s1, const char *s2) __attribute__
+				((nonnull(1,2)));
+
 int				ft_strncmp(const char *s1, const char *s2,
 				size_t n) __attribute__((nonnull(1,2)));
 

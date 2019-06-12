@@ -122,6 +122,7 @@ SRC_FILES =	cast.o \
 			ft_strchr.o \
 			ft_strclen.o \
 			ft_strclr.o \
+			ft_strcasecmp.o \
 			ft_strcmp.o \
 			ft_strcpy.o \
 			ft_strdel.o \
