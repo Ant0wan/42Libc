@@ -6,13 +6,13 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 14:16:53 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/08 19:45:45 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/06/15 15:41:22 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int		ft_strcmp(const char *s1, const char *s2)
+inline int	ft_strcmp(const char *s1, const char *s2)
 {
 	size_t	i;
 
