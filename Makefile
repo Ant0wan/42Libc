@@ -6,15 +6,17 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 11:47:48 by abarthel          #+#    #+#              #
-#    Updated: 2019/06/06 10:52:26 by abarthel         ###   ########.fr        #
+#    Updated: 2019/06/17 22:00:29 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 CC = clang
-
-FLAGS = -Werror -Wall -Wextra -fno-builtin -O2
+OPTI = -fno-builtin -O2
+WARN = -Werror -Wall -Wextra
+DEBUG = -g
+FLAGS = $(OPTI) $(WARN) $(DEBUG)
 
 %.o : %.c
 	@$(CC) $(FLAGS) $< -c -I$(INCLUDES_PATH)
