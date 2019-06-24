@@ -3,9 +3,19 @@ language: c
 os:
     - linux
     - osx
+    - freebsd
 
 compiler:
-    - gcc
     - clang
 
-script: make -j && make clean
+script:
+    - make
+    - make clean
+
+env:
+    global:
+        - MAKEFLAGS="-j"
+
+branches:
+    only:
+        - master
