@@ -1,3 +1,11 @@
-os: osx
 language: c
-script: make
+
+os:
+    - linux
+    - osx
+
+compiler:
+    - gcc
+    - clang
+
+script: make -j && make clean
