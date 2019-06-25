@@ -6,13 +6,14 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/25 14:45:47 by abarthel          #+#    #+#              #
-#    Updated: 2019/06/25 16:48:29 by abarthel         ###   ########.fr        #
+#    Updated: 2019/06/25 17:09:18 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 SOURCES_PATH :=	./src/
+
 SOURCES	:=	cast.c \
 			dispatcher.c \
 			format.c \
