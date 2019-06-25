@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/25 14:03:51 by abarthel          #+#    #+#              #
-#    Updated: 2019/06/25 17:02:44 by abarthel         ###   ########.fr        #
+#    Updated: 2019/06/25 17:24:11 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ DEBUGGING := -g
 
 WARNING := -Wall -Wextra -Werror
 
-.PHONY: all clean fclean re objects
+.PHONY: all clean fclean re objects lib
 
 all: $(NAME)
 
@@ -41,7 +41,7 @@ re: fclean $(NAME)
 # Objects rule to be used when building larger libraries
 objects: $(OBJECTS)
 
-# Include Libft in larger project
+# Include Libft in larger projects
 lib	: $(OBJECTS)
 	@ar rc $(NAME) $(OBJECTS)
 	@ranlib $(NAME)
