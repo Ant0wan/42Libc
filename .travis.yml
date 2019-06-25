@@ -1,7 +1,13 @@
 language: c
 
 os:
-    - linux
+    - linux:
+        addons:
+            apt:
+                sources:
+                    - ubuntu-toolchain-r-test
+                packages:
+                    -g++-7
     - osx
 
 sudo: false
@@ -21,13 +27,3 @@ env:
 branches:
     only:
         - master
-
-matrix:
-    include:
-        - os: linux
-          addons:
-              apt:
-                  sources:
-                      - ubuntu-toolchain-r-test
-                  packages:
-                      - g++-7
