@@ -1,29 +1,13 @@
 language: c
 
-os:
-    - linux:
-        addons:
-            apt:
-                sources:
-                    - ubuntu-toolchain-r-test
-                packages:
-                    -g++-7
-    - osx
-
-sudo: false
-
-compiler:
-    - clang
-    - gcc
-
-script:
-    - make
-    - make clean
-
-env:
-    global:
-        - MAKEFLAGS="-j"
-
-branches:
-    only:
-        - master
+matrix:
+    include:
+        - os: linux
+            addons:
+                apt:
+                    sources:
+                        - ubuntu-toolchain-r-test
+                    packages:
+                        - g++-7
+            env:
+                - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
