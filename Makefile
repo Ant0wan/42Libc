@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/25 14:03:51 by abarthel          #+#    #+#              #
-#    Updated: 2019/06/25 16:49:23 by abarthel         ###   ########.fr        #
+#    Updated: 2019/06/25 17:02:44 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,8 +36,15 @@ fclean:
 	@$(RM) $(OBJECTS) $(DEPENDS) $(NAME)
 	@printf "\e[0m$(NAME)\e[38;5;52m%2sdeleted\n\e[0m"
 
+re: fclean $(NAME)
+
 # Objects rule to be used when building larger libraries
 objects: $(OBJECTS)
+
+# Include Libft in larger project
+lib	: $(OBJECTS)
+	@ar rc $(NAME) $(OBJECTS)
+	@ranlib $(NAME)
 
 -include $(DEPENDS)
 
