@@ -6,11 +6,9 @@ os:
 
 sudo: false
 
-addons: *gcc7
-
 compiler:
     - clang
-    - gcc
+    - gcc7
 
 script:
     - make
