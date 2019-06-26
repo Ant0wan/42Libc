@@ -6,22 +6,19 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 10:55:44 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/19 11:15:40 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/06/26 17:30:59 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 #include <stdlib.h>
-
-#define HEXA_SIZE 16
+#include "libft.h"
 
 static void	ft_putint(size_t nbr, char *base)
 {
-	if (nbr >= HEXA_SIZE)
+	if (nbr >= 16)
 	{
-		ft_putint(nbr / HEXA_SIZE, base);
-		ft_putint(nbr % HEXA_SIZE, base);
+		ft_putint(nbr / 16, base);
+		ft_putint(nbr % 16, base);
 	}
 	else
 		ft_putchar(base[nbr]);

@@ -6,33 +6,28 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 13:25:35 by abarthel          #+#    #+#             */
-/*   Updated: 2019/06/26 15:06:57 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/06/26 17:33:01 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdlib.h>
 
-#define BITS_WCHAR         32
-#define WCHAR_BYTE_SIZE     4
-#define MASK             0x30
-#define RET_ERROR          -1
-
 int		ft_putwcbits(wchar_t c)
 {
 	int		bit;
-	char	str[BITS_WCHAR];
+	char	str[32];
 
-	if (sizeof(wchar_t) == WCHAR_BYTE_SIZE)
+	if (sizeof(wchar_t) == 4)
 	{
 		bit = 0;
-		while (bit < BITS_WCHAR)
+		while (bit < 32)
 		{
-			str[(BITS_WCHAR - 1) - bit] = c & (1 << bit) ? 1 ^ MASK : 0 ^ MASK;
+			str[31 - bit] = c & (1 << bit) ? 1 ^ 0x30 : 0;
 			++bit;
 		}
-		return ((int)write(STDOUT_FILENO, str, BITS_WCHAR));
+		return ((int)write(STDOUT_FILENO, str, 32));
 	}
 	else
-		return (RET_ERROR);
+		return (-1);
 }

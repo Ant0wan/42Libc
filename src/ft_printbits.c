@@ -6,26 +6,22 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 13:25:35 by abarthel          #+#    #+#             */
-/*   Updated: 2019/06/26 15:15:00 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/06/26 17:30:30 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-#define BITS_IN_CHAR 8
-#define START_ARRAY (BITS_IN_CHAR - 1)
-#define MASK 0x30
-
 int		ft_printbits(char c)
 {
 	int		bit;
-	char	str[BITS_IN_CHAR];
+	char	str[8];
 
 	bit = 0;
-	while (bit < BITS_IN_CHAR)
+	while (bit < 8)
 	{
-		str[START_ARRAY - bit] = c & (1 << bit) ? 1 ^ MASK : 0 ^ MASK;
+		str[7 - bit] = c & (1 << bit) ? 1 ^ 0x30 : 0;
 		++bit;
 	}
-	return ((int)write(STDOUT_FILENO, str, BITS_IN_CHAR));
+	return ((int)write(STDOUT_FILENO, str, 8));
 }

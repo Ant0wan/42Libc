@@ -6,17 +6,13 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 17:03:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/19 16:49:11 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/06/26 17:33:48 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
-
 #include "utf8.h"
-
-#define RET_ERROR      -1
-#define UTF8ENCOD_SIZE  4
 
 int	ft_putwchar(wchar_t wc)
 {
@@ -25,20 +21,20 @@ int	ft_putwchar(wchar_t wc)
 	if (wc >= 0x00)
 	{
 		if (wc <= 0x007F)
-			return ((write(STDOUT_FILENO, &wc, sizeof(wc))) == RET_ERROR
-					? RET_ERROR : (int)wc);
+			return ((write(STDOUT_FILENO, &wc, sizeof(wc))) == -1
+					? -1 : (int)wc);
 		else
 		{
-			if (utf8_encoder(&wc) == RET_ERROR)
-				return (RET_ERROR);
+			if (utf8_encoder(&wc) == -1)
+				return (-1);
 			buf[0] = wc >> 24;
 			buf[1] = wc >> 16;
 			buf[2] = wc >> 8;
 			buf[3] = wc;
-			return ((write(STDOUT_FILENO, buf, UTF8ENCOD_SIZE)) == RET_ERROR
-					? RET_ERROR : (int)wc);
+			return ((write(STDOUT_FILENO, buf, 4)) == -1
+					? -1 : (int)wc);
 		}
 	}
 	else
-		return (RET_ERROR);
+		return (-1);
 }

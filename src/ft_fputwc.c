@@ -6,17 +6,13 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 18:07:08 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/13 17:26:35 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/06/26 16:53:36 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
-
 #include "utf8.h"
-
-#define RET_ERROR         -1
-#define UTF8ENCODING_SIZE  4
 
 int	ft_fputwc(wchar_t wc, int fd)
 {
@@ -25,20 +21,20 @@ int	ft_fputwc(wchar_t wc, int fd)
 	if (wc >= 0x00)
 	{
 		if (wc <= 0x007F)
-			return ((write(fd, &wc, sizeof(wc))) == RET_ERROR
-					? RET_ERROR : (int)wc);
+			return ((write(fd, &wc, sizeof(wc))) == -1
+					? -1 : (int)wc);
 		else
 		{
-			if (utf8_encoder(&wc) == RET_ERROR)
-				return (RET_ERROR);
+			if (utf8_encoder(&wc) == -1)
+				return (-1);
 			buf[0] = wc >> 24;
 			buf[1] = wc >> 16;
 			buf[2] = wc >> 8;
 			buf[3] = wc;
-			return ((write(fd, buf, UTF8ENCODING_SIZE)) == RET_ERROR
-					? RET_ERROR : (int)wc);
+			return ((write(fd, buf, 4)) == -1
+					? -1 : (int)wc);
 		}
 	}
 	else
-		return (RET_ERROR);
+		return (-1);
 }

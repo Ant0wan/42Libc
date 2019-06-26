@@ -6,15 +6,12 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 18:25:44 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/30 16:33:06 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/06/26 17:29:38 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_wchar.h"
-
 #include <stdlib.h>
-
-#define RET_ERROR -1
+#include "ft_wchar.h"
 
 int	ft_fputwsbits(const wchar_t *restrict ws, int fd)
 {
@@ -26,12 +23,12 @@ int	ft_fputwsbits(const wchar_t *restrict ws, int fd)
 	{
 		while (ws[i])
 		{
-			if ((ret = ft_fputwcbits(ws[i], fd)) == RET_ERROR)
+			if ((ret = ft_fputwcbits(ws[i], fd)) == -1)
 				return (ret);
 			else
 				++i;
 		}
 		return (ret);
 	}
-	return (RET_ERROR);
+	return (-1);
 }

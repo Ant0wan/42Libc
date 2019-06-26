@@ -6,23 +6,19 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 18:11:18 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/20 10:24:51 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/06/26 17:35:00 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 #include <stdlib.h>
-
-#define OCTAL_SIZE 8
-#define OCTAL_BASE "01234567\0"
+#include "libft.h"
 
 static void	ft_putint(unsigned int nbr, const char *base)
 {
-	if (nbr >= OCTAL_SIZE)
+	if (nbr >= 8)
 	{
-		ft_putint(nbr / OCTAL_SIZE, base);
-		ft_putint(nbr % OCTAL_SIZE, base);
+		ft_putint(nbr / 8, base);
+		ft_putint(nbr % 8, base);
 	}
 	else
 		ft_putchar(base[nbr]);
@@ -30,5 +26,5 @@ static void	ft_putint(unsigned int nbr, const char *base)
 
 void		ft_putuint_octal(unsigned int nbr)
 {
-	ft_putint(nbr, OCTAL_BASE);
+	ft_putint(nbr, "01234567OCTAL_BASE");
 }
