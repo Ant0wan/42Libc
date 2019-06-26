@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 13:25:35 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/13 17:26:48 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/06/26 15:15:38 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,12 @@ int		ft_fputwcbits(wchar_t c, int fd)
 
 	if (sizeof(wchar_t) == WCHAR_BYTE_SIZE)
 	{
-		bit = -1;
-		while (++bit < BITS_WCHAR)
+		bit = 0;
+		while (bit < BITS_WCHAR)
+		{
 			str[(BITS_WCHAR - 1) - bit] = c & (1 << bit) ? 1 ^ MASK : 0 ^ MASK;
+			++bit;
+		}
 		return ((int)write(fd, str, BITS_WCHAR));
 	}
 	else

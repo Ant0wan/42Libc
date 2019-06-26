@@ -6,7 +6,7 @@
 /*   By: abarthel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/19 17:50:36 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/06 17:01:48 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/06/26 15:14:11 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,13 @@ void	ft_print_tables(char **tab)
 {
 	size_t	i;
 
-	i = -1;
-	while (tab[++i])
+	i = 0;
+	while (tab[i])
+	{
 		if (tab[i][0])
+		{
 			ft_putendl(tab[i]);
+		}
+		++i;
+	}
 }
