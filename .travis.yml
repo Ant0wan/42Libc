@@ -6,8 +6,6 @@ os:
    - osx
    - linux
 
-dist: trusty
-
 compiler:
    - gcc
    - clang
