@@ -6,13 +6,17 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 08:03:22 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/06 18:13:49 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/06/26 16:42:18 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 
 void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, sizeof(c));
+	if (write(fd, &c, sizeof(c)) == -1)
+	{
+		perror(NULL);
+	}
 }
