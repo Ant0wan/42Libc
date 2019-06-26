@@ -3,7 +3,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/72deeb1e890b4bd490676de2ccd1cc91)](https://www.codacy.com/app/Ant0wan/42Libc?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Ant0wan/42Libc&amp;utm_campaign=Badge_Grade)
 [![Build Status](https://travis-ci.com/Ant0wan/42Libc.svg?branch=master)](https://travis-ci.com/Ant0wan/42Libc)
 
-An implementation of some of the standard functions in C [a 42 side-project].
+An corss-platform implementation of some of the standard functions in C [a 42 side-project].
 
 This project aims to learn basics of C and open-source project contribution methods.
 
@@ -52,4 +52,3 @@ compiler some_c_file.c -L<path_to_library_file> -lft
 The makefile defines Clang as default compiler.
 
 Note that -L takes the path to your library and -l takes the set of characters that come after lib in your library name.
-
