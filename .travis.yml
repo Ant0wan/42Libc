@@ -13,3 +13,11 @@ compiler:
 script:
     - make
     - make clean
+
+env:
+    global:
+        - MAKEFLAGS="-j"
+
+branches:
+    only:
+        - master
