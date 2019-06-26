@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 10:16:04 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/29 12:51:53 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/06/26 15:03:29 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	len;
 	char	*str;
 
-	i = -1;
+	i = 0;
 	if (s)
 		len = stat_strlen(s);
 	else
@@ -42,8 +42,11 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str = (char*)malloc(sizeof(*str) * len + 1);
 	if (!str)
 		return (NULL);
-	while (++i < len && s[i] && &s[i] && f)
+	while (i < len && s[i] && &s[i] && f)
+	{
 		str[i] = f(i, s[i]);
-	str[i++] = '\0';
+		++i;
+	}
+	str[i] = '\0';
 	return (str);
 }
