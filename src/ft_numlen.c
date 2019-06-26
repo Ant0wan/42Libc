@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
+/*   ft_numlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 17:49:13 by abarthel          #+#    #+#             */
-/*   Updated: 2019/06/26 18:37:16 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/06/26 19:39:17 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static inline char	ft_nbrlen_part2(unsigned int nb)
+static inline char	ft_numlen_part2(unsigned int nb)
 {
 	if (nb >= 1000)
 	{
@@ -28,7 +28,7 @@ static inline char	ft_nbrlen_part2(unsigned int nb)
 	}
 }
 
-extern inline char	ft_nbrlen(unsigned int nb)
+extern inline char	ft_numlen(unsigned int nb)
 {
 	if (nb >= 100000)
 	{
@@ -45,5 +45,5 @@ extern inline char	ft_nbrlen(unsigned int nb)
 		return (6);
 	}
 	else
-		return (ft_nbrlen_part2(nb));
+		return (ft_numlen_part2(nb));
 }

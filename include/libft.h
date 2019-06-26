@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 11:55:45 by abarthel          #+#    #+#             */
-/*   Updated: 2019/06/26 18:36:42 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/06/26 19:39:29 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int				ft_memcmp(const void *s1, const void *s2,
 
 size_t			ft_strlen(const char *s) __attribute__((nonnull(1)));
 
-int				ft_nbrlen(unsigned int nb);
+int				ft_numlen(unsigned int nb);
 
 size_t			ft_strlcat(char *dst, const char *src,
 				size_t size) __attribute__((nonnull(1,2)));
