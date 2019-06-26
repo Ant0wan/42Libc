@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 09:58:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/01/29 14:14:49 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/06/26 15:00:22 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,12 @@ char			**ft_strsplit(char const *s, char c)
 	if (!array)
 		return (NULL);
 	array[nb] = 0;
-	index = -1;
+	index = 0;
 	l = 0;
-	while (++index < nb)
+	while (index < nb)
+	{
 		array[index] = mallnwrite(s, &l, c);
+		++index;
+	}
 	return (array);
 }
