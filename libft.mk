@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/25 14:45:47 by abarthel          #+#    #+#              #
-#    Updated: 2019/06/26 16:29:52 by abarthel         ###   ########.fr        #
+#    Updated: 2019/06/26 18:35:24 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,7 @@ SOURCES	:=	cast.c \
 			ft_memset.c \
 			ft_n.c \
 			ft_nbr.c \
+			ft_nbrlen.c \
 			ft_octal.c \
 			ft_p.c \
 			ft_print_tables.c \
