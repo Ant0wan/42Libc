@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/18 12:20:27 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/06/26 14:52:03 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,11 @@ extern t_prefix		g_prefix;
 
 static inline void				ret_str(char *restrict str)
 {
-	while (g_prefix.len--)
+	while (g_prefix.len)
 	{
 		g_ret.ret[++g_ret.i] = *str++;
 		--g_options.width;
+		--g_prefix.len;
 	}
 }
 
