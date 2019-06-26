@@ -14,7 +14,7 @@
 
 OPTIMIZATION := -O2 -fno-builtin
 
-DEBUGGING := -g
+DEBUGGING := -g -std=c99
 
 WARNING := -Wall -Wextra -Werror
 
