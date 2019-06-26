@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 11:19:27 by abarthel          #+#    #+#             */
-/*   Updated: 2019/03/12 17:59:33 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/06/26 15:11:39 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	unsigned char	*p_dst;
 	unsigned char	*p_src;
 
+	i = 0;
 	p_dst = (unsigned char*)dst;
 	p_src = (unsigned char*)src;
 	if (src < dst)
@@ -28,13 +29,14 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			--i;
 			p_dst[i] = p_src[i];
 		}
-		return (dst);
 	}
 	else
 	{
-		i = -1;
-		while (++i < len)
+		while (i < len)
+		{
 			p_dst[i] = p_src[i];
-		return (dst);
+			++i;
+		}
 	}
+	return (dst);
 }
