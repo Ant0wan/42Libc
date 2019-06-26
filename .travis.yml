@@ -3,10 +3,9 @@ language: c
 sudo: true
 
 os:
-   - linux
    - osx
 
-dist: xenial
+dist: trusty
 
 compiler:
    - gcc
