@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/17 10:48:01 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/06/26 15:24:32 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,11 +110,11 @@ static inline _Bool	prs_specifier(const char *restrict format, va_list ap)
 
 int					printf_prs(const char *restrict format, va_list ap)
 {
-	g_ret.fmt_i = -1;
+	g_ret.fmt_i = 0;
 	va_copy(g_ap_origin, ap);
 	if (!(format))
 		return (-1);
-	while (format[++g_ret.fmt_i] && !(prs_specifier(format, ap)))
+	while (format[g_ret.fmt_i] && !(prs_specifier(format, ap)))
 	{
 		if (g_error)
 		{
@@ -125,7 +125,9 @@ int					printf_prs(const char *restrict format, va_list ap)
 			break ;
 		while (g_ret.i + 1 >= g_ret.max)
 			ft_expand_ret(1);
-		g_ret.ret[++g_ret.i] = format[g_ret.fmt_i];
+		++g_ret.i;
+		g_ret.ret[g_ret.i] = format[g_ret.fmt_i];
+		++g_ret.fmt_i;
 	}
 	return (g_ret.i + 1);
 }
