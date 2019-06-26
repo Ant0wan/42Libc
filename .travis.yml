@@ -4,8 +4,7 @@ sudo: true
 
 os:
    - osx
-
-dist: trusty
+   - linux: trusty
 
 compiler:
    - gcc
