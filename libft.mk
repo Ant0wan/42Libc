@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/25 14:45:47 by abarthel          #+#    #+#              #
-#    Updated: 2019/06/26 19:39:37 by abarthel         ###   ########.fr        #
+#    Updated: 2019/06/27 17:52:24 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SOURCES	:=	cast.c \
 			ft_ewcsnwidth.c \
 			ft_ewcswidth.c \
 			ft_ewcwidth.c \
+			ft_fgetline.c \
 			ft_expand_ret.c \
 			ft_fprintbits.c \
 			ft_fputwc.c \
