@@ -151,7 +151,7 @@ int				ft_strnequ(char const *s1, char const *s2, size_t n);
 
 void			*ft_memalloc(size_t size);
 
-char			*ft_strnew(size_t size) __attribute__((alloc_size(1)));
+char			*ft_strnew(size_t size);
 
 char			*ft_strmap(char const *s, char (*f)(char));
 
