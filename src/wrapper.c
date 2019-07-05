@@ -32,6 +32,6 @@ extern inline void	wrapper(void *(*f)(), va_list ap)
 	if (f == (void*)&ft_double)
 		f(ap);
 	else
-		f(va_arg(ap, typeof(ap)));
+		f(va_arg(ap, __typeof__(ap)));
 	++g_options.i_ap;
 }
