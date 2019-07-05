@@ -17,8 +17,6 @@ branches:
 matrix:
   include:
     - os: linux
-      script:
-        - make
       addons:
         apt:
           sources:
