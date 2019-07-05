@@ -20,7 +20,7 @@
 # define RET_ERROR -1
 #endif
 
-static inline int	m0x07ff_utf8(wchar_t *wc)
+static __inline__ int	m0x07ff_utf8(wchar_t *wc)
 {
 	wchar_t	tmp;
 
@@ -32,7 +32,7 @@ static inline int	m0x07ff_utf8(wchar_t *wc)
 	return ((int)*wc);
 }
 
-static inline int	m0xffff_utf8(wchar_t *wc)
+static __inline__ int	m0xffff_utf8(wchar_t *wc)
 {
 	*wc = ((*wc << 12) & ~0xF0FFFFFF) | ((*wc << 10) & ~0xFFC0FFFF)
 		| ((*wc << 8) & ~0xFFFFC0FF);
@@ -40,7 +40,7 @@ static inline int	m0xffff_utf8(wchar_t *wc)
 	return ((int)*wc);
 }
 
-static inline int	m0x10ffff_ut8(wchar_t *wc)
+static __inline__ int	m0x10ffff_ut8(wchar_t *wc)
 {
 	*wc = ((*wc << 7) & ~0xF8FFFFFF) | ((*wc << 4) & ~0xFFC0FFFF)
 		| ((*wc << 2) & ~0xFFFFC0FF) | (*wc & ~0xFFFFFFC0);
@@ -48,7 +48,7 @@ static inline int	m0x10ffff_ut8(wchar_t *wc)
 	return ((int)*wc);
 }
 
-extern inline int	utf8_encoder(wchar_t *wc)
+int	utf8_encoder(wchar_t *wc)
 {
 	_Static_assert(sizeof(wchar_t) == BYTE_WCHAR,
 			"System does not support 32bits wchar_t");

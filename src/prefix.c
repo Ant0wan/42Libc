@@ -18,7 +18,7 @@
 
 t_prefix	g_prefix;
 
-extern inline void	reset_prefix(void)
+void	reset_prefix(void)
 {
 	g_prefix.len = 0;
 	g_prefix.base = 10;

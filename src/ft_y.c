@@ -29,7 +29,7 @@ extern t_flags		g_flags;
 extern t_modifier	g_modifier;
 extern t_options	g_options;
 
-static inline void	set_globals(void)
+static __inline__ void	set_globals(void)
 {
 	g_options.width = -1;
 	g_options.precision = -1;
@@ -49,7 +49,7 @@ static inline void	set_globals(void)
 	g_modifier.upl = 0;
 }
 
-static inline void	ffff_coloring(unsigned short value)
+static __inline__ void	ffff_coloring(unsigned short value)
 {
 	if (g_flags.hash)
 	{

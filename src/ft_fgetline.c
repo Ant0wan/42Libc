@@ -15,7 +15,7 @@
 #include <stdio.h>
 #include "libft.h"
 
-static inline char	ft_fgetch(const int fd)
+static __inline__ char	ft_fgetch(const int fd)
 {
 	int		ret;
 	char	ch;
@@ -48,9 +48,6 @@ int					ft_fgetline(const int fd, char **line, char c)
 			return (-1);
 		if (len && *line && new_line)
 			new_line = ft_strncpy(new_line, *line, len);
-//		if (*line)
-//			free(*line);
-//		*line = NULL;
 		ft_memdel((void**)*line);
 		*line = new_line;
 		while (ret < len)

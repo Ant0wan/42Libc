@@ -144,4 +144,4 @@ INCLUDES := ./include/
 
 DEPENDS := $(patsubst %.c,%.d,$(addprefix $(SOURCES_PATH), $(SOURCES)))
 
-CFLAGS = -ansi
+CFLAGS := -ansi

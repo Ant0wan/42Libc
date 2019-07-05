@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-static inline char	ft_numlen_part2(unsigned int nb)
+static __inline__ char	ft_numlen_part2(unsigned int nb)
 {
 	if (nb >= 1000)
 	{
@@ -28,7 +28,7 @@ static inline char	ft_numlen_part2(unsigned int nb)
 	}
 }
 
-extern inline char	ft_numlen(unsigned int nb)
+extern char		ft_numlen(unsigned int nb)
 {
 	if (nb >= 100000)
 	{

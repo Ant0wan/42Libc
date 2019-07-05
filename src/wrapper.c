@@ -17,7 +17,7 @@
 
 extern t_options	g_options;
 
-extern inline void	wrapper(void *(*f)(), va_list ap)
+void	wrapper(void *(*f)(), va_list ap)
 {
 	int	i;
 	int	rubbish;
