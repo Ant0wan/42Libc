@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/25 14:45:47 by abarthel          #+#    #+#              #
-#    Updated: 2019/07/06 15:48:00 by abarthel         ###   ########.fr        #
+#    Updated: 2019/07/06 15:55:18 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,6 +88,7 @@ SOURCES	:=	cast.c \
 			ft_putwcbits.c \
 			ft_putwchar.c \
 			ft_putwstr.c \
+			ft_setenv.c \
 			ft_str.c \
 			ft_str_is_alpha.c \
 			ft_str_is_lowercase.c \
