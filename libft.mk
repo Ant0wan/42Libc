@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/25 14:45:47 by abarthel          #+#    #+#              #
-#    Updated: 2019/06/27 17:52:24 by abarthel         ###   ########.fr        #
+#    Updated: 2019/07/06 15:48:00 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SOURCES	:=	cast.c \
 			ft_chr.c \
 			ft_chrsearch.c \
 			ft_dprintf.c \
+			ft_envcpy.c \
 			ft_double.c \
 			ft_ewcsnwidth.c \
 			ft_ewcswidth.c \
@@ -36,6 +37,7 @@ SOURCES	:=	cast.c \
 			ft_fputws.c \
 			ft_fputwsbits.c \
 			ft_hexa.c \
+			ft_getenv.c \
 			ft_isalnum.c \
 			ft_isalpha.c \
 			ft_isascii.c \
