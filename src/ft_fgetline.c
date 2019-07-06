@@ -6,13 +6,12 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/27 16:48:52 by abarthel          #+#    #+#             */
-/*   Updated: 2019/06/27 22:01:54 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/06/30 16:47:49 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include <unistd.h>
-#include <stdio.h>
+#include <stdlib.h>
 #include "libft.h"
 
 static inline char	ft_fgetch(const int fd)
@@ -31,27 +30,43 @@ static inline char	ft_fgetch(const int fd)
 	}
 }
 
+static inline char	*create_new_line(char *str, int *len)
+{
+	char	*new_line;
+
+	new_line = (char*)ft_memalloc(*len);
+	if (!new_line)
+	{
+		*len = -1;
+		return (NULL);
+	}
+	else
+	{
+		if (str)
+		{
+			new_line = ft_strncpy(new_line, str, *len);
+			free(str);
+		}
+		return (new_line);
+	}
+}
+
 int					ft_fgetline(const int fd, char **line, char c)
 {
-	static int	len;
-	int			ret;
-	char		tmp;
-	char		*new_line;
+	int		len;
+	int		ret;
+	char	tmp;
+	char	*new_line;
 
+	len = 0;
 	ret = 0;
 	new_line = NULL;
 	while (1)
 	{
 		len += 128;
-		new_line = (char*)ft_memalloc(len);
-		if (!new_line)
+		new_line = create_new_line(new_line, &len);
+		if (len == -1)
 			return (-1);
-		if (len && *line && new_line)
-			new_line = ft_strncpy(new_line, *line, len);
-//		if (*line)
-//			free(*line);
-//		*line = NULL;
-		ft_memdel((void**)*line);
 		*line = new_line;
 		while (ret < len)
 		{
