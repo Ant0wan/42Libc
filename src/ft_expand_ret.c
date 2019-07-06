@@ -28,9 +28,9 @@
 extern t_ret		g_ret;
 extern _Bool		g_error;
 
-extern inline void	ft_expand_ret(int size)
+void	ft_expand_ret(int size)
 {
-	void *restrict	new_ret;
+	void *__restrict__	new_ret;
 
 	g_ret.max += size < BUFF ? BUFF : size;
 	if (!(new_ret = (char*)ft_memalloc(sizeof(char) * g_ret.max + 1)))

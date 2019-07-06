@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/27 16:48:52 by abarthel          #+#    #+#             */
-/*   Updated: 2019/06/30 16:47:49 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/07/06 13:33:05 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include "libft.h"
 
-static inline char	ft_fgetch(const int fd)
+static __inline__ char	ft_fgetch(const int fd)
 {
 	int		ret;
 	char	ch;
@@ -30,7 +30,7 @@ static inline char	ft_fgetch(const int fd)
 	}
 }
 
-static inline char	*create_new_line(char *str, int *len)
+static __inline__ char	*create_new_line(char *str, int *len)
 {
 	char	*new_line;
 

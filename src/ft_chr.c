@@ -27,7 +27,7 @@ extern t_options	g_options;
 extern t_modifier	g_modifier;
 extern t_prefix		g_prefix;
 
-static inline void	ret_wc(wchar_t wc)
+static __inline__ void	ret_wc(wchar_t wc)
 {
 	if (g_modifier.l)
 		utf8_encoder(&wc);
@@ -42,7 +42,7 @@ static inline void	ret_wc(wchar_t wc)
 	g_options.width -= g_prefix.len;
 }
 
-static inline void	chr_format(wchar_t wc)
+static __inline__ void	chr_format(wchar_t wc)
 {
 	while (!(g_flags.minus) && g_options.width - g_prefix.len > 0)
 	{

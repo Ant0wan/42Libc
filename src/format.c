@@ -26,7 +26,7 @@ extern t_flags		g_flags;
 extern t_options	g_options;
 extern t_prefix		g_prefix;
 
-extern inline unsigned short	ft_nbrlen(intmax_t nb)
+unsigned short	ft_nbrlen(intmax_t nb)
 {
 	intmax_t		rest;
 	unsigned short	len;
@@ -43,7 +43,7 @@ extern inline unsigned short	ft_nbrlen(intmax_t nb)
 	return (len > 0 ? len : 1);
 }
 
-extern inline unsigned short	ft_unbrlen(uintmax_t nb)
+unsigned short	ft_unbrlen(uintmax_t nb)
 {
 	uintmax_t		rest;
 	unsigned short	len;
@@ -60,7 +60,7 @@ extern inline unsigned short	ft_unbrlen(uintmax_t nb)
 	return (len > 0 ? len : 1);
 }
 
-static inline void				ret_nbr(uintmax_t nb, short len)
+static __inline__ void				ret_nbr(uintmax_t nb, short len)
 {
 	int	mod;
 
@@ -80,7 +80,7 @@ static inline void				ret_nbr(uintmax_t nb, short len)
 	}
 }
 
-static inline void				width_precision(void)
+static __inline__ void				width_precision(void)
 {
 	while (!(g_flags.zero) && !(g_flags.minus) && g_options.width - g_prefix.len
 			- g_prefix.size > 0)
@@ -108,7 +108,7 @@ static inline void				width_precision(void)
 	}
 }
 
-extern inline void				format(uintmax_t nb)
+extern void					format(uintmax_t nb)
 {
 	int	z;
 

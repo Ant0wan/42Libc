@@ -14,7 +14,7 @@
 
 #include <stdlib.h>
 
-extern inline void	*ft_memalloc(size_t size)
+void	*ft_memalloc(size_t size)
 {
 	void	*p_mem;
 
