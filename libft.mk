@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/25 14:45:47 by abarthel          #+#    #+#              #
-#    Updated: 2019/07/06 15:55:18 by abarthel         ###   ########.fr        #
+#    Updated: 2019/07/06 18:45:07 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -125,6 +125,7 @@ SOURCES	:=	cast.c \
 			ft_strstr.c \
 			ft_strsub.c \
 			ft_strtrim.c \
+			ft_tabdel.c \
 			ft_tolower.c \
 			ft_toupper.c \
 			ft_unbr.c \
