@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/06 18:41:29 by abarthel          #+#    #+#             */
-/*   Updated: 2019/07/06 18:59:55 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/07/06 21:49:08 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_tabdel(char ***tab)
 	while ((*tab)[i])
 	{
 		free((*tab)[i]);
-		tab[i] = NULL;
+		(*tab)[i] = NULL;
 		++i;
 	}
 	free(*tab);
