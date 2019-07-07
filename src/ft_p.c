@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 17:00:19 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/17 11:05:33 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/07/07 14:14:53 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,6 @@
 #include "cast.h"
 #include "format.h"
 
-#ifndef X64BYTES
-# define X64BYTES 8
-#endif
-
 extern t_flags		g_flags;
 extern t_modifier	g_modifier;
 
@@ -32,7 +28,7 @@ void	ft_p(void *__restrict__ ptr)
 	p_ptr = (uintmax_t)ptr;
 	g_flags.hash = 1;
 	g_flags.apost = 0;
-	if (sizeof(void*) == X64BYTES)
+	if (sizeof(void*) == 8)
 		g_modifier.l = 1;
 	reset_prefix();
 	ft_cast_unbr(&p_ptr);

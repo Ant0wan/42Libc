@@ -6,19 +6,11 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 18:54:10 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/10 14:52:20 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/07/07 13:45:09 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
-#ifndef BYTE_WCHAR
-# define BYTE_WCHAR 4
-#endif
-
-#ifndef RET_ERROR
-# define RET_ERROR -1
-#endif
 
 static __inline__ int	m0x07ff_utf8(wchar_t *wc)
 {
@@ -50,10 +42,10 @@ static __inline__ int	m0x10ffff_ut8(wchar_t *wc)
 
 int	utf8_encoder(wchar_t *wc)
 {
-	_Static_assert(sizeof(wchar_t) == BYTE_WCHAR,
+	_Static_assert(sizeof(wchar_t) == 4,
 			"System does not support 32bits wchar_t");
 	if (*wc < 0)
-		return (RET_ERROR);
+		return (-1);
 	else if (*wc <= 0x007F)
 		return ((int)*wc);
 	else if (*wc <= 0x07FF)
@@ -63,5 +55,5 @@ int	utf8_encoder(wchar_t *wc)
 	else if (*wc <= 0x10FFFF)
 		return (m0x10ffff_ut8(wc));
 	else
-		return (RET_ERROR);
+		return (-1);
 }

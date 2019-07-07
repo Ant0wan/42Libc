@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/17 11:19:27 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/07/07 14:12:59 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,6 @@
 #include "prs_struct.h"
 #include "ft_expand_ret.h"
 #include "prefix.h"
-
-#ifndef G_ERROR
-# define G_ERROR 1
-#endif
 
 extern _Bool		g_error;
 extern t_flags		g_flags;
@@ -117,7 +113,7 @@ extern void					format(uintmax_t nb)
 	z = g_prefix.len > g_options.precision ? g_prefix.len : g_options.precision;
 	z = z > g_options.width ? g_prefix.len : g_options.width;
 	z += g_prefix.size;
-	if ((int)((unsigned int)(g_ret.i + z)) < -1 && (g_error = G_ERROR))
+	if ((int)((unsigned int)(g_ret.i + z)) < -1 && (g_error = 1))
 		return ;
 	if (g_ret.i + z >= g_ret.max)
 		ft_expand_ret(z);

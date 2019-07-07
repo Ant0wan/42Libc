@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/16 15:00:04 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/07/07 14:13:58 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,6 @@
 #include "prefix.h"
 #include "ft_wchar.h"
 #include "utf8.h"
-
-#ifndef G_ERROR
-# define G_ERROR 1
-#endif
 
 extern _Bool		g_error;
 extern t_options	g_options;
@@ -70,7 +66,7 @@ void				ft_chr(wchar_t wc)
 	else
 		g_prefix.len = sizeof(char);
 	size = g_options.width < g_prefix.len ? g_prefix.len : g_options.width;
-	if ((int)((unsigned int)(g_ret.i + size)) < -1 && (g_error = G_ERROR))
+	if ((int)((unsigned int)(g_ret.i + size)) < -1 && (g_error = 1))
 		return ;
 	if (g_ret.i + size >= g_ret.max)
 		ft_expand_ret(size);

@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/17 11:02:25 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/07/07 14:15:33 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,6 @@
 #include "ft_wchar.h"
 #include "str_format.h"
 
-#ifndef NULL_STR
-# define NULL_STR "(null)"
-#endif
-
-#ifndef NULL_WSTR
-# define NULL_WSTR L"(null)"
-#endif
-
 extern t_options	g_options;
 extern t_modifier	g_modifier;
 extern t_prefix		g_prefix;
@@ -34,9 +26,9 @@ void	ft_str(void *__restrict__ str)
 {
 	reset_prefix();
 	if (!(str) && !(g_modifier.l))
-		str = NULL_STR;
+		str = "(null)";
 	else if (!(str))
-		str = NULL_WSTR;
+		str = L"(null)";
 	if (g_modifier.l)
 		g_prefix.len = ft_ewcswidth((wchar_t*)str);
 	else

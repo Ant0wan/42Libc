@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 17:38:39 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/15 16:14:31 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/07/07 14:16:34 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,6 @@
 #include "prs_struct.h"
 #include "ft_expand_ret.h"
 #include "specifiers.h"
-
-#ifndef G_ERROR
-# define G_ERROR 1
-#endif
-
-#ifndef COLORING_SIZE_MAX
-# define COLORING_SIZE_MAX 14
-#endif
 
 extern _Bool		g_error;
 extern t_flags		g_flags;
@@ -75,11 +67,11 @@ static __inline__ void	ffff_coloring(unsigned short value)
 
 void				ft_y(unsigned short value)
 {
-	if ((int)((unsigned int)(g_ret.i + COLORING_SIZE_MAX)) < -1
-			&& (g_error = G_ERROR))
+	if ((int)((unsigned int)(g_ret.i + 14)) < -1
+			&& (g_error = 1))
 		return ;
-	if (g_ret.i + COLORING_SIZE_MAX >= g_ret.max)
-		ft_expand_ret(COLORING_SIZE_MAX);
+	if (g_ret.i + 14 >= g_ret.max)
+		ft_expand_ret(14);
 	if (g_error)
 		return ;
 	g_ret.ret[++g_ret.i] = '\e';
