@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/09 16:46:06 by abarthel          #+#    #+#             */
-/*   Updated: 2019/07/09 18:13:15 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/07/09 18:36:37 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,13 @@ void	ft_perror(const char *s)
 	if (!s)
 	{
 		write(STDERR_FILENO, error_msg, ft_strlen(error_msg));
+		write(STDERR_FILENO, "\n", 1);
 	}
 	else
 	{
 		write(STDERR_FILENO, s, ft_strlen(s));
 		write(STDERR_FILENO, ": ", 2);
 		write(STDERR_FILENO, error_msg, ft_strlen(error_msg));
+		write(STDERR_FILENO, "\n", 1);
 	}
 }
