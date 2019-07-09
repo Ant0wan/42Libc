@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/25 14:03:51 by abarthel          #+#    #+#              #
-#    Updated: 2019/07/07 13:43:07 by abarthel         ###   ########.fr        #
+#    Updated: 2019/07/09 12:25:44 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,10 +38,8 @@ fclean:
 
 re: fclean $(NAME)
 
-# Objects rule to be used when building larger libraries
 objects: $(OBJECTS)
 
-# Include Libft in larger projects
 lib	: $(OBJECTS)
 	@ar rc $(NAME) $(OBJECTS)
 	@ranlib $(NAME)

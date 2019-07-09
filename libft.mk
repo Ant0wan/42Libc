@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/25 14:45:47 by abarthel          #+#    #+#              #
-#    Updated: 2019/07/06 18:45:07 by abarthel         ###   ########.fr        #
+#    Updated: 2019/07/09 18:14:50 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ SOURCES_PATH :=	./src/
 
 SOURCES	:=	cast.c \
 			dispatcher.c \
+			error_msg.c \
 			format.c \
 			ft_atoi.c \
 			ft_asprintf.c \
@@ -65,6 +66,7 @@ SOURCES	:=	cast.c \
 			ft_numlen.c \
 			ft_octal.c \
 			ft_p.c \
+			ft_perror.c \
 			ft_print_tables.c \
 			ft_printbits.c \
 			ft_printf.c \
@@ -106,6 +108,7 @@ SOURCES	:=	cast.c \
 			ft_strdup.c \
 			ft_strendcpy.c \
 			ft_strequ.c \
+			ft_strerror.c \
 			ft_striter.c \
 			ft_striteri.c \
 			ft_strjoin.c \
