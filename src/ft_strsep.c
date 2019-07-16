@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/16 10:44:25 by abarthel          #+#    #+#             */
-/*   Updated: 2019/07/16 11:40:16 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/07/16 14:31:33 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ char	*ft_strsep(char **stringp, const char *delim)
 	}
 	while (delim && *delim && next && *next)
 	{
+		*next = '\0';
 		++next;
 		++delim;
 	}
