@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 11:55:45 by abarthel          #+#    #+#             */
-/*   Updated: 2019/07/06 18:58:43 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/07/16 10:49:16 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,6 +157,8 @@ char			*ft_strmap(char const *s, char (*f)(char));
 
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
+char			*ft_strsep(char **stringp, const char *delim);
+
 char			*ft_strsub(char const *s, unsigned int start, size_t len);
 
 char			*ft_strjoin(char const *s1, char const *s2);
@@ -234,5 +236,7 @@ char			*ft_getenv(const char *name);
 int				ft_setenv(const char *name, const char *value, int overwrite);
 
 void			ft_tabdel(char ***tab);
+
+int				ft_getch(void);
 
 #endif
