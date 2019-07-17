@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_envcpy.c                                        :+:      :+:    :+:   */
+/*   ft_tabcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/04 17:27:52 by abarthel          #+#    #+#             */
-/*   Updated: 2019/07/06 15:33:01 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/07/17 20:04:14 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 #include "libft.h"
 
-char	**ft_envcpy(char **envp)
+char	**ft_tabcpy(char **table)
 {
-	char	**env;
+	char	**tab_cpy;
 	int		nb;
 
-	env = NULL;
+	tab_cpy = NULL;
 	nb = 0;
-	while (envp[nb])
+	while (table[nb])
 	{
 		++nb;
 	}
-	env = (char**)ft_memalloc(sizeof(char**) * (nb + 1));
+	tab_cpy = (char**)ft_memalloc(sizeof(char**) * (nb + 1));
 	--nb;
 	while (nb >= 0)
 	{
-		env[nb] = ft_strdup(envp[nb]);
+		tab_cpy[nb] = ft_strdup(table[nb]);
 		--nb;
 	}
-	return (env);
+	return (tab_cpy);
 }

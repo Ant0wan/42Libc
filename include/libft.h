@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 11:55:45 by abarthel          #+#    #+#             */
-/*   Updated: 2019/07/16 10:49:16 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/07/17 20:04:56 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -229,7 +229,7 @@ int				ft_vdprintf(int fd, const char *__restrict__ format,
 
 int				ft_vasprintf(char **ret, const char *format, va_list ap);
 
-char			**ft_envcpy(char **envp);
+char			**ft_tabcpy(char **table);
 
 char			*ft_getenv(const char *name);
 

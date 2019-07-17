@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/25 14:45:47 by abarthel          #+#    #+#              #
-#    Updated: 2019/07/16 10:48:28 by abarthel         ###   ########.fr        #
+#    Updated: 2019/07/17 20:05:11 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,6 @@ SOURCES	:=	cast.c \
 			ft_chr.c \
 			ft_chrsearch.c \
 			ft_dprintf.c \
-			ft_envcpy.c \
 			ft_double.c \
 			ft_ewcsnwidth.c \
 			ft_ewcswidth.c \
@@ -130,6 +129,7 @@ SOURCES	:=	cast.c \
 			ft_strstr.c \
 			ft_strsub.c \
 			ft_strtrim.c \
+			ft_tabcpy.c \
 			ft_tabdel.c \
 			ft_tolower.c \
 			ft_toupper.c \
