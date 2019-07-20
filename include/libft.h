@@ -151,6 +151,8 @@ int				ft_strnequ(char const *s1, char const *s2, size_t n);
 
 void			*ft_memalloc(size_t size);
 
+void			**ft_tabmalloc(size_t size);
+
 char			*ft_strnew(size_t size);
 
 char			*ft_strmap(char const *s, char (*f)(char));

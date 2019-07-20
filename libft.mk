@@ -131,6 +131,7 @@ SOURCES	:=	cast.c \
 			ft_strtrim.c \
 			ft_tabcpy.c \
 			ft_tabdel.c \
+			ft_tabmalloc.c \
 			ft_tolower.c \
 			ft_toupper.c \
 			ft_unbr.c \
