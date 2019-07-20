@@ -233,6 +233,8 @@ int				ft_vasprintf(char **ret, const char *format, va_list ap);
 
 char			**ft_tabcpy(char **table);
 
+size_t			ft_tablen(char **table);
+
 char			*ft_getenv(const char *name);
 
 int				ft_setenv(const char *name, const char *value, int overwrite);
