@@ -5,6 +5,7 @@ sudo: true
 script:
     - make
     - make clean
+    - make test
 
 env:
     global:

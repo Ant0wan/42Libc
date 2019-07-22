@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/25 14:03:51 by abarthel          #+#    #+#              #
-#    Updated: 2019/07/09 12:25:44 by abarthel         ###   ########.fr        #
+#    Updated: 2019/07/22 18:28:57 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,9 @@ objects: $(OBJECTS)
 lib	: $(OBJECTS)
 	@ar rc $(NAME) $(OBJECTS)
 	@ranlib $(NAME)
+
+test :
+	make -j ; gcc -g main.c libft.a -I./include ; echo "\n./a.out -Ralrt -ok -n54 -n 54dsf\n" ; ./a.out -Ralrt -ok -n54 -n 54dsf
 
 -include $(DEPENDS)
 

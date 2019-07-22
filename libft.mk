@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/25 14:45:47 by abarthel          #+#    #+#              #
-#    Updated: 2019/07/17 20:05:11 by abarthel         ###   ########.fr        #
+#    Updated: 2019/07/22 17:31:19 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ SOURCES	:=	cast.c \
 			ft_hexa.c \
 			ft_getch.c \
 			ft_getenv.c \
+			ft_getopt.c \
 			ft_isalnum.c \
 			ft_isalpha.c \
 			ft_isascii.c \
