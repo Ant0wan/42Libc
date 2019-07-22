@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 13:47:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/07/22 18:18:45 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/07/22 18:32:35 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ static int	parse_arg(char *argv, const char *optstring)
 
 	(void)i;
 	(void)optstring;
+	(void)nextchar;
 	if (!argv)
 	{
 		return (-1); /* end of arg */
