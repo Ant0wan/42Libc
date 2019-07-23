@@ -15,6 +15,7 @@
 */
 
 #include <stdlib.h>
+#include <unistd.h>
 #include "libft.h"
 #include "ft_getopt.h"
 
@@ -23,12 +24,11 @@ int		g_optind = 1;
 int		g_opterr = 1;
 int		g_optopt; /* error option only */
 
-static int		parse_char(char *c, const char *optstring)
+static int		parse_char(char *c, const char *optstring, char *progname)
 {
 	int i;
 
 	i = 0;
-	ft_printf("\n>%s", c);
 	while (optstring[i])
 	{
 		if (*c == optstring[i])
@@ -46,10 +46,14 @@ static int		parse_char(char *c, const char *optstring)
 		}
 	}
 	g_optopt = *c;
+	if (g_opterr)
+	{
+		ft_dprintf(STDERR_FILENO, "%s: invalid option -- '%c'\n", progname, *c);
+	}
 	return ('?');
 }
 
-static int		parse_optstring(char *str, const char *optstring)
+static int		parse_optstring(char *str, const char *optstring, char *progname)
 {
 	static int	i;
 	int		ret;
@@ -60,7 +64,7 @@ static int		parse_optstring(char *str, const char *optstring)
 		i = 0;
 		g_optarg = NULL;
 	}
-	ret = parse_char(&str[i], optstring);
+	ret = parse_char(&str[i], optstring, progname);
 	++i;
 	if (!str[i])
 	{
@@ -72,8 +76,16 @@ static int		parse_optstring(char *str, const char *optstring)
 
 int			ft_getopt(int argc, char *const argv[], const char *optstring)
 {
+	static char	*progname;
 	int	ret;
 
+	if (!progname)
+	{
+		if (argv)
+		{
+			progname = argv[0];
+		}
+	}
 	ret = 0;
 	if (!optstring || g_optind >= argc || !argv[g_optind]
 			|| *(argv[g_optind]) != '-' || !ft_strcmp((argv[g_optind]), "-"))
@@ -89,7 +101,7 @@ int			ft_getopt(int argc, char *const argv[], const char *optstring)
 	}
 	if (argv[g_optind] && argv[g_optind][0])
 	{
-		ret = parse_optstring(&argv[g_optind][1], optstring);
+		ret = parse_optstring(&argv[g_optind][1], optstring, progname);
 	}
 	return (ret);
 /*	

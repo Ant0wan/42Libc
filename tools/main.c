@@ -29,6 +29,7 @@ int	main(int argc, char **argv, char **envp)
 	char	str3_opt[] = "-c1OK";
 	char	str4_opt[] = "totoargument";
 	char	str5_opt[] = "--";
+	int	i = 1;
 
 	str0_opt = argv[0];
 	getopt_argv[0] = str0_opt;
@@ -40,13 +41,16 @@ int	main(int argc, char **argv, char **envp)
 	getopt_argv[5] = NULL;
 	
 	ft_print_tables(getopt_argv);
-	while (getoptret != -1)
+	g_opterr = 1;
+	opterr = 1;
+	while (i < 20)
 	{
-		ft_getoptret = ft_getopt(5, getopt_argv, ":Rarlttn:c:");
-		getoptret = getopt(5, getopt_argv, ":Rarltn:c:");
+		ft_getoptret = ft_getopt(5, getopt_argv, "Rarlttn:c:");
+		getoptret = getopt(5, getopt_argv, "Rarltn:c:");
 		printf("\n      ret, optopt:optarg, optind, opterr\n", getoptret, optopt, optarg, optind, opterr);
 		printf("libc:%3c,%6c:%10s,%5d,%5d\n", getoptret, optopt, optarg, optind, opterr);
 		printf("lbft:%3c,%6c:%10s,%5d,%5d\n", ft_getoptret, g_optopt, g_optarg, g_optind, g_opterr);
+		++i;
 	}
 	printf("%d\n", g_optind);
 	printf("%d\n", g_optind);
