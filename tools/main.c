@@ -21,14 +21,14 @@ int	main(int argc, char **argv, char **envp)
 /* Test GETOPT */
 	char	ft_getoptret = 0;
 	char	getoptret = 0;
-	int	getopt_argc = 5;
+	int	getopt_argc = 3;
 	char	*getopt_argv[7];
 	char	*str0_opt;
 	char	str1_opt[] = "-Raorlt";
-	char	str2_opt[] = "--";
-	char	str3_opt[] = "-c";
-	char	str4_opt[] = "150";
-	char	str5_opt[] = "";
+	char	str2_opt[] = "-c";
+	char	str3_opt[] = "1265";
+	char	*str4_opt = NULL;
+	char	*str5_opt = NULL;
 	int	i = 1;
 
 	str0_opt = argv[0];
@@ -45,8 +45,8 @@ int	main(int argc, char **argv, char **envp)
 	opterr = 1;
 	while (i < 28)
 	{
-		ft_getoptret = ft_getopt(5, getopt_argv, "Rarlttn:c:");
-		getoptret = getopt(5, getopt_argv, "Rarltn:c:");
+		ft_getoptret = ft_getopt(getopt_argc, getopt_argv, "Rarlttn:c:");
+		getoptret = getopt(getopt_argc, getopt_argv, "Rarltn:c:");
 		printf("\n      ret, optopt:optarg, optind, opterr\n", getoptret, optopt, optarg, optind, opterr);
 		printf("libc:%3c,%6c:%10s,%5d,%5d\n", getoptret, optopt, optarg, optind, opterr);
 		printf("lbft:%3c,%6c:%10s,%5d,%5d\n", ft_getoptret, g_optopt, g_optarg, g_optind, g_opterr);

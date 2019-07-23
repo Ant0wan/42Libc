@@ -24,7 +24,7 @@ int		g_optind = 1;
 int		g_opterr = 1;
 int		g_optopt; /* error option only */
 
-static int		parse_char(char *const *argv, char *c, const char *optstring, char *progname)
+static int		parse_char(int argc, char *const *argv, char *c, const char *optstring, char *progname)
 {
 	int i;
 
@@ -38,9 +38,20 @@ static int		parse_char(char *const *argv, char *c, const char *optstring, char *
 				if (!c[1])
 				{
 					++g_optind;
-					if (argv[g_optind])
-					{
+					if (g_optind < argc)
 						g_optarg = argv[g_optind];
+					else
+					{
+						g_optopt = *c;
+						--g_optind;
+						if (*optstring == ':')
+							return (':');
+						else
+						{
+							if (g_opterr)
+								ft_dprintf(STDERR_FILENO, "%s: option requires an argument -- '%c'\n", progname, *c);
+							return ('?');
+						}
 					}
 				}
 				else
@@ -57,14 +68,12 @@ static int		parse_char(char *const *argv, char *c, const char *optstring, char *
 		}
 	}
 	g_optopt = *c;
-	if (g_opterr)
-	{
+	if (g_opterr && *optstring != ':')
 		ft_dprintf(STDERR_FILENO, "%s: invalid option -- '%c'\n", progname, *c);
-	}
 	return ('?');
 }
 
-static int		parse_optstring(char *const *argv, char *str, const char *optstring, char *progname)
+static int		parse_optstring(int argc, char *const *argv, char *str, const char *optstring, char *progname)
 {
 	static int	i;
 	int		ret;
@@ -75,7 +84,7 @@ static int		parse_optstring(char *const *argv, char *str, const char *optstring,
 		i = 0;
 		g_optarg = NULL;
 	}
-	ret = parse_char(argv, &str[i], optstring, progname);
+	ret = parse_char(argc, argv, &str[i], optstring, progname);
 	++i;
 	if (!str[i])
 	{
@@ -112,7 +121,7 @@ int			ft_getopt(int argc, char *const argv[], const char *optstring)
 	}
 	if (argv[g_optind] && argv[g_optind][0])
 	{
-		ret = parse_optstring(argv, &argv[g_optind][1], optstring, progname);
+		ret = parse_optstring(argc, argv, &argv[g_optind][1], optstring, progname);
 	}
 	return (ret);
 /*	
