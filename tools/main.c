@@ -25,10 +25,10 @@ int	main(int argc, char **argv, char **envp)
 	char	*getopt_argv[7];
 	char	*str0_opt;
 	char	str1_opt[] = "-Raorlt";
-	char	str2_opt[] = "-n5";
-	char	str3_opt[] = "-c1OK";
-	char	str4_opt[] = "totoargument";
-	char	str5_opt[] = "--";
+	char	str2_opt[] = "--";
+	char	str3_opt[] = "-c";
+	char	str4_opt[] = "150";
+	char	str5_opt[] = "";
 	int	i = 1;
 
 	str0_opt = argv[0];
@@ -43,7 +43,7 @@ int	main(int argc, char **argv, char **envp)
 	ft_print_tables(getopt_argv);
 	g_opterr = 1;
 	opterr = 1;
-	while (i < 20)
+	while (i < 28)
 	{
 		ft_getoptret = ft_getopt(5, getopt_argv, "Rarlttn:c:");
 		getoptret = getopt(5, getopt_argv, "Rarltn:c:");

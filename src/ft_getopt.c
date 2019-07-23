@@ -24,7 +24,7 @@ int		g_optind = 1;
 int		g_opterr = 1;
 int		g_optopt; /* error option only */
 
-static int		parse_char(char *c, const char *optstring, char *progname)
+static int		parse_char(char *const *argv, char *c, const char *optstring, char *progname)
 {
 	int i;
 
@@ -35,8 +35,19 @@ static int		parse_char(char *c, const char *optstring, char *progname)
 		{
 			if (optstring[i + 1] == ':')
 			{
-				g_optarg = &c[1];
-				++g_optind;
+				if (!c[1])
+				{
+					++g_optind;
+					if (argv[g_optind])
+					{
+						g_optarg = argv[g_optind];
+					}
+				}
+				else
+				{
+					g_optarg = &c[1];
+					++g_optind;
+				}
 			}
 			return (*c);
 		}
@@ -53,7 +64,7 @@ static int		parse_char(char *c, const char *optstring, char *progname)
 	return ('?');
 }
 
-static int		parse_optstring(char *str, const char *optstring, char *progname)
+static int		parse_optstring(char *const *argv, char *str, const char *optstring, char *progname)
 {
 	static int	i;
 	int		ret;
@@ -64,7 +75,7 @@ static int		parse_optstring(char *str, const char *optstring, char *progname)
 		i = 0;
 		g_optarg = NULL;
 	}
-	ret = parse_char(&str[i], optstring, progname);
+	ret = parse_char(argv, &str[i], optstring, progname);
 	++i;
 	if (!str[i])
 	{
@@ -101,7 +112,7 @@ int			ft_getopt(int argc, char *const argv[], const char *optstring)
 	}
 	if (argv[g_optind] && argv[g_optind][0])
 	{
-		ret = parse_optstring(&argv[g_optind][1], optstring, progname);
+		ret = parse_optstring(argv, &argv[g_optind][1], optstring, progname);
 	}
 	return (ret);
 /*	
@@ -109,9 +120,5 @@ int			ft_getopt(int argc, char *const argv[], const char *optstring)
 	{
 		optopt = argv[optind][i];
 	}
-	if (last_opt)
-	{
-		optind = 1;
-		return (-1);
-	} */
+	 */
 }
