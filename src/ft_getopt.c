@@ -14,64 +14,85 @@
 **  https://www.unix.com/man-page/posix/3p/getopt/
 */
 
-#include <libft.h>
-#include <ft_getopt.h>
+#include <stdlib.h>
+#include "libft.h"
+#include "ft_getopt.h"
 
-char	*g_optarg; /*opt parameter */
+char	*g_optarg = NULL; /*opt parameter */
 int		g_optind = 1;
 int		g_opterr = 1;
 int		g_optopt; /* error option only */
 
-
-
-static int	parse_arg(char *argv, const char *optstring)
+static int		parse_char(char *c, const char *optstring)
 {
-	static char	*nextchar;
-	static int	i;
+	int i;
 
-	(void)optstring;
-	ft_printf("%s\n", argv);
-/*	else if (optstring[i] == nextchar)
+	i = 0;
+	ft_printf("\n>%s", c);
+	while (optstring[i])
 	{
-		nextchar = ++argv;
-	} */
-	++i;
-	nextchar = &argv[i];
-	if (!*nextchar)
-	{
-		++g_optind;
-		return (0);
+		if (*c == optstring[i])
+		{
+			if (optstring[i + 1] == ':')
+			{
+				g_optarg = &c[1];
+				++g_optind;
+			}
+			return (*c);
+		}
+		else
+		{
+			++i;
+		}
 	}
-	g_optopt = *nextchar;
-	return (*nextchar);
+	g_optopt = *c;
+	return ('?');
+}
+
+static int		parse_optstring(char *str, const char *optstring)
+{
+	static int	i;
+	int		ret;
+
+	ret = 0;
+	if (g_optarg)
+	{
+		i = 0;
+		g_optarg = NULL;
+	}
+	ret = parse_char(&str[i], optstring);
+	++i;
+	if (!str[i])
+	{
+		i = 0;
+		++g_optind;
+	}
+	return (ret);
 }
 
 int			ft_getopt(int argc, char *const argv[], const char *optstring)
 {
 	int	ret;
 
-	ret = -1;
+	ret = 0;
 	if (!optstring || g_optind >= argc || !argv[g_optind]
 			|| *(argv[g_optind]) != '-' || !ft_strcmp((argv[g_optind]), "-"))
 	{
+		g_optarg = NULL;
 		return (-1);
 	}
 	else if (!ft_strcmp((argv[g_optind]), "--"))
 	{
+		g_optarg = NULL;
 		++g_optind;
 		return (-1);
 	}
-	if ((ret = parse_arg(argv[g_optind], optstring)) != -1)
+	if (argv[g_optind] && argv[g_optind][0])
 	{
-		return (ret);
+		ret = parse_optstring(&argv[g_optind][1], optstring);
 	}
-	
-
-/*	treatment;
-	if (element in  argv[] not an option in optstring)
-	{
-		return ('?');
-	}
+	return (ret);
+/*	
 	if (option : with no argument, then return optstring[0] which is : or ? therwise)
 	{
 		optopt = argv[optind][i];
@@ -81,5 +102,4 @@ int			ft_getopt(int argc, char *const argv[], const char *optstring)
 		optind = 1;
 		return (-1);
 	} */
-	return (0); /* to delete it */
 }

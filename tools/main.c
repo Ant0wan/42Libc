@@ -24,9 +24,9 @@ int	main(int argc, char **argv, char **envp)
 	int	getopt_argc = 5;
 	char	*getopt_argv[7];
 	char	*str0_opt;
-	char	str1_opt[] = "-Rarlt";
+	char	str1_opt[] = "-Raorlt";
 	char	str2_opt[] = "-n5";
-	char	str3_opt[] = "-c5OK";
+	char	str3_opt[] = "-c1OK";
 	char	str4_opt[] = "totoargument";
 	char	str5_opt[] = "--";
 
