@@ -19,10 +19,10 @@
 #include "libft.h"
 #include "ft_getopt.h"
 
-char	*g_optarg = NULL; /*opt parameter */
+char	*g_optarg = NULL;
 int		g_optind = 1;
 int		g_opterr = 1;
-int		g_optopt; /* error option only */
+int		g_optopt;
 
 static int		parse_char(int argc, char *const *argv, char *c, const char *optstring)
 {
@@ -31,6 +31,11 @@ static int		parse_char(int argc, char *const *argv, char *c, const char *optstri
 	i = 0;
 	while (optstring[i])
 	{
+		if (optstring[i] == ':')
+		{
+			++i;
+			continue ;
+		}
 		if (*c == optstring[i])
 		{
 			if (optstring[i + 1] == ':')
@@ -98,12 +103,20 @@ static int		parse_optstring(int argc, char *const *argv, const char *optstring)
 
 int			ft_getopt(int argc, char *const argv[], const char *optstring)
 {
-	int	ret;
+	static char	first_arg;
+	int		ret;
 
 	ret = 0;
+	if (!first_arg && argv[g_optind] && *(argv[g_optind]) != '-')
+		first_arg = g_optind + 1;
+	while (argv[g_optind] && *(argv[g_optind]) != '-')
+			++g_optind;
 	if (!optstring || g_optind >= argc || !argv[g_optind]
-			|| (*(argv[g_optind]) != '-' && *optstring != '-') || !ft_strcmp((argv[g_optind]), "-"))
+			|| (*(argv[g_optind]) != '-' && *optstring != '-')
+			|| !ft_strcmp((argv[g_optind]), "-"))
 	{
+		if (first_arg && !argv[g_optind])
+			g_optind = first_arg;
 		g_optarg = NULL;
 		return (-1);
 	}
