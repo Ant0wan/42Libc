@@ -107,15 +107,15 @@ int			ft_getopt(int argc, char *const argv[], const char *optstring)
 	int		ret;
 
 	ret = 0;
-	if (!first_arg && argv[g_optind] && *(argv[g_optind]) != '-')
+	if (!first_arg && argv[g_optind] && *(argv[g_optind]) != '-' && *optstring != '-')
 		first_arg = g_optind + 1;
-	while (argv[g_optind] && *(argv[g_optind]) != '-')
+	while (argv[g_optind] && *(argv[g_optind]) != '-' && *optstring != '-')
 			++g_optind;
 	if (!optstring || g_optind >= argc || !argv[g_optind]
 			|| (*(argv[g_optind]) != '-' && *optstring != '-')
 			|| !ft_strcmp((argv[g_optind]), "-"))
 	{
-		if (first_arg && !argv[g_optind])
+		if (first_arg && !argv[g_optind] && *optstring != '-')
 			g_optind = first_arg;
 		g_optarg = NULL;
 		return (-1);
