@@ -21,13 +21,13 @@ int	main(int argc, char **argv, char **envp)
 /* Test GETOPT */
 	char	ft_getoptret = 0;
 	char	getoptret = 0;
-	int	getopt_argc = 3;
-	char	optstring[] = ":Rarln:c:"; 
+	int	getopt_argc = 5;
+	char	optstring[] = "Rarln:c:"; 
 	char	*getopt_argv[7];
 	char	*str0_opt;
 	char	str1_opt[] = "-Raorlt";
 	char	str2_opt[] = "-al";
-	char	str3_opt[] = "al";
+	char	str3_opt[] = "-n77200";
 	char	str4_opt[] = "-Rt";
 	char	*str5_opt = NULL;
 	int	i = 1;
@@ -45,7 +45,7 @@ int	main(int argc, char **argv, char **envp)
 	ft_print_tables(getopt_argv);
 	g_opterr = 1;
 	opterr = 1;
-	while (i < 15)
+	while (i < 28)
 	{
 		ft_getoptret = ft_getopt(getopt_argc, getopt_argv, optstring);
 		getoptret = getopt(getopt_argc, getopt_argv, optstring);

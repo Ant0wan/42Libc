@@ -55,17 +55,13 @@ static int		parse_char(int argc, char *const *argv, char *c, const char *optstri
 					}
 				}
 				else
-				{
 					g_optarg = &c[1];
-					++g_optind;
-				}
+				++g_optind;
 			}
 			return (*c);
 		}
 		else
-		{
 			++i;
-		}
 	}
 	g_optopt = *c;
 	if (g_opterr && *optstring != ':')
@@ -111,9 +107,7 @@ int			ft_getopt(int argc, char *const argv[], const char *optstring)
 		++g_optind;
 		return (-1);
 	}
-	if (argv[g_optind] && argv[g_optind][0])
-	{
+	else if (argv[g_optind] && argv[g_optind][0])
 		ret = parse_optstring(argc, argv, optstring);
-	}
 	return (ret);
 }
