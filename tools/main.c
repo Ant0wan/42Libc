@@ -22,13 +22,14 @@ int	main(int argc, char **argv, char **envp)
 	char	ft_getoptret = 0;
 	char	getoptret = 0;
 	int	getopt_argc = 5;
-	char	optstring[] = "Rarln:c:"; 
+	char	optstring[] = "-Rarln:c:";/* 
+	char	optstring[] = ":Rarln:c:"; */
 	char	*getopt_argv[7];
 	char	*str0_opt;
 	char	str1_opt[] = "-Raorlt";
-	char	str2_opt[] = "-al";
-	char	str3_opt[] = "-n77200";
-	char	str4_opt[] = "-Rt";
+	char	str2_opt[] = "alc50";
+	char	str3_opt[] = "MYARGUMENT";
+	char	str4_opt[] = "-n4";
 	char	*str5_opt = NULL;
 	int	i = 1;
 

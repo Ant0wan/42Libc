@@ -80,9 +80,15 @@ static int		parse_optstring(int argc, char *const *argv, const char *optstring)
 		i = 1;
 		g_optarg = NULL;
 	}
+	if (*optstring == '-' && argv[g_optind][0] != '-')
+	{
+		g_optarg = argv[g_optind];
+		++g_optind;
+		return (1);
+	}
 	ret = parse_char(argc, argv, &argv[g_optind][i], optstring);
 	++i;
-	if (!argv[g_optind][i])
+	if (argv[g_optind] && !argv[g_optind][i])
 	{
 		i = 1;
 		++g_optind;
@@ -96,7 +102,7 @@ int			ft_getopt(int argc, char *const argv[], const char *optstring)
 
 	ret = 0;
 	if (!optstring || g_optind >= argc || !argv[g_optind]
-			|| *(argv[g_optind]) != '-' || !ft_strcmp((argv[g_optind]), "-"))
+			|| (*(argv[g_optind]) != '-' && *optstring != '-') || !ft_strcmp((argv[g_optind]), "-"))
 	{
 		g_optarg = NULL;
 		return (-1);
