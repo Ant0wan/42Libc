@@ -22,12 +22,13 @@ int	main(int argc, char **argv, char **envp)
 	char	ft_getoptret = 0;
 	char	getoptret = 0;
 	int	getopt_argc = 3;
+	char	optstring[] = ":Rarln:c:"; 
 	char	*getopt_argv[7];
 	char	*str0_opt;
 	char	str1_opt[] = "-Raorlt";
-	char	str2_opt[] = "-c";
-	char	str3_opt[] = "1265";
-	char	*str4_opt = NULL;
+	char	str2_opt[] = "-al";
+	char	str3_opt[] = "al";
+	char	str4_opt[] = "-Rt";
 	char	*str5_opt = NULL;
 	int	i = 1;
 
@@ -40,16 +41,17 @@ int	main(int argc, char **argv, char **envp)
 	getopt_argv[5] = str5_opt;
 	getopt_argv[5] = NULL;
 	
+	printf("optstring => %s\n", optstring);
 	ft_print_tables(getopt_argv);
 	g_opterr = 1;
 	opterr = 1;
-	while (i < 28)
+	while (i < 15)
 	{
-		ft_getoptret = ft_getopt(getopt_argc, getopt_argv, "Rarlttn:c:");
-		getoptret = getopt(getopt_argc, getopt_argv, "Rarltn:c:");
+		ft_getoptret = ft_getopt(getopt_argc, getopt_argv, optstring);
+		getoptret = getopt(getopt_argc, getopt_argv, optstring);
 		printf("\n      ret, optopt:optarg, optind, opterr\n", getoptret, optopt, optarg, optind, opterr);
-		printf("libc:%3c,%6c:%10s,%5d,%5d\n", getoptret, optopt, optarg, optind, opterr);
-		printf("lbft:%3c,%6c:%10s,%5d,%5d\n", ft_getoptret, g_optopt, g_optarg, g_optind, g_opterr);
+		printf("libc:%d%3c,%6c:%10s,%5d,%5d\n", (int)getoptret, getoptret, optopt, optarg, optind, opterr);
+		printf("lbft:%d%3c,%6c:%10s,%5d,%5d\n", (int)ft_getoptret, ft_getoptret, g_optopt, g_optarg, g_optind, g_opterr);
 		++i;
 	}
 	printf("%d\n", g_optind);

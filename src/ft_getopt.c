@@ -24,7 +24,7 @@ int		g_optind = 1;
 int		g_opterr = 1;
 int		g_optopt; /* error option only */
 
-static int		parse_char(int argc, char *const *argv, char *c, const char *optstring, char *progname)
+static int		parse_char(int argc, char *const *argv, char *c, const char *optstring)
 {
 	int i;
 
@@ -49,7 +49,7 @@ static int		parse_char(int argc, char *const *argv, char *c, const char *optstri
 						else
 						{
 							if (g_opterr)
-								ft_dprintf(STDERR_FILENO, "%s: option requires an argument -- '%c'\n", progname, *c);
+								ft_dprintf(STDERR_FILENO, "%s: option requires an argument -- '%c'\n", argv[0], *c);
 							return ('?');
 						}
 					}
@@ -69,26 +69,26 @@ static int		parse_char(int argc, char *const *argv, char *c, const char *optstri
 	}
 	g_optopt = *c;
 	if (g_opterr && *optstring != ':')
-		ft_dprintf(STDERR_FILENO, "%s: invalid option -- '%c'\n", progname, *c);
+		ft_dprintf(STDERR_FILENO, "%s: invalid option -- '%c'\n", argv[0], *c);
 	return ('?');
 }
 
-static int		parse_optstring(int argc, char *const *argv, char *str, const char *optstring, char *progname)
+static int		parse_optstring(int argc, char *const *argv, const char *optstring)
 {
-	static int	i;
+	static int	i = 1;
 	int		ret;
 
 	ret = 0;
 	if (g_optarg)
 	{
-		i = 0;
+		i = 1;
 		g_optarg = NULL;
 	}
-	ret = parse_char(argc, argv, &str[i], optstring, progname);
+	ret = parse_char(argc, argv, &argv[g_optind][i], optstring);
 	++i;
-	if (!str[i])
+	if (!argv[g_optind][i])
 	{
-		i = 0;
+		i = 1;
 		++g_optind;
 	}
 	return (ret);
@@ -96,16 +96,8 @@ static int		parse_optstring(int argc, char *const *argv, char *str, const char *
 
 int			ft_getopt(int argc, char *const argv[], const char *optstring)
 {
-	static char	*progname;
 	int	ret;
 
-	if (!progname)
-	{
-		if (argv)
-		{
-			progname = argv[0];
-		}
-	}
 	ret = 0;
 	if (!optstring || g_optind >= argc || !argv[g_optind]
 			|| *(argv[g_optind]) != '-' || !ft_strcmp((argv[g_optind]), "-"))
@@ -121,13 +113,7 @@ int			ft_getopt(int argc, char *const argv[], const char *optstring)
 	}
 	if (argv[g_optind] && argv[g_optind][0])
 	{
-		ret = parse_optstring(argc, argv, &argv[g_optind][1], optstring, progname);
+		ret = parse_optstring(argc, argv, optstring);
 	}
 	return (ret);
-/*	
-	if (option : with no argument, then return optstring[0] which is : or ? therwise)
-	{
-		optopt = argv[optind][i];
-	}
-	 */
 }
