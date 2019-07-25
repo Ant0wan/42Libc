@@ -22,7 +22,7 @@ int	main(int argc, char **argv, char **envp)
 	char	ft_getoptret = 0;
 	char	getoptret = 0;
 	int	getopt_argc = 5;
-	char	optstring[] = ":Rarln:c:";/* 
+	char	optstring[] = "-Rarln:c:";/* 
 	char	optstring[] = "-Rarln:c:"; */
 	char	*getopt_argv[7];
 	char	*str0_opt;
@@ -50,7 +50,7 @@ int	main(int argc, char **argv, char **envp)
 	{
 		ft_getoptret = ft_getopt(getopt_argc, getopt_argv, optstring);
 		getoptret = getopt(getopt_argc, getopt_argv, optstring);
-		printf("\n      ret, optopt:optarg, optind, opterr\n", getoptret, optopt, optarg, optind, opterr);
+		printf("\n      ret, optopt:optarg, optind, opterr\n");
 		printf("libc:%d%3c,%6c:%10s,%5d,%5d\n", (int)getoptret, getoptret, optopt, optarg, optind, opterr);
 		printf("lbft:%d%3c,%6c:%10s,%5d,%5d\n", (int)ft_getoptret, ft_getoptret, g_optopt, g_optarg, g_optind, g_opterr);
 		++i;

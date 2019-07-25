@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 13:47:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/07/22 19:48:33 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/07/25 11:14:01 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ int		g_optind = 1;
 int		g_opterr = 1;
 int		g_optopt;
 
-static int		parse_char(int argc, char *const *argv, char *c, const char *optstring)
+static int	parse_char(int argc, char *const *argv, char *c,
+			const char *optstring)
 {
 	int i;
 
@@ -74,10 +75,10 @@ static int		parse_char(int argc, char *const *argv, char *c, const char *optstri
 	return ('?');
 }
 
-static int		parse_optstring(int argc, char *const *argv, const char *optstring)
+static int	parse_optstring(int argc, char *const *argv, const char *optstring)
 {
 	static int	i = 1;
-	int		ret;
+	int			ret;
 
 	ret = 0;
 	if (g_optarg)
@@ -104,13 +105,14 @@ static int		parse_optstring(int argc, char *const *argv, const char *optstring)
 int			ft_getopt(int argc, char *const argv[], const char *optstring)
 {
 	static char	first_arg;
-	int		ret;
+	int			ret;
 
 	ret = 0;
-	if (!first_arg && argv[g_optind] && *(argv[g_optind]) != '-' && *optstring != '-')
+	if (!first_arg && argv[g_optind] &&
+			*(argv[g_optind]) != '-' && *optstring != '-')
 		first_arg = g_optind + 1;
 	while (argv[g_optind] && *(argv[g_optind]) != '-' && *optstring != '-')
-			++g_optind;
+		++g_optind;
 	if (!optstring || g_optind >= argc || !argv[g_optind]
 			|| (*(argv[g_optind]) != '-' && *optstring != '-')
 			|| !ft_strcmp((argv[g_optind]), "-"))
@@ -126,7 +128,7 @@ int			ft_getopt(int argc, char *const argv[], const char *optstring)
 		++g_optind;
 		return (-1);
 	}
-	else if (argv[g_optind] && argv[g_optind][0])
+	else if (argv[g_optind] && *(argv[g_optind]))
 		ret = parse_optstring(argc, argv, optstring);
 	return (ret);
 }
