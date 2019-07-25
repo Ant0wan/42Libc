@@ -11,19 +11,22 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 static int	ft_argcmp(char *s1, char *s2)
 {
 	if (s1 && s2)
 	{
 		if (*s1 == '-' && *s2 != '-')
+		{
 			return (1);
+		}
 		return (0);
 	}
 	return (0);
 }
 
-void		ft_sortopt(int argc, char **argv)
+void		ft_sortopt(int argc, char **argv, const char *optstring)
 {
 	char	*tmp;
 	int	diff;
@@ -37,6 +40,9 @@ void		ft_sortopt(int argc, char **argv)
 		i = 2;
 		while (i < argc)
 		{
+			if ((*optstring == '-' || *optstring == '+' )
+					&& ft_strcmp(argv[i], argv[i - 1]))
+				return ;
 			if (ft_argcmp(argv[i], argv[i - 1]))
 			{
 				diff |= 1;

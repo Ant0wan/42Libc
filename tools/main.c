@@ -22,12 +22,12 @@ int	main(int argc, char **argv, char **envp)
 	char	ft_getoptret = 0;
 	char	getoptret = 0;
 	int	getopt_argc = 5;
-	char	optstring[] = ":Rarln:c:";/* 
+	char	optstring[] = "+Rarln:c:";/* 
 	char	optstring[] = "-Rarln:c:"; */
 	char	*getopt_argv[7];
 	char	*str0_opt;
 	char	str1_opt[] = "-R:aorlt";
-	char	str2_opt[] = "n4";
+	char	str2_opt[] = "--";
 	char	str3_opt[] = "alc50";
 	char	str4_opt[] = "-Nono";
 	char	str5_opt[] = "222Nono";
@@ -42,7 +42,6 @@ int	main(int argc, char **argv, char **envp)
 	getopt_argv[5] = str5_opt;
 	getopt_argv[5] = NULL;
 	
-	ft_sortopt(getopt_argc, getopt_argv);
 	printf("optstring => %s\n", optstring);
 	ft_print_tables(getopt_argv);
 	g_opterr = 0;

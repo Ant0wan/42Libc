@@ -120,6 +120,7 @@ int			ft_getopt(int argc, char *const argv[], const char *optstring)
 	int		ret;
 
 	ret = 0;
+	ft_sortopt(argc, (char**)argv, optstring);
 	if (!g_optind)
 		reset_getopt(&first_arg);
 	if (!first_arg && argv[g_optind] &&

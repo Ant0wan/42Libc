@@ -243,6 +243,6 @@ void			ft_tabdel(char ***tab);
 
 int				ft_getch(void);
 
-void			ft_sortopt(int argc, char **argv);
+void			ft_sortopt(int argc, char **argv, const char *optstring);
 
 #endif
