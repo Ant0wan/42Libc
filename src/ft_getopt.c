@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 13:47:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/07/25 11:14:01 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/07/25 11:17:55 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*g_optarg = NULL;
 int		g_optind = 1;
 int		g_opterr = 1;
 int		g_optopt;
+
+#ifdef __unix__
 
 static int	parse_char(int argc, char *const *argv, char *c,
 			const char *optstring)
@@ -86,7 +88,7 @@ static int	parse_optstring(int argc, char *const *argv, const char *optstring)
 		i = 1;
 		g_optarg = NULL;
 	}
-	if (*optstring == '-' && argv[g_optind][0] != '-')
+	if (*optstring == '-' && *(argv[g_optind]) != '-')
 	{
 		g_optarg = argv[g_optind];
 		++g_optind;
@@ -132,3 +134,7 @@ int			ft_getopt(int argc, char *const argv[], const char *optstring)
 		ret = parse_optstring(argc, argv, optstring);
 	return (ret);
 }
+
+#else
+
+
