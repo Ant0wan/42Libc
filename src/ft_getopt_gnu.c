@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 13:47:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/07/25 17:52:02 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/07/25 17:57:55 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		g_optopt;
 
 #ifdef __unix__
 
-static int	parse_char(int argc, char *const *argv, char *c,
+static int		parse_char(int argc, char *const *argv, char *c,
 			const char *optstring)
 {
 	int i;
@@ -73,7 +73,8 @@ static int	parse_char(int argc, char *const *argv, char *c,
 	return ('?');
 }
 
-static int	parse_optstring(int argc, char *const *argv, const char *optstring)
+static int		parse_optstring(int argc, char *const *argv,
+		const char *optstring)
 {
 	static int	i = 1;
 	int			ret;
@@ -100,7 +101,8 @@ static int	parse_optstring(int argc, char *const *argv, const char *optstring)
 	return (ret);
 }
 
-static int	has_options(int argc, char *const argv[], const char *optstring)
+static int		has_options(int argc, char *const argv[],
+		const char *optstring)
 {
 	if (!optstring || g_optind >= argc || !argv[g_optind]
 			|| *(argv[g_optind]) != '-' || !ft_strcmp((argv[g_optind]), "-"))
@@ -117,7 +119,8 @@ static int	has_options(int argc, char *const argv[], const char *optstring)
 	return (0);
 }
 
-int			ft_getopt(int argc, char *const argv[], const char *optstring)
+int				ft_getopt(int argc, char *const argv[],
+		const char *optstring)
 {
 	int		ret;
 
