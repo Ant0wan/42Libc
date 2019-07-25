@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 13:47:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/07/25 17:44:27 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/07/25 17:52:02 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,20 +100,8 @@ static int	parse_optstring(int argc, char *const *argv, const char *optstring)
 	return (ret);
 }
 
-static void	reset_getopt(void)
+static int	has_options(int argc, char *const argv[], const char *optstring)
 {
-	parse_optstring(0, NULL, NULL);
-	g_optind = 1;
-}
-
-int			ft_getopt(int argc, char *const argv[], const char *optstring)
-{
-	int		ret;
-
-	ret = 0;
-	ft_sortopt(argc, (char**)argv, optstring);
-	if (!g_optind)
-		reset_getopt();
 	if (!optstring || g_optind >= argc || !argv[g_optind]
 			|| *(argv[g_optind]) != '-' || !ft_strcmp((argv[g_optind]), "-"))
 	{
@@ -126,6 +114,22 @@ int			ft_getopt(int argc, char *const argv[], const char *optstring)
 		g_optarg = NULL;
 		return (-1);
 	}
+	return (0);
+}
+
+int			ft_getopt(int argc, char *const argv[], const char *optstring)
+{
+	int		ret;
+
+	ret = 0;
+	ft_sortopt(argc, (char**)argv, optstring);
+	if (!g_optind)
+	{
+		parse_optstring(0, NULL, NULL);
+		g_optind = 1;
+	}
+	if ((ret = has_options(argc, argv, optstring)))
+		return (ret);
 	else if (!ft_strcmp((argv[g_optind]), "--"))
 	{
 		g_optarg = NULL;
