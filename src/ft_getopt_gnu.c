@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 13:47:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/07/25 18:30:56 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/07/25 18:33:00 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,37 +25,12 @@ int		g_optopt;
 static int		assign_char(int argc, char *const *argv, char *c,
 		const char *optstring)
 {
-	if (!c[1])
-	{
-		++g_optind;
-		if (g_optind < argc)
-		{
-			g_optarg = argv[g_optind];
-			return (0);
-		}
-		else
-		{
-			g_optopt = *c;
-			--g_optind;
-			if (*optstring == ':')
-				return (':');
-				else
-			{
-				if (g_opterr)
-					ft_dprintf(STDERR_FILENO, \
-					"%s: option requires an argument -- '%c'\n", argv[0], *c);
-				return ('?');
-			}
-		}
-	}
-	return (0);
 }
 
 static int		parse_char(int argc, char *const *argv, char *c,
 		const char *optstring)
 {
 	int i;
-	int	ret;
 
 	i = 0;
 	while (optstring[i])
@@ -69,8 +44,25 @@ static int		parse_char(int argc, char *const *argv, char *c,
 		{
 			if (optstring[i + 1] == ':')
 			{
-				if ((ret = assign_char(argc, argv, c, optstring)) != 0)
-					return (ret);
+				if (!c[1])
+				{
+					++g_optind;
+					if (g_optind < argc)
+						g_optarg = argv[g_optind];
+					else
+					{
+						g_optopt = *c;
+						--g_optind;
+						if (*optstring == ':')
+							return (':');
+						else
+						{
+							if (g_opterr)
+								ft_dprintf(STDERR_FILENO, "%s: option requires an argument -- '%c'\n", argv[0], *c);
+							return ('?');
+						}
+					}
+				}
 				else
 					g_optarg = &c[1];
 				++g_optind;
