@@ -96,7 +96,8 @@ static int	parse_optstring(int argc, char *const *argv, const char *optstring)
 	if (argv[g_optind] && !argv[g_optind][i]) /* go to next opt when scan done for [i] */
 	{
 		i = 1;
-		++g_optind;
+		if (!g_optarg)
+			++g_optind;
 	}
 	return (ret);
 }

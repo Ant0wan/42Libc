@@ -27,9 +27,9 @@ int	main(int argc, char **argv, char **envp)
 	char	*getopt_argv[7];
 	char	*str0_opt;
 	char	str1_opt[] = "-R:aorlt";
-	char	str2_opt[] = "-alc50";
-	char	str3_opt[] = "toto";
-	char	str4_opt[] = "-Nono";
+	char	str2_opt[] = "--";
+	char	str3_opt[] = "-alc50";
+	char	str4_opt[] = "Nono";
 	char	str5_opt[] = "222Nono";
 	int	i = 1;
 	
