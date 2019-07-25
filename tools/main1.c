@@ -49,11 +49,11 @@ int	main(int argc, char **argv, char **envp)
 	opterr = 0;
 	while (i < 28)
 	{
-	//	ft_getoptret = ft_getopt(getopt_argc, getopt_argv, optstring);
-		getoptret = getopt(getopt_argc, getopt_argv, optstring);
+		ft_getoptret = ft_getopt(getopt_argc, getopt_argv, optstring);
+	//	getoptret = getopt(getopt_argc, getopt_argv, optstring);
 	//	printf("\n      ret, optopt:optarg, optind, opterr\n");
-		printf("libc:%d%3c,%6c:%10s,%5d,%5d\n", (int)getoptret, getoptret, optopt, optarg, optind, opterr);
-	//	printf("lbft:%d%3c,%6c:%10s,%5d,%5d\n", (int)ft_getoptret, ft_getoptret, g_optopt, g_optarg, g_optind, g_opterr);
+	//	printf("libc:%d%3c,%6c:%10s,%5d,%5d\n", (int)getoptret, getoptret, optopt, optarg, optind, opterr);
+		printf("lbft:%d%3c,%6c:%10s,%5d,%5d\n", (int)ft_getoptret, ft_getoptret, g_optopt, g_optarg, g_optind, g_opterr);
 		++i;
 	}
 	ft_print_tables(getopt_argv);
