@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 13:47:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/07/25 18:29:06 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/07/25 18:30:56 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ static int		parse_char(int argc, char *const *argv, char *c,
 		{
 			if (optstring[i + 1] == ':')
 			{
-				if ((ret = assign_char(argc, argv, c, optstring)))
+				if ((ret = assign_char(argc, argv, c, optstring)) != 0)
 					return (ret);
 				else
 					g_optarg = &c[1];
