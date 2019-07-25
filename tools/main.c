@@ -22,13 +22,13 @@ int	main(int argc, char **argv, char **envp)
 	char	ft_getoptret = 0;
 	char	getoptret = 0;
 	int	getopt_argc = 5;
-	char	optstring[] = "+Rarln:c:";/* 
+	char	optstring[] = ":Rarln:c:";/* 
 	char	optstring[] = "-Rarln:c:"; */
 	char	*getopt_argv[7];
 	char	*str0_opt;
 	char	str1_opt[] = "-R:aorlt";
-	char	str2_opt[] = "--";
-	char	str3_opt[] = "alc50";
+	char	str2_opt[] = "-alc50";
+	char	str3_opt[] = "toto";
 	char	str4_opt[] = "-Nono";
 	char	str5_opt[] = "222Nono";
 	int	i = 1;
@@ -43,6 +43,7 @@ int	main(int argc, char **argv, char **envp)
 	getopt_argv[5] = NULL;
 	
 	printf("optstring => %s\n", optstring);
+	ft_sortopt(getopt_argc, getopt_argv, ":");
 	ft_print_tables(getopt_argv);
 	g_opterr = 0;
 	opterr = 0;
@@ -55,7 +56,7 @@ int	main(int argc, char **argv, char **envp)
 		printf("lbft:%d%3c,%6c:%10s,%5d,%5d\n", (int)ft_getoptret, ft_getoptret, g_optopt, g_optarg, g_optind, g_opterr);
 		++i;
 	}
-	printf("\n===================== RESET ===========================\n");
+/*	printf("\n===================== RESET ===========================\n");
 	i = 1;
 	g_optind = 0;
 	optind = 0;
@@ -69,7 +70,7 @@ int	main(int argc, char **argv, char **envp)
 		printf("lbft:%d%3c,%6c:%10s,%5d,%5d\n", (int)ft_getoptret, ft_getoptret, g_optopt, g_optarg, g_optind, g_opterr);
 		++i;
 	}
-	printf("%d\n", g_optind);
+*/	printf("%d\n", g_optind);
 	printf("%d\n", g_optind);
 	
 	return (0);

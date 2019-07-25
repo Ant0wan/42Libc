@@ -81,25 +81,19 @@ static int	parse_optstring(int argc, char *const *argv, const char *optstring)
 	int			ret;
 
 	ret = 0;
-	if (!g_optind)
+	if (!g_optind) /* in case of reset */
 	{
 		i = 1;
 		return (0);
 	}
-	if (g_optarg)
+	if (g_optarg) /* previsou was opt with arg */
 	{
 		i = 1;
 		g_optarg = NULL;
 	}
-	if (*optstring == '-' && *(argv[g_optind]) != '-')
-	{
-		g_optarg = argv[g_optind];
-		++g_optind;
-		return (1);
-	}
 	ret = parse_char(argc, argv, &argv[g_optind][i], optstring);
 	++i;
-	if (argv[g_optind] && !argv[g_optind][i])
+	if (argv[g_optind] && !argv[g_optind][i]) /* go to next opt when scan done for [i] */
 	{
 		i = 1;
 		++g_optind;
@@ -107,33 +101,23 @@ static int	parse_optstring(int argc, char *const *argv, const char *optstring)
 	return (ret);
 }
 
-void	reset_getopt(char *first_arg)
+static void	reset_getopt(void)
 {
-	*first_arg = 0;
 	parse_optstring(0, NULL, NULL);
 	g_optind = 1;
 }
 
 int			ft_getopt(int argc, char *const argv[], const char *optstring)
 {
-	static char	first_arg;
 	int		ret;
 
 	ret = 0;
 	ft_sortopt(argc, (char**)argv, optstring);
 	if (!g_optind)
-		reset_getopt(&first_arg);
-	if (!first_arg && argv[g_optind] &&
-			*(argv[g_optind]) != '-' && *optstring != '-')
-		first_arg = g_optind + 1;
-	while (argv[g_optind] && *(argv[g_optind]) != '-' && *optstring != '-')
-		++g_optind;
-	if (!optstring || g_optind >= argc || !argv[g_optind]
-			|| (*(argv[g_optind]) != '-' && *optstring != '-')
+		reset_getopt();
+	if (!optstring || g_optind >= argc || !argv[g_optind] || *(argv[g_optind]) != '-'
 			|| !ft_strcmp((argv[g_optind]), "-"))
 	{
-		if (first_arg && !argv[g_optind] && *optstring != '-')
-			g_optind = first_arg;
 		g_optarg = NULL;
 		return (-1);
 	}
