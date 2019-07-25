@@ -236,6 +236,12 @@ int			ft_getopt(int argc, char *const argv[], const char *optstring)
 	if (!optstring || g_optind >= argc || !argv[g_optind] || *(argv[g_optind]) != '-'
 			|| !ft_strcmp((argv[g_optind]), "-"))
 	{
+		if (*optstring == '-' && g_optind < argc)
+		{
+			g_optarg = argv[g_optind];
+			++g_optind;
+			return (1);
+		}
 		g_optarg = NULL;
 		return (-1);
 	}
