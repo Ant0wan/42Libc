@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 13:49:41 by abarthel          #+#    #+#             */
-/*   Updated: 2019/07/22 17:32:06 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/07/25 16:43:26 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ extern int	g_optind;
 extern int	g_optopt;
 extern int	g_opterr;
 
-int	ft_getopt(int argc, char * const argv[], const char *optstring);
+int	ft_getopt(int argc, char *const argv[], const char *optstring);
 
 #endif

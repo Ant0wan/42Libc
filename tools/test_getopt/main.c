@@ -22,12 +22,12 @@ int	main(int argc, char **argv, char **envp)
 	char	ft_getoptret = 0;
 	char	getoptret = 0;
 	int	getopt_argc = 5;
-	char	optstring[] = "Rarln:c:";/* 
+	char	optstring[] = "-Rarln:c:";/* 
 	char	optstring[] = "-Rarln:c:"; */
 	char	*getopt_argv[7];
 	char	*str0_opt;
 	char	str1_opt[] = "-R:aorlt";
-	char	str2_opt[] = "toto";
+	char	str2_opt[] = "--";
 	char	str3_opt[] = "-acl50";
 	char	str4_opt[] = "--";
 	char	str5_opt[] = "merde";
@@ -59,8 +59,14 @@ int	main(int argc, char **argv, char **envp)
 	ft_print_tables(getopt_argv);
 	printf("\n===================== RESET ===========================\n");
 	i = 1;
+#ifdef __unix__
 	g_optind = 0;
 	optind = 0;
+#else
+	g_optind = 1;
+	optind = 1;
+	optreset = 0;
+#endif
 //	ft_print_tables(getopt_argv);
 	while (i < 28)
 	{

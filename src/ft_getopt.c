@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 13:47:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/07/25 16:22:53 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/07/25 16:57:33 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -221,31 +221,14 @@ static int	parse_optstring(int argc, char *const *argv, const char *optstring)
 	return (ret);
 }
 
-static void	reset_getopt(void)
-{
-	parse_optstring(0, NULL, NULL);
-	g_optind = 1;
-}
-
 int			ft_getopt(int argc, char *const argv[], const char *optstring)
 {
 	int		ret;
 
 	ret = 0;
-	if (!g_optind)
-		reset_getopt();
 	if (!optstring || g_optind >= argc || !argv[g_optind] || *(argv[g_optind]) != '-'
 			|| !ft_strcmp((argv[g_optind]), "-"))
-	{
-		if (*optstring == '-' && g_optind < argc)
-		{
-			g_optarg = argv[g_optind];
-			++g_optind;
-			g_optopt = *argv[g_optind];
-			return (1);
-		}
 		return (-1);
-	}
 	else if (!ft_strcmp((argv[g_optind]), "--"))
 	{
 		g_optopt = *argv[g_optind];
