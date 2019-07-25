@@ -92,6 +92,7 @@ SOURCES	:=	cast.c \
 			ft_putwchar.c \
 			ft_putwstr.c \
 			ft_setenv.c \
+			ft_sortopt.c \
 			ft_str.c \
 			ft_str_is_alpha.c \
 			ft_str_is_lowercase.c \
