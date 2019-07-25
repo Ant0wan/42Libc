@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 13:47:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/07/25 18:33:00 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/07/25 18:33:38 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,6 @@ int		g_opterr = 1;
 int		g_optopt;
 
 #ifdef __unix__
-
-static int		assign_char(int argc, char *const *argv, char *c,
-		const char *optstring)
-{
-}
 
 static int		parse_char(int argc, char *const *argv, char *c,
 		const char *optstring)
