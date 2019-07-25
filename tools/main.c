@@ -44,8 +44,22 @@ int	main(int argc, char **argv, char **envp)
 	
 	printf("optstring => %s\n", optstring);
 	ft_print_tables(getopt_argv);
-	g_opterr = 1;
-	opterr = 1;
+	g_opterr = 0;
+	opterr = 0;
+	while (i < 28)
+	{
+		ft_getoptret = ft_getopt(getopt_argc, getopt_argv, optstring);
+		getoptret = getopt(getopt_argc, getopt_argv, optstring);
+		printf("\n      ret, optopt:optarg, optind, opterr\n");
+		printf("libc:%d%3c,%6c:%10s,%5d,%5d\n", (int)getoptret, getoptret, optopt, optarg, optind, opterr);
+		printf("lbft:%d%3c,%6c:%10s,%5d,%5d\n", (int)ft_getoptret, ft_getoptret, g_optopt, g_optarg, g_optind, g_opterr);
+		++i;
+	}
+	printf("\n===================== RESET ===========================\n");
+	i = 1;
+	g_optind = 0;
+	optind = 0;
+	ft_print_tables(getopt_argv);
 	while (i < 28)
 	{
 		ft_getoptret = ft_getopt(getopt_argc, getopt_argv, optstring);
