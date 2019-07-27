@@ -63,9 +63,9 @@ int	main(int argc, char **argv, char **envp)
 	g_optind = 0;
 	optind = 0;
 #else
-	g_optind = 1;
-	optind = 1;
-	optreset = 0;
+	g_optind = 0;
+	optind = 0;
+	optreset = 1;
 #endif
 //	ft_print_tables(getopt_argv);
 	while (i < 28)

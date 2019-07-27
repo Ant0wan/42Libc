@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_getopt.c                                        :+:      :+:    :+:   */
+/*   ft_getopt_osx.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -75,6 +75,7 @@ static int	parse_char(int argc, char *const *argv, char *c,
 
 static int	parse_optstring(int argc, char *const *argv, const char *optstring)
 {
+	static int	index;
 	static int	i = 1;
 	int			ret;
 
@@ -84,11 +85,12 @@ static int	parse_optstring(int argc, char *const *argv, const char *optstring)
 		i = 1;
 		return (0);
 	}
-	if (g_optarg)
+	if (g_optarg || index > g_optind)
 	{
 		i = 1;
 		g_optarg = NULL;
 	}
+	index = g_optind;
 	ret = parse_char(argc, argv, &argv[g_optind][i], optstring);
 	++i;
 	if (argv[g_optind] && !argv[g_optind][i])
