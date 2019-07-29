@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 13:47:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/07/25 17:44:50 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/07/29 17:03:19 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ int			ft_getopt(int argc, char *const argv[], const char *optstring)
 
 	ret = 0;
 	if (!optstring || g_optind >= argc || !argv[g_optind]
-			|| *(argv[g_optind]) != '-'	|| !ft_strcmp((argv[g_optind]), "-"))
+			|| *(argv[g_optind]) != '-' || !ft_strcmp((argv[g_optind]), "-"))
 		return (-1);
 	else if (!ft_strcmp((argv[g_optind]), "--"))
 	{
