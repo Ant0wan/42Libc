@@ -21,6 +21,6 @@ int	main(int argc, char **argv, char **envp)
 
 	final = ft_strnjoin(7, "Hello ", "my name ", "is ", "Valentine ", "I ", "code", "\n");
 	printf("%s\n", final);
-	
+	ft_memdel((void**)&final);	
 	return (0);
 }
