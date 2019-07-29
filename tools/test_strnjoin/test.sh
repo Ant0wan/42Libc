@@ -1,5 +1,5 @@
 #!/bin/bash
 make -j -C ../../ ;
-gcc main.c ../../libft.a -I../../include ;
-valgrind ./a.out ;
+gcc -fsanitize=address main.c ../../libft.a -I../../include ;
+./a.out ;
 rm a.out ;
