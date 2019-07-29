@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 11:55:45 by abarthel          #+#    #+#             */
-/*   Updated: 2019/07/17 20:04:56 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/07/29 15:59:08 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -244,5 +244,7 @@ void			ft_tabdel(char ***tab);
 int				ft_getch(void);
 
 void			ft_sortopt(int argc, char **argv, const char *optstring);
+
+void			ft_swap(void *a, void *b);
 
 #endif
