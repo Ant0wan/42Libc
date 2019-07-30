@@ -14,8 +14,8 @@
 
 char	*ft_strsep(char **stringp, const char *delim)
 {
-	static char		*token;
-	static char		*next;
+	static char	*token;
+	static char	*next;
 
 	if (!token && !next && *stringp && delim)
 	{
