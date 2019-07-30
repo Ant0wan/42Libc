@@ -22,7 +22,7 @@ char	*ft_strsep(char **stringp, const char *delim)
 	if (track != *stringp)
 	{
 		ft_printf("NEW\n");
-		track = stringp;
+		track = *stringp;
 	}
 	if (!token && !next && *stringp && delim)
 	{
