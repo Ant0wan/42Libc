@@ -10,17 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strsep(char **stringp, const char *delim)
 {
 	static char	*token;
 	static char	*next;
-	
-	if (!*stringp != token)
-		ft_printf("Start\n");
+	static char	**track;
+
+	if (track != stringp)
+		ft_printf("LOL\n");
 	if (!token && !next && *stringp && delim)
 	{
+		track = stringp;
 		token = *stringp;
 		next = ft_strstr(*stringp, delim);
 	}
