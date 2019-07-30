@@ -16,7 +16,9 @@ char	*ft_strsep(char **stringp, const char *delim)
 {
 	static char	*token;
 	static char	*next;
-
+	
+	if (!*stringp != token)
+		ft_printf("Start\n");
 	if (!token && !next && *stringp && delim)
 	{
 		token = *stringp;
