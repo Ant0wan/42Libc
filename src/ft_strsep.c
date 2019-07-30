@@ -19,9 +19,13 @@ char	*ft_strsep(char **stringp, const char *delim)
 	static char	*next;
 	static char	**track;
 
-	if (track != stringp || (!token && !next && *stringp && delim))
+	if (track != stringp)
 	{
+		ft_printf("NEW\n");
 		track = stringp;
+	}
+	if (!token && !next && *stringp && delim)
+	{
 		token = *stringp;
 		next = ft_strstr(*stringp, delim);
 	}
