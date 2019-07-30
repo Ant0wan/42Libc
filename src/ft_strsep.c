@@ -13,19 +13,24 @@
 #include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strsep(char **stringp, const char *delim)
+static void	check_initial_call(char **token, char **next, char **track,
+		char **stringp)
+{
+	if (*track != *stringp)
+	{
+		*token = NULL;
+		*next = NULL;
+		*track = *stringp;
+	}
+}
+
+char		*ft_strsep(char **stringp, const char *delim)
 {
 	static char	*token;
 	static char	*next;
 	static char	*track;
 
-	if (track != *stringp)
-	{
-		ft_printf("NEW\n");
-		token = NULL;
-		next = NULL;
-		track = *stringp;
-	}
+	check_initial_call(&token, &next, &track, stringp);
 	if (!token && !next && *stringp && delim)
 	{
 		token = *stringp;
