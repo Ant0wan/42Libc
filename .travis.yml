@@ -3,6 +3,7 @@ language: c
 sudo: true
 
 script:
+    - 
     - make
     - make clean
 
@@ -161,4 +162,5 @@ env:
       osx_image: xcode10.2
 
 before_install:
+    - cat /proc/version
     - eval "${MATRIX_EVAL}"
