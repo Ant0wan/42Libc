@@ -82,7 +82,7 @@ char		**ft_strsplit_whitespaces(char *str)
 
 	whitespaces = " \t\n\v\f\r";
 	if ((nb_words = count_words(str, whitespaces)) <= 0
-		|| !(tokens = (char**)ft_tabmalloc(nb_words))
+		|| !(tokens = (char**)ft_tabmalloc(nb_words + 1))
 		|| copy_tab(str, whitespaces, tokens) == -1)
 		return (NULL);
 	return (tokens);
