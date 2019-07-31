@@ -133,6 +133,7 @@ SOURCES	:=	cast.c \
 			ft_strsplit_whitespaces.c \
 			ft_strstr.c \
 			ft_strsub.c \
+			ft_strtok.c \
 			ft_strtrim.c \
 			ft_swap.c \
 			ft_tabcpy.c \

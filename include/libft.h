@@ -161,6 +161,8 @@ char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 char			*ft_strsep(char **stringp, const char *delim);
 
+char			*ft_strtok(char *str, const char *delim);
+
 char			*ft_strsub(char const *s, unsigned int start, size_t len);
 
 char			*ft_strjoin(char const *s1, char const *s2);
