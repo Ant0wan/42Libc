@@ -172,6 +172,9 @@ char			*ft_itoa(int n);
 char			**ft_strsplit(char const *s, char c) __attribute__
 				((nonnull(1)));
 
+char			**ft_strsplit_whitespaces(char *str) __attribute__
+				((nonnull(1)));
+
 typedef struct	s_list
 {
 	void			*content;
