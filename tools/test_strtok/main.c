@@ -4,12 +4,12 @@
 #include "libft.h"
 int main ()
 {
-  char str[] ="- This,   a .sample string.";
+  char str[] ="	echo ok 	 ;does not  ok 		";
   char str2[] ="- This,   a .sample string.";
   char * pch;
   char *delim;
 
-  delim = "\t .";
+  delim = " \t\f\n";
   printf ("\n>>Libft\n");
   pch = ft_strtok(str,delim);
   while (pch != NULL)

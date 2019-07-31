@@ -27,18 +27,19 @@ static _Bool	isdelim(char c, const char *delim)
 char		*ft_strtok(char *str, const char *delim)
 {
 	static char	*s;
-	char		*token;
+	char		*token = NULL;
 
 	if (str)
 		s = str;
 	if (*s == '\0')
 		return (NULL);
+	while (isdelim(*s, delim))
+		++s;
 	token = s;
 	while (!isdelim(*s, delim))
 	{
 		if (*s == '\0')
-			return (NULL);
-
+			return (token);
 		++s;
 	}
 	while (isdelim(*s, delim))
