@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+#include <stdio.h>
 void	ft_print_tables(char **tab)
 {
 	size_t	i;
@@ -21,6 +22,7 @@ void	ft_print_tables(char **tab)
 	{
 		while (tab[i])
 		{
+			printf("OK\n");
 			if (tab[i][0])
 				ft_putendl(tab[i]);
 			++i;

@@ -2,6 +2,19 @@
 #include <string.h>
 #include "libft.h"
 
+/*
+void	*malloc(size_t n)
+{
+	static int i;
+
+	++i;
+	if (!(i % 9))
+		return (NULL);
+	else
+		return (valloc(n));
+}
+*/
+
 int main ()
 {
   char str[] = "\t - This\t, a \fsample\n string. ";
