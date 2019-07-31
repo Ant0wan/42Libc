@@ -21,14 +21,14 @@ static int	count_words(char *str, char *whitespaces)
 	nb = 0;
 	if (!(cpy = ft_strdup(str)))
 		return (-1);
-	if (ft_strtok(cpy, whitespaces))
+	if (strtok(cpy, whitespaces))
 		++nb;
 	else
 	{
 		ft_memdel((void**)&cpy);
 		return (nb);
 	}
-	while (ft_strtok(NULL, whitespaces))
+	while (strtok(NULL, whitespaces))
 		++nb;
 	ft_memdel((void**)&cpy);
 	return (nb);
@@ -46,7 +46,7 @@ static int	copy_tab(char *str, char *whitespaces, char **tokens)
 		ft_tabdel(&tokens);
 		return (-1);
 	}
-	if ((tok = ft_strtok(cpy, whitespaces)))
+	if ((tok = strtok(cpy, whitespaces)))
 	{
 		if (!(tokens[nb] = ft_strdup(tok)))
 		{
@@ -61,7 +61,7 @@ static int	copy_tab(char *str, char *whitespaces, char **tokens)
 		ft_memdel((void**)&cpy);
 		return (-1);
 	}
-	while ((tok = ft_strtok(NULL, whitespaces)))
+	while ((tok = strtok(NULL, whitespaces)))
 	{
 		if (!(tokens[nb] = ft_strdup(tok)))
 		{
