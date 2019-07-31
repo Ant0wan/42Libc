@@ -18,13 +18,16 @@ void	ft_tabdel(char ***tab)
 	size_t	i;
 
 	i = 0;
-	while ((*tab)[i])
+	if (tab && *tab)
 	{
+		while ((*tab)[i])
+		{
+			free((*tab)[i]);
+			(*tab)[i] = NULL;
+			++i;
+		}
 		free((*tab)[i]);
-		(*tab)[i] = NULL;
-		++i;
+		free(*tab);
+		tab = NULL;
 	}
-	free((*tab)[i]);
-	free(*tab);
-	tab = NULL;
 }

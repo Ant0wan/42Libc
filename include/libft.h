@@ -194,7 +194,7 @@ t_list			*ft_lstnew(void const *content, size_t content_size);
 
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
-void			ft_print_tables(char **tab) __attribute__((nonnull(1)));
+void			ft_print_tables(char **tab);
 
 int				ft_str_is_alpha(char *s) __attribute__((nonnull(1)));
 

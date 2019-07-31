@@ -17,12 +17,13 @@ void	ft_print_tables(char **tab)
 	size_t	i;
 
 	i = 0;
-	while (tab[i])
+	if (tab)
 	{
-		if (tab[i][0])
+		while (tab[i])
 		{
-			ft_putendl(tab[i]);
+			if (tab[i][0])
+				ft_putendl(tab[i]);
+			++i;
 		}
-		++i;
 	}
 }
