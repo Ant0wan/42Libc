@@ -17,23 +17,54 @@
 static int	count_words(char *str, char *whitespaces)
 {
 	char	*cpy;
-	char	*beg;
 	int	nb;
 
 	nb = 0;
-	cpy = ft_strdup(str);
-	beg = cpy;
-	if (strtok(str, whitespaces))
+	if (!(cpy = ft_strdup(str)))
+		return (-1);
+	if (strtok(cpy, whitespaces))
 		++nb;
 	else
 	{
-		ft_memdel((void**)&beg);
+		ft_memdel((void**)&cpy);
 		return (nb);
 	}
 	while (strtok(NULL, whitespaces))
 		++nb;
-	ft_memdel((void**)&beg);
+	ft_memdel((void**)&cpy);
 	return (nb);
+}
+
+static int	copy_tab(char *str, char *whitespaces, char **tokens)
+{
+	char	*tok;
+	char	*cpy;
+	int	nb;
+
+	nb = 0;
+	if (!(cpy = ft_strdup(str)))
+	{
+		ft_tabdel(&tokens);
+		return (-1);
+	}
+	if ((tok = strtok(cpy, whitespaces)))
+	{
+		tokens[nb] = ft_strdup(tok);
+		++nb;
+	}
+	else
+	{
+		ft_tabdel(&tokens);
+		ft_memdel((void**)&cpy);
+		return (-1);
+	}
+	while ((tok = strtok(NULL, whitespaces)))
+	{
+		tokens[nb] = ft_strdup(tok);
+		++nb;
+	}
+	ft_memdel((void**)&cpy);
+	return (0);
 }
 
 char		**ft_strsplit_whitespaces(char *str)
@@ -42,10 +73,10 @@ char		**ft_strsplit_whitespaces(char *str)
 	char	*whitespaces;
 	int	nb_words;
 
-	tokens = NULL;
 	whitespaces = " \t\n\v\f\r";
-	nb_words = count_words(str, whitespaces);
-	ft_printf(">nb:%d\n", nb_words);
-	/*tokens = ft_tabmalloc(nb_words);*/
+	if ((nb_words = count_words(str, whitespaces)) == -1
+		|| !(tokens = (char**)ft_tabmalloc(nb_words))
+		|| copy_tab(str, whitespaces, tokens) == -1)
+		return (NULL);
 	return (tokens);
 }

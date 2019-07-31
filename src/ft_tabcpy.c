@@ -19,17 +19,25 @@ char	**ft_tabcpy(char **table)
 	char	**tab_cpy;
 	int		nb;
 
-	tab_cpy = NULL;
 	nb = 0;
 	while (table[nb])
-	{
 		++nb;
-	}
-	tab_cpy = (char**)ft_memalloc(sizeof(char**) * (nb + 1));
+	if (!(tab_cpy = (char**)ft_memalloc(sizeof(char**) * (nb + 1))))
+		return (NULL);
 	--nb;
 	while (nb >= 0)
 	{
-		tab_cpy[nb] = ft_strdup(table[nb]);
+		if (!(tab_cpy[nb] = ft_strdup(table[nb])))
+		{
+			++nb;
+			while (table[nb])
+			{
+				ft_memdel((void**)&tab_cpy[nb]);
+				++nb;
+			}
+			free(tab_cpy);
+			return (NULL);
+		}
 		--nb;
 	}
 	return (tab_cpy);
