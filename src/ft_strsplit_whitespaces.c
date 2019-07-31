@@ -13,7 +13,6 @@
 #include <stdlib.h>
 #include "libft.h"
 
-#include <string.h>
 static int	count_words(char *str, char *whitespaces)
 {
 	char	*cpy;
@@ -22,14 +21,14 @@ static int	count_words(char *str, char *whitespaces)
 	nb = 0;
 	if (!(cpy = ft_strdup(str)))
 		return (-1);
-	if (strtok(cpy, whitespaces))
+	if (ft_strtok(cpy, whitespaces))
 		++nb;
 	else
 	{
 		ft_memdel((void**)&cpy);
 		return (nb);
 	}
-	while (strtok(NULL, whitespaces))
+	while (ft_strtok(NULL, whitespaces))
 		++nb;
 	ft_memdel((void**)&cpy);
 	return (nb);
@@ -47,7 +46,7 @@ static int	copy_tab(char *str, char *whitespaces, char **tokens)
 		ft_tabdel(&tokens);
 		return (-1);
 	}
-	if ((tok = strtok(cpy, whitespaces)))
+	if ((tok = ft_strtok(cpy, whitespaces)))
 	{
 		if (!(tokens[nb] = ft_strdup(tok)))
 		{
@@ -62,7 +61,7 @@ static int	copy_tab(char *str, char *whitespaces, char **tokens)
 		ft_memdel((void**)&cpy);
 		return (-1);
 	}
-	while ((tok = strtok(NULL, whitespaces)))
+	while ((tok = ft_strtok(NULL, whitespaces)))
 	{
 		if (!(tokens[nb] = ft_strdup(tok)))
 		{
