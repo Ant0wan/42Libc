@@ -13,6 +13,7 @@
 #include <stdlib.h>
 #include "libft.h"
 
+#include <string.h>
 static int	count_words(char *str, char *whitespaces)
 {
 	char	*cpy;
