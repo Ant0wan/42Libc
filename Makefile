@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/25 14:03:51 by abarthel          #+#    #+#              #
-#    Updated: 2019/07/22 18:28:57 by abarthel         ###   ########.fr        #
+#    Updated: 2019/08/01 08:36:40 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,4 +51,4 @@ test :
 
 %.o: %.c Makefile
 	@$(CC) $(WARNING) $(CFLAGS) -I $(INCLUDES) $(DEBUGGING) $(OPTIMIZATION) -MMD -MP -c $< -o $@
-	@printf "\e[38;5;74m%-20s \e[38;5;85mobject built\n\e[0m" $(notdir $(basename $@))
+	@printf "\e[38;5;74m%-24s \e[38;5;85mobject built\n\e[0m" $(notdir $(basename $@))
