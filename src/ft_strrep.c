@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/01 14:43:13 by abarthel          #+#    #+#             */
-/*   Updated: 2019/08/01 18:24:29 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/08/01 18:26:38 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,6 @@ char		*ft_strrep(char **dst, const char *src, const char *tag)
 	if (!tag || !src || !dst)
 		return (NULL);
 	instances = count_tag_instances(*dst, tag);
-	ft_printf("%d\n", instances);
 	if (!instances)
 		return (*dst);
 	if (!(cpy = malloc_new_line(*dst, src, tag, instances)))
