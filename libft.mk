@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/25 14:45:47 by abarthel          #+#    #+#              #
-#    Updated: 2019/07/29 16:54:26 by abarthel         ###   ########.fr        #
+#    Updated: 2019/08/01 15:24:27 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -128,6 +128,7 @@ SOURCES	:=	cast.c \
 			ft_strnjoin.c \
 			ft_strnstr.c \
 			ft_strrchr.c \
+			ft_strrep.c \
 			ft_strsep.c \
 			ft_strsplit.c \
 			ft_strsplit_whitespaces.c \
