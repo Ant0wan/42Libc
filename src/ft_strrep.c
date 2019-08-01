@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/01 14:43:13 by abarthel          #+#    #+#             */
-/*   Updated: 2019/08/01 16:54:23 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/08/01 16:58:57 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,9 @@ static void	build_str(char *dst, const char *src, const char *tag, char *cpy)
 	{
 		ptr = ft_strstr(dst, tag);
 		tag_cpy = (char*)tag;
-		src_cpy = (char*)src;
-		while (dst < ptr)
+		if (ptr)
+			src_cpy = (char*)src;
+		while (dst < ptr || (!ptr && *dst))
 		{
 			*cpy = *dst;
 			++dst;
@@ -73,8 +74,7 @@ static void	build_str(char *dst, const char *src, const char *tag, char *cpy)
 			++src_cpy;
 		}
 		ptr = NULL;
-	/*	ft_printf("%s\n", ptr);
-*/	}
+	}
 }
 
 char		*ft_strrep(char **dst, const char *src, const char *tag)
@@ -91,8 +91,6 @@ char		*ft_strrep(char **dst, const char *src, const char *tag)
 	if (!(cpy = malloc_new_line(*dst, src, tag, instances)))
 		return (NULL);
 	build_str(*dst, src, tag, cpy);
-	ft_printf("dst:%s\n", *dst);
-	ft_printf("cpy:%s\n", cpy);
 	free(*dst);
 	*dst = cpy;
 	return (*dst);
