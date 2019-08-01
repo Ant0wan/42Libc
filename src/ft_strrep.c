@@ -6,10 +6,11 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/01 14:43:13 by abarthel          #+#    #+#             */
-/*   Updated: 2019/08/01 16:27:52 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/08/01 16:54:23 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
 static int	count_tag_instances(char *dst, const char *tag)
@@ -24,7 +25,6 @@ static int	count_tag_instances(char *dst, const char *tag)
 	}
 	return (nb);
 }
-
 
 static char	*malloc_new_line(char *dst, const char *src, const char *tag,
 		int instances)
@@ -46,14 +46,35 @@ static char	*malloc_new_line(char *dst, const char *src, const char *tag,
 
 static void	build_str(char *dst, const char *src, const char *tag, char *cpy)
 {
-	(void)tag;
-	(void)src;
-	while (*dst)
+	char	*ptr;
+	char	*tag_cpy;
+	char	*src_cpy;
+
+	while (*dst || ptr)
 	{
-		*cpy = *dst;
-		++dst;
-		++cpy;
-	}
+		ptr = ft_strstr(dst, tag);
+		tag_cpy = (char*)tag;
+		src_cpy = (char*)src;
+		while (dst < ptr)
+		{
+			*cpy = *dst;
+			++dst;
+			++cpy;
+		}
+		while (*dst && *tag_cpy)
+		{
+			++dst;
+			++tag_cpy;
+		}
+		while (*src_cpy)
+		{
+			*cpy = *src_cpy;
+			++cpy;
+			++src_cpy;
+		}
+		ptr = NULL;
+	/*	ft_printf("%s\n", ptr);
+*/	}
 }
 
 char		*ft_strrep(char **dst, const char *src, const char *tag)
@@ -64,12 +85,9 @@ char		*ft_strrep(char **dst, const char *src, const char *tag)
 	if (!tag || !src || !dst)
 		return (NULL);
 	instances = count_tag_instances(*dst, tag);
-	if (!instances)
-	{
-		ft_printf("ERROR\n");
-		return (*dst);
-	}
 	ft_printf("%d\n", instances);
+	if (!instances)
+		return (*dst);
 	if (!(cpy = malloc_new_line(*dst, src, tag, instances)))
 		return (NULL);
 	build_str(*dst, src, tag, cpy);
