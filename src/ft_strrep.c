@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/01 14:43:13 by abarthel          #+#    #+#             */
-/*   Updated: 2019/08/01 16:58:57 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/08/01 18:24:29 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	count_tag_instances(char *dst, const char *tag)
 static char	*malloc_new_line(char *dst, const char *src, const char *tag,
 		int instances)
 {
-	char 	*new;
+	char	*new;
 	size_t	ldst;
 	size_t	lsrc;
 	size_t	ltag;
@@ -52,10 +52,9 @@ static void	build_str(char *dst, const char *src, const char *tag, char *cpy)
 
 	while (*dst || ptr)
 	{
-		ptr = ft_strstr(dst, tag);
-		tag_cpy = (char*)tag;
-		if (ptr)
+		if ((ptr = ft_strstr(dst, tag)))
 			src_cpy = (char*)src;
+		tag_cpy = (char*)tag;
 		while (dst < ptr || (!ptr && *dst))
 		{
 			*cpy = *dst;
