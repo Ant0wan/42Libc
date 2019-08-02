@@ -50,6 +50,7 @@ static void	build_str(char *dst, const char *src, const char *tag, char *cpy)
 	char	*tag_cpy;
 	char	*src_cpy;
 
+	src_cpy = NULL;
 	while (*dst || ptr)
 	{
 		if ((ptr = ft_strstr(dst, tag)))

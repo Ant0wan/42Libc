@@ -24,22 +24,27 @@ int main(void)
 	dst = ft_strdup("df");
 	after = ft_strrep(&dst, expansion, "$LOGNAME");
 	printf("%s\n", after);
+	ft_memdel((void**)&after);
 
 	dst = ft_strdup("/home/$LOGNAME/sfsfasdfasf/safasdf/$LOGNAME/endf");
 	after = ft_strrep(&dst, expansion, "$LOGNAME");
 	printf("%s\n", after);
+	ft_memdel((void**)&after);
 
 	dst = ft_strdup("$LOGNAME");
 	after = ft_strrep(&dst, expansion, "$LOGNAME");
 	printf("%s\n", after);
+	ft_memdel((void**)&after);
 	
 	dst = ft_strdup("");
 	after = ft_strrep(&dst, expansion, "$LOGNAME");
 	printf("%s\n", after);
+	ft_memdel((void**)&after);
 	
 	dst = ft_strdup("$LOG$LOGNAMENAME");
 	after = ft_strrep(&dst, expansion, "$LOGNAME");
 	printf("%s\n", after);
-	
+	ft_memdel((void**)&after);
+
 	return (0);
 }
