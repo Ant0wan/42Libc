@@ -49,6 +49,8 @@ int				ft_memcmp(const void *s1, const void *s2,
 
 size_t			ft_strlen(const char *s) __attribute__((nonnull(1)));
 
+size_t			ft_alnumlen(const char *s);
+
 int				ft_numlen(unsigned int nb);
 
 size_t			ft_strlcat(char *dst, const char *src,

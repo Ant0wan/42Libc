@@ -19,6 +19,7 @@ SOURCES	:=	cast.c \
 			error_msg.c \
 			format.c \
 			ft_atoi.c \
+			ft_alnumlen.c \
 			ft_asprintf.c \
 			ft_b.c \
 			ft_bzero.c \
