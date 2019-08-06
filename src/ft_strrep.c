@@ -13,12 +13,12 @@
 #include <stdlib.h>
 #include "libft.h"
 
-static int	count_tag_instances(char *dst, const char *tag)
+static int	count_expansion_instances(char *dst, const char *expansion)
 {
 	int	nb;
 
 	nb = 0;
-	while (*dst && (dst = ft_strstr(dst, tag)))
+	while (*dst && (dst = ft_strstr(dst, expansion)))
 	{
 		++nb;
 		++dst;
@@ -26,70 +26,70 @@ static int	count_tag_instances(char *dst, const char *tag)
 	return (nb);
 }
 
-static char	*malloc_new_line(char *dst, const char *src, const char *tag,
+static char	*malloc_new_line(char *dst, const char *content, const char *expansion,
 		int instances)
 {
 	char	*new;
 	size_t	ldst;
-	size_t	lsrc;
-	size_t	ltag;
+	size_t	lcontent;
+	size_t	lexpansion;
 
 	ldst = ft_strlen(dst);
-	lsrc = ft_strlen(src);
-	ltag = ft_strlen(tag);
-	if (!(new = (char*)ft_memalloc(sizeof(char) * (instances * (lsrc - ltag)
+	lcontent = ft_strlen(content);
+	lexpansion = ft_strlen(expansion);
+	if (!(new = (char*)ft_memalloc(sizeof(char) * (instances * (lcontent - lexpansion)
 						+ ldst + 1))))
 		return (NULL);
 	else
 		return (new);
 }
 
-static void	build_str(char *dst, const char *src, const char *tag, char *cpy)
+static void	build_str(char *dst, const char *content, const char *expansion, char *cpy)
 {
 	char	*ptr;
-	char	*tag_cpy;
-	char	*src_cpy;
+	char	*expansion_cpy;
+	char	*content_cpy;
 
-	src_cpy = NULL;
+	content_cpy = NULL;
 	while (*dst || ptr)
 	{
-		if ((ptr = ft_strstr(dst, tag)))
-			src_cpy = (char*)src;
-		tag_cpy = (char*)tag;
+		if ((ptr = ft_strstr(dst, expansion)))
+			content_cpy = (char*)content;
+		expansion_cpy = (char*)expansion;
 		while (dst < ptr || (!ptr && *dst))
 		{
 			*cpy = *dst;
 			++dst;
 			++cpy;
 		}
-		while (*dst && *tag_cpy)
+		while (*dst && *expansion_cpy)
 		{
 			++dst;
-			++tag_cpy;
+			++expansion_cpy;
 		}
-		while (*src_cpy)
+		while (*content_cpy)
 		{
-			*cpy = *src_cpy;
+			*cpy = *content_cpy;
 			++cpy;
-			++src_cpy;
+			++content_cpy;
 		}
 		ptr = NULL;
 	}
 }
 
-char		*ft_strrep(char **dst, const char *src, const char *tag)
+char		*ft_strrep(char **dst, const char *content, const char *expansion)
 {
 	char	*cpy;
 	int		instances;
 
-	if (!tag || !src || !dst)
+	if (!expansion || !content || !dst)
 		return (NULL);
-	instances = count_tag_instances(*dst, tag);
+	instances = count_expansion_instances(*dst, expansion);
 	if (!instances)
 		return (*dst);
-	if (!(cpy = malloc_new_line(*dst, src, tag, instances)))
+	if (!(cpy = malloc_new_line(*dst, content, expansion, instances)))
 		return (NULL);
-	build_str(*dst, src, tag, cpy);
+	build_str(*dst, content, expansion, cpy);
 	free(*dst);
 	*dst = cpy;
 	return (*dst);

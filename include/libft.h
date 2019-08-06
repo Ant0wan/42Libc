@@ -102,7 +102,7 @@ char			*ft_strchr(const char *s, int c) __attribute__
 char			*ft_strrchr(const char *s, int c) __attribute__
 				((nonnull(1)));
 
-char			*ft_strrep(char **dst, const char *src, const char *tag);
+char			*ft_strrep(char **dst, const char *content, const char *expansion);
 
 void			ft_memdel(void **ap);
 
