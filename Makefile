@@ -12,11 +12,12 @@
 
 -include libft.mk
 
-OPTIMIZATION := -O2 -fno-builtin
+OPTIMIZATION	:= -O2 -fno-builtin
+DEBUGGING	:= -g
+WARNING		:= -Wall -Wextra -Werror
+ANSI		:= -ansi
 
-DEBUGGING := -g
-
-WARNING := -Wall -Wextra -Werror
+CFLAGS += $(WARNING) $(ANSI) $(DEBUGGING) $(OPTIMIZATION)
 
 .PHONY: all clean fclean re objects lib
 
@@ -50,5 +51,5 @@ test :
 -include $(DEPENDS)
 
 %.o: %.c Makefile
-	@$(CC) $(WARNING) $(CFLAGS) -I $(INCLUDES) $(DEBUGGING) $(OPTIMIZATION) -MMD -MP -c $< -o $@
+	@$(CC) $(CFLAGS) -I $(INCLUDES) -MMD -MP -c $< -o $@
 	@printf "\e[38;5;74m%-24s \e[38;5;85mobject built\n\e[0m" $(notdir $(basename $@))
