@@ -46,7 +46,7 @@ static int	copy_tab(char *str, char *whitespaces, char **tokens)
 		ft_tabdel(&tokens);
 		return (-1);
 	}
-	if ((tok = ft_strtok(cpy, whitespaces)))
+/*	if ((tok = ft_strtok(cpy, whitespaces)))
 	{
 		if (!(tokens[nb] = ft_strdup(tok)))
 		{
@@ -61,8 +61,14 @@ static int	copy_tab(char *str, char *whitespaces, char **tokens)
 		ft_memdel((void**)&cpy);
 		return (-1);
 	}
-	while ((tok = ft_strtok(NULL, whitespaces)))
+*/	while ((tok = ft_strtok(NULL, whitespaces)))
 	{
+		if (!nb && !tok)
+		{
+			ft_tabdel(&tokens);
+			ft_memdel((void**)&cpy);
+			return (-1);
+		}
 		if (!(tokens[nb] = ft_strdup(tok)))
 		{
 			ft_tabdel(&tokens);
