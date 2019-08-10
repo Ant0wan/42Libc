@@ -17,7 +17,7 @@ DEBUGGING	:= -g
 WARNING		:= -Wall -Wextra -Werror
 ANSI		:= -ansi
 
-CFLAGS += $(WARNING) $(ANSI) $(DEBUGGING) $(OPTIMIZATION)
+CFLAGS += $(WARNING) $(ANSI) $(DEBUGGING) $(OPTIMIZATION) 
 
 .PHONY: all clean fclean re objects lib
 
@@ -44,9 +44,6 @@ objects: $(OBJECTS)
 lib	: $(OBJECTS)
 	@ar rc $(NAME) $(OBJECTS)
 	@ranlib $(NAME)
-
-test :
-	make -j ; gcc -g main.c libft.a -I./include ; echo "\n./a.out -Ralrt -ok -n54 -n 54dsf\n" ; ./a.out -Ralrt -ok -n54 -n 54dsf
 
 -include $(DEPENDS)
 

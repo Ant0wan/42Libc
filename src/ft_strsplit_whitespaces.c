@@ -34,51 +34,44 @@ static int	count_words(char *str, char *whitespaces)
 	return (nb);
 }
 
-static int	copy_tab(char *str, char *whitespaces, char **tokens)
+static int	get_tokens(char	**str, char *whitespaces, char **tokens)
 {
 	char	*tok;
-	char	*cpy;
-	char	*in;
+	char	*pstr;
 	int	nb;
 
-	nb = 0;
+	nb = 0;	
+	pstr = *str;
+	while ((tok = ft_strtok(pstr, whitespaces)))
+	{
+		if (!nb && !tok)
+		{
+			ft_tabdel(&tokens);
+			ft_memdel((void**)str);
+			return (-1);
+		}
+		if (!(tokens[nb] = ft_strdup(tok)))
+		{
+			ft_tabdel(&tokens);
+			return (-1);
+		}
+		pstr = NULL;
+		++nb;
+	}
+	return (0);
+}
+
+static int	copy_tab(char *str, char *whitespaces, char **tokens)
+{
+	char	*cpy;
+
 	if (!(cpy = ft_strdup(str)))
 	{
 		ft_tabdel(&tokens);
 		return (-1);
 	}
-	in = cpy;
-/*	if ((tok = ft_strtok(cpy, whitespaces)))
-	{
-		if (!(tokens[nb] = ft_strdup(tok)))
-		{
-			ft_tabdel(&tokens);
-			return (-1);
-		}
-		++nb;
-	}
-	else
-	{
-		ft_tabdel(&tokens);
-		ft_memdel((void**)&cpy);
+	if (get_tokens(&cpy, whitespaces, tokens) == -1)
 		return (-1);
-	}
-*/	while ((tok = ft_strtok(in, whitespaces)))
-	{
-		if (!nb && !tok)
-		{
-			ft_tabdel(&tokens);
-			ft_memdel((void**)&cpy);
-			return (-1);
-		}
-		if (!(tokens[nb] = ft_strdup(tok)))
-		{
-			ft_tabdel(&tokens);
-			return (-1);
-		}
-		in = NULL;
-		++nb;
-	}
 	ft_memdel((void**)&cpy);
 	return (0);
 }
