@@ -12,19 +12,16 @@
 
 -include libft.mk
 
-OPTIMIZATION	:= -O2 -fno-builtin
-DEBUGGING	:= -g
-WARNING		:= -Wall -Wextra -Werror
-ANSI		:= -ansi
+CFLAGS	+= -g -Wall -Wextra -Werror -ansi
 
-CFLAGS += $(WARNING) $(ANSI) $(DEBUGGING) $(OPTIMIZATION) 
+ARFLAGS	:= rc
 
 .PHONY: all clean fclean re objects lib
 
 all: $(NAME)
 
 $(NAME)	: $(OBJECTS)
-	@ar rc $(NAME) $(OBJECTS)
+	@$(AR) $(ARFLAGS) $(NAME) $(OBJECTS)
 	@ranlib $(NAME)
 	@printf "\n\e[38;5;82m%4s [\e[1m$(NAME) built]\n\n\e[0m"
 	@printf "\e[38;5;41mTo compile with the $(NAME), use the command-line: \e[0m\e[4m%s main.c -L. -lft\n\e[0m" $(CC)
@@ -42,11 +39,11 @@ re: fclean $(NAME)
 objects: $(OBJECTS)
 
 lib	: $(OBJECTS)
-	@ar rc $(NAME) $(OBJECTS)
+	@$(AR) $(ARFLAGS) $(NAME) $(OBJECTS)
 	@ranlib $(NAME)
 
 -include $(DEPENDS)
 
-%.o: %.c Makefile
+%.o: %.c Makefile $(addsuffix .mk, $(basename $(NAME)))
 	@$(CC) $(CFLAGS) -I $(INCLUDES) -MMD -MP -c $< -o $@
 	@printf "\e[38;5;74m%-24s \e[38;5;85mobject built\n\e[0m" $(notdir $(basename $@))

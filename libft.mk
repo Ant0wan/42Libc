@@ -162,3 +162,5 @@ OBJECTS := $(patsubst %.c,%.o,$(addprefix $(SOURCES_PATH), $(SOURCES)))
 INCLUDES := ./include/
 
 DEPENDS := $(patsubst %.c,%.d,$(addprefix $(SOURCES_PATH), $(SOURCES)))
+
+CFLAGS += -O2 -fno-builtin
