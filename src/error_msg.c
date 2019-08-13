@@ -17,7 +17,7 @@ const int	g_sys_nerr = 107;
 
 const char	*const g_sys_errlist[] =
 {
-	"Undefined error: 0",
+	"Success",
 	"Operation not permitted",
 	"No such file or directory",
 	"No such process",

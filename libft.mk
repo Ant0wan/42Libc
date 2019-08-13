@@ -144,6 +144,7 @@ SOURCES	:=	cast.c \
 			ft_tolower.c \
 			ft_toupper.c \
 			ft_unbr.c \
+			ft_unsetenv.c \
 			ft_vasprintf.c \
 			ft_vdprintf.c \
 			ft_wcscmp.c \

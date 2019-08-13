@@ -28,7 +28,7 @@ int	main(int argc, char **argv, char **envp)
 	char	*str0_opt;
 	char	str1_opt[] = "-R:aorlt";
 	char	str2_opt[] = "--";
-	char	str3_opt[] = "-acl50";
+	char	str3_opt[] = "-ac=l50";
 	char	str4_opt[] = "--";
 	char	str5_opt[] = "merde";
 	int	i = 1;
