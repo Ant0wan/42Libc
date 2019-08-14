@@ -59,10 +59,10 @@ int			ft_unsetenv(const char *name)
 	{
 		if (!(dst = getenvvar(name)))
 			return (0);
-	/*	free(dst);
-	*/	src = dst + 1;
+		src = dst + 1;
 		tlen = ft_tablen(src);
 		ft_memmove(dst, src, sizeof(char*) * tlen);
+		dst[tlen] = NULL;
 		return (0);
 	}
 }
