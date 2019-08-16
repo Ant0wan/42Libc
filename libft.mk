@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/25 14:45:47 by abarthel          #+#    #+#              #
-#    Updated: 2019/08/01 15:24:27 by abarthel         ###   ########.fr        #
+#    Updated: 2019/08/16 16:03:49 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -92,6 +92,7 @@ SOURCES	:=	cast.c \
 			ft_putwcbits.c \
 			ft_putwchar.c \
 			ft_putwstr.c \
+			ft_realpath.c \
 			ft_setenv.c \
 			ft_sortopt.c \
 			ft_str.c \
