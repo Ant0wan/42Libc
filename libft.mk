@@ -92,7 +92,6 @@ SOURCES	:=	cast.c \
 			ft_putwcbits.c \
 			ft_putwchar.c \
 			ft_putwstr.c \
-			ft_realpath.c \
 			ft_setenv.c \
 			ft_sortopt.c \
 			ft_str.c \
