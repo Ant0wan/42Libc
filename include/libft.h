@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 11:55:45 by abarthel          #+#    #+#             */
-/*   Updated: 2019/08/21 12:44:46 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/08/21 13:56:16 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -257,8 +257,5 @@ void			ft_sortopt(int argc, char **argv, const char *optstring);
 void			ft_swap(void **a, void **b);
 
 char			*ft_strnjoin(int nb, char *s1, char *s2, ...);
-
-char			*ft_realpath(const char *__restrict__ file_name,
-				char *__restrict__ resolved_name);
 
 #endif

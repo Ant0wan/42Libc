@@ -6,14 +6,13 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/04 15:49:03 by abarthel          #+#    #+#             */
-/*   Updated: 2019/07/06 15:56:11 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/08/21 13:07:06 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
 #include "libft.h"
-#include "errno.h"
 #include "ft_errno.h"
 
 static char	**getenvvar(const char *name)
@@ -51,8 +50,9 @@ int			ft_unsetenv(const char *name)
 
 	if (!name || !*name || ft_strstr(name, "="))
 	{
-		g_errno = EINVAL;
-		errno = EINVAL;
+#ifdef FT_ERRNO_H
+		g_errno = E_EINVAL;
+#endif
 		return (-1);
 	}
 	else
