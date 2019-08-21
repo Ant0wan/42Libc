@@ -6,14 +6,14 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/16 10:44:25 by abarthel          #+#    #+#             */
-/*   Updated: 2019/07/16 14:31:33 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/08/21 12:43:27 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-static _Bool	isdelim(char c, const char *delim)
+static __inline__ _Bool	isdelim(char c, const char *delim)
 {
 	while (*delim)
 	{
@@ -24,11 +24,12 @@ static _Bool	isdelim(char c, const char *delim)
 	return (0);
 }
 
-char		*ft_strtok(char *str, const char *delim)
+char					*ft_strtok(char *str, const char *delim)
 {
 	static char	*s;
-	char		*token = NULL;
+	char		*token;
 
+	token = NULL;
 	if (str)
 		s = str;
 	if (*s == '\0')
