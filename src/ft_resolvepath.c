@@ -53,13 +53,11 @@ static void	clean_start(char *str)
 		}
 	}
 }
+
 static void	currentdir_trim(char *str)
 {
-	size_t	i;
 	char	*ptr;
 
-	i = 0;
-	(void)i;
 	while ((ptr = ft_strstr(str, "/.")))
 	{
 		if (*(ptr + 2) == '/')
