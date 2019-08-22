@@ -58,17 +58,37 @@ static void	currentdir_trim(char *str)
 {
 	char	*ptr;
 
-	while ((ptr = ft_strstr(str, "/.")))
+	while ((ptr = ft_strstr(str, ".")))
 	{
-		if (*(ptr + 2) == '/')
-			ft_memmove(ptr, (ptr + 2), ft_strlen((ptr + 2)));
-		while (*(ptr + 2))
+		if (*(ptr + 1) == '/')
+			ft_memmove(ptr, (ptr + 1), ft_strlen((ptr + 1)));
+		while (*(ptr + 1))
 			++ptr;
 		while (*ptr)
 		{
 			*ptr = '\0';
 			++ptr;
 		}
+	}
+}
+
+static void	previousdir_res(char *str)
+{
+	char	*ptr;
+	char	*next;
+	int	i;
+
+	i = 0;
+	while ((ptr = ft_strstr(str, "..")))
+	{
+		next = ptr + 2 ;
+		ptr -= 2;
+		while (ptr > str && *ptr != '/')
+			--ptr;
+		if (ptr < str)
+			ptr = str;
+		i = ft_strlen(next);
+		ft_memmove(ptr, next, i + 1);
 	}
 }
 
@@ -80,7 +100,10 @@ char	*ft_resolvepath(char *str)
 		return (NULL);
 	}
 	clean_start(str);
+	previousdir_res(str);
+	clean_start(str);
 	currentdir_trim(str);
+	clean_start(str);
 	clean_end(str);
 	return (str);
 }

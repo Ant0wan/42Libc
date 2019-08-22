@@ -20,36 +20,63 @@ int main(void)
 	s = ft_strdup("/home//.////antoine");
 	ft_printf("%s\n", ft_resolvepath(s));
 	free(s);
-
 	s = ft_strdup("./home/./antoine");
 	ft_printf("%s\n", ft_resolvepath(s));
 	free(s);
-
 	s = ft_strdup("/./home/./antoine/./");
 	ft_printf("%s\n", ft_resolvepath(s));
 	free(s);
-
 	s = ft_strdup("/./home/./antoine/.");
 	ft_printf("%s\n", ft_resolvepath(s));
 	free(s);
-
 	s = ft_strdup("/");
 	ft_printf("%s\n", ft_resolvepath(s));
 	free(s);
-
 	s = ft_strdup("//");
 	ft_printf("%s\n", ft_resolvepath(s));
 	free(s);
-
 	s = ft_strdup("///");
 	ft_printf("%s\n", ft_resolvepath(s));
 	free(s);
-
 	s = ft_strdup("/.//");
 	ft_printf("%s\n", ft_resolvepath(s));
 	free(s);
-
 	s = ft_strdup("/././.");
+	ft_printf("%s\n", ft_resolvepath(s));
+	free(s);
+
+	ft_printf("\n\n-------------   /../   -------------- \n");
+	s = ft_strdup("/home/antoine/../Minishell");
+	ft_printf("%s\n", ft_resolvepath(s));
+	free(s);
+	s = ft_strdup("/home/../antoine");
+	ft_printf("%s\n", ft_resolvepath(s));
+	free(s);
+	s = ft_strdup("/home/antoine/../");
+	ft_printf("%s\n", ft_resolvepath(s));
+	free(s);
+	s = ft_strdup("../home/antoine");
+	ft_printf("%s\n", ft_resolvepath(s));
+	free(s);
+	s = ft_strdup("/../home/antoine/./");
+	ft_printf("%s\n", ft_resolvepath(s));
+	free(s);
+	s = ft_strdup("/../home/../antoine/.");
+	ft_printf("%s\n", ft_resolvepath(s));
+	free(s);
+	s = ft_strdup("../");
+	ft_printf("%s\n", ft_resolvepath(s));
+	free(s);
+	s = ft_strdup("/../");
+	ft_printf("%s\n", ft_resolvepath(s));
+	free(s);
+	s = ft_strdup("//../");
+	ft_printf("%s\n", ft_resolvepath(s));
+	free(s);
+	s = ft_strdup("/...//");
+	ft_printf("%s\n", ft_resolvepath(s));
+	free(s);
+	s = ft_strdup("/../../..");
 	ft_printf("%s\n", ft_resolvepath(s));
 	free(s);
 
