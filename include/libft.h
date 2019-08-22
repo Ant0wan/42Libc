@@ -258,4 +258,6 @@ void			ft_swap(void **a, void **b);
 
 char			*ft_strnjoin(int nb, char *s1, char *s2, ...);
 
+char			*ft_resolvepath(char *str);
+
 #endif
