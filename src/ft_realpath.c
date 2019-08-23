@@ -20,23 +20,26 @@ char	*ft_realpath(const char *path, char *resolved_path)
 	char	*physical;
 	char	*tmp;
 
+	if (!path)
+		return (NULL);
 	tmp = getcwd(NULL, 0);
-	if (!resolved_path)
+	if (chdir(path))
 	{
-		chdir(path);
-		physical = getcwd(NULL, 0);
-		chdir(tmp);
 		free(tmp);
-		return (physical);
+		return (NULL);
 	}
-	else
+	if (!(physical = getcwd(NULL, 0)))
+		return (NULL);
+	if (chdir(tmp))
 	{
-		chdir(path);
-		physical = getcwd(NULL, 0);
-		chdir(tmp);
 		free(tmp);
-		ft_strcpy(resolved_path, physical);
 		free(physical);
-		return (resolved_path);
+		return (NULL);
 	}
+	free(tmp);
+	if (!resolved_path)
+		return (physical);
+	ft_strcpy(resolved_path, physical);
+	free(physical);
+	return (resolved_path);
 }
