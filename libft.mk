@@ -137,6 +137,7 @@ SOURCES	:=	cast.c \
 			ft_strtok.c \
 			ft_strtrim.c \
 			ft_resolvepath.c \
+			ft_realpath.c \
 			ft_swap.c \
 			ft_tabcpy.c \
 			ft_tabdel.c \

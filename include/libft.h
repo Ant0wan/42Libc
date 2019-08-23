@@ -260,4 +260,6 @@ char			*ft_strnjoin(int nb, char *s1, char *s2, ...);
 
 char			*ft_resolvepath(char *str);
 
+char			*ft_realpath(const char *path, char *resolved_path);
+
 #endif
