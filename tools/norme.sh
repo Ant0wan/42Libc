@@ -3,7 +3,7 @@
 ##
 ## This script changes some C keywords in .h and .c to make the lib 42 or ansi compliant
 ##
-
+cd ../
 if [ "$1" == "ansi" ]
 then
 	if [ $(grep -a __inline__ **/*.c | wc -l) == "0" ] && [ $(grep -a __inline__ **/*.h | wc -l) == "0" ]
@@ -53,3 +53,4 @@ then
 	)
 	printf "Restrict 42norm\n"
 fi
+cd -
