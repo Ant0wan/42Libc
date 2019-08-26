@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include "libft.h"
 
-static char	ft_fgetch(const int fd)
+static __inline__ char	ft_fgetch(const int fd)
 {
 	int		ret;
 	char	ch;
@@ -30,7 +30,7 @@ static char	ft_fgetch(const int fd)
 	}
 }
 
-static char	*create_new_line(char *str, int *len)
+static __inline__ char	*create_new_line(char *str, int *len)
 {
 	char	*new_line;
 

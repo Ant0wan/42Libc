@@ -15,14 +15,14 @@
 
 # include <stdarg.h>
 
-void	get_precision(const char * format, va_list ap);
+void	get_precision(const char *__restrict__ format, va_list ap);
 
-void	get_flags(const char * format
-		, _Bool * specifier);
+void	get_flags(const char *__restrict__ format
+		, _Bool *__restrict__ specifier);
 
-_Bool	get_modifier(const char * format);
+_Bool	get_modifier(const char *__restrict__ format);
 
-void	ft_get_width_or_dollar(const char * str
+void	ft_get_width_or_dollar(const char *__restrict__ str
 		, _Bool dot);
 
 #endif
