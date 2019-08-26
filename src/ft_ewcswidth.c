@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-int	ft_ewcswidth(const wchar_t *restrict pwcs)
+int	ft_ewcswidth(const wchar_t * pwcs)
 {
 	int	len;
 

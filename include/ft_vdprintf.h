@@ -15,6 +15,6 @@
 
 # include <stdarg.h>
 
-int	ft_vdprintf(int fd, const char *restrict format, va_list ap);
+int	ft_vdprintf(int fd, const char * format, va_list ap);
 
 #endif

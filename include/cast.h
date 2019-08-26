@@ -15,10 +15,10 @@
 
 # include <stdlib.h>
 
-void	ft_cast_nbr(intmax_t *restrict nb) __attribute__
+void	ft_cast_nbr(intmax_t * nb) __attribute__
 		((nonnull));
 
-void	ft_cast_unbr(uintmax_t *restrict nb) __attribute__
+void	ft_cast_unbr(uintmax_t * nb) __attribute__
 		((nonnull));
 
 #endif

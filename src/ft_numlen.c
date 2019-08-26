@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-static inline char	ft_numlen_part2(unsigned int nb)
+static char	ft_numlen_part2(unsigned int nb)
 {
 	if (nb >= 1000)
 	{
