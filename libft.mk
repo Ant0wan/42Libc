@@ -166,4 +166,4 @@ INCLUDES := ./include/
 
 DEPENDS := $(patsubst %.c,%.d,$(addprefix $(SOURCES_PATH), $(SOURCES)))
 
-CFLAGS += -O2 -fno-builtin
+CFLAGS += -fno-builtin -O3
