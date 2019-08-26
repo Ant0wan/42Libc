@@ -167,4 +167,4 @@ INCLUDES := ./include/
 DEPENDS := $(patsubst %.c,%.d,$(addprefix $(SOURCES_PATH), $(SOURCES)))
 
 #CFLAGS += -g -fsanitize-address
-CFLAGS += -fno-builtin -O3
+CFLAGS += -fno-builtin -O2
