@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 17:49:13 by abarthel          #+#    #+#             */
-/*   Updated: 2019/06/26 19:39:17 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/08/27 18:26:38 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static inline char	ft_numlen_part2(unsigned int nb)
 	}
 }
 
-extern char		ft_numlen(unsigned int nb)
+extern char			ft_numlen(unsigned int nb)
 {
 	if (nb >= 100000)
 	{

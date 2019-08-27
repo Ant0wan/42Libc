@@ -6,14 +6,14 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/16 10:44:25 by abarthel          #+#    #+#             */
-/*   Updated: 2019/08/21 12:43:27 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/08/27 18:25:36 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-static inline _Bool	isdelim(char c, const char *delim)
+static inline _Bool		isdelim(char c, const char *delim)
 {
 	while (*delim)
 	{
