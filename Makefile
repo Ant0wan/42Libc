@@ -12,7 +12,7 @@
 
 -include libft.mk
 
-CFLAGS	+= -ansi -Wall -Wextra -Werror -D_POSIX_C_SOURCE
+CFLAGS	+= -Wall -Wextra -Werror -D_POSIX_C_SOURCE
 
 ARFLAGS	:= rc
 
