@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 13:47:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/07/25 18:34:02 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/08/27 18:41:46 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ static int		parse_char_mod(int argc, char *const *argv, char *c,
 			else
 			{
 				if (g_opterr)
-					ft_dprintf(STDERR_FILENO, "%s: option requires an argument -- '%c'\n", argv[0], *c);
+					ft_dprintf(STDERR_FILENO,
+					"%s: option requires an argument -- '%c'\n", argv[0], *c);
 				return ('?');
 			}
 		}
