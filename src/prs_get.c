@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/28 12:17:11 by abarthel          #+#    #+#             */
-/*   Updated: 2019/04/17 10:51:26 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/08/27 18:23:16 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ extern t_ret		g_ret;
 extern t_modifier	g_modifier;
 extern t_options	g_options;
 
-void		get_flags(const char *restrict format
+void					get_flags(const char *restrict format
 		, _Bool *restrict specifier)
 {
 	if (!(format[g_ret.fmt_i] ^ '#'))
@@ -73,7 +73,7 @@ static inline _Bool		get_additional_modifier(const char *restrict format)
 		return (1);
 }
 
-_Bool				get_modifier(const char *restrict format)
+_Bool					get_modifier(const char *restrict format)
 {
 	if (!(format[g_ret.fmt_i] ^ 'l'))
 	{
@@ -102,7 +102,7 @@ _Bool				get_modifier(const char *restrict format)
 	return (1);
 }
 
-void		ft_get_width_or_dollar(const char *restrict str
+void					ft_get_width_or_dollar(const char *restrict str
 		, _Bool dot)
 {
 	int	nbr;
@@ -127,7 +127,7 @@ void		ft_get_width_or_dollar(const char *restrict str
 	}
 }
 
-void		get_precision(const char *restrict format, va_list ap)
+void					get_precision(const char *restrict format, va_list ap)
 {
 	while (!(format[g_ret.fmt_i] ^ '.'))
 		++g_ret.fmt_i;
