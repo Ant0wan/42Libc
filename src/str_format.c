@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/07/07 14:17:34 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/08/27 18:25:15 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ extern t_options	g_options;
 extern t_modifier	g_modifier;
 extern t_prefix		g_prefix;
 
-static inline void				ret_str(char *restrict str)
+static inline void			ret_str(char *restrict str)
 {
 	while (g_prefix.len)
 	{
@@ -34,7 +34,7 @@ static inline void				ret_str(char *restrict str)
 	}
 }
 
-static inline void				ret_wcs(wchar_t *restrict wcs)
+static inline void			ret_wcs(wchar_t *restrict wcs)
 {
 	wchar_t wc;
 

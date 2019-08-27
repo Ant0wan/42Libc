@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 14:39:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/07/07 14:12:59 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/08/27 18:24:36 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ extern t_flags		g_flags;
 extern t_options	g_options;
 extern t_prefix		g_prefix;
 
-unsigned short	ft_nbrlen(intmax_t nb)
+unsigned short		ft_nbrlen(intmax_t nb)
 {
 	intmax_t		rest;
 	unsigned short	len;
@@ -39,7 +39,7 @@ unsigned short	ft_nbrlen(intmax_t nb)
 	return (len > 0 ? len : 1);
 }
 
-unsigned short	ft_unbrlen(uintmax_t nb)
+unsigned short		ft_unbrlen(uintmax_t nb)
 {
 	uintmax_t		rest;
 	unsigned short	len;
@@ -56,7 +56,7 @@ unsigned short	ft_unbrlen(uintmax_t nb)
 	return (len > 0 ? len : 1);
 }
 
-static inline void				ret_nbr(uintmax_t nb, short len)
+static inline void	ret_nbr(uintmax_t nb, short len)
 {
 	int	mod;
 
@@ -76,7 +76,7 @@ static inline void				ret_nbr(uintmax_t nb, short len)
 	}
 }
 
-static inline void				width_precision(void)
+static inline void	width_precision(void)
 {
 	while (!(g_flags.zero) && !(g_flags.minus) && g_options.width - g_prefix.len
 			- g_prefix.size > 0)
@@ -104,7 +104,7 @@ static inline void				width_precision(void)
 	}
 }
 
-extern void					format(uintmax_t nb)
+extern void			format(uintmax_t nb)
 {
 	int	z;
 
