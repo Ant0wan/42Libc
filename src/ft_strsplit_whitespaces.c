@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 12:58:26 by abarthel          #+#    #+#             */
-/*   Updated: 2019/06/26 15:00:22 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/08/27 18:04:26 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 static int	count_words(char *str, char *whitespaces)
 {
 	char	*cpy;
-	int	nb;
+	int		nb;
 
 	nb = 0;
 	if (!(cpy = ft_strdup(str)))
@@ -34,13 +34,13 @@ static int	count_words(char *str, char *whitespaces)
 	return (nb);
 }
 
-static int	get_tokens(char	**str, char *whitespaces, char **tokens)
+static int	get_tokens(char **str, char *whitespaces, char **tokens)
 {
 	char	*tok;
 	char	*pstr;
-	int	nb;
+	int		nb;
 
-	nb = 0;	
+	nb = 0;
 	pstr = *str;
 	while ((tok = ft_strtok(pstr, whitespaces)))
 	{
@@ -80,7 +80,7 @@ char		**ft_strsplit_whitespaces(char *str)
 {
 	char	**tokens;
 	char	*whitespaces;
-	int	nb_words;
+	int		nb_words;
 
 	whitespaces = " \t\n\v\f\r";
 	if ((nb_words = count_words(str, whitespaces)) <= 0

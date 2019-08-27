@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/01 14:43:13 by abarthel          #+#    #+#             */
-/*   Updated: 2019/08/01 18:26:38 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/08/27 18:05:23 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ static int	count_expansion_instances(char *dst, const char *expansion)
 	return (nb);
 }
 
-static char	*malloc_new_line(char *dst, const char *content, const char *expansion,
-		int instances)
+static char	*malloc_new_line(char *dst, const char *content,
+		const char *expansion, int instances)
 {
 	char	*new;
 	size_t	ldst;
@@ -37,14 +37,15 @@ static char	*malloc_new_line(char *dst, const char *content, const char *expansi
 	ldst = ft_strlen(dst);
 	lcontent = ft_strlen(content);
 	lexpansion = ft_strlen(expansion);
-	if (!(new = (char*)ft_memalloc(sizeof(char) * (instances * (lcontent - lexpansion)
-						+ ldst + 1))))
+	if (!(new = (char*)ft_memalloc(sizeof(char)
+					* (instances * (lcontent - lexpansion) + ldst + 1))))
 		return (NULL);
 	else
 		return (new);
 }
 
-static void	build_str(char *dst, const char *content, const char *expansion, char *cpy)
+static void	build_str(char *dst, const char *content,
+		const char *expansion, char *cpy)
 {
 	char	*ptr;
 	char	*expansion_cpy;
