@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/04 15:49:03 by abarthel          #+#    #+#             */
-/*   Updated: 2019/08/21 13:07:06 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/08/27 18:01:50 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,18 +41,18 @@ static char	**getenvvar(const char *name)
 	return (NULL);
 }
 
+#ifdef FT_ERRNO_H
+
 int			ft_unsetenv(const char *name)
 {
 	extern char	**environ;
 	char		**dst;
 	char		**src;
-	int		tlen;
+	int			tlen;
 
 	if (!name || !*name || ft_strstr(name, "="))
 	{
-#ifdef FT_ERRNO_H
 		g_errno = E_EINVAL;
-#endif
 		return (-1);
 	}
 	else
@@ -66,3 +66,28 @@ int			ft_unsetenv(const char *name)
 		return (0);
 	}
 }
+
+#else
+
+int			ft_unsetenv(const char *name)
+{
+	extern char	**environ;
+	char		**dst;
+	char		**src;
+	int			tlen;
+
+	if (!name || !*name || ft_strstr(name, "="))
+		return (-1);
+	else
+	{
+		if (!(dst = getenvvar(name)))
+			return (0);
+		src = dst + 1;
+		tlen = ft_tablen(src);
+		ft_memmove(dst, src, sizeof(char*) * tlen);
+		dst[tlen] = NULL;
+		return (0);
+	}
+}
+
+#endif

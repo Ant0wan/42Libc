@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 16:51:41 by abarthel          #+#    #+#             */
-/*   Updated: 2019/07/16 16:47:19 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/08/27 17:59:45 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ char				*ft_strerror(int errnum);
 void				ft_perror(const char *s);
 
 /*
- ** man 2 intro
- */
+** man 2 intro
+*/
 
 enum	e_errno
 {
