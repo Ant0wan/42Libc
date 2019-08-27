@@ -22,10 +22,39 @@ int		g_optopt;
 
 #ifndef __unix__
 
+static int	parse_char_mod(int argc, char *const *argv, char *c,
+		const char *optstring)
+{
+	if (!c[1])
+	{
+		++g_optind;
+		if (g_optind < argc)
+			g_optarg = argv[g_optind];
+		else
+		{
+			g_optopt = *c;
+			--g_optind;
+			if (*optstring == ':')
+				return (':');
+			else
+			{
+				if (g_opterr)
+					ft_dprintf(STDERR_FILENO, "%s: option requires an argument -- %c\n", argv[0], *c);
+				return ('?');
+			}
+		}
+	}
+	else
+		g_optarg = &c[1];
+	++g_optind;
+	return (0);
+}
+
 static int	parse_char(int argc, char *const *argv, char *c,
-			const char *optstring)
+		const char *optstring)
 {
 	int i;
+	int tmp;
 
 	i = 0;
 	while (optstring[i])
@@ -38,30 +67,8 @@ static int	parse_char(int argc, char *const *argv, char *c,
 		if (*c == optstring[i])
 		{
 			if (optstring[i + 1] == ':')
-			{
-				if (!c[1])
-				{
-					++g_optind;
-					if (g_optind < argc)
-						g_optarg = argv[g_optind];
-					else
-					{
-						g_optopt = *c;
-						--g_optind;
-						if (*optstring == ':')
-							return (':');
-						else
-						{
-							if (g_opterr)
-								ft_dprintf(STDERR_FILENO, "%s: option requires an argument -- %c\n", argv[0], *c);
-							return ('?');
-						}
-					}
-				}
-				else
-					g_optarg = &c[1];
-				++g_optind;
-			}
+				if ((tmp = parse_char_mod(argc, argv, c, optstring)))
+					return (tmp);
 			return (*c);
 		}
 		else
