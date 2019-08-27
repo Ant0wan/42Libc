@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 11:55:45 by abarthel          #+#    #+#             */
-/*   Updated: 2019/08/21 13:56:16 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/08/27 18:21:46 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,8 @@ char			*ft_strchr(const char *s, int c) __attribute__
 char			*ft_strrchr(const char *s, int c) __attribute__
 				((nonnull(1)));
 
-char			*ft_strrep(char **dst, const char *content, const char *expansion);
+char			*ft_strrep(char **dst, const char *content,
+				const char *expansion);
 
 void			ft_memdel(void **ap);
 
