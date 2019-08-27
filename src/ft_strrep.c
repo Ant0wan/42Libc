@@ -12,6 +12,7 @@
 
 #include <stdlib.h>
 #include "libft.h"
+#include "ft_strrep.h"
 
 static int	count_expansion_instances(char *dst, const char *expansion)
 {
@@ -44,38 +45,44 @@ static char	*malloc_new_line(char *dst, const char *content,
 		return (new);
 }
 
+static void	wh_build(struct s_strrep *rep)
+{
+	if ((rep->ptr = ft_strstr(rep->dst, rep->expansion)))
+		rep->content_cpy = (char*)rep->content;
+	rep->expansion_cpy = (char*)rep->expansion;
+	while (rep->dst < rep->ptr || (!rep->ptr && *(rep->dst)))
+	{
+		*(rep->cpy) = *(rep->dst);
+		++rep->dst;
+		++rep->cpy;
+	}
+	while (*(rep->dst) && *(rep->expansion_cpy))
+	{
+		++rep->dst;
+		++rep->expansion_cpy;
+	}
+	while (*(rep->content_cpy))
+	{
+		*(rep->cpy) = *(rep->content_cpy);
+		++(rep->cpy);
+		++(rep->content_cpy);
+	}
+	rep->ptr = NULL;
+}
+
 static void	build_str(char *dst, const char *content,
 		const char *expansion, char *cpy)
 {
-	char	*ptr;
-	char	*expansion_cpy;
-	char	*content_cpy;
+	struct s_strrep	rep;
 
-	content_cpy = NULL;
-	while (*dst || ptr)
-	{
-		if ((ptr = ft_strstr(dst, expansion)))
-			content_cpy = (char*)content;
-		expansion_cpy = (char*)expansion;
-		while (dst < ptr || (!ptr && *dst))
-		{
-			*cpy = *dst;
-			++dst;
-			++cpy;
-		}
-		while (*dst && *expansion_cpy)
-		{
-			++dst;
-			++expansion_cpy;
-		}
-		while (*content_cpy)
-		{
-			*cpy = *content_cpy;
-			++cpy;
-			++content_cpy;
-		}
-		ptr = NULL;
-	}
+	rep.ptr = NULL;
+	rep.dst = dst;
+	rep.content = content;
+	rep.expansion = expansion;
+	rep.cpy = cpy;
+	rep.content_cpy = NULL;
+	while (*rep.dst || rep.ptr)
+		wh_build(&rep);
 }
 
 char		*ft_strrep(char **dst, const char *content, const char *expansion)
