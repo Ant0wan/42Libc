@@ -13,21 +13,21 @@
 #include <stdlib.h>
 #include "libft.h"
 
-void	ft_tabdel(char ***tab)
+void	ft_tabdel(char ***tables)
 {
 	size_t	i;
 
 	i = 0;
-	if (tab && *tab)
+	if (tables && *tables)
 	{
-		while ((*tab)[i])
+		while ((*tables)[i])
 		{
-			free((*tab)[i]);
-			(*tab)[i] = NULL;
+			free((*tables)[i]);
+			(*tables)[i] = NULL;
 			++i;
 		}
-		free((*tab)[i]);
-		free(*tab);
-		tab = NULL;
+		free((*tables)[i]);
+		free(*tables);
+		tables = NULL;
 	}
 }

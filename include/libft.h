@@ -199,7 +199,7 @@ t_list			*ft_lstnew(void const *content, size_t content_size);
 
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
-void			ft_print_tables(char **tab);
+void			ft_print_tables(char **tables);
 
 int				ft_str_is_alpha(char *s) __attribute__((nonnull(1)));
 
@@ -249,7 +249,7 @@ int				ft_setenv(const char *name, const char *value, int overwrite);
 
 int				ft_unsetenv(const char *name);
 
-void			ft_tabdel(char ***tab);
+void			ft_tabdel(char ***tables);
 
 int				ft_getch(void);
 

@@ -12,17 +12,17 @@
 
 #include "libft.h"
 
-void	ft_print_tables(char **tab)
+void	ft_print_tables(char **tables)
 {
 	size_t	i;
 
 	i = 0;
-	if (tab)
+	if (tables)
 	{
-		while (tab[i])
+		while (tables[i])
 		{
-			if (tab[i][0])
-				ft_putendl(tab[i]);
+			if (tables[i][0])
+				ft_putendl(tables[i]);
 			++i;
 		}
 	}
