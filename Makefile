@@ -6,15 +6,11 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/25 14:03:51 by abarthel          #+#    #+#              #
-#    Updated: 2019/08/16 15:55:22 by abarthel         ###   ########.fr        #
+#    Updated: 2019/09/11 10:27:24 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 -include libft.mk
-
-CFLAGS	+= -Wall -Wextra -Werror -ansi -D_POSIX_C_SOURCE
-
-ARFLAGS	:= rc
 
 .PHONY: all clean fclean re objects lib
 
