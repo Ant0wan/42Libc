@@ -19,8 +19,10 @@ char		*ft_strsep(char **stringp, const char *delim)
 	char	*next;
 
 	next = NULL;
-	if (!**stringp)
+	if (!*stringp)
 		return (NULL);
+	if (!**stringp)
+		return (*stringp);
 	token = *stringp;
 	next = ft_strstr(*stringp, delim);
 	while (delim && *delim && next && *next)
