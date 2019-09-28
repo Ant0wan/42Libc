@@ -20,6 +20,7 @@ notifications:
         on_failure: never
 
 matrix:
+  include:
     - os: osx
       osx_image: xcode6.4
 
