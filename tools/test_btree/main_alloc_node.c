@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 18:11:37 by abarthel          #+#    #+#             */
-/*   Updated: 2019/10/21 18:11:38 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/10/21 18:44:49 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ int main(void)
 		printf("%s\n", node->data);
 	else
 		printf("Could not allocate\n");
-	btree_apply_prefix(struct s_btree *node, free);
+	btree_apply_prefix(node, free);
 	return (0);
 }
