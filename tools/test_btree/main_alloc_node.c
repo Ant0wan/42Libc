@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   main_alloc_node.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/21 18:09:00 by abarthel          #+#    #+#             */
-/*   Updated: 2019/10/21 18:09:02 by abarthel         ###   ########.fr       */
+/*   Created: 2019/10/21 18:11:37 by abarthel          #+#    #+#             */
+/*   Updated: 2019/10/21 18:11:38 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_lowercase(char *s)
+#include <stdio.h>
+
+#include "libft.h"
+
+int main(void)
 {
-	if (!*s)
-		return (1);
-	while (*s >= 97 && *s <= 122)
-	{
-		++s;
-		if (!*s)
-			return (1);
-	}
+	struct s_btree	*node;
+	char		*str;
+
+	str = ft_strdup("Hello Dear !\n");
+	node = NULL;
+	node = btree_create_node(str);
+	if (node)
+		printf("%s\n", node->data);
+	else
+		printf("Could not allocate\n");
 	return (0);
 }

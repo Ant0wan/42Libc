@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   ft_btree.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/21 18:09:00 by abarthel          #+#    #+#             */
-/*   Updated: 2019/10/21 18:09:02 by abarthel         ###   ########.fr       */
+/*   Created: 2019/10/21 18:11:02 by abarthel          #+#    #+#             */
+/*   Updated: 2019/10/21 18:11:03 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_lowercase(char *s)
+#ifndef FT_BTREE_H
+# define FT_BTREE_H
+
+struct s_btree
 {
-	if (!*s)
-		return (1);
-	while (*s >= 97 && *s <= 122)
-	{
-		++s;
-		if (!*s)
-			return (1);
-	}
-	return (0);
-}
+	void		*data;
+	struct s_btree	*left;
+	struct s_btree	*right;
+};
+
+struct s_btree	*btree_create_node(void *data);
+
+#endif
