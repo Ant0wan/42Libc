@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_alloc_node.c                                  :+:      :+:    :+:   */
+/*   btree_apply_prefix.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/21 18:11:37 by abarthel          #+#    #+#             */
-/*   Updated: 2019/10/21 18:11:38 by abarthel         ###   ########.fr       */
+/*   Created: 2019/10/21 17:40:22 by abarthel          #+#    #+#             */
+/*   Updated: 2019/10/21 17:40:26 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <stdlib.h>
 
-#include "libft.h"
 #include "ft_btree.h"
 
-int main(void)
+void		btree_apply_prefix(struct s_btree *root, void (*applyf)(void *))
 {
-	struct s_btree	*node;
-	char		*str;
-
-	str = ft_strdup("Hello Dear !\n");
-	node = NULL;
-	node = btree_create_node(str);
-	if (node)
-		printf("%s\n", node->data);
-	else
-		printf("Could not allocate\n");
-	btree_apply_prefix(struct s_btree *node, free);
-	return (0);
+	applyf(root->data);
+	if (root->left)
+		btree_apply_prefix(root->left, applyf);
+	if (root->right)
+		btree_apply_prefix(root->right, applyf);
 }

@@ -15,6 +15,7 @@ NAME = libft.a
 SOURCES_PATH :=	./src/
 
 SOURCES	:=	btree_create_node.c \
+			btree_apply_prefix.c \
 			cast.c \
 			dispatcher.c \
 			error_msg.c \
