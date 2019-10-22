@@ -53,6 +53,10 @@ int main(void)
 	s4 = strdup("sddasfdasfddasf");
 	stack_push(&mystack, s4);
 
+	printf("\n");
+	stack_apply_to_each(&mystack, (void (*)())printf);
+	printf("\n");
+
 	printf("Last stack to del: %s\n", (char*)stack_peek(&mystack));
 	stack_delete(&mystack, free);
 	printf("Should be NULL: %s\n", (char*)stack_peek(&mystack));
