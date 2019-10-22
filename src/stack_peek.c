@@ -10,4 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 
+#include "ft_stack.h"
+
+void			*stack_peek(struct s_stack **top)
+{
+    
+}

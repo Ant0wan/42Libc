@@ -21,11 +21,12 @@ struct	s_stack
 
 struct s_stack	*stack_create_element(void *data);
 struct s_stack	*stack_initialize(void *data);
-void			*stack_pop(struct s_stack **top);
 void			stack_push(struct s_stack **top, void *data);
+void			stack_pop(struct s_stack **top, void (*del_data)(void *))
+void			*stack_peek(struct s_stack **top);
+
 void			stack_swap(struct s_stack **top);
 void			stack_rotate(struct s_stack **top);
-void			*stack_peek(struct s_stack **top);
 _Bool			stack_isempty(struct s_stack **top);
 
 #endif

@@ -14,12 +14,14 @@
 
 #include "ft_stack.h"
 
-void    *stack_pop(struct s_stack **top)
+void    stack_pop(struct s_stack **top, void (*del_data)(void *))
 {
-    if (*top)
-    {
+    struct s_stack  *previous;
 
-    }
-    else
+    if (!*top)
         return (NULL);
+    del_data((*top)->data);
+    previous = (*top)->previous;
+    free(*top);
+    *top = previous;
 }
