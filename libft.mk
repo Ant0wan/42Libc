@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/25 14:45:47 by abarthel          #+#    #+#              #
-#    Updated: 2019/10/22 13:01:30 by abarthel         ###   ########.fr        #
+#    Updated: 2019/10/22 13:04:41 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SOURCES	:=	btree_create_node.c \
 			btree_apply_infix.c \
 			btree_insert_data.c \
 			btree_level_count.c \
+			btree_apply_by_level.c \
 			cast.c \
 			dispatcher.c \
 			error_msg.c \
