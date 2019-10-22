@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_swap.c                                       :+:      :+:    :+:   */
+/*   stack_isempty.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 14:27:51 by abarthel          #+#    #+#             */
-/*   Updated: 2019/10/22 14:27:52 by abarthel         ###   ########.fr       */
+/*   Created: 2019/10/22 16:17:35 by abarthel          #+#    #+#             */
+/*   Updated: 2019/10/22 16:17:58 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+
 #include "ft_stack.h"
 
-void			stack_swap(struct s_stack **top)
+_Bool   stack_isempty(struct s_stack **top)
 {
-    struct s_stack  *tmp;
-
     if (!*top)
-        return ;
-    else if (!(*top)->previous)
-        return ;
-    tmp = *top;
-    *top = (*top)->previous;
-    tmp->previous = (*top)->previous;
-    (*top)->previous = tmp;
+        return (1);
+    else
+        return (0);
 }
