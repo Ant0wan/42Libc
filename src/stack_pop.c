@@ -18,10 +18,11 @@ void    stack_pop(struct s_stack **top, void (*del_data)(void *))
 {
     struct s_stack  *previous;
 
-    if (!*top)
-        return (NULL);
-    del_data((*top)->data);
-    previous = (*top)->previous;
-    free(*top);
-    *top = previous;
+    if (*top)
+    {
+        del_data((*top)->data);
+        previous = (*top)->previous;
+        free(*top);
+        *top = previous;
+    }
 }

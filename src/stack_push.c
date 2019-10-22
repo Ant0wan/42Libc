@@ -28,4 +28,5 @@ void	stack_push(struct s_stack **top, void *data)
 			push->previous = *top;
 			*top = push;
 		}
+	}
 }

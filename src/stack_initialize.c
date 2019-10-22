@@ -16,7 +16,7 @@
 
 struct s_stack	*stack_initialize(void *data)
 {
-    struct s_stack  element;
+    struct s_stack  *element;
 
     element = stack_create_element(data);
     if (element)

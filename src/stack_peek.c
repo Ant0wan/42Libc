@@ -14,7 +14,9 @@
 
 #include "ft_stack.h"
 
-void			*stack_peek(struct s_stack **top)
+void    *stack_peek(struct s_stack **top)
 {
-    
+    if (*top)
+        return ((*top)->data);
+    return (NULL);
 }
