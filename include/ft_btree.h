@@ -21,7 +21,9 @@ struct s_btree
 };
 
 struct s_btree	*btree_create_node(void *data);
-
-void		btree_apply_prefix(struct s_btree *root, void (*applyf)(void *));
+void			btree_apply_prefix(struct s_btree *root, void (*applyf)(void *));
+void			btree_apply_infix(struct s_btree *root, void (*applyf)(void *));
+void			btree_apply_postfix(struct s_btree *root, void (*applyf)(void *));
+void			btree_insert_data(struct s_btree **root, void *data, int (*cmpf)(void *, void *));
 
 #endif

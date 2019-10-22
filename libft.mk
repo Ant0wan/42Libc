@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/25 14:45:47 by abarthel          #+#    #+#              #
-#    Updated: 2019/10/21 18:10:35 by abarthel         ###   ########.fr        #
+#    Updated: 2019/10/22 12:48:29 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,9 @@ SOURCES_PATH :=	./src/
 
 SOURCES	:=	btree_create_node.c \
 			btree_apply_prefix.c \
+			btree_apply_postfix.c \
+			btree_apply_infix.c \
+			btree_insert_data.c \
 			cast.c \
 			dispatcher.c \
 			error_msg.c \
