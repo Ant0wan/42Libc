@@ -39,5 +39,24 @@ int main(void)
 	stack_pop(&mystack, free);
 	printf("isempty, should be 1: %d\n", (int)stack_isempty(&mystack));
 
+	char *s1;
+	char *s2;
+	char *s3;
+	char *s4;
+
+	s1 = strdup("sddasfdasfddasf");
+	stack_push(&mystack, s1);
+	s2 = strdup("sddasfdasfddasf");
+	stack_push(&mystack, s2);
+	s3 = strdup("sddasfdasfddasf");
+	stack_push(&mystack, s3);
+	s4 = strdup("sddasfdasfddasf");
+	stack_push(&mystack, s4);
+
+	printf("Last stack to del: %s\n", (char*)stack_peek(&mystack));
+	stack_delete(&mystack, free);
+	printf("Should be NULL: %s\n", (char*)stack_peek(&mystack));
+
+
 	return (0);
 }

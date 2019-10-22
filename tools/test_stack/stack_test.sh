@@ -14,6 +14,6 @@
 make -j -C ../../
 gcc main.c -fsanitize=address -g -Wextra -Wall -Werror ../../libft.a -I../../include -o test
 ./test
-#rm test
-#rm -rf test.dSYM
+rm test
+rm -rf test.dSYM
 make fclean -C ../../
