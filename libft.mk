@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/25 14:45:47 by abarthel          #+#    #+#              #
-#    Updated: 2019/10/23 12:06:49 by abarthel         ###   ########.fr        #
+#    Updated: 2019/10/23 12:28:02 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,12 @@ NAME = libft.a
 
 SOURCES_PATH :=	./src/
 
-SOURCES	:=	btree_create_node.c \
-			btree_apply_prefix.c \
-			btree_apply_postfix.c \
-			btree_apply_infix.c \
-			btree_insert_data.c \
-			btree_level_count.c \
+SOURCES	:=	ds_btree/btree_create_node.c \
+			ds_btree/btree_apply_prefix.c \
+			ds_btree/btree_apply_postfix.c \
+			ds_btree/btree_apply_infix.c \
+			ds_btree/btree_insert_data.c \
+			ds_btree/btree_level_count.c \
 			cast.c \
 			dispatcher.c \
 			error_msg.c \
@@ -162,18 +162,18 @@ SOURCES	:=	btree_create_node.c \
 			get_next_line.c \
 			prefix.c \
 			prs_get.c \
-			stack_create_element.c \
-			stack_initialize.c \
-			stack_peek.c \
-			stack_pop.c \
-			stack_push.c \
-			stack_swap.c \
-			stack_isempty.c \
-			stack_delete.c \
-			stack_rotate.c \
-			stack_reverse.c \
-			stack_duplicate.c \
-			stack_apply_to_each.c \
+			ds_stack/stack_create_element.c \
+			ds_stack/stack_initialize.c \
+			ds_stack/stack_peek.c \
+			ds_stack/stack_pop.c \
+			ds_stack/stack_push.c \
+			ds_stack/stack_swap.c \
+			ds_stack/stack_isempty.c \
+			ds_stack/stack_delete.c \
+			ds_stack/stack_reverse.c \
+			ds_stack/stack_sort.c \
+			ds_stack/stack_duplicate.c \
+			ds_stack/stack_apply_to_each.c \
 			str_format.c \
 			utf8.c \
 			wrapper.c \

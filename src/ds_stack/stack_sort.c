@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_rotate.c                                     :+:      :+:    :+:   */
+/*   stack_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 14:28:08 by abarthel          #+#    #+#             */
-/*   Updated: 2019/10/22 17:19:43 by abarthel         ###   ########.fr       */
+/*   Created: 2019/10/23 12:22:36 by abarthel          #+#    #+#             */
+/*   Updated: 2019/10/23 12:23:08 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 
 #include "ft_stack.h"
 
-void    stack_rotate(struct s_stack **top)
+void	stack_sort(struct s_stack **top, int (*cmp)())
 {
-    /* HS */
-    if ((*top)->previous->previous)
-        stack_rotate(&((*top)->previous));
-    (*top)->previous->previous = (*top);
 }
