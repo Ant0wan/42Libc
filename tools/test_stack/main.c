@@ -43,7 +43,11 @@ int main(void)
 	char *s2;
 	char *s3;
 	char *s4;
+	char *s5;
+	char *s6;
 
+	s6 = strdup("f\n");
+	s5 = strdup("e\n");
 	s4 = strdup("c\n");
 	s3 = strdup("d\n");
 	s2 = strdup("b\n");
@@ -53,13 +57,10 @@ int main(void)
 	stack_push(&mystack, s3);
 	stack_push(&mystack, s4);
 
-
 	printf("\n");
 	stack_swap(&mystack);
 	stack_reverse(&mystack);
 	
-/*	stack_rotate(&mystack);
-*/	
 	stack_duplicate(&mystack, (void *(*)())strdup);
 	stack_apply_to_each(&mystack, (void (*)())printf);
 	
@@ -67,10 +68,18 @@ int main(void)
 	stack_pop(&mystack, free);
 	stack_apply_to_each(&mystack, (void (*)())printf);
 
+	printf("\n");
+	stack_push(&mystack, s6);
+	stack_push(&mystack, s5);
+	stack_apply_to_each(&mystack, (void (*)())printf);
+	printf("\nSorted stack:\n");
+	stack_sort(&mystack, strcmp, free);
+	stack_apply_to_each(&mystack, (void (*)())printf);
+	printf("\n");
+
 	printf("Last stack to del: %s\n", (char*)stack_peek(&mystack));
 	stack_delete(&mystack, free);
 	printf("Should be NULL: %s\n", (char*)stack_peek(&mystack));
-
 
 	return (0);
 }
