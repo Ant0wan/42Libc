@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/25 14:45:47 by abarthel          #+#    #+#              #
-#    Updated: 2019/10/23 10:34:15 by abarthel         ###   ########.fr        #
+#    Updated: 2019/10/23 12:06:49 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -171,6 +171,7 @@ SOURCES	:=	btree_create_node.c \
 			stack_isempty.c \
 			stack_delete.c \
 			stack_rotate.c \
+			stack_reverse.c \
 			stack_duplicate.c \
 			stack_apply_to_each.c \
 			str_format.c \

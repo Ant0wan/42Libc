@@ -44,10 +44,10 @@ int main(void)
 	char *s3;
 	char *s4;
 
-	s4 = strdup("b\n");
-	s3 = strdup("a\n");
-	s2 = strdup("c\n");
-	s1 = strdup("d\n");
+	s4 = strdup("c\n");
+	s3 = strdup("d\n");
+	s2 = strdup("b\n");
+	s1 = strdup("a\n");
 	stack_push(&mystack, s1);
 	stack_push(&mystack, s2);
 	stack_push(&mystack, s3);
@@ -56,6 +56,7 @@ int main(void)
 
 	printf("\n");
 	stack_swap(&mystack);
+	stack_reverse(&mystack);
 	
 /*	stack_rotate(&mystack);
 */	

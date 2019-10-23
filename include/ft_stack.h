@@ -28,6 +28,7 @@ void			stack_swap(struct s_stack **top);
 void			stack_delete(struct s_stack **top, void (*del_data)(void *));
 void			stack_apply_to_each(struct s_stack **top, void (*f)());
 void			stack_rotate(struct s_stack **top);
+void			stack_reverse(struct s_stack **top);
 void			stack_duplicate(struct s_stack **top, void *(*copy_data)());
 _Bool			stack_isempty(struct s_stack **top);
 
