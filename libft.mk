@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/25 14:45:47 by abarthel          #+#    #+#              #
-#    Updated: 2019/10/23 18:17:43 by abarthel         ###   ########.fr        #
+#    Updated: 2019/10/23 18:22:52 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,188 +15,163 @@ NAME = libft.a
 SOURCES_PATH :=	./src/
 
 SOURCES	:= \
-	./ds_btree:
-btree_apply_by_level.c
-btree_apply_infix.c
-btree_apply_postfix.c
-btree_apply_prefix.c
-btree_create_node.c
-btree_insert_data.c
-btree_level_count.c
-btree_search_data.c
-
-./ds_queue:
-
-./ds_singly_linked_list:
-ft_lstadd.c
-ft_lstdel.c
-ft_lstdelone.c
-ft_lstiter.c
-ft_lstmap.c
-ft_lstnew.c
-
-./ds_stack:
-stack_apply_to_each.c
-stack_create_element.c
-stack_delete.c
-stack_duplicate.c
-stack_initialize.c
-stack_isempty.c
-stack_peek.c
-stack_pop.c
-stack_pop_get_data.c
-stack_push.c
-stack_reverse.c
-stack_reverse_recursion.c
-stack_sort.c
-stack_swap.c
-
-./f_ctype:
-ft_isalnum.c
-ft_isalpha.c
-ft_isascii.c
-ft_isdigit.c
-ft_tolower.c
-ft_toupper.c
-
-./f_errno:
-error_msg.c
-
-./f_misc:
-ft_chrsearch.c
-ft_ewcsnwidth.c
-ft_ewcswidth.c
-ft_ewcwidth.c
-ft_fgetline.c
-ft_fprintbits.c
-ft_fputwcbits.c
-ft_fputwsbits.c
-ft_isempty.c
-ft_isprime.c
-ft_isprint.c
-ft_itoa.c
-ft_memalloc.c
-ft_memdel.c
-ft_numlen.c
-ft_print_tables.c
-ft_printbits.c
-ft_putaddr.c
-ft_putchar_fd.c
-ft_putendl.c
-ft_putendl_fd.c
-ft_putllnb.c
-ft_putnbr.c
-ft_putnbr_base.c
-ft_putnbr_fd.c
-ft_putnbr_lowhexa.c
-ft_putnbr_octal.c
-ft_putnbr_upphexa.c
-ft_putstr.c
-ft_putstr_fd.c
-ft_putuint.c
-ft_putuint_octal.c
-ft_putwcbits.c
-ft_putwstr.c
-ft_resolvepath.c
-ft_sortopt.c
-ft_str_is_alpha.c
-ft_str_is_lowercase.c
-ft_str_is_numeric.c
-ft_str_is_printable.c
-ft_str_is_uppercase.c
-ft_strclen.c
-ft_strclr.c
-ft_strdel.c
-ft_strendcpy.c
-ft_strequ.c
-ft_striter.c
-ft_striteri.c
-ft_strjoin.c
-ft_strmap.c
-ft_strmapi.c
-ft_strnequ.c
-ft_strnew.c
-ft_strnjoin.c
-ft_strrep.c
-ft_strsplit.c
-ft_strsplit_whitespaces.c
-ft_strsub.c
-ft_strtrim.c
-ft_swap.c
-ft_tabcpy.c
-ft_tabdel.c
-ft_tablen.c
-ft_tabmalloc.c
-get_next_line.c
-utf8.c
-
-./f_ncurses:
-ft_getch.c
-
-./f_stdio:
-ft_perror.c
-ft_putchar.c
-ft_strerror.c
-printf
-
-./f_stdio/printf:
-cast.c
-dispatcher.c
-format.c
-ft_asprintf.c
-ft_b.c
-ft_chr.c
-ft_double.c
-ft_dprintf.c
-ft_expand_ret.c
-ft_hexa.c
-ft_n.c
-ft_nbr.c
-ft_octal.c
-ft_p.c
-ft_printf.c
-ft_printf_prs.c
-ft_str.c
-ft_unbr.c
-ft_vasprintf.c
-ft_vdprintf.c
-ft_y.c
-prefix.c
-prs_get.c
-str_format.c
-wrapper.c
-
-./f_stdlib:
-ft_atoi.c
-ft_getenv.c
-ft_realpath.c
-ft_setenv.c
-ft_unsetenv.c
-
-./f_string:
-ft_memccpy.c
-ft_memchr.c
-ft_memcmp.c
-ft_memcpy.c
-ft_memmove.c
-ft_memset.c
-ft_strcat.c
-ft_strchr.c
-ft_strcmp.c
-ft_strcpy.c
-ft_strdup.c
-ft_strlcat.c
-ft_strlen.c
-ft_strncat.c
-ft_strncmp.c
-ft_strncpy.c
-ft_strndup.c
-ft_strnstr.c
-ft_strrchr.c
-ft_strsep.c
-ft_strstr.c
-ft_strtok.c
-
+ds_btree/btree_apply_by_level.c \
+ds_btree/btree_apply_infix.c \
+ds_btree/btree_apply_postfix.c \
+ds_btree/btree_apply_prefix.c \
+ds_btree/btree_create_node.c \
+ds_btree/btree_insert_data.c \
+ds_btree/btree_level_count.c \
+ds_btree/btree_search_data.c \
+ds_signly_linked_list/ft_lstadd.c \
+ds_signly_linked_list/ft_lstdel.c \
+ds_signly_linked_list/ft_lstdelone.c \
+ds_signly_linked_list/ft_lstiter.c \
+ds_signly_linked_list/ft_lstmap.c \
+ds_signly_linked_list/ft_lstnew.c \
+ds_stack/stack_apply_to_each.c \
+ds_stack/stack_create_element.c \
+ds_stack/stack_delete.c \
+ds_stack/stack_duplicate.c \
+ds_stack/stack_initialize.c \
+ds_stack/stack_isempty.c \
+ds_stack/stack_peek.c \
+ds_stack/stack_pop.c \
+ds_stack/stack_pop_get_data.c \
+ds_stack/stack_push.c \
+ds_stack/stack_reverse.c \
+ds_stack/stack_reverse_recursion.c \
+ds_stack/stack_sort.c \
+ds_stack/stack_swap.c \
+f_ctype/ft_isalnum.c \
+f_ctype/ft_isalpha.c \
+f_ctype/ft_isascii.c \
+f_ctype/ft_isdigit.c \
+f_ctype/ft_tolower.c \
+f_ctype/ft_toupper.c \
+f_errno/error_msg.c \
+f_misc/ft_chrsearch.c \
+f_misc/ft_ewcsnwidth.c \
+f_misc/ft_ewcswidth.c \
+f_misc/ft_ewcwidth.c \
+f_misc/ft_fgetline.c \
+f_misc/ft_fprintbits.c \
+f_misc/ft_fputwcbits.c \
+f_misc/ft_fputwsbits.c \
+f_misc/ft_isempty.c \
+f_misc/ft_isprime.c \
+f_misc/ft_isprint.c \
+f_misc/ft_itoa.c \
+f_misc/ft_memalloc.c \
+f_misc/ft_memdel.c \
+f_misc/ft_numlen.c \
+f_misc/ft_print_tables.c \
+f_misc/ft_printbits.c \
+f_misc/ft_putaddr.c \
+f_misc/ft_putchar_fd.c \
+f_misc/ft_putendl.c \
+f_misc/ft_putendl_fd.c \
+f_misc/ft_putllnb.c \
+f_misc/ft_putnbr.c \
+f_misc/ft_putnbr_base.c \
+f_misc/ft_putnbr_fd.c \
+f_misc/ft_putnbr_lowhexa.c \
+f_misc/ft_putnbr_octal.c \
+f_misc/ft_putnbr_upphexa.c \
+f_misc/ft_putstr.c \
+f_misc/ft_putstr_fd.c \
+f_misc/ft_putuint.c \
+f_misc/ft_putuint_octal.c \
+f_misc/ft_putwcbits.c \
+f_misc/ft_putwstr.c \
+f_misc/ft_resolvepath.c \
+f_misc/ft_sortopt.c \
+f_misc/ft_str_is_alpha.c \
+f_misc/ft_str_is_lowercase.c \
+f_misc/ft_str_is_numeric.c \
+f_misc/ft_str_is_printable.c \
+f_misc/ft_str_is_uppercase.c \
+f_misc/ft_strclen.c \
+f_misc/ft_strclr.c \
+f_misc/ft_strdel.c \
+f_misc/ft_strendcpy.c \
+f_misc/ft_strequ.c \
+f_misc/ft_striter.c \
+f_misc/ft_striteri.c \
+f_misc/ft_strjoin.c \
+f_misc/ft_strmap.c \
+f_misc/ft_strmapi.c \
+f_misc/ft_strnequ.c \
+f_misc/ft_strnew.c \
+f_misc/ft_strnjoin.c \
+f_misc/ft_strrep.c \
+f_misc/ft_strsplit.c \
+f_misc/ft_strsplit_whitespaces.c \
+f_misc/ft_strsub.c \
+f_misc/ft_strtrim.c \
+f_misc/ft_swap.c \
+f_misc/ft_tabcpy.c \
+f_misc/ft_tabdel.c \
+f_misc/ft_tablen.c \
+f_misc/ft_tabmalloc.c \
+f_misc/get_next_line.c \
+f_misc/utf8.c \
+f_ncurses/ft_getch.c \
+f_stdio/ft_perror.c \
+f_stdio/ft_putchar.c \
+f_stdio/ft_strerror.c \
+f_stdio/printf/cast.c \
+f_stdio/printf/dispatcher.c \
+f_stdio/printf/format.c \
+f_stdio/printf/ft_asprintf.c \
+f_stdio/printf/ft_b.c \
+f_stdio/printf/ft_chr.c \
+f_stdio/printf/ft_double.c \
+f_stdio/printf/ft_dprintf.c \
+f_stdio/printf/ft_expand_ret.c \
+f_stdio/printf/ft_hexa.c \
+f_stdio/printf/ft_n.c \
+f_stdio/printf/ft_nbr.c \
+f_stdio/printf/ft_octal.c \
+f_stdio/printf/ft_p.c \
+f_stdio/printf/ft_printf.c \
+f_stdio/printf/ft_printf_prs.c \
+f_stdio/printf/ft_str.c \
+f_stdio/printf/ft_unbr.c \
+f_stdio/printf/ft_vasprintf.c \
+f_stdio/printf/ft_vdprintf.c \
+f_stdio/printf/ft_y.c \
+f_stdio/printf/prefix.c \
+f_stdio/printf/prs_get.c \
+f_stdio/printf/str_format.c \
+f_stdio/printf/wrapper.c \
+f_stdlib/ft_atoi.c \
+f_stdlib/ft_getenv.c \
+f_stdlib/ft_realpath.c \
+f_stdlib/ft_setenv.c \
+f_stdlib/ft_unsetenv.c \
+f_string/ft_memccpy.c \
+f_string/ft_memchr.c \
+f_string/ft_memcmp.c \
+f_string/ft_memcpy.c \
+f_string/ft_memmove.c \
+f_string/ft_memset.c \
+f_string/ft_strcat.c \
+f_string/ft_strchr.c \
+f_string/ft_strcmp.c \
+f_string/ft_strcpy.c \
+f_string/ft_strdup.c \
+f_string/ft_strlcat.c \
+f_string/ft_strlen.c \
+f_string/ft_strncat.c \
+f_string/ft_strncmp.c \
+f_string/ft_strncpy.c \
+f_string/ft_strndup.c \
+f_string/ft_strnstr.c \
+f_string/ft_strrchr.c \
+f_string/ft_strsep.c \
+f_string/ft_strstr.c \
+f_string/ft_strtok.c \
 f_strings/ft_bzero.c \
 f_strings/ft_strcasecmp.c \
 f_unistd/ft_getopt_gnu.c \
