@@ -44,8 +44,8 @@ int main(void)
 	char *s3;
 	char *s4;
 
-	s4 = strdup("a\n");
-	s3 = strdup("b\n");
+	s4 = strdup("b\n");
+	s3 = strdup("a\n");
 	s2 = strdup("c\n");
 	s1 = strdup("d\n");
 	stack_push(&mystack, s1);
@@ -55,11 +55,16 @@ int main(void)
 
 
 	printf("\n");
-/*	stack_swap(&mystack);
-*/	
+	stack_swap(&mystack);
+	
 /*	stack_rotate(&mystack);
-*/	stack_apply_to_each(&mystack, (void (*)())printf);
+*/	
+	stack_duplicate(&mystack, (void *(*)())strdup);
+	stack_apply_to_each(&mystack, (void (*)())printf);
+	
 	printf("\n");
+	stack_pop(&mystack, free);
+	stack_apply_to_each(&mystack, (void (*)())printf);
 
 	printf("Last stack to del: %s\n", (char*)stack_peek(&mystack));
 	stack_delete(&mystack, free);

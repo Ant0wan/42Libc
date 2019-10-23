@@ -16,6 +16,7 @@
 
 void    stack_rotate(struct s_stack **top)
 {
+    /* HS */
     if ((*top)->previous->previous)
         stack_rotate(&((*top)->previous));
     (*top)->previous->previous = (*top);
