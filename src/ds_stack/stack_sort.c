@@ -10,25 +10,39 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h> /*DEBUGG*/
 #include <stdlib.h>
 
 #include "ft_stack.h"
 
-void    put_in_stack(struct s_stack **top, int (*cmp)(), void (*del_data)(void *))
+static __inline__ void  stack_pop_keep_data(struct s_stack **top)
 {
-    struct s_stack  *element;
+    struct s_stack  *previous;
 
-    element = (struct s_stack*)stack_peek(top);
-    if (element)
+    if (*top)
     {
-        stack_pop(top, del_data);
-        put_in_stack(top, cmp, del_data);
+        previous = (*top)->previous;
+        free(*top);
+        *top = previous;
     }
 }
 
-void	stack_sort(struct s_stack **top, int (*cmp)(), void (*del_data)(void *))
+void                    put_in_stack(struct s_stack **top, int (*cmp)())
 {
-    put_in_stack(top, cmp, del_data);
+    void    *element_data;
+
+    element_data = stack_peek(top);
+    if (element_data)
+    {
+        stack_pop(top);
+        put_in_stack(top, cmp);
+        printf("-> %s\n", (char*)element_data);
+    }
+}
+
+void	stack_sort(struct s_stack **top, int (*cmp)())
+{
+    put_in_stack(top, cmp);
     (void)top;
     (void)cmp;
 }
