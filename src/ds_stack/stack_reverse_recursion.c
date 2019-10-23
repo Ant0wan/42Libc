@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_sort.c                                       :+:      :+:    :+:   */
+/*   stack_reverse_recursion.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,7 +14,7 @@
 
 #include "ft_stack.h"
 
-void    insert_element(struct s_stack **top, void *data)
+static void insert_element(struct s_stack **top, void *data)
 {
     void    *__restrict__ element_data;
 
@@ -28,7 +28,7 @@ void    insert_element(struct s_stack **top, void *data)
     }
 }
 
-void    stack_reverse_recursion(struct s_stack **top)
+void        stack_reverse_recursion(struct s_stack **top)
 {
     void    *__restrict__ element_data;
 
