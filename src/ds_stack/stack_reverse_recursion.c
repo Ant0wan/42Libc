@@ -10,27 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h> /*DEBUGG*/
 #include <stdlib.h>
 
 #include "ft_stack.h"
 
-void                    put_in_stack(struct s_stack **top, int (*cmp)())
+void    insert_element(struct s_stack **top, void *data)
 {
     void    *__restrict__ element_data;
 
-    element_data = stack_peek(top);
-    if (element_data)
+    if (stack_isempty(top))
+        stack_push(top, data);
+    else
     {
-        stack_pop_get_data(top);
-        put_in_stack(top, cmp);
-        printf("-> %s\n", (char*)element_data);
+        element_data = stack_pop_get_data(top);
+        insert_element(top, data);
+        stack_push(top, element_data);
     }
 }
 
-void	stack_sort(struct s_stack **top, int (*cmp)())
+void    stack_reverse_recursion(struct s_stack **top)
 {
-    put_in_stack(top, cmp);
-    (void)top;
-    (void)cmp;
+    void    *__restrict__ element_data;
+
+    element_data = stack_pop_get_data(top);
+    if (element_data)
+    {
+        stack_reverse_recursion(top);
+        insert_element(top, element_data);
+    }
 }

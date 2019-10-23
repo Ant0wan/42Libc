@@ -59,8 +59,12 @@ int main(void)
 
 	printf("\n");
 	stack_swap(&mystack);
+	stack_reverse_recursion(&mystack);
+	stack_reverse(&mystack);
 	stack_reverse(&mystack);
 	
+	printf("After reverse:\n");
+
 	stack_duplicate(&mystack, (void *(*)())strdup);
 	stack_apply_to_each(&mystack, (void (*)())printf);
 	
@@ -73,7 +77,7 @@ int main(void)
 	stack_push(&mystack, s5);
 	stack_apply_to_each(&mystack, (void (*)())printf);
 	printf("\nSorted stack:\n");
-	stack_sort(&mystack, strcmp, free, (void *(*)(void *))strdup);
+	stack_sort(&mystack, strcmp);
 	stack_apply_to_each(&mystack, (void (*)())printf);
 	printf("\n");
 

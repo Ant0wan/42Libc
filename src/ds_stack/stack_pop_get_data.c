@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_sort.c                                       :+:      :+:    :+:   */
+/*   stack_pop_get_data.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/23 12:22:36 by abarthel          #+#    #+#             */
-/*   Updated: 2019/10/23 12:23:08 by abarthel         ###   ########.fr       */
+/*   Created: 2019/10/23 15:09:11 by abarthel          #+#    #+#             */
+/*   Updated: 2019/10/23 15:09:13 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h> /*DEBUGG*/
 #include <stdlib.h>
 
 #include "ft_stack.h"
 
-void                    put_in_stack(struct s_stack **top, int (*cmp)())
+extern __inline__ void *stack_pop_get_data(struct s_stack **top)
 {
-    void    *__restrict__ element_data;
+    struct s_stack  *previous;
+    void            *__restrict__ data;
 
-    element_data = stack_peek(top);
-    if (element_data)
+    data = NULL;
+    if (*top)
     {
-        stack_pop_get_data(top);
-        put_in_stack(top, cmp);
-        printf("-> %s\n", (char*)element_data);
+        previous = (*top)->previous;
+        data = (*top)->data;
+        free(*top);
+        *top = previous;
     }
-}
-
-void	stack_sort(struct s_stack **top, int (*cmp)())
-{
-    put_in_stack(top, cmp);
-    (void)top;
-    (void)cmp;
+    return (data);
 }

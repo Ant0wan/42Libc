@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/25 14:45:47 by abarthel          #+#    #+#              #
-#    Updated: 2019/10/23 12:28:02 by abarthel         ###   ########.fr        #
+#    Updated: 2019/10/23 15:18:02 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -166,11 +166,13 @@ SOURCES	:=	ds_btree/btree_create_node.c \
 			ds_stack/stack_initialize.c \
 			ds_stack/stack_peek.c \
 			ds_stack/stack_pop.c \
+			ds_stack/stack_pop_get_data.c \
 			ds_stack/stack_push.c \
 			ds_stack/stack_swap.c \
 			ds_stack/stack_isempty.c \
 			ds_stack/stack_delete.c \
 			ds_stack/stack_reverse.c \
+			ds_stack/stack_reverse_recursion.c \
 			ds_stack/stack_sort.c \
 			ds_stack/stack_duplicate.c \
 			ds_stack/stack_apply_to_each.c \
