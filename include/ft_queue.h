@@ -6,13 +6,26 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 13:06:51 by abarthel          #+#    #+#             */
-/*   Updated: 2019/10/22 13:07:21 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/10/23 20:48:07 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_QUEUE_H
 # define FT_QUEUE_H
 
+struct s_qnode
+{
+	void		*data;
+	struct s_qnode	*previous;
+};
 
+struct s_queue
+{
+	struct s_qnode	*rear;
+	struct s_qnode	*front;
+};
+
+struct s_qnode	*queue_create_node(void *data);
+void			queue_enqueue(struct s_qnode **rear, void *data);
 
 #endif

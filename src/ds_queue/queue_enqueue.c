@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_create_element.c                             :+:      :+:    :+:   */
+/*   queue_enqueue.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 14:22:33 by abarthel          #+#    #+#             */
-/*   Updated: 2019/10/22 14:22:52 by abarthel         ###   ########.fr       */
+/*   Created: 2019/10/24 10:50:06 by abarthel          #+#    #+#             */
+/*   Updated: 2019/10/24 10:50:19 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "ft_queue.h"
 
-#include "libft.h"
-#include "ft_stack.h"
-
-struct s_stack  *stack_create_element(void *data)
+void	queue_enqueue(struct s_qnode **rear, void *data)
 {
-    struct s_stack  *element;
+    struct s_qnode  *node;
 
-    element = (struct s_stack*)ft_memalloc(sizeof(struct s_stack));
-    if (element)
-        element->data = data;
-    return (element);
+    node = queue_create_node(data);
+    if (node)
+    {
+        if (*rear)
+            node->previous = *rear;
+        *rear = node;
+    }
 }
