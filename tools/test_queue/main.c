@@ -27,7 +27,9 @@ int main(void)
 	s8 = strdup("Eighth line\n");
 
 	printf("%s\n", (char*)queue_dequeue(&(myqueue.front), NULL));
+	printf("%s\n", (char*)queue_front(&myqueue));
 	queue_dequeue(&(myqueue.front), free);
+
 
 	queue_enqueue(&myqueue, s1);
 	queue_enqueue(&myqueue, s2);
@@ -38,7 +40,16 @@ int main(void)
 	queue_enqueue(&myqueue, s7);
 	queue_enqueue(&myqueue, s8);
 
+	printf("Check front: %s\n", (char*)queue_front(&myqueue));
+	printf("Should not change: %s\n", (char*)queue_front(&myqueue));
+
 	printf("\nInitial queue:\n\n");
+	queue_apply_to_each(myqueue.front, (void (*)())printf);
+	printf("\n");
+
+	queue_reverse(&myqueue);
+	queue_reverse(&myqueue);
+	printf("\nReversed queue:\n\n");
 	queue_apply_to_each(myqueue.front, (void (*)())printf);
 	printf("\n");
 
@@ -54,6 +65,8 @@ int main(void)
 	str = (char*)queue_dequeue(&(myqueue.front), NULL);
 	printf("%s\n", str);
 	free(str);
-	
+
+	queue_delete(&myqueue, free);
+
 	return (0);
 }

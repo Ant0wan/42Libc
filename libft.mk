@@ -24,6 +24,10 @@ SOURCES	:=	ds_btree/btree_apply_infix.c \
 		ds_queue/queue_create_node.c \
 		ds_queue/queue_enqueue.c \
 		ds_queue/queue_dequeue.c \
+		ds_queue/queue_front.c \
+		ds_queue/queue_reverse.c \
+		ds_queue/queue_delete.c \
+		ds_queue/queue_sort.c \
 		ds_queue/queue_apply_to_each.c \
 		ds_singly_linked_list/ft_lstadd.c \
 		ds_singly_linked_list/ft_lstdel.c \

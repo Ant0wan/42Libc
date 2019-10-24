@@ -28,6 +28,9 @@ struct s_queue
 struct s_qnode	*queue_create_node(void *data);
 void			queue_enqueue(struct s_queue *queue, void *data);
 void			*queue_dequeue(struct s_qnode **front, void (*del)(void *));
+void			*queue_front(struct s_queue *queue);
 void			queue_apply_to_each(struct s_qnode *pfront, void (*f)());
+void			queue_reverse(struct s_queue *queue);
+void			queue_delete(struct s_queue *queue, void (*del)());
 
 #endif
