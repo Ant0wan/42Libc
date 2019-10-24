@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   queue_enqueue.c                                    :+:      :+:    :+:   */
+/*   queue_dequeue.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,17 +12,21 @@
 
 #include "ft_queue.h"
 
-void	queue_enqueue(struct s_queue *queue, void *data)
+void	*queue_dequeue(struct s_qnode **front, void (*del)(void *))
 {
     struct s_qnode  *node;
+    void            *data;
 
-    node = queue_create_node(data);
-    if (node)
+    data = NULL;
+    if (*front)
     {
-        if (queue->rear)
-            (queue->rear)->previous = node;
-        if (!queue->front)
-            queue->front = queue->rear;
-        queue->rear = node;
+        node = *front;
+        *front = (*front)->previous;
     }
+    if (!del)
+        data = node->data;
+    else
+        del(node->data);
+    free(node);
+    return (data);
 }
