@@ -30,13 +30,13 @@ int main(void)
 	printf("%s\n", (char*)queue_front(&myqueue));
 	queue_dequeue(&(myqueue.front), free);
 
-	queue_enqueue(&myqueue, s1);
 	queue_enqueue(&myqueue, s2);
 	queue_enqueue(&myqueue, s3);
-	queue_enqueue(&myqueue, s4);
 	queue_enqueue(&myqueue, s5);
 	queue_enqueue(&myqueue, s6);
+	queue_enqueue(&myqueue, s4);
 	queue_enqueue(&myqueue, s7);
+	queue_enqueue(&myqueue, s1);
 	queue_enqueue(&myqueue, s8);
 
 	printf("Check front: %s\n", (char*)queue_front(&myqueue));
