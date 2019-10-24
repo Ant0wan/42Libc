@@ -26,6 +26,9 @@ int main(void)
 	s7 = strdup("Seventh line\n");
 	s8 = strdup("Eighth line\n");
 
+	printf("%s\n", (char*)queue_dequeue(&(myqueue.front), NULL));
+	queue_dequeue(&(myqueue.front), free);
+
 	queue_enqueue(&myqueue, s1);
 	queue_enqueue(&myqueue, s2);
 	queue_enqueue(&myqueue, s3);
@@ -46,5 +49,11 @@ int main(void)
 	queue_apply_to_each(myqueue.front, (void (*)())printf);
 	printf("\n");
 
+	char *str;
+
+	str = (char*)queue_dequeue(&(myqueue.front), NULL);
+	printf("%s\n", str);
+	free(str);
+	
 	return (0);
 }

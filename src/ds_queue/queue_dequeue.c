@@ -20,14 +20,16 @@ void	*queue_dequeue(struct s_qnode **front, void (*del)(void *))
     void            *data;
 
     data = NULL;
-    node = *front;
-    if (node)
+    if (*front)
+    {
+        node = *front;
+        data = (*front)->data;
         *front = (*front)->previous;
-    if (!del)
-        data = node->data;
-    else
-        del(node->data);
-    if (node)
+        if (del)
+            del(data);
+        else
+            data = node->data;
         free(node);
+    }
     return (data);
 }
