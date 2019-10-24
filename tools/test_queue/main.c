@@ -30,7 +30,6 @@ int main(void)
 	printf("%s\n", (char*)queue_front(&myqueue));
 	queue_dequeue(&(myqueue.front), free);
 
-
 	queue_enqueue(&myqueue, s1);
 	queue_enqueue(&myqueue, s2);
 	queue_enqueue(&myqueue, s3);
@@ -46,6 +45,12 @@ int main(void)
 	printf("\nInitial queue:\n\n");
 	queue_apply_to_each(myqueue.front, (void (*)())printf);
 	printf("\n");
+
+	printf("\nSorted queue:\n\n");
+	queue_sort(&myqueue, strcmp);
+	queue_apply_to_each(myqueue.front, (void (*)())printf);
+	printf("\n");
+	
 
 	queue_reverse(&myqueue);
 	queue_reverse(&myqueue);

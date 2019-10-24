@@ -12,9 +12,9 @@
 
 #include "ft_queue.h"
 
-void    queue_sort(struct s_qnode *front, int (*cmp)())
+void    queue_sort(struct s_queue *queue, int (*cmp)())
 {
     (void)cmp;
-    (void)front;
+    (void)queue;
 
 }
