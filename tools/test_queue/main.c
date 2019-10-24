@@ -39,5 +39,12 @@ int main(void)
 	queue_apply_to_each(myqueue.front, (void (*)())printf);
 	printf("\n");
 
+	queue_dequeue(&(myqueue.front), free);
+	queue_dequeue(&(myqueue.front), free);
+	queue_dequeue(&(myqueue.front), free);
+	printf("\nDequeued queue:\n\n");
+	queue_apply_to_each(myqueue.front, (void (*)())printf);
+	printf("\n");
+
 	return (0);
 }

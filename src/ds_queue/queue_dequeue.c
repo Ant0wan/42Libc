@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+
 #include "ft_queue.h"
 
 void	*queue_dequeue(struct s_qnode **front, void (*del)(void *))
@@ -18,15 +20,14 @@ void	*queue_dequeue(struct s_qnode **front, void (*del)(void *))
     void            *data;
 
     data = NULL;
-    if (*front)
-    {
-        node = *front;
+    node = *front;
+    if (node)
         *front = (*front)->previous;
-    }
     if (!del)
         data = node->data;
     else
         del(node->data);
-    free(node);
+    if (node)
+        free(node);
     return (data);
 }
