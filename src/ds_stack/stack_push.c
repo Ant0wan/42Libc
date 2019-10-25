@@ -18,15 +18,15 @@ void	stack_push(struct s_stack **top, void *data)
 {
 	struct s_stack	*push;
 
-	push = stack_create_element(data);
-	if (push)
+	if (*top)
 	{
-		if (!*top)
-			*top = stack_initialize(data);
-		else
+		push = stack_create_element(data);
+		if (push)
 		{
 			push->previous = *top;
 			*top = push;
 		}
 	}
+	else
+		*top = stack_initialize(data);
 }
