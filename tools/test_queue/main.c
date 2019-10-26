@@ -26,6 +26,7 @@ int main(void)
 	s7 = strdup("Seventh line\n");
 	s8 = strdup("Eighth line\n");
 
+	fprintf(stderr, "size: %d\n", queue_size(&myqueue));
 
 	fprintf(stderr, "%s\n", (char*)queue_front(&myqueue));
 	char *stest = (char*)queue_dequeue(&(myqueue.front), NULL);
@@ -43,6 +44,7 @@ int main(void)
 	queue_enqueue(&myqueue, s1);
 	queue_enqueue(&myqueue, s8);
 
+	fprintf(stderr, "size: %d\n", queue_size(&myqueue));
 	fprintf(stderr, "Check front: %s\n", (char*)queue_front(&myqueue));
 	fprintf(stderr, "Should not change: %s\n", (char*)queue_front(&myqueue));
 
@@ -76,6 +78,7 @@ int main(void)
 	fprintf(stderr, "%s\n", str);
 	free(str);
 
+	fprintf(stderr, "size: %d\n", queue_size(&myqueue));
 	queue_delete(&myqueue, free);
 	return (0);
 }

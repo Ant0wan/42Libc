@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   queue_sort.c                                       :+:      :+:    :+:   */
+/*   queue_size.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/24 13:52:49 by abarthel          #+#    #+#             */
-/*   Updated: 2019/10/24 13:52:50 by abarthel         ###   ########.fr       */
+/*   Created: 2019/10/24 16:56:16 by abarthel          #+#    #+#             */
+/*   Updated: 2019/10/24 16:56:18 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+
 #include "ft_queue.h"
 
-void    queue_sort(struct s_queue *queue, int (*cmp)())
+int queue_size(struct s_queue *queue)
 {
-    (void)cmp;
-    (void)queue;
-    
+    struct s_qnode  *node;
+    int             size;
 
+    node = queue->front;
+    size = 0;
+    while (node)
+    {
+        ++size;
+        node = node->previous;
+    }
+    return (size);
 }
