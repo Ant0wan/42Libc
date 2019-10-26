@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <strings.h>
 #include "ft_btree.h"
-#include "ft_btree_rb.h"
 
 void	applylevel(void *data, int current_level, int is_first_elem){
 	printf("%s, %d, %d\n", (char*)data, current_level, is_first_elem);}
@@ -39,12 +38,12 @@ int main(void)
 //	rb_insert(&root, (void*)&s, (int (*)(void*, void*))&strcmp);
 	
 
-	printf("\n\n");
+	fprintf(stderr, "\n\n");
 //	rb_apply_by_level(root, rbapplylevel);
 	rb_apply_by_level(root, rbapplylevel);
 	rotation(&root, &seven, 0);
 //	rotation(&root, &eleven, 1);
-	printf("\n\n");
+	fprintf(stderr, "\n\n");
 //	set_color(&four, 0);
 	rb_apply_by_level(root, rbapplylevel);
 

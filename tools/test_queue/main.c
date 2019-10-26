@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <strings.h>
+#include "ft_printf.h"
 #include "ft_queue.h"
 
 int main(void)
@@ -54,9 +55,18 @@ int main(void)
 
 	fprintf(stderr, "\nSorted queue:\n\n");
 	queue_sort(&myqueue, strcmp);
-	queue_apply_to_each(myqueue.front, (void (*)())printf);
+/*	queue_apply_to_each(myqueue.front, (void (*)())ft_printf);
+*/	
+
 	fprintf(stderr, "\n");
-	
+/*	fprintf(stderr, "Should not change: %s\n", (char*)queue_front(&myqueue));
+	fprintf(stderr, "size: %d\n", queue_size(&myqueue));
+*/
+/*	char *str2;
+	str2 = (char*)queue_dequeue(&(myqueue.front), NULL);
+	fprintf(stderr, "OK: %s\n", str2);
+	free(str2);
+*/	return (0);
 
 	queue_reverse(&myqueue);
 	queue_reverse(&myqueue);
