@@ -23,9 +23,13 @@ void    queue_sort(struct s_queue *queue, int (*cmp)())
     {
 
         data = queue_dequeue(&(queue->front), NULL);
+    	fprintf(stderr, "r %p\n", queue->rear);
+    	fprintf(stderr, "f %p\n\n", queue->front);
         queue_sort(queue, cmp);
-    /*	fprintf(stderr, "Check front: %s\n", (char*)queue_front(queue));
-    */	fprintf(stderr, "Data: %s\n", (char*)data);
+    	fprintf(stderr, "Data: %s\n", (char*)data);
         queue_enqueue(queue, data);
-    }
+    	fprintf(stderr, "%p\n", queue->rear);
+    	fprintf(stderr, "%p\n", queue->front);
+  /*      fprintf(stderr, "Check front: %s\n", (char*)queue_front(queue));
+   */ }
 }

@@ -25,6 +25,8 @@ void	*queue_dequeue(struct s_qnode **front, void (*del)(void *))
         node = *front;
         data = (*front)->data;
         *front = (*front)->previous;
+        if (!*front)
+            /* queue should be passed for rear to be set to NULL when total dequeue */
         if (del)
             del(data);
         else
