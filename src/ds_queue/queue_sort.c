@@ -22,7 +22,7 @@ void    queue_sort(struct s_queue *queue, int (*cmp)())
     if (!queue_isempty(queue))
     {
 
-        data = queue_dequeue(&(queue->front), NULL);
+        data = queue_dequeue(queue, NULL);
     	fprintf(stderr, "r %p\n", queue->rear);
     	fprintf(stderr, "f %p\n\n", queue->front);
         queue_sort(queue, cmp);

@@ -12,11 +12,14 @@
 
 #include "ft_queue.h"
 
-void    queue_apply_to_each(struct s_qnode  *pfront, void (*f)())
+void    queue_apply_to_each(struct s_queue *queue, void (*f)())
 {
-    while (pfront)
+    struct s_qnode  *node;
+
+    node = queue->front;
+    while (node)
     {
-        f(pfront->data);
-        pfront = pfront->previous;
+        f(node->data);
+        node = node->previous;
     }
 }

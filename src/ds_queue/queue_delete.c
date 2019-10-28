@@ -17,6 +17,6 @@
 void    queue_delete(struct s_queue *queue, void (*del)())
 {
     while (queue->front)
-        queue_dequeue(&(queue->front), del);
+        queue_dequeue(queue, del);
     queue->rear = NULL;
 }

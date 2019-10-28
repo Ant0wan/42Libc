@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 10:50:06 by abarthel          #+#    #+#             */
-/*   Updated: 2019/10/24 10:50:19 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/10/28 14:13:55 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 #include "ft_queue.h"
 
-void	*queue_dequeue(struct s_qnode **front, void (*del)(void *))
+void	*queue_dequeue(struct s_queue *queue, void (*del)(void *))
 {
     struct s_qnode  *node;
     void            *data;
 
     data = NULL;
-    if (*front)
+    if (queue->front)
     {
-        node = *front;
-        data = (*front)->data;
-        *front = (*front)->previous;
-        if (!*front)
-            /* queue should be passed for rear to be set to NULL when total dequeue */
+        node = queue->front;
+        data = queue->front->data;
+        queue->front = queue->front->previous;
+        if (!queue->front)
+            queue->rear = NULL;
         if (del)
             del(data);
         else
             data = node->data;
-        free(node);
+    	free(node);
     }
     return (data);
 }

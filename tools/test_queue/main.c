@@ -30,11 +30,11 @@ int main(void)
 	fprintf(stderr, "size: %d\n", queue_size(&myqueue));
 
 	fprintf(stderr, "%s\n", (char*)queue_front(&myqueue));
-	char *stest = (char*)queue_dequeue(&(myqueue.front), NULL);
+	char *stest = (char*)queue_dequeue(&myqueue, NULL);
 	fprintf(stderr, "%s\n", stest);
 	free(stest);
 	fprintf(stderr, "%s\n", (char*)queue_front(&myqueue));
-	queue_dequeue(&(myqueue.front), free);
+	queue_dequeue(&myqueue, free);
 
 	queue_enqueue(&myqueue, s2);
 	queue_enqueue(&myqueue, s3);
@@ -50,7 +50,7 @@ int main(void)
 	fprintf(stderr, "Should not change: %s\n", (char*)queue_front(&myqueue));
 
 	fprintf(stderr, "\nInitial queue:\n\n");
-	queue_apply_to_each(myqueue.front, (void (*)())printf);
+	queue_apply_to_each(&myqueue, (void (*)())printf);
 	fprintf(stderr, "\n");
 
 	fprintf(stderr, "\nSorted queue:\n\n");
@@ -74,19 +74,19 @@ int main(void)
 	queue_reverse(&myqueue);
 	queue_reverse(&myqueue);
 	fprintf(stderr, "\nReversed queue:\n\n");
-	queue_apply_to_each(myqueue.front, (void (*)())printf);
+	queue_apply_to_each(&myqueue, (void (*)())printf);
 	fprintf(stderr, "\n");
 
-	queue_dequeue(&(myqueue.front), free);
-	queue_dequeue(&(myqueue.front), free);
-	queue_dequeue(&(myqueue.front), free);
+	queue_dequeue(&myqueue, free);
+	queue_dequeue(&myqueue, free);
+	queue_dequeue(&myqueue, free);
 	fprintf(stderr, "\nDequeued queue:\n\n");
-	queue_apply_to_each(myqueue.front, (void (*)())printf);
+	queue_apply_to_each(&myqueue, (void (*)())printf);
 	fprintf(stderr, "\n");
 
 	char *str;
 
-	str = (char*)queue_dequeue(&(myqueue.front), NULL);
+	str = (char*)queue_dequeue(&myqueue, NULL);
 	fprintf(stderr, "%s\n", str);
 	free(str);
 
