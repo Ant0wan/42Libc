@@ -55,10 +55,8 @@ int main(void)
 
 	fprintf(stderr, "\nSorted queue:\n\n");
 	queue_sort(&myqueue, strcmp);
-
-/*	fprintf(stderr, "> %s\n", (char*)queue_front(&myqueue));
-	queue_apply_to_each(myqueue.front, (void (*)())ft_printf);
-*/	
+	queue_apply_to_each(&myqueue, (void (*)())ft_printf);
+	
 
 	fprintf(stderr, "\n");
 /*	fprintf(stderr, "Should not change: %s\n", (char*)queue_front(&myqueue));
@@ -72,7 +70,7 @@ int main(void)
 
 	queue_reverse(&myqueue);
 	queue_reverse(&myqueue);
-	queue_reverse(&myqueue);
+	queue_reverse_recursion(&myqueue);
 	fprintf(stderr, "\nReversed queue:\n\n");
 	queue_apply_to_each(&myqueue, (void (*)())printf);
 	fprintf(stderr, "\n");

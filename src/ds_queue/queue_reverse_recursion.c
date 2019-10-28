@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   queue_sort.c                                       :+:      :+:    :+:   */
+/*   queue_reverse_recursion.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/24 13:52:49 by abarthel          #+#    #+#             */
-/*   Updated: 2019/10/24 13:52:50 by abarthel         ###   ########.fr       */
+/*   Created: 2019/10/28 14:45:55 by abarthel          #+#    #+#             */
+/*   Updated: 2019/10/28 14:46:14 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 #include "ft_queue.h"
 
-void    queue_sort(struct s_queue *queue, int (*cmp)())
+void    queue_reverse_recursion(struct s_queue *queue)
 {
     void    *data;
     
     if (!queue_isempty(queue))
     {
         data = queue_dequeue(queue, NULL);
-        queue_sort(queue, cmp);
+        queue_reverse_recursion(queue);
         queue_enqueue(queue, data);
     }
 }
