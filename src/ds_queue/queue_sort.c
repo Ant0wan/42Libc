@@ -15,18 +15,22 @@
 
 #include "ft_queue.h"
 #include <unistd.h>
-/*
-static void     re_dequeue(struct s_queue *queue, int (*cmp)())
+
+static void     re_dequeue(struct s_queue *queue, void *pdata, int (*cmp)())
 {
     void    *data;
 
     if (!queue_isempty(queue))
     {
-        (void)data;
-        (void)queue;
-        (void)cmp;
+        if (cmp(pdata, queue->rear->data) >= 0)
+        {
+            data = queue_dequeue(queue, NULL);
+            re_dequeue(queue, data, cmp);
+        }
+        else
+            queue_enqueue(queue, pdata);
     }
-}*/
+}
 
 static void    sorted_enqueue(struct s_queue *queue, void *data, int (*cmp)())
 {
@@ -36,11 +40,7 @@ static void    sorted_enqueue(struct s_queue *queue, void *data, int (*cmp)())
     else if (cmp(data, queue->rear->data) >= 0)
         queue_enqueue(queue, data);
     else
-    {
-        return ;
-        /* re-dequeue to  reorder */
-    }
-    
+        re_dequeue(queue, data, cmp);
 }
 
 void    queue_sort(struct s_queue *queue, int (*cmp)())
