@@ -14,7 +14,7 @@
 
 _Bool	queue_isempty(const struct s_queue *queue)
 {
-    if (!queue->rear || !queue->front)
+    if (!queue->rear && !queue->front)
         return (1);
     return (0);
 }

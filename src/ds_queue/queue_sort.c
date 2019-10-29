@@ -21,8 +21,13 @@ static void    sorted_enqueue(struct s_queue *queue, void *data, int (*cmp)())
     (void)queue;
     (void)cmp;
     if (queue_isempty(queue))
+    {
+        printf("s:%d\n", queue_size(queue));
+        printf("f %p\n", queue->front);
+        printf("r %p\n", queue->rear);
+        printf("YES\n");
         queue_enqueue(queue, data);
-    printf("s:%d\n", queue_size(queue));
+    }
 
     return ;
 }

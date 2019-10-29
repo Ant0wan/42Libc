@@ -21,8 +21,8 @@ void	queue_enqueue(struct s_queue *queue, void *data)
     {
         if (queue->rear)
             (queue->rear)->previous = node;
+        queue->rear = node;
         if (!queue->front)
             queue->front = queue->rear;
-        queue->rear = node;
     }
 }
