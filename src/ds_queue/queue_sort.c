@@ -16,6 +16,17 @@
 #include "ft_queue.h"
 #include <unistd.h>
 
+static void    sorted_enqueue(struct s_queue *queue, void *data, int (*cmp)())
+{
+    (void)queue;
+    (void)cmp;
+    if (queue_isempty(queue))
+        queue_enqueue(queue, data);
+    printf("s:%d\n", queue_size(queue));
+
+    return ;
+}
+
 void    queue_sort(struct s_queue *queue, int (*cmp)())
 {
     void    *data;
@@ -24,6 +35,6 @@ void    queue_sort(struct s_queue *queue, int (*cmp)())
     {
         data = queue_dequeue(queue, NULL);
         queue_sort(queue, cmp);
-        queue_enqueue(queue, data);
+        sorted_enqueue(queue, data, cmp);
     }
 }
