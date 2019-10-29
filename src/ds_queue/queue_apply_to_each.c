@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 12:40:18 by abarthel          #+#    #+#             */
-/*   Updated: 2019/10/24 12:40:20 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/10/29 13:01:30 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void    queue_apply_to_each(struct s_queue *queue, void (*f)())
 {
-    struct s_qnode  *node;
+	struct s_qnode  *node;
 
-    node = queue->front;
-    while (node)
-    {
-        f(node->data);
-        node = node->previous;
-    }
+	node = queue->front;
+	while (node)
+	{
+		f(node->data);
+		node = node->previous;
+	}
 }

@@ -18,14 +18,14 @@ int main(void)
 	char	*s7;
 	char	*s8;
 
-	s1 = strdup("First line\n");
-	s2 = strdup("Second line\n");
-	s3 = strdup("Third line\n");
-	s4 = strdup("Fourth line\n");
-	s5 = strdup("Fifth line\n");
-	s6 = strdup("Sixth line\n");
-	s7 = strdup("Seventh line\n");
-	s8 = strdup("Eighth line\n");
+	s1 = strdup("1st line\n");
+	s2 = strdup("2nd line\n");
+	s3 = strdup("3rd line\n");
+	s4 = strdup("4th line\n");
+	s5 = strdup("5th line\n");
+	s6 = strdup("6th line\n");
+	s7 = strdup("7th line\n");
+	s8 = strdup("8th line\n");
 
 	fprintf(stderr, "size: %d\n", queue_size(&myqueue));
 
