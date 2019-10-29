@@ -15,21 +15,32 @@
 
 #include "ft_queue.h"
 #include <unistd.h>
+/*
+static void     re_dequeue(struct s_queue *queue, int (*cmp)())
+{
+    void    *data;
+
+    if (!queue_isempty(queue))
+    {
+        (void)data;
+        (void)queue;
+        (void)cmp;
+    }
+}*/
 
 static void    sorted_enqueue(struct s_queue *queue, void *data, int (*cmp)())
 {
-    (void)queue;
     (void)cmp;
     if (queue_isempty(queue))
-    {
-        printf("s:%d\n", queue_size(queue));
-        printf("f %p\n", queue->front);
-        printf("r %p\n", queue->rear);
-        printf("YES\n");
         queue_enqueue(queue, data);
+    else if (cmp(data, queue->rear->data) >= 0)
+        queue_enqueue(queue, data);
+    else
+    {
+        return ;
+        /* re-dequeue to  reorder */
     }
-
-    return ;
+    
 }
 
 void    queue_sort(struct s_queue *queue, int (*cmp)())
