@@ -14,7 +14,6 @@
 #include <stdlib.h>
 
 #include "ft_queue.h"
-#include <unistd.h>
 
 static void     re_dequeue(struct s_queue *queue, void *pdata, int (*cmp)())
 {
@@ -34,13 +33,25 @@ static void     re_dequeue(struct s_queue *queue, void *pdata, int (*cmp)())
 
 static void    sorted_enqueue(struct s_queue *queue, void *data, int (*cmp)())
 {
-    (void)cmp;
+    printf("0:queue f n r: %p      %p\n", queue->front, queue->rear);
     if (queue_isempty(queue))
+    {
+        printf("data: %s", (char*)data);
+        printf("1:queue f n r: %p      %p\n\n", queue->front, queue->rear);
         queue_enqueue(queue, data);
+    }
     else if (cmp(data, queue->rear->data) >= 0)
+    {
+        printf("data: %s", (char*)data);
+        printf("2:queue f n r: %p      %p\n\n", queue->front, queue->rear);
         queue_enqueue(queue, data);
+    }
     else
+    {
+        printf("data: %s", (char*)data);
+        printf("3:queue f n r: %p      %p\n\n", queue->front, queue->rear);
         re_dequeue(queue, data, cmp);
+    }
 }
 
 void    queue_sort(struct s_queue *queue, int (*cmp)())
