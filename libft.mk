@@ -26,6 +26,7 @@ SOURCES	:=	ds_btree/btree_apply_infix.c \
 		ds_queue/queue_dequeue.c \
 		ds_queue/queue_front.c \
 		ds_queue/queue_reverse.c \
+		ds_queue/queue_reverse_recursion.c \
 		ds_queue/queue_delete.c \
 		ds_queue/queue_sort.c \
 		ds_queue/queue_isempty.c \

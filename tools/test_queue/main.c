@@ -59,14 +59,14 @@ int main(void)
 	
 
 	fprintf(stderr, "\n");
-/*	fprintf(stderr, "Should not change: %s\n", (char*)queue_front(&myqueue));
-	fprintf(stderr, "size: %d\n", queue_size(&myqueue));
-*/
-/*	char *str2;
-	str2 = (char*)queue_dequeue(&(myqueue.front), NULL);
+	fprintf(stderr, "Should not change: %s\n", (char*)queue_front(&myqueue));
+	fprintf(stderr, "size: %zu\n", queue_size(&myqueue));
+
+	char *str2;
+	str2 = (char*)queue_dequeue(&myqueue, NULL);
 	fprintf(stderr, "OK: %s\n", str2);
 	free(str2);
-*/	return (0);
+
 
 	queue_reverse(&myqueue);
 	queue_reverse(&myqueue);
