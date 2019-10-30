@@ -12,6 +12,7 @@
 
 #ifndef FT_QUEUE_H
 # define FT_QUEUE_H
+# include <stdlib.h>
 
 struct s_qnode
 {
@@ -35,7 +36,7 @@ void			queue_sort(struct s_queue *queue, int (*cmp)());
 void			queue_reverse_recursion(struct s_queue *queue);
 _Bool			queue_isempty(const struct s_queue *queue);
 void			queue_reverse(struct s_queue *queue);
-int				queue_size(struct s_queue *queue);
+size_t			queue_size(struct s_queue *queue);
 
 
 #endif

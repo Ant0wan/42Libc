@@ -14,17 +14,17 @@
 
 #include "ft_queue.h"
 
-int queue_size(struct s_queue *queue)
+size_t  queue_size(struct s_queue *queue)
 {
     struct s_qnode  *node;
-    int             size;
+    size_t          qsize;
 
     node = queue->front;
-    size = 0;
+    qsize = 0;
     while (node)
     {
-        ++size;
+        ++qsize;
         node = node->previous;
     }
-    return (size);
+    return (qsize);
 }

@@ -18,4 +18,4 @@ gcc main.c -fsanitize=address -g -Wextra -Wall ../../libft.a -I../../include -o 
 ./test
 rm test
 rm -rf test.dSYM
-#make fclean -C ../../
+make fclean -C ../../
