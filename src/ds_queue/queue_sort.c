@@ -21,13 +21,16 @@ static void     re_dequeue(struct s_queue *queue, void *pdata, int (*cmp)())
 {
     void    *data;
 
+    printf("----RE----\n");
+    queue_apply_to_each(queue, (void (*)())printf);
+    printf("--END--\n\n");
     if (!queue_isempty(queue))
     {
         printf("pdata: %s data: %s  HERE\n", (char*)pdata, (char*)queue->rear->data);
 //        if (cmp(pdata, queue->rear->data) >= 0)
-        if (cmp(queue->rear->data, pdata) > 0)
+        if (cmp(queue->rear->data, pdata) >= 0)
         {
-       //     printf("sadfasfasdfasfasd\n");
+            printf("sadfasfasdfasfasd\n");
             data = queue_dequeue(queue, NULL);
             re_dequeue(queue, data, cmp);
             sorted_enqueue(queue, pdata, cmp);
@@ -40,24 +43,27 @@ static void     re_dequeue(struct s_queue *queue, void *pdata, int (*cmp)())
 static void    sorted_enqueue(struct s_queue *queue, void *data, int (*cmp)())
 {
     printf("0:queue f n r: %p      %p\n", queue->front, queue->rear);
+    printf("---------\n");
+    queue_apply_to_each(queue, (void (*)())printf);
+    printf("--END--\n\n");
     if (queue_isempty(queue))
     {
         printf("1data: %s", (char*)data);
         printf("1:queue f n r: %p      %p\n\n", queue->front, queue->rear);
         queue_enqueue(queue, data);
     }
-    else if (cmp(data, queue->rear->data) >= 0)
+    else if (cmp(data, queue->rear->data) < 0)
     {
         printf("2data: %s", (char*)data);
         printf("2:queue f n r: %p      %p\n\n", queue->front, queue->rear);
-        queue_enqueue(queue, data);
+        re_dequeue(queue, data, cmp);
     }
     else
     {
         printf("3data: %s", (char*)data);
         printf("3data: %s", (char*)queue->rear->data);
         printf("3:queue f n r: %p      %p\n\n", queue->front, queue->rear);
-        re_dequeue(queue, data, cmp);
+        queue_enqueue(queue, data);
     }
     printf("\n");
 }
