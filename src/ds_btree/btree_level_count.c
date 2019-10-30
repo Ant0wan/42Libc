@@ -10,14 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+
 #include "ft_btree.h"
 
-int	ft_max(int a, int b)
+static __inline__ size_t	ft_max(size_t a, size_t b)
 {
 	return (a > b ? a : b);
 }
 
-int	btree_level_count(struct s_btree *root)
+size_t				btree_level_count(struct s_btree *root)
 {
 	if (!root)
 		return (0);
