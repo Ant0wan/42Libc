@@ -38,5 +38,4 @@ _Bool			queue_isempty(const struct s_queue *queue);
 void			queue_reverse(struct s_queue *queue);
 size_t			queue_size(struct s_queue *queue);
 
-
 #endif
