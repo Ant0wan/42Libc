@@ -10,5 +10,6 @@ do
 	time ./test inputs/$elem | wc -l
 	printf "\n-------------------------------\n"
 done
+rm -rf test.dSYM
 rm test
-make fclean -C ../../
+#make fclean -C ../../

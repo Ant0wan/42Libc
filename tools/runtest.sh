@@ -11,8 +11,19 @@
 #                                                                              #
 # **************************************************************************** #
 
+# TEST STACK
 cd test_stack/
 ./stack_test.sh
 cd ..
 
+# TEST QUEUE
+cd test_queue/
+./queue_test.sh
+cd ..
+
+cd test_gnl/
+./gnl_test.sh
+cd ..
+
+# CLEAR REPO
 make fclean -C ../

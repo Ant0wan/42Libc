@@ -12,10 +12,10 @@
 # **************************************************************************** #
 
 make -j -C ../../
-#gcc main.c -fsanitize=address -g -Wextra -Wall -Werror ../../libft.a -I../../include -o test
-gcc main.c -fsanitize=address -g -Wextra -Wall ../../libft.a -I../../include -o test
-#gcc main.c -Wextra -Wall ../../libft.a -I../../include -o test
+#cc main.c -fsanitize=address -g -Wextra -Wall -Werror ../../libft.a -I../../include -o test
+cc main.c -fsanitize=address -g -Wextra -Wall ../../libft.a -I../../include -o test
+#cc main.c -Wextra -Wall ../../libft.a -I../../include -o test
 ./test
 rm test
 rm -rf test.dSYM
-make fclean -C ../../
+#make fclean -C ../../
