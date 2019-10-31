@@ -31,7 +31,7 @@ int main(void)
 	fprintf(stderr, "Here is the top after SWAP    %s", (char*)stack_peek(&mystack));
 
 	stack_pop(&mystack, free);
-	fprintf("stderr, %s", (char*)stack_peek(&mystack));
+	fprintf(stderr, "%s", (char*)stack_peek(&mystack));
 	stack_swap(&mystack);
 	stack_pop(&mystack, free);
 	stack_swap(&mystack);
