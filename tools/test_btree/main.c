@@ -55,7 +55,8 @@ int main(void)
 	struct s_btree *test;
 
 
-	test = (struct s_btree*)btree_search_data(root, "5th node\n", (int (*)(void*, void*))strcmp);
+/*	test = (struct s_btree*)btree_search_data(root, "2th node\n", (int (*)(void*, void*))strcmp);
+*/	test = (struct s_btree*)parentbtree_search_data(root, "1st node\n", (int (*)(void*, void*))strcmp);
 	fprintf(stderr, "\n%s\n\n", test->data);
 
 
