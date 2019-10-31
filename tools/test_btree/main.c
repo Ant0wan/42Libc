@@ -52,6 +52,11 @@ int main(void)
 	fprintf(stderr, "\n");
 
 	fprintf(stderr, "\nLevel count: %zu\n\n", btree_level_count(root));
+	struct s_btree *test;
+
+
+	test = (struct s_btree*)btree_search_data(root, "5th node\n", (int (*)(void*, void*))strcmp);
+	fprintf(stderr, "\n%s\n\n", test->data);
 
 
 	return (0);

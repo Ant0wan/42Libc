@@ -14,7 +14,7 @@
 
 #include "ft_btree.h"
 
-void	*btree_search_data(struct s_btree *root, void *data_ref, int (*cmpf)(void *, void *))
+struct s_btree	*btree_search_data(struct s_btree *root, void *data_ref, int (*cmpf)(void *, void *))
 {
 	void	*node;
 
