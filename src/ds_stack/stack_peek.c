@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:25:07 by abarthel          #+#    #+#             */
-/*   Updated: 2019/10/22 14:25:09 by abarthel         ###   ########.fr       */
+/*   Updated: 2019/10/31 09:36:09 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 #include "ft_stack.h"
 
-void    *stack_peek(struct s_stack **top)
+void	*stack_peek(struct s_stack **top)
 {
-    if (*top)
-        return ((*top)->data);
-    return (NULL);
+	if (*top)
+		return ((*top)->data);
+	return (NULL);
 }
