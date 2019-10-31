@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   btree_remove_data.c                                :+:      :+:    :+:   */
+/*   btree_free_node.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/31 13:50:38 by abarthel          #+#    #+#             */
-/*   Updated: 2019/10/31 13:50:39 by abarthel         ###   ########.fr       */
+/*   Created: 2019/10/31 16:02:09 by abarthel          #+#    #+#             */
+/*   Updated: 2019/10/31 16:02:11 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,18 @@
 
 #include "ft_btree.h"
 
-void    btree_remove_data(struct s_btree **root, void *data_ref, int (*cmpf)(void *, void *), void (*del)(void *))
+void    *btree_free_node(struct s_btree *node, void (*del)(void *))
 {
-	void    *node;
+    void    *data;
 
-    while ((node = btree_search_data(*root, data_ref, cmpf)))
+    data = NULL;
+    if (node)
     {
-        btree_free_node(node, del);
+        if (del)
+            del(node->data);
+        else
+            data = node->data;
+        free(node);
     }
+    return (data);
 }
