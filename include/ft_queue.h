@@ -32,7 +32,7 @@ void			*queue_dequeue(struct s_queue *queue, void (*del)(void *));
 void			queue_apply_to_each(struct s_queue *queue, void (*f)());
 void			queue_delete(struct s_queue *queue, void (*del)());
 void			queue_enqueue(struct s_queue *queue, void *data);
-void			queue_sort(struct s_queue *queue, int (*cmp)());
+void			queue_sort(struct s_queue *queue, int (*cmp)(void *, void *));
 void			queue_reverse_recursion(struct s_queue *queue);
 _Bool			queue_isempty(const struct s_queue *queue);
 void			queue_reverse(struct s_queue *queue);

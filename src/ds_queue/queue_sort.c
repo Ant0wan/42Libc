@@ -40,7 +40,7 @@ static void		sorted_enqueue(struct s_queue *queue, void *data, int (*cmp)(), siz
 	}
 }
 
-void			queue_sort(struct s_queue *queue, int (*cmp)())
+void			queue_sort(struct s_queue *queue, int (*cmp)(void *, void *))
 {
 	void	*data;
 

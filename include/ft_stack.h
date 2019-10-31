@@ -31,7 +31,7 @@ void			stack_apply_to_each(struct s_stack **top, void (*f)());
 void			stack_reverse(struct s_stack **top);
 void			stack_reverse_recursion(struct s_stack **top);
 void			stack_duplicate(struct s_stack **top, void *(*copy_data)());
-void			stack_sort(struct s_stack **top, int (*cmp)());
+void			stack_sort(struct s_stack **top, int (*cmp)(void *, void *));
 _Bool			stack_isempty(struct s_stack **top);
 
 #endif

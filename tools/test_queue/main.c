@@ -55,7 +55,7 @@ int main(void)
 	fprintf(stderr, "\n");
 
 	fprintf(stderr, "\nSorted queue:\n\n");
-	queue_sort(&myqueue, strcmp);
+	queue_sort(&myqueue, (int (*)(void *, void *))strcmp);
 	queue_apply_to_each(&myqueue, (void (*)())ft_printf);
 	
 

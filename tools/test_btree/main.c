@@ -42,12 +42,17 @@ int main(void)
 	fprintf(stderr, "\nInfix traversal:\n");
 	btree_apply_infix(root, (void (*)(void*))printf);
 	fprintf(stderr, "\n");
+
 	fprintf(stderr, "\nPrefix traversal:\n");
 	btree_apply_prefix(root, (void (*)(void*))printf);
 	fprintf(stderr, "\n");
+
 	fprintf(stderr, "\nPostfix traversal:\n");
 	btree_apply_postfix(root, (void (*)(void*))printf);
 	fprintf(stderr, "\n");
+
+	fprintf(stderr, "\nLevel count: %zu\n\n", btree_level_count(root));
+
 
 	return (0);
 }

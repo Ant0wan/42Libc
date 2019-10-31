@@ -78,7 +78,7 @@ int main(void)
 	stack_push(&mystack, s5);
 	stack_apply_to_each(&mystack, (void (*)())printf);
 	fprintf(stderr, "\nSorted stack:\n");
-	stack_sort(&mystack, strcmp);
+	stack_sort(&mystack, (int (*)(void *, void *))strcmp);
 	stack_apply_to_each(&mystack, (void (*)())printf);
 	fprintf(stderr, "\n");
 
