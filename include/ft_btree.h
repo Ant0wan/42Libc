@@ -27,6 +27,5 @@ void			btree_apply_postfix(struct s_btree *root, void (*applyf)(void *));
 void			btree_insert_data(struct s_btree **root, void *data, int (*cmpf)(void *, void *));
 void			*btree_search_data(struct s_btree *root, void *data_ref, int (*cmpf)(void *, void *));
 size_t			btree_level_count(struct s_btree *root);
-/*void			btree_apply_by_level(struct s_btree *root, void (*applyf)(void *data, int current_level, int is_first_elem));
-*/
+void			btree_apply_by_level(struct s_btree *root, void (*applyf)(void *item, size_t current_level, size_t is_first_elem), void (*del)(void *));
 #endif

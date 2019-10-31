@@ -1,51 +1,48 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <strings.h>
+#include <string.h>
+
 #include "ft_btree.h"
 
-void	applylevel(void *data, int current_level, int is_first_elem){
-	printf("%s, %d, %d\n", (char*)data, current_level, is_first_elem);}
-//void	rbapplylevel(void *data, int current_level, int is_first_elem, int color){
-//	printf("%s, l:%d, %d, c:%d\n", (char*)data, current_level, is_first_elem, color);}
-void	rbapplylevel(void *data, int current_level, int is_first_elem, int color){
-	printf("%d, l:%d, %d, c:%d\n", *(int*)data, current_level, is_first_elem, color);}
-void donothing(void *ptr){printf("%s\n", (char*)ptr);}
-//int		sup(int *a, int *b){return (*a - *b);}
-
-void            rb_apply_by_level(t_rb_node *root, void (*applyf)(void *item,
-			int current_level, int is_first_elem, int color));
+void print_node_info(void *data, size_t current_level, size_t is_first_elem){fprintf(stderr, "%s, %zu, %zu\n", (char*)data, current_level, is_first_elem);}
+/*
+void	print_rbnode_info(void *data, int current_level, int is_first_elem, int color){printf("%s, l:%d, %d, c:%d\n", (char*)data, current_level, is_first_elem, color);}
+*/
 
 int main(void)
 {
-	// left, right, parent, data, color
-	int			on = 1, el = 11, tw = 2, fo = 4, fi = 5, sev = 7, eig = 8, fourt = 14, fivte = 15;
-	t_rb_node	fourteen, fiveteen, two, one, four, five, seven, eight, eleven;
-	
-	fourteen =	(t_rb_node){NULL, &fiveteen, &eleven, &fourt, RB_BLACK};
-	fiveteen =	(t_rb_node){NULL, NULL, &fourteen, &fivte, RB_RED};
-	two =		(t_rb_node){&one, &seven, &eleven, &tw, RB_RED};
-	one =		(t_rb_node){NULL, NULL, &two, &on, RB_BLACK};
-	four =		(t_rb_node){NULL, NULL, &five, &fo, RB_RED};
-	five =		(t_rb_node){&four, NULL, &seven, &fi, RB_RED};
-	seven =		(t_rb_node){&five, &eight, &two, &sev, RB_BLACK};
-	eight =		(t_rb_node){NULL, NULL, &seven, &eig, RB_RED};
-	eleven =	(t_rb_node){&two, &fourteen, NULL, &el, RB_BLACK};
+	struct s_btree	*root = NULL;
+	char	*n1;
+	char	*n2;
+	char	*n3;
+	char	*n4;
+	char	*n5;
+	char	*n6;
+	char	*n7;
+	char	*n8;
 
-//	int	s = 4;
-	t_rb_node	*root;
+	n1 = strdup("1st node\n");
+	n2 = strdup("2nd node\n");
+	n3 = strdup("3rd node\n");
+	n4 = strdup("4th node\n");
+	n5 = strdup("5th node\n");
+	n6 = strdup("6th node\n");
+	n7 = strdup("7th node\n");
+	n8 = strdup("8th node\n");
 
-	root = &eleven;
-//	rb_insert(&root, (void*)&s, (int (*)(void*, void*))&strcmp);
-	
+	btree_insert_data(&root, n5, (int (*)(void*,void*))strcmp);
+	btree_insert_data(&root, n3, (int (*)(void*,void*))strcmp);
+	btree_insert_data(&root, n7, (int (*)(void*,void*))strcmp);
+	btree_insert_data(&root, n2, (int (*)(void*,void*))strcmp);
+	btree_insert_data(&root, n1, (int (*)(void*,void*))strcmp);
+	btree_insert_data(&root, n4, (int (*)(void*,void*))strcmp);
+	btree_insert_data(&root, n6, (int (*)(void*,void*))strcmp);
+	btree_insert_data(&root, n8, (int (*)(void*,void*))strcmp);
 
 	fprintf(stderr, "\n\n");
 //	rb_apply_by_level(root, rbapplylevel);
-	rb_apply_by_level(root, rbapplylevel);
-	rotation(&root, &seven, 0);
-//	rotation(&root, &eleven, 1);
+//	btree_apply_by_level(root, rbapplylevel);
 	fprintf(stderr, "\n\n");
-//	set_color(&four, 0);
-	rb_apply_by_level(root, rbapplylevel);
 
 	return (0);
 }
