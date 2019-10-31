@@ -52,12 +52,12 @@ int main(void)
 	fprintf(stderr, "\n");
 
 	fprintf(stderr, "\nLevel count: %zu\n\n", btree_level_count(root));
+	
 	struct s_btree *test;
+	test = (struct s_btree*)btree_search_data(root, "1st node\n", (int (*)(void*, void*))strcmp);
+	fprintf(stderr, "\nSearch: %s\n\n", test->data);
 
-
-/*	test = (struct s_btree*)btree_search_data(root, "2th node\n", (int (*)(void*, void*))strcmp);
-*/	test = (struct s_btree*)parentbtree_search_data(root, "1st node\n", (int (*)(void*, void*))strcmp);
-	fprintf(stderr, "\n%s\n\n", test->data);
+	btree_remove_data(&root, "2nd node\n", (int (*)(void*, void*))strcmp, free);
 
 
 	return (0);
