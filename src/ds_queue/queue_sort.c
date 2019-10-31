@@ -17,10 +17,10 @@
 
 static void    front_to_rear(struct s_queue *queue, size_t qsize)
 {
-    if (qsize > 0)
+    while (qsize > 0)
     {
         queue_enqueue(queue, queue_dequeue(queue, NULL));
-        front_to_rear(queue, qsize - 1);
+        --qsize;
     }
 }
 
