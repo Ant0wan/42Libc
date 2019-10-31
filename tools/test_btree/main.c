@@ -39,10 +39,15 @@ int main(void)
 	btree_insert_data(&root, n6, (int (*)(void*,void*))strcmp);
 	btree_insert_data(&root, n8, (int (*)(void*,void*))strcmp);
 
-	fprintf(stderr, "\n\n");
-//	rb_apply_by_level(root, rbapplylevel);
-//	btree_apply_by_level(root, rbapplylevel);
-	fprintf(stderr, "\n\n");
+	fprintf(stderr, "\nInfix traversal:\n");
+	btree_apply_infix(root, (void (*)(void*))printf);
+	fprintf(stderr, "\n");
+	fprintf(stderr, "\nPrefix traversal:\n");
+	btree_apply_prefix(root, (void (*)(void*))printf);
+	fprintf(stderr, "\n");
+	fprintf(stderr, "\nPostfix traversal:\n");
+	btree_apply_postfix(root, (void (*)(void*))printf);
+	fprintf(stderr, "\n");
 
 	return (0);
 }
