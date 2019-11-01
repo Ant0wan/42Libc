@@ -50,6 +50,7 @@ void    btree_remove_data(struct s_btree **root, void *data_ref, int (*cmpf)(voi
 		else
 		{
 			/* code */
+			(void)del;
 		}
     }
 }
