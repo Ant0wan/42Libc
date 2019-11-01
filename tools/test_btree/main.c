@@ -2,9 +2,13 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "ft_queue.h"
 #include "ft_btree.h"
 
-void print_node_info(void *data, size_t current_level, size_t is_first_elem){fprintf(stderr, "%s, %zu, %zu\n", (char*)data, current_level, is_first_elem);}
+void print_node_info(void *item, size_t current_level, size_t is_first_elem)
+{
+	fprintf(stderr, "%s, %zu, %zu\n", item, current_level, is_first_elem);
+}
 /*
 void	print_rbnode_info(void *data, int current_level, int is_first_elem, int color){printf("%s, l:%d, %d, c:%d\n", (char*)data, current_level, is_first_elem, color);}
 */
@@ -55,10 +59,13 @@ int main(void)
 	
 	struct s_btree *test;
 	test = (struct s_btree*)btree_search_data(root, "1st node\n", (int (*)(void*, void*))strcmp);
-	fprintf(stderr, "\nSearch: %s\n\n", test->data);
+	fprintf(stderr, "\nSearch: %s\n\n", (char*)test->data);
 
+	btree_apply_by_level(root, print_node_info);
+
+/*
 	btree_remove_data(&root, "2nd node\n", (int (*)(void*, void*))strcmp, free);
-
+*/
 
 	return (0);
 }

@@ -17,20 +17,17 @@
 
 void	apply_level(struct s_queue *queue, void (*applyf)(void *item, size_t current_level, size_t is_first_elem), size_t level)
 {
-	struct s_btree *data;
+	struct s_btree *qnode;
 
 	if (queue->front)
 	{
-		while (queue->front)
-		{
-			applyf(queue->front->data, level, 0);
-			queue_dequeue(queue, NULL);
-		}
-		data = (struct s_btree*)queue->front->data;
-		if (data->left)
-			queue_enqueue(queue, (void*)data->left);
-		if (data->right)
-			queue_enqueue(queue, (void*)data->right);
+		qnode = (struct s_btree*)queue->front->data;
+		applyf(qnode->data, level, 0);
+		if (qnode->left)
+			queue_enqueue(queue, (void*)qnode->left);
+		if (qnode->right)
+			queue_enqueue(queue, (void*)qnode->right);
+		queue_dequeue(queue, NULL);
 		apply_level(queue, applyf, level + 1);
 	}
 }
@@ -40,6 +37,7 @@ void	btree_apply_by_level(struct s_btree *root, void (*applyf)(void *item, size_
 	struct s_queue	queue;
 	size_t		level;
 
+	queue = (struct s_queue){.front = NULL, .rear = NULL};
 	if (root)
 	{
 		level = 0;
