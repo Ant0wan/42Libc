@@ -17,6 +17,7 @@ SOURCES_PATH :=	./src/
 SOURCES	:=	ds_btree/btree_apply_infix.c \
 		ds_btree/btree_apply_postfix.c \
 		ds_btree/btree_apply_prefix.c \
+		ds_btree/btree_apply_by_level.c \
 		ds_btree/btree_create_node.c \
 		ds_btree/btree_insert_data.c \
 		ds_btree/btree_level_count.c \
