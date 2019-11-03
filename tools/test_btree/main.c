@@ -82,8 +82,15 @@ int main(void)
 	btree_insert_data(&root, n9, (int (*)(void*,void*))strcmp);
 	btree_insert_data(&root, na, (int (*)(void*,void*))strcmp);
 	btree_insert_data(&root, nb, (int (*)(void*,void*))strcmp);
+	btree_insert_data(&root, strdup(nb), (int (*)(void*,void*))strcmp);
 	
-	fprintf(stderr, "\nInfix traversal after insert:\n");
+	btree_remove_data(&root, "0th node\n", (int (*)(void*,void*))strcmp, free);
+	btree_remove_data(&root, "5th node\n", (int (*)(void*,void*))strcmp, free);
+	btree_remove_data(&root, "1st node\n", (int (*)(void*,void*))strcmp, free);
+	btree_remove_data(&root, "bth node\n", (int (*)(void*,void*))strcmp, free);
+	btree_remove_data(&root, "bth node\n", (int (*)(void*,void*))strcmp, free);
+	
+	fprintf(stderr, "\nInfix traversal after insert and deletion:\n");
 	btree_apply_infix(root, print_data);
 	fprintf(stderr, "\n");
 	
