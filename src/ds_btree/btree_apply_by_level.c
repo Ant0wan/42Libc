@@ -15,20 +15,24 @@
 #include "ft_queue.h"
 #include "ft_btree.h"
 
-void	apply_level(struct s_queue *queue, void (*applyf)(void *item, size_t current_level, size_t is_first_elem), size_t level)
+static __inline__ void	apply_at_level(struct s_queue *queue,
+	void (*applyf)(void *item, size_t current_level, size_t is_first_elem),
+	size_t level, size_t nb_node_at_level)
 {
-	struct s_btree *qnode;
+	struct s_btree *node;
+	_Bool		isfirst;
 
-	if (queue->front)
+	isfirst = 1;
+	while (nb_node_at_level)
 	{
-		qnode = (struct s_btree*)queue->front->data;
-		applyf(qnode->data, level, 0);
-		if (qnode->left)
-			queue_enqueue(queue, (void*)qnode->left);
-		if (qnode->right)
-			queue_enqueue(queue, (void*)qnode->right);
-		queue_dequeue(queue, NULL);
-		apply_level(queue, applyf, level + 1);
+		node = queue_dequeue(queue, NULL);
+		applyf(node->data, level, isfirst);
+		if (node->left)
+			queue_enqueue(queue, node->left);
+		if (node->right)
+			queue_enqueue(queue, node->right);
+		--nb_node_at_level;
+		isfirst &= ~(1 << 0);
 	}
 }
 
@@ -36,12 +40,18 @@ void	btree_apply_by_level(struct s_btree *root, void (*applyf)(void *item, size_
 {
 	struct s_queue	queue;
 	size_t		level;
+	size_t		nb_node_at_level;
 
 	queue = (struct s_queue){.front = NULL, .rear = NULL};
 	if (root)
 	{
 		level = 0;
 		queue_enqueue(&queue, (void*)root);
-		apply_level(&queue, applyf, level);
+		while (!queue_isempty(&queue))
+		{
+			nb_node_at_level = queue_size(&queue);
+			apply_at_level(&queue, applyf, level, nb_node_at_level);
+			++level;
+		}
 	}
 }

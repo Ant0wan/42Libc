@@ -7,7 +7,7 @@
 
 void print_node_info(void *item, size_t current_level, size_t is_first_elem)
 {
-	fprintf(stderr, "%s, %zu, %zu\n", item, current_level, is_first_elem);
+	fprintf(stderr, "%s, %zu, %zu\n\n", item, current_level, is_first_elem);
 }
 /*
 void	print_rbnode_info(void *data, int current_level, int is_first_elem, int color){printf("%s, l:%d, %d, c:%d\n", (char*)data, current_level, is_first_elem, color);}
