@@ -7,7 +7,7 @@
 
 void print_node_info(void *item, size_t current_level, size_t is_first_elem)
 {
-	fprintf(stderr, "%s, %zu, %zu\n\n", (char*)item, current_level, is_first_elem);
+	fprintf(stderr, "%s, %zu, %zu\n", (char*)item, current_level, is_first_elem);
 }
 /*
 void	print_rbnode_info(void *data, int current_level, int is_first_elem, int color){printf("%s, l:%d, %d, c:%d\n", (char*)data, current_level, is_first_elem, color);}
@@ -66,6 +66,26 @@ int main(void)
 /*
 	btree_remove_data(&root, "2nd node\n", (int (*)(void*, void*))strcmp, free);
 */
+
+	char	*n0;
+	char	*n9;
+	char	*na;
+	char	*nb;
+	
+	n0 = strdup("0th node\n");
+	n9 = strdup("9th node\n");
+	na = strdup("ath node\n");
+	nb = strdup("bth node\n");
+	
+	btree_insert_data(&root, n0, (int (*)(void*,void*))strcmp);
+	btree_insert_data(&root, n9, (int (*)(void*,void*))strcmp);
+	btree_insert_data(&root, na, (int (*)(void*,void*))strcmp);
+	btree_insert_data(&root, nb, (int (*)(void*,void*))strcmp);
+	
+	fprintf(stderr, "\nInfix traversal:\n");
+	btree_apply_infix(root, (void (*)(void*))printf);
+	fprintf(stderr, "\n");
+	
 	btree_delete(&root, free);
 	return (0);
 }
