@@ -2,34 +2,20 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    runtest.sh                                         :+:      :+:    :+:    #
+#    nmemdel_test.sh                                    :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/10/31 09:49:39 by abarthel          #+#    #+#              #
-#    Updated: 2019/10/31 09:49:39 by abarthel         ###   ########.fr        #
+#    Created: 2019/10/22 16:25:27 by abarthel          #+#    #+#              #
+#    Updated: 2019/10/22 16:25:27 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# TEST STACK
-cd test_stack/
-./stack_test.sh
-cd ..
-
-# TEST QUEUE
-cd test_queue/
-./queue_test.sh
-cd ..
-
-# TEST GETNEXTLINE
-cd test_gnl/
-./gnl_test.sh
-cd ..
-
-# TEST NMEMDEL
-cd test_nmemdel/
-./nmemdel_test.sh
-cd ..
-
-# CLEAR REPO
-make fclean -C ../
+make -j -C ../../
+#cc main.c -fsanitize=address -g -Wextra -Wall -Werror ../../libft.a -I../../include -o test
+cc main.c -fsanitize=address -g -Wextra -Wall ../../libft.a -I../../include -o test
+#cc main.c -Wextra -Wall ../../libft.a -I../../include -o test
+./test
+rm test
+rm -rf test.dSYM
+#make fclean -C ../../

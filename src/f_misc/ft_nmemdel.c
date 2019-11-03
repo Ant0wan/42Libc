@@ -20,7 +20,12 @@ void	ft_nmemdel(size_t n, void **ptr, ...)
 	va_list	ap;
 	
 	va_start(ap, ptr);
+	ft_memdel(ptr);
+	--n;
 	while (n)
+	{
 		ft_memdel(va_arg(ap, void**));
+		--n;
+	}
 	va_end(ap);
 }
