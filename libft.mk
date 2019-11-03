@@ -75,6 +75,7 @@ SOURCES	:=	ds_btree/btree_apply_infix.c \
 		f_misc/ft_itoa.c \
 		f_misc/ft_memalloc.c \
 		f_misc/ft_memdel.c \
+		f_misc/ft_nmemdel.c \
 		f_misc/ft_numlen.c \
 		f_misc/ft_print_tables.c \
 		f_misc/ft_printbits.c \

@@ -263,4 +263,6 @@ char			*ft_resolvepath(char *str);
 
 char			*ft_realpath(const char *path, char *resolved_path);
 
+void			ft_nmemdel(size_t n, void **ptr, ...);
+
 #endif
