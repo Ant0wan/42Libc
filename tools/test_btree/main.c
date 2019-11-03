@@ -4,6 +4,7 @@
 
 #include "ft_queue.h"
 #include "ft_btree.h"
+#include "ft_bstree.h"
 
 static void print_node_info(void *item, size_t current_level, size_t is_first_elem){
 	fprintf(stderr, "%s, %zu, %zu\n", (char*)item, current_level, is_first_elem);}
@@ -83,12 +84,13 @@ int main(void)
 	btree_insert_data(&root, na, (int (*)(void*,void*))strcmp);
 	btree_insert_data(&root, nb, (int (*)(void*,void*))strcmp);
 	btree_insert_data(&root, strdup(nb), (int (*)(void*,void*))strcmp);
-	
-	btree_remove_data(&root, "0th node\n", (int (*)(void*,void*))strcmp, free);
-	btree_remove_data(&root, "5th node\n", (int (*)(void*,void*))strcmp, free);
-	btree_remove_data(&root, "1st node\n", (int (*)(void*,void*))strcmp, free);
-	btree_remove_data(&root, "bth node\n", (int (*)(void*,void*))strcmp, free);
-	btree_remove_data(&root, "bth node\n", (int (*)(void*,void*))strcmp, free);
+
+	/* should be replaced by the btree_remove_data */	
+	bstree_remove_data(&root, "0th node\n", (int (*)(void*,void*))strcmp, free);
+	bstree_remove_data(&root, "5th node\n", (int (*)(void*,void*))strcmp, free);
+	bstree_remove_data(&root, "1st node\n", (int (*)(void*,void*))strcmp, free);
+	bstree_remove_data(&root, "bth node\n", (int (*)(void*,void*))strcmp, free);
+	bstree_remove_data(&root, "bth node\n", (int (*)(void*,void*))strcmp, free);
 	
 	fprintf(stderr, "\nInfix traversal after insert and deletion:\n");
 	btree_apply_infix(root, print_data);

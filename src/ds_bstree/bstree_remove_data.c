@@ -73,7 +73,7 @@ static struct s_btree	*find_node(struct s_btree *root, void *data_ref, int (*cmp
 	return (delete_node(root, del));	
 } 
 
-void    btree_remove_data(struct s_btree **root, void *data_ref, int (*cmpf)(void *, void *), void (*del)(void *))
+void    bstree_remove_data(struct s_btree **root, void *data_ref, int (*cmpf)(void *, void *), void (*del)(void *))
 {
 	if (*root)
 		*root = find_node(*root, data_ref, cmpf, del);
