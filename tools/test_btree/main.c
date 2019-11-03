@@ -5,10 +5,11 @@
 #include "ft_queue.h"
 #include "ft_btree.h"
 
-void print_node_info(void *item, size_t current_level, size_t is_first_elem)
-{
-	fprintf(stderr, "%s, %zu, %zu\n", (char*)item, current_level, is_first_elem);
-}
+static void print_node_info(void *item, size_t current_level, size_t is_first_elem){
+	fprintf(stderr, "%s, %zu, %zu\n", (char*)item, current_level, is_first_elem);}
+
+static void print_data(void *ptr){
+	fprintf(stderr, "%s", (char*)ptr);}
 /*
 void	print_rbnode_info(void *data, int current_level, int is_first_elem, int color){printf("%s, l:%d, %d, c:%d\n", (char*)data, current_level, is_first_elem, color);}
 */
@@ -44,15 +45,15 @@ int main(void)
 	btree_insert_data(&root, n8, (int (*)(void*,void*))strcmp);
 
 	fprintf(stderr, "\nInfix traversal:\n");
-	btree_apply_infix(root, (void (*)(void*))printf);
+	btree_apply_infix(root, print_data);
 	fprintf(stderr, "\n");
 
 	fprintf(stderr, "\nPrefix traversal:\n");
-	btree_apply_prefix(root, (void (*)(void*))printf);
+	btree_apply_prefix(root, print_data);
 	fprintf(stderr, "\n");
 
 	fprintf(stderr, "\nPostfix traversal:\n");
-	btree_apply_postfix(root, (void (*)(void*))printf);
+	btree_apply_postfix(root, print_data);
 	fprintf(stderr, "\n");
 
 	fprintf(stderr, "\nLevel count: %zu\n\n", btree_level_count(root));
@@ -82,8 +83,8 @@ int main(void)
 	btree_insert_data(&root, na, (int (*)(void*,void*))strcmp);
 	btree_insert_data(&root, nb, (int (*)(void*,void*))strcmp);
 	
-	fprintf(stderr, "\nInfix traversal:\n");
-	btree_apply_infix(root, (void (*)(void*))printf);
+	fprintf(stderr, "\nInfix traversal after insert:\n");
+	btree_apply_infix(root, print_data);
 	fprintf(stderr, "\n");
 	
 	btree_delete(&root, free);
