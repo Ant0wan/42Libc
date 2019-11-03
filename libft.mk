@@ -23,6 +23,7 @@ SOURCES	:=	ds_btree/btree_apply_infix.c \
 		ds_btree/btree_level_count.c \
 		ds_btree/btree_search_data.c \
 		ds_btree/btree_remove_data.c \
+		ds_btree/btree_delete.c \
 		ds_queue/queue_create_node.c \
 		ds_queue/queue_enqueue.c \
 		ds_queue/queue_dequeue.c \
