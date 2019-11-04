@@ -31,5 +31,10 @@ cd test_nmemdel/
 ./nmemdel_test.sh
 cd ..
 
+# TEST BTREE
+cd test_btree/
+./btree_test.sh
+cd ..
+
 # CLEAR REPO
 make fclean -C ../
