@@ -59,6 +59,7 @@ SOURCES	:=	ds_btree/btree_apply_infix.c \
 		f_ctype/ft_isalnum.c \
 		f_ctype/ft_isalpha.c \
 		f_ctype/ft_isascii.c \
+		f_ctype/ft_isspace.c \
 		f_ctype/ft_isdigit.c \
 		f_ctype/ft_tolower.c \
 		f_ctype/ft_toupper.c \
