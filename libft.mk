@@ -41,6 +41,7 @@ SOURCES	:=	ds_btree/btree_apply_infix.c \
 		ds_singly_linked_list/ft_lstiter.c \
 		ds_singly_linked_list/ft_lstmap.c \
 		ds_singly_linked_list/ft_lstnew.c \
+		ds_singly_linked_list/ft_lstquicksort.c \
 		ds_stack/stack_apply_to_each.c \
 		ds_stack/stack_create_element.c \
 		ds_stack/stack_delete.c \
