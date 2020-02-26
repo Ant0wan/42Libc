@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 10:50:06 by abarthel          #+#    #+#             */
-/*   Updated: 2019/10/31 08:52:35 by abarthel         ###   ########.fr       */
+/*   Updated: 2020/02/26 11:21:39 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 void	*queue_dequeue(struct s_queue *queue, void (*del)(void *))
 {
 	struct s_qnode	*node;
-	void		*data;
+	void			*data;
 
 	data = NULL;
 	if (queue->front)
