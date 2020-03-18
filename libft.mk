@@ -64,6 +64,8 @@ SOURCES	:=	ds_btree/btree_apply_infix.c \
 		f_ctype/ft_isdigit.c \
 		f_ctype/ft_tolower.c \
 		f_ctype/ft_toupper.c \
+		f_ctype/ft_isprint.c \
+		f_ctype/ft_ispunct.c \
 		f_errno/error_msg.c \
 		f_misc/ft_chrsearch.c \
 		f_misc/ft_ewcsnwidth.c \
@@ -75,7 +77,6 @@ SOURCES	:=	ds_btree/btree_apply_infix.c \
 		f_misc/ft_fputwsbits.c \
 		f_misc/ft_isempty.c \
 		f_misc/ft_isprime.c \
-		f_misc/ft_isprint.c \
 		f_misc/ft_itoa.c \
 		f_misc/ft_memalloc.c \
 		f_misc/ft_memdel.c \
