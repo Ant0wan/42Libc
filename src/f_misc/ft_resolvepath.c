@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/09 16:47:47 by abarthel          #+#    #+#             */
-/*   Updated: 2020/05/11 14:37:09 by abarthel         ###   ########.fr       */
+/*   Updated: 2020/05/12 14:56:49 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,10 @@ static void	clean_end(char *str)
 	}
 }
 
-static void	clean_start(char *str)
+static void	remove_doubleslash(char *str)
 {
-	size_t	i;
 	char	*ptr;
 
-	i = 0;
-	(void)i;
 	while ((ptr = ft_strstr(str, "//")))
 	{
 		ft_memmove(ptr, (ptr + 1), ft_strlen((ptr + 1)));
@@ -57,18 +54,27 @@ static void	clean_start(char *str)
 static void	currentdir_trim(char *str)
 {
 	char	*ptr;
+	int	l;
 
-	while ((ptr = ft_strstr(str, ".")))
+	while (!ft_strncmp(str, "./", 2))
 	{
-		if (*(ptr + 1) == '/')
-			ft_memmove(ptr, (ptr + 1), ft_strlen((ptr + 1)));
-		while (*(ptr + 1))
-			++ptr;
-		while (*ptr)
-		{
-			*ptr = '\0';
-			++ptr;
-		}
+		l = ft_strlen(str + 2);
+		ft_memmove(str, str + 2, l);
+		str[l] = '\0';
+	}
+	ptr = str;
+	while ((ptr = ft_strstr(ptr, "/./")))
+	{
+			l = ft_strlen(ptr + 2);
+			ft_memmove(ptr, ptr + 2, l);
+			ptr[l] = '\0';
+	}
+	if (*str)
+	{
+		l = ft_strlen(str);
+		if ((l >= 2 && !ft_strncmp(&str[l - 2], "/.", 2))
+			|| !ft_strcmp(str, "."))
+			str[l - 1] = '\0';
 	}
 }
 
@@ -104,11 +110,10 @@ char		*ft_resolvepath(char *str)
 		g_errno = E_ENOENT;
 		return (str);
 	}
-	clean_start(str);
-	previousdir_res(str);
-	clean_start(str);
+	remove_doubleslash(str);
 	currentdir_trim(str);
-	clean_start(str);
+	previousdir_res(str);
+	remove_doubleslash(str);
 	clean_end(str);
 	return (str);
 }
