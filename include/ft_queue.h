@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 13:06:51 by abarthel          #+#    #+#             */
-/*   Updated: 2019/10/23 20:48:07 by abarthel         ###   ########.fr       */
+/*   Updated: 2020/05/19 19:36:29 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 # define FT_QUEUE_H
 # include <stdlib.h>
 
-struct s_qnode
+struct			s_qnode
 {
-	void		*data;
+	void			*data;
 	struct s_qnode	*previous;
 };
 
-struct s_queue
+struct			s_queue
 {
 	struct s_qnode	*rear;
 	struct s_qnode	*front;
