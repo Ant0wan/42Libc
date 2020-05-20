@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/25 14:45:47 by abarthel          #+#    #+#              #
-#    Updated: 2019/10/23 18:25:39 by abarthel         ###   ########.fr        #
+#    Updated: 2020/05/20 09:51:18 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,6 @@ SOURCES	:=	ds_btree/btree_apply_infix.c \
 		ds_singly_linked_list/ft_lstiter.c \
 		ds_singly_linked_list/ft_lstmap.c \
 		ds_singly_linked_list/ft_lstnew.c \
-		ds_singly_linked_list/ft_lstquicksort.c \
 		ds_stack/stack_apply_to_each.c \
 		ds_stack/stack_create_element.c \
 		ds_stack/stack_delete.c \

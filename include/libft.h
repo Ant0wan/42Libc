@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 11:55:45 by abarthel          #+#    #+#             */
-/*   Updated: 2019/08/27 18:21:46 by abarthel         ###   ########.fr       */
+/*   Updated: 2020/05/20 09:51:30 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -204,8 +204,6 @@ void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstnew(void const *content, size_t content_size);
 
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-
-void			ft_lstquicksort(t_list **alst, int (*cmp)(void *, void *));
 
 void			ft_print_tables(char **tables);
 
