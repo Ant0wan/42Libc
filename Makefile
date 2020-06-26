@@ -6,17 +6,17 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/25 14:03:51 by abarthel          #+#    #+#              #
-#    Updated: 2019/10/31 09:59:40 by abarthel         ###   ########.fr        #
+#    Updated: 2020/06/26 20:45:39 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 -include libft.mk
 
-.PHONY: all clean fclean re objects lib
+.PHONY: all clean fclean re objects lib debug
 
 all: $(NAME)
 
-$(NAME)	: $(OBJECTS)
+$(NAME): $(OBJECTS)
 	@$(AR) $(ARFLAGS) $(NAME) $(OBJECTS)
 	@ranlib $(NAME)
 	@printf "\n\e[38;5;82m%4s [\e[1m$(NAME) built]\n\n\e[0m"
@@ -34,7 +34,7 @@ re: fclean $(NAME)
 
 objects: $(OBJECTS)
 
-lib	: $(OBJECTS)
+lib: $(OBJECTS)
 	@$(AR) $(ARFLAGS) $(NAME) $(OBJECTS)
 	@ranlib $(NAME)
 
