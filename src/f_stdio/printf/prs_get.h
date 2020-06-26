@@ -18,11 +18,11 @@
 void	get_precision(const char *__restrict__ format, va_list ap);
 
 void	get_flags(const char *__restrict__ format
-		, _Bool *__restrict__ specifier);
+		, unsigned char *__restrict__ specifier);
 
-_Bool	get_modifier(const char *__restrict__ format);
+unsigned char	get_modifier(const char *__restrict__ format);
 
 void	ft_get_width_or_dollar(const char *__restrict__ str
-		, _Bool dot);
+		, unsigned char dot);
 
 #endif

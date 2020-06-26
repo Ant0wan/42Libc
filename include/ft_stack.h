@@ -36,6 +36,6 @@ void			stack_duplicate(struct s_stack **top, \
 	void *(*copy_data)());
 void			stack_sort(struct s_stack **top, \
 	int (*cmp)(void *, void *));
-_Bool			stack_isempty(struct s_stack **top);
+unsigned char			stack_isempty(struct s_stack **top);
 
 #endif

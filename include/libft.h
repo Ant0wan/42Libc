@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 11:55:45 by abarthel          #+#    #+#             */
-/*   Updated: 2020/05/20 09:51:30 by abarthel         ###   ########.fr       */
+/*   Updated: 2020/06/26 20:55:50 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <stdarg.h>
+# include <stdint.h>
 
 void			ft_bzero(void *s, size_t n) __attribute__
 				((nonnull(1)));
@@ -133,7 +134,7 @@ void			ft_putuint(unsigned int n);
 
 void			ft_putuint_octal(unsigned int nbr);
 
-void			ft_putllnb(long long int n);
+void			ft_putllnb(int64_t n);
 
 void			ft_putnbr_base(int nbr, char *base);
 

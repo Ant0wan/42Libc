@@ -16,7 +16,7 @@
 #include "ft_expand_ret.h"
 #include "specifiers.h"
 
-extern _Bool		g_error;
+extern unsigned char		g_error;
 extern t_flags		g_flags;
 extern t_modifier	g_modifier;
 extern t_options	g_options;

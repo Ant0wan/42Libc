@@ -6,15 +6,15 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 07:11:32 by abarthel          #+#    #+#             */
-/*   Updated: 2019/02/19 12:54:56 by abarthel         ###   ########.fr       */
+/*   Updated: 2020/06/26 20:56:56 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putllnb(long long int n)
+void	ft_putllnb(int64_t n)
 {
-	unsigned long long int	nb;
+	uint64_t	nb;
 
 	if (n < 0)
 		ft_putchar('-');

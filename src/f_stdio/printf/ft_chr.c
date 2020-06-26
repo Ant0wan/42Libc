@@ -18,7 +18,7 @@
 #include "ft_wchar.h"
 #include "utf8.h"
 
-extern _Bool		g_error;
+extern unsigned char		g_error;
 extern t_options	g_options;
 extern t_modifier	g_modifier;
 extern t_prefix		g_prefix;

@@ -12,7 +12,7 @@
 
 #include "ft_queue.h"
 
-_Bool	queue_isempty(const struct s_queue *queue)
+unsigned char	queue_isempty(const struct s_queue *queue)
 {
 	if (!queue->rear && !queue->front)
 		return (1);

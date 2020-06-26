@@ -18,7 +18,7 @@
 #include "libft.h"
 
 extern t_ret		g_ret;
-extern _Bool		g_error;
+extern unsigned char		g_error;
 
 void	ft_expand_ret(int size)
 {

@@ -14,7 +14,7 @@
 
 #include "ft_stack.h"
 
-_Bool	stack_isempty(struct s_stack **top)
+unsigned char	stack_isempty(struct s_stack **top)
 {
 	if (!*top)
 		return (1);

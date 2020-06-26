@@ -28,7 +28,7 @@ t_options		g_options =
 {.width = -1, .precision = -1, .i_ap = 0, .val_dol = 0};
 t_flags			g_flags =
 {.hash = 0, .zero = 0, .minus = 0, .space = 0, .plus = 0, .apost = 0};
-_Bool			g_error = 0;
+unsigned char			g_error = 0;
 
 static __inline__ void	reset_globals(void)
 {
@@ -51,8 +51,8 @@ static __inline__ void	reset_globals(void)
 	g_modifier.upl = 0;
 }
 
-static __inline__ _Bool	get_fwpm(const char *__restrict__ format, va_list ap
-		, _Bool *__restrict__ specifier)
+static __inline__ unsigned char	get_fwpm(const char *__restrict__ format, va_list ap
+		, unsigned char *__restrict__ specifier)
 {
 	if (format[g_ret.fmt_i] > '0' && format[g_ret.fmt_i] <= '9')
 	{
@@ -80,10 +80,10 @@ static __inline__ _Bool	get_fwpm(const char *__restrict__ format, va_list ap
 		return (0);
 }
 
-static __inline__ _Bool	prs_specifier(const char *__restrict__ format, va_list ap)
+static __inline__ unsigned char	prs_specifier(const char *__restrict__ format, va_list ap)
 {
 	void	*(*f)();
-	_Bool	specifier;
+	unsigned char	specifier;
 
 	while (!(format[g_ret.fmt_i] ^ '%'))
 	{

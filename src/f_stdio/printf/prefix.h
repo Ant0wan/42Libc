@@ -23,7 +23,7 @@ typedef struct	s_prefi
 	unsigned short			len;
 	unsigned short			base:5;
 	unsigned short			size:2;
-	_Bool					neg:1;
+	unsigned char					neg:1;
 }				t_prefix;
 
 extern t_prefix	g_prefix;

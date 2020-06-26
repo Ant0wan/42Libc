@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 13:06:51 by abarthel          #+#    #+#             */
-/*   Updated: 2020/05/19 19:36:29 by abarthel         ###   ########.fr       */
+/*   Updated: 2020/06/26 20:49:57 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void			queue_delete(struct s_queue *queue, void (*del)());
 void			queue_enqueue(struct s_queue *queue, void *data);
 void			queue_sort(struct s_queue *queue, int (*cmp)(void *, void *));
 void			queue_reverse_recursion(struct s_queue *queue);
-_Bool			queue_isempty(const struct s_queue *queue);
+unsigned char		queue_isempty(const struct s_queue *queue);
 void			queue_reverse(struct s_queue *queue);
 size_t			queue_size(struct s_queue *queue);
 

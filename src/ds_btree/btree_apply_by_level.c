@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 13:04:14 by abarthel          #+#    #+#             */
-/*   Updated: 2019/10/22 13:04:28 by abarthel         ###   ########.fr       */
+/*   Updated: 2020/06/26 20:52:06 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static __inline__ void	apply_at_level(struct s_queue *queue,
 	size_t level, size_t nb_node_at_level)
 {
 	struct s_btree *node;
-	_Bool		isfirst;
+	unsigned char		isfirst;
 
 	isfirst = 1;
 	while (nb_node_at_level)
@@ -42,7 +42,8 @@ void	btree_apply_by_level(struct s_btree *root, void (*applyf)(void *item, size_
 	size_t		level;
 	size_t		nb_node_at_level;
 
-	queue = (struct s_queue){.front = NULL, .rear = NULL};
+	queue.front = NULL;
+	queue.rear = NULL;
 	if (root)
 	{
 		level = 0;
