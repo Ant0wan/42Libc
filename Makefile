@@ -6,13 +6,13 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/25 14:03:51 by abarthel          #+#    #+#              #
-#    Updated: 2020/06/26 20:45:39 by abarthel         ###   ########.fr        #
+#    Updated: 2020/06/26 20:47:37 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 -include libft.mk
 
-.PHONY: all clean fclean re objects lib debug
+.PHONY: all clean fclean re objects lib
 
 all: $(NAME)
 
