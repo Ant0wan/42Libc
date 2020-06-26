@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/28 12:47:59 by abarthel          #+#    #+#             */
-/*   Updated: 2019/06/26 14:45:03 by abarthel         ###   ########.fr       */
+/*   Updated: 2020/06/26 21:08:43 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,4 @@ void	wrapper(void *(*f)(), va_list ap)
 		f(ap);
 	else
 		f(va_arg(ap, __typeof__(ap)));
-	++g_options.i_ap;
 }

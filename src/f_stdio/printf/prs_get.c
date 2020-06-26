@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/28 12:17:11 by abarthel          #+#    #+#             */
-/*   Updated: 2019/08/27 18:23:16 by abarthel         ###   ########.fr       */
+/*   Updated: 2020/06/26 21:08:24 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,10 +132,7 @@ void					get_precision(const char *__restrict__ format, va_list ap)
 	while (!(format[g_ret.fmt_i] ^ '.'))
 		++g_ret.fmt_i;
 	if (!(format[g_ret.fmt_i] ^ '*'))
-	{
 		g_options.precision = va_arg(ap, int);
-		++g_options.i_ap;
-	}
 	else if (!((format[g_ret.fmt_i] & '0')) ^ '0')
 	{
 		if (format[g_ret.fmt_i] >= '0' && format[g_ret.fmt_i] <= '9')

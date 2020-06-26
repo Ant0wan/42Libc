@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2019/06/26 15:24:32 by abarthel         ###   ########.fr       */
+/*   Updated: 2020/06/26 21:09:27 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,8 @@
 
 static va_list	g_ap_origin;
 t_ret			g_ret;
-t_modifier		g_modifier =
-{.hh = 0, .h = 0, .l = 0, .ll = 0, .j = 0, .t = 0, .z = 0, .upl = 0};
-t_options		g_options =
-{.width = -1, .precision = -1, .i_ap = 0, .val_dol = 0};
+t_modifier		g_modifier;
+t_options		g_options;
 t_flags			g_flags =
 {.hash = 0, .zero = 0, .minus = 0, .space = 0, .plus = 0, .apost = 0};
 unsigned char			g_error = 0;
@@ -67,7 +65,6 @@ static __inline__ unsigned char	get_fwpm(const char *__restrict__ format, va_lis
 	else if (!(format[g_ret.fmt_i] ^ '*'))
 	{
 		g_options.width = va_arg(ap, int);
-		++g_options.i_ap;
 		return (1);
 	}
 	else if (!((format[g_ret.fmt_i] & ' ') ^ ' ')
