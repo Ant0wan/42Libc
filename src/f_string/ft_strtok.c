@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include "libft.h"
 
-static __inline__ _Bool		isdelim(char c, const char *delim)
+static __inline__ unsigned char		isdelim(char c, const char *delim)
 {
 	while (*delim)
 	{

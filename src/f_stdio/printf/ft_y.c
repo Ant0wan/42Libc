@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 17:38:39 by abarthel          #+#    #+#             */
-/*   Updated: 2019/07/07 14:16:34 by abarthel         ###   ########.fr       */
+/*   Updated: 2020/06/26 21:12:11 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void				ft_y(unsigned short value)
 		ft_expand_ret(14);
 	if (g_error)
 		return ;
-	g_ret.ret[++g_ret.i] = '\e';
+	g_ret.ret[++g_ret.i] = '\033';
 	g_ret.ret[++g_ret.i] = '[';
 	if (g_flags.plus)
 		ffff_coloring(value);

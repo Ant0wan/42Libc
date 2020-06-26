@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:39:43 by abarthel          #+#    #+#             */
-/*   Updated: 2020/06/26 21:09:27 by abarthel         ###   ########.fr       */
+/*   Updated: 2020/06/26 21:38:56 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ static va_list	g_ap_origin;
 t_ret			g_ret;
 t_modifier		g_modifier;
 t_options		g_options;
-t_flags			g_flags =
-{.hash = 0, .zero = 0, .minus = 0, .space = 0, .plus = 0, .apost = 0};
+t_flags			g_flags;
 unsigned char			g_error = 0;
 
 static __inline__ void	reset_globals(void)

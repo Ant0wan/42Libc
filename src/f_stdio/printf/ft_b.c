@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 17:00:19 by abarthel          #+#    #+#             */
-/*   Updated: 2019/07/07 14:13:30 by abarthel         ###   ########.fr       */
+/*   Updated: 2020/06/26 21:11:13 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static __inline__ size_t	ft_type_len(void)
 	else if (g_modifier.l)
 		return (sizeof(long) * 8);
 	else if (g_modifier.ll)
-		return (sizeof(long long) * 8);
+		return (sizeof(int64_t) * 8);
 	else if (g_modifier.j)
 		return (sizeof(intmax_t) * 8);
 	else if (g_modifier.t)
